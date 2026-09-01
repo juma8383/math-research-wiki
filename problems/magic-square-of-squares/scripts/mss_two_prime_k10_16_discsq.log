@@ -1,0 +1,18 @@
+=== disc-square census, primes <= 3e5, 16 closed-form pieces + K1 ===
+primes: 12980
+progress 2000 {'K10': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K12': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K13': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K14': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K15': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K16': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K1': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}}
+progress 4000 {'K10': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K12': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K13': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K14': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K15': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K16': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K1': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}}
+progress 6000 {'K10': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K12': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K13': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K14': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K15': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K16': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K1': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}}
+progress 8000 {'K10': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K12': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K13': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K14': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K15': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K16': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K1': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}}
+progress 10000 {'K10': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K12': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K13': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K14': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K15': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K16': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K1': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}}
+progress 12000 {'K10': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K12': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K13': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K14': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K15': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K16': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K1': {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}}
+census complete:
+  K10 {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}
+  K12 {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}
+  K13 {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}
+  K14 {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}
+  K15 {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}
+  K16 {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}
+  K1 {'discsq': 0, 'roots': 0, 'adm': 0, 'prime': 0, 'verified': 0}
+total fully-verified hits: 0
+DONE

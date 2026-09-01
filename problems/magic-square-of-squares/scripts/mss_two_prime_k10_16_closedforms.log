@@ -1,0 +1,3 @@
+=== closed-form piece quadratics vs interpolation, primes <= 2000 ===
+checks=2352, mismatches=0 PASS
+DONE

@@ -1,0 +1,22 @@
+=== 0. iff check: relation <=> predicted admissible root, p<q<=600 ===
+pairs=1275, relations found=0, iff mismatches=0 PASS
+=== 1. brute relation census p<q<=3000 ===
+pairs=22155, relations=0 (expect 0)
+DONE
+=== 2. per-prime sieve, all 1 mod 4 primes <= 3e5 ===
+primes: 12980
+progress 2000 {'K10': {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K12': {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K13': {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K14': {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K15': {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K16': {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}}
+progress 4000 {'K10': {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K12': {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K13': {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K14': {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K15': {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K16': {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}}
+progress 6000 {'K10': {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K12': {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K13': {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K14': {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K15': {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K16': {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}}
+progress 8000 {'K10': {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K12': {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K13': {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K14': {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K15': {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K16': {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}}
+progress 10000 {'K10': {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K12': {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K13': {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K14': {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K15': {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K16': {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}}
+progress 12000 {'K10': {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K12': {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K13': {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K14': {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K15': {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}, 'K16': {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}}
+sieve complete. stats:
+  K10 {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}
+  K12 {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}
+  K13 {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}
+  K14 {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}
+  K15 {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}
+  K16 {'disc': 0, 'region': 0, 'adm': 0, 'prime': 0, 'verified': 0}
+total fully-verified hits: 0
+DONE

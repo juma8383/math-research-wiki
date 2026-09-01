@@ -62,7 +62,7 @@ def covered_by(lo, hi, rs, mod=5):
             return False
         cur = x
     mid = (cur + hi) / 2
-    return all((mid * r) % mod <= 1 or (mid * r) % mod >= mod - 1 for r in rs)
+    return any((mid * r) % mod <= 1 or (mid * r) % mod >= mod - 1 for r in rs)
 
 
 def main():
@@ -96,6 +96,21 @@ def main():
                             "all_single=%-5s  cov_by_B_{%d,%d}=%s"
                             % (p, q, r, len(ws), n1, n1 == len(ws),
                                r, s[0] if s else 0, covr))
+            out("")
+            # n=3-window version of the T4-f one-pair condition (bound 1/4,
+            # circle [0,4)): windows of {p,q} inside single arcs of the
+            # n=3-style B_r.  Theorem T4-f: all single-arc => (p,q,r)=(1,2,3).
+            out("  T4-f one-pair condition, n=3 windows (bound 1/4):")
+            for i in range(4):
+                for j in range(i + 1, 4):
+                    p, q = V[i], V[j]
+                    ws3 = windows_pair(p, q, mod=4)
+                    for r in [V[m] for m in range(4) if V[m] > q]:
+                        n1 = sum(1 for lo, hi in ws3
+                                 if in_single_arc(lo, hi, r, mod=4))
+                        out("    {%d,%d} vs B_%d: nwin=%d single=%d all=%s  "
+                            "(T4-f forces all_single => (p,q,r)=(1,2,3))"
+                            % (p, q, r, len(ws3), n1, n1 == len(ws3)))
             out("")
     finally:
         _FH.close()

@@ -689,6 +689,95 @@ one-pair condition, no tightness needed). The tight-3-set classification
 is closed; the next open questions are the tight 4-sets
 ($\{1,3,4,7\}$ sporadic) and T1/T2 at larger $n$.
 
+## Tight 4-sets (2026-09-01): census + one-pair structure
+`[lonely-runner-tight4]` (`scripts/lonely_runner_tight4.py`,
+`lonely_runner_tight4_struct.py`, logs alongside; self-tests S1–S4 ALL
+PASSED verbatim in the log: S1 integer engine vs the Fraction reference
+engine, exhaustive primitive 4-sets [1,16], 0 mismatches; S2 Fan–Sun 7/30 +
+both known tight 4-sets exact; S3 tight ⟺ triple-window condition
+exhaustive [1,16], 0 mismatches; S4 the proved filters never reject a
+tight set, [1,16]).
+
+**Census (exact, exhaustive in box).** All primitive 4-subsets of
+$[1,80]$: **1,473,833 sets, 607,153 full $\kappa$-evals** (proved
+filters rejected the rest), 139.6 s. **Exactly TWO tight sets:
+$\{1,2,3,4\}$ and $\{1,3,4,7\}$**; zero $\kappa<\tfrac15$ violations
+(box re-verification of published LRC(4)). Fixed-prefix families to
+$d=200$: tight members of $\{1,2,3,d\}=\{4\}$, $\{1,3,4,d\}=\{7\}$,
+$\{1,2,4,d\}=\{1,3,5,d\}=\{2,3,4,d\}=\emptyset$ — each sporadic is alone
+in its family. Independent cross-check: the earlier tightscan
+(`lonely_runner_tightscan.log`) found the same 2 tight sets in [1,30]
+with the reference Fraction engine.
+
+**Prior art (survey-verified, verbatim).** arXiv:2409.20160v1 §4:
+Wills (after a comment by Flor) identified $\{1,3,4,7\}$,
+$\{1,3,4,5,9\}$, $\{1,2,3,4,5,7,12\}$; **"Cusick and Pomerance show that
+there are no more instances, up to dilations, for $n=4$"**; "the same is
+true for $n=5$ (Bohman–Holzman–Kleitman, Thm 3)"; a complete
+characterization is "still widely open"; Goddyn–Wong (Theorem 12) give
+infinite families at larger $n$. So the n=4 classification is PUBLISHED
+(computer-aided, 1984) `[summary of the survey — to-verify vs the
+Cusick–Pomerance primary source]`; the census is an independent exact
+box-confirmation, and the lemmas below are the wiki's structural
+contribution (a one-pair reduction route in the T4 style).
+
+**Lemma N4-a (generalized T4-a at $n=4$ — PROVED; S3-verified).**
+$\kappa(V)=\tfrac15$ (with published LRC(4) supplying $\ge$) $\iff$ the
+bound-$\tfrac15$ windows of every TRIPLE of $V$ lie in a single closed
+arc of $B_{\text{fourth}}$ (windows on the circle $[0,5)$:
+$G_v=\{T: vT \bmod 5\in(1,4)\}$, arcs $[\tfrac{5k-1}v,\tfrac{5k+1}v]$).
+Same proof as T4-a. *Verified on both tight sets: triOK = True.*
+
+**Lemma N4-b (maximizer/residue structure — PROVED).** If $V$ is a tight
+4-set and $5\nmid v$ for all $v$, then: (i) $f(\tfrac k5)=\tfrac15$
+exactly for $k=1,2,3,4$ — each $t=\tfrac k5$ is a maximizing time
+(forced: $f(\tfrac15)\ge\tfrac15$ by $5\nmid v$, and
+$f(\tfrac25)=\tfrac25>\kappa$ unless some element $\equiv\pm2$); (ii)
+the residues mod 5 of $V$ meet $\{1,4\}$ AND $\{2,3\}$; (iii) by Lemma
+T(b) at $t^*=\tfrac15$: some element $\equiv1$ (rising tight runner) and
+some $\equiv4$ (falling). *Data:* both tight sets maximize exactly at
+$t\in\{\tfrac15,\tfrac25,\tfrac35,\tfrac45\}$ and have residue multiset
+exactly $\{1,2,3,4\}$ — **Conjecture T5-b (census, 2/2):** every
+primitive tight 4-set has one element in each residue class
+$1,2,3,4 \bmod 5$ (none $\equiv0$; refines T1 at $n=4$).
+
+**Theorem N4-c (one-pair obstruction — PROVED, from Theorem T4-f).**
+Let $V=\{a<b<c<d\}$ be tight. For any pair $\{p<q\}\subset V$ and any
+$r\in V$ with $r>q$: if every $n=3$-window (bound $\tfrac14$, circle
+$[0,4)$) of $\{p,q\}$ lies in a single arc of $B_r$, then
+$(p,q,r)=(1,2,3)$. Hence **the T4-f one-pair condition FAILS for every
+(pair, larger third speed) in every tight 4-set, except exactly
+$(\{1,2\},B_3)$ when $\{1,2,3\}\subset V$**: tightness needs only the
+weaker JOINT coverage "every window of $\{p,q\}\subseteq B_r\cup B_s$"
+($\{r,s\}$ the complement), which holds for all 6 pairs of both tight
+sets (struct log, incl. the corrected `covered_by` check — the first
+version had all/any swapped on the final segment, caught because it
+contradicted tightness of $\{1,2,3,4\}$). So tight 4-sets live exactly
+where pairwise single-arc control fails but pairwise joint coverage
+holds — the n=4 shape of the control gap.
+
+**What does NOT transfer from $n=3$.** (a) Theorem T4-c's
+$\nu_2(a)\ne\nu_2(b)$ kill is FALSE at $n=4$: $\{1,3,4,7\}$ has
+$\nu_2(a)=\nu_2(b)=0$ — the $t=\tfrac12$ window survives because the
+flanks can be covered by $B_d$ arcs (in $\{1,3,4,7\}$ the flank
+$(\tfrac25,\tfrac9{20})$ in real-$t$ sits exactly in arc $k=3$ of
+$B_7$), so the position kill becomes a two-arc (not one-arc) condition.
+(b) Theorem L's length lemma does not transfer verbatim: at bound
+$\tfrac15$ the pair gaps have length $\tfrac3v$ (mod-5 units) and the
+exhibit-a-full-gap argument needs the residue class of $a(5k+1) \bmod
+5b$ meeting $[5m{+}1,\,5m{+}4-3a]$ — a different (harder) Diophantine
+problem; open.
+
+**Conjecture T5 (classification — published as computer-aided
+[Cusick–Pomerance, to-verify vs primary], census-confirmed here).** The
+only primitive tight 4-sets are $\{1,2,3,4\}$ and $\{1,3,4,7\}$:
+finitely many, no infinite family at $n=4$ (contrast Goddyn–Wong at
+larger $n$). Open problem the data poses: reprove T5 by the one-pair
+route — show no primitive 4-set outside these two has all four
+N4-a triple-window conditions; the pair-$\{a,b,c\}$-windows-in-single-
+$B_d$-arcs condition is the natural T4-f analogue to attack first
+(Part B shows it is the condition both sporadics satisfy).
+
 ## Control-step framing (one line)
 Resolution on a slice (small $n$: $n\le6$ by hand+computer, $n=7$ claimed —
 *superseded 2026-09-01: published through $n=9$, claimed through $n=12$;

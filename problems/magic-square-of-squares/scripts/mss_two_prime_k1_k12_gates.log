@@ -1,0 +1,6 @@
+=== gate lemma verification, primes <= 100000 ===
+R^2+Y^2=p^4 violations: 0
+3|s <=> p=2 mod 3: agree 4783 bad 0
+G3 mod-9 check (3∤st): tested 0 bad 0
+gate hits: {'G_K1': 0, 'G_K12': 0, 'G3': 0, 'D1a': 0, 'D1b': 0, 'D2': 0}
+DONE

@@ -3692,3 +3692,57 @@ Continuation of the two-prime kill-equation attack (`[mss-two-prime-freeness]` -
 - Zenodo skipped the pre-existing v0.1.0 (webhook only fires on releases arriving after enablement); fallback executed as pre-announced: v0.1.1 published -> DOI minted within 1 minute.
 - Version DOI 10.5281/zenodo.22238400 (v0.1.1, verified HTTP 200 -> zenodo.org/records/22238400); concept DOI (all versions) 10.5281/zenodo.22238399.
 - README: DOI badge (concept DOI) + Cite section added. Two-layer publish complete: GitHub (open notebook) + Zenodo (citable layer).
+
+## [ATTACK lonely-runner-tight4] Tight 4-set classification opened: exhaustive census [1,80] + one-pair structure (2026-09-01)
+
+Continuation of `[lonely-runner-t4-onepair]` (T4 resolved). Goal: open the tight-4-set classification ({1,3,4,7} sporadic). Scripts `problems/lonely-runner-conjecture/scripts/lonely_runner_tight4.py` + `_tight4_struct.py` (+ .log, self-tests S1-S4 ALL PASSED: integer engine cross-validated vs the Fraction reference engine exhaustive [1,16] 0 mismatches; Fan-Sun 7/30 + both known tight 4-sets exact; triple-window<=>tight exhaustive [1,16] 0 mismatches; proved filters never reject a tight set).
+(1) CENSUS: all 1,473,833 primitive 4-subsets of [1,80] (607,153 full kappa-evals after the two PROVED filters F1 = Lemma T3 (some element divisible by each of 2,3,4) and F2 = NEW Lemma (Lemma T at t*=1/5: if 5 does not divide any element, t=1/5 maximizes and the tight runners are exactly the residues +-1 mod 5 with a rising AND a falling one present), 139.6 s: **exactly TWO tight sets, {1,2,3,4} and {1,3,4,7}**; zero kappa < 1/5 violations (box re-verification of published LRC(4)). Fixed-prefix families to d=200: tight members of {1,2,3,d}={4}, {1,3,4,d}={7}, {1,2,4,d}={1,3,5,d}={2,3,4,d}={} - each sporadic alone in its family.
+(2) PRIOR ART verified verbatim against the survey (arXiv:2409.20160v1, section 4): Wills (after Flor) identified the three sporadics; "Cusick and Pomerance show that there are no more instances, up to dilations, for n=4" (same for n=5, BHK Thm 3); complete characterization "still widely open"; Goddyn-Wong Thm 12 = infinite families at larger n. So the n=4 classification is PUBLISHED computer-aided (1984) [summary of survey - to-verify vs the Cusick-Pomerance primary source]; the census is an independent exact box-confirmation and the lemmas below are the wiki's structural contribution.
+(3) NEW LEMMAS/THEOREM filed ([lonely-runner-tight4] in problem.md, inserted before Control-step framing, heading verified intact): **N4-a** generalized T4-a at n=4 (tight <=> every TRIPLE's bound-1/5 windows in single arcs of B_fourth; verified triOK on both hits); **N4-b** maximizer/residue structure (5 not-dividing all elements => f(k/5)=1/5 exactly for k=1..4, residues meet {1,4} AND {2,3}, rising/falling forced; both hits maximize exactly at {1/5,2/5,3/5,4/5} and have residue multiset exactly {1,2,3,4} => Conjecture T5-b: every primitive tight 4-set has one element in each residue class 1,2,3,4 mod 5); **Theorem N4-c** (one-pair obstruction, from Theorem T4-f): in every tight 4-set the T4-f one-pair condition FAILS for every (pair, larger third speed) EXCEPT exactly ({1,2},B_3) when {1,2,3} subset V - tight 4-sets live exactly where pairwise single-arc control fails but pairwise JOINT coverage (window of {p,q} subset B_r u B_s) holds, verified for all 6 pairs of both tight sets (struct log; the covered_by check initially had all/any swapped on the final segment - caught because it contradicted tightness of {1,2,3,4}, fixed, append-only note in the log).
+(4) What does NOT transfer from n=3, filed precisely: T4-c's nu_2(a)!=nu_2(b) kill is FALSE at n=4 ({1,3,4,7} has nu_2(a)=nu_2(b)=0 - the t=1/2 window survives via two-arc flank coverage, flank (2/5,9/20) sits in arc k=3=[2/5,16/35] of B_7); Theorem L's length lemma does not transfer (bound-1/5 gaps have length 3/v in mod-5 units; the exhibit-a-full-gap argument needs a(5k+1) mod 5b to meet [5m+1, 5m+4-3a] - open).
+(5) Conjecture T5 stated: the only primitive tight 4-sets are {1,2,3,4}, {1,3,4,7} (finitely many, no family at n=4); open = first-principles one-pair reproval (triple {a,b,c}-windows-in-single-B_d-arcs is the natural T4-f analogue - the condition both sporadics satisfy).
+Files: lonely_runner_tight4.py/.log, lonely_runner_tight4_struct.py/.log; problem.md new section (heading count verified 1); index.md lonely-runner line extended.
+
+## [ATTACK mss-two-prime-uquad] 2026-09-01 -- u-factorization + K1/K10/K12 + K13-K16 kills
+
+Agent: math-research subagent (kill equations K1, K10, K12-K16).
+Objective: verify the dead agent's factorization lead, write each kill as an
+equation in (u_p,u_q), prove what possible, census fallback.
+
+Done (all PROVED, unconditional, machine-corroborated):
+- THEOREM U: every element of D((pq)^2) closed form = 4 t_p^2 t_q^2 x
+  u-only factor; verified exact (Fractions) on 3,160 pairs p<q<=1000.
+  The dead agent's lead is CONFIRMED.
+- Reduction: K1, K10, K12-K16 <=> piecewise quadratics in w=u_q (18 pieces),
+  closed forms machine-equal to interpolation (2,352 checks, 0 mism);
+  iff check 1,275 pairs 0 mism; brute census 22,155 pairs 0 relations.
+- K1 DEAD: forces p^4+4Y_p^2=square; primitive-triple descent => Y_p=(p^4-1)/4
+  > 2p^2 > Y_p. Wieferich gate dissolved. [mss-two-prime-k58] closed.
+- K12 DEAD: forces R^2-3Y^2=square; coprime de=3(Y/2)^2 + R^2+Y^2=p^4 =>
+  8w^2=p^3-p, p|w, contradiction. K10 DEAD by swap symmetry (gate on q).
+- K13/K14/K15/K16 DEAD: share gate G3(n): s^4+4s^2t^2+16t^4=square.
+  Sophie-Germain factorization + coprimality => U^2,W^2 with U^2+W^2=2p^2,
+  U^2-W^2=4st; Z[i] classification of primitive reps of 2p^2 gives
+  U^2-W^2=8st != 4st. Contradiction. (K13/K15 via swap.)
+- K3/K4: same machinery reproduces exactly Conjecture K34's gate
+  (P^2+144v^2 <=> R^2+9Y^2=square) -- the ONLY survivors.
+- Census: per-prime square-gate test, all 18 pieces x 12,980 primes <=3e5:
+  0 hits. K1/K10/K12/K13-K16 gates impossible <=1e5 (direct gate checks).
+
+UPSHOT: two-prime sum-freeness of D((pq)^2) for 1 mod 4 prime pairs is now
+EQUIVALENT to Conjecture K34 ([mss-two-prime-k34]). Kill list: K1, K2,
+K5-K16 all dead; K3/K4 remaining (dead for min(p,q)<=3e5).
+
+Files (scripts/mss_two_prime_*): u_factorization.py, k10_16_sieve.py,
+k10_16_closedforms.py, k10_16_discsq.py, k1_k12_gates.py (+ .log each).
+notes.md: new section [mss-two-prime-uquad] before Cross-problem links.
+
+Tracked failures (append-only): (i) Lagrange interpolation bug (basis init
+w^2 instead of 1) made first iff-pass vacuous; caught via hand-slip on K12
+disc ((y^2-32)^2-768, not auto-square); fixed + re-run. (ii) Two closed-form
+table transcription errors (K10 sig-, K13(-1,+1)) caught by 2,352-check test.
+(iii) Mod-9 kill of G3 is VACUOUS: 3|s <=> n=2 mod 3, 3|t <=> n=1 mod 3
+(4,783/4,783 primes <=1e5), so 3 -| st never occurs; real kill is Z[i] arg.
+
+Integrity: "## Cross-problem links" count in notes.md = 1; log.md appended
+via Add-Content only; no Set-Content on log.md.

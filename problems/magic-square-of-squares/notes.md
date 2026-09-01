@@ -1,4 +1,4 @@
-# Notes — Magic Square of Squares
+﻿# Notes — Magic Square of Squares
 
 > Session findings and structural lemmas. Read [problem.md](problem.md)
 > first for status and censuses. Wikilinks: problem slugs use UNDERSCORE,
@@ -811,6 +811,112 @@ Note also the killed K5-K8 shape (per-prime ratio equality
 $(p^2\pm R_p)/Y_p\in\{s/2t,\,2t/s\}$ taking equal values at two primes) is
 the same "per-prime value-set collision" genus as Conjecture K34 — here the
 collision is provably impossible, there it is only conjectured.
+
+
+**LABEL RESOLUTION (2026-09-01, appended after a subagent's reading pass; agent itself died
+on the output cap before filing).** The K10-mislabel flag above was a FALSE ALARM. The canonical
+K9-K16 mapping is pinned by `sign_reduce` in `mss_two_prime_freeness_closedform.py` (lines 129-146):
+K9=2A=B, K10=2A=D0, K11=2B=A, K12=2B=D0, K13/K14=2C=A/B, K15/K16=2D0=A/B. Under this mapping T2
+kills exactly K9 and K11 (as the filed status lines state); "2B=A" is K11, not K10. No status-line
+correction needed; this note supersedes the flag. Lead left unverified by the same agent (treat as
+conjecture): every D-element factors as 4 t_p^2 t_q^2 x (u-only quantity) with u=s/t=x-1/x, which
+would reduce ALL kill-equations to quadratic curves in (u_p,u_q) and give per-prime Delta-square
+sieves for K1-K4, K10, K12-K16 uniformly.
+
+## u-factorization theorem; K1, K10, K12-K16 all DEAD; kill list down to K3/K4 (2026-09-01, `[mss-two-prime-uquad]`)
+
+Attack on the six open doubles K10, K12-K16 + the gated K1 (continuation of
+`[mss-two-prime-freeness]`, `[mss-two-prime-crossdiv]`, `[mss-two-prime-k34]`,
+`[mss-two-prime-k58]`; the LABEL RESOLUTION lead is VERIFIED below). Scripts
+`scripts/mss_two_prime_u_factorization.py`, `mss_two_prime_k10_16_sieve.py`,
+`mss_two_prime_k10_16_closedforms.py`, `mss_two_prime_k10_16_discsq.py`,
+`mss_two_prime_k1_k12_gates.py` (+ logs; two bugs found and fixed en route,
+see tracked failures).
+
+**THEOREM U (u-factorization; the dead agent's lead, verified).** For a
+1 mod 4 prime $n=a^2+b^2$ put $s=a^2-b^2$, $t=ab$ ($\gcd(s,t)=1$, $s$ odd,
+$t$ even), $x=a/b$, $u=s/t=x-1/x$. Then $n^2=t^2(u^2+4)$, $Y_n=4t^2u$,
+$R_n=t^2|u^2-4|$, and with $f=4t_p^2t_q^2$ EVERY element of the closed form
+is $f\times$ a function of $(u_p,u_q)$ alone:
+$$A=f\,u_q(u_p^2{+}4),\quad B=f\,u_p(u_q^2{+}4),\quad X=f\,|u_p^2{-}4|u_q,\quad
+Y=f\,u_p|u_q^2{-}4|$$
+(one-line proof: $p^2=s_p^2{+}4t_p^2=t_p^2(u_p^2{+}4)$, $Y_q=4s_qt_q$).
+Machine-verified exact (Fractions) on all 3,160 pairs $p<q\le1000$, 0
+mismatches. Consequence: every kill-equation, after cancelling $f$, is an
+equation in $(u_p,u_q)$ ONLY.
+
+**Reduction machinery (iff-verified).** Each of K1, K10, K12-K16 is
+piecewise-quadratic in $w=u_q$ (pieces = the two $Q=|w^2-4|$ branches, plus
+the $g$-vs-$h$ sign for K13/K14; 16 pieces for K10/K12-K16, 2 more for K1),
+with closed-form coefficients in $(v,P)=(u_p,|u_p^2-4|)$, all 16 machine-equal
+to an independent interpolation solver (2,352 checks, 0 mismatches) and the
+iff "relation $\iff$ $w$ is a region-valid rational root" checked on all 1,275
+pairs $p<q\le600$ (0 mismatches; brute census 22,155 pairs $q\le3000$, 0
+relations). The same reduction reproduces K3/K4 exactly ($P^2{+}144v^2=\Box$
+$\iff$ filed $A(n)$: $R^2{+}9Y^2=\Box$), unifying the whole kill list as
+predicted. Per-prime square-gate census (disc-square test, all pieces, all
+12,980 1 mod 4 primes $\le3\cdot10^5$): **0 hits** (233,640 conic tests).
+
+**THEOREM K1-DEAD (all pairs, unconditional).** K1 ($p^2Y_q=2Y_pR_q$)
+$\iff w(v^2{+}4)=2vQ$; rational $w$ forces
+$\Delta=(v^2{+}4)^2{+}64v^2=(p^4{+}4Y_p^2)/t_p^4=\Box$, i.e. $(p^2)^2{+}(2Y_p)^2=k^2$
+a primitive Pythagorean triple ($p\nmid Y_p$, S3). Odd leg: $p^2=m^2-n^2$,
+$2Y_p=2mn$; $(m{-}n)(m{+}n)=p^2$, $\gcd=1$ (both odd) forces $m-n=1$,
+$m+n=p^2$, so $Y_p=mn=(p^4{-}1)/4$; but $Y_p=4ab(a^2{-}b^2)<2p\cdot p=2p^2<(p^4{-}1)/4$
+for $p\ge5$. Contradiction. **K1 was the last Wieferich-gated equation; the
+gate dissolves.**
+
+**THEOREM K10/K12-DEAD (all pairs, unconditional).** K12 ($2B=D_0$)
+$\iff$ one of two quadratics in $w$, both with
+$\Delta=P^2-48v^2=(R_p^2-3Y_p^2)/t_p^4$; so K12 forces
+$R_p^2-3Y_p^2=k^2$. Then $(R{-}k)(R{+}k)=3Y^2$; $R,k$ odd, $3\nmid R$,
+$\gcd(R,Y)=1$ give coprime $d=(R{-}k)/2,\ e=(R{+}k)/2$ with
+$de=3(Y/2)^2$, so $\{d,e\}=\{u^2,3w^2\}$, $Y=2uw$, $R=u^2{+}3w^2$ (or
+mirror). Combined with $R^2{+}Y^2=p^4$ (exact identity):
+$(u^2{+}w^2)(u^2{+}9w^2)=p^4$. Both factors $>1$, so
+$\{u^2{+}w^2,\,u^2{+}9w^2\}=\{p,p^3\}$ (the $p^2,p^2$ and $1,p^4$ cases
+die), giving $8w^2=p^3-p$ with $p\mid w$ -- but then $u^2{+}w^2>p=u^2{+}w^2$.
+Contradiction; $R^2-3Y^2=\Box$ is IMPOSSIBLE for every 1 mod 4 prime
+(verified 0 hits, primes $\le10^5$). K10 $\iff$ K12 with $p\leftrightarrow q$
+($2A=D_0$ for $(p,q)$ $=$ $2B=D_0$ for $(q,p)$), and the gate sits on the
+first label's prime, so **K10 and K12 are both dead for all pairs**.
+
+**THEOREM K13-K16 DEAD (all pairs, unconditional).** All four pieces of K14
+and both pieces of K16 share $\Delta=4(P^2{+}12v^2)$, so any solution forces
+the per-prime gate **G3(n): $s_n^4+4s_n^2t_n^2+16t_n^4=\Box$**. G3 is
+impossible: $s^4{+}4s^2t^2{+}16t^4=(s^2{+}2st{+}4t^2)(s^2{-}2st{+}4t^2)$
+(Sophie-Germain shape), the two factors are coprime (odd, and any common odd
+prime divides $4st$ and then both $s,t$), so each is a square: $U^2,W^2$ with
+$U^2+W^2=2p^2$, $U^2-W^2=4st$. In $\mathbb Z[i]$, $2p^2=(1+i)(1-i)\pi^2\bar\pi^2$
+($\pi=a{+}bi$); primitivity ($\gcd(U,W)=1$; $U=W=p$ gives $U^2-W^2=0$) forces
+$\{U,W\}=\{|s{+}2t|,|s{-}2t|\}$, whence $U^2-W^2=8st\ne 4st$. Contradiction
+(verified: $\gcd(A,B)=1$ all 329 primes $\le5000$; G3 0 hits $\le10^5$).
+Since K13 $\iff$ K14 and K15 $\iff$ K16 under $p\leftrightarrow q$ (C is
+symmetric, $A\leftrightarrow B$), **all four of K13, K14, K15, K16 are dead
+for every distinct 1 mod 4 pair.**
+
+**Tracked failures (append-only).** (i) Interpolation bug: Lagrange basis
+initialized as $w^2$ instead of $1$ made every prediction empty -- the first
+iff-check "PASS" was vacuous; caught because a hand slip claimed K12's
+discriminant $(y^2-32)^2$ is auto-square (it is $(y^2-32)^2-768$); fixed +
+re-run non-vacuously. (ii) Two closed-form transcription errors (K10 sig$-$
+$w^2$-coeff; K13(-1,+1) middle coeff) caught by the 2352-check equality test.
+(iii) A tempting mod-9 kill of G3 ($\equiv3\bmod9$ when $3\nmid st$) is
+VACUOUS: $3\mid s_n\iff n\equiv2\pmod3$ and $3\mid t_n\iff n\equiv1\pmod3$
+(verified 4,783/4,783 primes $\le10^5$), so $3\nmid st$ never occurs; the
+real kill is the $\mathbb Z[i]$ argument above.
+
+**Status after this round.** Every kill-equation is now dead or per-prime
+square-gated: K1, K2, K5-K12, K13-K16 all DEAD (proved, unconditional);
+**the ONLY survivors are K3/K4**, which are dead for every pair with
+$\min(p,q)\le3\cdot10^5$ (K34 sieve) and in general are gated exactly by
+**Conjecture K34** ($A(n)$: $R_n^2{+}9Y_n^2=\Box$, $B(n)$: $9R_n^2{+}Y_n^2=\Box$
+never hold for a 1 mod 4 prime; 0 hits on 12,980 primes $\le3\cdot10^5$).
+**Two-prime sum-freeness of $D((pq)^2)$ is now EQUIVALENT to Conjecture
+K34** -- the entire $\omega_1=2$ stratum hangs on one cheap per-prime square
+condition. Next lever: the K34 conic descent (filed in
+`[mss-two-prime-k34]`: $n^2=2s^2-r^2$ or $n^2=s^2-2r^2$ with $rs=Y_n$), now
+the single named gap for the whole two-prime freeness theorem.
 
 ## Cross-problem links
 

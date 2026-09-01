@@ -1,0 +1,5 @@
+=== 0. iff check: relation <=> predicted admissible root, p<q<=600 ===
+pairs=1275, relations found=0, iff mismatches=0 PASS
+=== 1. brute relation census p<q<=3000 ===
+pairs=22155, relations=0 (expect 0)
+DONE
