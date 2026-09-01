@@ -1,0 +1,11 @@
+# Private operational state (session-local, not part of the research record)
+.claude/
+.playwright-mcp/
+
+# Python
+__pycache__/
+*.pyc
+
+# OS noise
+Thumbs.db
+.DS_Store

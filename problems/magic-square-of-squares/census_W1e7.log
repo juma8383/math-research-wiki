@@ -1,0 +1,4 @@
+census: triples-driven, W=10000000 (centers <= 100000000000000), entry box M=300000000000000000
+raw configs: 70587
+primitive configs: 3 ; dihedral classes: 1 ; non-Bremner primitives: 0
+=> uniqueness of the Bremner/Sallows scaling orbit HOLDS: the only square-center nsq>=7 config with center <= 100000000000000 is Bremner/Sallows (up to its global scalings)

@@ -1,0 +1,12 @@
+built D-sets: 721372 w-values, 159139 primitive triples, 1.4s
+== window/spacing W=1000000 ==
+reps verified: 1980642 checked, 0 bad
+spacing (Corollary A): checked=1259270 violations=0
+min gap ratio (d'-x)/(2*sqrt(w^2+x)) = 2.0000 at w=946985 x=895966344000 next=895971699744 lb=2677871 dx=5355744
+elements: total=1980642 lopsided(u/v>3+2sqrt2)=321416 (0.162)
+heuristic: naive-pairs H_partial=0.042024 (filed 1.0086)
+admissible pairs (both windows): 1247841
+H2 (window-corrected, density |D|)   = 0.003230
+H2s (window-corrected, density |D|-2) = 0.002317
+x24 (density 24|D|, filed convention): naive=1.008578 H2=0.077531 H2s=0.055604
+time=5.5s

@@ -1,0 +1,7 @@
+=== self-test vs builder (p<q<=120) ===
+pairs=91 mismatches=0 PASS
+=== full relation census, all p<q<=1e5 ===
+pairs=11436153, relation hits=0 (expect 0)
+cross-div counts: q|Y_p=0, q|R_p=714, q|Y_p AND q|R_p=0, p|Y_q=12414, p|R_q=5883, p^2|R_q=99, q^2|R_p=0
+closest K1 approach among p^2|R_q pairs: |logratio|=0.011725 at (41, 64997)
+DONE

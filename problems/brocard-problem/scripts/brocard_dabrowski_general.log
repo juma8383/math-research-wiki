@@ -1,0 +1,38 @@
+brocard_dabrowski_general.py -- n! + A = m^2, |A| <= 12, n = 2..200
+
+Per A: solutions (n, m) found, plus structural sieve flags.
+S2 = A is a QR mod every prime p<=n with p|A false (necessary).
+S3 = A mod 8 in {0,1,4} (necessary for n>=4; squares mod 8).
+
+A= -12  sols(n,m)= none   S3(=A mod 8 in {0,1,4})=True
+A= -11  sols(n,m)= none   S3(=A mod 8 in {0,1,4})=False
+A= -10  sols(n,m)= none   S3(=A mod 8 in {0,1,4})=False
+A=  -9  sols(n,m)= none   S3(=A mod 8 in {0,1,4})=False
+A=  -8  sols(n,m)= [(4, 4)]   S3(=A mod 8 in {0,1,4})=True S2-check at nmax=4: all pass
+A=  -7  sols(n,m)= none   S3(=A mod 8 in {0,1,4})=True
+A=  -6  sols(n,m)= none   S3(=A mod 8 in {0,1,4})=False
+A=  -5  sols(n,m)= [(3, 1)]   S3(=A mod 8 in {0,1,4})=False S2-check at nmax=3: all pass
+A=  -4  sols(n,m)= none   S3(=A mod 8 in {0,1,4})=True
+A=  -3  sols(n,m)= none   S3(=A mod 8 in {0,1,4})=False
+A=  -2  sols(n,m)= [(3, 2)]   S3(=A mod 8 in {0,1,4})=False S2-check at nmax=3: all pass
+A=  -1  sols(n,m)= [(2, 1)]   S3(=A mod 8 in {0,1,4})=False S2-check at nmax=2: all pass
+A=   0  sols(n,m)= none   S3(=A mod 8 in {0,1,4})=True
+A=   1  sols(n,m)= [(4, 5), (5, 11), (7, 71)]   S3(=A mod 8 in {0,1,4})=True S2-check at nmax=7: all pass
+A=   2  sols(n,m)= [(2, 2)]   S3(=A mod 8 in {0,1,4})=False S2-check at nmax=2: all pass
+A=   3  sols(n,m)= [(3, 3)]   S3(=A mod 8 in {0,1,4})=False S2-check at nmax=3: all pass
+A=   4  sols(n,m)= none   S3(=A mod 8 in {0,1,4})=True
+A=   5  sols(n,m)= none   S3(=A mod 8 in {0,1,4})=False
+A=   6  sols(n,m)= none   S3(=A mod 8 in {0,1,4})=False
+A=   7  sols(n,m)= [(2, 3)]   S3(=A mod 8 in {0,1,4})=False S2-check at nmax=2: all pass
+A=   8  sols(n,m)= none   S3(=A mod 8 in {0,1,4})=True
+A=   9  sols(n,m)= [(6, 27)]   S3(=A mod 8 in {0,1,4})=True S2-check at nmax=6: all pass
+A=  10  sols(n,m)= [(3, 4)]   S3(=A mod 8 in {0,1,4})=False S2-check at nmax=3: all pass
+A=  11  sols(n,m)= none   S3(=A mod 8 in {0,1,4})=False
+A=  12  sols(n,m)= [(4, 6)]   S3(=A mod 8 in {0,1,4})=True S2-check at nmax=4: all pass
+
+Asymmetry check (Brocard A=+1 vs A=-1):
+  A=+1 solutions: [(4, 5), (5, 11), (7, 71)]
+  A=-1 solutions: [(2, 1)]
+
+Cross-check of the three known Brown numbers inside the table:
+  n=4 m=5 (A=1), n=5 m=11 (A=1), n=7 m=71 (A=1) -- expect in A=+1 row

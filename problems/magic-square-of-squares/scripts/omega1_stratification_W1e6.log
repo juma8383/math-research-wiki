@@ -1,0 +1,8 @@
+﻿W=1000000  centers_with_|D|>=2 = 276569
+omega1   centers     H2 naive    H2 window   share%
+     1     22927      0.14743      0.00004    0.05%
+     2    220288      0.71272      0.04710   60.74%
+     3     32372      0.14030      0.02843   36.68%
+     4       982      0.00812      0.00196    2.53%
+TOTAL naive=1.00858  window=0.07753
+THEOREM-CONDITIONED (omega1>=2, proved-free strata removed): naive=0.86114  window=0.07749

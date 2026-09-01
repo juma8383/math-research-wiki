@@ -1,0 +1,4 @@
+﻿self-tests PASS: D(25)=[336,600] both builders agree
+prime powers tested: p<2000 (1 mod 4), p^k<=1e9
+A2 (additive triples)=0, A3 (parallelograms)=0, AP=0
+largest family: (5, 12, 12, 59592893557110600)

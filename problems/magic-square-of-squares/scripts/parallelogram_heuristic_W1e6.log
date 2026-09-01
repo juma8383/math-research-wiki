@@ -1,0 +1,8 @@
+== parallelogram heuristic W=1000000 ==
+admissible pairs (sum windows + diff Cor.A): 1247839
+(note: for y < 2x the difference-side window needs the rep
+ of y-x, unmodelable before y-x in D -- no filter applied)
+E_A3 naive (all pairs)  = 1.130914e-02
+E_A3 window-corrected   = 4.402112e-05
+ratio = 256.9
+time=3.4s

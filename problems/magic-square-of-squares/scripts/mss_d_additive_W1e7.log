@@ -1,0 +1,4 @@
+W=10000000: w-with-D=7449349, w-with-|D|>=3=2952907, pairs=99124984
+A2 (additive triples)=0, A3 (parallelograms)=0, AP=0
+build=49s dedupe=10s check=48s total=107s
+selftest D(25) (may be pruned if <3): pruned (|D|=1) OK

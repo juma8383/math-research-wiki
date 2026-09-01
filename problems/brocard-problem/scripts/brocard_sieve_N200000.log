@@ -1,0 +1,16 @@
+== Brocard Legendre sieve, N=200000, 12 primes p in (200000, 200153] ==
+prime 200003: alive 99963
+prime 200009: alive 49881
+prime 200017: alive 24868
+prime 200023: alive 12243
+prime 200029: alive 6087
+prime 200033: alive 3014
+prime 200041: alive 1535
+prime 200063: alive 756
+prime 200087: alive 395
+prime 200117: alive 200
+prime 200131: alive 106
+prime 200153: alive 56
+after sieving: 56 survivors
+exact square hits: [(4, 5), (5, 11), (7, 71)]
+time=18.2s

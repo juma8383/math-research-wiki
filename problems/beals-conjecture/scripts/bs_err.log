@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Claude-Code\Math\problems\brocard-problem\scripts\brocard_legendre_sieve.py", line 88, in <module>
+    main()
+    ~~~~^^
+  File "C:\Claude-Code\Math\problems\brocard-problem\scripts\brocard_legendre_sieve.py", line 50, in main
+    if len(primes) >= NPR:
+                      ^^^
+NameError: name 'NPR' is not defined

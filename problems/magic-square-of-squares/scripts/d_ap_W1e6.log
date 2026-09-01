@@ -1,0 +1,6 @@
+﻿D-set 3-term-AP census: W=1000000 (centers <= 1000000000000)
+building primitive-triple table...
+primitive triples with hypotenuse <= W: 159139
+w with |D|>=3: 257824
+w with a 3-term AP in D(w^2): 0
+=> D-sets are 3-AP-free for all w <= 1000000 (centers <= 1000000000000)

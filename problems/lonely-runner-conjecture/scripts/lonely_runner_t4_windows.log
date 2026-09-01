@@ -1,0 +1,23 @@
+lonely_runner_t4_windows.py -- Tue Sep  1 14:25:50 2026
+python 3.13.2
+S1  engine cross-validation [1,30]: 0 mismatches (must be 0)
+S2  kappa(1,2,3) = 1/4 (expect 1/4)
+    pair (1,2): 2 windows, max len 1/2, all in single B_3 arc: True
+    pair (1,3): 1 windows, max len 2/3, all in single B_2 arc: True
+    pair (2,3): 2 windows, max len 1/2, all in single B_1 arc: True
+S3  window<->tight equivalence, 400 sampled triples [1,24]: 0 mismatches
+S4  exhaustive [1,60]: tight triples violating T4-a: 0, T4-b: 0
+S5  exact pair kappas kappa({a,b}) and implied c-bound b/(4*(k-1/4)):
+    kappa(1,2) = 1/3     c <= 6
+    kappa(1,3) = 1/2     c <= 3
+    kappa(2,3) = 2/5     c <= 5
+    kappa(1,4) = 2/5     c <= 20/3
+    kappa(3,4) = 3/7     c <= 28/5
+    kappa(2,5) = 3/7     c <= 7
+    kappa(3,5) = 1/2     c <= 5
+    kappa(4,5) = 4/9     c <= 45/7
+    kappa(3,7) = 1/2     c <= 7
+    kappa(4,7) = 5/11    c <= 77/9
+    kappa(5,7) = 1/2     c <= 7
+    kappa(5,6) = 5/11    c <= 22/3
+S6  pair formula kappa=floor((a'+b')/2)/(a'+b') on 7140 pairs [1,120]: 0 mismatches

@@ -1,0 +1,27 @@
+12980 primes 1 mod 4 up to 300000
+=== building per-prime (Y,R) tables ===
+done
+=== 0. SELF-TEST: closed form vs builder, p<q<=120 ===
+pairs=91 mismatches=0 PASS
+=== 1. near-miss (173,7933) for K3 ===
+p=173 q=7933: X=R_p*Y_q=1393203771960, Y=Y_p*R_q=464384589240
+X-3Y = 50004240  (filed: 50,004,240)
+|log(X/3Y)| = 3.589219207742847e-05  (filed ~4e-5)
+min |log| K3 = 0.000012 at (101, 47681); K4 = 0.000032 at (61, 198221)
+=== 2. reduction verification: K3 <=> 4R_p u = 3Y_p|u^2-4| (u=c/d-d/c) ===
+pairs=10731 iff-mismatches=0 PASS
+=== 2b. square conditions A(p),B(q) at pair level (p<q<=5000) ===
+pairs=53956; A(p)-hits=0; B(q)-hits=0 (per-prime counts within loop)
+=== 3. PER-PRIME SQUARE CENSUS, all 1mod4 primes <= 300000 ===
+A-hits=0 B-hits=0 time=0.0s
+VERDICT: if both 0 => K3 dead for every pair with p<=QMAX (q unbounded) and every pair with q<=QMAX (p unbounded); same for K4 mirrored.
+=== 4. DIRECT K3/K4 PAIR CENSUS, p<q<=300000 ===
+  progress i=2000/12980 pairs=23959000 hits=0 t=12s
+  progress i=4000/12980 pairs=43918000 hits=0 t=22s
+  progress i=6000/12980 pairs=59877000 hits=0 t=31s
+  progress i=8000/12980 pairs=71836000 hits=0 t=37s
+  progress i=10000/12980 pairs=79795000 hits=0 t=41s
+  progress i=12000/12980 pairs=83754000 hits=0 t=43s
+pairs=84233710 K3/K4 hits=0 time=43.3s
+=== 5. divisor characterization of A/B hits (expect none) ===
+DONE

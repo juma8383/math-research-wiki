@@ -1,0 +1,114 @@
+﻿lonely_runner_census.py -- exact LRC census, seed 20260901
+python 3.13.2 / numpy 2.4.3
+
+==============================================================================
+SELF-TESTS
+==============================================================================
+T1  kappa(1..1) = 1/2      expected 1/2   OK
+T1  kappa(1..2) = 1/3      expected 1/3   OK
+T1  kappa(1..3) = 1/4      expected 1/4   OK
+T1  kappa(1..4) = 1/5      expected 1/5   OK
+T1  kappa(1..5) = 1/6      expected 1/6   OK
+T1  kappa(1..6) = 1/7      expected 1/7   OK
+T1  kappa(1..7) = 1/8      expected 1/8   OK
+T1  kappa(1..8) = 1/9      expected 1/9   OK
+T1  kappa(1..9) = 1/10     expected 1/10  OK
+T2  kappa(3,8,11,19) = 7/30   expected 7/30   OK
+T3  engine >= dense grid on 300 random sets (n=2..5, v<=30): 0 failures OK
+T4  difference-class redundancy: 500 sets tested, 0 mismatches OK
+SELF-TESTS: ALL PASSED
+
+------------------------------------------------------------------------------
+CENSUS A2  (n=2, exhaustive primitive n-subsets of [1,12], LRC bound 1/3)
+  sets tested           : 45
+  min kappa found       : 1/3  at V=(1, 2)
+  violations k < 1/(n+1): 0 
+  tight sets k = 1/(n+1): 1
+    first tight sets    : (1, 2)
+    tight non-{1..n}    : 0
+  elapsed               : 0.0 s
+------------------------------------------------------------------------------
+CENSUS A3  (n=3, exhaustive primitive n-subsets of [1,12], LRC bound 1/4)
+  sets tested           : 196
+  min kappa found       : 1/4  at V=(1, 2, 3)
+  violations k < 1/(n+1): 0 
+  tight sets k = 1/(n+1): 1
+    first tight sets    : (1, 2, 3)
+    tight non-{1..n}    : 0
+  elapsed               : 0.0 s
+------------------------------------------------------------------------------
+CENSUS A4  (n=4, exhaustive primitive n-subsets of [1,12], LRC bound 1/5)
+  sets tested           : 479
+  min kappa found       : 1/5  at V=(1, 2, 3, 4)
+  violations k < 1/(n+1): 0 
+  tight sets k = 1/(n+1): 2
+    first tight sets    : (1, 2, 3, 4), (1, 3, 4, 7)
+    tight non-{1..n}    : 1  e.g. (1, 3, 4, 7)
+  elapsed               : 0.0 s
+------------------------------------------------------------------------------
+CENSUS A5  (n=5, exhaustive primitive n-subsets of [1,12], LRC bound 1/6)
+  sets tested           : 786
+  min kappa found       : 1/6  at V=(1, 2, 3, 4, 5)
+  violations k < 1/(n+1): 0 
+  tight sets k = 1/(n+1): 2
+    first tight sets    : (1, 2, 3, 4, 5), (1, 3, 4, 5, 9)
+    tight non-{1..n}    : 1  e.g. (1, 3, 4, 5, 9)
+  elapsed               : 0.1 s
+------------------------------------------------------------------------------
+CENSUS A6  (n=6, exhaustive primitive n-subsets of [1,12], LRC bound 1/7)
+  sets tested           : 923
+  min kappa found       : 1/7  at V=(1, 2, 3, 4, 5, 6)
+  violations k < 1/(n+1): 0 
+  tight sets k = 1/(n+1): 1
+    first tight sets    : (1, 2, 3, 4, 5, 6)
+    tight non-{1..n}    : 0
+  elapsed               : 0.1 s
+------------------------------------------------------------------------------
+CENSUS B7  (n=7, exhaustive primitive 7-subsets of [1,16], LRC bound 1/8)
+  sets tested           : 11432
+  min kappa found       : 1/8  at V=(1, 2, 3, 4, 5, 6, 7)
+  violations k < 1/(n+1): 0 
+  tight sets k = 1/(n+1): 3
+    first tight sets    : (1, 2, 3, 4, 5, 6, 7), (1, 2, 3, 4, 5, 7, 12), (1, 4, 5, 6, 7, 11, 13)
+    tight non-{1..n}    : 2  e.g. (1, 2, 3, 4, 5, 7, 12), (1, 4, 5, 6, 7, 11, 13)
+  elapsed               : 2.8 s
+------------------------------------------------------------------------------
+CENSUS C8  (n=8, exhaustive primitive 8-subsets of [1,15], LRC bound 1/9)
+  sets tested           : 6435
+  min kappa found       : 1/9  at V=(1, 2, 3, 4, 5, 6, 7, 8)
+  violations k < 1/(n+1): 0 
+  tight sets k = 1/(n+1): 1
+    first tight sets    : (1, 2, 3, 4, 5, 6, 7, 8)
+    tight non-{1..n}    : 0
+  elapsed               : 1.7 s
+------------------------------------------------------------------------------
+CENSUS D7  (n=7, 10000 random primitive 7-subsets of [1,400], LRC bound 1/8)
+  sets tested           : 10000
+  min kappa found       : 98/419  at V=(5, 40, 91, 96, 187, 291, 379)
+  violations k < 1/(n+1): 0 
+  tight sets k = 1/(n+1): 0
+  elapsed               : 143.6 s
+------------------------------------------------------------------------------
+CENSUS D8  (n=8, 3000 random primitive 8-subsets of [1,300], LRC bound 1/9)
+  sets tested           : 3000
+  min kappa found       : 37/163  at V=(24, 27, 41, 68, 95, 107, 180, 280)
+  violations k < 1/(n+1): 0 
+  tight sets k = 1/(n+1): 0
+  elapsed               : 40.2 s
+==============================================================================
+SUMMARY (all values exact rationals from this run)
+==============================================================================
+  n=2  sets=45      min_kappa=1/3        violations=0  tight=1
+  n=3  sets=196     min_kappa=1/4        violations=0  tight=1
+  n=4  sets=479     min_kappa=1/5        violations=0  tight=2
+  n=5  sets=786     min_kappa=1/6        violations=0  tight=2
+  n=6  sets=923     min_kappa=1/7        violations=0  tight=1
+  n=7  sets=11432   min_kappa=1/8        violations=0  tight=3
+  n=8  sets=6435    min_kappa=1/9        violations=0  tight=1
+  n=7  sets=10000   min_kappa=98/419     violations=0  tight=0
+  n=8  sets=3000    min_kappa=37/163     violations=0  tight=0
+
+Legend: 'violations' = speed sets with kappa < 1/(n+1), i.e. LRC
+counterexamples. Any nonzero count would be a disproof of LRC(n);
+each such hit is exact-verified by construction (Lemma L1 engine).
+'tight' = sets attaining kappa = 1/(n+1) exactly (extremal sets).

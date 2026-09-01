@@ -1,0 +1,1826 @@
+    Electronic Colloquium on Computational Complexity, Report No. 21 (2019)
+
+1 AC0[p] Lower Bounds and NP-Hardness for
+2 Variants of MCSP
+
+3 Rahul Ilango
+
+4 Rutgers University, Piscataway, USA
+5 rahul.ilango@rutgers.edu
+
+6   Abstract
+
+7 The Minimum Circuit Size Problem (MCSP) asks whether a (given) Boolean function has a circuit
+
+8 of at most a (given) size. Despite over a half-century of study, we know relatively little about the
+
+9 computational complexity of MCSP. We do know that questions about the complexity of MCSP
+
+10 have significant ramifications on longstanding open problems. In a recent development, Golovnev et
+11 al. [11] improve the status of unconditional lower bounds for MCSP, showing that MCSP  AC0[p]
+
+12 for any prime p. While their results generalize to most "typical" circuit classes, it fails to generalize
+
+13 to the circuit minimization problem for depth-d formulas, denoted (ACd0)-MCSP. In particular, their
+14 result relies on a Lipchitz hypothesis that is unknown (and possibly false) in the case of (ACd0)-MCSP.
+15 Despite this, we show that (AC0d)-MCSP  AC0[p] by proving even the failure of the Lipchitzness for
+16 AC0d formulas implies that MAJORITY tAtC0 (ACd0)-MCSP. Somewhat remarkably, our proof (in the
+
+17 case of non-Lipchitzness) uses completely different techniques than [11]. To our knowledge, this is
+
+18 the first MCSP reduction that uses modular properties of a function's circuit complexity.
+
+19  We also define MOCSP, an oracle version of MCSP that takes as input a Boolean function f , a
+
+20 size threshold s, and oracle Boolean functions f1, . . . , ft, and determines whether there is an oracle
+
+21 circuit of size at most s that computes f when given access to f1, . . . , ft. We prove that MOCSP
+22 is NP-complete under non-uniform AC0 many-one reductions as well as (uniform) ZPP truth table
+
+23 reductions. We also observe that improving this ZPP reduction to a deterministic polynomial-time
+
+24 reduction requires showing EXP = ZPP (using theorems of Hitchcock and Pavan [17] and Murray and
+
+25 Williams [22]). Optimistically, these MOCSP results could be a first step towards NP-hardness results
+
+26 for MCSP. At the very least, we believe MOCSP clarifies the barriers towards proving hardness for
+
+27 MCSP and provides a useful "testing ground" for questions about MCSP.
+
+28 2012 ACM Subject Classification Theory of computation  Circuit complexity; Theory of compu-
+29 tation  Problems, reductions and completeness
+
+30 Keywords and phrases Minimum Circuit Size Problem, reductions, NP-completeness, circuit lower
+31 bounds
+
+32 Acknowledgements I would like to give a special thanks to Eric Allender for innumerable suggestions
+33 and perspectives during all stages of this work. To name just a single example, one of his suggestions
+34 led me to improve a PARITY-reduction to the presented MAJORITY-reduction for (ACd0)-MCSP. I
+35 would also like to thank Abhishek Bhrushundi and Aditi Dudeja for their help in results about
+36 constant depth formulas that lead to this paper. I am grateful to Ryan Williams for asking interesting
+37 questions and helping to improve the exposition of the paper. Finally, I thank Harry Buhrman,
+38 Lance Fortnow, Aditya Potukuchi, and Michael Saks for answering my questions and engaging in
+39 many useful discussions.
+
+1 40 Introduction
+
+41 The Minimum Circuit Size Problem (MCSP) takes as input a Boolean function f (represented
+42 by its truth table) and a size parameter s and asks if there is a circuit of size at most s
+43 computing f . Study of this problem began in the 1950s by complexity theorists in the
+44 Soviet Union [30], where MCSP was of such great interest that Levin is said to have delayed
+
+                                                                                                              ISSN 1433-8092
+2  AC0[p] Lower Bounds and NP-Hardness for Variants of MCSP
+
+   45 publishing his initial NP-completeness results in hope of showing that MCSP is NP-complete.1
+   46 Interest in MCSP was revitalized when Kabanets and Cai [19] connected the problem with
+   47 the natural proofs framework of Razborov and Rudich [27]. Since then, MCSP has been the
+   48 subject of intense research. We begin by reviewing some of this work.
+
+   49 1.1 Known lower bounds, hardness, and non-hardness for MCSP
+
+   50 It is easy to see that MCSP is in NP (the circuit of size at most s can be used as a witness),
+   51 but, despite work by numerous researchers, the exact complexity of MCSP remains unknown.
+
+   52 Lower bounds and hardness results. We believe MCSP is not easy to compute. Kabanets
+   53 and Cai [19] show that MCSP  P conditioned on a widely-believed cryptographic hypothesis,
+   54 and Allender and Das [2] show that MCSP is hard for SZK under BPP-Turing reductions.
+   55 Unconditionally, we know lower bounds against MCSP for restricted classes of circuits.
+   56 Hirahara and Santhanam [15] show that MCSP requires nearly quadratic sized DeMorgan
+   57 formulas, and Allender et al. [1] prove that MCSP  AC0. In a recent paper, Golovnev et al.
+   58 [11] improve the latter result, showing that MCSP requires exponential-sized AC0[p] circuits
+   59 by proving MAJORITY  (AC0)MCSP. The MAJORITY hardness result of [11] generalizes to
+   60 the circuit minimization problem for many circuit classes, however, the techniques fail in the
+   61 case of constant depth formulas.
+   62 Under weak reductions, we know MCSP is hard for some subclasses of P. Oliveira and
+   63 Santhanam [25] prove that MCSP is hard for DET under TC0 truth table reductions, and
+   64 Golovnev et al. [11] use the results of [25] to show that NC1  (AC0)MCSP. Surprisingly, we
+   65 know stronger results for the "program" variant of MCSP, MKTP. Allender and Hirahara
+   66 [3] show that MKTP is hard for DET under NC0 many-one reductions, and Hirahara and
+   67 Santhanam [15] show average-case lower bounds for MKTP against AC0[p].
+   68 The most natural question is whether MCSP is NP-complete. As of yet, we have not
+   69 managed to uncover even strong supporting evidence for, or against, MCSP being NP-
+   70 complete. We do know that the circuit minimization problem is NP-complete for some
+   71 restricted classes of circuits: DNF circuits by Masek [20] and OR  AND  MODm circuits
+   72 by Hirahara, Oliveira, and Santhanam [14]. Impagliazzo, Kabanets, and Volkovich [18]
+   73 show that if there exist Indistinguishability Obfuscators against randomized polynomial-time
+   74 algorithms, then MCSP  ZPP  NP = ZPP.
+
+   75 Known non-hardness results. The unconditional non-hardness results for MCSP rule out
+   76 NP-hardness under certain types of reductions. For example, Hirahara and Watanabe [16]
+   77 show that "oracle-independent reductions" cannot show that MCSP is hard for either a class
+   78 larger than P under polynomial-time Turing reductions or a class larger than AM  coAM
+   79 under BPP reductions with one query to MCSP. Moreover, while most NP-complete problems
+   80 are complete under rather weak reductions such as TIME[no(1)] or AC0 many-one reductions,
+   81 Murray and Williams [22] prove that MCSP is not NP-hard under TIME[n.49] reductions,
+   82 and Allender, Ilango, and Vafa [5] show that a super-linear approximations of MCSP cannot
+   83 be NP-hard under even non-uniform AC0 many-one reductions.
+   84 Conditioned on a widely-believed cryptographic hypothesis, Allender and Hirahara [3]
+   85 show that a very weak approximation of MCSP is NP-intermediate.
+
+   1 [6] cites a personal communication from Levin regarding this story.
+R.Ilango                                                                                                           3
+
+86 1.2 Implications of lower bounds and hardness for MCSP
+
+87 While we have not managed to establish the complexity of MCSP, a series of works, beginning
+88 with Kabanets and Cai [19], connect the computational complexity of MCSP and its variants
+89 to longstanding open questions in the field.
+
+90 Separations of complexity classes. Several works ([17], [22], [2], [19]) show that MCSP
+91 being NP-hard, under various notions of reducibility, implies unknown class separations. For
+92 example, Hitchcock and Pavan [17] and Murray and Williams [22] show that if MCSP is
+93 NP-hard under polynomial-time truth-table reductions, then ZPP = EXP, a major open
+94 problem.2
+
+95 Worst-case versus average-case complexity for NP. Using tools developed by Nisan and
+96 Wigderson [23] and Carmosino, Impagliazzo, Kabanets, and Kolokova [9], Hirahara [13] gives
+97 a "worst-case to average-case" reduction for NP conditioned on a certain approximation to
+98 MCSP being NP-hard. Thus, if one could show this approximation to MCSP is NP-hard, the
+99 worst-case and average-case complexity of NP would be equivalent.
+
+100 Circuit Lower Bounds. Recent work by Oliveira, Pich, and Santhanam ([26] and [24])3
+101 explores a phenomenon they term "hardness magnification," whereby even weak circuit lower
+102 bounds on certain computational problems imply strong lower bounds on other problems. For
+103 example, [26] shows that if MCSP cannot be solved on average with no error by linear-size
+104 formulas, then NP does not have polynomial-size formulas. [24] shows that if a certain
+105 approximation to MCSP cannot be computed by circuits of size n1+ , then NP does not have
+106 polynomial-sized circuits.
+
+107 1.3 Our Contributions
+
+108 In this work, we focus on hardness results for variants of MCSP, in particular establishing an
+109 AC0[p] lower bound and an NP-hardness result.
+
+110 MAJORITY-hardness for (ACd0)-MCSP
+
+111 As mentioned previously, Golovnev et al. [11] proves that MAJORITY  (AC0)MCSP. Using
+112 similar techniques, they also show that, for restricted classes of circuits C such as formulas
+113 and constant depth circuits, the C-circuit minimization problem, denoted (C)-MCSP, is hard
+114 for MAJORITY under AC0 reductions. For these MAJORITY reductions to work, [11] requires
+115 that the size of the minimum C-circuit on truth tables of length n is roughly (n.49)-Lipchitz.
+116 This Lipchitzness hypothesis is unknown (and perhaps even false) in the class of
+117 depth-d formulas, which we denote AC0d.4 Despite this, we prove MAJORITY-hardness
+118 for (ACd0)-MCSP by giving a MAJORITY reduction that works in the case that Lipchitzness
+119 fails. Applying the lower bounds of Razborov [27] and Smolensky [29] then gives an AC0[p]
+120 lower bound for (ACd0)-MCSP.
+
+      2 [22] only shows the result under many-one reductions, but their techniques easily generalize to the truth
+         table case. [17] explicitly proves the truth table result using a different approach than [22].
+
+      3 Pich is an author on [24] but not [26]
+      4 We will always use the notation AC0d to refer to depth-d formulas and never depth-d circuits.
+4       AC0[p] Lower Bounds and NP-Hardness for Variants of MCSP
+
+   121 Theorem 1.1. Let d  2. Then MAJORITY tAtC0 (ACd0)-MCSP. Consequently, (ACd0)-MCSP 
+   122 AC0[p] for any prime p.
+
+   123 Remarkably, the techniques used for this MAJORITY reduction (in the case of non-
+   124 Lipchitzness) are entirely different than the ones used by [11] for general MCSP. Indeed, the
+   125 non-Lipchitz case reduction we present is of a very different flavor than, to our knowledge,
+   126 all known MCSP hardness results. As far as the author knows, it is the only MCSP hardness
+   127 result that does not easily generalize to an approximation of MCSP. This is because the key
+   128 step in the reduction is determining, exactly, a Boolean function's circuit complexity modulo
+   129 a certain prime.
+
+   130 Open Question 1.2. Can one extend Theorem 1.1 to an approximation of MCSP?
+
+   131  We also remark that our notion of size for ACd0 formulas is critical for Theorem 1.1. We
+
+   132 define the size of an ACd0 formula to be the number of input leaves. While this is the standard
+
+   133 definition of formula size, we make heavy use of elementary direct product theorems known,
+
+   134 specifically, for this notion of formula size. It is not clear to us how to generalize Theorem
+   135 1.1 to the case when the size of an AC0d formula is, say, the number of gates or the number of
+   136 wires.
+
+   137 NP-Hardness of oracle MCSP (MOCSP)
+
+   138 Some work has been done trying to approach the NP-hardness of MCSP "from below," that
+
+   139 is, proving that the circuit minimization problem is NP-hard for restricted classes of circuits.
+
+   140 As mentioned previously, we know that (DNF)-MCSP [20] and (OR  AND  MODm)-MCSP
+
+   141 [14] are NP-hard.
+
+   142 Instead, we attempt to approach MCSP from "above." We formulate the Minimum Oracle
+
+   143 Circuit Size Problem, denoted MOCSP, that takes as input a truth table T , a size parameter
+
+   144 s  N, and auxiliary truth tables T1, . . . , Tt and asks whether there is an oracle circuit
+
+   145 of size at most s that computes T when given access to T1, . . . , Tt. It is easy to see that
+
+   146 MOCSP  NP (the oracle circuit of size s acts as a witness).
+
+   147 We note that this is not the first time someone has considered an "oracle version" of
+
+   148 MCSP. Allender et al. [1] and Allender, Holden, and Kabanets [4] consider the problem of
+   149 minimizing oracle circuits for a fixed oracle A. We will denote this problem MCSPA. An
+   150 important result for this problem that [1] proves is that MCSPQBF is complete for PSPACE
+   151 under ZPP reductions. MOCSP differs from MCSPA in that the oracle circuit gets access to
+
+   152 a finite number of Boolean functions, not a language, and the functions the oracle circuit has
+
+   153 access to are inputs to the problem.
+
+   154  In our view, MOCSP has two advantages over MCSPA. First, MOCSP  NP while the
+
+   155 complexity of MCSPA depends on the oracle A. Second, there is an easy reduction from
+
+   156 MCSP to MOCSP, simply provide no oracle truth tables. Therefore, we can use MOCSP as a
+
+   157 testing ground for hardness results we conjecture for MCSP. Thus, the most natural question
+
+   158 is whether we can prove that MOCSP is NP-hard. We prove that MOCSP is indeed NP-hard
+   159 under non-uniform AC0 reductions and under uniform randomized reductions.
+
+   160  Theorem 1.3.      NP AmC0 MOCSP
+
+   161  NP RmP MOCSP
+
+   162  NP tZtPP MOCSP
+
+   163 These NP-hardness results are all proved by giving a reduction from approximating r-
+   164 bounded set cover to MOCSP. It is worth noting that the NP-hardness results of (DNF)-MCSP
+   165 [20] and (OR  AND  MODm)-MCSP [14] are also proved via set cover problems.
+R.Ilango                                                                                           5
+
+166 Given that we can show MOCSP is NP-hard under randomized reductions, one might even
+167 begin to hope that we can prove hardness under, say, polynomial-time truth table reductions.
+168 Unfortunately, this seems difficult. Essentially the same proofs Murray and Williams [22]
+169 or Hitchcock and Pavan [17] use to show that MCSP being NP-hard under polynomial-time
+170 truth table reductions implies EXP = ZPP also works for MOCSP.
+
+171 Theorem 1.4 (Essentially proven in [17] and [22]). If NP tPt MOCSP, then EXP = ZPP.
+
+172 Thus, improving our ZPP reduction to a P reduction requires separating EXP from ZPP, a
+173 longstanding open problem. For completeness, we give the MOCSP version of Murray and
+174 Williams' proof in Appendix B.
+175 Even so, we expect that the ground truth is that MOCSP is NP-hard under, at least,
+176 polynomial-time Turing reductions.
+
+177 Conjecture 1.5. NP TP MOCSP.
+
+178 We give some details on why we believe Conjecture 1.5 near the end of Section 4. Even so,
+179 we believe proving such a hardness result is beyond current techniques. Perhaps one could
+180 even prove there are some barriers.
+
+181 A perspective on MOCSP and some questions.
+
+182 In light of the fact that hardness for MCSP beyond SZK under even non-uniform reductions
+183 is unknown, we found these MOCSP hardness results to be quite surprising. To an optimist,
+184 NP-hardness results for MOCSP could even be a first step towards proving hardness for
+185 MCSP. Indeed, a PSPACE-hardness result was first proved by Buhrman and Torenvliet [8]
+186 for an "oracle" version of space-bounded Kolmogorov complexity before Allender et al. [1]
+187 showed PSPACE-hardness for the non-oracle version about four years later.5
+188 Even if stronger hardness results for MCSP remain out of reach, MOCSP could still yield
+189 valuable insights about MCSP. For instance, it would be interesting to see which of the
+190 barriers and non-hardness results known for MCSP carry over to MOCSP.
+
+191 Open Question 1.6. Can one show that other barriers or non-hardness results that hold
+192 for MCSP also hold for MOCSP?
+
+193 As an example of the insight given by answers to this question, consider Murray and Williams'
+194 [22] result that proving MCSP is NP-hard under polynomial-time many-one reductions implies
+195 EXP = ZPP. A natural question one might ask is whether we can improve this theorem
+196 to show that MCSP being NP-hard under randomized reductions implies unknown class
+197 separations. As we note in Theorem 1.4, however, Murray and Williams' proof carries over
+198 to MOCSP, and Theorem 1.3 shows MOCSP is indeed NP-hard under randomized reductions.
+199 Thus, any improvement of Murray and Williams' result to randomized reductions likely
+200 requires a fact about MCSP that we do not know for MOCSP.
+201 In another direction, our results seem to imply that proving hardness for MOCSP is easier
+202 than proving hardness for MCSP. Indeed, since MCSP easily reduces to MOCSP, any hardness
+203 result that is true for MCSP must also be true for MOCSP. Therefore, we can use MOCSP
+204 as a testing ground for hardness results we conjecture about MCSP. For example, Hirahara's
+205 [13] worst-case to average-case reduction for NP can be based on a certain approximation
+206 of MCSP being NP-hard, which would imply that a certain approximation of MOCSP is
+
+      5 The conference versions of [8] and [1] are four years apart.
+6       AC0[p] Lower Bounds and NP-Hardness for Variants of MCSP
+
+   207 also NP-hard. Given that we can prove the NP-hardness of MOCSP under uniform ZPP
+   208 reductions and non-uniform AC0 reductions, we ask if one can prove something similar for
+   209 the approximation version of MOCSP.
+
+   210 Open Question 1.7. Can one prove that, for some > 0, approximating MOCSP on
+   211 n-inputs to a factor of n is NP-hard under, say, P/poly reductions? Conversely, can one
+   212 prove that there is any barrier to showing such a hardness result?
+
+   213 We note that the techniques we use to prove NP-hardness results for MOCSP seem to break
+   214 down completely in the case of even super-constant approximation, so answering this question
+   215 will likely require new ideas.
+
+   216 1.4 Proof Overviews
+
+   217 In this section, we give fairly detailed overviews of our proofs. In doing this, we will often
+   218 state results without filling in low-level details. To make clear to the reader when we are
+   219 doing this, we mark such sentences with an italicized we observe.
+
+   220 Majority Hardness for (AC0d)-MCSP
+
+   221 Recall, AC0d is the class of depth-d formulas. We also define AND  AC0d-1 and OR  ACd0-1
+   222 be the classes of ACd0 formulas with a top AND and top OR gate respectively. For F 
+   223 {ACd0, AND  ACd0-1, OR  ACd0-1} and a truth table T , we let CCF (T ) denote the size of the
+   224 minimum F -formula computing T where the size of a formula is the number of input leaves.
+
+   225  Our analysis proceeds by considering each n  N and splitting into cases depending on
+
+   226 whether CCACd0 is Lipchitz on truth tables of length around n. In more detail, fix some
+   227 sufficiently large n. Let q = (n2) be a power of two. We divide into cases depending on
+
+   228 whether there exists an m  {q10, q50} such that CCAC0d is (m.25)-Lipchitz on truth tables of
+   229 length m.
+
+   230 Case 1: Lipchitzness holds for some m.
+
+   231 If there does exist an m  {q10, q50} such that CCAC0d is (m.25)-Lipchitz on truth tables of
+   232 length m, then the techniques of [11] yield an AC0 truth table reduction from MAJORITY
+   233 on n-bits to (AC0d)-MCSP on m-bits. For completeness, we include a self-contained proof of
+   234 this case in Appendix A.
+
+   235 Case 2: Lipchitzness fails.
+
+   236  Assume that for  all m  {q10, q50}  CCACd0  is  not  (m.25)-Lipchitz  on  truth  tables  of  length  m.
+   237  Let u = q10 and  v = q50.
+
+   238 Lipchitzness failing = functions easier to compute with a top AND gate. We observe,
+   239 as a straight forward consequence of Lipchitzness failing, that there exists a truth table of
+   240 length u that has an optimal formula with large top fan-in and and a truth table of length v
+   241 that is easier to compute with a top AND gate:
+
+   242 1. There exists a Boolean function f u that takes log u inputs and an ACd0 formula u such
+        that u is an optimal ACd0 formula for f u and u = u1  · · ·  tu for some t  n and
+   243
+
+   244  some u1 , . . . , tu  ACd0-1.
+     R.Ilango                                                                                                              7
+
+245 2. There exists a Boolean function f v that takes log v inputs such that CCORAC0d-1 (f v) >
+         CwCilAl NmDaAkCed0- u1se(fovf) f+u
+246  We                                      u log  u.  to  reduce  MAJORITY  to  CCANDACd0-1  and  we  will  use  fv  to
+247                                          and    u
+
+248 reduce CCANDACd0-1 to CCACd0 .
+
+249 Using CCANDAC0d-1 and optimal subformulas of u to compute a dot product. The heart
+250 of our MAJORITY reduction is a fairly elementary observation about optimal (AND  ACd0-1)
+251 formulas. Recall, u = u1  · · ·  ut is an optimal (AC0d) formula for f u and, hence, also an
+252 optimal (AND  ACd0-1) formula for f u. We observe that for any A  [t], the (AND  AC0d-1)-
+253 optimality of u implies that iA ui is also an optimal (AND  AC0d-1) formula for the
+
+254 function it computes.
+
+255      Introducing some notation, for a string x  {0, 1}n, we let fxu be the function given
+
+256 by iOx iu where Ox  [n] are the bits in x that are one. Using the above observation
+257 about subformulas being optimal, we have that CCANDACd0-1 (fxu) = iOx |iu|.6 Thus,
+258 one can think of CCANDAC0d-1 (fxu) as computing the dot product between x and the vector
+259 |1u|, . . . , |un| .
+
+260      Note that that the definition of fxu depends on the labeling of 1u, . . . , tu, in particular the
+
+261 choice of which ui have i  n. We will later choose an labeling of the iu that is convenient.
+
+262 Computing MAJORITY (non-uniformly) using CCANDACd0-1 . Our goal is to compute
+263 MAJORITY on a string x  {0, 1}n using the above "dot product" observation. Before
+
+264 we show how to do this, we give some intuition on how we came up with the idea.
+
+265 Instead of trying to compute MAJORITY, suppose we relaxed the problem to computing
+266 PARITY given access to the integer produced by the dot product x · |1u|, . . . , |nu| . Well,
+267 if it so happened that all the entries in the vector |u1 |, . . . , |un| were odd, then it is clear
+268 that the integer produced by x · |1u|, . . . , |un| is odd if and only if x has an odd number of
+269 ones. Our approach for MAJORITY is a generalization of this.
+
+270 Let p = O(n) be prime greater than n. We observe, via an averaging argument, that
+271 there exists integers k  0 and 1  r  p - 1 such that (after relabeling the iu)
+
+272      |u1 |/pk  · · ·  |un|/pk  r mod p.
+
+273 Thus, we can determine the weight w of x (and hence compute MAJORITY of x) by computing
+274 the value of
+
+275      CCANDAC0d-1 (fxu)/pk =                         |iu|/pk  rw mod p
+
+                                             iOx
+
+276 and multiplying by the inverse of r modulo p. 7
+
+277 Reducing computing CCANDAC0d-1 to computing CCAC0d . Ultimately, we want to compute
+278 MAJORITY using CCACd0 not CCANDACd0-1 . By the above procedure, it suffices to show how
+279 to compute CCANDACd0-1 (fxu) using CCACd0 .
+
+     6 Recall, our notion of formula size is the number of input leaves.
+     7 In case the reader is unsure of whether the last parts of this procedure are implementable in AC0, realize
+
+        that the output of CCANDAC0d-1 (fxu) is a binary string of length O(log n) and that any function on a
+        string of length O(log n) can be computed by a polynomial-sized DNF. See the proof in Section 3 for
+
+        more details.
+8       AC0[p] Lower Bounds and NP-Hardness for Variants of MCSP
+
+   280  We can make such a computation as follows. Recall that f v is a function satisfying
+
+   281  CCORACd0-1 (f v) > CCANDAC0d-1 (f v) + u log u
+
+   282 whose existence is guaranteed by the failure of Lipchitzness. Take the direct product of fxu
+   283 with f v to obtain a function gx(y, z) = fxu(y)  f v(z). Since the difference between computing
+   284 f v with a top AND gate and a top OR gate is larger than u log u (which is the maximum
+
+   285 complexity of fxu), we observe8 any optimal ACd0 formula for gx must have a top AND gate,
+
+   286 so
+
+   287  CCAC0d (gx) = CCANDACd0-1 (gx).
+
+   288 Then, we observe that
+
+   289  CCANDACd0-1 (gx) = CCANDACd0-1 (fxu) + CCANDAC0d-1 (f v).
+
+   290 Hence, if we are non-uniformly given the value of CCANDAC0d-1 (f v), we can subtract
+   291 CCANDAC0d-1 (f v) from CCACd0 (gx) to find CCANDACd0-1 (fxu).
+
+   292 NP-hardness of Oracle MCSP (MOCSP)
+
+   293 We define the size of an oracle circuit to be the total number of AND, OR, and oracle gates.
+   294 The Minimum Oracle Circuit Size Problem, MOCSP, takes as input a truth table T , a
+   295 threshold s  N, and auxiliary truth tables T1, . . . Tt and outputs whether there is an oracle
+   296 circuit of size at most s that computes T when given oracle access to T1, . . . , Tt. We denote
+   297 the output of MOCSP on such an input as MOCSP(T, s; T1, . . . , Tt). We denote the minimum
+   298 size of any oracle circuit computing T when given access to T1, . . . , Tt as CCT1,...,Tt (T ).
+   299 We prove that MOCSP is NP-hard under various reductions by giving a reduction from
+   300 4-approximating r-bounded set cover, denoted 4-SetCoverr, to MOCSP. As a reminder,
+   301 4-SetCoverr is the promise problem takes as input sets S1, . . . , St  [n] of cardinality at most
+   302 r whose union is [n] as well as an integer c  [n] and requires outputting YES when c 
+   303 and NO when c < /4 where is the optimal cover size, i.e.
+
+   304  = min{|I| : I  [t] and Si = [n]}.
+
+                                           iI
+
+   305 For sufficiently large r, 4-SetCoverr is known to be NP-hard (see Theorem 2.6).
+
+   306 Informal idea. We begin by giving a high-level overview of the reduction to orient the
+
+   307 reader. (It will be very informal, but we are building to a more detailed description.) Say
+
+   308 we are given sets S1, . . . , St  [n] of cardinality at most r whose union is [n]. One can
+
+   309 think of each of these sets Si as "seeing" a small portion of the ground set [n]. For some
+
+   310 carefully chosen truth table T of length m  n, we let each set S1, . . . , St induce truth tables
+
+   311 TS1 , . . . , TSt respectively where each truth table TSi "sees" roughly the same part of T as Si
+   312 "sees" of [n]. Finally, we ask how hard it is for a circuit to compute T given oracle access to
+
+   313 T1, . . . , Tt, and we show that, if T has a certain property, then the answer to this question is
+
+   314 the answer to the set cover problem up to a constant factor.
+
+   315  We now illustrate the algorithm in more detail. Fix sets S1, . . . , St  [n] of cardinality at
+
+   316 most r whose union is [n] and fix a truth table T of length m. Assume the optimal cover
+
+   317 size of [n] by S1, . . . , St is .
+
+        8 both the "we observe" statements in this paragraph are consequences of standard direct product theorems
+           for formulas.
+     R.Ilango                                                                                                 9
+
+318 The truth tables induced by S1, . . . , St and T . We rigorously define the truth tables
+
+319 TS1 , . . . , TSt of length m induced by S1, . . . , St and T . First, we fix a partition of [m] into n
+320 sets. It does not really matter what partition we choose as long as the sets are roughly the
+
+321 same size and the partition is easily computable, but, for concreteness, let P1, . . . , Pn  [m]
+
+322 be the partition of [m] given by Pi = {j  [m] : j  i mod n}.
+
+323 We can then use this partition to "lift" any subset of [n] into a subset of [m] as follows.
+
+324 For a subset S of [n], let Sm denote the subset of [m] given by Sm = iS Pi.
+
+325  Next, for a subset P  [m], we let TP be the truth table of length m that "sees" T on
+
+326 the elements of P and zeroes everywhere else, that is the ith bit of TP is
+
+     the ith bit of T , if i  P
+
+327                      , otherwise.
+
+            0
+
+328  Finally, we define the truth table TSi induced by Si to be the truth table TSiP given by
+
+329 the above notation (we are dropping the m superscript for concision).
+
+330 CCTS1 ,...,TSt (T ) is at most 2 . Suppose, without loss of generality, that S1  · · ·  S is an
+
+331 optimal cover of [n]. Then, by construction, the function computed by TS1  · · ·  TS is T .
+332 This is an oracle circuit of size 2 - 1, so CCTS1 ,...,TSt (T )  2 .
+
+333 If T is (rn)-irritable, then CCTS1 ,...,TSt (T ) > /2. Recall the notation defined previously
+334 that, for a set P  [m], TP denotes the string of length m that equals T on the bits in P
+335 and is zero everywhere else. Also recall that we fixed a partition P1, . . . , Pn of [m]. We say
+336 that T is (s)-irritable if for all i  [n] we have that
+
+337  CCTP1 ,...,TPi-1 ,TPi+1 ,...,TPn (T ) > s.
+
+338 Informally, T being (rn)-irritable means that if you take away access to any particular
+
+339 TPi oracle, then computing T requires an oracle circuit of size greater than rn, which is a
+
+340 (r/2)-factor jump over the trivial 2n-sized oracle circuit given by TP1  · · ·  TPn if one had
+
+341 full oracle access.
+
+342  Now assume T is (rn)-irritable. We need to show that CCTS1 ,...,TSt (T ) > /2. For
+
+343 contradiction, suppose that C is an oracle circuit computing T with at most /2 gates. Then
+
+344 C uses at most q  /2 unique oracle gates. Without loss of generality, assume C uses
+
+345 as oracles only TS1 , . . . , TSq . Next, note that for any i  [q], TSi can, by construction, be
+
+346 computed by the oracle circuit jSi TPj . Moreover, this is an oracle circuit for TSi of size
+347 at most 2r since |Si|  r. Thus, replacing each TSi oracle gate in C with the oracle circuit
+
+348 jSi TPj , we can transform C into an oracle circuit D of size at most r · |C|  r such that
+349 D computes T when given access to the oracles in the set O = {TPj : j  S1  · · ·  Sq}.
+
+350 However, since q  /2 is less than the optimal cover size, |S1  · · ·  Sq| < n and so |O| < n,
+
+351 so O is missing TPi for some i  [n]. But then D is an oracle circuit of size at most r  rn
+
+352 that computes T when given access to TP1 , . . . , TPn without using TPi as an oracle gate,
+353 which contradicts that T is (rn)-irritable.
+
+354 RP, ZPP and AC0 reductions. At this point, we have shown that one can compute whether
+
+355 S1, . . . , St admits a c-cover (up to a 4-approximation) by outputting MOCSP(T, 2c; TS1 , . . . , TSt )
+356 for some T that is (rn)-irritable.
+
+357  We observe by a counting argument that a truth table T of length m  n3 picked uniformly
+
+358 at random is (rn)-irritable with high probability. Thus, picking a random truth table T of
+10       AC0[p] Lower Bounds and NP-Hardness for Variants of MCSP
+
+    359 length (n3) and outputting MOCSP(T, 2c; TS1 , . . . , TSt ) gives an RP many-one reduction
+    360 from 4-SetCoverr to MOCSP (note that we get one-sided error because irritability was only
+
+    361 required for the /2 lower bound and not required for the 2 upper bound). Additionally,
+
+    362 since we can check if a random T is (rn)-irritable using an oracle to MOCSP, we observe
+    363 that 4-SetCoverr tZtPP MOCSP. Finally, we observe that there is an AC0 circuit C such
+    364 that C(T, c, S1, . . . , St) = (T, 2c; TS1 , . . . , TSt ). Therefore, by non-uniformly hardcoding
+    365 an (rn)-irritable truth table T into C, we get that 4-SetCoverr reduces to MOCSP under
+    366 (non-uniform) AC0 many-one reductions.
+
+    367 1.5 Paper Organization
+
+    368 In Section 2 we fix notation and review precise definitions. In Section 3 we prove that
+    369 MAJORITY reduces to (AC0d)-MCSP, and in Section 4 we prove our MOCSP results.
+
+    2 370 Preliminaries
+
+    371 For an integer n, we let [n] denote the set {1, . . . , n}. For a binary string x  {0, 1},
+
+    372 the weight of x, denoted wt(x), is the number ones in x. We identify a Boolean function
+    373 f : {0, 1}n  {0, 1} with its truth table T  {0, 1}2n and often use them interchangeably.
+
+    374 We let log denote the base-2 logarithm and ln represent the base-e logarithm. For
+    375 functions f and g, we say f = O~(g) if there exists a c such that f (x)  logc(g(x))g(x) for all
+    376 sufficiently large x. We say that f = ~ (g) if g = O~(f ).
+
+    377  We say a function f : {0, 1}n  R is c-Lipchitz if for all x, y  {0, 1}n that differ in at
+
+    378 most one bit, |f (x) - f (y)|  c.
+
+    379 Complexity classes and reductions
+
+    380 We assume the reader is familiar with the standard complexity classes such as AC0, P, ZPP, RP, NP, E
+    381 and the notion of Turing machines. For background on these, we refer to Arora and Barak's
+    382 excellent textbook [7]. For us, AC0 always refers to non-uniform AC0.
+    383 We review the types of reductions we use in case the reader is not familiar with randomized
+    384 reductions, truth table reductions, or our notation.
+
+    385 Many-one reductions. We will make use of the follow notions of many-one reduction.
+
+    386  L AmC0 L if there is a non-uniform (polynomial-sized) AC0 circuit C such that x 
+
+    387  L  C(x)  L .
+
+    388  L Pm L if there is a polynomial-time Turing machine M such that x  L  M (x) 
+
+    389  L.
+
+    390  L RmP L if there is a polynomial-time probabilistic Turing machine M taking in a
+
+    391 "random" auxiliary input r such that
+
+    392      x  L = r M (x, r)  L , and
+
+    393
+
+    394      x  L = Pr[M (x, r)  L ]  2/3,
+
+             r
+
+    395  and |r| is polynomial in the length of x.
+     R.Ilango                                                                                      11
+
+396 Truth table reductions. We will also make use of the following notions of truth table
+
+397 reductions.
+
+398 We say an oracle circuit C is a truth table oracle circuit if there is no directed path
+
+399  between oracle gates in C.
+
+400  L tAtC0 L if there is a non-uniform (polynomial-sized) AC0 truth table oracle circuit C
+
+401  such that C computes L when given oracle access to L .
+
+402  L tZtPP L if L can be computed with zero-error by a polynomial-time probabilistic oracle
+
+403 Turing machine M with oracle access to L with the caveat that all of M 's oracle queries
+
+404 must be answered simultaneously (i.e. so no oracle query can depend on another oracle
+
+405 query). On any single input, M is allowed to output "don't know" with probability at
+
+406  most 1/2.
+
+407 ACd0 formulas, (ACd0)-MCSP, and CCACd0
+
+408 For an integer d  2, we let ACd0 denote the class of depth-d formulas that use AND and OR
+409 gates with unbounded fan-in and fan-out 1 and that takes as "input leaves" the bits of a
+
+410 binary string and the negation of each of those bits.
+
+411  For an ACd0 formula , we define the size of , denoted ||, to be the total number of
+
+412 input leaves  uses. For a Boolean function f , we let CCAC0d (f ) be the size of the smallest
+413 AC0d formula computing f .
+
+414 Definition 2.1 (Minimum Circuit Size Problem for constant depth formulas). (AC0d)-MCSP,
+415 is the language given by
+
+416  {(T, s)  {0, 1} × N : T is the truth table of a Boolean function, and CCACd0 (T )  s}.
+
+417  We will also make use of the classes of formulas OR  ACd0-1 and AND  ACd0-1, defined
+
+418 as the subclasses of AC0d formulas with a top OR gate and a top AND gate respectively. For
+419 C  {OR  ACd0-1, AND  AC0d-1}, we define We define CCC and (C)-MCSP analogous to CCAC0d
+420 and (AC0d)-MCSP.
+     We also require the following elementary lemmas regarding AC0d formulas.
+421
+
+422 Lemma 2.2. Let f be a Boolean function. Then CCAC0d (f ) = CCACd0 (¬f ).
+
+423 Proof. One can use DeMorgan's laws to turn any ACd0 formula for f of size s into an AC0d
+424 formula for ¬f of size s.
+
+425  We note that our specific notion of AC0d formula size is crucial for the next lemma.
+
+426 Lemma 2.3 (Direct product theorem for formulas). Let f : {0, 1}n  {0, 1} and g :
+427 {0, 1}m  {0, 1} be Boolean functions that are both not the constant zero function. Define
+428 h : {0, 1}n × {0, 1}m  {0, 1} by h(x, y) = f (x)  g(y). Then
+
+429  CCANDACd0-1 (h) = CCANDAC0d-1 (f ) + CCANDACd0-1 (g), and
+
+430
+
+431  CCORAC0d-1 (h)  CCORAC0d-1 (f ) + CCORACd0-1 (g).
+
+432 Proof. It is easy to see that
+
+433  CCANDAC0d-1 (h)  CCANDACd0-1 (f ) + CCANDAC0d-1 (g).
+
+434  On the other hand, since f is not the constant 0 function, it has a 1-valued input x0.
+
+435 Then, h(x0, y) computes g(y). Thus, if  is an OR  ACd0-1 formula for h, then  has at least
+12       AC0[p] Lower Bounds and NP-Hardness for Variants of MCSP
+
+    436 CCANDACd0-1 (g) y-input leaves. A similar argument shows that  has at least CCANDACd0-1 (f )
+    437 x-input leaves. Hence
+
+    438  CCANDAC0d-1 (h)  CCANDACd0-1 (f ) + CCANDACd0-1 (g).
+
+    439  A similar argument shows that
+
+    440  CCORAC0d-1 (h)  CCORAC0d-1 (f ) + CCORACd0-1 (g).
+
+    441
+
+    442 Oracle Circuits and Oracle MCSP: MOCSP
+
+    443 An oracle circuit C is made up of NOT gates, fan-in two AND and OR gates, and oracle
+
+    444 gates g1, . . . , gt with fan-in i1, . . . , it respectively for some integers t, i1, . . . , it  1. When
+    445 given functions f1 : {0, 1}i1  {0, 1}, . . . , ft : {0, 1}it  {0, 1}, we let Cf1,...,ft (x) be the
+
+    446 value obtained when evaluating C on input x by using the f1, . . . , ft functions as the outputs
+
+    447 of the g1, . . . , gt gates respectively.
+
+    448 We define the size of an oracle circuit C, denoted |C|, to be the sum of the number of
+
+    449 OR gates, the number of AND gates, and the number of oracle gates in C.
+
+    450  For Boolean functions f, f1, . . . , ft, we let CCf1,...,ft (f ) be the size of the smallest oracle
+
+    451 circuit that computes f when given access to f1, . . . , ft. Analogous to MCSP, we define the
+
+    452 following.
+
+    453 Definition 2.4 (The Minimum Oracle Circuit Size Problem). The Minimum Oracle Circuit
+
+    454 Size Problem, denoted MOCSP, takes as as input a truth table T , a threshold s  N, and
+    455 oracle truth tables T1, . . . , Tt and outputs whether CCT1,...,Tt (T )  s. The output of MOCSP
+    456 on such an input is written as MOCSP(T, s; T1, . . . , Tt).
+
+    457 r-Bounded Set Cover
+
+    458 We will make use of the following well known NP-complete problem.
+
+    459 Definition 2.5 (r-Bounded Set Cover). r-Bounded Set Cover, denoted SetCoverr, is the
+    460 problem that takes as input a tuple (n, c, S1, . . . , St), where n  N is a universe size, c  N is
+    461 a proposed cover size 1  c  n, and S1, . . . , St  [n] are sets of cardinality at most r whose
+    462 union is [n], and outputs whether c  where is the optimal cover size given by
+
+    463       = min{|I| : I  [t] and iI Si = [n]}.
+
+    464  We will also make use of the following restricted version of set cover. Let SetCoverr,n,t
+
+    465 denote r-bounded set cover on t subsets of [n]. We encode inputs to SetCoverr,n,t as the
+
+    466 tuple (c, S1, . . . , St) (with n implicit) where c is represented in binary and the set Si, for each
+
+    467 i  [t], is represented by a bit string of length r log(n + 1) that is a concatenated list of the
+
+    468 elements of Si in binary, padded with zeroes if |Si| < r (note that zero is not an element of
+
+    469 [n], so padding with zeroes is not ambiguous).
+
+    470  We will use that SetCoverr is NP-hard even to approximate to a roughly ln r factor.
+
+    471 Theorem 2.6 (Feige [10] and Trevisan [31]). Let r be a sufficiently large constant, and let
+
+    472 L be a language. If for every instance x = (n, c, S1, . . . , St) of SetCoverr, we have that both
+
+    473 that
+
+    474  c  implies x  L, and
+
+    475  c  /(ln r - O(ln ln r)) implies x  L,
+
+    476 where is the optimal cover size, then L is NP-hard under polynomial-time many-one
+
+    477 reductions.
+     R.Ilango                                                                                                                13
+
+3 478 MAJORITY AttC0 (AC0d)-MCSP
+
+479 Let d  2. Our goal in this section is to prove the following theorem.
+
+480  Theorem 3.1. MAJORITY tAtC0 (AC0d)-MCSP.
+
+481 We will do this by showing that for all sufficiently large n  N, there exists an AC0 truth
+
+482  table  oracle  circuit  that  computes  MAJORITY  on  n-bits               when  given access     to    (AC0d)-MCSP.
+                                                                                            
+483 Fix some n, and let q be the least power of two such that n  q/2. We will split our
+
+484 analysis into cases depending on whether there exists an m  {q10, q50} such that CCAC0d is
+485 (m.25)-Lipchitz on inputs of length m.
+
+486 3.1 Case 1: Lipchitzness Holds
+
+487 If Lipchitzness holds, then the desired (ACd0)-MCSP oracle circuit C exists for computing
+488 MAJORITY on n-inputs by the work of Golovnev et al. [11]. At a high-level, C works
+489 by using the input string to sample a random variable whose circuit complexity spikes (in
+490 expectation) depending on the weight of the input and using Lipchitzness to show that this
+491 spike happens with such high probability that it can be derandomized using non-uniformity.
+492 For completeness, we give a self-contained proof of this case in Appendix A.
+
+493 3.2 Case 2: Lipchitzness fails
+
+494 Assume that for all m  {q10, q50}, CCAC0d is not (m.25)-Lipchitz on inputs of length m. Thus,
+495 for all m  {q10, q50} there exist functions f m, hm : {0, 1}log m  {0, 1} that differ only on a
+
+496 single input zm  {0, 1}log m such that CCACd0 (hm) - CCAC0d (f m) > m.25.
+     We assume, without loss of generality, that for all m  {q10, q50}, f m(zm) = 0 and
+497
+
+498 hm(zm) = 1. (If this is not the case, then replace f m and hm by ¬f m and ¬hm respectively
+
+499 and apply Lemma 2.2.)
+
+500 First, we show that the failure of Lipchitzness implies the existence of functions that
+
+501 are much easier to compute by formulas with an AND gate on top. For m  {q10, q50} let
+
+502 1zm : {0, 1}log m  {0, 1} denote the indicator function that accepts just the string zm.
+
+503  Proposition 3.2. Let m  {q10, q50}. For sufficiently large n, CCORACd0-1 (f m) 
+
+504 CCAC0d (f m) + m.24, and so any optimal AC0d formula for f m has an AND gate on top.
+
+505 Proof. Suppose  is an OR  ACd0-1 formula computing f m, that is, f m is computed by
+506  = 1  · · ·  t for some ACd0-1 formulas 1, . . . , t. Then
+
+507  1zm  1  · · ·  t
+
+508 computes hm. Since 1zm can be computed by a single AND gate of formula size log m,
+
+509  this shows    thamt .C25CAgCiv0de(hs mth)ede|si|r+edlorgesmul.t.Combining  this  with  the  fact  that  CCAC0d (hm)  -
+510  CCAC0d (f m)
+
+511  At this point, we will need to refer to both q10 and q50 individually, so for convenience
+
+512 let u = q10 and v = q50.
+
+513  Let u be an optimal AC0d formula for f u. By Proposition 3.2, for sufficiently large n,
+
+514 we know that u = 1u  · · ·  tu for some ACd0-1 formulas u1 , . . . , ut . Moreover, we can
+
+515 assume, without loss of generality, that the top gate of iu is OR for all i  [t]. (If some ui
+
+516 has an AND gate on top, then this AND can be carried out by the AND gate on top of u
+
+517 without increasing the size of the formula.)
+
+518  Our next Proposition shows that u has high top fan-in.
+14       AC0[p] Lower Bounds and NP-Hardness for Variants of MCSP
+
+    519 Proposition 3.3. For sufficiently large n,
+
+    520  t  u.24.
+
+    521 Proof. We divide into cases depending on d.
+
+    522 Case 1: d  3. Realize that
+
+    523  (u1  1zu )  · · ·  (ut  1zu )
+
+    524 computes hu. Since 1zu can be computed by a single AND gate of formula size log u and
+
+    525 the top gate of each iu is an OR gate and d  3, this yields a depth-d formula for hu of size
+    526 CCAC0d (f u) + t log u. Since CCACd0 (hu) - CCACd0 (f u)  u.25, the desired bound on t follows.
+
+    527 Case 2: d = 2. Let 1zu, j : {0, 1}log u  {0, 1} be the function that accepts a string x if
+
+    528 and only if the jth bit of x equals the jth bit of zu. Observe that, since i[t] iu computes
+    529 f u, we have that
+
+    530                 (iu  1zu, j )
+
+         i[t] j[log u]
+
+    531 computes hu. Since 1zu, j is computed by a single input leaf and iu has an OR gate on top,
+
+    532 this yields a depth-2 formula for hu of size (|u| + 1) log u. Since u is an optimal CNF,
+
+    533 each clause iu of u is the OR of at most log u input leaves. In other words, |ui |  log u.
+    534 Therefore, we have that
+
+    535  CCAC0d (hu)  (|u| + 1) log u  ( |iu| + 1) log u  (t log u + 1) log u = t log2 u + log u.
+
+                                        i[t]
+
+    536 On the other hand, we know by assumption that
+
+    537  CCAC0d (hu) > CCACd0 (f u) + u.25  u.25.
+
+    538 Combining these two inequalities gives us the desired bound on t.
+
+    539
+
+    540 Let p be smallest prime greater than n. (Note that p  2n by Betrand's postulate,
+
+    541 also known as Chebyshev's theorem. See [12] for a proof.) We say that an integer j is
+
+    542 (k, r)-good for integers k  0 and 1  r  p - 1 if pk divides j and j/pk  r mod p. In other
+
+    543 words, an integer j is (k, r)-good for k  0 and r  [p - 1] if the kth largest entry of the
+
+    544 base-p representation of the integer j equals r and all previous entries equal zero. From this
+
+    545 "base-p" perspective, it is clear that all positive integers j are (k, r)-good for some k  0 and
+
+    546 r  [p - 1].
+
+    547  We show that, for some k and r, a large subset of the |iu| are (k, r)-good.
+
+    548 Proposition 3.4. For all sufficiently large n, there exist integers k  0 and 1  r  p - 1
+    549 and a set S  [t] of cardinality n such that, for all i  S, the integer |ui | is (k, r)-good.
+
+    550 Proof. We do this by an averaging argument. First, we show that each |ui | is (k, r)-good
+    551 for a k not too large.
+
+    552 Claim 3.5. For all i  [t], |iu| is (k, r)-good for some 0  k  log(u log u) + 1 and some
+    553 r  [p - 1].
+     R.Ilango                                                                                       15
+
+554 Proof. Fix some i  [t]. |ui | is a positive integer, so |iu| is (k, r)-good for some k  0 and
+555 some r  [p - 1]. We still need to upper bound this k. Note that the size of |iu| is at most
+556 by u log u since u is optimal for f u and f u can be computed by a DNF of size u log u. Thus,
+
+557 for pk to divide |iu|, we must have that k  logp(u log u) + 1  log(u log u) + 1.
+
+558 Since for all i  [t] we have shown that |ui | is (k, r) good for some 0  k  log(u log u) + 1
+559 and some r  [p - 1], a standard averaging argument implies that there exists a set S  [t]
+
+560 of cardinality at least
+
+                         t
+
+561
+
+          (log(u log u) + 1)(p - 1)
+
+562 such that for all i  S, |ui | is (k, r)-good for some fixed k  0 and 1  r  p - 1. For
+563 sufficiently large n, we have that
+
+                     t                 u.24    n
+
+564  (log(u log u) + 1)(p - 1) 4n log u
+
+565 using that u = q10  n10. We then can truncate S so that it has only n elements as
+566 desired.
+
+567 Assume that n is large enough that all the sufficiently large hypotheses in Propositions
+
+568 3.2, 3.3, and 3.4 apply. For convenience, relabel 1, . . . , t so that the set S guaranteed by
+
+569 Proposition 3.4 is just S = [n]. Fix k  0 and r  [p - 1] to be the values such that for all
+
+570 i  S = [n], |iu| is (k, r)-good.
+
+571  Introducing notation, for a set A  [n], let fAu be the function computed by iA ui .
+
+572  Lemma 3.6. Let A  [n]. Then CCANDAC0d-1 (fAu) = iA |ui |.
+
+573 Proof. By construction, we have that CCANDACd0-1 (fAu)         iA |i|. Suppose for contradic-
+574 tion that CCANDACd0-1 (fAu) < iA |iu|.
+
+575  Let 1  · · ·   be a minimum-sized (AND  AC0d-1) formula for fAu. By assumption, we
+
+576 have that j=1 |j| < iA |iu|. We can thus replace the iA ui in the optimal formula
+
+577 for f u with 1  · · ·   and get a smaller formula. In more detail, we have that
+
+578  f u = fAu  (            iu) = (1  · · ·   )  (           iu)
+
+                     i[t]\A                           i[t]\A
+
+579 which is a formula of size
+
+                                                              t
+
+580       |j| +          |iu| < |iu| +               |iu| = |ui | = |u|
+
+     j=1         i[t]\A         iA           i[t]\A   i=1
+
+581 which contradicts the optimality of u for f u.
+
+582  For a string x  {0, 1}n, let fxu be shorthand for fAux where Ax  [n] is the set of indices
+
+583 where x is one.
+
+584 Proposition 3.7. Let x  {0, 1}n. Then x has weight w if and only if the integer
+585 CCANDAC0d-1 (fxu) is (k, rw)-good.
+
+586 Proof. By Lemma 3.6 and the fact that |ui | is (k, r)-good for all i  [n], we have that
+
+     CCANDACd0-1 (fxu)       =  iAx    |iu|    w  ·r  mod p
+              pk
+587                               pk
+
+588 where Ax  [n] are bits of x that are ones. The "only if" part of the statement is guaranteed
+589 by the fact that 1  r  p - 1 has a multiplicative inverse modulo p since p is prime.
+16       AC0[p] Lower Bounds and NP-Hardness for Variants of MCSP
+
+    590 Theorem 3.8. Assume n is sufficiently large. Then there is a depth-8 AC0 truth table
+    591 oracle circuit C with O(n250) wires such that C(AC0d)-MCSP computes MAJORITY on n-bits.
+
+    592 Proof. It suffices to show that for every w  [n], there exists a depth-7 AC0 oracle circuit Cw
+    593 with O(n249) wires such that Cw(AC0d)-MCSP(x) = 1  wt(x) = w. Then MAJORITY(x) =
+
+    594  wn/2 Cw(x).
+
+    595  Fix some w  [n]. The circuit Cw works as follows. On input x  {0, 1}n, first check
+
+    596 if x is the all zeroes string. If so, then reject. Otherwise, compute the truth table of the
+
+    597 direct product function gx : {0, 1}log u × {0, 1}log v  {0, 1} given by gx(y, z) = fxu(y)  f v(z).
+                                                                                               to (ACd0)-MCSP.
+    598  Compute    s=   tChCe ApCr0do(pgexr)tyintbhiantasry-uCsiCnAgCod0 (rfacvl)e  access    w)-good. Reject   Finally accept  if  the
+    599  integer s  has                                                              is (k, r                   otherwise.
+
+    600  We now verify this yields a (non-uniform) AC0 truth table oracle circuit. We can check if
+
+    601 x is the all zeroes string with a single OR gate. This requires one level of depth and O(n)
+
+    602 wires. Next, realize the jth bit in the truth table of gx is either zero for all x or equal to
+
+    603  fxu(j) =                   xi
+
+                    i[n]:iu (j )=1
+
+    604 where xi denotes the ith bit of x. Thus, using non-uniformity, we can compute the truth table
+
+    605 of gx with O(nuv) = O(nq60) = O(n121) wires and depth-one. Next, we can compute s =
+    606 CCACd0 (gx) in binary with O(uv log(uv)) calls to (AC0d)-MCSP using the fact that CCACd0 (gx) 
+    607 uv log(uv) by the DNF bound and the fact that
+
+    608  CCACd0 (gx) = s  (AC0d)-MCSP(gx, s) = 1 and (ACd0)-MCSP(gx, s - 1) = 0.
+
+    609 This takes at most O~((uv)2) = O(n241) wires, an additional three layers of depth, and
+
+    610 2uv log(uv) oracle calls that all do not depend on each other. Finally, the DNF upper bound
+
+    611 guarantees that CCACd0 (gx)  uv log(uv)  n61, so the length of the integer s = CCACd0 (gx) in
+    612 binary is at most 61 log n. Therefore we can check if s has the property that s - CCACd0 (f v)
+    613 is (k, rw)-good using a DNF with at most n62 wires and at most an additional two layers of
+    614 depth. Combining all this yields a AC0 circuit of depth-7 with at most O(n241) wires and no
+
+    615 directed path between oracle gates.
+
+    616  Next, we argue for correctness. Clearly, Cw rejects the all zero string, so assume x = 0n.
+
+    617 By Proposition 3.7, it suffices to show that, for s = CCAC0d (gx),
+
+    618  s - CCACd0 (f v) = CCANDAC0d-1 (fxu).
+
+    619  We confirm that neither fxu nor f v is the constant zero function, so that we can use the
+
+    620 direct product theorems in Lemma 2.3.
+
+    621 Claim 3.9. Neither fxu nor f v is the constant zero function.
+
+    622 Proof. If f v were the constant zero function, then CCACd0 (hv)  log v by DNF computation
+    623 which contradicts that
+
+    624  CCAC0d (hv) - CCACd0 (f v)  v.25.
+
+    625  Next, let i  [n] be a bit of x that is not zero. (Recall, we assumed that x = 0n.) Then
+
+    626 fxu has accepts every input that that iu accepts. For contradiction, suppose that iu had no
+    627 ones. Then we can remove ui from the optimal formula u = u1  . . . tu for f u and get a
+    628 smaller formula for f u which contradicts the optimality of u.
+        R.Ilango                                                                                       17
+
+629     Next we show that the optimal AC0d formula for gx has an AND gate on top.
+
+630     Claim 3.10. CCORACd0-1 (gx) > CCANDACd0-1 (gx). Consequently, CCAC0d (gx) = CCANDACd0-1 (gx).
+
+631 Proof. Let  = CCORAC0d-1 (gx) - CCANDACd0-1 (gx). We need to show  > 0.
+
+632       CCORAC0d-1 (f v) - CCANDAC0d-1 (f v) + CCORAC0d-1 (fxu) (by Lemma 2.3)
+
+633            - CCANDAC0d-1 (fxu)
+
+634      (v).24 + CCORAC0d-1 (fxu) - CCANDACd0-1 (fxu)     (by Proposition 3.2)
+
+635      (v).24 - u log u                                  (by DNF bound on fxu)
+
+636      n50·.24 - n10 log(n10)                            (by definition of u and v)
+
+637     >0                                                 (for sufficiently large n)
+638
+
+639
+
+640 Using the claim we have that
+
+641     s - CCAC0d (f v) = CCACd0 (gx) - CCAC0d (f v)                         (by definition)
+
+642                   = CCANDAC0d-1 (gx) - CCACd0 (f v)                       (by Claim 3.10)
+
+643                   = CCANDAC0d-1 (fxu) + CCANDAC0d-1 (f v) - CCACd0 (f v)  (by Lemma 2.3)
+
+644                   = CCANDACd0-1 (fxu) + CCANDACd0-1 (f v) - CCANDACd0-1 (f v) (by Proposition 3.2)
+
+664456                = CCANDAC0d-1 (fxu)
+
+647 as desired.
+
+648 Remark 3.11. We remark that the only time we use the failure of Lipchitzness in Case
+649 2 is to show the existence of functions like f u with high top fan-in and functions like f v
+
+650 with a large difference between top AND gate and top OR gate complexity. Using known
+651 PARITY lower bounds and depth-hierarchy theorems for AC0 circuits, we can unconditionally
+652 prove the existence of f u and f v respectively but with slightly worse parameters that would
+
+653 yield a quasi-polynomial reduction (at least in the d  3 case) rather than the polynomial
+
+654 reduction we present.
+
+4 655 On the NP-hardness of MOCSP
+
+656 First, we introduce some useful notation and definitions. For a truth table T of length m
+657 and a set P  [m], let TP be the truth table of length m where the jth bit of TP equals
+
+        the jth bit of T , if j  P
+
+658                        , otherwise.
+
+            0
+
+659 Next, we say a truth table T of length m is (s)-irritable on a partition P = (P1, . . . , Pn) of
+660 [m] if for all i  [n]
+
+661     CCTP1 , ... , TPi-1 , TPi+1 , ... , TPn (T ) > s.
+
+662     Finally, for a partition P = (P1, . . . , Pn) of [m] and any set S  [n], we define the P-lift
+
+663 of S, denoted SP , to be the subset of [m] given by
+
+664     SP = Pi.
+
+                  iS
+18       AC0[p] Lower Bounds and NP-Hardness for Variants of MCSP
+
+    665 Our first theorem shows that one can use an irritable truth table and MOCSP to approx-
+    666 imate r-bounded set cover.
+
+    667 Theorem 4.1. Let S1, . . . , St  [n] be sets of cardinality at most r that cover [n]. Let T
+
+    668 be a truth table of length m, and let P = (P1, . . . , Pn) be a partition of [m]. Then
+
+    669  CCTS1P ,...,TStP (T )  2 , and
+
+    670  CCTS1P ,...,TStP (T ) > /2 if T is (rn)-irritable on P
+
+    671 where is size of the optimal cover of [n] by S1, . . . , St.
+
+    672 Proof. We split this proof into two claims to make clear that our two "without loss of
+    673 generality" assumptions do not conflict with each other.
+
+    674  Claim 4.2. CCTS1P ,...,TStP (T )  2
+
+    675 Proof. Without loss of generality, assume that the optimal cover size is witnessed by S1 
+
+    676 · · ·  S = [n]. Then, by construction, the function computed by oracle circuit TS1P  · · ·  TSP
+    677 of size 2 - 1 is T . In more detail,
+
+    678        TSiP =            TPj =             TPj =        TPj = T.
+
+         i[ ]          i[ ] jSi         j S1 ···S         j[n]
+
+    679 Therefore CCTS1P ,...,TStP (T )  2 .
+
+    680  Claim 4.3. If T is (rn)-irritable on P, then CCTS1P ,...,TStP > /2.
+
+    681 Proof. For contradiction, suppose there is an oracle circuit D with at most /2 gates such
+    682 that DTS1P ,...,TStP computes T . Since D has at most q  /2 unique oracle gates, assume,
+    683 without loss of generality, that DTS1P ,...,TSqP computes T .
+
+    684  Recall, by the definition of TSiP , we have that TSiP = jSi TPj . Note that jSi TPj
+
+    685 is an oracle circuit of size at most 2r since |Si|  r. Thus, by replacing each TSiP oracle
+
+    686 gate in D with the oracle circuit jSi TPj , we can transform D into an oracle circuit E
+
+    687 of size at most 2r|C|  r that computes T when given access to the oracles in the set
+
+    688 O = {TPj : j  S1  · · ·  Sq}. However, since the optimal cover of n is of size and
+    689 q  /2 < , it follows that |S1  · · ·  Sq| < n and hence |O| < n. Thus, there is an element
+
+    690 i  [n] such that TPi  O. Therefore, the circuit E witnesses that
+
+    691  CCTP1 ,...,TPi -1 ,TPi +1 ,...,TPn (T )  r  rn
+
+    692 which contradicts that T is (rn)-irritable on P.
+
+    693
+
+    694 Moreover, given a truth table T and the partition P on which T is sufficiently irritable,
+    695 we show it is easy to build a constant-depth circuit that approximates r-bounded set cover
+    696 using MOCSP.
+
+    697 Theorem 4.4. Let r  N. There exists an polynomial-time algorithm A such that if
+
+    698 P = (P1, . . . , Pn) is a partition of [m], and T is a truth table of length m, then
+    699 1. A(0n, 0t, T, P) outputs a depth-2 AC0 circuit Cn,t,T,P with O(mnrt) wires,
+
+    700 2. MOCSP  Cn,t,T,P accepts all YES instances of SetCoverr,n,t , and
+
+    701 3. MOCSP  Cn,t,T,P computes a 4-approximation to SetCoverr,n,t if T is (rn)-irritable on
+
+    702  P.
+     R.Ilango                                                                                            19
+
+703 Proof. First, we show that there is a polynomial-time algorithm A that outputs a small
+704 depth-2 circuit computing a specific function. Then we show that this specific function is
+705 helpful in computing SetCoverr,n,t.
+
+706 Claim 4.5. There is a polynomial-time algorithm A such that A(0n, 0t, T, P) outputs a
+707 depth-2 AC0 circuit Cn,t,T,P with O(mnrt) wires satisfying
+
+708     Cn,t,T,P (c, S1, . . . , St) = (T, 2c; TS1P , . . . , TStP )
+
+709 for any instance (c, S1, . . . , St) of SetCoverr,n,t.
+
+710 Proof. On input (0n, 0t, T, P), A builds the circuit Cn,t,T,P as follows. First, A will hardwire
+
+711 Cn,t,T,P to output T . This requires O(m) wires and depth one. Next, A adds circuitry to
+
+712 Cn,t,T,P that outputs 2c by adding an extra zero to the binary expansion of c. This uses
+
+713 O(log n) wires and depth one.
+
+714     Finally, A adds circuitry to Cn,t,T,P that outputs TS1P , . . . , TStP as follows. Observe that
+
+715 for any i  [t] and j  [m], the jth bit of TSiP is one if and only if Si contains the unique
+
+716 element kj  [n] such that j  Pkj . Thus, since A has access to P, A can calculate kj for all
+
+717 j  [m] and then add circuitry to Cn,t,T,P that calculates the jth bit of TSiP by ORing over
+718 all the elements of Si and using an AND to check if any one of those elements is kj. This
+
+719 requires O(mnrt) wires and depth-two.
+
+720     Therefore, Cn,t,T,P is a depth-2 AC0 circuit with O(mnrt) wires as desired. Moreover, it
+
+721 is clear from this description that A runs in polynomial-time.
+
+722 It remains to show that the algorithm A given in Claim 4.5 satisfies (2) and (3). Let
+723 (c, S1, . . . , St) be an instance of SetCoverr,n,t. Let be the minimum size of any cover of [n]
+724 by S1, . . . , St.
+725 First, we show (2) holds. Suppose c  . Then Theorem 4.1 implies that
+
+726     CCTS1P ,...,TStP (T )  2  2c
+
+727 so
+
+728     MOCSP(Cn,t,T,P (c, S1, . . . , St)) = MOCSP(T, 2c; TS1P , . . . , TStP ) = YES
+
+729 as desired.
+730 Finally, we show (3) holds. Suppose c < /4 and T is (rn)-irritable. Then Theorem 4.1
+731 implies that
+
+732     CCTS1P ,...,TStP (T ) > /2  2c
+
+733 so
+
+734     MOCSP(Cn,t,T,P (c, S1, . . . , St)) = MOCSP(T, 2c; TS1P , . . . , TStP ) = NO.
+
+735 Hence (3) holds.
+
+736 Of course to make use of Theorem 4.4, we need to actually find truth tables T and
+737 partitions P on which T is sufficiently irritable. Fortunately, such T and P are abundant.
+738 We show that, with high probability, any choice of P and a random choice of a truth table T
+739 suffices.
+20       AC0[p] Lower Bounds and NP-Hardness for Variants of MCSP
+
+    740 Lemma 4.6. Let n, r  N. Let m be the least power of two greater than n3. Let P =
+
+    741 (P1, . . . , Pn) be any partition of [m] such that |Pi|  m/n - 1 for all i  [n]. Pick a truth
+    742 table T  {0, 1}m uniformly at random. Then T is (rn)-irritable on P except with probability
+    743 2-(n2).
+
+    744 Proof. We prove this by bounding the probability that, for some fixed i and some fixed
+    745 oracle circuit C,
+
+    746  CTP1 ,...,TPi -1 ,TPi +1 ,...,TPn computes T
+
+    747 and then union bounding over all i and all oracle circuits of size at most rn.
+
+    748  Realize that the function computed by CTP1 ,...,TPi -1 ,TPi +1 ,...,TPn does not depend on
+
+    749 any of the bits in T that lie in Pi . Therefore, since |Pi |  m/n - 1, this means that the
+    750 probability that CTP1 ,...,TPi -1 ,TPi +1 ,...,TPn computes T is at most 2-m/n+1  2-n2+1.
+
+    751 Now, we union bound. Clearly, there are at most n choices of i . Next, we need to count
+
+    752 the number of C of size at most rn. For concision, let s = rn. We bound the number of
+
+    753 oracle circuits of size s, allowing for identity gates to catch circuits of smaller size. For each
+
+    754 of the s gates, there are 4 + n gate types to chose from (AND, OR, NOT, identity, and the n
+
+    755 oracle gates). Then, for each of the s gates, we have to choose the at most log(m) wires that
+
+    756 feed into that gate and there are at most (s + log(m)) choices for where each of these wires
+
+    757 comes from. Hence, we get a bound of
+
+    758  (4 + n)s(s + log(m))s log(m)
+
+    759 whose logarithm is
+
+    760  s log(4 + n) + s log(m) log(s + log(m)) = O~(rn).
+
+    761 Thus, probability that T fails to be (rn)-irritable on P is at most
+
+    762  n2-n2+O~(rn)  2-(n2).
+
+    763
+
+    764 Thus, using a random choice of T gives us an NP-hardness result under RP-reductions.
+
+    765 Corollary 4.7. NP m RP MOCSP.
+
+    766 Proof. Let r be sufficiently large that computing a 4-approximation to r-bounded set cover
+
+    767 is NP-hard (such an r exists by Theorem 2.6). We will reduce giving a 4-approximation of
+
+    768 r-bounded set cover to MOCSP.
+
+    769  The reduction R works as follows. On an instance (c, S1, . . . , St) of SetCoverr,n,t, R first
+
+    770 computes the integer m that is the least power of two greater than n3. Next, R computes
+
+    771 the partition P = (P1, . . . , Pn) of [m] where for all i  [n]
+
+    772  Pi = {j  [m] : j  i mod n}.
+
+    773 Then, R picks a truth table T of length m uniformly at random. After that, R runs the
+
+    774 algorithm A from Theorem 4.4 on the input (0n, 0t, T, P) to obtain the circuit Cn,t,T,P .
+
+    775 Finally, R outputs MOCSP(Cn,t,T,P (c, S1, . . . , St)).
+
+    776  Now, we argue for correctness. Theorem 4.4 guarantees that Cn,t,T,P correctly answers all
+
+    777 YES instances of SetCoverr,n,t, so R also correctly answers all YES instances of SetCoverr,n,t.
+
+    778  On the other hand, observe that our construction of P guarantees that |Pi|  m/n - 1
+
+    779 for all i  [n], so Lemma 4.6 implies that T is (rn)-irritable on P with high probability.
+
+    780 Therefore, Theorem 4.1 further implies that with high probability Cn,t,T,P (and hence R)
+
+    781 computes a 4-approximation to r-bounded set cover.
+     R.Ilango                                                                                         21
+
+782 Using more queries to MOCSP, we can improve the RP reduction to a ZPP reduction by
+783 checking if the randomly chosen T is indeed (rn)-irritable on P.
+
+784 Corollary 4.8. NP tZtPP MOCSP.
+
+785 Proof. Run the same reduction as in the proof of Corollary 4.7 except check whether T
+786 is (rn)-irritable on P using the MOCSP oracle. This can be done at the same time the
+787 as the MOCSP oracle answers MOCSP(Cn,t,T,P (c, S1, . . . , St)). If T is indeed (rn)-irritable
+788 on P, then we know the output given by MOCSP(Cn,t,T,P (c, S1, . . . , St)) is correct using
+789 Theorem 4.1. Otherwise, output "don't know."
+
+790 We can also use non-uniform bits to provide the reduction with a truth table T and a
+791 partition P such that T is sufficiently irritable on P. This yields an AC0 many-one reduction.
+
+792 Corollary 4.9. MOCSP is NP-hard under (non-uniform) AC0 many-one reductions.
+
+793 Proof. Let r be large enough that computing a 4-approximation to r-bounded set cover is
+794 NP-hard. It suffices to show that for all sufficiently large n and t, there is an AC0 circuit C
+
+795 such that MOCSP  C computes a 4-approximation to SetCoverr,n,t.
+
+796  By Lemma 4.6 for sufficiently large n, there exists a truth table T of length O(n3) and
+
+797 a partition P = (P1, . . . , Pn) of [m] such that T is (rn)-irritable on P. Thus, letting A be
+798 the algorithm from Theorem 4.4, A(0n, 0t, T, P) outputs a depth-2 AC0 circuit C such that
+
+799 MOCSP  C computes a 4-approximation to SetCoverr,n,t, as desired.
+
+800 At this point, one might begin to speculate whether we can prove that MOCSP is NP-
+
+801 hard under deterministic polynomial-time reductions. Unfortunately, this seems difficult.
+
+802 This is because Murray and Williams' [22] and Hitchcock and Pavan's [17] result that
+803 NP tPt MCSP = EXP = ZPP also holds for MOCSP with essentially the same proof. For
+804 completeness, we give the MOCSP version of Murray and Williams' proof in Appendix B.
+
+805 Theorem 4.10 (Essentially proved in [22] and [17]). If NP Ptt MOCSP, then EXP = ZPP.
+
+806 Still, it seems plausible to us that MOCSP is hard for NP under Turing reductions. Indeed,
+807 Theorem 4.4 implies that, to prove a P-Turing reduction, it suffices to show that that there is
+808 a polynomial time algorithm B, with oracle access to MOCSP, such that for all large n, B(0n)
+809 outputs a truth table T and a partition P = (P1, . . . , Pn) such that T is (rn)-irritable on P.
+810 We stress that B has access to MOCSP, so B can actually check whether T is (rn)-irritable
+811 on P and make adjustments accordingly.
+
+812 Conjecture 4.11. NP PT MOCSP.
+
+813  Maybe it is even possible to prove that such a B exists if E  i.o-SIZE[2O(n)].
+
+814 Open Question 4.12. Can one show that E  i.o-SIZE[2O(n)] implies NP TP MOCSP?
+
+815  References
+
+816 1 Eric Allender, Harry Buhrman, Michal Koucký, Dieter van Melkebeek, and Detlef Ronneburger.
+
+817  Power from random strings. SIAM J. Comput., 35(6):1467­1493, 2006.
+
+818 2 Eric Allender and Bireswar Das. Zero knowledge and circuit minimization. Information and
+
+819  Computation, 256:2­8, 2017.
+
+820 3 Eric Allender and Shuichi Hirahara. New insights on the (non-)hardness of circuit minimization
+
+821  and related problems. In Symposium on Mathematical Foundations of Computer Science
+
+822  (MFCS), pages 54:1­54:14, 2017.
+22       AC0[p] Lower Bounds and NP-Hardness for Variants of MCSP
+
+    823 4 Eric Allender, Dhiraj Holden, and Valentine Kabanets. The minimum oracle circuit size
+
+    824  problem. Computational Complexity, 26(2):469­496, 2017.
+
+    825 5 Eric Allender, Rahul Ilango, and Neekon Vafa. The non-hardness of approximating circuit
+
+    826  size. Electronic Colloquium on Computational Complexity, TR18-173, 2018.
+
+    827 6 Eric Allender, Michal Koucký, Detlef Ronneburger, and Sambuddha Roy. The pervasive reach
+
+    828  of resource-bounded kolmogorov complexity in computational complexity theory. Journal of
+
+    829  Computer and System Sciences, 77(1):14 ­ 40, 2011.
+
+    830 7 Sanjeev Arora and Boaz Barak. Computational Complexity: A Modern Approach. Cambridge
+
+    831  University Press, 2009.
+
+    832 8 Harry Buhrman and Leen Torenvliet. Randomness is hard. SIAM Journal on Computing,
+
+    833  30:200­1, 2000.
+
+    834 9 Marco L. Carmosino, Russell Impagliazzo, Valentine Kabanets, and Antonina Kolokolova.
+
+    835  Learning algorithms from natural proofs. In Computational Complexity Conference (CCC),
+
+    836  pages 10:1­10:24, 2016.
+
+    837 10 Uriel Feige. A threshold of ln n for approximating set cover. J. ACM, 45(4):634­652, 1998.
+
+    838 11 Alexander Golovnev, Rahul Ilango, Russell Impagliazzo, Valentine Kabanets, Antonina Koloko-
+
+    839  lova, and Avishay Tal. AC0[p] lower bounds against MCSP via the coin problem. Electronic
+
+    840  Colloquium on Computational Complexity, TR19-018, 2019.
+
+    841 12 G.H. Hardy and E. M. Wright. An Introduction to the Theory of Numbers. Clarendon Press,
+
+    842  Oxford, England, 5th edition, 1979.
+
+    843 13 Shuichi Hirahara. Non-black-box worst-case to average-case reductions within NP. In Sym-
+
+    844  posium on Foundations of Computer Science (FOCS), pages 247­258, 2018.
+
+    845 14 Shuichi Hirahara, Igor C. Oliveira, and Rahul Santhanam. NP-hardness of minimum circuit
+
+    846  size problem for OR-AND-MOD circuits. In Computational Complexity Conference (CCC),
+
+    847  pages 5:1­5:31, 2018.
+
+    848 15 Shuichi Hirahara and Rahul Santhanam. On the average-case complexity of MCSP and its
+
+    849  variants. In Computational Complexity Conference (CCC), pages 7:1­7:20, 2017.
+
+    850 16 Shuichi Hirahara and Osamu Watanabe. Limits of minimum circuit size problem as oracle. In
+
+    851  Computational Complexity Conference (CCC), pages 18:1­18:20, 2016.
+
+    852 17 John Hitchcock and Aduri Pavan. On the NP-completeness of the minimum circuit size
+
+    853  problem. In Conference on Foundation of Software Technology and Theoretical Computer
+
+    854  Science (FSTTCS), 2015.
+
+    855 18 Russell Impagliazzo, Valentine Kabanets, and Ilya Volkovich. The Power of Natural Properties
+
+    856  as Oracles. In Computational Complexity Conference (CCC), pages 7:1­7:20, 2018.
+
+    857 19 Valentine Kabanets and Jin-Yi Cai. Circuit minimization problem. In Proceedings of ACM
+
+    858  Symposium on Theory of Computing (STOC), pages 73­79, 2000.
+
+    859 20 William J. Masek. Some NP-complete set covering problems. Unpublished Manuscript, 1979.
+
+    860 21 Colin McDiarmid. On the method of bounded differences. In Surveys in Combinatorics,
+
+    861  (Norwich, 1989), London Math. Soc. Lecture Note Ser. 141 . Cambridge Univ. Press, Cambridge,
+
+    862  (1989), pp. 48­188.
+
+    863 22 Cody D. Murray and R. Ryan Williams. On the (non) NP-hardness of computing circuit
+
+    864  complexity. In Computational Complexity Conference (CCC), pages 365­380, 2015.
+
+    865 23 Noam Nisan and Avi Wigderson. Hardness vs randomness. J. Comput. Syst. Sci., 49(2):149­167,
+
+    866  1994.
+
+    867 24 Igor C. Oliveira, Ján Pich, and Rahul Santhanam. Hardness magnification near state-of-the-art
+
+    868  lower bounds. Electronic Colloquium on Computational Complexity, TR18-158, 2018.
+
+    869 25 Igor C. Oliveira and Rahul Santhanam. Conspiracies between learning algorithms, circuit
+
+    870  lower bounds, and pseudorandomness. In Computational Complexity Conference (CCC), pages
+
+    871  18:1­18:49, 2017.
+
+    872 26 Igor C. Oliveira and Rahul Santhanam. Hardness magnification for natural problems. In
+
+    873  Symposium on Foundations of Computer Science (FOCS), pages 65­76, 2018.
+     R.Ilango                                                                                         23
+
+874 27 A. A. Razborov. Lower bounds on the size of constant-depth networks over a complete basis
+
+875  with logical addition. Mathematicheskie Zametki, 41(4):598­607, 1987.
+
+876 28 Ronen Shaltiel and Emanuele Viola. Hardness amplification proofs require majority. SIAM J.
+
+877  Comput., 39(7):3122­3154, 2010.
+
+878 29 R. Smolensky. On representations by low-degree polynomials. In FOCS, pages 130­138, 1993.
+
+879 30 Boris Trakhtenbrot. A survey of Russian approaches to perebor (brute-force searches) al-
+
+880  gorithms. IEEE Ann. Hist. Comput., 6(4):384­400, October 1984.
+
+881 31 Luca Trevisan. Non-approximability results for optimization problems on bounded degree
+
+882  instances. In Proceedings of the ACM Symposium on Theory of Computing (STOC), pages
+
+883  453­461, 2001.
+
+884 32 Stanislav Zák. A Turing machine time hierarchy. Theoretical Computer Science, 26(3):327­333,
+
+885  1983.
+
+A 886 MAJORITY reduces to (ACd0)-MCSP when Lipchitzness holds
+
+887 Our goal in this section is to find a small (ACd0)-MCSP-oracle circuit that computes MAJORITY
+888 on n-bits for sufficiently large n. We can do this using the techniques of Golovnev et al. [11].
+
+889 In order to make our proof relatively self-contained, we differ slightly from the presentation
+
+890 in [11]. In particular, our presentation follows a method for computing MAJORITY that is
+
+891 described in Shaltiel and Viola [28].
+
+892 At a high-level, this procedure works by using the input string to sample a random
+
+893 variable whose circuit complexity spikes depending on the weight of the input and then
+
+894 using Lipchitzness to prove that this spike occurs with high enough probability that we can
+
+895 derandomize using non-uniformity.
+
+896  Continuing the notation from Section 3, assume that there is an m  {q10, q50} such that
+
+897 CCACd0 is (m.25)-Lipchitz on inputs of length m.
+     We define the random variable Tp,m  {0, 1}m where each bit in Tp,m is independently
+898
+
+899 chosen to be one with probability p and zero with probability 1 - p.
+
+900  Lemma A.1. E[CCAC0d (Tp,m)] = O~(pm) if p  m-1/3
+
+901 Proof. By Hoeffding's inequality we have that the probability that Tp,m has greater than
+902 k ones is at most exp(-2 2m). Via computation by DNF, if a truth table T  {0, 1}m has
+903 at most k ones, CCACd0 (T ) = k log m = O~(k). Similarly, we have that max{C(T ) : T 
+904 {0, 1}m} = O~(m). Hence, we get that
+
+905  E[CCACd0 (Tp,m)] = O~(k) + O~(exp(-2 2m)m) = O~(pm + pm + exp(-2 2m)m).
+
+906 If we set =  ln m   ,  then  we  have
+                 2m
+
+907  E[CCAC0d  (Tp,m)]     O~(pm  +        ln  m  +  1)    O~(pm  +       ln  m)
+                                     pm                                m
+
+908 Finally, if p  1/m1/3, we have E[Tp,m] = O~(pm) as desired
+
+909 We will make use of the following concentration inequality.
+
+910 Theorem A.2 (McDiarmid's "bounded differences inequality" [21]). Let f : {0, 1}n  R
+911 be c-Lipchitz. Let X1, . . . , Xn be independent random variables with values in {0, 1}. Let
+912 µ = EX1,...,Xn [f (X1, . . . , Xn)]. Then
+
+                                                     2
+
+913  Pr[|f (X1, . . . , Xn) - µ|  ]  2exp(- nc2 ).
+24       AC0[p] Lower Bounds and NP-Hardness for Variants of MCSP
+
+    914  For t  N and w1 = w2  [t], we say a Boolean function f : {0, 1}t  {0, 1} computes
+
+    915 WTDISt[w1, w2] if wt(x) = w1 implies f (x) = 1 and wt(x) = w2 implies f (x) = 0. (WTDIS
+
+    916 is short for weight distinguishing.)
+
+                                                                                              
+    917 Theorem A.3. If n is sufficiently large, then for all 1  b  q/2, there exists a (non-
+
+    918 uniform) NC0 oracle circuit C with at most O(n100) wires such that C(ACd0)-MCSP computes
+                                                        
+
+    919 WTDISq[w1, w1 + b] for some w1  q/2. Moreover, C has a single gate.
+
+    920  Proof.  For  w  [q],    let  pw    =   w   .  Letw0  be   the largest   integer  less  than  q   such   that  q - w0
+                                                2q                   
+
+    921 is a multiple of b. (Note that w0  q - b  q/2).
+
+    922  By Lemma A.1, we have that
+
+                                            
+                                             q m) = O~(m/q).
+    923  E[CCACd0 (Tpw0 ,m)] = O~(          q
+
+    924 On the other hand, since pq = 1/2, Tpq,m is just a binary string of length m picked uniformly
+    925 at random, so the formula size lower bounds of Shannon and Riordan imply
+
+    926  E[CCAC0d (Tpq,m)]       =        E [C(x)]        =   ~ (m)
+
+                                      x{0,1}m
+
+    927  (note  that  an  AC0d  formula     of  size   s  implies     an unrestricted  formula  of  size  s).  Hence,  by  an
+                                                                         
+    928 averaging argument there exists a w1  w0  q/2 such that
+
+         E[CCACd0 (Tpw1+b,m)]            -  E[CC(Tpw1 ,m)]         ~ (m)      -  O~(m/q)  =  ~ (m/q).
+                                                                                 q
+    929
+
+    930  Let t   =    . E[Tpw1+b,m]+E[Tpw1 ,m]         Then we have that E[Tpw1+b,m] - t = ~ (m/q) and t -
+    931
+                                       2
+         E[Tpw1 ,m] = ~ (m/q).
+
+    932 We now outline a probabilistic oracle circuit D that we will later make into a deterministic
+
+    933 NC0 circuit. D takes as input a string x  {0, 1}n and takes as its random "inputs" strings
+
+    934 u1, . . . , um  {0, 1}log q and v1, . . . , vm  {0, 1}. The reduction then computes the string
+
+    935 y := y1 . . . ym where yi is zero if vi is zero and yi is the uith bit of x if vi is one (recall, q is a
+    936 power of two). D then outputs (ACd0)-MCSP(y, t).
+
+    937  We now argue for correctness with high probability. Realize each yi is independent with
+
+    938  probability  wt(x)  of  being      1.  Hence,    y  is  just    the  random  variable  Tpw ,m    where  w  = wt(x).
+                        2n
+
+    939 Hence, if wt(x) = w1, then
+
+    940  Pr[R(x) = 1] = Pr[C(Tpw1 ,m) > t]
+
+    941  Recall that t -   E[Tpw1 ,m] = ~ (m/q)           and, by      assumption, CCAC0d       on  inputs of length   m   is
+    942  (m.25)-Lipchitz,  so by Theorem A.2,             we have      that this probability    is  bounded by
+
+    943  2exp(-2        ~ (m2)        )     exp(-2     ~ (q.5·10)  )  =  O(exp(-q3))
+                      O~ (q 2 m1.5 )                    O~(q2)
+
+    944 using the fact that m  q10. A similar analysis shows that the probability D errs if
+    945 wt(x) = w1 + b is at most O(exp(-q3)). This completes the analysis of D.
+    946 We now argue that this reduction can be derandomized using non-uniformity. For each
+
+    947 input of weight either w1 or w1 + b, we have shown the fraction of random strings which err
+    948 on that input is O(exp(-q3)). Hence, the fraction of random seeds which err on at least one
+
+    949 input of weight w1 or w1 + b is at most
+
+    950  2qO(exp(-q3)) < 1
+     R.Ilango                                                                                              25
+
+951 for large enough n. Thus, there exists some fixed u1, . . . , um and v1, . . . , vm which work on all
+952 inputs of length q. Once we are (non-uniformly) given these u1, . . . , um and v1, . . . , vm which
+953 work on all inputs, we can turn D into an NC0 oracle circuit C which has just a single gate
+
+954 (an oracle gate) whose inputs are the fixed number t and the string y where each bit of y is
+955 either a fixed bit of x or zero. This yields a NC0 oracle circuit with O(m) = O(q50) = O(n100)
+
+956 wires.
+
+957 Corollary A.4. If n is sufficiently large, then for all distinct w1, w2  [n] there is an NC0
+958 oracle circuit C with at most two gates and O(n100) wires such that C(AC0d)-MCSP computes
+
+959 WTDISn[w1, w2].
+
+960 Proof. Fix some w1 = w2. Without loss of generality assume w1 < w2 (if this is not the case,
+
+961  then swap the names of w1 and w2 in this proof and add a        NOT gate to the top of C). Let
+962                                                                  n  q/2. Note that q = (n2)
+963  b=   w2 - w1.  Recall  q is the least  power of two such that   an NC0 oracle circuit D of size
+     and  bn        q/2.    Theorem A.3     guarantees there exists
+964 O(n20) such that DMCSP computes WTDISq[w3, w3 + b] for some w3  q/2  n. Finally, let
+
+965 C be the oracle circuit that on input x outputs D(y) where y = 1w3-w1 0q-n-w3+w1 x. The
+
+966 correctness of this output is guaranteed by the fact that wt(y) = w3 if and only if wt(x) = w1
+
+967 and wt(y) = w3 + b if and only if wt(x) = w2.
+
+968 Corollary A.5. If n is sufficiently large, then there exists a depth-4 AC0 truth table oracle
+969 circuit C with O(n102) wires such that C(ACd0)-MCSP computes MAJORITY on strings on length
+
+970 n.
+
+971 Proof. It suffices to show that, for all w  [n], one can check if a string x  {0, 1}n has
+
+972 weight w using a depth-3 AC0 truth-table oracle circuit Cw of size O(n101). If one is able to
+
+973 do this, then MAJORITY is computed by wn/2 Cw(x).
+
+974  For w  [n], let wtw : {0, 1}n  {0, 1} be the Boolean function that outputs one if and
+
+975 only if its input is a string of weight w. Now fix some w  [n]. We claim that
+
+976  wtw(x) =                  WTDISn[w, w ]
+
+                    w [n]:w=w
+
+977 If x has weight w, then WTDISn[w, w ](x) = 1 for all w = w, so
+
+978  wtw (x) = 1 =             WTDISn[w, w ].
+
+                    w [n]:w=w
+
+979 On the other hand, if x has weight w = w,then WTDISn[w, w ](x) = 0, so
+
+980  wtw(x) = 0 =              WTDISn[w, w ].
+
+                    w [n]:w=w
+
+981  Finally, by Corollary A.4 we have that w[n]:w=w WTDISn[w , w] is computable by a
+
+982 depth-3 AC0 truth table oracle circuit with O(n101) wires.
+
+B 983 NP Ptt MOCSP implies EXP = ZPP
+
+984 The proof of this result follows essentially exactly from Murray and Williams's [22] proof for
+985 MCSP. For completeness, we replicate the proof here (even using their words and structure).
+986 Proposition B.1. If NP Ptt MOCSP, then EXP  P/poly implies EXP = NEXP.
+26        AC0[p] Lower Bounds and NP-Hardness for Variants of MCSP
+
+    987 Proof. Assume NP Ptt MOCSP and EXP  P/poly. Let L  NTIME(2nc ) for some c  1. It
+
+    988 suffices to show that L  EXP.
+          We pad L into the L = {x012|x|c : x  L}. Note that L  NP. Hence there is a
+    989
+
+    990 polynomial-time truth table reduction from L to MOCSP. Composing the reduction from L
+    991 to L with the reduction from L to MOCSP, we get a 2c nc -time truth table reduction R
+    992 from n-bit instances of L to 2c nc -bit instances of MOCSP for some constant c .
+
+    993 Let Q(x) denote the concatenated string of all MOCSP queries produced by R in order
+
+    994 on input x. Define the language
+
+    995   BIT SQ := {(x, i) : the ith bit of Q(x) is 1}
+
+    996 BIT SQ is clearly in EXP. Since EXP  P/poly, for some d  1 there is a circuit family Cn
+
+    997 of size at most nd + d computing BIT SQ on n-bit inputs.
+
+    998   Thus, on a given instance x, we have CC(Q(x))  s(|x|) where s(|x|) := (|x| + 2c |x|c)d + d.
+
+    999 Therefore, every MOCSP query (T, s , T1, . . . , Tt) produced by the reduction R on input x
+
+    1000 satisfies
+
+    1001  CCT1,...,Tt (T )  CC(T )  e · CC(Q(x))  e · s(|x|)
+
+    1002 for some constant e since T is a substring of Q(x) (see Lemma 2.2 in [22] for a proof of this
+    1003 substring fact). This leads to the following exponential time algorithm for L:
+
+    1004 On input x, run the exponential-time reduction R(x) by using the following procedure
+
+    1005  for answering each MOCSP oracle query (T, s ; T1, . . . , Tt). If s > e · s(|x|), then
+
+    1006  respond YES to the query. Otherwise, cycle through every oracle circuit E of size
+
+    1007  at most s . If ET1,...,Tt computes T , then respond YES. If no such E is found, then
+
+    1008  respond NO.
+
+    1009 It suffices to show the procedure for answering MOCSP oracle queries runs in exponential time.
+    1010 Let n = |x|. First, we need to count the number of oracle circuits E on (log |T |  c nc)-inputs
+
+    1011 with size at most s(n) As shown in Lemma 4.6, the logarithm of the number of oracle circuit
+    1012 of size at most s(|x|) on (c nc)-inputs with t oracle functions is at most
+
+    1013  O(s(n) log(4 + t) + s(|x|) log(c nc) log(s(|x|) + log(c nc))).
+
+    1014 Since t  2c nc and s is polynomial in n, it is easy to see that the number of such circuits
+    1015 E is at most exponential. Second, one can check if an oracle circuit E satisfies ET1,...,Tt
+    1016 computes T in time polynomial in (|E| + |T | + |T1| + · · · + |Tt|) and hence exponential in n.
+    1017 As a result, L  EXP, completing the proof.
+
+    1018 Theorem B.2. If NP Ptt MOCSP, then EXP = NP  P/poly. Consequently, EXP = ZPP.
+
+    1019 Proof. For contradiction, suppose NP Ptt MOCSP and EXP = NP  P/poly. Then by
+    1020 Proposition B.1 NEXP  EXP  NP contradicting the nondeterministic time hierarchy
+    1021 theorem [32].
+
+                                                                          ECCC                         ISSN 1433-8092
+                                                                          https://eccc.weizmann.ac.il
+

@@ -1,0 +1,6 @@
+chunked census: W=100000000 (centers <= 10000000000000000) mode=nsq9 block=2000000 M=40000000000000000
+building primitive-triple table...
+primitive triples with hypotenuse <= W: 15915492
+count pass done.
+done. raw configs found: 0
+=> no full 9-square (nsq>=8) config with center <= 10000000000000000

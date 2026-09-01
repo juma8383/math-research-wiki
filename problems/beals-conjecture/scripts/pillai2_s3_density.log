@@ -1,0 +1,31 @@
+== S3 sieve quantification (forbidden primes <= 200000) ==
+e= 3: #forbidden=6001  P(2e5)=0.497969  fitted slope=0.3225 (theory 1/e=0.3333)
+      P(z): 6.81e-01  6.02e-01  5.47e-01  5.08e-01  4.98e-01
+e= 5: #forbidden=3600  P(2e5)=0.687858  fitted slope=0.1965 (theory 1/e=0.2000)
+      P(z): 8.32e-01  7.72e-01  7.28e-01  6.96e-01  6.88e-01
+e= 7: #forbidden=2545  P(2e5)=0.807257  fitted slope=0.1441 (theory 1/e=0.1429)
+      P(z): 9.30e-01  8.74e-01  8.40e-01  8.14e-01  8.07e-01
+e=11: #forbidden=1626  P(2e5)=0.863728  fitted slope=0.0787 (theory 1/e=0.0909)
+      P(z): 9.32e-01  9.08e-01  8.86e-01  8.68e-01  8.64e-01
+e=13: #forbidden=1390  P(2e5)=0.899935  fitted slope=0.0757 (theory 1/e=0.0769)
+      P(z): 9.69e-01  9.40e-01  9.20e-01  9.04e-01  9.00e-01
+e=17: #forbidden=1052  P(2e5)=0.934099  fitted slope=0.0689 (theory 1/e=0.0588)
+      P(z): 1.00e+00  9.66e-01  9.50e-01  9.37e-01  9.34e-01
+e=19: #forbidden=940  P(2e5)=0.953871  fitted slope=0.0484 (theory 1/e=0.0526)
+      P(z): 1.00e+00  9.81e-01  9.68e-01  9.57e-01  9.54e-01
+
+Extrapolated surviving density / reduction at the 1e25 box (log z = 57.565):
+  e= 3: P_e(1e25) ~ 0.3020 -> search-space reduction x3.31
+  e= 5: P_e(1e25) ~ 0.5071 -> search-space reduction x1.97
+  e= 7: P_e(1e25) ~ 0.6456 -> search-space reduction x1.55
+  e=11: P_e(1e25) ~ 0.7645 -> search-space reduction x1.31
+  e=13: P_e(1e25) ~ 0.8003 -> search-space reduction x1.25
+  e=17: P_e(1e25) ~ 0.8394 -> search-space reduction x1.19
+  e=19: P_e(1e25) ~ 0.8848 -> search-space reduction x1.13
+
+Combined (u,v) reduction ~ 1/(P_u * P_v) at the 1e25 box:
+  (u,v)=(5,3): 2.0 x 3.3 = x6.5
+  (u,v)=(3,5): 3.3 x 2.0 = x6.5
+  (u,v)=(7,3): 1.5 x 3.3 = x5.1
+  (u,v)=(3,7): 3.3 x 1.5 = x5.1
+  (u,v)=(5,7): 2.0 x 1.5 = x3.1

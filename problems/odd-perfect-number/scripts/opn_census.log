@@ -1,0 +1,84 @@
+==============================================================================
+S1  SELF-TESTS  (start     0.0s)
+==============================================================================
+  sigma(6) == 2n ? OK
+  sigma(28) == 2n ? OK
+  sigma(496) == 2n ? OK
+  sigma(8128) == 2n ? OK
+  sigma(33550336) == 2n ? OK
+  sigma(12) != 2n (non-perfect) ? OK
+  sigma(945) != 2n (non-perfect) ? OK
+  sigma(22021) != 2n (non-perfect) ? OK
+  945 = {3: 3, 5: 1, 7: 1} ; sigma/n = 128/63 > 1 (abundant: True)
+
+  Descartes spoof D = 198585576189
+  spoof sigma (22021 treated as prime) == 2D ? OK
+  factor(22021) = {19: 2, 61: 1}   <- 23*457 = 10511, so the 23*457 claim is FALSE
+  true sigma(D)/D = 23622/11011 = 2.1453092362  (D abundant: True)
+  spoof over-count factor: true/spoof abundancy = 11811/11011
+  spoof Euler-form: 22021 mod 4 = 1 (Euler p=1 mod 4), exponent 1 (odd): OK
+  spoof D mod 12 = 9, D mod 36 = 9  (Touchard classes: 1 mod 12 or 9 mod 36)
+  spoof passes Touchard congruence: True
+  window on written set {3,7,11,13,22021}: prod(1+1/p)=39424/22021<=2? True ; sum 1/(p-1)=0.8500>log2? True
+
+  Voight spoof V = -22017975903 (negative base -127)
+  spoof sigma(V) == 2V exactly ? OK
+
+S1 done     0.0s
+
+==============================================================================
+S2  LEMMA VERIFICATION SWEEPS  (    0.0s)
+==============================================================================
+  Lemma O1 sweep: 3322 (p,a) pairs, v2(sigma(p^a))==1 <=> (p=1 mod4, a=1 mod4): OK (0 mismatches)
+  Lemma O2 mod-3 sweep: 5967 (p,a) pairs, 3|sigma(p^a) iff a odd (p=2 mod 3): OK (0 mismatches)
+S2 done     0.0s
+
+==============================================================================
+S3  CENSUS A: abundancy-window prime-set census (Lemma O3)  (    0.0s)
+==============================================================================
+  box: odd primes <= 100 (24 primes)
+  exact rational re-check of window on float survivors: 589031/589031 pass
+
+  --- k=10 (general omega>=10, Nielsen 2015)
+  DFS nodes explored: 2060065
+  prime-set structures in box passing window (i)+(ii): 589031
+  (window,p0) pairs passing window + Euler budget (iii): 2530775
+  sum log(1+1/p) over survivors: min 0.469644, max 0.693147  (log 2 = 0.693147)
+  smallest prime in a budget-surviving set: 3 ; special-prime values used (first 10): [5, 17, 53, 73, 89, 97]
+    e.g. S=[3, 5, 7, 67, 71, 73, 79, 83, 89, 97] p0=5 budget=764965958354335078284427397651/852029175000474374729128432605 (= 0.897817)
+    e.g. S=[3, 5, 7, 67, 71, 73, 79, 83, 89, 97] p0=73 budget=54718304108025513994507251487/58358162671265368132132084425 (= 0.937629)
+    e.g. S=[3, 5, 7, 67, 71, 73, 79, 83, 89, 97] p0=89 budget=44884244915427756267335140559/47866807584296313187029687225 (= 0.937690)
+    e.g. S=[3, 5, 7, 67, 71, 73, 79, 83, 89, 97] p0=97 budget=41183328384230259977431692583/43919029639199710037583939825 (= 0.937710)
+  min-prime distribution of window survivors (first 12): [(3, 523832), (5, 65199)]
+  exact rational re-check of window on float survivors: 255402/255402 pass
+
+  --- k=12 with 3 !| N (Nielsen 2007)
+  DFS nodes explored: 896483
+  prime-set structures in box passing window (i)+(ii): 255402
+  (window,p0) pairs passing window + Euler budget (iii): 1473637
+  sum log(1+1/p) over survivors: min 0.571742, max 0.693146  (log 2 = 0.693147)
+  smallest prime in a budget-surviving set: 5 ; special-prime values used (first 10): [5, 13, 17, 53, 89, 97]
+    e.g. S=[5, 7, 11, 13, 17, 19, 23, 53, 79, 83, 89, 97] p0=5 budget=1927169287836863584083410108644599/2488768288076408264427254502794045 (= 0.774347)
+    e.g. S=[5, 7, 11, 13, 17, 19, 23, 53, 79, 83, 89, 97] p0=13 budget=773843684532885883735087151335983/957218572337080101702790193382325 (= 0.808429)
+    e.g. S=[5, 7, 11, 13, 17, 19, 23, 53, 79, 83, 89, 97] p0=17 budget=593561283642316758673374037194987/731990672963649489537427794939425 (= 0.810886)
+    e.g. S=[5, 7, 11, 13, 17, 19, 23, 53, 79, 83, 89, 97] p0=53 budget=191116417112580809393557032201543/234789461139283798530873066301325 (= 0.813991)
+  min-prime distribution of window survivors (first 12): [(5, 255402)]
+
+S3 done   122.2s
+
+==============================================================================
+S4  CENSUS B: divisor-sum sieve over odd n <= 10^7  (  122.2s)
+==============================================================================
+  numpy available: True
+  sieve loop done in 8.5s
+  odd n <= 10000000 with sigma(n) == 2n : 0  (none)
+  odd n <= 10000000 in Touchard classes (1 mod 12: 833334, 9 mod 36: 277778) = 11.11%
+  sieve vs exact sigma on 500 random odd n: OK (0 mismatches)
+  exact-sigma re-check of known perfects: OK
+
+S4 done   130.9s
+
+==============================================================================
+ALL SELF-TESTS PASSED; censuses complete. Log: opn_census.log
+Total runtime 130.9s
+==============================================================================

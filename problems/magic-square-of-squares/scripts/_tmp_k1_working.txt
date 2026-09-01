@@ -1,0 +1,55 @@
+# K-equation valuation/size analysis (working notes, this session)
+
+Setup: p<q, pi=a+bi (a^2+b^2=p), rho=c+di (c^2+d^2=q).
+Y_p=|Im pi^4|, R_p=|Re pi^4|, 0<R_p<p^2 (Im pi^4 != 0), R_p!=0 (3+-2sqrt2 irrational).
+S3: p|Y_p, p|R_p, q|Y_q, q|R_q NEVER.
+Cross-divisibility CAN happen: q|Y_p, q|R_p, p|Y_q, p|R_q (empirical).
+
+Elements and valuations:
+  A=p^2 Y_q : v_p = 2+v_p(Y_q), v_q = 0
+  B=q^2 Y_p : v_q = 2+v_q(Y_p), v_p = 0
+  D0=X+Y=R_pY_q+Y_pR_q
+  C=|X-Y|
+
+## K2  2R_pY_q = q^2Y_p   ==>   DEAD
+  v_q: v_q(R_p) = 2+v_q(Y_p) >= 2  ==> q^2 | R_p.
+  But 0 < R_p < p^2 < q^2.  Impossible.  PROVED (script-verified 0/53956).
+
+## K11  2B=A  i.e. 2q^2Y_p = p^2Y_q   ==>   DEAD
+  v_q(LHS)=2+v_q(Y_p)>=2, v_q(RHS)=v_q(Y_q)=0.  DEAD.
+
+## K9  2A=B  i.e. 2p^2Y_q = q^2Y_p   ==>   DEAD (same argument at p)
+  v_p(LHS)=2+v_p(Y_q)>=2, v_p(RHS)=v_p(Y_p)=0.  DEAD.
+
+## K1  p^2Y_q = 2Y_pR_q
+  v_p: p^2 | R_q (i.e. v_p(R_q) = 2+v_p(Y_q) >= 2).
+  v_q: v_q(Y_p) = 0 (since v_q(Y_q)=0=v_q(R_q)).
+  Mod-8 GATE (Lemma A below): p|R_q requires p==1 mod 8 AND chi_p(q)=chi_p((2+sqrt2)/4).
+  So K1 vacuous for p==5 mod 8 (half of pairs). p^2|R_q DOES occur (99 hits q<=1e5).
+  No size kill: R_q < q^2 is compatible with p^2 | R_q.
+
+## K10 2A=D0: 2p^2Y_q = R_pY_q+Y_pR_q
+  If v_p(Y_q)>=1 then v_p(2nd term)=0 != 0 => v_p(RHS)=0 unless R_q has p-factors...
+  RHS mod p = R_pY_q+Y_pR_q; needs v_p = 3+v_p(Y_q) >= 3. No kill (needs 3-term
+  cancellation). Open.
+
+## K12 2B=D0: 2q^2Y_p = R_pY_q+Y_pR_q
+  v_q(LHS)=2. v_q(R_pY_q)=v_q(R_p), v_q(Y_pR_q)=v_q(Y_p). If both 0, the sum can
+  still cancel mod q => NO forced individual divisibility (my first "both>=1"
+  claim was WRONG - cancellation). Open.
+  Cross-check "q|Y_p AND q|R_p => q^2|p^4 impossible": applies only if an
+  equation forces BOTH q|Y_p and q|R_p; K12 does NOT (cancellation escape).
+
+## K15 2D0=A / K16 2D0=B: same cancellation escape. Open.
+
+## K13/K14 (2C=A/B): sign branches; X>=Y branch of K13:
+  2(R_pY_q-Y_pR_q)=p^2Y_q; mod q: 2R_pY_q-2Y_pR_q==0 - genuine constraint. Open.
+
+## Lemma A (cross-prime R gate; NECESSITY only)
+  R_q = |q^2-8c^2d^2| (identity R_q=|8c^4-8qc^2+q^2|, script-verified).
+  p|R_q => 8x^2-8x+1==0 mod p with x=c^2/q  =>  x=(2+-sqrt2)/4 mod p
+  => sqrt2 exists mod p (p==1 mod 8) and chi_p(q)=chi_p((2+sqrt2)/4) (the two
+  roots have the same character since x1*x2=1/8, chi(2)=1 for p==1 mod 8).
+  REVERSE FALSE: coset condition necessary not sufficient (4966/5148 coset
+  pairs to q<=3000 have p∤R_q): the actual rep (c,d) of q is one specific
+  point on the mod-p circle c^2+d^2==q, not one of the 8 quartic-root points.

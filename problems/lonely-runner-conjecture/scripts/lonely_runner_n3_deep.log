@@ -1,0 +1,9 @@
+﻿lonely_runner_n3_deep.py -- tight-triple deep scan, Tue Sep  1 14:07:24 2026
+python 3.13.2
+cross-validation [1,14]: 0 mismatches (must be 0)
+  TIGHT: (1, 2, 3)
+n=3 deep box [1,200]: 1098601 primitive triples, 651143 full evals
+tight sets: 1 [(1, 2, 3)]
+violations (kappa < 1/4): 0
+tight with 4|v (T1 violations): 0
+elapsed: 70.5 s

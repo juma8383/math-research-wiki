@@ -1,0 +1,3956 @@
+                Electronic Colloquium on Computational Complexity, Report No. 183 (2020)
+
+1 Constant Depth Formula and Partial Function
+2 Versions of MCSP are Hard
+
+3 Rahul Ilango
+
+4 Massachusetts Institute of Technology, USA
+5 rilango@mit.edu
+
+6   Abstract
+
+7 Attempts to prove the intractability of the Minimum Circuit Size Problem (MCSP) date as far
+
+8 back as the 1950s and are well-motivated by connections to cryptography, learning theory, and
+
+9 average-case complexity. In this work, we make progress, on two fronts, towards showing MCSP is
+
+10 intractable under worst-case assumptions.
+
+11  While Masek showed in the late 1970s that the version of MCSP for DNF formulas is NP-hard,
+
+12 extending this result to the case of depth-3 AND/OR formulas was open. We show that determining
+
+13 the minimum size of a depth-d formula computing a given Boolean function is NP-hard under
+
+14 quasipolynomial-time randomized reductions for all constant d  2. Our approach is based on a
+
+15 method to "lift" depth-d formula lower bounds to depth-(d + 1). This method also implies the
+16 existence of a function with a 2d(n) additive gap between its depth-d and depth-(d + 1) formula
+
+17 complexity.
+
+18  We also make progress in the case of general, unrestricted circuits. We show that the version of
+
+19 MCSP where the input is a partial function (represented by a string in {0, 1, }) is not in P under
+
+20 the Exponential Time Hypothesis (ETH).
+
+21  Intriguingly, we formulate a notion of lower bound statements being (P/poly)-recognizable that
+
+22 is closely related to Razborov and Rudich's definition of being (P/poly)-constructive. We show
+
+23 that unless there are subexponential-sized circuits computing SAT, the collection of lower bound
+
+24 statements used to prove the correctness of our reductions cannot be (P/poly)-recognizable.
+
+25 2012 ACM Subject Classification Theory of computation  Circuit complexity; Theory of compu-
+26 tation  Problems, reductions and completeness
+
+27 Keywords and phrases Minimum Circuit Size Problem, NP hardness, Circuit Lower Bounds, Natural
+28 Proofs Barrier, Constant Depth Formulas, Minimum Formula Size Problem, Exponential Time
+29 Hypothesis
+
+30 Funding This research was supported by an Akamai Presidential Fellowship and by NSF Grants
+31 CCF-1741615 and CCF-1909429..
+
+32 Acknowledgements I would like to give a special thanks to Rahul Santhanam for valuable discussions
+33 on this work. The origins of this paper can be traced to a fruitful visit to his research group. In
+34 addition, I'm grateful to Eric Allender, Shuichi Hirahara, Bruno Loff, Dylan McKay, Igor Oliveira,
+35 Ján Pich, Ninad Rajgopal, Michael Saks, and Ryan Williams for helpful perspectives and remarks on
+36 our results and techniques. I also want to give a profuse thanks to the anonymous FOCS reviewers
+37 for their patience with the technical aspects in an earlier version of the paper and because their
+38 extremely detailed comments improved the paper significantly.
+
+                                                                                                        ISSN 1433-8092
+2      Versions of MCSP are Hard
+
+   39 Contents
+
+   40 1 Introduction                             3
+
+   41 1.1 Background and Motivation . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+
+   42  1.1.1 General Background . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+
+   43  1.1.2 Specific Background and Motivation . . . . . . . . . . . . . . . . . . . 3
+
+   44 1.2 Results and Discussion . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+
+   45  1.2.1 (C)-MCSP is Hard when C is Constant Depth Formulas . . . . . . . . 4
+
+   46  1.2.2 (C)-MCSP is Hard for General Circuits . . . . . . . . . . . . . . . . . 6
+
+   47 1.3 Proof Ideas . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+
+   48  1.3.1 Hardness for (AC0d)-MCSP. . . . . . . . . . . . . . . . . . . . . . . . . 8
+
+   49  1.3.2 Proof Sketch: Main Constant Depth Formula Lower Bound . . . . . . 10
+
+   50  1.3.3 Hardness for MCSP . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+
+   51 1.4 Connections with Constructivity and the Natural Proofs Barrier . . . . . . . 13
+
+   52 1.5 Open Questions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+
+   53 2 Preliminaries                            16
+
+   54 2.1 Background on Formulas . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+
+   55 2.2 Versions of MCSP . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+
+   56 3 ETH Hardness for MCSP                    20
+
+   57 4 Main Lower Bound for Constant Depth Formulas: From Depth d to d + 1 26
+
+   58 5 (AC0d)-MCSP is NP-hard                   31
+
+   59 6 Approximating LdO-R1(f ) Using LOd R(·)  32
+
+   60 7 NP Hardness of LO2 R                     39
+
+   61 8 OR-top to General Reduction              40
+
+   62 8.1 An alternate version avoiding the switching lemma. . . . . . . . . . . . . . . . 42
+
+   63 9 Gaps in Complexity Between Depths        44
+    R. Ilango                                                                                            3
+
+1 64 Introduction
+
+65 1.1 Background and Motivation
+
+66 1.1.1 General Background
+
+67 The Minimum Circuit Size Problem, abbreviated MCSP, requires one to determine whether
+68 a given Boolean function f : {0, 1}n  {0, 1} (represented by its truth table, a binary string
+69 of length N = 2n) is computable by circuits of size at most a given parameter s  N.
+70 Kabanets and Cai [22] initiated the "modern" study of MCSP and recent work has
+71 uncovered deep connections between MCSP and a growing number of areas including crypto-
+72 graphy, learning theory, pseudorandomness and average-case complexity.
+73 Giving an exhaustive review of these results is beyond our scope. However, we informally
+74 state some highlights and recommend an excellent survey by Allender [2] for a detailed
+75 overview.
+
+76 If MCSP is NP-hard under polynomial time many-one reductions, then EXP = ZPP [29].
+
+77  If MCSP with a fixed size parameter s = poly(n) does not have circuits of size O~(N ),
+
+78  then NP  P/poly [28].
+
+79 If MCSP  P, then there are no one-way functions [22, 12].
+
+80 If a certain "universality conjecture" is true, then the existence of one-way functions
+
+81 is equivalent to zero-error average-case hardness of MCSP (under a certain setting of
+
+82  parameters) [31].
+
+83 There is an equivalence between learning a circuit class C and the problem of "approxim-
+
+84  ately minimizing" C-circuits [8].
+
+85 If a certain approximation to MCSP is NP-hard, then there is a "worst-case to average-case"
+
+86  reduction for NP [15].
+
+87 Moreover, all but one of these results have been proved within the past five years!
+
+88 1.1.2 Specific Background and Motivation
+
+89 While it is easy to see that MCSP is in NP, it is a longstanding open question whether MCSP
+90 is NP-hard. Indeed, there is work dating back to the 1950s attempting to establish the
+91 intractability of MCSP (see [33] for a history of this early work), and Levin is said1 to have
+92 initially delayed publishing his results on the theory of NP-completeness in hopes of also
+93 showing MCSP is NP-complete. Nearly a half-century later, the question of whether MCSP
+94 is NP-complete remains wide open.
+95 One intuition for why it is difficult to prove hardness for MCSP is that producing a NO
+96 instance of MCSP corresponds to producing a function with a certain circuit complexity
+97 lower bound, a notoriously difficult task even when the desired lower bound is quite small.
+98 Kabanets and Cai formalized this intuition to show that any "natural" polynomial-time
+99 reduction from SAT to MCSP would imply breakthrough circuit lower bounds [22].
+100 We describe two potential ways researchers hope to "sidestep" having to prove strong
+101 lower bounds while still giving compelling evidence that MCSP is intractable. The first is
+102 to strengthen the assumption under which we are trying to show that MCSP is intractable.
+103 Roughly speaking, the Kabanets and Cai result suggests that proving MCSP  P under the
+104 assumption that P = NP likely requires breakthrough circuit lower bounds.
+
+    1 [4] cites a personal communication from Levin regarding this, and some discussion can be found on
+       Levin's website: https://www.cs.bu.edu/fac/lnd/research/hard.htm.
+4       Versions of MCSP are Hard
+
+   105 However, it is not clear whether a similar barrier exists to proving that, say, the Expo-
+
+   106 nential Time Hypothesis (ETH) implies that MCSP  P. In particular, we certainly know of
+
+   107 functions that require circuits of size cn for small constants c, and even brute-forcing over all
+
+   108 circuits of size n requires about n! time, which is superpolynomial in N = 2n. Thus, it is
+
+   109 conceivable that one could prove that MCSP  P under ETH by showing that the brute-force
+
+   110 algorithm for MCSP is nearly optimal when s = O(n), since this is a regime where we already
+
+   111 have lower bounds. Indeed, we view this as a tantalizing possibility.
+
+   112 Another approach to sidestep having to prove breakthrough circuit lower bounds is to
+
+   113 consider the circuit minimization task for restricted classes of circuits C that we already have
+   114 strong lower bounds against, like AC0. To formalize this, let C be some class of circuits, and
+
+   115 let (C)-MCSP be the task of determining whether a given truth table is computed by some
+
+   116 C-circuit of size at most a given parameter.
+
+   117  Despite our relatively good understanding of circuit classes like AC0, progress on proving
+
+   118 hardness for (C)-MCSP has been somewhat elusive. In 1979, Masek showed that (DNF)-MCSP
+
+   119 is NP-hard. A series of subsequent results [9, 34, 3, 10, 23] simplified Masek's proof and
+
+   120 showed near-optimal hardness of approximation for (DNF)-MCSP. However, it was only
+
+   121 recently, in 2018, that hardness was proved for a class C beyond DNFs: Hirahara, Oliveira,
+
+   122 and Santhanam [16] showed that (C)-MCSP is NP-hard when C is the class of DNF  XOR
+
+   123 circuits (that is, DNFs that are allowed to have XOR gates at its leaves).
+
+   124 Before we go on to state our results, we give a quick review of how NP-hardness is proved
+
+   125 for (DNF)-MCSP and (DNF  XOR)-MCSP. In particular, both results are proved using a
+
+   126 two part strategy that involves an intermediate problem (C)-MCSP which we define now.2
+
+   127 Roughly speaking, (C)-MCSP is the analogue of (C)-MCSP for partial truth tables.
+
+   128 Formally, (C)-MCSP is defined as follows
+
+   129  Given: the truth table T  {0, 1, }2n of an n-input partial function  : {0, 1}n  {0, 1, }
+
+   130  and a size parameter s  N
+
+   131 Determine: whether there is a C-circuit of size at most s that computes  on all its
+
+   132  {0, 1}-valued inputs.
+
+   133 We stress that the truth table T here is of length N = 2n and the function f is not represented
+
+   134 by the set of {0, 1}-valued input/output pairs {(x, f (x)) : f (x)  {0, 1}}, which could be
+
+   135 exponentially more concise. Indeed, it is known that the input/output pair representation
+
+   136 version of MCSP is NP-complete [11, 1]. However, this result makes use of the succinctness
+
+   137 of the input representation, and the instances that the reduction produces can be solved by
+
+   138 brute force in time poly(N ).
+
+   139 The two part strategy used to prove hardness for (DNF)-MCSP and (DNF  XOR)-MCSP is
+
+   140 then as follows: First, reduce an NP-hard problem to (C)-MCSP . Second, reduce (C)-MCSP
+
+   141 to (C)-MCSP.
+
+   142 Thus, the starting point of this work was to aim to prove hardness for (C)-MCSP and
+
+   143 (C)-MCSP for as expressive classes of circuits C as possible.
+
+   144 1.2 Results and Discussion
+
+   145 1.2.1 (C)-MCSP is Hard when C is Constant Depth Formulas
+
+   146 Our first result shows that (C)-MCSP is NP-hard under randomized quasipolynomial time
+   147 Turing reductions when C is the class, denoted AC0d, of depth-d formulas with AND/OR gates
+
+        2 Actually, Masek's original reduction was a direct reduction from Circuit-SAT, but later improvements
+           used this framework.
+     R. Ilango                                                                                       5
+
+148 of unbounded fan-in.
+
+149 Theorem 1 (also Theorem 22). Let d  2. Given oracle access to (ACd0)-MCSP, one can
+150 compute SAT in randomized quasipolynomial time.
+
+151 We discuss some of the ideas behind our proof in Section 1.3. In a few sentences, our
+
+152 reduction works by induction on d. The d = 2 case is given by the previously known hardness
+
+153 of (DNF)-MCSP. For the inductive step, our main technical contribution is to prove a novel
+
+154 way to "lift" depth-d lower bounds to depth-(d + 1) lower bounds. We use this technique to
+
+155 estimate the depth-d complexity of a function using an oracle that computes the depth-(d + 1)
+
+156 complexity of functions.
+
+157 Comparison to Previous Work. As we mentioned earlier, Masek [27] proved that
+
+158 (DNF)-MCSP is NP-hard in the 1970s, and Hirahara, Oliveira, and Santhanam [16] recently
+
+159 showed that (DNF  XOR)-MCSP is NP-hard.
+
+160  One way the jump from DNF and DNF  XOR to AC03 is significant is that both DNF and
+
+161 DNF  XOR circuits can be written as OR  D for a circuit class D that is not functionally
+
+162 complete (i.e., not every function can be computed by a circuit in D). In the case of DNFs
+
+163 and DNF  XOR circuits, D contains functions corresponding to subcubes and affine subspaces
+164 respectively. On the other hand, AC03 includes the class of OR  CNF formulas and CNFs
+165 are functionally complete. This makes it more involved to prove lower bounds for AC30. For
+166 example, it is still a major open question to prove explicit, strongly exponential lower bounds
+167 against AC30. This reduced understanding is our rationale for why the depth-3 case was
+168 elusive. Indeed, this difference is manifest in our results as our method for "lifting" the
+
+169 existing depth-2 result requires significantly different ideas than the ones in [27] and [16],
+
+170 though their work forms our base case.
+
+171 Another related work is the innovative paper of Buchfuhrer and Umans [7], who showed
+172 that the 2P variant of (ACd0)-MCSP is 2P -hard. In particular, they consider the problem
+173 where given an AC0d formula  and a size parameter s, one must output whether there is a
+174 AC0d formula of size at most s that computes the same function as . As we will describe later
+175 in this section, one of the first steps in our reduction is actually the same as in Buchfuhrer
+
+176 and Umans: to show that we can restrict to the case where the final output gate is assumed
+
+177 to be OR.
+
+178 After this, however, our proof strategy diverges significantly. In a sense, this divergence
+
+179 is expected since the different input representations give the two problems a very different
+
+180 character. One consequence of this difference, as Buchfuhrer and Umans note in their paper,
+
+181 is that while the succinctness of the input representation in the 2P version allows one to
+
+182 get by with clever applications of "weak" lower bounds, the full truth table representation
+183 used in MCSP and (AC0d)-MCSP means that proving NP-hardness through "the use of weak
+184 lower bounds is not even an option, under a complexity assumption."
+
+185 Finally, perhaps the most direct prior work is by Allender, Hellerstein, McCabe, Pitassi,
+
+186 and Saks [3] who extended the cryptographic hardness results for MCSP to show cryptographic
+187 hardness for computing (ACd0)-MCSP when d is sufficiently large.
+188 Using randomness to prove hardness for MCSP-type problems. While there is
+
+189 significant evidence that proving MCSP is NP-hard under deterministic reductions is beyond
+
+190 the reach of current techniques [22, 29], no such barriers are known for randomized reductions.
+
+191 Indeed, some recent results show that for close variants of MCSP, like an oracle variant
+
+192 [17] and a multi-output variant [19], one can prove the problem is NP-hard using randomized
+
+193 reductions.
+
+194 We view our reduction as a further demonstration of how one can use randomness in
+
+195 proving hardness for MCSP-related problems. Intriguingly, our result seems to use randomness
+6       Versions of MCSP are Hard
+
+   196 in a more subtle way than the aforementioned results. In particular, while the aforementioned
+
+   197 results use randomness to sample uniformly random functions, we use randomness to sample
+
+   198 functions with specific properties that uniformly random functions do not have. These
+
+   199 properties are crucial to our analysis.
+
+   200 Application: Large Gaps in Complexity Between Depths. A reasonable question
+
+   201 is whether our method used in the reduction for "lifting" depth-d lower bounds to depth-(d+1)
+
+   202 formula lower bounds can be applied to prove new lower bounds.
+
+   203 Indeed, we give such an application. One can ask how far apart can the depth-d and
+
+   204 depth-(d+1) formula complexity of a function be, additively. In our notation, this corresponds
+
+   205 to asking how large can one make the quantity Ld(f ) - Ld+1(f ).
+
+   206  Using existing depth hierarchy theorems for AC0, there exist explicit functions for which
+
+   207 this gap is at least 2n(1/d) [14].
+
+   208 Using our techniques, we are able to improve the dependence on d significantly.
+
+   209 Theorem 2 (Proved in Section 9). For all d  2 there exists a function f : {0, 1}n  {0, 1}
+   210 such that Ld(f ) - Ld+1(f )  2d(n).
+
+   211  Our proof works by "lifting" the 2(n) seperation the parity function gives in the d = 2
+
+   212 case to higher depths at a low cost. We sketch the proof of the main technique used here in
+
+   213 Section 1.3.2.
+
+   214 We note, however, that our method comes with some drawbacks. First, the lower bound is
+
+   215 existential and does not exhibit an explicit function witnessing this separation. Second, while
+
+   216 there is a large additive gap Ld-1(f ) and Ld(f ), there is only a constant factor multiplicative
+
+   217 gap between the two quantities, and lastly, (related to the previous point) it only gives a gap
+
+   218 for formulas and not circuits.
+
+   219 Despite these drawbacks, we find Theorem 2 to be especially interesting because it does
+   220 not yet seem possible to prove such a result using the usual AC0 lower bound approaches.
+
+   221 An intriguing question is how well this lower bound fits into the Natural Proofs framework
+
+   222 of Razborov and Rudich [30]. We defer discussion about this to Section 1.4.
+
+   223 1.2.2 (C)-MCSP is Hard for General Circuits
+
+   224 As we mentioned earlier, hardness for (C)-MCSP has been an important intermediate step
+   225 towards proving hardness for (C)-MCSP in previous results. This naturally motivates the
+   226 search for the most expressive class C where we can show that (C)-MCSP is hard. Perhaps
+   227 surprisingly, we are able to show hardness even in the case of general circuits, but in order
+   228 to do this we strengthen our assumption to the Exponential Time Hypothesis (ETH).
+   229 To formalize our result, let MCSP denote the the problem of (C)-MCSP where C is the
+   230 class of general circuits: that is circuits with fan-in two AND and OR gates as well as NOT
+   231 gates where the size of a circuit is the number of AND and OR gates in the circuit. We
+   232 establish that MCSP is not in P assuming ETH.
+
+   233 Theorem 3 (also Theorem 11). Assume ETH holds. Then there is no deterministic
+   234 algorithm for solving MCSP that runs in time N o(log log N). Moreover, given the truth table
+   235 of a partial function T  {0, 1, }N , there is no deterministic algorithm for deciding whether
+   236 T can be computed by a monotone read once formula that runs in time N o(log log N).
+
+   237 We prove this theorem by giving a reduction from a problem with known ETH hardness
+   238 (2n × 2n Bipartite Permutation Independent Set) to MCSP . Lokshtanov, Marx, and Saurabh
+   239 [25] showed that, under ETH, 2n×2n Bipartite Permutation Independent Set cannot be solved
+   240 in deterministic time 2o(n log n). We discuss the basic idea behind our proof in Section 1.3.
+     R. Ilango                                                                                             7
+
+241 Input Representation and Closeness of MCSP to MCSP. We again stress that the
+242 partial function input to MCSP is represented as a string in {0, 1, }2n and not as a (possibly
+243 exponentially more concise) list of input/output pairs where the partial function is defined.
+244 To highlight this difference, we note that while the input/output pair representation variant
+245 of MCSP is already known to be NP-complete under deterministic many-one reductions
+246 [11, 1], if the same were known for MCSP , then the breakthrough separation EXP = ZPP
+247 would follow from an argument by Murray and Williams [29].
+
+248 Implications for Read Once Formulas. Theorem 3 establishes that under ETH
+249 the brute force algorithm for detecting whether a partial function can be computed by a
+250 monotone read once formula is nearly optimal, since there are roughly N log log N such read
+251 once formulas. This is in sharp contrast to the case when one is given a total function f as
+252 input: in that case, one can decide if f is computable by a monotone read once formula in
+253 time poly(n) given oracle access to the truth table of the function [5], an exponential gap!
+
+254 Algorithmic Implications. Currently, the best known algorithm for solving MFSP on
+255 a truth table of length N and with a size parameter s is the brute force algorithm that runs
+256 in time N s2O(s log n). There have been some efforts [36] hoping to reduce the exponential
+257 dependence from s log n to s. Theorem 3 suggests that the exponential s log n dependence
+258 may be necessary when the input is a partial truth table, at least in the regime where
+259 s = O(n).
+
+260 Open Question: Extension to MCSP? A natural question is whether this result
+261 can be extended to show that MCSP  P under ETH. We already know reductions from
+262 (C)-MCSP to (C)-MCSP for the classes DNF and DNF  XOR, so perhaps one can also reduce
+263 MCSP to MCSP.3
+
+264 In our opinion, however, the most promising approach is to skip MCSP entirely and
+265 extend our techniques to apply to MCSP directly. In particular, our MCSP hardness result
+266 can be viewed in a more general framework that we describe now. Let f : {0, 1}n  {0, 1}
+267 be a function whose optimal circuits have size exactly s. Let F : {0, 1}n × {0, 1}k  {0, 1}.
+268 We say that F is a simple extension of f if
+
+269  F depends on all its inputs,
+
+270  F can be computed by a circuit of size s + k, and
+
+271  there exists a y0  {0, 1}k such that for all x  {0, 1}n we have F (x, y0) = f (x).
+
+272 Essentially, the definition of a simple extension of an optimal f -circuit is made so that we
+
+273 can apply a "reverse gate elimination" argument (we describe what this is in Section 1.3)
+
+274 to argue that any optimal circuit for F is obtained by taking an optimal circuit for f and
+
+275 "uneliminating" (i.e. adding) gates "in a specific way."
+
+276 From our definition, it is easy to see that one can compute whether F is a simple extension
+277 of f using an oracle to MCSP. Thus, if one can show hardness for deciding whether F is a
+278 simple extension of f , then one has established hardness for MCSP.
+
+279 Indeed, our approach to proving hardness for MCSP essentially shows that deciding
+
+280 whether a partial function F is a simple extension of ORn (the OR function on n bits) cannot
+281 be solved in time N o(log log N) under ETH.
+
+282 We believe that one might be able to prove a similar hardness result for MCSP by letting
+283 f be a function other than ORn. Indeed the difficultly with using f = ORn to try to prove
+284 hardness for MCSP is that the set of optimal ORn circuits is so well structured that it is easy
+
+     3 Subsequent to this work, the author was able to prove that (Formula)-MCSP is not in P under ETH by
+        giving a reduction from (Formula)-MCSP to (Formula)-MCSP.
+8       Versions of MCSP are Hard
+
+   285 to decide whether any total function F is a simple extension of f = ORn. This difficultly is
+   286 manifest in any function f whose optimal circuits are read once formulas.
+   287 Thus, the missing component in extending our results to MCSP is finding some function
+   288 f whose optimal circuits we can characterize but are also sufficiently complex. Since we
+   289 can make do with linear-sized optimal circuits, we see no immediate reason why existing
+   290 techniques cannot yield such an f .
+
+   291 1.3 Proof Ideas
+
+   292 1.3.1 Hardness for (AC0d)-MCSP.
+
+   293 Before we begin, we introduce some notation. The size of a formula  is denoted by || and
+
+   294 equals the number of leaves in the binary tree underlying . Given a Boolean function f ,
+
+   295 Ld(f ) denotes the size of the smallest depth-d formula computing f . LdOR(f ) and LAdND(f )
+   296 denote the size of the smallest depth-d formula whose output/top gate is an OR or AND gate
+
+   297 respectively.
+
+   298 Three Step Overview. At a high-level, our strategy for proving the NP-hardness of
+
+   299 computing Ld(·) breaks into three parts.
+
+   300 1. Show that for all d  2 one can reduce computing LOd R to Ld, so it suffices to prove NP
+
+   301  hardness for LOd R.
+
+   302 2. Show that when d = 2 it is NP-hard to compute LOd R within any constant factor (this
+
+   303  part was already known).
+
+   304 3. Show that when d  3 one can compute a small approximation of LOd-R1 using an oracle
+
+   305  that computes a small approximation of LOd R. Conclude that Ld is NP-hard to compute
+
+   306  for all d  2.
+
+   307 We now describe each of these steps in order.
+
+   308 Step 1: Restrict to a Top OR Gate. The idea in Step (1) to restrict the top gate of
+
+   309 the formula is also used in the aforementioned result of Buchfuhrer and Umans [7]. However,
+
+   310 the method they use to restrict the top gate can blow up the size of the corresponding truth
+
+   311 table exponentially. We modify their approach using existing depth hierarchy theorems for
+   312 AC0 (the statement of the depth-hierarchy theorem in [13] is easiest for us to use) in order to
+
+   313 give a quasipolynomial time reduction from computing LOd R to Ld.
+   314 We note that this is the only part of our proof that makes use of classical "switching
+
+   315 lemma style" lower bound techniques. This dependence, however, is not strictly necessarily:
+
+   316 we also show that one can avoid "switching lemma" type techniques in the proof altogether
+
+   317 at the cost of losing some hardness of approximation.
+
+   318 At a high-level, the key idea for how to prove step (1) is to take the direct sum of f with
+
+   319 a function g that is much easier to compute with a top OR gate than a top AND gate in
+
+   320 order to force any optimal depth-d formula for computing the direct sum to use a top OR
+
+   321 gate.
+
+   322  Step 2: d = 2 Base Case. In step (2), we use the NP-hardness of computing LOd R to
+
+   323 any constant factor when d = 2 as the base case of our inductive approach. This result
+
+   324 (actually a stronger version) was first proved in the work of Feldman [10] and Allender et al.
+
+   325 [3] and was subsequently improved by Khot and Saket [23]. There is a technicality in that
+
+   326 these results use a slightly different size measure for DNFs: the number of terms in a DNF
+
+   327 rather than the number of leaves. However, we show that there is an easy reduction between
+
+   328 computing the two size measures for DNFs.
+
+   329 Step 3: d  3 Inductive Argument. Finally, Step (3)'s connection between computing
+   330 LdOR and LOd-R1 is the heart of our reduction and required several new ideas. Since the goal
+     R. Ilango                                                                                         9
+
+331 in this step is to be able to compute LOd-R1(f ) for some function f using an oracle to LOd R, a
+332 natural approach is to construct some function F such that any optimal OR  ACd0-1 formula
+333 for F must "contain" an optimal OR  ACd0-2 formula for f "within" it. Our original hope
+334 was to be able to force such a situation using a "switching lemma style" argument, but we
+
+335 were not able to figure out how to make this approach to work.
+
+336 Instead, we take an approach based on direct sums. Our proof of step (3) begins with an
+
+337 observation that, while trivial, was an important perspective switch (at least for the author):
+
+338 DeMorgan's laws imply that LOd-R1(f ) = LAd-ND1 (¬f ) for all functions f . Thus, if we want to
+339 compute LOd-R1(f ) given an oracle to Ld for any function f , it suffices to show how to compute
+340 LdA-ND1 (f ) using an oracle to Ld for any function f .
+
+341 The natural approach mentioned above then becomes to try constructing a function F
+
+342 such that any optimal OR  ACd0-1 formula for F contains an optimal AND  AC0d-2 formula
+
+343 for f within it. A reasonable candidate for F is the direct sum of f with another function g,
+
+344 that is F (x, y) = f (x)  g(y).
+
+345 One can gain some intuition for the complexity of F by examining the following family of
+
+346 formulas for computing f (x)  g(y). Suppose  and  are OR  AC0d-1 formulas for computing
+347 f and g respectively. Then we can expand  = i[tf ] i where each i is an AND  ACd0-2
+
+348 formula and tf is the top fan-in of . Similarly, write  = j[tg] j.
+
+349  Observe that, by distributivity, we can then compute F as
+
+350             (i(x)  j(y)).
+
+     i[tf ],j[tg ]
+
+351 This yields a formula for computing f of size
+
+352  || · tg + || · tf .
+
+353 Hence, if computing g is significantly more expensive than computing f and g has an
+
+354 optimal formula with top fan-in tg = 1, then the optimal formula for F within this family is
+355 plausibly obtained by picking a formula  for computing f that has top fan-in tf = 1 (i.e. 
+356 is an AND  AC0d-2 formula computing f ). In this case, we would have our desired property
+357 that optimal formulas for F contain an optimal AND  ACd0-2 formula for f within them.
+358 Our main lower bound is a partial formalization of this intuition.
+
+359 Theorem 4 (Informal version of Theorem 5). Let f be a boolean function, and let g be a
+360 function that is "expensive" to compute compared to f . Then
+
+361  LAd-ND1 (f ) + LdOR(g)  LdOR(f (x)  g(y))
+
+362                        LdA-ND1 (f ) + LdA-ND1 (g).
+363
+
+364 The proof of Theorem 4 is, in our opinion, our most interesting proof. We state the
+
+365 theorem formally and give a sketch of the proof in Section 1.3.2. Roughly speaking, however,
+
+366 g is "expensive" compared to f if computing even a weak one-sided approximation of g using
+367 non-deterministic formulas is more expensive than computing f exactly with AND  AC0d-2
+368 formulas. The full proof of Theorem 4 can be found in Section 4.
+
+369 Theorem 4 implies that, when g is chosen carefully, the quantity
+
+370  LdOR(f (x)  g(y)) - LdOR(g)
+
+371 gives an additive approximation to LdA-ND1 (f ) with error bounded by LAd-ND1 (g) - LdOR(g). This
+372 is how our reduction estimates LdA-ND1 (f ).
+373 While we do not describe the details of our reduction here, there are three important
+
+374 details (phrased as questions) we would like to highlight about getting the reduction to work:
+10       Versions of MCSP are Hard
+
+    375 How do we get our hands on such g? We need g to satisfy two properties: be expensive
+
+    376  relative to f and have the quantity LAd-ND1 (g) - LdOR(g) be small. Uniformly random
+
+    377 functions (with the right parameters) are expensive, but when d = 3, the quantity
+
+    378  LAd-ND1 (g) - LdOR(g) is not small for such uniformly random g. We get around this by
+
+    379 selecting our g to be drawn randomly from a set of functions that roughly corresponds
+
+    380 to the subfunctions computed by CNF subformulas in Lupanov's construction of near
+
+    381 optimal depth-3 formulas for random functions [26]. In this way, we get functions that
+
+    382 are essentially optimally computed by CNFs but also have properties expected of random
+
+    383  functions.
+
+    384 Without knowing the complexity of f , how can we know that g is expensive compared to f ?
+
+    385  In our reduction we have to balance how expensive g is with how large LdA-ND1 (g) - LOd R(g)
+
+    386  is, since as g gets more expensive LAd-ND1 (g) - LdOR(g) also gets larger. Thus, in some sense
+
+    387 we need to know the complexity of f in order to ensure the approximation error we get
+
+    388 is small. The idea we use is to successively iterate through all the possibilities for the
+
+    389 complexity of f from high to low, and only output an estimate for f the first time the
+
+    390  estimate significantly exceeds the error bound LAd-ND1 (g) - LdOR(g).
+
+    391 How does the approximation error propagate as we go to higher and higher depths?
+
+    392  Because our method for computing LdA-ND1 (f ) involves some additive error, we must be
+
+    393 careful that at each depth we prove enough hardness of approximation in order to imply
+
+    394 hardness for the next depth. Indeed, we show that for each d  3 there is an  > 0 such
+
+    395  that it is NP-hard to approximate LOd R to within a factor of (1 + ).
+
+    396 1.3.2 Proof Sketch: Main Constant Depth Formula Lower Bound
+
+    397 In this subsection we sketch the proof of Theorem 4, which we previously stated informally.
+
+    398 The full proof of Theorem 4 can be found in Section 4.
+
+    399 Before giving the formal statement, we introduce some notation. A non-deterministic
+
+    400 formula  with n-inputs and m non-deterministic inputs is just a (standard) formula 
+
+    401 with (n + m)-inputs with its last m inputs designated as "non-deterministic" inputs. 
+
+    402 evaluated at an input x  {0, 1}n equals y{0,1}m (x, y). The size of  is the same as the
+    403 size of : the number of leaves in the underlying binary tree. We use the notation LND(f ) to
+
+    404 denote the minimum size of any non-deterministic formula with n (regular) inputs and n non-
+
+    405 deterministic inputs for computing f . In this paper we will only consider non-deterministic
+
+    406 formulas that have the same number of regular and non-deterministic inputs.
+
+    407  If 0   1, we say a function g : {0, 1}n  {0, 1} is an one-sided approximation of
+
+    408 f : {0, 1}n  {0, 1} if g-1(1)  f -1(1) and |g-1(1)|  |f -1(1)|. We let LND, (f ) denote
+
+    409 minimum of LND(g) among all g that are one-sided approximations of f .
+
+    410 We now give the formal statement of Theorem 4. The proof of this theorem can be found
+
+    411 in Section 4.
+
+    412  Theorem       5.  Let  d  3.  Let    =   1   .  Let  f  : {0, 1}n   {0, 1}  be  a  non-constant  function,
+                                                 104
+    413 and let g : {0, 1}m  {0, 1} be a non-constant function with m  n that satisfies
+
+    414  min{2 · LND,.73(g), LND(g) + LND, (g)}  LOd R(g) + LAd-ND1 (f ).
+
+    415 Then
+
+    416  LdOR(f (x)  g(y))  LdOR(g) + LAd-ND1 (f ).
+
+    417 Our approach is a proof by contradiction. Suppose the hypotheses of the theorem
+
+    418 hold and that there is an OR  AC0d-1 formula  for computing f (x)  g(y) with less than
+    419 LdOR(g) + LdA-ND1 (f ) leaves.
+     R. Ilango                                                                                              11
+
+420  We begin by writing  = i[t] i where each i is an AND  ACd0-2 formula. The key
+
+421 idea of our proof is to view each i as a non-deterministic formula with y being its regular
+
+422 input and x being its non-deterministic input. In particular, for each i  [t] let Si  {0, 1}m
+
+423 be the subset of inputs accepted non-deterministically by i. In other words
+
+424  Si = {y : x such that i(x, y) = 1}.
+
+425  Since  = i[t] i computes f (x)  g(y) and f is not constant, it follows that the
+
+426 union of the Si sets is precisely g-1(1). However using the assumption that  has less than
+
+427 LdOR(g) + LdA-ND1 (f ) leaves, we show something stronger must occur: the sets S1, . . . , St must
+
+428 cover g-1(1) redundantly. Formally, we mean that for each element y1  g-1(1), there exists
+
+429 some i = j such that y1  Si and y1  Sj. Intuitively this represents a redundancy that we
+
+430 will exploit to contradict our assumptions.
+
+431  Before we continue, we try to give some intuition for why the sets S1, . . . , St must form a
+
+432 redundant cover of g-1(1). Suppose that there was some y1  g-1(1) such that y1  S1 but
+
+433 y1  S2  · · ·  St. By the definition of the sets Si this implies that i(x, y1) = 0 for all x
+
+434 and all i  2. Since  computes f (x)  g(y) and g(y1) = 1 this means that
+
+435  f (x) = f (x)  g(y1) = (x, y1) = i(x, y1) = 1(x, y1)
+
+                i[t]
+
+436 so we can conclude that 1 can be used to compute f (by setting y = y1). This implies that
+437 1 has at least LdA-ND1 (f ) many x-leaves since 1 is an AND  ACd0-2 formula. This means that
+438  also has at least LdA-ND1 (f ) many x-leaves. On the other hand,  must have LOd R(g) many
+
+439 y-leaves because we can make  compute g by setting x to a YES instance of f . Hence, we
+
+440 can conclude  has at least LAd-ND1 (f ) + LOd R(g) many leaves which is a contradiction. This
+441 completes the intuition for why S1, . . . , St form a redundant cover of g-1(1).
+
+442 We ultimately exploit this redundancy in order to produce a non-deterministic .73
+
+443 one-sided approximation to g whose complexity is too small. The idea is as follows. Con-
+
+444 sider partitioning [t] into two subsets L and R uniformly at random, and consider the
+
+445 non-deterministic formulas L = iL i and R = iR i where we view the x-input
+446 non-deterministically and y as the true input. Because  computes f (x)  g(y), we can
+
+447 conclude that L and R each compute one-sided non-deterministic approximations for g.
+
+448 Moreover, the redundancy of the cover implies that in expectation they form a .75 one-sided
+
+449 approximation of g. This is because each element of g-1(1) is contained in at least two sets
+
+450 in the list S1, . . . , St, so L and R each get at least "two chances" to get a subformula i
+
+451 that non-deterministically accepts any given YES instance of g.
+
+452  Now we would like to conclude that L and R are both .75 one-sided approximations
+
+453 of g and hence yield a contradiction because |L| + |R| = || (because L and R are a
+454 partition) and ||  LAd-ND1 (f ) + LdOR(g) and we assumed that 2 · LND,.73(g)  LdA-ND1 (f ) + LOd R(g).
+455 However, we cannot conclude this since we only get that L and R are each .75 one-sided
+
+456 approximations in expectation. It could be the case that each time L is a .75 one-sided
+
+457 approximation that R is not and vice versa.
+
+458  We get around this by proving that the random variables |L-1(1)| and |R-1(1)| concentrate
+
+459 around their expectation. We argue this concentration must occur as a consequence of the
+
+460 fact that S1, . . . , St redundantly covers g-1(1). In particular, we use redundancy to show
+
+461 that each set Si has small cardinality. Consequently, the smallness of the Si sets can be used
+462 to bound the variance of the random variables |L-1(1)| and |R-1(1)|, which in turn implies
+
+463 by the second moment method that there is a choice of L and R such that L and R both
+
+464 form non-deterministic .73 one-sided approximations for g, which we use to show that L
+465 and R witness a contradiction to the assumption that 2 · LND,.73(g)  LAd-ND1 (f ) + LdOR(g).
+12       Versions of MCSP are Hard
+
+    466  We finish our sketch by giving the intuition for why the each of the sets S1, . . . , St must
+
+    467 have small cardinality. Fix some j  [t]. The redundancy of the cover implies that the
+
+    468 union of all the Si sets excluding Sj still covers g-1(1). This means that i[t]\{j} i is a
+
+    469  non-deterministic  formula  for  g.  On  the  other  hand,  we  know  that  j  is  a     |Sj |    one-sided
+                                                                                               |g -1 (1)|
+
+    470 approximation of g. Thus, because we assumed that || < LdA-ND1 (f ) + LOd R(g) and a hypothesis
+    471 of the theorem is that LND(g) + LND, (g)  LdA-ND1 (f ) + LdOR(g), we can conclude that it
+    472 must be the case that |Sj|  |g-1(1)|. The reasoning is that otherwise we would get that
+
+    473 i[t]\{j} i computes g non-deterministically and j computes a  one-sided approximation
+
+    474 non-deterministically and that combined they have size at most || < LAd-ND1 (f ) + LOd R(g).
+
+    475 1.3.3 Hardness for MCSP
+
+    476 The heart of our hardness proof for MCSP is the trivial lower bound for computing ORn
+
+    477 (the OR function on n bits). One can easily characterize what the optimal circuits for ORn
+
+    478 look like: all optimal circuits for ORn are given by taking a rooted binary tree with exactly
+
+    479 n-leaves, labelling the internal nodes by fan-in two OR gates, and labelling each leaf node
+
+    480 with an input variable in the set {x1, . . . , xn} bijectively. This last part is crucial for us, since
+
+    481 it implies there are at least n! many optimal circuits for computing ORn. It also suggests
+
+    482 that one might be able to associate optimal circuits for ORn with permutations.
+
+    483 Indeed this is the approach we take. Our starting point is the 2n×2n Bipartite Permutation
+
+    484 Independent Set problem defined by Lokshtanov, Marx, and Saurabh [25], who showed that,
+
+    485 under ETH, one cannot solve 2n × 2n Bipartite Permutation Independent Set much faster
+
+    486 than brute forcing over all n! permutations, specifically not as fast as 2o(n log n). For our
+
+    487 high-level description, all the reader needs to know about 2n × 2n Bipartite Permutation
+
+    488 Independent Set is that it
+
+    489 asks whether there is a permutation  : [2n]  [2n] satisfying certain properties, and
+
+    490  it cannot be solved in time 2o(n log n) under ETH.
+
+    491 Our reduction works by showing that given some instance I of 2n × 2n Bipartite Permuta-
+    492 tion Independent Set, one can construct a partial function  : {0, 1}2n × {0, 1}2n × {0, 1}2n 
+    493 {0, 1} such that
+
+    494  there exists a permutation  satisfying I
+
+    495    so               (zi  (yi  x(i))) computes (x, y, z)
+
+               i[2n]
+
+    496   a monotone read once formula computes 
+
+    497   MCSP (, 6n - 1) = 1.
+    498
+
+    499 We note that all the lower bound techniques used in our proof of correctness are classical
+
+    500 and can, for example, be found in Wegner's text on Boolean functions [35]. However, we do
+
+    501 highlight the specific way we use the gate elimination technique, since it will be relevant to
+
+    502 our discussion in Section 1.4 regarding the Natural Proofs framework.
+
+    503 "Reverse" Gate Elimination. One usually uses gate elimination to say that if some
+
+    504 circuit C computes some function f , then one can obtain a smaller circuit C for computing
+
+    505 a restriction f = f | of f by applying various simplifications to C that eliminate gates in f .
+
+    506 Reverse gate elimination is the same technique but with a "reverse perspective."
+
+    507  Suppose C is a circuit of size s for computing f and f = f | is some restriction of f .
+
+    508 Assume that gate elimination implies that one can eliminate k gates from C to obtain a
+
+    509 circuit C of size s - k for f . Then, equivalently, we have that the circuit C can be obtained
+     R. Ilango                                                                                                 13
+
+510 by taking C and "un-eliminating" (i.e. adding) gates to C in a specific manner that is dual
+511 to the way gates are eliminated in gate elimination. Thus, if one knows what the circuits for
+512 f of size s - k look like (as is the case with circuits for ORn of size n - 1), one can constrain
+513 what circuits of size s for computing f look like.
+514 We use this technique implicitly to argue that any circuit for computing  has an optimal
+515 ORn circuit "within it," which we can associate with a permutation.
+516 We note that the "reverse gate elimination" technique was also used in [18] to show a
+517 non-trivial search-to-decision reduction for (Formula)-MCSP. In fact, functions with many
+518 optimal formulas, like the ORn function, precisely correspond to the hard instances for the
+519 algorithm in [18].
+
+520 1.4 Connections with Constructivity and the Natural Proofs Barrier
+
+521 There are close connections between MCSP and Razborov and Rudich's Natural Proofs
+
+522 barrier [30]. In this subsection, we will focus on one specific connection between designing
+
+523 reductions to (C)-MCSP and a strengthening of the constructivity condition in the Natural
+
+524 Proofs barrier.4 We begin by describing the connection informally, before going into more
+
+525 detail.
+
+526 Intuition. Roughly speaking, Razborov and Rudich's celebrated Natural Proofs result
+
+527 shows that any "natural" lower bound against a circuit class C can be made "algorithmic"
+
+528 and that this algorithm can be used to defeat certain types of cryptography constructed
+
+529 within the circuit class C. Since the general belief is that strong cryptography exists in even
+
+530 relatively weak looking circuit classes C, Razborov and Rudich's result suggests it is unlikely
+
+531 that there are "natural proofs" showing strong lower bounds against many circuit classes.
+
+532 The relevance of this to (C)-MCSP is as follows. Suppose one has a reduction R from SAT
+
+533 to (C)-MCSP. In the proof of correctness of this reduction, one must use some lower bound
+
+534 method M against C-circuits. If this method M could be made sufficiently "algorithmic,"
+
+535 then one could plug the algorithmic version of M into the reduction R and obtain an efficient
+
+536 algorithm for SAT. Hence, if one believes that SAT does not have efficient algorithms, one
+
+537 should also believe that the lower bound method M cannot be made "algorithmic" (at least
+
+538 without making modifications to M).
+
+539 A More Formal Description. We now describe this idea in more detail. A "lower
+
+540 bound method" M is not a formal notion, so we instead look at collections S of lower bound
+
+541 statements. In particular, we consider sets S whose elements are of the form (T, s) where
+
+542 T is a truth table and s is a lower bound on the complexity of T . For most lower bound
+
+543 methods M, there is a natural choice of the lower bound statements SM that M "proves,"
+
+544 although we note that whether a M "proves" a lower bound statement is not necessarily
+
+545 well-defined.
+
+546  One example where it is easy to define SM is Håstad's switching lemma, which implies
+
+547 that if a function f : {0, 1}n  {0, 1} cannot be made to compute a constant function by
+
+548 setting n - k of its inputs to 0/1-values, then f cannot be computed by a depth-d circuit of
+549 size 2(n-k)(1/d) [14]. A natural choice of the collection of lower bound statements associated
+
+550 with the switching lemma is
+
+551  SM = {(T, s) : T is not constant on any subcube of dimension k and s < 2(n-k)(1/d) }.
+
+     4 To the author's knowledge, this connection was first observed in a conversation between the author and
+        Rahul Santhanam, who kindly allowed for its inclusion here.
+14       Versions of MCSP are Hard
+
+    552 The connection to (C)-MCSP is as follows. Suppose one had a polynomial-time many-one
+    553 reduction R from, say, SAT to (C)-MCSP. In the proof of correctness for this reduction, one
+    554 must have some method for proving a collection of lower bound statements S such that if 
+    555 is unsatisfiable and (T, s) is output by the reduction, then the lower bound statement that
+    556 the C-complexity of T is greater than s is an element of S, i.e. (T, s)  S. On the other hand
+    557 if  is satisfiable and the reduction outputs (T, s), then we know that the C-complexity of T
+    558 is at most s, so (T, s)  S because we require that S only contains correct lower bounds.
+    559 Hence, we can conclude that the reduction R actually also implies that recognizing
+    560 elements of S is coNP-hard! In fact, it shows that even the promise problem of distinguishing
+    561 the lower bounds contained in S from strings in the set of YES instances of (C)-MCSP
+
+    562  {(T, s) : the truth table T has C-circuits of size  s}
+
+    563 is coNP-hard. Thus, if one believes that, say, coNP  P/poly, it better not be the case that
+
+    564 the language S can be computed in P/poly.
+
+    565 With this in mind, we say a collection of lower bound statements S against a circuit class
+
+    566 C is (P/poly)-recognizable if there exists a family of polynomial-sized circuits that accepts all
+
+    567 elements of S and rejects all the YES instances of (C)-MCSP. The logic above demonstrates
+
+    568 that, under widely believed complexity assumptions, one should not be able to prove hardness
+
+    569 for (C)-MCSP using (P/poly)-recognizable collections of lower bound statements (at least
+
+    570 under the usual type of reductions: many-one, deterministic, polynomial-time). This is
+
+    571 interesting because many lower bound methods we know, like Håstad's switching lemma,
+
+    572 yield collections of lower bound statements that are (P/poly)-recognizable.
+
+    573 One nice property of the definition of (P/poly)-recognizability is monotonicity: if a set of
+
+    574 lower bound statements S is (P/poly)-recognizable, then all subsets of S are also (P/poly)-
+
+    575 recognizable. In the contrapositive, if a set S is not (P/poly)-recognizable, then any set that
+
+    576 contains S is also not (P/poly)-recognizable. This is a consequence of the promise problem
+
+    577 underlying the definition.
+
+    578 Finally, we note that a collection of lower bound statements being (P/poly)-recognizable
+
+    579 is closely related to Razborov and Rudich's notion of (P/poly)-constructive. The main
+
+    580 difference being that Razborov and Rudich's formalization is only concerned with lower
+
+    581 bound statements where the size lower bound s is fixed to some particular (usually super-
+
+    582 polynomial) value.
+
+    583 The Takeaway. Perhaps the most useful consequence of this connection is that it gives
+
+    584 a helpful tool for designing reductions to (C)-MCSP, since it rules out many approaches that
+
+    585 solely rely on easily recognizable lower bound statements. Indeed, our proof that MCSP is
+
+    586 not in P under ETH was inspired by our failure to rule out lower bounds obtained by gate
+
+    587 elimination within this framework.
+
+    588 This connection may also give further motivation for proving hardness results for
+
+    589 (C)-MCSP. Since the collection of lower bound statements used to prove hardness for
+
+    590 (C)-MCSP (likely) cannot be (P/poly)-recognizable, any proof requires considering lower
+
+    591 bounds of a slightly different flavor than many existing lower bound techniques. One might
+
+    592 hope that these different lower bound techniques might also be useful in understanding
+
+    593 other questions about the class C and, optimistically, might be a step towards proving
+
+    594 non-naturalizing lower bounds.
+
+    595  Indeed, our hardness result for (AC0d)-MCSP gives evidence for these two motivations.
+
+    596 Using the novel lower bound techniques in our reduction, we prove our "large gaps in formula
+
+    597 complexity between depths" result (Theorem 2). Previous techniques like random restrictions
+
+    598 do not seem capable of achieving the parameters in Theorem 2 (since random restrictions
+     R. Ilango                                                                                       15
+
+599 typically establish lower bounds of the form 2nO(1/d) and our lower bound has a much better
+600 dependence on d).
+
+601 Moreover, if we view Theorem 2 as separating the class of size-s depth-(d + 1) formulas
+602 from size-(s + 2Od(n)) depth-d formulas for some s, it is not clear to what extent this circuit
+603 class separation naturalizes in the sense of Razborov and Rudich's Natural Proofs Barrier.
+604 For one, our method only proves a lower bound on a specific class of functions obtained via
+605 a direct sum. This seems to violate the largeness condition of a natural proof, which roughly
+606 says that the lower bound method should apply to a significant fraction of functions. It is
+607 worth noting that (to the author's knowledge) it is open whether uniformly random functions
+608 f : {0, 1}n  {0, 1} have a gap as large as
+
+609  Ld(f ) - Ld+1(f )  2(n)
+
+610 with high probability. Lupanov showed that
+
+611  Ld(f ) = (1 + o(1))Ld+1(f )
+
+612 when d  3 with high probability [26]. Second, it is not clear how to recognize the functions
+613 witnessing this lower bound in polynomial time given a truth table. This seems to violate
+614 the constructivity condition of a Natural Proof.
+
+615 Of course, this does not mean that this separation does not naturalize, just that it does
+616 not obviously naturalize. Since results can naturalize in highly non-trivial ways (we mention
+617 an example in the next paragraph), it would be interesting to explore whether one can
+618 put this result in the framework of Natural Proofs. Either way, we view this result as a
+619 compelling example of the further insights that understanding (C)-MCSP could give.
+
+620 Caveats. Even though a collection of lower bound statements S might not be (P/poly)-
+621 recognizable, it is possible that there is a variation S of S that is (P/poly)-recognizable and
+622 still captures all the "interesting" lower bounds given by S. A situation like this occurs in
+623 Razborov and Rudich's paper where they show how to modify Smolensky's [32] lower bound
+624 against AC0[p] circuits to fit into the natural proofs framework, even though it is unclear
+625 whether Smolensky's original method is constructive.
+
+626 That being said, if a collection of lower bound statements S is used to prove hardness for
+627 (C)-MCSP, then any (P/poly)-recognizable modification S (likely) loses the ability to prove
+628 hardness of (C)-MCSP, so it seems like some "interesting" lower bounds must be lost in this
+629 case.
+
+630 Another caveat worth mentioning is that our logic above assumes that the reduction from
+631 SAT to (C)-MCSP is a deterministic many-one reduction. In contrast, one can imagine more
+632 exotic reductions, where it is not clear how to define the collection of lower bound statements
+633 S used to prove the correctness of a reduction. Nevertheless, we feel that our logic is broadly
+634 applicable. In the specific reductions we prove (one is a deterministic many-one reduction
+635 and one is a randomized quasipolynomial time Turing reduction), the definition of S does
+636 makes sense, and one can indeed carry out a version of the logic above in order to argue that
+637 S is hard.
+
+638 If the reader is curious, the proof of correctness for our randomized quasipolynomial
+639 time Turing reduction implies that following collection of lower bound statements against
+640 OR  AC0d-1 formulas is hard for coNP under randomized quasipolynomial time Turing
+16       Versions of MCSP are Hard
+
+    641 reductions:
+
+    642  {(T, s) :T is the truth table of the function f (x)  g(y) where
+
+    643              f : {0, 1}n  {0, 1} and g : {0, 1}m  {0, 1} are non-constant functions
+
+    644              satisfying m  n and s  LdOR(g) + LdA-ND1 (f ) and
+
+    645              min{2 · LND,.73(g), LND(g) + LND, (g)}  LdOR(g) + LAd-ND1 (f )}.
+    646
+
+    647 where  = 10-4 and the notation LND,· is defined in Section 2.1.
+
+    648 1.5 Open Questions
+
+    649 Perhaps the most tantalizing open question is whether one can show that MCSP is not in P
+
+    650 under ETH. We discussed a potential approach to doing this at the end of Section 1.2.2.
+
+    651  There are also several intriguing open questions related to our (AC0d)-MCSP result. Can
+
+    652 one prove that minimizing constant depth circuits is NP-hard? Our proof techniques heavily
+
+    653 rely on the underlying model being formulas.
+
+    654  Another interesting direction is better hardness of approximation for (AC0d)-MCSP. Our
+
+    655 results only yield hardness for small constant factor approximations. One should be able to
+
+    656 do significantly better.
+
+    657 One can also try to look beyond constant depth AND/OR formulas. What if one is
+
+    658 allowed to use, say,  gates?
+
+    659 Finally, what about improving the complexity gap result in Theorem 2? Can one give a
+
+    660 multiplicative gap instead of an additive one? What about the case of circuits? Can one use
+
+    661 our lower bound techniques to prove other interesting results?
+
+    2 662 Preliminaries
+
+    663 For a natural number n, we let [n] denote the set {1, . . . , n}. If E is some event, then we let
+
+    664 1E denote the indicator random variable that equals 1 if E occurs and 0 if E does not occur.
+
+    665 Big Oh Notation. We use the standard "big oh" notation O, o, ,  with the convention
+    666 that n will always be the parameter that is going to infinity. When there are multiple
+    667 parameters, we use subscripts to denote parameters being held constant. For example o(1)
+    668 indicates a function that goes to zero as n goes to infinity and  is held constant.
+
+    669 Binary Strings. For a binary string x, we let wt(x) denote the weight of x, that is the
+    670 number of ones in x. Unless otherwise specified, if x is a binary string, then xi denotes the
+    671 ith bit of x.
+
+    672 Partial Functions. For us, partial functions will refer to functions of the form  : {0, 1}n 
+    673 {0, 1, } for some n. We say a total function f : {0, 1}n  {0, 1} agrees with  if f (x) = (x)
+    674 for all x with (x)  {0, 1}. Similarly, a circuit (or formula) C computes a partial function 
+    675 if C(x) = (x) for all x with (x)  {0, 1}.
+
+    676 Multiplicative Approximations. When   0, we say a function O computes a (1 + )
+    677 multiplicative approximation to a real-valued function f if for all inputs x
+
+    678  f (x)  O(x)  (1 + )f (x)
+     R. Ilango                                                                                        17
+
+679 Textbook Background: Complexity Theory and Boolean Functions. We will make use
+680 of basic complexity theoretic notions such as P, NP, and various types of reductions that are
+681 explained, for example, in Arora and Barak's excellent textbook [6]. We will also assume
+682 knowledge of basic circuit lower bound techniques such as gate elimination that are described
+683 in Wegner's text [35].
+
+684 The Exponential Time Hypothesis. The Exponential Time Hypothesis (abbreviated ETH)
+685 was first formulated by Impagliazzo, Paturi, and Zane [20, 21] and has been extremely
+686 useful for proving conditional lower bounds on various problems (see [24] for a survey). It is
+687 somewhat technical to define ETH formally, but, roughly speaking, it is a slight strengthening
+688 of the statement that 3-SAT cannot be solved deterministically in 2o(n) time.
+
+689 Circuits. We use the usual model of general circuits with NOT gates and fan-in two AND
+690 and OR gates. The size of a circuit C, denoted |C|, is the number of AND and OR gates in
+691 the circuit.
+
+692 2.1 Background on Formulas
+
+693 A formula  on n-inputs consists of a rooted binary tree whose leaves are labelled by elements
+694 of the set {0, 1, x1, ¬x1, . . . , xn, ¬xn} and whose internal nodes are labelled by either AND
+695 or OR. The size of a formula , denoted ||, is the number of leaves in its underlying binary
+696 tree.
+
+697 Constant Depth Formulas. For each integer d  2, we let ACd0 denote the class of depth-d
+698 formulas. That is, formulas that are allowed to use AND and OR gates of unbounded fan-in,
+
+699 but whose underlying tree has depth at most d. The size of a constant depth formula is again
+700 the number of leaves in its underlying tree. We let AND  ACd0-1 and OR  AC0d-1 denote the
+701 classes of depth-d formulas with an AND and OR top/output gate respectively.
+
+702  For a function f , we let Ld(f ) denote the size of the smallest depth-d formula computing
+
+703 f . Similarly, we let LAdND(f ) and LdOR(f ) denote the size of the smallest depth-d formula for
+
+704 computing f that has an AND top gate and OR top gate respectively.
+
+705 Direct Sums and DeMorgan's Law. We will make heavy use of the following two elementary
+706 results about direct sums and negations of functions.
+
+707 Proposition 6 (Direct Sum Theorem for Formulas). Let f : {0, 1}n  {0, 1} and g :
+
+708 {0, 1}m  {0, 1} be non-constant functions and let F : {0, 1}n × {0, 1}m  {0, 1} be given
+
+709 by F(x, y) = f (x)  g(y). Then both of the following hold:
+
+710  LOd R(F) = LdOR(f ) + LOd R(g) and
+
+711  LdAND(F)  LdAND(f ) + LAdND(g).
+
+712  Similarly, if F(x, y) = f (x)  g(y), then we have
+
+713  LOd R(F(x, y))  LOd R(f ) + LOd R(g) and
+
+714  LAdND(F(x, y)) = LdAND(f ) + LAdND(g).
+
+715 Proof. To demonstrate how these are proved, we show why LAdND(F)  LdAND(f ) + LAdND(g).
+
+716 The other lower bounds can be proved similarly, and the upper bounds are easy to see.
+
+717  Let  be a AND  ACd0-1 formula computing F. Since f is not constant there exists
+
+718 an x1 such that f (x1) = 0. Thus, if we set all the x leaves in  to x1 and eliminate the
+
+719 resulting constant leaves using gate elimination, we obtain a formula  for computing g
+18       Versions of MCSP are Hard
+
+    720 whose size is at most the number of y leaves in . Thus, the number of y leaves in  is at
+
+    721 least LAdND(g). Similarly, the number of x-leaves in  must be at least LAdND(f ). Hence, we
+    722 have that ||  LAdND(f ) + LAdND(g).
+
+    723  The next proposition is a consequence of DeMorgan's Laws.
+
+         Proposition 7 (DeMorgan's Laws).
+
+    724  LdOR(¬f ) = LdAND(f )
+
+    725 and
+
+    726  LAdND(¬f ) = LdOR(f ).
+
+    727 Finally, we can combine the above two propositions to characterize the complexity of the
+    728 direct sum of a function with its negation.
+
+    729 Proposition 8. Let f be a function. Let F(x, y) = f (x)  ¬f (y). Let F(x, y) =
+
+    730 f (x)  ¬f (y). All of the following quantities equal LdAND(f ) + LOd R(f )
+
+    731  Ld(F),
+
+    732  Ld(F),
+
+    733  LAdND(F), and
+
+    734  LdOR(F).
+
+    735 Proof. We just prove that
+
+    736  Ld(F) = LAdND(f ) + LOd R(f ).
+
+    737 The other proofs are similar. Using the direct sum rules in Proposition 6 and DeMorgan's
+    738 laws as in Proposition 7 we get that
+
+    739  LAdND(F) = LdAND(f ) + LAdND(¬f ) = LdAND(f ) + LdOR(f ).
+
+    740 On the other hand, the direct sum rules and DeMorgan's laws also imply that
+
+    741  LOd R(F)  LdOR(f ) + LdOR(¬f ) = LOd R(f ) + LdAND(f ).
+
+    742 Together, these imply that
+
+    743  Ld(F) = LdAND(f ) + LOd R(f )
+
+    744 as desired.
+
+    745 Non-deterministic formulas and one-sided approximations. A non-deterministic formula
+    746  with n-inputs and m non-deterministic inputs is just a (normal) formula  on (n + m)-
+    747 inputs with the last m-inputs being designated as "non-deterministic" inputs. The value of
+    748  on input x  {0, 1}n equals
+
+    749  (x) =                (x, y).
+
+                     y{0,1}m
+
+    750 The size of , denoted || is just the size of .
+    751 For our purposes, we will only be interested in non-deterministic formulas that have the
+    752 same number of regular and non-deterministic inputs. Indeed, for a function f : {0, 1}n 
+    753 {0, 1}, we let LND(f ) denote the size of the smallest non-deterministic formula for computing
+    754 f with n non-deterministic inputs.
+    755 We will also make use of simple bounds on the number of non-deterministic formulas
+    756 with n regular inputs and n non-deterministic inputs.
+     R. Ilango                                                                                         19
+
+757 Proposition 9 (Bound on the number of non-deterministic formulas). The number of
+758 functions computed by non-deterministic formulas of size at most s with n-inputs and n
+759 non-deterministic inputs is at most
+
+760  2s log(100n).
+
+761 Proof. It suffices to count the number of non-deterministic formulas of size exactly s since if
+
+762 a function can be computed by a formula of size less than s, it can clearly also be computed
+
+763 by a formula of size exactly s by adding in gates that do not do anything.
+
+764  The number of binary trees with s leaves is at most 4s+1 by bounds on the Catalan
+
+765 number. Each of the s - 1 internal nodes can be labeled by either an AND or OR gate, so this
+
+766 gives 2s-1 possibilities. Finally the leaf nodes can each be labelled one of 4n + 2 possibilities
+
+767 (either one of the 2n variables, the negation of one of the 2n variables, or a constant 0, 1).
+
+768 This gives (4n + 2)s possibilities.
+
+769  In total, this gives us a bound of
+
+770  4s+12s-1(4n + 2)s = 23s+12s log(4n+2)  24s2s log(6n) = 2s log(24)+s log(6n)  2s log(100n)
+
+771 where we use that s and n are both at least one.
+
+772  Finally, if 0   1, we say a function g : {0, 1}n  {0, 1} computes an one-sided
+
+773 approximation of a function f : {0, 1}n  {0, 1} if both of the following conditions hold
+
+774  g-1(1)  f -1(1), and
+
+775  |g-1(1)|  · |f -1(1)|.
+
+776  We let LND, (f ) denote the minimum of LND(g) for all functions g computing an one-sided
+
+777 approximation of f .
+
+778 Read Once Formulas. A read once formula is a formula where each input variable occurs
+779 in at most one leaf. A monotone read once formula is a read once formula that reads each
+780 input variable positively (i.e., it does not use any negations).
+
+781 2.2 Versions of MCSP
+
+782 In this paper, we will mainly consider three versions of MCSP.
+
+783 MCSP. The Minimum Circuit Size Problem, MCSP, is defined as follows:
+
+784  Given: the truth table T  {0, 1}2n of a Boolean function f : {0, 1}n  {0, 1} and an
+
+785  integer size parameter s.
+
+786 Decide: Does there exists a circuit of size at most s that computes f ?
+
+787 MCSP for C-circuits: (C)-MCSP. The Minimum C-Circuit Size Problem, (C)-MCSP, is
+
+788 defined as follows:
+
+789  Given: the truth table T  {0, 1}2n of a Boolean function f : {0, 1}n  {0, 1} and an
+
+790  integer size parameter s.
+
+791 Decide: Does there exists a C-circuit of size at most s that computes f ?
+
+792 MCSP for partial functions: MCSP . The Minimum Circuit Size Problem for Partial
+
+793 Functions, MCSP , is defined as follows:
+
+794  Given: the truth table T  {0, 1, }2n of a partial Boolean function  : {0, 1}n  {0, 1, }
+
+795  and an integer size parameter s.
+
+796 Decide: Does there exists a circuit of size at most s that computes ?
+20       Versions of MCSP are Hard
+
+    3 797 ETH Hardness for MCSP
+
+    798 We will prove hardness for MCSP by giving a reduction from the 2n × 2n Bipartite Per-
+    799 mutation Independent Set problem. This problem was introduced by Lokshtanov, Marx,
+    800 and Saurabh who proved hardness for it under ETH [25]. 2n × 2n Bipartite Permutation
+    801 Independent Set is defined as follows:
+
+    802 Given: An undirected graph G over the vertex set [2n] × [2n] where every edge is between
+
+    803  the sets of vertices J1 = {(j, k) : j, k  [n]} and J2 = {(n + j, n + k) : j, k  [n]}.
+
+    804 Decide: Does there exist a permutation  : [2n]  [2n] such that the set
+
+    805  {(1, (1)), . . . , (2n, (2n))}
+
+    806  is both a subset of J1  J2 and an independent set of G?
+
+    807 The following definition is equivalent and is easier for us to work with, so it is the one we use
+
+    808 throughout the paper.
+
+    809 Given: A directed graph G on the vertex set [n] × [n] with an edge set E.
+
+    810 Decide: Does there exist a permutation  : [2n]  [2n] such that all of the following
+
+    811  are true:
+
+    812  ([n]) = [n],
+
+    813  ({n + i : i  [n]}) = {n + i : i  [n]}, and
+
+    814  if ((j, k), (j , k ))  E, then either (j) = k or (j + n) = k + n.
+
+    815 If ETH is true, then this problem cannot be solved much faster than brute forcing over
+    816 all (roughly 2n log n) permutations.
+
+    817 Theorem 10 (Lokshtanov, Marx, and Saurabh [25]). 2n × 2n Bipartite Permutation Inde-
+    818 pendent Set cannot be solved in deterministic time 2o(n log n) unless ETH fails.
+
+    819 We prove hardness for MCSP by giving a reduction from 2n × 2n Bipartite Permutation
+    820 Independent Set.
+
+    821 Theorem 11. MCSP cannot be solved in deterministic time N o(log log N) on truth tables
+    822 of length-N assuming ETH. In particular, detecting whether a truth table T  {0, 1, }2n
+    823 can be computed by a monotone read once formula cannot be solved in deterministic time
+    824 N o(log log N) assuming ETH where n = log N .
+
+    825 Proof. We give a reduction from 2n × 2n Bipartite Permutation Independent Set to MCSP
+    826 that runs in deterministic 2O(n) time.
+
+    827 Reduction
+
+    828 Before we describe the reduction, we introduce some notation. For an i  [n], we let
+    829 ei  {0, 1}n denote the indicator vector with a one in the ith entry and zeroes everywhere
+    830 else. Similarly, we let ei  {0, 1}n denote the complementary vector, with a zero in the ith
+    831 entry and ones everywhere else.
+    832 The reduction R works as follows. Given an instance of 2n × 2n Bipartite Permutation
+    833 Independent Set defined by a directed graph G = ([n] × [n], E), the reduction outputs the
+    834 truth table of the partial function  : {0, 1}2n × {0, 1}2n × {0, 1}2n  {0, 1, } given by
+     R. Ilango                                                                                        21
+
+835 (x, y, z) =
+
+     
+
+        i[2n](yi  zi)       , if x = 02n
+     
+
+     
+
+        i[2n] zi            , if x = 12n
+
+     
+     
+     
+     
+
+                            , if z = 12n
+
+        i[2n](xi  yi)
+     
+     
+     
+
+                            , if z = 02n
+
+     0                                                                                             .
+
+836                         , if z = 1n0n and y = 02n
+
+     ORn(x1, . . . , xn)
+
+     
+
+     ORn(xn+1, . . . , x2n) , if z = 0n1n and y = 02n
+
+     
+
+                            , if  ((j, k), (j , k ))  E such that (x, y, z) = (ekek , 02n, ejej )
+     1
+
+     
+
+     
+
+                            , otherwise
+     
+
+837 Running time
+
+838 It is easy to see that  is well-defined and that the truth table of  can be output in time
+839 2O(n) given G.
+
+840 Correctness
+
+841 We prove the correctness of this reduction in stages, by showing each of the following are
+
+842 equivalent:
+
+843 1. MCSP (, 6n - 1) = 1
+
+844 2.  can be computed by a read once formula
+
+845 3. there exists a permutation  : [2n]  [2n] such that i[2n]((x(i)  yi)  zi) computes 
+846 4. there exists a permutation  : [2n]  [2n] that satisfies the instance of 2n × 2n Bipartite
+
+847  Permutation Independent Set given by G.
+
+848 The remainder of the proof is dedicated to proving the equivalences (1)  (2), (2)
+849  (3), and (3)  (4).
+
+850 (1)  (2)
+
+851 We need to show that MCSP (, 6n - 1) = 1 if and only if  can be computed by a read once
+852 formula.
+853 This reverse direction is obvious (note that size for circuits equals the number of gates,
+854 but size for formulas equals the number of leaves).
+855 The forward direction follows from  depending on all of its 6n distinct input variables.
+856 It depends on all its y and z input variables because
+
+857  (x, y, z) =         (yi  zi)
+
+                  i[2n]
+
+858 when x = 02n. It depends on all its x input variables because when z = 12n
+
+859  (x, y, z) =         (xi  yi).
+
+                  i[2n]
+
+860 (2)  (3)
+
+861 We need to show that  can be computed by a read once formula if and only if there exists a
+862 permutation  : [2n]  [2n] such that i[2n]((x(i)  yi)  zi) computes .
+863 The reverse direction is obvious. The forward direction follows from the following lemma,
+864 whose proof we defer to the end of the section.
+22       Versions of MCSP are Hard
+
+    865 Lemma 12. Suppose  is a read once formula that computes a partial function  :
+    866 {0, 1}2n × {0, 1}2n × {0, 1}2n satisfying
+
+                                         , if x = 02n
+
+                          i[2n](yi  zi)
+                   
+
+                                         , if x = 12n
+                                                         .
+    867                   i[2n] zi
+                        
+                          i[2n](xi  yi)  , if z = 12n
+         (x, y, z) =
+
+                   
+                   
+
+                   
+
+                   0                     , if z = 02n
+
+    868 Then there exists a permutation  : [2n]  [2n] such that (x, y, z) equals, as a formula,
+    869 i[2n]((x(i)  yi)  zi).
+
+    870 Note that our  actually satisfies more constraints imposed on it than the ones stated in
+    871 this lemma. For example, we specified (x, y, z) = ORn(x1, . . . , xn) when (y, z) = (02n, 1n0n).
+    872 But these extra constraints are not needed to prove the lemma.
+
+    873 (3)  (4)
+
+    874 We need to show that there exists a permutation  : [2n]  [2n] such that i[2n]((x(i) 
+    875 yi)  zi) computes  if and only if there exists a permutation  : [2n]  [2n] that satisfies
+    876 the instance of 2n × 2n Bipartite Permutation Independent Set given by G.
+    877 The proof of this equivalence is long because there are many conditions to check. We give
+    878 the full proof below, however, we remark that it essentially amounts to carefully plugging in
+    879 definitions.
+    880 We start with the forward direction. Suppose that  : [2n]  [2n] is a permutation
+    881 such that i[2n]((x(i)  yi)  zi) computes . We will show that  satisfies the constraints
+    882 required in 2n × 2n Bipartite Permutation Independent Set. That is, all the following hold
+    883 1. ([n]) = [n],
+    884 2. ({n + i : i  [n]}) = {n + i : i  [n]}, and
+    885 3. if ((j, k), (j , k ))  E, then either (j) = k or (j + n) = k + n
+
+    886 The proof that (1) and (2) hold are similar, so we just prove (1). We need to show that
+    887 if i  [n], then (i)  [n]. This follows from the following series of equalities when setting
+    888 (x, y, z) = (ei0n, 02n, 1n0n)
+
+    889  1 = ORn(x1, . . . , xn)
+
+    890  = (x, y, z)
+
+    891  =         ((x(i)  yi)  zi)
+
+            i[2n]
+
+    892  1 = (i)[n]
+    893
+
+    894 where the justifications for these equalities are (in order):
+
+    895  since x = ei0n and i  [n],
+
+    896  from the definition of  when (x, y, z) = (ei0n, 02n, 1n0n),
+
+    897  since i[2n]((x(i)  yi)  zi) computes , and
+
+    898  since (x, y, z) = (ei0n, 02n, 1n0n)
+
+    899 This completes our justification that (1) and (2) hold.
+
+    900 For (3), suppose that ((j, k), (j , k ))  E. We need to show that either (j) = k
+
+    901 or (j + n) = k + n. This follows from the following series of equalities when setting
+     R. Ilango                                                                                               23
+
+902 (x, y, z) = (ekek , 02n, ej ej )
+
+903  1 = (x, y, z)
+
+904  =          ((x(i)  yi)  zi)
+
+          i[2n]
+
+905  = x(j)  x(j +n)
+
+906  1 1 = (j){k,k +n}  (j +n){k,k +n}
+
+907  1 1 = (j)=k  (j +n)=k +n
+908
+
+909 where the justifications for these equalities are (in order):
+
+910  from the definition of  when (x, y, z) = (ekek , 02n, ejej ) and ((j, k), (j , k ))  E,
+
+911  since i[2n]((x(i)  yi)  zi) computes ,
+
+912  since (y, z) = (02n, ejej ),
+
+913  since x = ekek , and
+
+914 since we have already shown that (1) and (2) must hold (i.e, that ([n]) = [n] and
+
+915  ({n + i : i  [n]}) = {n + i : i  [n]}).
+
+916 This completes our proof of the forward direction.
+
+917 Now we show the reverse direction. Suppose  : [2n]  [2n] satisfies the constraints in G.
+918 In other words, all of the following are true:
+
+919  ([n]) = [n]
+
+920  ({n + i : i  [n]}) = {n + i : i  [n]}
+
+921  if ((j, k), (j , k ))  E, then either (j) = k or (j + n) = k + n
+
+922  We will show that i[2n]((x(i)  yi)  zi) computes . In other words, we need to check
+
+923 the following seven cases:
+
+924       ((x(i)  yi)  zi) =
+
+     i[2n]
+
+                (yi  zi)                , if x = 02n                                          (1)
+     
+
+     
+
+       i[2n]
+     
+     
+
+     
+
+     
+
+                zi                      , if x = 12n                                          (2)
+     
+     
+     
+
+     
+
+       i[2n]
+     
+
+     
+
+     
+
+                                        , if z = 12n
+
+                (xi  yi)                                                                      (3)
+     
+
+       i[2n]
+
+     
+
+       0                                , if z = 02n                                          (4)
+     
+     
+
+     
+
+     
+
+       ORn(x1,      ..  .  , xn)        , if z = 1n0n and y = 02n                             (5)
+
+     
+     
+     
+
+     
+
+                                        , if z = 0n1n and y = 02n
+
+       ORn(xn+1, .         .  .,  x2n)                                                        (6)
+     
+     
+
+     
+
+     
+
+     1                                  , if  ((j, k), (j , k ))  E with (x, y, z) = (ekek , 02n, ejej )(7)
+
+925 The proof in cases (1) - (4) are easy to see. The proof in cases (5) and (6) follow from
+926 the fact that ([n]) = [n] and ({n + i : i  [n]}) = {n + i : i  [n]}.
+927 Lastly, we must check case (7). Suppose that ((j, k), (j , k ))  E. When (x, y, z) =
+24       Versions of MCSP are Hard
+
+    928 (ekek , 02n, ej ej ), we have that
+
+    929         ((x(i)  yi)  zi) = x(j)  x(j +n)
+
+         i[2n]
+
+    930                    1 1 = (j){k,k +n}  (j +n){k,k +n}
+
+    931                    1 1 = (j)=k  (j +n)=k +n
+
+    932                    =1
+    933
+
+    934 where the justification for each equality is (in order):
+
+    935  since y = 02n and z = ejej ,
+
+    936  since x = ekek ,
+
+    937  since ([n]) = [n] and ({n + i : i  [n]}) = {n + i : i  [n]}, and
+
+    938 since  satisfies all the constraints of G, we know that for ((j, k), (j , k ))  E either
+
+    939  (j) = k or (j + n) = k + n
+
+    940 This completes the reverse direction.
+
+    941 We now give the proof of Lemma 12. In this proof, it will be important to distinguish
+    942 between when two formulas are equal as functions (i.e., they compute the same function)
+    943 and when they are equal as formulas (i.e., they are isomorphic as labeled binary trees up to
+    944 the commutativity of AND and OR gates). We will try to be explicit about this by prefacing
+    945 equalities by "as functions" or "as formulas."
+
+    946 Lemma 12. Suppose  is a read once formula that computes a partial function  :
+    947 {0, 1}2n × {0, 1}2n × {0, 1}2n satisfying
+
+                                            , if x = 02n
+
+                           i[2n](yi  zi)
+                
+
+                                            , if x = 12n
+                                                            .
+    948                    i[2n] zi
+                        
+                           i[2n](xi  yi)    , if z = 12n
+         (x, y, z) =
+
+                
+                
+
+                
+
+                0                           , if z = 02n
+
+    949 Then there exists a permutation  : [2n]  [2n] such that (x, y, z) equals, as a formula,
+    950 i[2n]((x(i)  yi)  zi).
+
+    951 Proof of Lemma 12. We begin by proving three claims about the structure of . In Claim 13,
+    952 we show that  is a monotone read once formula with 6n leaves, and thus 6n - 1 gates. Then,
+    953 in Claim 14 we show that  must have 4n - 1 OR gates, and finally, Claim 15 shows that
+    954 each z variable leaf feeds into an AND gates.
+
+    955 Claim 13.  reads each x, y, and z input variable exactly once, and it reads each x, y,
+    956 and z variable positively (i.e. it uses no negated input variables).
+
+    957 Proof.  is a read once formula so each input variable can be used at most once, so to show
+
+    958 that  reads each input variable exactly once we just need to show that  depends on every
+
+    959 input.
+
+    960 Regarding positivity, in our model of formulas, negations are pushed to the leaf level, so
+
+    961 only the monotone gates AND and OR can be used (no NOT gates). Thus, if the read once
+
+    962 formula  read the negated version of an input variable, then its output would have to be
+
+    963 monotone in the value of that negated variable.
+
+    964  Now, when x = 02n, (x, y, z) = i2n(yi  zi), so  depends on all its y and z variables.
+
+    965 Moreover, the output of i2n(yi  zi) is monotone in all the y and z variables, so we know
+
+    966 that each y and z input cannot be read negatively.
+      R. Ilango                                                                                            25
+
+967   A similar argument can be made for the x variables, by setting z = 12n, in which case
+
+968 (x, y, z) = i2n(xi  yi).
+
+969 Claim 14.  has at least 4n - 1 OR gates.
+
+970 Proof. By setting z = 12n and applying a standard gate elimination argument, one can
+
+971 eliminate gates in  to obtain a read once formula  for computing i[2n](xi  yi) with 4n
+972 leaves and 4n - 1 gates. It is easy to see that all 4n - 1 of the gates in  must be OR gates.
+973 As a result, these 4n - 1 OR gates must also be in .
+
+974 Claim 15. For each i  [2n], the zi leaf in  feeds into an AND gate.
+
+975 Proof. Fix some i  [2n]. From Claim 13, we know that zi is read exactly once, positively in
+
+976 the formula . If, for contradiction, the zi leaf fed into an OR gate, then by setting zi = 1
+
+977 and applying a standard gate elimination argument, we could obtain a formula  with 6s - 2
+
+978 leaves for computing (x, y, z) when zi = 1.
+
+979   This is a contradiction because (x, y, z) depends on 6n - 1 of its inputs even when zi = 1.
+
+980 In particular, (x, y, 12n) = j[2n](xj  yj), so it depends on all 4n of its x and y inputs.
+
+981 And (02n, y, z) = j[2n](yi  zi) so it depends on the remaining 2n - 1 of its z inputs.
+
+982   Now, we introduce some important subformulas of . For each i  [2n], let i be the
+
+983 subformula of  such that zi  i is a subformula of . Crucially, Claim 16 shows that
+
+984 1, . . . , 2n all do not read any z inputs.
+
+985 Claim 16. For each i  [2n], the formula i does not read any z input leaf.
+
+986 Proof. Since zi  i is a subformula of  and  is a read once formula, we know that no zi
+
+987 leaf occurs in i.
+
+988   Next, consider some i  [n] \ {i}. For contradiction, suppose i read the zi input. Then
+
+989 the output of the read once formula  could not depend on the input zi when zi = 0 (since
+
+990 the read once property implies that the only time  reads the input zi is in the subformula
+
+991 zi  i(x, y, z), which always evaluates to zero when zi = 0). But when x = 02n and zi = 0,
+
+992 (x, y, z) = j[2n](yj  zj), so the output of  does still depend on zi when zi = 0, giving
+
+993 us a contradiction.
+
+994   The key consequence of Claim 16 is that it means the subformulas 1  z1, . . . , 2n  z2n
+
+995 are all disjoint subformulas of  (since none of the i can read a z variable). This implies
+
+996 that  contains 2n AND gates. Since we already knew that there were 4n - 1 OR gates in 
+
+997 (by Claim 14) and 6n - 1 gates total (by Claim 13), this means the only AND gates in  are
+
+998 the 2n AND gates at the top of the subformulas 1  z1, . . . , 2n  z2n. Using this, along with
+
+999 the knowledge from Claim 13 that  reads every input positively, we get that as a formula,
+
+1000   = ( w)  ( (zi  i(x, y, z)))
+
+      wI                 i[2n]
+
+1001 where I is some subset of the x and y input variables (i.e., I  {x1, . . . , x2n, y1, . . . , y2n}).
+
+1002  In fact, I must actually be empty!
+
+1003 Claim 17. I = .
+1004 Proof. When z = 02n, we have that
+
+1005  0 = (x, y, z) = ( w)             (zi  i(x, y, z)) = w.
+
+                         wI     i[2n]            wI
+
+1006
+26        Versions of MCSP are Hard
+
+    1007 So now, we know that, as a formula, we have that
+
+    1008     =         (zi  i(x, y, z)).
+
+                i[2n]
+
+    1009     Next, we use the fact that i can only use OR gates (since all the AND gates in  are
+
+    1010 already accounted for). In particular, this, combined with the fact that  is a monotone
+
+    1011 read once formula (by Claim 13), implies there exists pairwise disjoint subsets I1, . . . , I2n of
+
+    1012 {x1, . . . , x2n, y1, . . . , y2n} such that, as a formula,
+
+    1013     =         (z  ( w)).
+
+                i[2n]    wIi
+
+    1014     Therefore, when x = 02n, we have that, as functions,
+
+    1015            (yi  zi) = (x, y, z) = (x, y, z) = (zi  ( w)).
+
+             i[2n]                                          i[2n]         wIi
+
+    1016 From this equality, it is easy to see that we must have yi  Ii for all i  [2n].
+
+    1017     As a result, we can conclude that, as a formula,
+
+    1018     =         (zi  (yi  w))
+
+                i[2n]             wJi
+
+    1019 where J1, . . . , J2n are pairwise disjoint subsets of {x1, . . . , x2n}.
+
+    1020     Finally, when x = 12n, we have that, as a function,
+
+    1021            (zi  (yi  w)) = (x, y, z) = (x, y, z) =                    zi.
+
+             i[2n]           wJi                                      i[2n]
+
+    1022 From this we can conclude that there is a permutation  : [2n]  [2n] such that, as a formula,
+
+    1023     =         (zi  (yi  x(i)))
+
+                i[2n]
+
+    1024 which is what we desired to show.
+
+    1025  4    Main Lower Bound for Constant Depth Formulas: From Depth d
+
+    1026       to d + 1
+
+    1027 In this section we prove our main constant depth formula lower bound.
+
+    1028  Theorem   5.  Let  d  3.  Let     =   1   .  Let  f  : {0, 1}n   {0, 1}   be  a  non-constant  function,
+                                               104
+    1029 and let g : {0, 1}m  {0, 1} be a non-constant function with m  n that satisfies
+
+    1030     min{2 · LND,.73(g), LND(g) + LND, (g)}  LOd R(g) + LdA-ND1 (f ).
+
+    1031 Then
+
+    1032     LOd R(f (x)  g(y))  LdOR(g) + LdA-ND1 (f ).
+
+    1033 Proof. For convenience, let F : {0, 1}n × {0, 1}m  {0, 1} be given by F (x, y) = f (x)  g(y).
+
+    1034     For contradiction, suppose there is the a OR  AC0d-1 formula  for computing F of size
+
+    1035 less than LdOR(g) + LdA-ND1 (f ). We assume without loss of generality that  alternates between
+      R. Ilango                                                                                        27
+
+1036 OR and AND gates at each level, and thus we can write  = i[t] i where each i is an
+
+1037 AND  AC0d-2 formula.
+
+1038  For each i  [t], let the set Si  {0, 1}m denote the set of y-inputs i accepts when using
+
+1039 the x-inputs non-deterministically. In other words,
+
+1040  Si = {y  {0, 1}m :            i(x, y) = 1}.
+
+                           x{0,1}n
+
+1041  Since  computes F (x, y) = f (x)  g(y), it is not too hard to see that the union of the Si
+
+1042 sets is exactly the set of YES instances of g.
+
+1043  Claim 18. i[t] Si = g-1(1).
+
+1044 Proof. First, we show that i[t] Si  g-1(1). If y  Si for some i  [t], then there exists
+1045 some x such that i(x, y) = 1. Thus we have that
+
+1046  f (x)  g(y) = F (x, y) = (x, y) = i(x, y) = 1
+
+                                       i[t]
+
+1047 so g(y) = 1, so y  g-1(1).
+
+1048  For the other direction, suppose that y  g-1(1). Since f is not constant, there exists
+
+1049 some x such that f (x) = 1. Then
+
+1050  1 = f (x)  g(y) = F (x, y) = (x, y) = i(x, y)
+
+                                             i[t]
+
+1051 so there exists some i  [t] such that i(x, y) = 1 so y  Si.
+
+1052  However, an even stronger claim is true. Not only do the sets S1, . . . , St cover g-1(1),
+
+1053 but they must actually cover g-1(1) in a "redundant" way, which we make formal in the
+
+1054 following claim.
+
+1055 Claim 19. Each y  g-1(1) is an element of at least two distinct sets in the list S1, . . . , St.
+
+1056 Proof. For contradiction, suppose not. Since we know that g-1(1) = i[t] Si from Claim 18,
+1057 it follows that there exists some y1  g-1(1) such that y1 is in exactly one of the sets in the
+
+1058 list S1, . . . , St.
+
+1059  Without loss of generality, assume that y1 is only in the set S1. By definition, this means
+
+1060 that i(x, y1) = 0 for all i  2 and all x  {0, 1}n. As a result, we have the following equality
+
+1061 for all x  {0, 1}n
+
+1062  f (x) = f (x)  1 = f (x)  g(y1) = F (x, y1) = i(x, y1) = 1(x, y1).
+
+                                                     i[t]
+
+1063 Hence, 1 can be made into an AND  ACd0-2 formula for f by fixing its y-inputs to y1. This
+
+1064 implies that 1 has at least LdA-ND1 (f ) many x-leaves.
+
+1065  Clearly, this means that  also has at least LAd-ND1 (f ) many x-leaves. On the other hand,
+
+1066 since f is non-constant, there exists an x1 such that f (x1) = 1. Thus, if we set the x-inputs
+
+1067 of  to be x1, we have that (x1, y) computes g(y). Hence, g has at least LOd R(g) many
+
+1068 y-leaves.
+
+1069  Summing the bound on the x-leaves and the y-leaves, we get that
+
+1070  ||  LdOR(g) + LAd-ND1 (f )
+
+1071 which contradicts our supposition that || < LdOR(g) + LdA-ND1 (f ).
+28        Versions of MCSP are Hard
+
+    1072  We can use this "redundancy" to show that each of the Si sets must be "small." This is
+
+    1073 roughly because the redundancy implies that even if you remove any one of the i from ,
+
+    1074 what remains can be used to make a non-deterministic formula for g and thus, still has most
+
+    1075 of the "cost" of computing g within it.
+
+    1076 Claim 20. For all i  [t], we have |Si|   · |g-1(1)|.
+
+    1077 Proof. For contradiction, suppose that |Si| >  · |g-1(1)| for some i  [t]. This implies that,
+    1078 viewing the x-inputs to i non-deterministically, i yields a non-deterministic one-sided
+    1079 -approximation of g, so
+
+    1080  |i|  LND, (g).
+
+    1081  On the other hand, since j[t] Sj = g-1(1) from Claim 18 and since each element of
+
+    1082 g-1(1) is contained in two sets in the list S1, . . . , St by Claim 19, we know that
+
+    1083            Sj = g-1(1).
+
+          j[t]\{i}
+
+    1084 From the definition of S1, . . . , St, this implies that
+
+    1085            j
+
+          j[t]\{i}
+
+    1086 is a non-deterministic formula for g, viewing the x-inputs non-deterministically. Hence,
+
+    1087            |j|  LND(g).
+
+          j[t]\{i}
+
+    1088  Thus, putting these two bounds together, we have that
+
+    1089  || = |i| +             |j |  LND, (g) + LND(g).
+
+                       j[t]\{i}
+
+    1090 However, an assumption in the theorem statement is that LND(g) + LND,(g)  LdOR(g) +
+    1091 LdA-ND1 (f ), so we have that
+
+    1092  ||  LOd R(g) + LdA-ND1 (f )
+
+    1093 which contradicts our supposition that || < LdOR(g) + LAd-ND1 (f ).
+
+    1094  We can then use the fact that the sets S1, . . . , St have small cardinality and the fact that
+
+    1095 they form a "redundant" cover of g-1(1) in order to argue that we can partition the list of
+
+    1096 sets S1, . . . , St into two disjoint lists that each covers a significant portion of g-1(1). This is
+
+    1097 made formal in the following claim.
+
+    1098 Claim 21. There exist disjoint subsets L, R  [t] such that for all T  {L, R},
+
+    1099  | Si|  .73|g-1(1)|.
+
+          iT
+
+    1100 Before proving Claim 21, we show how we can finish the proof using the claim. Let L and
+    1101 R be sets satisfying the claim. For T  {L, R}, define the OR  AC0d-1 formula T given by
+
+    1102  T = i.
+
+              iT
+      R. Ilango                                                                                     29
+
+1103 Since for each T  {L, R}, we have that
+
+1104  | Si|  .73|g-1(1)|,
+
+      iT
+
+1105 we know that T is a non-deterministic .73-one-sided approximation for g. Hence for all
+
+1106 T  {L, R}, we have that |T |  LND,.73(g).
+
+1107  Since L and R are disjoint, we have that
+
+1108  ||  |L| + |R|  2 · LND,.73(g)  LdOR(g) + LAd-ND1 (f )
+
+1109 which contradicts our supposition that || < LdOR(g) + LAd-ND1 (f ).
+
+1110  It remains to prove Claim 21.
+
+1111 Proof of Claim 21. We prove this using the probabilistic method. For each element i  [t],
+
+1112 flip an independent, unbiased coin to decide whether i should be placed in L or in R. We
+
+1113 will argue that this yields a disjoint L and R pair with the desired properties with positive
+
+1114 probability using the second moment method.
+
+1115  We will now show that
+
+1116  Pr[|       Si|    .73|g-1(1)|]      2
+                                           .
+       L    iL
+                                          3
+
+1117 Assuming this is true, we know by symmetry that
+
+1118  Pr[|       Si|    .73|g-1(1)|]      2
+                                          3
+       R    iR
+
+1119 and so by a union bound it follows that
+
+1120  Pr [| Si|  .73|g-1(1)| AND | Si|  .73|g-1(1)|] > 0
+
+      L,R   iL                                iR
+
+1121 which is what we desired to prove (note that L and R are disjoint by construction).
+
+1122  Hence, it suffices to prove that
+
+1123  Pr[|       Si|    .73|g-1(1)|]      2
+                                           .
+       L    iL
+                                          3
+
+1124  For simplicity, let X denote the random variable | iL Si| and for each y  g-1(1), let
+
+1125 Xy denote the indicator random variable for the event that y  iL Si. Then using linearity
+
+1126 of expectation we have that
+
+1127  E[X] = E[                 Xy ]
+
+                    y g -1 (1)
+
+1128        =                E[Xy ]
+
+                 y g -1 (1)
+
+1129        =                (1 - 2-|{i[t]:ySi}|)
+
+                 y g -1 (1)
+
+1130                         (1 - 2-2)
+
+                 y g -1 (1)
+
+1131        = 3 |g-1(1)|.
+                 4
+1132
+30        Versions of MCSP are Hard
+
+    1133 where the inequality follows from the fact that each y  g-1(1) lies in two at least two
+
+    1134 distinct sets in the list S1, . . . , St as proved in Claim 19.
+
+    1135  Thus, Chebyshev's inequality the implies that
+
+    1136  Pr[X            .73|g-1(1)|]              Pr[|X    -    E[X ]|        .02|g-1(1)|]             Var[X ]
+                                                                                                     (.02|g-1(1)|)2
+
+    1137  Thus,  if  we   could    show    that              Var[X ]            1  ,  then  we     would  have  that
+                                                        (.02|g -1 (1)|)2        3
+
+    1138  Pr[X  .73|g-1(1)|]  1
+                                                    3
+
+    1139 as desired.
+
+    1140  We     now      show     that       Var[X ]                 1  ,  or  equivalently,      that
+                                         (.02|g -1 (1)|)2             3
+
+    1141  Var[X ]            3  ·  4    |g-1(1)|2.
+                                   104
+
+    1142  Using the fact that X = yg-1(1) Xy, we have that
+
+    1143  Var[X] =                         Cov[Xy, Xy ]
+
+                             y,y g-1(1)
+
+    1144
+    1145
+
+    1146  Now fix some y  g-1(1), and we will bound y g-1(1) Cov[Xy, Xy ]. Let Dy = {y :
+
+    1147 i  [t] such that {y, y }  Si}. Note that if y  Dy, then y and y never appear in any set
+
+    1148 Si together, and hence Xy and Xy are independent random variables. Thus,
+
+    1149                  Cov[Xy, Xy ] =                     Cov[Xy, Xy ].
+
+          y g-1(1)                                     y Dy
+
+    1150  Since |Si|  |g-1(1)| for all i  [t] by Claim 20, it follows that
+
+    1151  |{i        [t]  :  y     Si}|       |Dy |
+                                           |g-1(1)|
+
+    1152 which implies that
+
+    1153  E[Xy ]             1  -  2-      |Dy |    .
+                                         |g-1 (1)|
+
+    1154  Hence,
+
+    1155             Cov[Xy, Xy ] =                     Cov[Xy, Xy ]
+
+          y Dy                              y Dy
+
+    1156                                 =              E[XyXy ] - E[Xy] E[Xy ]
+
+                                            y Dy
+
+    1157                                                E[Xy ] - E[Xy] E[Xy ]
+
+                                            y Dy
+
+                                                                                          |Dy |
+                                                                                        |g-1 (1)|
+    1158                                                E[Xy      ]   -     (1  -  2 ) E[X -         y    ]
+
+                                            y Dy
+
+                                          |D |2 y       -        |Dy |
+                                                             |g-1 (1)|
+    1159
+
+                                                    |g  -1  (1)|        1
+                                                                      ln 2
+    1160                                                          2-
+                                                       ln 2
+
+    1161                                  |g-1(1)|
+    1162
+      R. Ilango                                                                                      31
+
+1163 where the second to last inequality follows from some calculus.
+
+1164     Hence, we have that
+
+1165     Var[X] =                  Cov[Xy, Xy  ]    |g-1(1)|2    3  ·  4    |g-1  (1)|2
+                                                                       104
+                       y,y g-1(1)
+
+1166  since    =   1   .
+                  104
+
+1167
+
+1168
+
+1169  5        (ACd0)-MCSP is NP-hard
+
+1170 We use the lower bound technique in Theorem 5 to prove hardness for constant depth formula
+1171 minimization.
+
+1172 Theorem 22. Let d  2 be an integer. Then there exists an d > 0 such that computing
+1173 Ld(·) up to a factor of (1 + d) is NP-complete under randomized quasipolynomial Turing
+1174 reductions.
+
+1175     At a high-level, our strategy for proving the NP-hardness of computing Ld(·) breaks into
+
+1176 three parts (informally):
+
+1177 1. Show that for all d  2 one can reduce computing LdOR to Ld, so it suffices to prove NP
+
+1178     hardness for LOd R.
+
+1179 2. Show that when d = 2 it is NP-hard to compute LdOR to any constant factor (this part
+
+1180     was already known).
+
+1181 3. Show that when d  3 one can compute a small approximation to LOd-R1 using an oracle
+
+1182     that computes a small approximation to LdOR. Conclude that Ld is NP-hard to compute
+
+1183     for all d  2.
+
+1184     Each of these parts correspond to the following three theorems (in order).
+
+1185 Theorem 23. Let d  2 be an integer. Let   0. Given access to an oracle O that
+
+1186 computes an (1 + ) multiplicative approximation to Ld and given the truth table of a function
+1187 f : {0, 1}n  {0, 1}, one can compute LOd R(f ) and LAdND(f ) up to a factor of (1 + )2 in
+1188 deterministic quasipolynomial time.
+
+1189 Corollary 24 (Easy corollary of Khot and Saket [23]). Given the truth table of a function f :
+1190 {0, 1}n  {0, 1}, determining L2OR(f ) up to a factor of n1- is NP-hard under quasipolynomial
+1191 time Turing reductions for arbitrarily small > 0.
+
+1192     We note that [23] actually proves the NP-hardness of LO2 R when the size of a DNF is the
+
+1193 number of terms in the DNF rather than the number of leaves. However, there is an easy
+
+1194 reduction between computing these two size measures, which we show in Section 7.
+
+1195 Theorem 25. Let d  3. Let 0 <  < 10-7. Given access to an oracle O that computes
+
+1196 LdOR up to a factor of (1 + ) and given the truth table of a function f : {0, 1}n  {0, 1}, one
+1197 can compute LOd-R1(f ) up to a (1 + O()) factor in randomized quasipolynomial time.
+
+1198 In the next three sections, we prove these theorems in reverse order. We finish this section
+1199 by showing that these three parts together imply Theorem 22.
+32        Versions of MCSP are Hard
+
+    1200 Proof of Theorem 22. The reduction from computing LdOR to computing Ld in Theorem 23
+    1201 implies that it suffices to show that that for each d  2 there exists some d > 0 such that
+    1202 computing LOd R(f ) up to a factor of (1 + d) is NP-hard under randomized quasipolynomial
+    1203 Turing reductions.
+
+    1204 We show this is indeed the case by induction on d. The base case of d = 2 is provided by
+    1205 Corollary 24. Next suppose d  3 and that computing LOd-R1(f ) up to a factor of (1 + d-1)
+    1206 is NP-hard under randomized quasipolynomial Turing reductions. Then Theorem 25 implies
+    1207 that there exists an d > 0 such that computing LOd R(f ) up to a factor of (1 + d) is NP-hard
+    1208 under quasipolynomial time randomized Turing reductions.
+
+    1209     6       Approximating LdO-R1(f ) Using LdOR(·)
+
+    1210 In this section, we prove Theorem 25.
+
+    1211 Theorem 25. Let d  3. Let 0 <  < 10-7. Given access to an oracle O that computes
+
+    1212 LOd R up to a factor of (1 + ) and given the truth table of a function f : {0, 1}n  {0, 1}, one
+    1213 can compute LdO-R1(f ) up to a (1 + O()) factor in randomized quasipolynomial time.
+
+    1214 Before proving Theorem 25, we state the following lemma that will be an important
+    1215 ingredient in our proof. This lemma essentially shows that we can sample functions whose
+    1216 CNF complexity is within a certain range and whose non-deterministic formula complexity is
+    1217 very close to its CNF complexity.
+
+    1218      Lemma        26.  Let    = 10-4.     Let  0<   <      be  a  parameter  such    that  1   N.   Let  n  and
+                                                                16                                  
+                                                   n8     t  2n.
+    1219  t  be  positive    integers  satisfying                   Then there exists a distribution Dn,t,           of
+
+    1220 Boolean functions with (n + n2/)-inputs samplable in time quasipolynomial in 2n such that
+
+    1221 if g  Dn,t,, then with probability 1 - o(1) all of the following hold
+
+    1222 1. (1 - 4)tn2  LND(g)  LA2 ND(g)  (1 + 4)tn2,
+
+    1223  2.    min{LND(g) + LND, (g), 2 · LND,.73(g)}  (1 +               )tn2  .
+                                                                        2
+
+    1224 In one sentence, Lemma 26 is proved using a counting argument. We defer the prove of
+
+    1225 Lemma 26 to the end of this section.
+
+    1226        Assuming Lemma 26 is true, we can prove Theorem 25.
+
+    1227 Proof of Theorem 25. Assume that the oracle O satisfies
+
+    1228        LdOR(g)  O(g)  (1 + ) · LdOR(g)
+
+    1229 for all functions g.
+
+    1230        Next, we note it suffices to show that one can compute LAd-ND1 (f ) up to a (1 + O()) factor
+
+    1231 in quasipolynomial time since, as mentioned in Proposition 7, DeMorgan's laws imply that
+
+    1232 LOd-R1(f ) = LAd-ND1 (¬f ).
+
+    1233        Let  0  <    <       with  1    N  be  some  sufficiently  small    constant  depending  on  .
+                                16         
+
+    1234 Algorithm for the reduction.
+
+    1235 Given the truth table of a function f : {0, 1}n  {0, 1}, our algorithm for computing
+    1236 an approximation to LAd-ND1 (f ) is as follows. First, using brute force, iterate through all
+    1237 AND  ACd0-2 formulas of size n1024/, see if any of them compute f , and output the size of
+    1238 the smallest one computing f if one does.
+      R. Ilango                                                                                                                     33
+
+1239       Otherwise, for each i  [22n] and for each positive integer t satisfying n8/  t  2n,
+
+1240 sample gi,t  Dn,t,, and set
+
+           bi,t =      1  ,   if  O(f (x)  gi,t(y))  (1 +              )tn2
+                                                                   16
+1241
+
+                       0 , otherwise.
+
+1242       Finally, after we have finished computing bi,t for all i  [22n] and all n8/  t  2n, set
+
+1243       t = max{t : for at least half of i  [22n], bi,t = 1},
+
+                   t
+
+1244 let i be a random element of [22n] and output
+
+1245       O(f (x)  gi ,t (y)) - t · n2.
+
+1246 This completes our description of the algorithm.
+
+1247 Running Time.
+
+1248 Next, we check that this algorithm runs in quasipolynomial time. By Proposition 9, the
+
+1249  number     of    formulas    of  size  at  most  n 1024    with  n-inputs   is  bounded  by
+                                                              
+
+            1024
+           2n  log(100n)
+1250
+
+1251 and is thus quasipolynomial in N = 2n. Thus, we can iterate through all AND  ACd0-2
+                                        n 1024                                                                             n 1024
+1252  formulas     of  size at    most           by iterating    through all   the    unrestricted  formulas    of   size         
+
+1253 and checking whether each unrestricted formula is an AND  ACd0-2 formula (by turning
+
+1254 repeated gates into a single gate with larger fan-in). Thus, the brute-force part of the
+
+1255 algorithm runs in quasipolynomial time.
+
+1256 For the remaining part of the algorithm, it is easy to see it runs in quasipolynomial time
+
+1257 as long as the truth table of each gi,t is quasipolynomial in the length of the truth table of
+1258 f . Since from Lemma 26 we know that gi,t takes n + n2/ inputs, it follows that the length
+1259 of the truth table of each gi,t is 2n+n2/ which is quasipolynomial in 2n, as desired. This
+
+1260 completes our analysis of the running time of the algorithm.
+
+1261 Correctness.
+
+1262 We now prove that the algorithm outputs a (1+O()) approximation to LAd-ND1 with probability
+
+1263 at least 2/3 when n is sufficiently large. Clearly, brute-force stage of the algorithm ensures
+
+1264  that  the  algorithm        outputs    the  LAd-ND1 (f )  exactly  when  LdA-ND1 (f )    n . 1024  Thus,  for  the  rest  of
+                                                                                                      
+
+1265  the  analysis       we  can  assume    that  LdA-ND1 (f )    n 1024   .
+                                                                          
+
+1266 Conditioning on a likely event.
+
+1267 To begin, we will condition on an event that occurs with probability at least two thirds,
+
+1268 which we describe next. For any i  [22n] and any t satisfying n8/  t  2n, we say that gi,t
+
+1269 is good if it satisfies all the conditions at the end of Lemma 26, that is, if the following two
+
+1270 statements are true:
+
+1271 1. (1 - 4)tn2  LND(gi,t)  L2AND(gi,t)  (1 + 4)tn2, and
+
+1272  2.   min{LND(gi,t) + LND, (gi,t), 2 · LND,.73(gi,t)}  (1 +                  )tn2  .
+                                                                               2
+34        Versions of MCSP are Hard
+
+    1273      We will condition on the event E that for each fixed t we have that gi,t is good for at least
+
+    1274 90% of the i  [22n] and gi ,t is good. We show that this event occurs with high probability.
+
+    1275
+
+    1276 Claim 27. E occurs with probability at least 2/3.
+
+    1277 Proof. We do this by a union bound argument.
+
+    1278      Fix some t  [2n] satisfying n8/  t  2n. We bound the probability that gi,t is good for
+
+    1279 less than a .9 fraction of the i  [22n]. Lemma 26 implies that for each fixed i that gi,t is
+
+    1280 good with probability 1 - o(1). Thus, since each gi,t is sampled independently, we get by a
+
+    1281 Chernoff bound that
+
+    1282      P r[           1gi,t  .9 · 22n]  e-(22n).
+
+                    i[22n ]
+
+    1283      Thus, union bounding over all t  [2n], we get that for each fixed t, gi,t is good for 90%
+
+    1284 of all i with probability at least
+
+    1285      1 - o(1) + 2n · e-(22n) = 1 - o(1).
+
+    1286 This event also implies that gi ,t is good with probability at least 90% since i is chosen at
+    1287 random. Hence, we have that E occurs with probability at least 2/3 by choosing  sufficiently
+    1288 small.
+
+    1289 For the remainder of the proof, we assume that E occurs.
+
+    1290 Lower bounding t .
+
+    1291 Next, we work to lower bound the value of t .
+
+    1292      Claim 28.      If  gi,t   is  good  and     tn2     LdA-ND1 (f )       tn2,  then  bi,t   =   1.
+                                                       8                          4
+
+    1293 Proof of Claim. We wish to use the lower bound that
+
+    1294      LOd R(f (x)  gi,t(y))  LdOR(gi,t) + LAd-ND1 (f )
+
+    1295 that is given in Theorem 5. If we could use this lower bound, then we would have that
+
+    1296      O(f (x)  gi,t(y))  LOd R(f (x)  gi,t(y))
+
+    1297                                 LdOR(gi,t) + LAd-ND1 (f )
+
+    1298                                 (1 - 4)tn2 +  tn2
+                                                               8
+                                         (1 +  )tn2
+    1299                                          16
+
+    1300
+
+    1301 where the first inequality comes from O being a multiplication approximation of LOd R, the
+    1302 second inequality comes the lower bound in Theorem 5, the third inequality comes from the
+
+    1303 fact gi,t is good and the hypothesis of the claim, and the last inequality comes from setting 
+
+    1304  so  that  4·               .  Thus,  since   O(f (x)  gi,t(y))  (1 +                 )tn2  ,  we  know  that  bi,t  =1  (by
+                                 16                                                        16
+
+    1305 definition) and the claim is proved.
+
+    1306 Hence, to prove the claim, we just need to check that the hypotheses in Theorem 5 hold.
+
+    1307 That is, we need to check that f and g are not constant functions and that
+
+    1308      min{LND(gi,t) + LND, (gi,t), 2 · LND,.73(gi,t)}  LdOR(gi,t) + LdA-ND1 (f ).
+      R. Ilango                                                                                                                     35
+
+1309  Since,          after  the    brute     force     stage  of    the  algorithm,  we  know  that  LdA-ND1 (f )      n , 1024
+                                                                                                                               
+
+1310 it follows that f is not a constant function. Similarly, since gi,t is good, we know that
+
+1311 LND(gi,t)  (1 - 4)tn2, so g is not constant either.
+
+1312  For the last condition, we have that
+
+1313  LdOR(gi,t)      +    LdA-ND1 (f )    (1  +  4  ·  )tn2  +      tn2    min{LND(gi,t)  +    LND, (gi,t),  2  ·  LND,.73(gi,t)}
+                                                                  4
+
+1314 where the first inequality comes from property (1) of gi,t being good and the assumption in
+1315 the claim on LAd-ND1 (f ) and the last inequality comes from property (2) of gi,t being good and
+1316 setting  so that 4  /4.
+
+1317  We use Claim 28 to show that t exists and to lower bound t in terms of LAd-ND1 (f ). In
+
+1318 particular, since we know that
+
+1319      1024       LdA-ND1 (f )  n2n
+
+      n
+
+1320 (where the lower bound comes from the brute force stage of the algorithm and the upper
+1321 bound is the trivial CNF upper bound), it follows that when n is sufficiently large that there
+1322 exists an integer t satisfying both that
+
+1323  n8/  t  2n
+
+1324 and that
+
+1325   tn2            LdA-ND1 (f )        tn2.
+      8                                  4
+
+1326  Hence, using Claim 28 and the fact that E occurs, we get that t                      exists  and  LdA-ND1 (f )       t  n2
+                                                                                                                        4
+
+1327 when n is sufficiently large.
+
+1328 Upper bounding t .
+
+1329 On the other hand the following claim implies that t cannot be too large.
+
+1330 Claim 29. If for some i gi,t is good and bi,t = 1 and n is sufficiently large, then
+
+1331  LdA-ND1 (f )    (      -  5)tn2.
+                         16
+
+1332 Proof of Claim. Since bi,t = 1, we have that
+
+1333  (1  +          )tn2        O(f (x)       gi,t(y))       (1  +  )LOd R(f (x)    gi,t(y)).
+                    16
+
+1334  On the other hand,
+
+1335  LOd R(f (x)  gi,t(y))  LdA-ND1 (f (x)  gi,t(y))  LAd-ND1 (f ) + LAd-ND1 (gi,t)  (1 + 4)tn2 + LAd-ND1 (f )
+
+1336 where the last inequality comes from property (1) of gi,t being good (note d  3). Putting
+1337 these two bounds together, we get that
+
+1338  LAd-ND1 (f )               1         +    )tn2    - (1   + 4)tn2
+                                      (1       16
+
+                             (1 + )
+
+1339                      (1 - 2)(1 +  )tn2 - (1 + 4)tn2
+                                               16
+                          (1 +  - 4)tn2 - (1 + 4)tn2
+1340                                16
+
+1341                             - 4 - 4)tn2
+                         (
+                             16
+                              
+1342                     (       - 5)tn2
+                             16
+1343
+36        Versions of MCSP are Hard
+
+    1344  where     the  first  inequality  comes    from      1    1 - 2      when        1,  the       second  inequality  comes
+                                                             1+
+
+    1345 from  < 1, and the last inequality comes from assuming that 4  .
+
+    1346  Conditioned on the event E occurring, Claim 29 implies that
+
+    1347  LAd-ND1 (f )               -  5)n2t
+                                (
+
+                                 16
+
+    1348 when n is sufficiently large.
+
+    1349 Putting the bounds on t together.
+
+    1350 Putting our bounds together, we have that
+
+    1351            - 5)n2t           LAd-ND1 (f )        n2
+          (                                            t
+          16
+                                                     4
+
+    1352 when n is sufficiently large and E occurs. Using these inequalities, we can prove the
+
+    1353 correctness of our algorithm's output. First, we show the upper bound. We have
+
+    1354  O(f (x)  gi ,t (y)) - t n2  (1 + )LOd R(f (x)  gi ,t (y)) - t n2
+
+    1355                                        (1 + )[LAd-ND1 (f ) + LdA-ND1 (gi ,t )] - t n2
+
+    1356                                        (1 + )[LAd-ND1 (f ) + (1 + 4)t n2] - t n2
+
+    1357                                        (1 + )LAd-ND1 (f ) + (1 + 2 + 8)t n2 - t n2
+
+    1358                                        (1 + )LdA-ND1 (f ) + (2 + 8)t n2
+
+    1359                                             (1   +  )LAd-ND1 (f )  +  2    +  8  LdA-ND1 (f  )
+                                                                                    -  5
+                                                                                
+                                                                               16
+
+    1360                                        (1 + )LdA-ND1 (f ) + O() · LAd-ND1 (f )
+
+    1361                                        (1 + O())LdA-ND1 (f )
+    1362
+
+    1363 where the third inequality comes from gi ,t being good, the sixth inequality comes from the
+
+    1364 lower bound on LdA-ND1 (f ), and the seventh inequality comes from setting  sufficiently small
+    1365 and since  < /103.
+
+    1366  Next, we argue the lower bound on the output. For this we will again make use of
+
+    1367 Theorem 5 in order to obtain the lower bound
+
+    1368  LOd R(f (x)  gi ,t (y))  LAd-ND1 (f ) + LdOR(gi ,t ).
+
+    1369 To do this, we must check that the two hypothesis of Theorem 5 hold. In particular, we know
+    1370 that f is not a constant function (since the brute force stage ensures LAd-ND1 (f )  n1024/) and
+    1371 gi ,t is not constant (because it is good) and we have that
+
+    1372  LOd R(gi  ,t   )+LdA-ND1 (f )  (1+4·)t     n2+  t       n2  min{LND(gi          ,t  )+LND, (gi  ,t     ), 2·LND,.73(gi  ,t  )}
+                                                           4
+
+    1373 using that gi ,t is good, the inequality on LdA-ND1 (f ) and setting  sufficiently small. This
+    1374 means we can indeed apply Theorem 5. We make use of it to derive our lower bound
+
+    1375  O(f (x)  gi ,t (y)) - t n2  LdOR(f (x)  gi ,t (y)) - t n2
+
+    1376                                        LAd-ND1 (f ) + LdOR(gi ,t ) - t n2
+
+    1377                                        LAd-ND1 (f ) + (1 - 4)t n2 - t n2
+
+    1378                                        LdA-ND1 (f ) - 4t n2
+
+    1379                                             (1 -        4  5  )LdA-ND1 (f  )
+                                                             16  +
+
+    1380                                        (1 - 2)LdA-ND1 (f ).
+    1381
+      R. Ilango                                                                                                           37
+
+1382 where the second inequality comes from Theorem 5, the third inequality comes from gi ,t
+
+1383 being good, and the last inequality comes from setting  sufficiently small.
+
+1384      Hence, we have the algorithm outputs (1+O()) approximation of LdA-ND1 (f ), as desired.
+
+1385 Next, we prove Lemma 26. We note that the functions we use in the proof of this lemma
+1386 are taken from Lupanov's construction of asymptotically optimal depth-3 formulas [26]. In
+1387 particular, one can view our functions as the functions computed by the depth-2 subformulas
+1388 in Lupanov's depth-3 formulas.
+
+1389      Lemma    26.  Let      = 10-4.  Let  0<       <      be  a  parameter  such  that  1   N.         Let  n  and
+                                                           16                                
+                                             n8     t  2n.
+1390  t  be  positive  integers  satisfying                    Then there exists a distribution Dn,t,               of
+
+1391 Boolean functions with (n + n2/)-inputs samplable in time quasipolynomial in 2n such that
+
+1392 if g  Dn,t,, then with probability 1 - o(1) all of the following hold
+
+1393 1. (1 - 4)tn2  LND(g)  L2AND(g)  (1 + 4)tn2,
+
+1394  2.  min{LND(g) + LND, (g), 2 · LND,.73(g)}  (1 +                )tn2.
+                                                                   2
+
+1395  Proof.  Fix  some  positive  integers    n   and  t  satisfying  n8     t  2n.   Set  m   =  n2    .  Note    that
+                                                                                                       
+
+1396 t  m4.
+
+1397 Defining the distribution.
+
+1398 Our distribution Dn,t, on Boolean functions will be as follows. For each y  [t], sample
+
+1399 Zy  [m] to be a random subset of [m] where each element of [m] is placed in Zy independently
+1400 with probability m-1. The Boolean function output by the distribution is the function
+
+1401      g : {0, 1}n × {0, 1}m  {0, 1}
+
+1402 where g(y, z) = 1 if and only if all of the following hold:
+
+1403      wt(z) = 1 (recall, wt(z) denotes the number of ones in z),
+
+1404      y  [t] (We interpret y as an element of [2n] in the natural way. So, y  [t] if and only if
+
+1405      the binary integer represented by y is at most t - 1. Note that t  2n.), and
+
+1406      the jth bit of z is one for some j  Zy.
+
+1407 This completes our description of the distribution Dn,t,. It is easy to see that one can sample
+1408 a function from Dn,t, in time 2O(m·n) which is quasipolynomial in 2n.
+
+1409 Union bounding against a bad event.
+
+1410 We now establish that a function g sampled from Dn,t, has the desired properties with
+1411 high probability. To begin, we consider a high probability event involving y[t] |Zy|. Since
+1412 y[t] |Zy| is the sum of m · t independent Bernoulli random variables with probabilty m-1
+1413 of being one and m · t · m-1 = n2t, Chernoff bounds imply that
+
+1414      tn2(1 - )  |Zy|  tn2(1 + )
+
+                        y[t]
+
+1415 with probability at least 1 - o(1). Thus, we can union bound over this o(1) failure probability
+1416 and assume for the remainder of this proof that when n is sufficiently large we have that
+
+1417      tn2(1 - )  |Zy|  tn2(1 + ).
+
+                        y[t]
+38        Versions of MCSP are Hard
+
+    1418 Upper bounding the complexity of g.
+
+    1419 Next, we establish the upper bound LA2 ND(g)  (1 + 4)n2t. Observe that we can compute g
+    1420 as follows:
+
+    1421  g(y, z) = 1wt(z)=1  1y[t]                   (1y=y~  (      zj ))
+
+                                             y~[t]             jZy~
+
+    1422 where zj denotes the jth bit of y.
+
+    1423  The next two claims upper bound the complexity of this formula in pieces.
+
+    1424  Claim 30. 1 L2AND( wt(y)=1)  2m2.
+
+    1425 Proof. We can compute 1wt(z)=1 by checking if at least one bit of z is one and then checking
+
+    1426 if for each pair of bits that at least one of them is zero. That is,
+
+    1427  1wt(z)=1 = (z1  · · ·  zm)                  (¬zj  ¬zj )
+
+                                             j=j [m]
+
+    1428 so 1 L2AND( wt(y)=1)  m + m2/2  2m2.
+
+    1429  Claim 31. LA2 ND(1y[t])  (t + 1)n
+
+    1430 Proof. Pick the integer k so that 2k-1 < t  2k. Then
+
+    1431  1 1 y[t] = y[2k]                   1y~=y .
+
+                                y~[2k ]\[t]
+
+    1432 It is easy to see that 1 L2AND( y[2k])  n (you just check that the first n - k bits of y are zero),
+
+    1433 and since 2k - t  2t - t = t, we get that
+
+    1434  LA2 ND(               1y~=y)  |[2k] \ [t]| · n  tn.
+
+                   y~[2k ]\[t]
+
+    1435
+
+    1436 Putting these bounds together, we get that
+
+    1437  L2AND(g)  2m2 + (t + 1)n + t · n + |Zy~|
+
+                                                      y~[t]
+
+    1438            2m2 + (t + 1)n + t · n + tn2(1 + )
+
+    1439            tn2(1 + 4)
+    1440
+
+    1441 when n is sufficiently large (note that n being sufficiently large can be absorbed into the
+    1442 o(1) failure probability in the lemma statement) and where the second inequality comes
+    1443 from our previous assumption that
+
+    1444  tn2(1 - )  |Zy|  tn2(1 + ).
+
+                   y[t]
+
+    1445 Lower bounding the complexity of g.
+
+    1446 It remains to prove the lower bounds in the lemma statement. To prove these lower bounds,
+    1447 we use the following claim.
+    1448 Claim 32. Let 0 <  1. With probability 1-o ,(1), we have that LND, (g)  (1-4)tn2.
+      R. Ilango                                                                                                                     39
+
+1449 Before we prove the claim, we show how we can use it to finish the proof of the lemma. In
+
+1450 particular, the claim implies that with probability 1 - o(1) all of the following hold
+
+1451     LND(g)  (1 - 4)tn2,
+
+1452     LND(g) + LND,(g)  (1 + )(1 - 4)tn2, and
+
+1453     2 · LND,.73(g)  2 · (.73)(1 - 4)tn2.
+
+1454 Thus, to prove the lemma we require that both of the following hold
+
+1455     (1    +  )(1   -  4)       1  +      ,     and
+                                           2
+                                           
+1456     2  ·  (.73)(1  -  4)       1   +  2     .
+
+1457 Hence, the lemma is true since   /16.
+
+1458     It remains to prove the claim.
+
+1459 Proof of Claim. We prove this by a union bound argument. Fix any h : {0, 1}n+m  {0, 1}.
+
+1460 We bound the probability that h is an -one-sided approximation for g. By construction, we
+
+1461 have that |g-1(1)| = y[t] |Zy|. Since we have already union bounded against the possibility
+1462 that y[t] |Zy| < (1 - )tn2, we know that h computes an one-sided approximation of g
+1463 with probability zero if |h-1(1)| < · (1 - )tn2.
+
+1464     On the other hand, suppose that |h-1(1)|  (1 - )tn2. Then, since each value of g is an
+
+1465 independent Bernoulli random variable, whose probability of equalling one is at most m-1,
+
+1466 we get that the probability g outputs one whenever h outputs one is at most
+
+1467     (m-1)       (1-)tn2   = m-(1-)             (1-)tn2         =  2-(1-)     2  (1-)tn2 log n  =  O(2-  2  (1-3)  tn2 log n).
+                                                                                                             
+
+1468 In contrast, using Proposition 9, the number of functions computed by a non-deterministic
+1469 formula size s with m + n inputs and m + n non-deterministic inputs is at most
+
+1470     2s log(100(m+n))           2s log(200m)           2  2  s  log(200n)  .
+                                                              
+
+1471     Thus, setting s = (1 - 4)tn2 we get the number of functions computed by a non-
+
+1472 determinstic formula of size s is bounded by
+
+1473        2  (1-4)tn2 log(200n).
+
+         2
+
+1474 Hence, the probability an -one-sided approximation of g can be computed by a non-
+1475 deterministic formula of size at most (1 - 4)tn2 is bounded above by
+
+1476     O(2-     2  (1-3)tn2  log  n)  ·  2  2     (1-4)tn2 log(200n)  =o           , (1).
+                                              
+
+1477
+1478
+
+1479  7        NP Hardness of L2OR
+
+1480 After a long line of work that began with Masek [27], Khot and Saket [23] proved near
+1481 optimal hardness of approximation for minimizing the number of terms in a DNF.
+
+1482 Theorem 33 (Khot and Saket [23]). Given the truth table of a function f : {0, 1}n  {0, 1},
+1483 determining the minimum number of terms in a DNF for computing f up to a factor of n1-
+1484 is NP hard under quasipolynomial time Turing reductions for all > 0.
+
+1485 We will need a version of Khot and Saket's theorem that proves hardness of minimizing
+1486 the number of leaves in a DNF (which is our size measure). This follows from an easy
+1487 reduction.
+40        Versions of MCSP are Hard
+
+    1488 Corollary 24 (Easy corollary of Khot and Saket [23]). Given the truth table of a function f :
+    1489 {0, 1}n  {0, 1}, determining L2OR(f ) up to a factor of n1- is NP-hard under quasipolynomial
+    1490 time Turing reductions for arbitrarily small > 0.
+
+    1491 Proof. Let > 0. We show that, given an oracle O that computes L2OR up to a factor of n1-
+    1492 and given the truth table of a function f : {0, 1}n  {0, 1}, one can compute in polynomial
+
+    1493 time the minimum number of terms in any DNF for f up to a factor of O(n1- ).
+
+    1494     The algorithm is as follows. Given the truth table of a function f : {0, 1}n  {0, 1},
+
+    1495 define f : {0, 1}n × {0, 1}n  {0, 1} by
+
+    1496     f (x, y) = f (x)  yi
+
+                                 i[n]
+
+    1497  where  yi  index  the  bits  of  y.  Output  O(f   ).
+                                                          n
+
+    1498 It is easy to see that this is a polynomial time reduction, so it remains to argue for
+
+    1499 correctness. Let q be the minimum number of terms in a DNF required to compute f . It is
+
+    1500 easy to see that if f can be computed by a DNF  = j[q ] i with q terms then f can
+    1501 be computed by a DNF
+
+    1502      = [i  y1 · · ·  yn]
+
+                     j[q]
+
+    1503 with at most 2nq leaves.
+
+    1504     On the other hand, suppose that LO2 R(f ) = s and  = i[q ] i is a DNF for f with s
+
+    1505 leaves. By the optimality of  , we know that each i must output one on at least one input.
+
+    1506 It follows that i uses at least n literals since it must include y1  · · ·  yn in order to only
+
+    1507 accept YES instances of f . Hence, we have that s  q n. Therefore, there exists a DNF for
+
+    1508 f with at most q terms by setting the values of y1 = · · · = yn = 1 in  , so q  q  s/n.
+
+    1509     Putting these two bounds together, we get that
+
+    1510     q  LO2 R(f )  2q .
+                      n
+
+             Therefore,    we  have    that  our  output  O(f    )  satisfies  the  following  guarantee
+                                                             n
+    1511
+
+    1512     q  LO2 R(f )  O(f )  (2n)1- L2OR(f )  O(n1- q ),
+                      n          n                        n
+
+    1513 as desired.
+
+    1514  8      OR-top to General Reduction
+
+    1515 In this section we will prove the following theorem.
+
+    1516 Theorem 23. Let d  2 be an integer. Let   0. Given access to an oracle O that
+
+    1517 computes an (1 + ) multiplicative approximation to Ld and given the truth table of a function
+    1518 f : {0, 1}n  {0, 1}, one can compute LOd R(f ) and LAdND(f ) up to a factor of (1 + )2 in
+    1519 deterministic quasipolynomial time.
+
+    1520     In our proof we will make use of known depth hierarchy theorems for AC0 formulas.
+
+    1521 Various versions of these hierarchy theorems suffice for our purposes. We cite the one in [13]
+
+    1522 since it is clearest from the theorem statement that the depth d upper bound is given by a
+
+    1523 read once formula.
+      R. Ilango                                                                                            41
+
+1524 It will be important to us that these results are "explicit." We say a function family
+
+1525 fn : {0, 1}n  {0, 1} is explicit if there is a deterministic algorithm Afn that given the input
+1526 1n outputs the truth table of fn in time 2O(n). We say a family of formulas n that take
+1527 n-inputs is explicit if there is a deterministic algorithm A that on input 1n outputs n in
+1528 time 2O(n).
+
+1529 Theorem 34 (Håstad, Rossman, Servedio and Tan [13]). Let d  2. There is an explicit
+1530 function Sipserd that can be computed by an explicit depth-d read once formula, but requires
+1531 depth-(d - 1) formulas of size 2n(1/d) to compute.
+
+1532 A consequence of this hierarchy theorem is that there exist explicit functions that are
+1533 much easier to compute via a depth-d formula with a top OR gate compared to a top AND
+1534 gate.
+
+1535 Corollary 35. Let d  2. There exists an explicit function gn : {0, 1}n  {0, 1} such that
+1536 LdOR(gn)  n and LdAND(gn)  2 . n(1/d)
+
+1537 Proof. Fix d  2. Our function gn : {0, 1}n  {0, 1} is defined as follows. By Theorem 34,
+
+1538 there is an explicit function Sipserd+1 on n-inputs that is computed by an explicit depth-(d+1)
+
+1539 read once formula n. Without loss of generality assume that the top gate of n is an
+
+1540 AND gate (if this is not the case, then use ¬Sipserd+1 instead of Sipserd+1). Then we can
+1541 write n = i[k] ni where each n1 , . . . , nk are OR  ACd0-1 formulas that are read once on
+
+1542 pairwise disjoint inputs. Furthermore, i[k] |ni | = |n| = n.
+
+1543  We then let gn : {0, 1}n  {0, 1} be the function computed by
+
+1544  gn(x) = in(x).
+
+                 i[k]
+
+1545 By construction, we have that LdOR(gn)  n.
+
+1546  It remains to lower bound LAdND(gn). Since n1 , . . . , kn use pairwise disjoint inputs, the
+
+1547 direct sum rules in Proposition 6 imply that5
+
+1548  LAdND(gn)         LdAND(ni ).
+
+                  i[k]
+
+1549  On the other hand, since n = i[k] ni computes Sipserd+1 we have that
+
+1550        LdAND(in)  LAdND(        in)  Ld(Sipserd+1)  2n(1/d)
+
+      i[k]                     i[k]
+
+1551 where the last lower bound comes from Theorem 34. Hence, we can conclude that
+
+1552  LAd ND(gn)  2n(1/d)
+
+1553
+
+1554  Now we are ready to prove Theorem 23
+
+1555 Theorem 23. Let d  2 be an integer. Let   0. Given access to an oracle O that
+
+1556 computes an (1 + ) multiplicative approximation to Ld and given the truth table of a function
+1557 f : {0, 1}n  {0, 1}, one can compute LdOR(f ) and LAdND(f ) up to a factor of (1 + )2 in
+1558 deterministic quasipolynomial time.
+
+      5 Here we begin abusing notation by writing LAdND(ni ) to mean LAdND(hin) where hni is the function
+         computed by ni
+42        Versions of MCSP are Hard
+
+    1559 Proof. By applying DeMorgan's laws as in Proposition 7, we know that LAdND(f ) = LOd R(¬f ),
+
+    1560 so it suffices to show how to compute LdOR(f ) in polynomial time given oracle access to Ld.
+
+    1561  Let m be a parameter we set later. Let gm : {0, 1}m  {0, 1} be the explicit function
+
+    1562 given in Corollary 35 such that LOd R(gm)  m and LAdND(gm)  2 . m(1/d)
+
+    1563  Our algorithm for computing LdOR(f ) given oracle access to Ld will be as follows. First,
+
+    1564  using  brute  force,  we    iterate  through     all  formulas    of  size     at  most   m  on  n-inputs   and  output
+                                                                                                    
+    1565 LdOR(f ) exactly if we find a formula computing f . Otherwise, we output O(f (x)  gm(y)).
+
+    1566 This completes our description of the algorithm.
+
+    1567  Next      we  argue   that   this    gives  the  desired    output.     Clearly,     if  LOd R(f )    m  ,  the  output  is
+                                                                                                                
+                                               LOd R(f )        m
+    1568  correct.  Thus    we  assume  that               >       .  The   idea     is  that  the  cost   of  using  an   top  AND
+
+    1569 gate to compute gm is so high that the any optimal circuit for f (x)  gm(y) must use a top
+
+    1570 OR gate regardless of what f is doing. Indeed, computing f (x)  gm(y) using a top OR gate,
+
+    1571 we get that
+
+    1572  LdOR(f (x)  gm(y)) = m + LdOR(f )  m + n2n
+
+    1573 where the equality comes from the direct sum rules in Proposition 6 and the inequality comes
+    1574 from the trivial DNF upper bound. On the other hand
+
+    1575  LAdND(f (x)  gm(y))  LAdND(gm)  2m(1/d)
+
+    1576 where the first inequality comes from the direct sum rules in Proposition 6 and the last
+
+    1577 inequality comes from our the properties of gm.
+
+    1578  We now set m = nOd(1) such that
+
+    1579  LdAND(f (x)  gm(y))  2m(1/d)  2n2 .
+
+    1580  We can then conclude that LdOR(f (x)  gm(y))  m + n2n and LAdND(f (x)  gm(y))  2n2 .
+
+    1581 Hence we have that
+
+    1582  Ld(f (x)  gm(y)) = LOd R(f (x)  gm(y)) = LOd R(f ) + m
+
+    1583  when   n  is  sufficiently  large.   Since  LdOR(f )        m  ,  we  get  that
+                                                                      
+
+    1584  LOd R(f )  Ld(f (x)  gm(y))  (1 + )LdOR(f ).
+
+    1585 Thus, we can conclude that O(f (x)  gm(y)) gives a (1 + )2 approximation of LOd R(f ), as
+    1586 desired.
+    1587 Finally, we analyze the running time of this algorithm. The brute force stage of the
+    1588 algorithm takes time roughly
+
+    1589  2O(    m  log n)  =  2nO(1)
+                 
+
+    1590 and constructing the truth table for the oracle query can also be done in 2nO(1) time. Thus,
+    1591 the algorithm runs in time quasipolynomial in N , as desired.
+
+    8.1 1592 An alternate version avoiding the switching lemma.
+
+    1593 Note to the reader: the remainder of this section is not strictly necessary to read and can
+    1594 safely be skipped.
+    1595 One may ask how necessary "switching lemma" types of lower bounds (such as the one
+    1596 used to prove the depth hierarchy theorem we make use of in Theorem 34) to our reduction.
+      R. Ilango                                                                                      43
+
+1597 Indeed, Theorem 23 is the only place where we use such lower bounds. However, we can
+1598 actually get by without using switching lemma style techniques, albeit with a loss in hardness
+1599 of approximation. We show how to do this in the next proof, which only really makes use of
+1600 direct sum rules and DeMorgan's laws.
+
+1601 Theorem 36. Let d  2. Given access to an oracle computing Ld and the truth table of a
+1602 function f : {0, 1}n  {0, 1}, one can compute LOd R(f ) and LAdND(f ) in polynomial time.
+
+1603 Proof. By applying DeMorgan's laws as in Proposition 7, we know that LAdND(f ) = LOd R(¬f ),
+1604 so it suffices just to show how to compute LOd R(f ) in polynomial time given oracle access to
+1605 Ld.
+1606 Fix d  2. We split into two cases. First, we consider the case that for all functions h
+1607 that
+
+1608  LOd R(h) = Ld(h).
+
+1609 (We actually know this case is false by Corollary 35, but we want to avoid using any switching
+
+1610 lemma style results in this proof.) In this case, we can clearly get the desired algorithm for
+
+1611 computing LdOR(f ) by just outputting Ld(f ).
+
+1612  For the second case, we know that there exists a function h : {0, 1}m  {0, 1} such that
+
+1613 LOd R(h) = Ld(h). Then we must have that LdOR(h) > LdAND(h).
+
+1614  Given a function f : {0, 1}n  {0, 1}, our algorithm for computing LdOR(f ) is simply to
+
+1615 output
+
+      Ld(f )                , if Ld(f (x)  h(y)) = Ld(f ) + Ld(h)
+
+1616
+
+      Ld(f (x)  ¬f (y)) - Ld(f ) , otherwise.
+
+1617 It is easy to see that this algorithm runs in polynomial-time, so we just need to show
+
+1618 that the algorithm produces the correct output. We will do this by proving two claims:
+
+1619 1. LAdND(f ) = Ld(f ) if and only if Ld(f (x)  h(y)) = Ld(f ) + Ld(h).
+1620 2. Lmd ax(f ) = Ld(f (x)  ¬f (y)) - Ld(f )
+1621 where we define Ldmax(f ) = max{LdOR(f ), LAdND(f )}
+
+1622 Assuming that (1) and (2) are true, we can prove the correctness of the algorithm as
+
+1623 follows.
+
+1624  If LAdND(f ) = Ld(f ), then by (1) we have that Ld(f (x)  h(y)) = Ld(f ) + Ld(h), so the
+
+1625 algorithm will output
+
+1626  Ld(f (x)  ¬f (y)) - Ld(f ) = Ldmax(f ) = LdOR(f )
+
+1627 where the first equality comes from (2) and the last equality is because LAdND(f ) = Ld(f ).
+
+1628  On the other hand, if LdAND(f ) = Ld(f ), then by (1) we have that Ld(f (x)  h(y)) =
+
+1629 Ld(f ) + Ld(h), so the algorithm outputs
+
+1630  Ld(f ) = LOd R(f )
+
+1631 where the equality comes from LAdND(f ) = Ld(f ).
+1632 Hence, to prove the correctness of the algorithm, it suffices to prove (1) and (2), which
+
+1633 we show in the following claims.
+
+1634  Claim 37. (1) is true. That is, LAdND(f ) = Ld(f ) if and only if Ld(f (x)  h(y)) =
+
+1635 Ld(f ) + Ld(h).
+44        Versions of MCSP are Hard
+
+    1636 Proof. We begin by establishing that LOd R(f (x)  h(y)) > Ld(f ) + Ld(h). Indeed, we have
+    1637 that
+
+    1638     LOd R(f (x)  h(y))  LdOR(f ) + LdOR(h) > LdOR(f ) + Ld(h)  Ld(f ) + Ld(h)
+
+    1639 where the first inequality comes from the direct sum rules in Proposition 6 and the second
+
+    1640 inequality comes from the assumption that Ld(h) = LdOR(h).
+
+    1641     As a consequence, we have that
+
+    1642     Ld(f (x)  h(y)) = Ld(f ) + Ld(h)  LdAND(f (x)  h(y)) = Ld(f ) + Ld(h).
+
+    1643 However, we know that
+
+    1644     LdAND(f (x)  h(y)) = Ld(f ) + Ld(h)  LAdND(f ) = Ld(f ) and LdAND(h) = Ld(h)
+
+    1645                                       LdAND(f ) = Ld(f )
+    1646
+
+    1647 where the first equivalence comes from the direct sum rules in Proposition 6 and the second
+
+    1648 equivalence comes from the assumption that Ld(h) = LdOR(h).
+
+    1649     Thus we have established
+
+    1650     Ld(f (x)  h(y)) = Ld(f ) + Ld(h)  LAdND(f ) = Ld(f )
+
+    1651 as desired.
+
+    1652 Claim 38. (2) is true. That is, Lmd ax(f ) = Ld(f (x)  ¬f (y)) - Ld(f ).
+    1653 Proof. From Proposition 8 we know that
+
+    1654     Ld(f (x)  ¬f (y)) = LAdND(f ) + LOd R(f ).
+
+    1655 Hence, we get that
+
+    1656     Ld(f (x)  ¬f (y)) - Ld(f ) = LAdND(f ) + LdOR(f ) - Ld(f ) = Ldmax(f )
+
+    1657 as desired.
+
+    1658
+
+    1659  9  Gaps in Complexity Between Depths
+
+    1660 In this section we prove Theorem 2.
+
+    1661 Theorem 2 (Proved in Section 9). For all d  2 there exists a function f : {0, 1}n  {0, 1}
+    1662 such that Ld(f ) - Ld+1(f )  2d(n).
+
+    1663     The main idea here is to "lift" the 2(n) additive gap known for the case of d = 2 to
+
+    1664 higher depths, using the lower bound method in Theorem 5. To do this, we will need a
+
+    1665 stronger version of Lemma 26 that shows the existence of "non-deterministically hard" truth
+
+    1666 tables of length polynomial in 2n rather than quasipolynomial. This comes at the cost of
+
+    1667 having depth-3 near optimal formulas rather than depth-2, which is why we did not use them
+    1668 in our (AC0d)-MCSP hardness result.
+    1669 Again the inspiration for our proof comes from Lupanov's nearly optimal depth-3 con-
+
+    1670 struction [26].
+      R. Ilango                                                                                      45
+
+1671 Lemma 39. Let n and t be integers where n is a power of two and 1  t  2n/n. Then
+
+1672 there exists a distribution of functions that takes q-inputs where n  q  O(n) such that if f
+
+1673 is sampled from this distribution then with probability 1 - o(1) both of the following hold
+
+1674  (1 - o(1))tn11  LND(f )  LA3 ND(f )  (1 + o(1))tn11, and
+
+1675  min{LND(f ) + LND, (f ), 2 · LND,.73(f )}  (1 + /4)tn11 where  = 10-4.
+
+1676 We defer the proof of Lemma 39 (which is essentially a counting argument) to the end of
+
+1677 the section. We use this lemma to prove the desired gap result.
+
+1678  To start, we prove a weaker version of Theorem 2.
+
+1679 Theorem 40. Let d  2. There exists a family of functions fn : {0, 1}d(n)  {0, 1} such
+1680 that LOd R(fn) - LOd+R1(fn)  2d(n).
+
+1681 Proof. We work by induction on d. Our inductive hypothesis is that there exists a family of
+
+1682 functions fn : {0, 1}d(n)  {0, 1} such that both of the following hold:
+1683 1. LOd R(fn) = 2d(n), and
+1684 2. LdO+R1(fn) = (1 - d(1))LdOR(fn).
+
+1685 Base Case.
+
+1686 For the base case of d = 2, we can let fn : {0, 1}n  {0, 1} be given by the parity function
+
+1687 PARITYn. It is a folklore result that
+
+1688  LO2 R(PARITYn) = n2n (using the fact that any subcube with more than one element must
+
+1689  contain    both  YES  and   NO  instances   of  PARITYn),  and
+
+                                
+      L3OR(PARITYn)  2O( n) (by computing PARITYn via a divide and conquer approach)
+1690
+
+1691 Thus, it is easy to see that PARITYn satisfies the inductive hypothesis.
+
+1692 Inductive Step.
+
+1693 Now suppose that we have proved the theorem for some d  2, and we want to prove the
+
+1694 d + 1 case. We will construct a family of functions fn satisfying the inductive hypothesis for
+
+1695 depth d + 1.
+
+1696  Let ¬hn : {0, 1}d(n)  {0, 1} denote the family of functions satisfying the inductive
+
+1697 hypothesis for depth d. Combining the inductive hypothesis with DeMorgan's laws, we have
+
+1698 that
+
+1699 1. LAdND(hn) = 2d(n), and
+1700 2. LAd+ND1 (hn) = (1 - d(1))LdAND(hn).
+
+1701  We now construct fn (note it suffices to do this when n is sufficiently large). Fix some
+
+1702 positive integer n. Let m = d(n) be the least power of two greater than the number of
+
+1703 inputs hn takes. Using condition (1) on hn and the trivial CNF upper bound, we know that
+
+1704  2d(m)  LAdND(hn)  m2m.
+
+1705 Thus, when n is sufficiently large there must exist an integer t such that 1  t  2m/m and
+1706 such that
+
+1707  8    LdAND(hn)    tm11    16  LAd ND (hn )
+                                
+
+1708 where  = 10-4.
+
+1709  Then by Lemma 39, there exists a function g : {0, 1}r  {0, 1} where m  r  Od(n)
+
+1710 such that both of the following hold
+46        Versions of MCSP are Hard
+
+    1711  (1 - o(1))tm11  LND(g)  L3AND(g)  (1 + o(1))tm11, and
+
+    1712  min{LND(g) + LND, (g), 2 · LND,.73(g)}  (1 + /4)tm11.
+
+    1713  Let fn : {0, 1}d(n) × {0, 1}r  {0, 1} be given by fn(x, y) = hn(x)  g(y). Note that fn
+
+    1714 takes d(n) + r = d(n) inputs, as desired.
+
+    1715  One can check that fn satisfies all of the hypotheses of Theorem 5 when n is sufficiently
+
+    1716 large. (The trickiest condition to verify is:
+
+    1717  min{LND(g) + LND, (g), 2 · LND,.73(g)}  (1 + /4)tm11  LOd+R1(g) + LAdND(hn)
+
+    1718 which follows from the hypotheses on g and the choice of t.) Using Theorem 5, we get the
+    1719 following lower bound on fn
+
+    1720  LOd+R1(fn)  LAdND(hn) + LdO+R1(g)  LAdND(hn) + (1 - o(1))tm11.
+
+    1721 Since LAdND(hn) = 2d(n), this confirms condition (1) of the inductive hypothesis.
+
+    1722  On the other hand, we can upper bound the complexity of fn by
+
+    1723  LdO+R1(fn)  LdAND(fn)  LAdND(hn) + LAdND(g)  LdAND(hn) + (1 + o(1))tm11  O(LAdND(hn))
+
+    1724 where the last inequality comes from our choice of t.
+
+    1725  This allows us to confirm condition (2):
+
+    1726  LdO+R2(fn)  LAd+ND1 (fn)
+
+    1727            LdA+ND1 (hn) + LA3 ND(g)
+
+    1728            LAd+ND1 (hn) + (1 + o(1))tm11
+
+    1729            (1 - d(1))LdAND(hn) + (1 + o(1))tm11
+
+    1730            LOd+R1(fn) + o(tm11) - d(LdAND(hn))
+
+    1731            LOd+R1(fn) - d(LdAND(hn))
+
+    1732            (1 - d(1))LdO+R1(fn).
+    1733
+
+    1734 where the last four equalities are justified (in order) by:
+
+    1735  condition (2) on hn,
+
+    1736  the our lower bound on LOd+R1(fn),
+
+    1737  our choice of t, and
+
+    1738  our upper bound on LdO+R1(fn).
+
+    1739
+
+    1740  We can now prove the full theorem.
+
+    1741 Theorem 2 (Proved in Section 9). For all d  2 there exists a function f : {0, 1}n  {0, 1}
+    1742 such that Ld(f ) - Ld+1(f )  2d(n).
+
+    1743 Proof of Theorem 2. Fix some d. Let hn : {0, 1}d(n)  {0, 1} be the function guaranteed
+
+    1744 by Theorem 40 satisfying LdOR(hn) - LOd+R1(hn)  2d(n).
+
+    1745  Let M  N be the set containing all the input lengths of the functions in the family hn,
+
+    1746 that is,
+
+    1747  M = {m : there is an n such that hn takes m inputs}.
+
+    1748 Next, define the function m : N  N by
+
+          m (n) =  0                               , if {1, . . . , n/2 }  M = 
+
+    1749
+
+                   max({1, . . . , n/2 }  M ) , otherwise
+      R. Ilango                                                                                                      47
+
+1750 Since hn takes d(n) inputs, we have that m (n) = (n).
+
+1751  We now define fn : {0, 1}n  {0, 1} by
+
+      fn(x) =      0                                                                    , if mn = 0
+
+1752
+
+                   hm (n)(x1, . . . , xm (n))  ¬hm (n)(xm (n)+1, . . . , x2m (n)) , otherwise
+
+1753  Therefore, when n is sufficiently large, we have that
+
+1754  Ld+1(fn) - Ld+2(fn)
+
+1755  Ld+1(hm (n)(x1, . . . , xm (n))  ¬hm (n)(xm (n)+1, . . . , x2m (n)))-
+
+1756  - Ld+2(hm (n)(x1, . . . , xm (n))  ¬hm (n)(xm (n)+1, . . . , x2m (n)))
+
+1757  =LdO+R1(hm (n)) + LdA+ND1 (hm (n)) - LOd+R2(hm (n)) - LAd+ND2 (hm (n))
+
+1758  LdO+R1(hm (n)) - LOd+R2(hm (n))
+
+1759  2d(m (n))
+
+1760  2d(n)
+1761
+
+1762 where justifications for these equalities/inequalities are (in order):
+
+1763 1. follows from the definition of fn, n being sufficiently large, and M being non-empty
+
+1764 2. follows from the properties of direct sums of functions with their negations proved in
+
+1765  Proposition 8
+
+1766 3. follows from the quantity LAd+ND1 (Hm (n)) - LdA+ND2 (hm (n)) being non-negative
+1767 4. follows the work above on hm
+
+1768 5. follows from m (n) = (n)
+
+1769
+
+1770  We end the section by proving Lemma 39.
+
+1771 Lemma 39. Let n and t be integers where n is a power of two and 1  t  2n/n. Then
+
+1772 there exists a distribution of functions that takes q-inputs where n  q  O(n) such that if f
+
+1773 is sampled from this distribution then with probability 1 - o(1) both of the following hold
+
+1774  (1 - o(1))tn11  LND(f )  L3AND(f )  (1 + o(1))tn11, and
+
+1775  min{LND(f ) + LND, (f ), 2 · LND,.73(f )}  (1 + /4)tn11 where  = 10-4.
+
+1776 Proof. Set m = 10 log n and set to be an integer satisfying6 n1-1/ log(log(n))  22 
+
+1777 4n1-1/ log(log(n)). Since n is a power of two, we can partition {0, 1}n into Hamming balls of
+                                                                                    2n
+1778  radius one B1, . . . , B 2n  by the Hamming code.  Let  c1  ,  .  .  .  ,  c   n   {0, 1}n  be the centers of
+
+1779 these balls.     n
+
+1780  We also define an encoding  of the elements in the set X = i[t] Bi. In particular, let
+
+1781  : X  [t] × [n] be the bijection given by
+
+1782  (x) = (i, j) where x = ci  ej
+
+1783 where ej = 0j-110n-j-1.
+
+      6 If n is small, it may not be possible to set in this way, but this possibility can just be absorbed into
+         the o(1) failure probability in the lemma statement.
+48        Versions of MCSP are Hard
+
+    1784 Definition of f
+
+    1785 We define the function f : {0, 1}n × {0, 1}m × {0, 1} as follows. For each i  [t], j  [n] and
+    1786 y  {0, 1}m, let gi,j,y : {0, 1}  {0, 1} be uniformly random function. Then we define f by
+
+          f (x, y, z) =   0        , if x  X                          .
+
+    1787
+
+                          gi,j,y(z) , if x  X and (x) = (i, j)
+
+    1788  We make a few notes about f before we proceed. First, f takes n + m + = O(n) inputs.
+
+    1789 Next, let I = X × {0, 1}m × {0, 1} . Note that f restricted to I is a uniformly random
+
+    1790 function, and that f is always zero outside of I. It will also be useful to know that
+
+    1791  |I| = t · n · 2m · 2  tn11 · (1 - 1/ log(log(n))) log(n).
+
+    1792 Upper bounding the complexity of f
+    1793 To begin, we prove an upper bound on the complexity of f .
+
+          Claim 41.
+
+    1794  LA3 ND(f )  (1 + o(1))tn11
+
+    1795 Proof. Lupanov observed that one can compute f via the following AND  OR  AND formula
+
+    1796  ( 1xBi )                          1[ xBi  g~(z)             [1y~=y            (xj = (ci)j)]]
+
+          i[t]            g~:{0,1} {0,1},                   y~{0,1}m            j[n]:gi,j,y~=g~
+
+                             i[t]
+
+    1797 where (ci)j denotes the jth bit in ci.
+
+    1798  We upper bound the number of leaves in this formula. One can compute 1xBi by
+
+    1799 checking if at least one bit of x differs from ci and that for every pair of bits from y at least
+
+    1800 one agrees with the corresponding bit in ci. Using this strategy, we get that
+
+    1801  L2 1( xBi ) = L2 1( xBi )  2n2.
+
+    1802  By the trivial DNF upper bound, we get that LO2 R(g~)  2 . Finally,
+
+    1803  1 L1AND( y~=y               (xj = (ci)j)  m +                      1
+
+                          j[n]:gi,j,y~)=g~                  j[n]:gi,j,y~=g~
+
+    1804  Putting these all together, we get the upper bound
+
+    1805  LA3 ND(f )  2tn2 + t22 (2n2 + 2 + m2m) +                                   1
+
+                                                            g~,i,y~ j[n]:gi,j,y~=g~
+
+    1806              2tn2 + t22 (2n2 + 2 + m2m) + tn2m
+
+    1807              2tn2 + 4tn1-1/ log(log(n))(2n2 + n + 10n10 log n) + tn11
+
+    1808              (1 + o(1))tn11
+    1809
+
+    1810
+      R. Ilango                                                                                                                        49
+
+1811 Lower bounding the complexity of f
+
+1812 We now argue the lower bounds on f . All of these lower bounds are proved via a counting
+1813 argument. In particular, we will use that the number of nondeterministic formulas of size s
+1814 with (n + m + )-inputs and (n + m + ) nondeterministic inputs is bounded by
+
+1815      2s log(100(n+m+ ))  2s log(200n).
+
+1816 for sufficiently large n by Proposition 9.
+
+1817 Claim 42. With probability 1 - o(1),
+
+1818      LND(f )  (1 - o(1))tn11
+
+1819 Proof. We use a union bound argument. Since f is a uniformly random function on I, the
+1820 probability any fixed function h equals f is at most
+
+1821      2-|I|  2-tn11·(1-1/ log(log(n))) log(n).
+
+1822      The claim follows by combining this probability bound with the 2s log(200n) bound on the
+
+1823 number of non-deterministic formulas of size s.
+
+1824 Claim 43. With probability 1 - o(1),
+
+1825      LND(f ) + LND, (f )  (1 + /4)tn11
+
+1826 Proof. In the previous claim, we proved that LND(f )  (1 - o(1))tn11. Thus, we now just
+
+1827 need to lower bound LND,(f ). We again work via a union bound argument.
+
+          The   probability      there        exists  any  function     h  with  |h-1(1)|       <      (1-1/  log(log(n)))|I |  that
+                                                                                                                   2
+1828
+
+1829 computes a  one-sided approximation of f is o(1). This is because f is a uniformly random
+
+1830 function on I and is zero outside of I, so by a Chernoff bound, we have that f has at least
+
+1831  (1-1/ log(log(n)))|I|   YES         inputs  with  probability     1 - o(1).
+                    2
+
+          On    the    other  hand,       if  |h-1(1)|       (1-1/  log(log(n)))|I  |  ,  then  the  probability       some     fixed
+                                                                         2
+1832
+
+1833 function h computes a  one-sided approximation to f is at most
+
+                (1-1/  log(log(n)))|I  |      -(1-1/ log(log(n)))2tn11 log(n)/2
+                             2
+1834      2  2 -
+
+1835  since  h  needs  to  have  at       least  (1-1/ log(log(n)))|I|  YES  instances      to  have   any  hope   of  computing
+                                                                2
+
+1836 a  one-sided approximation of f and all these YES instances of h must be YES instances of
+
+f . 1837
+
+1838      By combining this probability bound with the 2s log(200n) bound on the number of non-
+
+1839  deterministic formulas of size s and (n + m +                 )-inputs,  we      get  that  LND, (f )     (     -  o(1))tn11
+                                                                                                                   2
+
+1840 with probability 1 - o(1).
+
+1841 Claim 44. With probability 1 - o(1),
+
+1842      2 · LND,.73(f )  (1 + /4)tn11
+
+1843 Proof. We again use a union bound. Fix some function h : {0, 1}n × {0, 1}m × {0, 1} . We
+
+1844 bound the probability that h computes a .73 one-sided approximation of f .
+
+1845      Set k = |h-1(1)|. For h to be a .73 one-sided approximation of f , two events must occur:
+
+1846 1. h-1(1)  f -1(1)
+
+1847 2. |f -1(1)|  k/.73
+50        Versions of MCSP are Hard
+
+    1848 We bound the probability that events (1) and (2) both occur. Since f is a uniformly
+
+    1849 random function on I and zero elsewhere, the probability that event (1) occurs is at most
+    1850 2-k.
+
+    1851 Next, we work to bound the probability that event (2) occurs given that event (1) occurs.
+
+    1852 Event (2) is equivalent to saying that 1 (x,y,z)I [ f(x,y,z)=1]  k/.73. If event (1) occurs,
+
+    1853 then
+
+    1854            1[ f(x,y,z)=1] = k +                 1[ f(x,y,z)=1].
+
+          (x,y,z)I                        (x,y,z )I \Yh
+
+    1855  Since (x,y,z)I\Yh [1f(x,y,z)=1] is the sum of |I|-k independent binomial random variables
+
+    1856 with expectation .5, it follows from a Chernoff bound that the probability that event (2)
+
+    1857 occurs given event (1) occurs is
+
+    1858  Pr[k +           1f(x)=1  k/.73]  e-D(q||.5)·(|I|-k)
+
+                  xX \Yh
+
+    1859 where D is the KL divergence function and
+
+          q=  k(1/.73 - 1)  · (1/.73 - 1)
+                           =
+    1860          |I| - k            1-
+
+    1861 where  = k/|I|. Note that when q  1, this bound does not make sense, in which case we
+    1862 adopt the convention that e-D(q||.5) = 1.
+    1863 Hence, we have that the probability that h computes a .73 one-sided approximation of f
+    1864 is at most
+
+                    -D(  ·(1/.73-1)  ||.5)·(1-)|I  |
+                                1-
+    1865  2 · e . -·|I|
+
+    1866 Using some calculus, we get that this quantity is at most 2-.501|I|, which is upper bounded
+    by 1867
+
+    1868  2-.501t·n11·(1-1/ log(log(n))) log(n).
+
+    1869 Combining this upper bound on the probability that h computes a .73 one-sided approx-
+    1870 imation of f with the 2s log(200n) bound on the number of non-deterministic formulas of size
+    1871 s and (n + m + )-inputs, we get that
+
+    1872  LND,.73(f )  (.501 - o(1))tn11
+
+    1873 with probability 1 - o(1).
+
+    1874  Therefore,
+
+    1875  2LND,.73(f )  (1.02 - o(1))tn11  (1 + /4)tn11
+
+    1876 with probability 1 - o(1).
+    1877 Combining the last three claims with a union bound completes our proof of this lemma.
+
+    1878  References
+
+    1879 1 Misha Alekhnovich, Mark Braverman, Vitaly Feldman, Adam R. Klivans, and Toniann Pitassi.
+
+    1880  The complexity of properly learning simple concept classes. J. Comput. Syst. Sci., 74(1):16­34,
+
+    1881  February 2008.
+      R. Ilango                                                                                        51
+
+1882 2 Eric Allender. The new complexity landscape around circuit minimization. In Language and
+
+1883  Automata Theory and Applications - 14th International Conference (LATA), volume 12038,
+
+1884  pages 3­16, 2020.
+
+1885 3 Eric Allender, Lisa Hellerstein, Paul McCabe, Toniann Pitassi, and Michael E. Saks. Minimizing
+
+1886  DNF formulas and AC0d circuits given a truth table. In 21st Annual IEEE Conference on
+
+1887  Computational Complexity (CCC), pages 237­251, 2006.
+
+1888 4 Eric Allender, Michal Koucký, Detlef Ronneburger, and Sambuddha Roy. The pervasive reach
+
+1889  of resource-bounded kolmogorov complexity in computational complexity theory. Journal of
+
+1890  Computer and System Sciences, 77(1):14 ­ 40, 2011.
+
+1891 5 Dana Angluin, Lisa Hellerstein, and Marek Karpinski. Learning read-once formulas with
+
+1892  queries. J. ACM, 40(1):185­210, January 1993.
+
+1893 6 Sanjeev Arora and Boaz Barak. Computational Complexity - A Modern Approach. 2009.
+
+1894 7 David Buchfuhrer and Christopher Umans. The complexity of boolean formula minimization.
+
+1895  J. Comput. Syst. Sci., 77(1):142­153, 2011.
+
+1896 8 Marco L. Carmosino, Russell Impagliazzo, Valentine Kabanets, and Antonina Kolokolova.
+
+1897  Learning algorithms from natural proofs. In 31st Conference on Computational Complexity
+
+1898  (CCC), volume 50, pages 10:1­10:24, 2016.
+
+1899 9 Sebastian Lukas Arne Czort. The complexity of minimizing disjunctive normal form formulas.
+
+1900  Master's thesis, University of Aarhus, 1999.
+
+1901 10 Vitaly Feldman. Hardness of approximate two-level logic minimization and PAC learning with
+
+1902  membership queries. In 38th Annual ACM Symposium on Theory of Computing (STOC),
+
+1903  pages 363­372, 2006.
+
+1904 11 Thomas Hancock, Tao Jiang, Ming Li, and John Tromp. Lower bounds on learning decision
+
+1905  lists and trees. Inf. Comput., 126(2):114­122, May 1996.
+
+1906 12 Johan Håstad, Russell Impagliazzo, Leonid A. Levin, and Michael Luby. A pseudorandom
+
+1907  generator from any one-way function. SIAM J. Comput., 28(4):1364­1396, 1999.
+
+1908 13 Johan Håstad, Benjamin Rossman, Rocco A. Servedio, and Li-Yang Tan. An average-case
+
+1909  depth hierarchy theorem for boolean circuits. J. ACM, 64(5):35:1­35:27, 2017.
+
+1910 14 John Håstad. Almost optimal lower bounds for small depth circuits. Advances in Computing
+
+1911  Research, 5:143­170, 1989.
+
+1912 15 Shuichi Hirahara. Non-black-box worst-case to average-case reductions within NP. In Mikkel
+
+1913  Thorup, editor, 59th IEEE Annual Symposium on Foundations of Computer Science (FOCS),
+
+1914  pages 247­258, 2018.
+
+1915 16 Shuichi Hirahara, Igor Carboni Oliveira, and Rahul Santhanam. NP-hardness of minimum
+
+1916  circuit size problem for OR-AND-MOD circuits. In 33rd Computational Complexity Conference
+
+1917  (CCC), volume 102, pages 5:1­5:31, 2018.
+
+1918 17 Rahul Ilango. Approaching MCSP from above and below: Hardness for a conditional variant
+
+1919  and AC0[p]. In 11th Innovations in Theoretical Computer Science Conference (ITCS), volume
+
+1920  151, pages 34:1­34:26, 2020.
+
+1921 18 Rahul Ilango. Connecting perebor conjectures: Towards a search to decision reduction for
+
+1922  minimizing formulas. In 35th Computational Complexity Conference (CCC), volume 169, pages
+
+1923  31:1­31:35, 2020.
+
+1924 19 Rahul Ilango, Bruno Loff, and Igor Carboni Oliveira. NP-hardness of circuit minimization for
+
+1925  multi-output functions. In 35th Computational Complexity Conference (CCC), volume 169,
+
+1926  pages 22:1­22:36, 2020.
+
+1927 20 Russell Impagliazzo and Ramamohan Paturi. On the complexity of k-SAT. J. Comput. Syst.
+
+1928  Sci., 62(2):367­375, 2001.
+
+1929 21 Russell Impagliazzo, Ramamohan Paturi, and Francis Zane. Which problems have strongly
+
+1930  exponential complexity? J. Comput. Syst. Sci., 63(4):512­530, 2001.
+
+1931 22 Valentine Kabanets and Jin-yi Cai. Circuit minimization problem. In 32nd Annual ACM
+
+1932  Symposium on Theory of Computing (STOC), pages 73­79, 2000.
+52        Versions of MCSP are Hard
+
+    1933 23 Subhash Khot and Rishi Saket. Hardness of minimizing and learning DNF expressions. In
+
+    1934  49th Annual IEEE Symposium on Foundations of Computer Science (FOCS), pages 231­240,
+
+    1935  2008.
+
+    1936 24 Daniel Lokshtanov, Dániel Marx, and Saket Saurabh. Lower bounds based on the exponential
+
+    1937  time hypothesis. Bull. EATCS, 105:41­72, 2011.
+
+    1938 25 Daniel Lokshtanov, Dániel Marx, and Saket Saurabh. Slightly superexponential parameterized
+
+    1939  problems. SIAM J. Comput., 47(3):675­702, 2018.
+
+    1940 26 O. B. Lupanov. On the realization of functions of logical algebra by formula of finite classes
+
+    1941  (formula of limited depth) in the basis &, v, -*. Problemy Kibernetiki, 6:5­14, 1961.
+
+    1942 27 William J. Masek. Some NP-complete set covering problems. Unpublished Manuscript, 1979.
+
+    1943 28 Dylan M. McKay, Cody D. Murray, and R. Ryan Williams. Weak lower bounds on resource-
+
+    1944  bounded compression imply strong separations of complexity classes. In 51st Annual ACM
+
+    1945  SIGACT Symposium on Theory of Computing (STOC), pages 1215­1225, 2019.
+
+    1946 29 Cody D. Murray and Richard Ryan Williams. On the (non) NP-hardness of computing
+
+    1947  circuit complexity. In 30th Conference on Computational Complexity (CCC), volume 33, pages
+
+    1948  365­380, 2015.
+
+    1949 30 Alexander A. Razborov and Steven Rudich. Natural proofs. J. Comput. Syst. Sci., 55(1):24­35,
+
+    1950  1997.
+
+    1951 31 Rahul Santhanam. Pseudorandomness and the minimum circuit size problem. In 11th
+
+    1952  Innovations in Theoretical Computer Science Conference (ITCS), volume 151, pages 68:1­
+
+    1953  68:26, 2020.
+
+    1954 32 Roman Smolensky. Algebraic methods in the theory of lower bounds for boolean circuit
+
+    1955  complexity. In 19th Annual ACM Symposium on Theory of Computing (STOC), pages 77­82,
+
+    1956  1987.
+
+    1957 33 Boris A. Trakhtenbrot. A survey of russian approaches to perebor (brute-force searches)
+
+    1958  algorithms. IEEE Annals of the History of Computing, 6(4):384­400, 1984.
+
+    1959 34 Christopher Umans, Tiziano Villa, and Alberto L. Sangiovanni-Vincentelli. Complexity of
+
+    1960  two-level logic minimization. IEEE Trans. on CAD of Integrated Circuits and Systems,
+
+    1961  25(7):1230­1246, 2006.
+
+    1962 35 Ingo Wegener. The Complexity of Boolean Functions. Wiley-Teubner, 1987.
+
+    1963 36 Ryan Williams. Personal Communication.
+
+                                                           ECCC                                   ISSN 1433-8092
+                                                           https://eccc.weizmann.ac.il
+

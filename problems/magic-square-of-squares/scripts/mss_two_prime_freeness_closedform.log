@@ -1,0 +1,17 @@
+=== 0. SELF-TEST: closed form vs builder ===
+self-test: 91 pairs, mismatches=0 PASS
+=== 1. distinctness / positivity ===
+pairs=4465, non-distinct/nonpositive=0 PASS
+=== 2. slice theorems (numeric verification) ===
+S1 A+B>D violations=0; S2 C+D=A(X>=Y)=0, C+D=B(Y>=X)=0; S3 p|Y_p or p|R_p hits=0; pairs=53956
+S2 check: a^4-14a^2b^2+b^4==0 or 3a^4-10a^2b^2+3b^4==0, a,b<=4000:
+  solutions=0 (expect 0)
+=== 3. full relation census, p<q<=1500 ===
+pairs=6670, live-relation hits=0 (expect 0)
+kill-equations referenced: NONE
+=== 4. kill-equation regime probes ===
+min |log ratio| over p<=200, q<=2e5: {'K1': 0.0001, 'K2': 0.0002, 'K3': 0.0, 'K4': 0.0002}
+  argmin pairs: {'K1': (41, 4657), 'K2': (181, 17497), 'K3': (173, 7933), 'K4': (137, 3709)}
+twin pairs q=p+2 (p<1e4): 0 pairs, relations=0
+p|Yq pairs (p in first 60 primes, q<=2e4): 2617 pairs, relations=0
+DONE

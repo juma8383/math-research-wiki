@@ -1,0 +1,10 @@
+﻿self-test PASS: closed form == general builder for 5 pairs (w=pq)
+primes 1 mod 4 up to 3000: 211
+w=pq pairs tested: 22155
+A2=0, A3=0, AP=0
+
+v_p profiles (elements mod p-adic valuation):
+  p=5, q=13: v_p = [0, 0, 0, 3]  (distinct: 2 of 4)
+  p=5, q=17: v_p = [0, 0, 0, 3]  (distinct: 2 of 4)
+  p=13, q=17: v_p = [0, 0, 0, 2]  (distinct: 2 of 4)
+  p=5, q=41: v_p = [0, 0, 0, 3]  (distinct: 2 of 4)

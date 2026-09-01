@@ -1,0 +1,9 @@
+D-set additive-pattern census: W=1000000 (centers <= 1000000000000)
+building primitive-triple table...
+primitive triples with hypotenuse <= W: 159139
+w with |D|>=3: 257824 ; |D|>=4: 254549
+w with additive triple (A2): 0
+w with parallelogram (A3): 0
+d not divisible by 24 (Lemma 4 check): 0
+=> NO D-set additive parallelogram with center <= 1000000000000
+   (necessary condition for a full 9-square solution with square center is NEVER met in this range)

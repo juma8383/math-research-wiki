@@ -1,0 +1,34 @@
+﻿lonely_runner_t1_scan.py -- Conjecture T1 deep box scan, Tue Sep  1 14:06:18 2026
+python 3.13.2
+
+cross-validation: 1001 sets checked, 0 mismatches (must be 0)
+
+T1-SCAN  n=10  [1,14]  (primitive 10-subsets, bound 1/11)
+  sets tested           : 1001
+  full kappa evals      : 259 (filters rejected the rest)
+  violations k < bound  : 0
+  tight sets            : 1
+  tight non-{1..n}      : 0
+  tight with (n+1)|v    : 0   <-- T1 says this must be 0
+  elapsed               : 0.0 s
+
+T1-SCAN  n=7  [1,22]  (primitive 7-subsets, bound 1/8)
+  sets tested           : 170213
+  full kappa evals      : 50332 (filters rejected the rest)
+  violations k < bound  : 0
+  tight sets            : 3
+  tight non-{1..n}      : 2  (1, 2, 3, 4, 5, 7, 12), (1, 4, 5, 6, 7, 11, 13)
+  tight with (n+1)|v    : 0   <-- T1 says this must be 0
+  elapsed               : 3.9 s
+
+T1-SCAN  n=6  [1,30]  (primitive 6-subsets, bound 1/7)
+  sets tested           : 588559
+  full kappa evals      : 257302 (filters rejected the rest)
+  violations k < bound  : 0
+  tight sets            : 1
+  tight non-{1..n}      : 0
+  tight with (n+1)|v    : 0   <-- T1 says this must be 0
+  elapsed               : 16.7 s
+
+Legend: 'tight with (n+1)|v' is the direct Conjecture T1 test.
+All-zero = T1 evidence extended to the widened boxes.

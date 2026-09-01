@@ -1,0 +1,84 @@
+brocard_rootofunity_exact.py -- exact roots-of-unity window verification
+window = (isqrt(n!), 2*isqrt(n!)];  R(n) expected = 2^(pi(n)+1) for n>=4
+
+SELF-TEST 1: CRT enumeration vs brute force (x*x mod N == 1), n=4..10
+  n= 4  N=       24  R_crt=  8  R_brute=  8  match=True  (0.0s)
+  n= 5  N=      120  R_crt= 16  R_brute= 16  match=True  (0.0s)
+  n= 6  N=      720  R_crt= 16  R_brute= 16  match=True  (0.0s)
+  n= 7  N=     5040  R_crt= 32  R_brute= 32  match=True  (0.0s)
+  n= 8  N=    40320  R_crt= 32  R_brute= 32  match=True  (0.0s)
+  n= 9  N=   362880  R_crt= 32  R_brute= 32  match=True  (0.0s)
+  n=10  N=  3628800  R_crt= 32  R_brute= 32  match=True  (0.3s)
+SELF-TEST 1 RESULT: PASS
+
+SELF-TEST 2: x^2 mod n! == 1 for ALL enumerated roots (n<=14), random sample of 64 for n>13
+SELF-TEST 2 RESULT: PASS
+
+MAIN CENSUS: n, pi(n), R(n) [exact count of roots], window hits, notes
+  n= 4 pi= 2 R=      8 win= 2  hits=[7, 5]  [known Brown m=5 present=True; *** EXACT SOLUTION m^2=n!+1: [5] ***]  (0.0s)
+  n= 5 pi= 3 R=     16 win= 2  hits=[19, 11]  [known Brown m=11 present=True; *** EXACT SOLUTION m^2=n!+1: [11] ***]  (0.0s)
+  n= 6 pi= 3 R=     16 win= 0  hits=[]  (0.0s)
+  n= 7 pi= 4 R=     32 win= 1  hits=[71]  [known Brown m=71 present=True; *** EXACT SOLUTION m^2=n!+1: [71] ***]  (0.0s)
+  n= 8 pi= 4 R=     32 win= 0  hits=[]  (0.0s)
+  n= 9 pi= 4 R=     32 win= 0  hits=[]  (0.0s)
+  n=10 pi= 4 R=     32 win= 0  hits=[]  (0.0s)
+  n=11 pi= 5 R=     64 win= 0  hits=[]  (0.0s)
+  n=12 pi= 5 R=     64 win= 0  hits=[]  (0.0s)
+  n=13 pi= 6 R=    128 win= 0  hits=[]  (0.0s)
+  n=14 pi= 6 R=    128 win= 0  hits=[]  (0.0s)
+  n=15 pi= 6 R=    128 win= 0  hits=[]  (0.0s)
+  n=16 pi= 6 R=    128 win= 0  hits=[]  (0.0s)
+  n=17 pi= 7 R=    256 win= 0  hits=[]  (0.0s)
+  n=18 pi= 7 R=    256 win= 0  hits=[]  (0.0s)
+  n=19 pi= 8 R=    512 win= 0  hits=[]  (0.0s)
+  n=20 pi= 8 R=    512 win= 0  hits=[]  (0.0s)
+  n=21 pi= 8 R=    512 win= 0  hits=[]  (0.0s)
+  n=22 pi= 8 R=    512 win= 0  hits=[]  (0.0s)
+  n=23 pi= 9 R=   1024 win= 0  hits=[]  (0.0s)
+  n=24 pi= 9 R=   1024 win= 0  hits=[]  (0.0s)
+  n=25 pi= 9 R=   1024 win= 0  hits=[]  (0.0s)
+  n=26 pi= 9 R=   1024 win= 0  hits=[]  (0.0s)
+  n=27 pi= 9 R=   1024 win= 0  hits=[]  (0.0s)
+  n=28 pi= 9 R=   1024 win= 0  hits=[]  (0.0s)
+  n=29 pi=10 R=   2048 win= 0  hits=[]  (0.0s)
+  n=30 pi=10 R=   2048 win= 0  hits=[]  (0.0s)
+  n=31 pi=11 R=   4096 win= 0  hits=[]  (0.0s)
+  n=32 pi=11 R=   4096 win= 0  hits=[]  (0.0s)
+  n=33 pi=11 R=   4096 win= 0  hits=[]  (0.0s)
+  n=34 pi=11 R=   4096 win= 0  hits=[]  (0.0s)
+  n=35 pi=11 R=   4096 win= 0  hits=[]  (0.0s)
+  n=36 pi=11 R=   4096 win= 0  hits=[]  (0.0s)
+  n=37 pi=12 R=   8192 win= 0  hits=[]  (0.0s)
+  n=38 pi=12 R=   8192 win= 0  hits=[]  (0.0s)
+  n=39 pi=12 R=   8192 win= 0  hits=[]  (0.0s)
+  n=40 pi=12 R=   8192 win= 0  hits=[]  (0.0s)
+  n=41 pi=13 R=  16384 win= 0  hits=[]  (0.0s)
+  n=42 pi=13 R=  16384 win= 0  hits=[]  (0.0s)
+  n=43 pi=14 R=  32768 win= 0  hits=[]  (0.0s)
+  n=44 pi=14 R=  32768 win= 0  hits=[]  (0.0s)
+  n=45 pi=14 R=  32768 win= 0  hits=[]  (0.0s)
+  n=46 pi=14 R=  32768 win= 0  hits=[]  (0.0s)
+  n=47 pi=15 R=  65536 win= 0  hits=[]  (0.0s)
+  n=48 pi=15 R=  65536 win= 0  hits=[]  (0.0s)
+  n=49 pi=15 R=  65536 win= 0  hits=[]  (0.0s)
+  n=50 pi=15 R=  65536 win= 0  hits=[]  (0.0s)
+  n=51 pi=15 R=  65536 win= 0  hits=[]  (0.0s)
+  n=52 pi=15 R=  65536 win= 0  hits=[]  (0.0s)
+  n=53 pi=16 R= 131072 win= 0  hits=[]  (0.1s)
+  n=54 pi=16 R= 131072 win= 0  hits=[]  (0.1s)
+  n=55 pi=16 R= 131072 win= 0  hits=[]  (0.1s)
+  n=56 pi=16 R= 131072 win= 0  hits=[]  (0.1s)
+  n=57 pi=16 R= 131072 win= 0  hits=[]  (0.1s)
+  n=58 pi=16 R= 131072 win= 0  hits=[]  (0.1s)
+  n=59 pi=17 R= 262144 win= 0  hits=[]  (0.1s)
+  n=60 pi=17 R= 262144 win= 0  hits=[]  (0.1s)
+
+TOTAL elapsed: 0.9 s
+
+SUMMARY: window hits for n>=8 (would contradict clean equidistribution):
+  NONE -- window occupancy occurs ONLY at n=4,5,7 through n=60.
+
+SUMMARY: exact solutions m^2 = n!+1 found among all roots:
+  n=4 m=[5]
+  n=5 m=[11]
+  n=7 m=[71]

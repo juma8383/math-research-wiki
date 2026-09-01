@@ -1,0 +1,27 @@
+﻿lonely_runner_openfrontier.py -- first-open-frontier probe, Tue Sep  1 14:14:52 2026
+python 3.13.2
+cross-validation n=5 [1,12]: 0 mismatches (must be 0)
+
+  TIGHT: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11)
+OPEN-FRONTIER n=11 [1,20]: 167960 primitive 11-subsets, 28447 full evals
+  tight sets: 1 [(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11)]
+  violations (kappa < 1/(n+1)): 0
+  tight with (n+1)|v (T1): 0   tight non-{1..n} (T2): 0
+  elapsed: 4.5 s
+
+  TIGHT: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
+OPEN-FRONTIER n=12 [1,18]: 18564 primitive 12-subsets, 3024 full evals
+  tight sets: 1 [(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)]
+  violations (kappa < 1/(n+1)): 0
+  tight with (n+1)|v (T1): 0   tight non-{1..n} (T2): 0
+  elapsed: 0.6 s
+
+  TIGHT: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13)
+OPEN-FRONTIER n=13 [1,18]: 8568 primitive 13-subsets, 1372 full evals
+  tight sets: 1 [(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13)]
+  violations (kappa < 1/(n+1)): 0
+  tight with (n+1)|v (T1): 0   tight non-{1..n} (T2): 0
+  elapsed: 0.3 s
+
+NOTE: n=11,12 overlap the preprint CLAIMS (unrefereed); n=13 is
+genuinely open territory. Small boxes -- first probes only.
