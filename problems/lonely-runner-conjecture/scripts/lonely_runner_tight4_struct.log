@@ -1,0 +1,40 @@
+lonely_runner_tight4_struct.py -- Tue Sep  1 15:55:55 2026
+
+==========================================================================
+V = (1, 2, 3, 4)
+  maximizing times (Lemma L1 candidates at kappa=1/5): ['1/5', '2/5', '3/5', '4/5']
+  (count 4)
+
+  pair {p,q} vs r: nwin  n_single_arc  all_in_single  all_cov_by_{r,s}(other speeds)
+    {1,2} vs B_3 : nwin= 2  single= 0  all_single=False  cov_by_B_{3,4}=False
+    {1,2} vs B_4 : nwin= 2  single= 0  all_single=False  cov_by_B_{4,3}=False
+    {1,3} vs B_2 : nwin= 3  single= 1  all_single=False  cov_by_B_{2,4}=False
+    {1,3} vs B_4 : nwin= 3  single= 2  all_single=False  cov_by_B_{4,2}=False
+    {1,4} vs B_2 : nwin= 2  single= 0  all_single=False  cov_by_B_{2,3}=False
+    {1,4} vs B_3 : nwin= 2  single= 0  all_single=False  cov_by_B_{3,2}=False
+    {2,3} vs B_1 : nwin= 2  single= 0  all_single=False  cov_by_B_{1,4}=False
+    {2,3} vs B_4 : nwin= 2  single= 0  all_single=False  cov_by_B_{4,1}=False
+    {2,4} vs B_1 : nwin= 4  single= 2  all_single=False  cov_by_B_{1,3}=False
+    {2,4} vs B_3 : nwin= 4  single= 2  all_single=False  cov_by_B_{3,1}=False
+    {3,4} vs B_1 : nwin= 4  single= 2  all_single=False  cov_by_B_{1,2}=False
+    {3,4} vs B_2 : nwin= 4  single= 2  all_single=False  cov_by_B_{2,1}=False
+
+==========================================================================
+V = (1, 3, 4, 7)
+  maximizing times (Lemma L1 candidates at kappa=1/5): ['1/5', '2/5', '3/5', '4/5']
+  (count 4)
+
+  pair {p,q} vs r: nwin  n_single_arc  all_in_single  all_cov_by_{r,s}(other speeds)
+    {1,3} vs B_4 : nwin= 3  single= 2  all_single=False  cov_by_B_{4,7}=False
+    {1,3} vs B_7 : nwin= 3  single= 0  all_single=False  cov_by_B_{7,4}=False
+    {1,4} vs B_3 : nwin= 2  single= 0  all_single=False  cov_by_B_{3,7}=False
+    {1,4} vs B_7 : nwin= 2  single= 0  all_single=False  cov_by_B_{7,3}=False
+    {1,7} vs B_3 : nwin= 5  single= 2  all_single=False  cov_by_B_{3,4}=False
+    {1,7} vs B_4 : nwin= 5  single= 3  all_single=False  cov_by_B_{4,3}=False
+    {3,4} vs B_1 : nwin= 4  single= 2  all_single=False  cov_by_B_{1,7}=False
+    {3,4} vs B_7 : nwin= 4  single= 2  all_single=False  cov_by_B_{7,1}=False
+    {3,7} vs B_1 : nwin= 5  single= 2  all_single=False  cov_by_B_{1,4}=False
+    {3,7} vs B_4 : nwin= 5  single= 1  all_single=False  cov_by_B_{4,1}=False
+    {4,7} vs B_1 : nwin= 6  single= 4  all_single=False  cov_by_B_{1,3}=False
+    {4,7} vs B_3 : nwin= 6  single= 2  all_single=False  cov_by_B_{3,1}=False
+

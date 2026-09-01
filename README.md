@@ -1,5 +1,7 @@
 # Math Wiki
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22238399.svg)](https://doi.org/10.5281/zenodo.22238399)
+
 A persistent, compounding research notebook for open math problems. The LLM
 owns all bookkeeping — working attempts, filing theorems and methods into a
 shared toolbox, indexing, and logging — so that work **survives across sessions
@@ -65,6 +67,19 @@ This is an LLM-maintained research notebook, not peer-reviewed literature.
 Flagged results should be treated with exactly the skepticism their flags
 announce. Corrections are applied append-only with the error left visible in
 place.
+
+## Cite
+
+The repository is archived on Zenodo with a versioned DOI. To cite the
+project as it stands, cite the **concept DOI** (resolves to the latest
+archived version):
+
+> Math Wiki (LLM-maintained math research notebook).
+> Zenodo. DOI: [10.5281/zenodo.22238399](https://doi.org/10.5281/zenodo.22238399)
+
+Snapshotted versions (e.g. v0.1.1 =
+[10.5281/zenodo.22238400](https://doi.org/10.5281/zenodo.22238400)) carry
+their own DOIs via the same record.
 
 ## License
 

@@ -1,0 +1,113 @@
+lonely_runner_tight4.py -- tight 4-set census, Tue Sep  1 15:52:59 2026
+python 3.13.2
+
+==============================================================================
+SELF-TESTS
+==============================================================================
+S1  integer engine vs kappa_exact, primitive 4-sets [1,16]: 1745 sets, 0 mismatches OK
+S2  kappa(3,8,11,19) = 7/30   expected 7/30  OK
+S2  kappa(1, 2, 3, 4) = 1/5  expected 1/5  OK
+S2  kappa(1, 3, 4, 7) = 1/5  expected 1/5  OK
+S3  tight <=> every triple-window in single B arc [1,16]: 0 mismatches OK
+S4  filters never reject a tight set [1,16]: 0 violations OK
+SELF-TESTS: ALL PASSED
+
+==============================================================================
+PART A: exhaustive tight-4 census, primitive 4-subsets of [1,80]
+==============================================================================
+d=  4  sets=      1  full=      1  tight= 1  [(1, 2, 3, 4)]
+d=  5  sets=      4  full=      2  tight= 0
+d=  6  sets=     10  full=      6  tight= 0
+d=  7  sets=     20  full=      6  tight= 1  [(1, 3, 4, 7)]
+d=  8  sets=     34  full=     13  tight= 0
+d=  9  sets=     56  full=     27  tight= 0
+d= 10  sets=     80  full=     30  tight= 0
+d= 11  sets=    120  full=     32  tight= 0
+d= 12  sets=    154  full=    105  tight= 0
+d= 13  sets=    220  full=     51  tight= 0
+d= 14  sets=    266  full=     68  tight= 0
+d= 15  sets=    360  full=    196  tight= 0
+d= 16  sets=    420  full=    250  tight= 0
+d= 17  sets=    560  full=    136  tight= 0
+d= 18  sets=    614  full=    188  tight= 0
+d= 19  sets=    816  full=    232  tight= 0
+d= 20  sets=    884  full=    618  tight= 0
+d= 21  sets=   1120  full=    542  tight= 0
+d= 22  sets=   1210  full=    279  tight= 0
+d= 23  sets=   1540  full=    342  tight= 0
+d= 24  sets=   1572  full=   1247  tight= 0
+d= 25  sets=   2020  full=    866  tight= 0
+d= 26  sets=   2080  full=    645  tight= 0
+d= 27  sets=   2544  full=    938  tight= 0
+d= 28  sets=   2638  full=   1164  tight= 0
+d= 29  sets=   3276  full=    990  tight= 0
+d= 30  sets=   3200  full=   1734  tight= 0
+d= 31  sets=   4060  full=   1288  tight= 0
+d= 32  sets=   4040  full=   1827  tight= 0
+d= 33  sets=   4840  full=   1729  tight= 0
+d= 34  sets=   4896  full=   1335  tight= 0
+d= 35  sets=   5960  full=   2284  tight= 0
+d= 36  sets=   5710  full=   4534  tight= 0
+d= 37  sets=   7140  full=   1820  tight= 0
+d= 38  sets=   6954  full=   1545  tight= 0
+d= 39  sets=   8216  full=   3580  tight= 0
+d= 40  sets=   8136  full=   5832  tight= 0
+d= 41  sets=   9880  full=   3167  tight= 0
+d= 42  sets=   9244  full=   3204  tight= 0
+d= 43  sets=  11480  full=   2802  tight= 0
+d= 44  sets=  11010  full=   6002  tight= 0
+d= 45  sets=  12824  full=   7553  tight= 0
+d= 46  sets=  12650  full=   3787  tight= 0
+d= 47  sets=  15180  full=   3750  tight= 0
+d= 48  sets=  14024  full=   8842  tight= 0
+d= 49  sets=  17276  full=   5496  tight= 0
+d= 50  sets=  16320  full=   6168  tight= 0
+d= 51  sets=  19040  full=   8620  tight= 0
+d= 52  sets=  18524  full=   8405  tight= 0
+d= 53  sets=  22100  full=   5401  tight= 0
+d= 54  sets=  20202  full=   8301  tight= 0
+d= 55  sets=  24680  full=   9888  tight= 0
+d= 56  sets=  23276  full=  12860  tight= 0
+d= 57  sets=  26904  full=   9845  tight= 0
+d= 58  sets=  25984  full=   5792  tight= 0
+d= 59  sets=  30856  full=   9273  tight= 0
+d= 60  sets=  27816  full=  27816  tight= 0
+d= 61  sets=  34220  full=  11203  tight= 0
+d= 62  sets=  31930  full=   7674  tight= 0
+d= 63  sets=  36624  full=  13189  tight= 0
+d= 64  sets=  35216  full=  19613  tight= 0
+d= 65  sets=  41440  full=  16885  tight= 0
+d= 66  sets=  37500  full=  16107  tight= 0
+d= 67  sets=  45760  full=  11659  tight= 0
+d= 68  sets=  42448  full=  18645  tight= 0
+d= 69  sets=  48576  full=  21997  tight= 0
+d= 70  sets=  46064  full=  17268  tight= 0
+d= 71  sets=  54740  full=  17070  tight= 0
+d= 72  sets=  49004  full=  31348  tight= 0
+d= 73  sets=  59640  full=  15015  tight= 0
+d= 74  sets=  55056  full=  15827  tight= 0
+d= 75  sets=  62440  full=  35700  tight= 0
+d= 76  sets=  59754  full=  33500  tight= 0
+d= 77  sets=  70160  full=  17774  tight= 0
+d= 78  sets=  62624  full=  20761  tight= 0
+d= 79  sets=  76076  full=  23660  tight= 0
+d= 80  sets=  69520  full=  48804  tight= 0
+census done: sets=1473833 full-evals=607153 tight=2  elapsed 139.6 s
+
+==============================================================================
+PART B: structure of the tight 4-sets
+==============================================================================
+V              t*     res5        #1 #4  nu2hist        {1,2,3}? max=Sum? nAB  ab-in-Bc ab-in-Bd triOK
+(1, 2, 3, 4)   1/5    [1, 2, 3, 4]  1  1  {0: 2, 1: 1, 2: 1} YES      YES        2  False    False    True
+(1, 3, 4, 7)   1/5    [1, 3, 4, 2]  1  1  {0: 3, 2: 1}   no       YES        3  False    False    True
+
+==============================================================================
+PART C: fixed-prefix families, d = ... up to 200
+==============================================================================
+  tight members of {1,2,3,d}: [4]
+  tight members of {1,3,4,d}: [7]
+  tight members of {1,2,4,d}: []
+  tight members of {1,3,5,d}: []
+  tight members of {2,3,4,d}: []
+  ({1,2,3,4} consecutive; {1,3,4,7} the known sporadic.)
+

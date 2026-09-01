@@ -751,6 +751,67 @@ Open: the conic-descent (case $lpha$: $n^2+r^2=2s^2$, case $eta$:
 $n^2+2r^2=s^2$, both with $rs=Y_n$) and the same treatment for K5-K8,
 K10, K13-K16.
 
+## K5-K8 DEAD: branch-split + rep-ratio injectivity (2026-09-01, `[mss-two-prime-k58]`)
+
+Attack on the six remaining separated kill-equations (continuation of
+`[mss-two-prime-freeness]`, `[mss-two-prime-crossdiv]`, `[mss-two-prime-k34]`).
+Script `scripts/mss_two_prime_k58_branch.py` (+ log). Unlike K1-K4, K5-K8 are
+**separated** multiplicative equations $Y_q\alpha_p=Y_p\beta_q$ with
+$\alpha\in\{p^2\pm R_p\}$, $\beta\in\{q^2\pm R_q\}$ — the quartic reduction of
+K3/K4 is not needed; a direct branch argument kills all four sign combos:
+
+**Lemma B1 (branch split).** For prime $n=a^2+b^2$ ($1\bmod4$, $a>b>0$), put
+$s=a^2-b^2$, $t=ab$, $u=s/t=x-1/x$ ($x=a/b$). Then $n^2=s^2+4t^2$ and
+$$\{n^2+R_n,\;n^2-R_n\}=\{2s^2,\;8t^2\},\qquad
+n^2+R_n=2s^2\iff \mathrm{Re}(\pi^4)=s^2-4t^2>0\iff u>2.$$
+(The threshold $u=2$ is exactly $x=1+\sqrt2$; note $R_n\ne0$, $s,t>0$,
+$\gcd(s,t)=1$.) Call $2s^2$ the S-branch, $8t^2$ the T-branch of $n$.
+
+**Lemma B2 (same-branch kill).** Same branch on both sides of
+$Y_q\alpha_p=Y_p\beta_q$ forces $s_pt_q=s_qt_p$, i.e. $u_p=u_q$, i.e.
+$a_p/b_p=a_q/b_q$; both reps primitive, so $(a_p,b_p)=(a_q,b_q)$ and $p=q$ —
+impossible.
+
+**Lemma B3 (cross-branch kill, "$q=2p$").** Cross branches force
+$s_ps_q=4t_pt_q$, i.e. $u_pu_q=4$. Since $u=x-1/x$ is a bijection
+$(1,\infty)\to(0,\infty)$, the unique solution is
+$x_q=\dfrac{x_p+1}{x_p-1}=\dfrac{a_p+b_p}{a_p-b_p}$ (always $>1$); and
+$\gcd(a_p+b_p,a_p-b_p)=1$ ($a,b$ opposite parity, both sums odd, common
+divisor divides $2a,2b$ and is odd), so the rep of $q$ is
+$(c_q,d_q)=(a_p+b_p,\,a_p-b_p)$ and
+$q=c_q^2+d_q^2=2(a_p^2+b_p^2)=2p$ — impossible for distinct odd primes.
+
+**THEOREM K58.** None of the four equations
+$Y_q(p^2\pm R_p)=Y_p(q^2\pm R_q)$ holds for any distinct $1\bmod4$ primes
+$p<q$. Mapping to the filed labels: K5 ($A{+}D_0=B$) = combo $(+,-)$: dead by
+B2/B3; K6a/b ($A{+}C=B$, cases $X{>}Y$/$Y{>}X$) = combos $(+,+)/(-,-)$: dead;
+K7/K8 (B-side mirrors $B{+}D_0=A$, $B{+}C=A$) = combos $(-,+)/(-,-)$: dead.
+(For $(\pm,\mp)$ the two branch cases are even incompatible with
+$u_pu_q=4$, which forces $u_p,u_q$ on opposite sides of 2; for
+$(\pm,\pm)$ the cross case is branch-compatible and dies only via $q=2p$.)
+
+**Machine verification** (log): branch-split lemma 0 violations on all 2,549
+$1\bmod4$ primes $\le5\cdot10^4$; equation-iff-branch-prediction check 0
+mismatches over all 1,296,855 pairs $p<q\le3\cdot10^4$; all five K5-K8
+relations 0 hits; extended relations census $p<q\le10^5$ (**11,436,153
+pairs**) 0 hits; $u\cdot u'=4$ identity 0 violations on 2,000 random
+coprime trials (an initial identity check with 1,216 "violations" was a
+bug in the test's cross-multiplication, not in the math — fixed with exact
+Fractions and re-verified).
+
+**Status.** K5, K6a, K6b, K7a, K7b, K8 all DEAD (proved, no conjectures
+used). Sum-freeness kill list down to **K1** (Wieferich-gated:
+$p^2\mid R_q$, $p\equiv1\bmod8$), **K3/K4** (K34-conjecture-gated:
+$A(n),B(n)$ per-prime square conditions), **K10, K12-K16**. Flagged
+discrepancy (not touched here): the filed T2 in `[mss-two-prime-crossdiv]`
+explicitly kills "$2B=A$", which under the sequential K9-K16 labeling
+(line order $2A{=}B, 2B{=}A,\ldots$) is K10 — yet that section's status line
+lists K10 as open; one of the two is mislabeled, resolve on next visit.
+Note also the killed K5-K8 shape (per-prime ratio equality
+$(p^2\pm R_p)/Y_p\in\{s/2t,\,2t/s\}$ taking equal values at two primes) is
+the same "per-prime value-set collision" genus as Conjecture K34 — here the
+collision is provably impossible, there it is only conjectured.
+
 ## Cross-problem links
 
 - Engine: `scripts/mss_census_pythagorean.py` (validated 3 ways — see

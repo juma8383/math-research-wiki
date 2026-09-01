@@ -1,0 +1,30 @@
+=== Part 1: branch-split lemma, 1 mod 4 primes <= 50000 ===
+count = 2549
+split violations   = 0
+branch violations  = 0
+part 1 time 0.0s
+
+=== Part 2: pair iff-check + census, 1 mod 4 primes <= 30000 ===
+count = 1611 primes, 1296855 pairs
+pairs tested          = 1296855
+iff mismatches        = 0
+sign-combo equations holding = 0
+same-branch u_p=u_q hits     = 0
+cross-branch u_p*u_q=4 hits  = 0
+relation K5_A+D0=B        hits = 0
+relation K6a_A+C=B(X>Y)   hits = 0
+relation K6b_A+C=B(Y>X)   hits = 0
+relation K7_B+D0=A        hits = 0
+relation K8_B+C=A         hits = 0
+part 2 time 4.8s
+
+=== Part 3: identity check x'=(x+1)/(x-1) <=> (x-1/x)(x'-1/x')=4 ===
+identity violations (of 2000 trials) = 0
+
+=== Part 4: relations-only census, 1 mod 4 primes <= 100000 ===
+count = 4783 primes, 11436153 pairs
+pairs = 11436153, relation hits = 0
+part 4 time 12.2s
+
+TOTAL time 17.1s
+ALL CHECKS COMPLETE
