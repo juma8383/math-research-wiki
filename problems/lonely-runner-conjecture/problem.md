@@ -631,6 +631,64 @@ suggests (P) is finitely-checkable per reduced ratio but not yet
 bounded. Confidence in T4-f as a conjecture: high (exact exhaustive
 [1,200], both stages cross-checked); as a theorem: unproven.
 
+## T4 RESOLVED (2026-09-01): the one-pair length + position lemmas proved
+`[lonely-runner-t4-onepair]` (`scripts/lonely_runner_t4_lengthlemma.py`,
+`lonely_runner_t4_consecutive.py`, `lonely_runner_t4_onepair.py`, logs
+alongside). Both open halves of the T4-f program — the (L) length lemma and
+the (P) position kill — are now **proved**, and with Lemma T4-a this closes
+Conjecture T4. All numerics exact (Fractions, circle $[0,4)$ in
+$T=4t$-units); window lists as in `[lonely-runner-t4-pairforce]`.
+
+**Theorem L (exact max window length — PROVED).** For coprime $a<b$:
+$$\mathrm{ml}(a,b)=\max\text{-window-length of }\{a,b\}=\begin{cases}
+\tfrac{2}{b} & b-a\ge 2,\\[2pt]
+\tfrac{2k-1}{k(k+1)} & (a,b)=(k,k+1).\end{cases}$$
+In particular the (L) lemma holds with threshold **reduced sum $=3$**: the
+only coprime pair with $\mathrm{ml}<\frac{2}{b+1}$ is $(1,2)$, and the only
+ones with $\mathrm{ml}<\frac2b$ are the consecutive ratios $(k,k+1)$ —
+the 700-exception census structure is a theorem. *Proof:* (≤) every window
+lies in a gap of $G_b$, length $\tfrac2b$. (≥, $b-a\ge2$) exhibit a **full
+gap of $G_b$ inside $G_a$**: need $i$ with $a(4i+1)\bmod 4b\in[b,\,3b-2a]$
+(the gap $((4i+1)/b,(4i+3)/b)$ then maps under $T\mapsto aT$ into an arc
+$[4m+1,4m+3]$, since the $aT$-image has length $2a/b<2$ and both endpoint
+residues lie in $[1,3]$). The set $\{a(4i+1)\bmod 4b\}$ is: all $b$
+residues $\equiv a\pmod 4$ (a odd), all $\equiv 2\pmod 4$ ($a\equiv2$), all
+multiples of $4$ ($a\equiv0$) — in each case (gcd$(a,4b)$ = $1,2,4$ resp.)
+a full residue class, and $[b,3b-2a]$ contains $2(b-a)+1\ge5$ consecutive
+integers, which meet every class mod 4. ∎ *(Consecutive formula: census-
+verified [1,120], `lonely_runner_t4_consecutive.log` Part B; not needed
+below.)*
+
+**Theorem P-kill (position kill for consecutive ratios — PROVED, all
+scales at once).** Let $(a,b)=(dk,d(k{+}1))$, $d\ge1$, $k\ge1$, and $c>d(k{+}1)$
+with gcd$(c,d)=1$. Then some window of $\{a,b\}$ fails to lie in a single
+closed arc of $B_c$. *Proof:* $w_0=(\tfrac1k,\tfrac{3}{k+1})$ is exactly a
+window of $\{k,k{+}1\}$ (gap $0$ of $G_k$ ∩ gap $0$ of $G_{k+1}$; no other
+boundary point lies inside — verified W1 for $k\le200$), hence
+$(\tfrac1{dk},\tfrac{3}{d(k+1)})$ is a window of $\{a,b\}$. If it fits in
+arc $j$ of $B_c$: $4j{-}1\le\frac{c}{dk}$ and
+$\frac{3c}{d(k{+}1)}\le 4j{+}1$; since $c>d(k{+}1)$ the left end of the
+scaled window exceeds $\frac{k+1}k>1$ and its right end exceeds $3$, so
+$j\ge1$ and $\frac{c}{dk}\ge 3$, i.e. $c\ge 3dk$; while the window length
+$\frac{2k-1}{dk(k+1)}\le\frac2c$ gives $c\le\frac{2dk(k+1)}{2k-1}$. Hence
+$3\le\frac{2(k+1)}{2k-1}$, i.e. $k\le\tfrac54$: **$k=1$**. Then
+$\frac c d\in[3,4]$, and the second window
+$(\tfrac{5}{2d},\tfrac3d)$ in arc $i$ forces $4i{+}1\in[9,12]$, so $i=2$
+and $\frac{c}{d}\le 3$: $\frac c d=3$, and gcd$(c,d)=1$ forces $d=1$. ∎
+
+**Theorem T4 (the conjecture — now PROVED).** The only primitive tight 3-set
+is $\{1,2,3\}$. *Proof:* tight $\Rightarrow$ (Lemma T4-a) the windows of
+$\{a,b\}$ (two smallest speeds) lie in single closed arcs of $B_c$; by
+Theorem L the reduced ratio is consecutive (else a window of length
+$\tfrac2b>\tfrac2c$ exists), and by Theorem P-kill $(a,b,c)=(1,2,3)$.
+Conversely $\kappa(\{1,2,3\})=\tfrac14$ (Lemma L3 / census). ∎
+*Verification:* W1–W4 in `lonely_runner_t4_onepair.log` (0 violations;
+W3 re-confirms pairforce V2: exactly one hit $(1,2,3)$ in $[1,200]$).
+*Corollary:* Conjecture T4-f is a theorem (its hypothesis is exactly the
+one-pair condition, no tightness needed). The tight-3-set classification
+is closed; the next open questions are the tight 4-sets
+($\{1,3,4,7\}$ sporadic) and T1/T2 at larger $n$.
+
 ## Control-step framing (one line)
 Resolution on a slice (small $n$: $n\le6$ by hand+computer, $n=7$ claimed —
 *superseded 2026-09-01: published through $n=9$, claimed through $n=12$;
