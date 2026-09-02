@@ -3922,3 +3922,60 @@ That is the exact residue of the problem: ruling out "all primitive divisors hav
 - Files: mss_k34_refine4_table.py/.log, mss_k34_refine4_sieve.py, parityA.json, parityB.json.
 [UPDATE mss-omega1-stratification] 2026-09-02 ~12:45 | magic-square-of-squares | W=1e7 omega_1 stratification filed (deferred item closed)
 - The W=1e7 run (omega1_stratification_W1e7.log, completed 2026-09-01 14:02, previously unfiled) LANDED: 3,116,858 centers |D|>=2; window-corrected H2 total 0.07856 (naive 1.01300) vs 0.07753 at W=1e6 — stable to +1.3 percent across a 10x box extension; stratum shares reproduce (omega_1=2: 60.0, omega_1=3: 36.7, omega_1=4: 3.2); theorem-conditioned (omega_1>=2) total 0.07852. Filed as W=1e7 extension in the stratification section of notes.md. Strongest calibration evidence yet for the window model; conclusions unchanged.
+[ATTACK mss-k34-descent] 2026-09-02 ~13:15 | magic-square-of-squares | Germain factorization descent on K34-A: (R-V')(R+V') = 4608 a^4 b^4
+- PROVED (scripts mss_k34_descent_p1..p6 in problems\magic-square-of-squares\scripts, logs alongside): master identity R = n^2+64P^2 (n=a^2+b^2, P=ab), R^2-V'^2 = 4608 a^4 b^4 (symbolic + numeric); delta-gcd lemma delta = 2^j with j=1 (exactly one of a,b even) or j=3 (both odd), no odd p | delta.
+- Four-case reduction (exhaustive, asserted): R = 2^(j-1)(c1 u^4 + c2 v^4), uv = ab, gcd(u,v)=1, (c1,c2) in {(1,72),(8,9),(9,8),(72,1)}; beta=1 dies on gcd(U,W)=1; u=a,v=b impossible in all four cases.
+- Layer-1 necessary quartics n^2 = c1 u^4 - 64 u^2 v^2 + c2 v^4 with (a+-b)^2 lift condition; census max(u,v)<=1500: only degenerate full hit (1,1,8,9,3).
+- Germain layer 2: coprime splits of 238 = 2*7*17, 8 (branch,split) cells reduced to exactly FOUR live leaves: Q-pos-(238,1), Q-neg-(119,2), N-pos-(17,14), N-neg-(34,7); kills include the unconditional 3 -| n condition and corrected sign bounds x < sqrt(d2/d1).
+- All four leaf quartics searched exhaustively (ranges 300-1500): ZERO solutions found.
+- Third layer on (238,1): (F-/2)(F+/2) = 72 (r/2)^4 regenerates a smaller layer-1 solution (verified on model (2,3,71) -> (1,72) point (71,6,3727), n=3 mod 4); other leaves reduce to Z[sqrt 2] norm forms (class number 1) and a rational split (3r^2-u)(3r^2+u) = 2(s^2-8r^2)^2.
+- STALL (honest, NO kill of K34-A claimed): descent terminates in four locally-soluble genus-1 leaf quartics with no small rational points; unproved: leaf insolvability (Tzanakis/Ljunggren/Bennett-Walsh machinery, flagged [summary, to-verify]), (238,1) descent preservation lemmas, Z[sqrt 2] UFD descent.
+- Tracked failures appended (items 5-6): p5 sign-bound bug x < d2/d1 vs x < sqrt(d2/d1); missing 3 -| n condition initially leaving wrong survivor list.
+- Notes subsection [mss-k34-descent] finalized in problems\magic-square-of-squares\notes.md before "## Cross-problem links" (grep-verified exactly once).
+
+## [ATTACK mss-k34-descent] 2026-09-02 ~13:55 | magic-square-of-squares
+
+- Factorization descent lever on K34-A DEVELOPED and VERIFIED (agent round
+  mss_k34_descent_p1..p6 + Claude verification mss_k34_descent_claude_check):
+  (R-V')(R+V') = 4608 a^4 b^4, R = a^4+66a^2b^2+b^4, delta = 2^j (proved);
+  exhaustive four-case constant reduction; Germain second layer reduces 16
+  cells to exactly 4 live leaf quartics (corrected kill table reproduced
+  independently, fixes 5+6 confirmed); leaf census 0 hits all four leaves;
+  layer-1 only full hits = degenerate X=1 point.
+- VERDICT: HONEST STALL - no kill of K34-A claimed. The descent tree ends in
+  four locally-soluble genus-1 leaf quartics with no small rational points;
+  named gaps: leaf insolvability (Tzanakis/Bennett-Walsh machinery
+  [to-verify]), the (238,1) descent-preservation lemmas, Z[sqrt2] norm-form
+  UFD descents for the N-leaves. Counterevidence: layer-1 quartics have rank
+  >= 1 (infinitely many rational points), so insolvability is FALSE there -
+  the obstruction is exactly the (a+-b)^2 lift.
+- Claude verification (main loop, RED zone): all claims reproduce; two
+  process gaps fixed - saved p5 log is pre-fix (final 16->4 table confirmed
+  by the independent run) and p6 never searched the two revived leaves
+  (saved evidence now supplied); 16-vs-12 layer-1 survivor count difference
+  noted (condition-set bookkeeping, full-hit set identical). K34 OPEN.
+
+## [ATTACK collatz-attempt-07] 2026-09-02 ~14:40 | collatz-conjecture
+
+- External-AI attempt integrated (GitHub Copilot session, produced outside
+  the wiki): exponent-word sieve for positive Syracuse cycles. Per protocol,
+  BOTH load-bearing claims independently verified BEFORE acceptance:
+  probe re-run (scripts/copilot_probe_replay.py) reproduces the Copilot
+  table EXACTLY - 1,119,904 words (k<=9, A-window +9), one integral+cycle
+  hit per row = trivial 1->1 codings, 0 nontrivial; cyclic-normalization
+  lemma verified 0 violations (prefix discrepancies AND S > k*3^(k-1)) over
+  all 1,119,895 k>=2 words. Files: attempts/attempt-07.md (provenance +
+  verification record), scripts/copilot_probe_replay.py/.log.
+- New partial lemma filed: cyclic normalization (rotate to cyclic min of
+  Delta_j = A_j - jA/k => Delta_j >= 0 => n0 > k*3^(k-1)/(2^A-3^k));
+  identifies the decisive control variable as the near-resonance gap
+  A log2 - k log3 (continued-fraction territory; Sinisalo semi-convergent
+  114,208,327,604/72,057,431,991 = first-candidate cycle shape,
+  [summary to-verify]). The attempt's reverse-tree direction names the
+  control-step obstruction verbatim - 6-for-6 wall reconfirmed.
+- FRONTIER UPDATE (append-only): the cycle-exclusion row in progress.md
+  was STALE (m<=75) - Hercher 2023 (J. Integer Seq. 26, Art. 23.3.5)
+  primary-verified via search improves to m<=91 (theory page already
+  carried it from the 2026-08-31 session; progress.md row now fixed).
+  Copilot's "2^71.02" precision NOT confirmed - kept to-verify; Wang 2026
+  Zenodo m<=93/94 preprints flagged unreviewed. Collatz OPEN.

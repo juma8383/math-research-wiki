@@ -21,7 +21,7 @@ $\mathrm{Col}_{\min}(N)=1$ for all $N$.
 | Allouche/Korec: $\mathrm{Col}_{\min}<N^\theta$ | almost all, $\theta\downarrow0.79$ | proven [collatz-density-allouche-korec] |
 | Krasikov–Lagarias: count reaches 1 | $\#\{\}\gg x^{0.84}$ | proven [collatz-kl-count] |
 | Tao: $\mathrm{Col}_{\min}<f(N)$, any $f\to\infty$ | almost all, log-density | proven [collatz-tao-almost-bounded] |
-| No nontrivial $m$-cycle | $m\le75$ | proven [collatz-cycle-simons-deweger] |
+| No nontrivial $m$-cycle | $m\le75$; **$m\le91$ (Hercher 2023, added attempt-07)** | proven [collatz-cycle-simons-deweger] [collatz-cycle-hercher] |
 | **Every $N$ reaches 1** | **all $N$** | **OPEN** |
 
 The gap is the leap from **density** (almost all) to **pointwise** (every $N$).
@@ -131,6 +131,30 @@ The gap is the leap from **density** (almost all) to **pointwise** (every $N$).
 - Average contraction: accelerated map shrinks on average, $\mathbb E[k]=2>
   \log_2 3\approx1.585$, geometric mean $3/4<1$ per two steps
   [collatz-average-contraction].
+- **attempt-07 (2026-09-02, external-AI attempt integrated + verified):**
+  exponent-word sieve for positive Syracuse cycles
+  ([attempts/attempt-07.md](attempts/attempt-07.md), provenance: GitHub
+  Copilot session; the two load-bearing computational claims independently
+  re-run and reproduced exactly — `scripts/copilot_probe_replay.py`).
+  (a) Exact affine cycle identity $(2^A-3^k)n_0=S$ restated with the
+  load-bearing **divisibility $\ne$ sufficiency** distinction (exact
+  valuation replay required); bounded probe over all 1,119,904 words
+  ($k\le9$, $A$-window $+9$): only trivial $1\mapsto1$ codings. (b) NEW
+  **cyclic-normalization lemma** (verified numerically, 0 violations):
+  rotating an exponent word to the cyclic minimum of
+  $\Delta_j=A_j-jA/k$ forces $\Delta_j\ge0$ for all prefixes, hence
+  $2^{A_j}>3^j$ ($j\ge1$) and $n_0>k3^{k-1}/(2^A-3^k)$ — identifies the
+  decisive control variable as the near-resonance gap $A\log2-k\log3$
+  (continued-fraction territory: Sinisalo's semi-convergent
+  114,208,327,604/72,057,431,991 = the "first candidate" cycle shape,
+  `[summary, to-verify]`). (c) **Frontier update (append-only):** the
+  cycle-exclusion row was stale — **Hercher 2023 (J. Integer Seq. 26,
+  Art. 23.3.5, primary-verified via search) improves $m\le75\to m\le91$**
+  ($K>7.94\times10^{21}$ odd elements, using $X_0=695\cdot2^{60}$;
+  Wang 2026 Zenodo preprints claiming $m\le93$/$94$ = unreviewed, flagged).
+  The attempt's direction C (reverse-tree residue covers) names the
+  control-step obstruction verbatim: average contraction gives no uniform
+  pointwise descent certificate — 6-for-6 wall reconfirmed from inside.
 
 ## Open content
 
@@ -219,12 +243,21 @@ Krasikov–Lagarias 2003 (Acta Arith. 109(3), 237–258, DOI 10.4064/aa109-3-4) 
 Steiner 1977 / Simons 2004 / Simons–de Weger 2010 — **CONFIRMED (attempt-02)**;
 Conway 1972 (FRACTRAN/undecidability) + Kurtz–Simon 2007 ($\Pi^0_2$-complete) +
 contracting framing — **CONFIRMED (attempt-04, primary source)**;
-**Still to-verify (attempt-07 targets):** the **$2^{71}$ project-reported
-bound** (Barina website, Jan 2025, self-reported — `to-verify` against a
-publication if Barina publishes the extension); the Santana refutation
-(arXiv:2601.03297, $f_0(n)=n$ counterexample — search-surfaced via Pith,
-minor to-verify directly). **(2024-26 claimed proofs: STATUS-CHECKED
-attempt-06 — see below; Barina 2020 $2^{68}$: CONFIRMED attempt-05.)**
+**Still to-verify:** the **$2^{71}$ project-reported bound** (Barina
+website, Jan 2025, self-reported — `to-verify` against a publication if
+Barina publishes the extension; attempt-07's "$\approx2^{71.02}$" precision
+NOT confirmed — search yields $695\cdot2^{60}\approx2^{69.44}$ (Hercher's
+input) and the project-reported $2^{71}$, so keep `to-verify`); the
+Sinisalo semi-convergent cycle shape (114,208,327,604/72,057,431,991,
+$\approx4.36\times10^{21}$ verification requirement)
+`[summary, to-verify]`; the Santana refutation (arXiv:2601.03297,
+$f_0(n)=n$ counterexample — search-surfaced via Pith, minor to-verify
+directly); Wang 2026 Zenodo preprints ($m\le93$/$94$, suffix-balanced
+method — unreviewed, flagged). **(2024-26 claimed proofs: STATUS-CHECKED
+attempt-06 — see below; Barina 2020 $2^{68}$: CONFIRMED attempt-05;
+attempt-07 targets: the $2^{71}$ bound was NOT resolved this round — the
+round was the external-AI attempt integration; Hercher 2023 $m\le91$ added
+as a frontier update.)**
 
 ## Honesty check
 
