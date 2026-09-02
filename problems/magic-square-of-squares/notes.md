@@ -558,6 +558,18 @@ $4\cdot10^{-5}$ of the model's window-corrected mass.
    it would cut the model's remaining expected total from $0.077$ to
    $\approx0.030$, $P(0)\approx97\%$).
 
+**W=1e7 extension (run completed 2026-09-01, filed 2026-09-02
+`[mss-omega1-stratification]`).** 3,116,858 centers with $|D|\ge2$ up to
+$W=10^7$ (`omega1_stratification_W1e7.log`): window-corrected total
+$H_2=0.07856$ (naive 1.01300) vs $0.07753$ at $W=10^6$ — the corrected
+expected total is **stable to $+1.3\%$ across a $10\times$ box
+extension**, the strongest calibration evidence yet for the window model.
+Stratum shares reproduce: $\omega_1=2$ 60.0% (vs 60.7%), $\omega_1=3$
+36.7% (vs 36.7%), $\omega_1=4$ 3.2%; theorem-conditioned
+($\omega_1\ge2$) window total $0.07852$. Center counts at $W=10^7$:
+$\{199{,}528,\ 2{,}421{,}096,\ 468{,}910,\ 27{,}117,\ 207\}$ at
+$\omega_1=1..5$. All conclusions above carry over unchanged.
+
 ## Two-prime sum-freeness: slice theorems + complete kill-equation case tree (2026-09-01, `[mss-two-prime-freeness]`)
 
 Attack on the omega_1 = 2 stratum (`[mss-two-prime]` inverted). On the
