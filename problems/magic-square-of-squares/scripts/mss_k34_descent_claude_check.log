@@ -1,0 +1,19 @@
+== mss_k34_descent_claude_check ==
+[A] polynomial identity R^2-4608a^4b^4 == a^8+132a^6b^2-250a^4b^4+132a^2b^6+b^8:
+[A] identity mismatches a,b<=60: 0
+[A] delta rule on all coprime (a,b) <= 400 with octic a perfect square:
+[A] degenerate points found: [(0, 1, 2, 2, True), (1, 1, 8, 8, True)]  total 2  all ok: True
+[B] coprime fourth-power-free constant pairs (c1*c2 = 2^(9-2j) 3^2), j=1,3:
+[B] j= 1  pairs: []
+[B] j= 3  pairs: [(1, 72), (8, 9), (9, 8), (72, 1)]
+[C] layer-2 joint mod-144 table with corrected conditions:
+[C] FINAL survivors (mod conditions + corrected sign):
+[C]     ('N', 'neg', 34, 7)
+[C]     ('N', 'pos', 17, 14)
+[C]     ('Q', 'neg', 119, 2)
+[C]     ('Q', 'pos', 238, 1)
+[D] leaf census:
+[D] totals: {'Q-pos(238,1)': 0, 'Q-neg(119,2)': 0, 'N-pos(17,14)': 0, 'N-neg(34,7)': 0}
+[E] layer-1 census n^2 = c1 u^4 - 64 u^2 v^2 + c2 v^4 + lift:
+[E] full layer-1 hits (lift ok): []
+[E] n^2-square survivors (no lift), all 8 cases: 2

@@ -1,0 +1,10 @@
+== mss_k34_descent_p6: surviving layer-2 quartic search ==
+[S1] 238r^4+32r^2s^2+s^4 = u^2, r even s odd, s>=4r, r,s<=600:
+[S1] hits: []  total 0
+[S2] 14r^4+32r^2s^2+17s^4 = u^2, r even s odd, r,s<=300:
+[S2] hits: []  total 0
+[S3] 32r^2s^2-7r^4-34s^4 = u^2 > 0, r odd s even, r,s<=400:
+[S3] hits: []  total 0
+[S4] 17r^4+32r^2s^2+14s^4 = 9u^2, r odd s even, r,s<=300:
+[S4] hits: []  total 0
+[D] third-layer descent check on S1 hits:

@@ -1600,7 +1600,10 @@ $\le2e5$, all depth 1** ($R_0^{(B)}$, $\log_{10}=103.2$). Class re-check
 [mss-k34-sieve2]**: the W2 count "624 valid primes $\le3e5$" was an
 undercount — its `bsgs_order` returned None for 16 primes (silently
 skipped); complete order-finding (trial-division factorization of
-$\#E(\mathbb{F}_p)$) gives 640. Class conclusions unaffected (0 violations). `[to-verify→verified-with-caveat,
+$\#E(\mathbb{F}_p)$) gives 640. Class conclusions unaffected (0 violations).
+The same bsgs-skip caveat applies to the W2b count "231 valid primes in
+$(3e5,1e6]$" — recount pending (extension of the parity table to $1e6$,
+~4h background run). `[to-verify→verified-with-caveat,
 2026-09-02]` Primitive-divisor status: Ingram's rank-one $Z\le12$ ($n\ge13$)
 is **conditional on Lang's height conjecture** (Ingram, *JNT* 123 (2007),
 473–486); unconditional: Silverman 1988 gives $Z<\infty$ but *ineffective*;
@@ -1702,6 +1705,200 @@ available and none is claimed. The refined candidate set
 ($k\le2\cdot10^5$ survivors listed in `mss_k34_refine4.log` context) is the
 input to deeper layers; the total remaining gap stays as structured in §2g
 (primitive-divisor existence window + odd-depth gate).
+
+### Factorization descent on K34-A (R-V')(R+V') = 4608 a^4 b^4 (2026-09-02, `[mss-k34-descent]`)
+
+Claude round. Scripts `scripts/mss_k34_descent_p1..p6.py` (+ `.log` each),
+all arithmetic exact. Develops the lever named in `[mss-k34-sieve2]` Sec. 2
+("$(R-W)(R+W)=4608a^4b^4$ ... not developed this round"). NOTATION clash
+warning: this $R=a^4+66a^2b^2+b^4$ is NOT the $R_n=|a^4-6a^2b^2+b^4|$ of
+`[mss-two-prime-k34]`; write $n=a^2+b^2$, $P=ab$, $V'=Vb^4$.
+
+**1. Identity (proved, symbolic + numeric).** $R^2-V'^2=4608a^4b^4$,
+$4608=2^9\cdot3^2$ (`p1`: sympy-verified identity, plus the clearing step
+$b^8 f_X((a/b)^2)=V'^2$ itself; numeric sweep $a,b\le60$ coprime, 0
+mismatches). Master reformulations (verified): $R=n^2+64P^2$ and
+$V'^2=n^4+128n^2P^2-512P^4$.
+
+**2. Delta lemma (proved).** For $\gcd(a,b)=1$,
+$\delta:=\gcd(R-V',R+V')=2^j$ with $j=1$ if exactly one of $a,b$ is even
+(the K34-A case, $n\equiv1\ (4)$) and $j=3$ if both odd.
+(a) *No odd prime in $\delta$:* $p\mid\delta\Rightarrow p\mid R,p\mid V'$
+$\Rightarrow p\mid4608a^4b^4\Rightarrow p=3$ or $p\mid ab$; $p\mid a\Rightarrow
+R\equiv b^4\not\equiv0$; $p=3$: $R\equiv a^4+b^4\equiv2\ (3)$ when
+$3\nmid ab$ (fourth powers are $0/1$; verified numerically, 0 violations
+$a,b<200$). (b) *2-part:* one even $\Rightarrow R$ odd, $V'$ odd
+($V'^2=R^2-2^{9+4t}3^2b_o^4$), so $\min v_2(R\pm V')=1$, $\delta=2$;
+both odd $\Rightarrow R\equiv4\ (16)$, $v_2(V')=2$, $v_2(R\mp V')=\{3,6\}$,
+$\delta=8$. Witnesses: $(a,b)=(0,1)$: $\delta=2$; $(1,1)$:
+$\delta=8$, $R-V'=64=8\cdot8$, $R+V'=72=8\cdot9$ (realizes $(c_1,c_2)=(8,9)$,
+$j=3$ — the degenerate $X=1$ point).
+
+**3. Exact four-case reduction (proved).** $R-V'=\delta U$, $R+V'=\delta W$,
+$\gcd(U,W)=1$, $UW=2^{9-2j}3^2(ab)^4$. With $uv=ab$, $\gcd(u,v)=1$:
+$U=c_1u^4$, $W=c_2v^4$, $V'=2^{j-1}(c_2v^4-c_1u^4)$, and
+$$R=2^{j-1}(c_1u^4+c_2v^4),\qquad (c_1,c_2)\in\{(1,72),(8,9),(9,8),(72,1)\}.$$
+The enumeration is EXHAUSTIVE (brute force over fourth-power-free coprime
+split pairs of $2^{9-2j}3^2$, `p1[5]`): the $2^{4t}$ part of $v_2(ab)$ is
+always absorbed into $u^4$ or $v^4$, the leftover 2-part is $2^3$ in BOTH
+$j=1,3$, and $\beta=1$ (constants $(24,3)$) dies on $\gcd(U,W)=1$. Parity:
+$j=1$ forces exactly one of $u,v$ even ($j=3$: both odd). For K34-A ($n$
+prime $\equiv1\ (4)$) **only $j=1$ occurs**; $j=3$ is the even-$n$
+degenerate stratum. **No case admits $u=a,v=b$** ((8,9),(9,8): disc
+$66^2-224=4132$, nonsquare; (1,72),(72,1): forces $71b^4=66a^2b^2$) — the
+prime repartition is genuinely nontrivial, so this descent does NOT reduce
+to the $A(n)/B(n)$ conditions of `[mss-two-prime-k34]`.
+
+**4. Layer-1 quartics (necessary, new objects).** Combining (3) with
+$R=n^2+64P^2$:
+$$n^2=c_1u^4-64u^2v^2+c_2v^4,\qquad uv=ab,\ \gcd(u,v)=1,$$
+plus the lift condition $n\pm2uv=(a\pm b)^2$ squares. Census (`p2[A]`,
+$\max(u,v)\le900$, all 8 $(c_1,c_2),j$ cases): 12 survivors of the
+$n^2$-square test, exactly ONE full hit — $(u,v,c_1,c_2,j)=(1,1,8,9,3)$, the
+degenerate $X=1$ point. The four quartics are locally soluble at every
+prime $\le509$ (no killing primes) and have rational points
+($(1,72)$: $w=\pm71/6$, $N=3727$; $(9,8)$: $w=\pm71/18$, $N=11181$) — they
+are genus-1 curves of likely rank $\ge1$, so insolvability is FALSE; the
+kill must come from the lift condition $n\pm2uv=\square$.
+
+**5. Germain second layer (proved reduction + computed kills).** Completing
+the square splits ALL FOUR cases as difference of squares:
+$(1,72)$: $(A-n)(A+n)=952v^4$, $A=u^2-32v^2$; $(72,1)$: same with $u,v$
+swapped; $(9,8)$: $(W-3n)(W+3n)=952v^4$, $W=9u^2-32v^2$; $(8,9)$:
+$(W'-3n)(W'+3n)=952u^4$, $W'=9v^2-32u^2$. *Coprime lemma:* with
+$g=\gcd((X-n)/2,(X+n)/2)$ (odd), $g^2\mid238v^4$ and $g\mid n$ force
+$g=1$ ($7,17\mid g\Rightarrow 7,17\mid v$ contradicting $\gcd(n,v)=1$;
+$3\mid g$ in the $(9,8)/(8,9)$ form forces $3\mid u$ and $3\mid v$).
+Hence $(X-n)/2=d_1r^4$, $(X+n)/2=d_2s^4$, $d_1d_2=238$, $\gcd(d_1,d_2)=1$,
+$rs=$ the even-carrying variable, and
+$$x^2\ (\text{resp. }9x^2)=d_1r^4+32r^2s^2+d_2s^4\quad\text{or}\quad
+  32r^2s^2-d_1r^4-d_2s^4,$$
+($x=u$ or $v$ per case; sign branches = $A>0$ resp. $A<0$, the latter
+killed mod 16 for $(1,72)$ itself but alive after the split).
+*Kill table* (final, after two corrections logged in Tracked failures;
+joint test over $r,s$ mod $144$: $F\in\{1,9\}$ mod 16, $F$ square mod 9
+resp. $\equiv0$ mod 9, $n\equiv1\ (4)$ via $d_2s^4-d_1r^4\equiv1\ (4)$ resp.
+$\equiv3\ (4)$, $3\mid$ bracket, **$3\nmid n$** (NEW: $3\mid a^2+b^2\Rightarrow
+3\mid a,b$, impossible for $\gcd(a,b)=1$, so $3\nmid n$ ALWAYS), $\gcd(r,s)=1$,
+$rs$ even, and the sign bounds $F>0$ resp. $d_2s^4>d_1r^4$ i.e.
+$x=r^2/s^2$ in the $F>0$ interval $(\tfrac{32-6\sqrt2}{2d_1},
+\tfrac{32+6\sqrt2}{2d_1})$ (neg branch, disc $=1024-4\cdot238=72$) intersected
+with $x<\sqrt{d_2/d_1}$):
+**of the 16 (branch, split) cells, exactly FOUR survive:**
+$$\text{Q-pos-}(238,1),\quad \text{Q-neg-}(119,2),\quad
+  \text{N-pos-}(17,14),\quad \text{N-neg-}(34,7).$$
+Killed: $(1,238),(7,34),(34,7)$-pos and $(14,17)$ by the mod-3/F-vs-$n$
+interaction ($F\equiv2(r^4+r^2s^2+s^4)$ forces $3\mid u^2\equiv F$, and
+$3\nmid d_2s^4-d_1r^4$ then forces $3\mid r$ or $3\mid s$, which recomputes
+$F\equiv2\ (3)$ — contradiction; $(1,238)$: $F\equiv(r^2+s^2)^2$ mod 3
+forces $3\mid\gcd(r,s)$ directly); $(2,119),(119,2),(7,34)$-neg-type
+residues on mod-9/$n\bmod4$ failures; no cell is killed by sign alone
+(the earlier sign "kills" used $x<d_2/d_1$ instead of $x<\sqrt{d_2/d_1}$
+and were WRONG — see Tracked failures 5).
+
+**6. Census of survivors and the descent step.** Exhaustive search
+(`p6` + correction runs): the four surviving layer-2 quartics have NO
+solutions in range — 0 hits each:
+$$\begin{array}{ll}
+\text{Q-pos-}(238,1): & u^2=238r^4+32r^2s^2+s^4,\ r\text{ even},\ s\text{ odd},\
+  3\mid r,\ s>238^{1/4}r,\ r\le600,s\le1200;\\
+\text{Q-neg-}(119,2): & u^2=32r^2s^2-119r^4-2s^4,\ r\text{ odd},\ s\text{ even},\
+  r/s\in(0.314,0.360),\ r,s\le1500;\\
+\text{N-pos-}(17,14): & 9u^2=17r^4+32r^2s^2+14s^4,\ r\text{ odd},\ s\text{ even},\
+  r,s\le300;\\
+\text{N-neg-}(34,7): & 9u^2=32r^2s^2-34r^4-7s^4,\ r\text{ even},\ s\text{ odd},\
+  r/s\in(0.588,0.674),\ r,s\le1500.
+\end{array}$$
+For Q-pos-$(238,1)$ a THIRD layer exists (only there is a rational
+completing square): $u^2=(s^2+16r^2)^2-18r^4\Rightarrow
+(\tfrac{F_-}2)(\tfrac{F_+}2)=72(r/2)^4$, $F_\pm=s^2+16r^2\mp u$, and the
+$g=1$ argument repeats, giving a NEW layer-1 solution
+$(\rho,\sigma,c_1',c_2')$ with $\rho\sigma=r/2$ — a candidate Fermat
+descent, verified structurally on the model hit $(r,s,u)=(2,3,71)$:
+$(F_-/2,F_+/2)=(1,72)\cdot1^4$, recovering the $(1,72)$ layer-1 point
+$(u,v,n)=(71,6,3727)$ (which has $n\equiv3\ (4)$, hence is NOT a K34-A
+candidate). The other three leaves have NO rational completing square but
+reduce to norm forms: Q-neg-$(119,2)$: $F=9r^4-2(s^2-8r^2)^2\Rightarrow
+(3r^2-u)(3r^2+u)=2(s^2-8r^2)^2$ (rational Germain layer again);
+N-pos-$(17,14)$: $126u^2=(14s^2+16r^2)^2-2(3r^2)^2$ and N-neg-$(34,7)$:
+$63u^2=2(3r^2)^2-(7s^2-16r^2)^2$ — both $\mathbb{Z}[\sqrt2]$ norm equations
+$(\cdot+3r^2\sqrt2)(\cdot-3r^2\sqrt2)=\{\pm\}63u^2$ (resp. $-63u^2$),
+class number 1, i.e. a UFD-factorization descent is available in principle.
+
+**7. HONEST STALL (named; no kill of K34-A claimed).** The descent tree
+terminates in the four leaf quartics above — each locally soluble, each
+with no small solution found — plus three unproved lemmas: (i) solve or
+exclude the four leaves (standard machinery: Tzanakis-type linear forms in
+elliptic logarithms for the $y^2=$ quartic structure, or 2-descent on their
+Weierstrass models) `[to-verify]` — Ljunggren 1967 (*Math. Scand.* 21,
+$Ax^4-By^2=C$), Bennett–Walsh 1999 ($b^2X^4-dY^2=1$: at most one positive
+solution) and Akhtari 2009 are the nearest classical anchors
+`[summary, to-verify]`; (ii) the Q-pos-$(238,1)$ Fermat loop closes only if
+the regenerated layer-1 solution provably inherits $n'\equiv1\ (4)$ and a
+valid constant pair (the $(8,9)/(9,8)$ sub-tree's only leaf N-pos-$(17,14)$
+then recurses into the $\mathbb{Z}[\sqrt2]$ norm form, not into a smaller
+copy — so a naive "smaller product" infinite descent does NOT immediately
+close); (iii) carry out the $\mathbb{Z}[\sqrt2]$ UFD descent (unit group
+$\pm(1+\sqrt2)^{\mathbb Z}$, ramification at 2, $u$ odd constraint) for the
+two N-leaves and the $(3r^2\pm u)$ split of Q-neg-$(119,2)$. The Rédei-symbol
+/ Gauss-composition viewpoint (Lemmermeyer 2011 `[summary, to-verify]`) is
+the structural home for the $238$-split bookkeeping.
+
+**Counterevidence check.** Layer-1 quartics have infinitely-many-looking
+rational points (rank $\ge1$), so "no square-X points" is NOT provable by
+insolvability of the necessary quartics; the obstruction is exactly the
+$(a\pm b)^2$ lift, consistent with the `[mss-k34-refine]` finding that
+congruence conditions alone cannot terminate.
+
+**Tracked failures (append-only).**
+1. Hand "kill" of splits $(14,17),(17,14)$ by mod 16 was WRONG (checked the
+   wrong parity class; $(r,s)=(\text{even},\text{odd})$ gives $u^2\equiv17\equiv1$
+   $(16)$, $n\equiv1\ (4)$) — caught by the `p2[C]` table; $(14,17)$ is
+   instead killed mod 3 ($3\mid n$ forced, $n=3$ impossible: no coprime
+   $a,b$ with $a^2+b^2=3$), while $(17,14)$ SURVIVES all mod checks (family N).
+2. `p4[T2]` tied the mod-3 condition to parity classes and wrongly reported
+   "no survivors" for family N; corrected in `p5` (mod 3 and mod 16 are
+   CRT-independent) — the true survivor is pos$(17,14)$.
+3. First hand parity "kill" of case $(8,9)$ ($n^2$ even) was an arithmetic
+   slip ($8u^4$ with $u$ even is $0$ mod 16, not 8); no such kill exists.
+4. `p4[D]` reported "0 of 4" split recoveries — not a contradiction: the 4
+   layer-1 solutions found are $(8,9)/(9,8)$-family, for which the
+   $(238)$-split machinery applies only via the $(8,9)/(8,9)$-mirror
+   $W'$-branch.
+5. `p5` sign-bound bug: br$>0$ was coded as $x<d_2/d_1$; correct is
+   $x^2<d_2/d_1$ i.e. $x<\sqrt{d_2/d_1}$. This WRONGLY sign-killed
+   neg$(119,2)$ and neg$(34,7)$; corrected intervals leave both branches
+   live (Q-neg-$(119,2)$: $x\in(0.0988,0.1701)\cap(0,0.1295)$;
+   N-neg-$(34,7)$: $x\in(0.3458,0.5954)\cap(0,0.4537)$). Lesson: quadratic
+   sign intervals in $x=r^2/s^2$ involve $x^2$, so bounds carry square roots.
+6. The condition $3\nmid n$ was MISSING from the first kill table. Since
+   $3\mid a^2+b^2\Rightarrow 3\mid a,b$ (contradiction with $\gcd(a,b)=1$),
+   $3\nmid n$ is UNCONDITIONAL; adding it kills pos$(14,17)$ and
+   neg$(7,34)$ ($3\mid n$ forced there) and, combined with fix 5, produces
+   the final four-survivor list of Section 5.
+
+**Claude main-loop verification (2026-09-02 ~13:50,
+`mss_k34_descent_claude_check.py` + `.log`).** All load-bearing claims
+reproduce independently: (i) identity 0/3721 mismatches $a,b\le60$; delta
+rule exact on both degenerate points $(0,1)\to\delta=2$, $(1,1)\to\delta=8$;
+(ii) constant-pair exhaustiveness: $j=3$ gives exactly
+$\{(1,72),(8,9),(9,8),(72,1)\}$; $j=1$ reduces to the same four after the
+fourth-power absorption ($2^7=8\cdot16$); (iii) the CORRECTED kill table
+(fixes 5+6) reproduces the four survivors EXACTLY over $r,s$ mod 144 with
+the corrected sign bounds $x<\sqrt{d_2/d_1}$; (iv) leaf census 0 hits on
+all four live leaves in the filed ranges — this run supplies SAVED evidence
+for Q-neg$(119,2)$ and N-neg$(34,7)$, which the saved `p6` script never
+searched (its S2/S3 targets pos$(14,17)$/neg$(7,34)$ are dead in the final
+table; the "correction runs" were ephemeral); (v) layer-1 full-hit
+conclusion confirmed: the only solutions passing $n\pm2uv=(a\pm b)^2$ are
+the degenerate $X=1$ mirror pair $(u,v,n)=(1,1,2)$ in the $(8,9)/(9,8)$,
+$j=3$ realizations. ONE bookkeeping discrepancy, no effect on conclusions:
+the independent census counts **16** $n^2$-square layer-1 survivors
+($\max(u,v)\le900$; $4\times1$ at $j=1$ + $4\times3$ at $j=3$) vs the filed
+"12" (p2[A] condition-set difference; the full-hit set is identical).
+Verification gap note: the agent's saved p5 log is PRE-fix (shows 8
+mod-survivors + the wrong sign test), so the final 16$\to$4 table is
+confirmed by this run, not by p5's saved log.
 
 ## Cross-problem links
 

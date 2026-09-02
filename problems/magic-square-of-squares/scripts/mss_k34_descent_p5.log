@@ -1,0 +1,31 @@
+== mss_k34_descent_p5 (corrected layer-2 tables) ==
+[Q] family Q (cases (1,72),(72,1)) surviving residues:
+    ('neg', 7, 34) -> (1, 2, 1, 2)  nclasses 6
+    ('neg', 119, 2) -> (1, 0, 1, 0)  nclasses 6
+    ('pos', 14, 17) -> (0, 3, 0, 3)  nclasses 6
+    ('pos', 238, 1) -> (0, 1, 0, 1)  nclasses 6
+[Q] survivors: [('neg', 7, 34), ('neg', 119, 2), ('pos', 14, 17), ('pos', 238, 1)]
+[N] family N (cases (9,8),(8,9)) surviving residues:
+    ('neg', 2, 119) -> (0, 3, 0, 3)  nclasses 6
+    ('neg', 34, 7) -> (0, 3, 0, 3)  nclasses 6
+    ('pos', 1, 238) -> (3, 0, 3, 0)  nclasses 6
+    ('pos', 17, 14) -> (1, 2, 1, 2)  nclasses 6
+[N] survivors: [('neg', 2, 119), ('neg', 34, 7), ('pos', 1, 238), ('pos', 17, 14)]
+[S] sign achievability (need br>0 i.e. x < d2/d1, plus F>0 interval):
+    Q neg (7, 34)  F>0 x-interval (1.6796, 2.8918)  br>0 needs x< 4.8571  -> achievable: True
+    Q neg (119, 2)  F>0 x-interval (0.0988, 0.1701)  br>0 needs x< 0.0168  -> achievable: False
+    Q pos (14, 17)  F>0 x-interval (0.0, inf)  br>0 needs x< 1.2143  -> achievable: True
+    Q pos (238, 1)  F>0 x-interval (0.0, inf)  br>0 needs x< 0.0042  -> achievable: True
+    N neg (2, 119)  F>0 x-interval (5.8787, 10.1213)  br>0 needs x< 59.5  -> achievable: True
+    N neg (34, 7)  F>0 x-interval (0.3458, 0.5954)  br>0 needs x< 0.2059  -> achievable: False
+    N pos (1, 238)  F>0 x-interval (0.0, inf)  br>0 needs x< 238.0  -> achievable: True
+    N pos (17, 14)  F>0 x-interval (0.0, inf)  br>0 needs x< 0.8235  -> achievable: True
+[QR] Legendre symbols (d/p) for p | 238*... reference:
+    (1, 238)  (d1/7)= 1  (d2/7)= 0  (d1/17)= 1  (d2/17)= 0  (-d1/17)= 1  (-d2/17)= 0
+    (2, 119)  (d1/7)= 1  (d2/7)= 0  (d1/17)= 1  (d2/17)= 0  (-d1/17)= 1  (-d2/17)= 0
+    (7, 34)  (d1/7)= 0  (d2/7)= -1  (d1/17)= -1  (d2/17)= 0  (-d1/17)= -1  (-d2/17)= 0
+    (14, 17)  (d1/7)= 0  (d2/7)= -1  (d1/17)= -1  (d2/17)= 0  (-d1/17)= -1  (-d2/17)= 0
+    (17, 14)  (d1/7)= -1  (d2/7)= 0  (d1/17)= 0  (d2/17)= -1  (-d1/17)= 0  (-d2/17)= -1
+    (34, 7)  (d1/7)= -1  (d2/7)= 0  (d1/17)= 0  (d2/17)= -1  (-d1/17)= 0  (-d2/17)= -1
+    (119, 2)  (d1/7)= 0  (d2/7)= 1  (d1/17)= 0  (d2/17)= 1  (-d1/17)= 0  (-d2/17)= 1
+    (238, 1)  (d1/7)= 0  (d2/7)= 1  (d1/17)= 0  (d2/17)= 1  (-d1/17)= 0  (-d2/17)= 1
