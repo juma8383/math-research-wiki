@@ -8,3 +8,22 @@
   14000/52501 primes (2445s), valid so far 84
   16000/52501 primes (2941s), valid so far 90
   18000/52501 primes (3450s), valid so far 102
+  20000/52501 primes (3986s), valid so far 109
+  22000/52501 primes (4532s), valid so far 119
+  24000/52501 primes (5101s), valid so far 129
+  26000/52501 primes (5699s), valid so far 141
+  28000/52501 primes (6356s), valid so far 151
+  30000/52501 primes (7040s), valid so far 161
+  32000/52501 primes (7756s), valid so far 170
+  34000/52501 primes (8499s), valid so far 178
+  36000/52501 primes (9276s), valid so far 188
+  38000/52501 primes (10090s), valid so far 197
+  40000/52501 primes (10922s), valid so far 200
+  42000/52501 primes (11825s), valid so far 204
+  44000/52501 primes (12721s), valid so far 214
+  46000/52501 primes (13642s), valid so far 219
+  48000/52501 primes (14601s), valid so far 223
+  50000/52501 primes (15563s), valid so far 226
+  52000/52501 primes (16576s), valid so far 233
+=== A extension 3e5..1e6: 52501 primes, valid 236 (16849s) ===
+saved parityA_ext.json

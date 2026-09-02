@@ -1602,8 +1602,13 @@ undercount — its `bsgs_order` returned None for 16 primes (silently
 skipped); complete order-finding (trial-division factorization of
 $\#E(\mathbb{F}_p)$) gives 640. Class conclusions unaffected (0 violations).
 The same bsgs-skip caveat applies to the W2b count "231 valid primes in
-$(3e5,1e6]$" — recount pending (extension of the parity table to $1e6$,
-~4h background run). `[to-verify→verified-with-caveat,
+$(3e5,1e6]$" — **RESOLVED (append-only correction, 2026-09-02,
+`mss_k34_refine4_ext.py`, 4.7 h run): the true count is 236** (52,501
+primes in $(3e5,1e6]$, complete order-finding; `parityA_ext.json`), so the
+total valid-prime census is **$640+236=876$ valid primes $\le1e6$**
+(base-depth histogram $\{1:875,\,2:1\}$ — the single depth-2 valid prime is
+the odd-Wieferich $q=167$). Class conclusions unaffected.
+`[to-verify→verified-with-caveat,
 2026-09-02]` Primitive-divisor status: Ingram's rank-one $Z\le12$ ($n\ge13$)
 is **conditional on Lang's height conjecture** (Ingram, *JNT* 123 (2007),
 473–486); unconditional: Silverman 1988 gives $Z<\infty$ but *ineffective*;
@@ -1696,6 +1701,15 @@ $c=2$). Distinct-$(D,k_0)$ class counts: 4,759 (A $c=\pm2$),
 $\exp(-\sum 1/D)$ model then matches A $c=\pm1$ well (0.554 vs 0.579) but
 still overkills B $c\ne1$ (0.105 vs 0.780) — nested/overlapping progressions
 cluster further. **Observed densities are the ground truth.**
+
+**Extended-table re-run (2026-09-02, `mss_k34_refine4_ext_sieve.py`):**
+with the corrected parity table extended to $1e6$ (78,496 primes; 876
+valid; 78,494 killers), the kill rates per class rise by ~3 points —
+$c=2$: 64.0% $\to$ 67.4% killed (65,112 survivors of 200,001);
+$c=M/2-1$: 42.1% $\to$ 45.5% (108,949); $c=-2$: 63.9% $\to$ 67.4%
+(65,221); $c=-1$: 42.1% $\to$ 45.5% (109,009) — **no class collapses**,
+consistent with the correlation finding (the marginal kill density decays
+as overlapping orders cluster). The gap structure of §2g is unchanged.
 
 **Honest assessment.** The layer kills 42–78% of the $k$-space per coset at
 $B=3e5$ but does not collapse any class; survivor density thins as $B$

@@ -3979,3 +3979,16 @@ That is the exact residue of the problem: ruling out "all primitive divisors hav
   carried it from the 2026-08-31 session; progress.md row now fixed).
   Copilot's "2^71.02" precision NOT confirmed - kept to-verify; Wang 2026
   Zenodo m<=93/94 preprints flagged unreviewed. Collatz OPEN.
+
+## [UPDATE mss-k34-refine4] 2026-09-02 ~15:10 | magic-square-of-squares
+
+- Parity-table extension to 1e6 LANDED (mss_k34_refine4_ext.py, 4.7 h,
+  52,501 primes in (3e5,1e6] with complete order-finding): APPEND-ONLY
+  CORRECTION - sieve2's W2b count "231 valid primes in (3e5,1e6]" was an
+  undercount (same bsgs-skip cause as the 624-vs-640 fix); true count 236,
+  total census 640+236 = 876 valid primes <= 1e6, base-depth hist
+  {1:875, 2:1} (the depth-2 one = odd-Wieferich q=167). parityA_ext.json.
+- Extended depth-parity sieve re-run (mss_k34_refine4_ext_sieve.py):
+  kill rates rise ~3 pts per class (64.0->67.4 pct, 42.1->45.5 pct);
+  NO class collapses - consistent with the kill-correlation finding.
+  K34 OPEN.
