@@ -3873,3 +3873,31 @@ Reduced to two lemmas, neither proved. Tracked-failure note: an initial
 claim "class -2 killed outright at p=11 by valuation parity" was
 self-caught by the local expansion at (4,264) (528 = 48*11 makes it a
 0/0 mod 11) - corrected before filing.
+
+---
+
+## [ATTACK mss-k34-refine2] 2026-09-02 — K34: cancellation lemma PROVED; gate reduced to odd-depth primitive divisors
+
+**Round target** (from 2d): the two lemmas of the primitive-divisor route — (a) cancellation/numerator lemma, (b) applicability of Ingram's primitive-divisor theorem to the coset EDS.
+
+**Outcome: Lemma (a) PROVED outright, no exceptions.** For any good prime q and any kernel point P = nG_A of depth s = v_q(denom x(P))/2 >= 1: writing x = phi/psi^2, y = phi3/psi^3 in lowest terms (standard integrality: gcd(phi3,psi)=gcd(phi,psi)=1, so v(phi3)=v(phi)=0):
+- y+66x = (phi3 + 66 phi psi)/psi^3 — second term has valuation >= s > -3s, no cancellation possible, v = -3s exactly;
+- x-4 = (phi - 4 psi^2)/psi^2 — numerator = phi mod q, v = -2s exactly;
+- hence v_q(X(P)) = -3s - (-4s) = +s UNCONDITIONALLY.
+The 0/0 exceptional points of X (poles (4,-/+264), zero T=(0,0)) never coincide with kernel points. Verified exactly on 256 kernel-prime cases (n <= 60, all good q <= 4000 with ord_q(G) | n): 0 failures (mss_k34_refine2.py/.log).
+
+**Consequence:** X(nG_A) = w^2 forces even depth s_q at EVERY kernel prime q of nG_A (every good q with ord_q(G) | n). One odd-depth kernel prime kills the point.
+
+**Lemma (b) refined to the exact remaining gap.** Ingram's primitive-divisor theorem gives primitive q | psi_n (ord_q(G) = n) for n >= 13; all coset indices n = c + kM_A >= M_A - 2 ~ 4.2e10 qualify, and q does not divide n (q | n with q >= 5 forces n <= 11 via ord <= #E(F_q) <= q+1+2sqrt(q)). Depth of nG at q = v_q(psi_n) = 1 + delta_q, delta_q = elliptic Wieferich defect (q^2 | psi_n iff delta_q >= 1). So:
+
+  K34-A reduces to: for every coset index n (n = c mod M_A, c in {0,2,M_A/2-1,-2,-1}), some primitive divisor q of psi_n has v_q(psi_n) ODD (equivalently: not all primitive divisors are odd-Wieferich, v_q(psi_n) in {2,4,...}).
+
+That is the exact residue of the problem: ruling out "all primitive divisors have even depth" unconditionally requires a non-Wieferich bound for EDS — the direct analogue of the Wall-Sun-Sun obstruction for Lucas sequences. Silverman's conditional-on-abc sparsity result suggests the gate holds heuristically, but unconditionally this is open. [to-verify] exact hypotheses of Ingram's theorem (n >= 13 for all nonsingular E/Q, infinite-order G, or curve-dependent exceptions?).
+
+**Empirical gate evidence:** depth census v_q(psi_ord) over all good q <= 4000 with ord_q(G) <= 60 for (E~_A, G_A): 78/78 primes have depth exactly 1, depth histogram {1:78} — zero odd-Wieferich primes found.
+
+**B-side port (Lemma a only):** same argument for X_B = (6y-92x)/(x(x-36)): 6phi3 - 92 phi psi has valuation 0 at kernel points for q >= 5, x - 36 gives -2s, so v_q(X_B(P)) = +s; identical reduction for the four k-cosets of <H_B> (M_B = 264). Lemma a fully ports; Lemma b is the shared gap.
+
+**Files:** notes.md sec 2e [mss-k34-refine2]; scripts/mss_k34_refine2.py + .log.
+
+**K34 status: OPEN.** Gate sharpened from "two unproven lemmas" to "one unproven lemma (odd-depth primitive divisors, a Wieferich-type gap)".

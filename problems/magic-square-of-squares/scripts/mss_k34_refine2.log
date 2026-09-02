@@ -1,0 +1,7 @@
+﻿=== (i) valuation formula v_q(X(nG)) = depth, exact check ===
+  ord_q(G) computed for good primes q<=4000 (548 primes)
+  exact kernel-prime checks (n<=60, q<=4000): 256 tested, 0 failures
+=== (ii) odd-Wieferich census: depth of ord_q(G)-multiple ===
+  primes q<=4000 with ord<=60: 78 computed; odd-Wieferich (even depth): NONE
+  depth histogram: {1: 78}
+  odd-depth (gate-friendly) count: 78 of 78

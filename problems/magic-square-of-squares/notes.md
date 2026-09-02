@@ -1460,7 +1460,75 @@ should read **5** (1097, 1571, 5297, 9769, 93407). The $p9$ continuation
 (grow to 3000, hunt to $2\cdot10^6$) found no further kills — consistent
 with the filed state.
 
+### 2e. The cancellation lemma is PROVED; K34-A reduced to odd-depth primitive divisors (2026-09-02, `[mss-k34-refine2]`)
+
+Of the two lemmas opening the primitive-divisor gate in 2d, **Lemma 2 (no
+cancellation) is now proved outright** — it needs no exceptions, no
+resultant, no enumeration. Script `mss_k34_refine2.py` (+ log).
+
+**Lemma 2 (valuation formula — PROVED).** Let $q\ge5$ be a good prime and
+$P=nG_A$ a kernel point at $q$ of depth $s\ge1$ (i.e.
+$v_q(\mathrm{denom}\,x_P)=2s$). Write $x_P=\varphi/\psi^2$,
+$y_P=\varphi_3/\psi^3$ in lowest terms; the standard integrality lemma gives
+$\gcd(\varphi_3,\psi)=\gcd(\varphi,\psi)=1$, so $v_q(\varphi_3)=v_q(\varphi)=0$.
+Then, with $X=2(y+66x)/(x(x-4))$:
+- $y+66x=(\varphi_3+66\varphi\psi)/\psi^3$: the second term has valuation
+  $\ge s\ge1>-3s=v(\varphi_3)$, so **no cancellation is possible**;
+  $v_q(y_P+66x_P)=-3s$ exactly.
+- $x-4=(\varphi-4\psi^2)/\psi^2$: $\varphi-4\psi^2\equiv\varphi\not\equiv0$,
+  so $v_q(x_P-4)=-2s$ exactly.
+- Hence $v_q(X(P))=-3s-(-4s)=\boxed{+s}$ **unconditionally** — the $0/0$
+  exceptional points of $X$ (pole points $(4,\pm264)$, zero $T=(0,0)$) can
+  never coincide with a kernel point (a depth-$s$ point reduces to $O$; the
+  exceptional points are affine). Verified exactly: 256 kernel-prime cases
+  ($n\le60$, all good $q\le4000$ with $\mathrm{ord}_q(G)\mid n$), **0
+  failures** (`mss_k34_refine2.log`).
+
+**Consequence — square condition.** $X(nG_A)=w^2$ forces $s_q$ **even** for
+*every* kernel prime $q$ of $nG_A$ (every good $q$ with $\mathrm{ord}_q(G)\mid n$).
+So any kernel prime of odd depth kills the point.
+
+**Lemma 1 refined to the exact remaining gap.** By Ingram's primitive-divisor
+theorem (primitive divisors of $\psi_n$ exist for $n\ge13$; all coset indices
+$n=c+kM_A\ge M_A-2\approx4.2\cdot10^{10}$ qualify), take $q$ primitive for
+$\psi_n$: $\mathrm{ord}_q(G)=n$, and $q\nmid n$ (if $q\mid n$ with $q\ge5$
+prime then $n=qj\ge2q$, but $\mathrm{ord}_q(G)=n\le\#Ẽ(\mathbb F_q)\le q+1+2\sqrt q$
+gives $q\le1+2\sqrt q$, i.e. $n\le11$ — impossible for
+$n\ge M_A-2$; and $n$ is composite so $q\ne n$). The depth of $nG$ at $q$
+is then $v_q(\psi_n)=1+\delta_q$ where $\delta_q\ge0$ is the **elliptic
+Wieferich defect** ($q^2\mid\psi_n\iff\delta_q\ge1$). So:
+
+> **K34-A reduces to:** for every coset index $n$ ($n\equiv c\bmod M_A$,
+> $c\in\{0,2,M_A/2-1,-2,-1\}$), some primitive divisor $q$ of $\psi_n$ has
+> $v_q(\psi_n)$ **odd** (equivalently: not every primitive divisor of
+> $\psi_n$ is an odd-Wieferich prime, i.e. $v_q(\psi_n)\in\{2,4,\dots\}$).
+
+That is the *exact* residue of the problem: ruling out "all primitive
+divisors have even depth" unconditionally would require a non-Wieferich
+bound for elliptic divisibility sequences — the direct analogue of the
+Wall–Sun–Sun obstruction for Lucas sequences. Silverman's conditional-on-abc
+result (Wieferich primes for fixed $(E,P)$ are sparse) suggests the condition
+holds with heuristic probability $\to1$, but unconditionally this is open.
+`[to-verify]` exact statement + hypotheses of Ingram's theorem (does
+$n\ge13$ hold for all nonsingular $E/\mathbb Q$, infinite-order $G$, or are
+there curve-dependent exceptions?).
+
+**Empirical evidence for the gate (this round).** Depth census
+$s_q=v_q(\psi_{\mathrm{ord}_q})$ over all good $q\le4000$ with
+$\mathrm{ord}_q(G)\le60$: **78/78 primes have depth exactly 1** — depth
+histogram $\{1:78\}$, **zero odd-Wieferich primes found** for $(Ẽ_A,G_A)$.
+Consistent with the gate being satisfiable.
+
+**Port to K34-B (Lemma 2 only).** Same argument with
+$X_B=(6y-92x)/(x(x-36))$: $6y-92x=(6\varphi_3-92\varphi\psi)/\psi^3$ has
+valuation $-3s$ at any kernel point for $q\ge5$ ($v(6\varphi_3)=0$,
+second term $\ge s$); $x-36=(\varphi-36\psi^2)/\psi^2$ gives $-2s$; so
+$v_q(X_B(P))=+s$ and the identical reduction holds for the four $k$-cosets
+of $\langle H_B\rangle$ ($n\equiv c\bmod M_B$, $M_B=264$). **Lemma 2 is
+fully ported; Lemma 1 (odd-depth primitive divisors) is the shared gap.**
+
 ## Cross-problem links
+
 
 
 - Engine: `scripts/mss_census_pythagorean.py` (validated 3 ways — see
