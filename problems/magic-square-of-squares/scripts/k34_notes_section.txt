@@ -1,0 +1,176 @@
+## K34 as rational points on genus-1 quartics M_A, M_B (2026-09-01, `[mss-k34-elliptic]`)
+
+Goal: settle K3/K4 (the last gates for two-prime sum-freeness) by determining
+the rational points on the two master quartics. Result: the reduction, the
+Weierstrass models, and the full Mordell-Weil ranks are now PROVED with
+machine-checked descent; K34 itself (no non-degenerate square-X point)
+remains OPEN, with the Mordell-Weil sieve built but not collapsed. Scripts:
+`scripts/mss_k34_elliptic.py` (+ parts p2..p12) and
+`scripts/mss_k34_elliptic.log`.
+
+### 1. The reduction (verified, exact)
+
+With $n=a^2+b^2$ prime $\equiv 1 \pmod 4$, $s=a^2-b^2$, $t=ab$, $u=s/t$:
+$A(n)\ \Longleftrightarrow\ t^4(u^4+136u^2+16) = \square$ and
+$B(n)\ \Longleftrightarrow\ t^4(9u^4-56u^2+144) = \square$
+(re-verified from scratch: `QA*(x^4)-P_A(x^2) = 0`, `QB*(x^4)-P_B(x^2) = 0`
+with $u=x-1/x$, and $t^4Q_A = a^8+132a^6b^2-250a^4b^4+132a^2b^6+b^8$,
+$t^4Q_B = 9a^8-92a^6b^2+310a^4b^4-92a^2b^6+9b^8$, all exact in sympy).
+Hence, with $X=(a/b)^2$:
+
+- **K34-A** $\Longleftrightarrow$ $M_A:\ V^2 = X^4+132X^3-250X^2+132X+1$
+  has no rational point with $X$ a positive rational square other than the
+  degenerate $X=0,1$;
+- **K34-B** $\Longleftrightarrow$ $M_B:\ V^2 = 9X^4-92X^3+310X^2-92X+9$
+  likewise.
+
+### 2. Weierstrass models and birational maps (verified on all known points)
+
+- $M_A \leftrightarrow E_A:\ Y^2 = X^3-250X^2+17420X+35848$, via
+  $\psi_A(X,V):\ x_E=(V-1-66X)/X^2$,
+  $(X_E,Y_E)=(-2x_E,\ 2(x_E^2-1)X+132(x_E-1))$; inverse
+  $X = 2(y+66x)/(x(x-4))$ on the shifted model
+  $\tilde E_A:\ y^2=x^3-256x^2+18432x$ ($x=X_E+2$). Origin choice:
+  $(0,-1)\mapsto O$, $(0,1)\mapsto(4606,-304128)$; the standard conversion
+  with origin $(0,1)$ is $\chi_A=-\psi_A\circ(V\mapsto -V)$ (tangent-line
+  algorithm; $\chi_A(0,1)=O$).
+- $M_B \leftrightarrow E_B:\ Y^2 = X^3+310X^2+8140X+51912$, via
+  $\psi_B(X,V):\ x_E=(V-3+\tfrac{46}{3}X)/X^2$,
+  $(X_E,Y_E)=(-6x_E,\ 3(2(x_E^2-9)X-\tfrac{92}{3}(x_E-3)))$;
+  $(0,-3)\mapsto O$, $(0,3)\mapsto(-\tfrac{674}{9},-\tfrac{23552}{27})$.
+
+All 12 known $M_A$ points (including $X=\tfrac{66}{1151},\tfrac{1151}{66}$
+with $V=\pm\tfrac{3693311}{q^2}$; the search log stores $V\cdot q^2$) and all
+12 known $M_B$ points (including $X=\tfrac{209}{414},\tfrac{414}{209}$,
+$V=\pm\tfrac{943587}{q^2}$) map onto their curves and back (exact Fraction
+arithmetic, every point verified on-curve in both directions).
+
+**Jacobian correction (tracked failure, now fixed).** The binary-quartic
+invariants are $I_1=10240,\ I_2=-8912896$ for $M_A$ and $I_1=71680,\
+I_2=-38273024$ for $M_B$ (as previously claimed), but the Jacobian is
+$y^2=x^3-27I_1x-27I_2$ — the earlier claim $y^2=x^3-27I_2x-27I_1$ has the two
+invariants swapped. Evidence: (i) the generic tangent construction applied to
+the test quartic $v^2=x^4+3x^3+5x^2+3x+1$ gives $j=256000/117$, equal to
+$j(y^2=x^3-27I_1x-27I_2)$ and unequal to the swapped form
+($j=10536048/6091$); (ii) Frobenius traces of the swapped cubic differ from
+$\tilde E_A$ at $p=7,13,17,19,23,29,31$; (iii) $y^2=x^3-276480x+240648192$
+($=x^3-27I_1x-27I_2$ for $M_A$) is $\mathbb{Q}$-isomorphic to $E_A$ ($c_4$
+ratio $u^4=81$, $c_6$ ratio $u^6=729$, i.e. scaling $u=3$ plus shift), and
+$x^3-1935360x+1033371648\cong E_B$ likewise.
+`[to-verify]` cite the classical normalization from a primary source.
+
+### 3. Mordell-Weil groups (proved)
+
+**Theorem.** $E_A(\mathbb{Q}) \cong \mathbb{Z}\cdot(126,512)\oplus\mathbb{Z}/2$
+with torsion generator $(-2,0)$, and
+$E_B(\mathbb{Q}) \cong \mathbb{Z}\cdot(-146,1536)\oplus\mathbb{Z}/2$ with
+torsion generator $(-18,0)$. In particular $M_A(\mathbb{Q})$ and
+$M_B(\mathbb{Q})$ are infinite; the "exactly the known points"
+hypothesis is FALSE.
+
+*Proof.* (a) *Torsion:* the gcd of $\#E(\mathbb{F}_p)$ over
+$p\in\{5,7,11,13,17,19\}$ equals 2 for $E_A, E_B, \tilde E_A, \tilde E_B$,
+so the torsion divides 2; each curve has a rational 2-torsion point
+($x^3-250x^2+17420x+35848=(x+2)(x^2-252x+17924)$ and
+$x^3+310x^2+8140x+51912=(x+18)(x^2+292x+2884)$, quadratic factors
+irreducible over $\mathbb{Q}$) — torsion is exactly $\mathbb{Z}/2$.
+(b) *2-isogeny descent* (exact arithmetic; locally insoluble homogeneous
+spaces $C_d:\ N^2=dM^4+aM^2e^2+(b/d)e^4$, squarefree $d\mid b$, killed mod
+$p^2$ for $p\le97$ and mod 32 for $p=2$, primitive classes only — these are
+rigorous one-way obstruction kills):
+- $\tilde E_A:\ y^2=x^3-256x^2+18432x$ ($a=-256$, $b=18432=2^{11}\cdot3^2$):
+  $\alpha(\tilde E_A)=\{1,2\}$ (both realized: $(4,264)$ and $(128,512)$);
+  dual $E'_A:\ y^2=x^3+512x^2-8192x$: $\alpha'(E'_A)\subseteq\{\pm1,\pm2\}$
+  with all four locally soluble, so $|\alpha'|\le4$ and
+  $2^{r+2}=|\alpha|\,|\alpha'|\le8$, i.e. $r\le1$; $(128,512)$ is not
+  torsion (the torsion group has only $O$ and $(0,0)$) $\Rightarrow r=1$.
+- $\tilde E_B:\ y^2=x^3+256x^2-2048x$ ($b=-2048=-2^{11}$):
+  $\alpha(\tilde E_B)=\{1,-2\}$ (realized by $(16,192)$ and $(-2,192)$);
+  dual $E'_B:\ y^2=x^3-512x^2+73728x$: soluble classes $\{1,2,3,6\}$, so
+  $|\alpha'|\le4$ and $r\le1$; $(-146,1536)$ is not torsion
+  $\Rightarrow r=1$.
+
+**Correction (tracked failure):** an earlier session line "rank$(E_B)=2$"
+was a bookkeeping slip ($2\cdot4=8=2^{r+2}$ gives $r=1$, not 2). The descent
+record above is the corrected one. `[to-verify]` the kill implementation has
+not been independently reimplemented; the kills are load-bearing only for
+the upper bounds $r\le1$.
+
+(c) *Generators and known points.* $G_A=(126,512)$ and $G_B=(-146,1536)$
+have infinite order; every known point is a small combination. $M_A$
+(writing $T_A=(-2,0)$): $(1,4)\mapsto-G_A$; $(1,-4)\mapsto-G_A+T_A$;
+$(31/35,\pm\cdot)\mapsto G_A+T_A,\ -3G_A$; $(35/31,\pm\cdot)\mapsto
+-3G_A+T_A,\ G_A$; $(66/1151,\pm\cdot)\mapsto-4G_A,\ -4G_A+T_A$;
+$(1151/66,\pm\cdot)\mapsto2G_A,\ 2G_A+T_A$; $(0,1)\mapsto-2G_A+T_A$;
+$(0,-1)\mapsto O$. $M_B$ ($T_B=(-18,0)$): $(1,12)\mapsto G_B$; $(1,-12)\mapsto G_B+T_B$;
+$(5/41,2508)\mapsto-G_B$; $(41/5,2508)\mapsto3G_B$;
+$(209/414,943587)\mapsto4G_B+T_B$ (verified exactly in rational
+arithmetic); $(414/209,-943587)\mapsto4G_B$; $(0,3)\mapsto2G_B+T_B$
+(verified exactly). The complete on-curve image list is in
+`mss_k34_elliptic_p12.log`. Note the involution rule (checked on all
+verified pairs): the quartic sign flip $V\mapsto-V$ acts on $E(\mathbb{Q})$
+as $P\mapsto C-P$ with $C=\psi(0,v_0)$, i.e. $C=-2G_A+T_A$ for $M_A$ and
+$C=2G_B+T_B$ for $M_B$; this determines every paired image from its partner.
+Index of
+$\langle G\rangle$ inside the free part not proved `[to-verify]`; nothing
+below depends on index 1.
+
+### 4. Genus-3 square covers: killing primes
+
+Non-degenerate square-$X$ points of $M_A$ correspond to rational points
+$x\ne0,\pm1$ on the genus-3 double covers
+$C3_A:\ W^2=x^8+132x^6-250x^4+132x^2+1$ and
+$C3_B:\ W^2=9x^8-92x^6+310x^4-92x^2+9$ (take $W=V$, $X=x^2$). Brute-force
+residue classification gives **killing primes** (primes at which the only
+solvable residue classes are $x\equiv0,\pm1$): $C3_A$: $\{3,5,11,13\}$;
+$C3_B$: $\{3,5,19,29\}$. Consequence: any K34-A counterexample
+$n=a^2+b^2$ prime satisfies $3\cdot5\cdot11\cdot13\mid ab(a^2-b^2)$;
+any K34-B counterexample satisfies $3\cdot5\cdot19\cdot29\mid ab(a^2-b^2)$.
+
+### 5. Mordell-Weil sieve on the square-X condition: OPEN
+
+The square-X condition on the rank-1 group $\langle G_A\rangle\oplus
+\mathbb{Z}/2$ was sieved over $n\in\mathbb{Z}$ (condition
+$X(nG_A+tT_A)\in\{0,1\}$ at the killing primes $3,5,11,13$ and
+QR-or-infinity elsewhere, classes merged by CRT, primes ordered by
+constraint density). With primes $<400$ the sieve does NOT collapse: coset
+$t=0$ retains 379,620 classes mod 653,083,200; coset $t=1$ retains
+16,322,040 classes mod 528,313,804,200 (stopped at $p=389$ on modulus size;
+survivor density $\approx3\cdot10^{-5}$, still decreasing). So no proof and
+no refutation this round. Next levers: primes with
+$\mathrm{ord}_p(G_A)$ coprime to the accumulated modulus; sieving the
+genus-3 Jacobian directly; or the sibling 2-cover
+$D_A:\ w^2=z^4+128z^2-512$ (same invariants $I_1,I_2$, another 2-covering
+of $E_A$) with the extra condition $z^2-4=\square$.
+
+### 6. Tracked failures (append-only)
+
+1. The brief's Jacobian formula $y^2=x^3-27I_2x-27I_1$ is **wrong**
+   (invariants swapped); correct is $y^2=x^3-27I_1x-27I_2$ (Section 2).
+2. "rank$(E_B)=2$": arithmetic slip ($2\cdot4=8\Rightarrow r=1$); corrected
+   in Section 3.
+3. Discriminant $-b_2^4b_6-8b_4^3-27b_6^2+9b_2b_4b_6$ is wrong; correct:
+   $\Delta=-b_2^2b_8-8b_4^3-27b_6^2+9b_2b_4b_6$ (verified on
+   $y^2=x^3+ax^2+bx$ and by locating the singular point of $\tilde E_B$
+   mod 3).
+4. Infinite loop in the group-law `mul` for negative $n$ ($n\gg=1$ never
+   reaches 0) — hit twice.
+5. Sieve bookkeeping: skipping classes where $X\bmod p$ is undefined (the
+   infinity class) wrongly killed them; fix: keep those classes.
+6. Modular doubling slope is $(3x^2+2a_2x+a_4)/(2y)$ — dropping $a_4$
+   silently leaves the curve mod $p$.
+7. `Fraction % p` is not modular reduction of a rational; use
+   $n\cdot d^{-1}\bmod p$.
+8. Part-1 reduction first used $u=s/t-t/s$ (wrong identity); correct is
+   $u=s/t$.
+
+### 7. Bottom line
+
+K3/K4 (K34) remain OPEN. New and proved here: the two-prime question is
+exactly a rational-point question on two genus-1 curves with **rank-1**
+Mordell-Weil groups (fully computed), the genus-3 covers have killing primes
+forcing $3\cdot5\cdot11\cdot13\mid ab(a^2-b^2)$ (A-case) and
+$3\cdot5\cdot19\cdot29$ (B-case), and the MW sieve machinery for the final
+square-X condition is built and running. The obstruction is now precisely
+located: the sieve must separate the rank-1 lattice from the square-X locus,
+and primes below 400 do not suffice.

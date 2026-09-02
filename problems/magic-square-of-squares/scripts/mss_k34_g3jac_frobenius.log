@@ -1,0 +1,96 @@
+Frobenius decomposition of J(C3_A), J(C3_B)  [mss-k34-g3jac]
+======================================================================
+C3_A: W^2 = 1*x^0 + 132*x^2 + -250*x^4 + 132*x^6 + 1*x^8
+disc(octic) sign*bits: 28 digits, prime factors: [2, 3]
+bad primes (p | disc, plus 2): [2, 3]
+full-frob primes (N1,N2,N3): [7, 11, 13, 17, 19, 23, 29, 31]
+N1-check primes (36): [37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211]
+----------------------------------------------------------------------
+p=  7: N1=    16 N2=      60 N3=     304  #J=     1152 #E_A=   12 #Prym=    96
+        Q_p(T) (asc) = [1, 4, 14, 28, 49]   split -> ('split', [-4, 0], 7)
+p= 11: N1=     8 N2=     140 N3=    1400  #J=     1024 #E_A=    8 #Prym=   128
+        Q_p(T) (asc) = [1, 0, 6, 0, 121]   split -> ('split', [-4, 4], 11)
+p= 13: N1=     8 N2=     212 N3=    2312  #J=     1600 #E_A=   10 #Prym=   160
+        Q_p(T) (asc) = [1, -2, 18, -26, 169]   split -> ('split', [-2, 4], 13)
+p= 17: N1=    20 N2=     380 N3=    4820  #J=     6400 #E_A=   20 #Prym=   320
+        Q_p(T) (asc) = [1, 0, 30, 0, 289]   split -> ('split', [-2, 2], 17)
+p= 19: N1=    24 N2=     428 N3=    6696  #J=     9216 #E_A=   24 #Prym=   384
+        Q_p(T) (asc) = [1, 0, 22, 0, 361]   split -> ('split', [-4, 4], 19)
+p= 23: N1=    32 N2=     476 N3=   12128  #J=    16384 #E_A=   32 #Prym=   512
+        Q_p(T) (asc) = [1, 0, -18, 0, 529]   split -> ('split', [-8, 8], 23)
+p= 29: N1=    40 N2=     852 N3=   24328  #J=    34656 #E_A=   38 #Prym=   912
+        Q_p(T) (asc) = [1, 2, 10, 58, 841]   split -> ('split', [-8, 6], 29)
+p= 31: N1=    48 N2=    1052 N3=   28944  #J=    51840 #E_A=   36 #Prym=  1440
+        Q_p(T) (asc) = [1, 12, 94, 372, 961]   split -> ('split', [-8, -4], 31)
+----------------------------------------------------------------------
+quartic-factor candidate matches over full primes:
+   ('EBt', 'E_B') : 6 primes
+   ('EBt', 'EP_B') : 6 primes
+   ('EP_A', 'E_B') : 4 primes
+   ('EP_A', 'EP_B') : 4 primes
+   ('EB_t', 'E_B') : 2 primes
+   ('EB_t', 'EP_B') : 2 primes
+   ('EBt', 'EP_A') : 2 primes
+   BEST: P ~ EBt x E_B
+   MISMATCH p=37 pred=34 act=40
+   MISMATCH p=41 pred=24 act=36
+   MISMATCH p=47 pred=56 act=64
+   MISMATCH p=53 pred=46 act=72
+   MISMATCH p=59 pred=72 act=88
+   predicted #C3_A(F_p) = p+1-(t_E_A+t_EBt+t_E_B): 4/36 primes OK
+   p=  7 full check N:(16,60,304) pred:(12,44,324) MISMATCH
+   p= 11 full check N:(8,140,1400) pred:(8,140,1400) OK
+   p= 13 full check N:(8,212,2312) pred:(18,200,2106) MISMATCH
+   p= 17 full check N:(20,380,4820) pred:(24,380,4632) MISMATCH
+   p= 19 full check N:(24,428,6696) pred:(24,428,6696) OK
+   p= 23 full check N:(32,476,12128) pred:(32,476,12128) OK
+   p= 29 full check N:(40,852,24328) pred:(22,824,24574) MISMATCH
+   p= 31 full check N:(48,1052,28944) pred:(36,1100,29484) MISMATCH
+======================================================================
+C3_B: W^2 = 9*x^0 + -92*x^2 + 310*x^4 + -92*x^6 + 9*x^8
+disc(octic) sign*bits: 28 digits, prime factors: [2, 3]
+bad primes (p | disc, plus 2): [2, 3]
+full-frob primes (N1,N2,N3): [7, 11, 13, 17, 19, 23, 29, 31]
+N1-check primes (36): [37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211]
+----------------------------------------------------------------------
+p=  7: N1=    16 N2=      60 N3=     304  #J=     1152 #E_B=   12 #Prym=    96
+        Q_p(T) (asc) = [1, 4, 14, 28, 49]   split -> ('split', [-4, 0], 7)
+p= 11: N1=    24 N2=     140 N3=    1128  #J=     4096 #E_B=   16 #Prym=   256
+        Q_p(T) (asc) = [1, 8, 38, 88, 121]   split -> ('split', [-4, -4], 11)
+p= 13: N1=    24 N2=     212 N3=    1944  #J=     5184 #E_B=   18 #Prym=   288
+        Q_p(T) (asc) = [1, 6, 34, 78, 169]   split -> ('split', [-4, -2], 13)
+p= 17: N1=    20 N2=     380 N3=    4820  #J=     6400 #E_B=   20 #Prym=   320
+        Q_p(T) (asc) = [1, 0, 30, 0, 289]   split -> ('split', [-2, 2], 17)
+p= 19: N1=     8 N2=     428 N3=    7352  #J=     4096 #E_B=   16 #Prym=   256
+        Q_p(T) (asc) = [1, -8, 54, -152, 361]   split -> ('split', [4, 4], 19)
+p= 23: N1=    32 N2=     476 N3=   12128  #J=    16384 #E_B=   32 #Prym=   512
+        Q_p(T) (asc) = [1, 0, -18, 0, 529]   split -> ('split', [-8, 8], 23)
+p= 29: N1=     8 N2=     852 N3=   25064  #J=    11616 #E_B=   22 #Prym=   528
+        Q_p(T) (asc) = [1, -14, 106, -406, 841]   split -> ('split', [6, 8], 29)
+p= 31: N1=    48 N2=    1052 N3=   28944  #J=    51840 #E_B=   36 #Prym=  1440
+        Q_p(T) (asc) = [1, 12, 94, 372, 961]   split -> ('split', [-8, -4], 31)
+----------------------------------------------------------------------
+quartic-factor candidate matches over full primes:
+   ('EP_B', 'EP_B') : 2 primes
+   ('EBt', 'E_A') : 2 primes
+   ('EBt', 'EP_A') : 2 primes
+   ('EBt', 'EP_B') : 2 primes
+   BEST: P ~ EP_B x EP_B
+   MISMATCH p=37 pred=26 act=24
+   MISMATCH p=41 pred=24 act=36
+   MISMATCH p=47 pred=72 act=64
+   MISMATCH p=53 pred=30 act=40
+   MISMATCH p=59 pred=24 act=40
+   predicted #C3_B(F_p) = p+1-(t_E_B+t_EP_B+t_EP_B): 3/36 primes OK
+   p=  7 full check N:(16,60,304) pred:(20,44,284) MISMATCH
+   p= 11 full check N:(24,140,1128) pred:(24,140,1128) OK
+   p= 13 full check N:(24,212,1944) pred:(26,200,1922) MISMATCH
+   p= 17 full check N:(20,380,4820) pred:(24,380,4632) MISMATCH
+   p= 19 full check N:(8,428,7352) pred:(8,428,7352) OK
+   p= 23 full check N:(32,476,12128) pred:(48,476,12048) MISMATCH
+   p= 29 full check N:(8,852,25064) pred:(6,824,24942) MISMATCH
+   p= 31 full check N:(48,1052,28944) pred:(44,1100,28868) MISMATCH
+======================================================================
+SUMMARY
+  C3_A: Prym candidates -> ('EBt', 'E_B')
+  C3_B: Prym candidates -> ('EP_B', 'EP_B')

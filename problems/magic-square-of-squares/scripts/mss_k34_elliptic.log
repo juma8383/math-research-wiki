@@ -1,0 +1,173 @@
+K34 ELLIPTIC ATTACK - CONSOLIDATED LOG (2026-09-01, [mss-k34-elliptic])
+========================================================================
+
+--- mss_k34_elliptic.py
+Part 1: symbolic reduction verification (A(n), B(n) as t^4*QA, t^4*QB; exact sympy identities). Output captured in-session; see section 1 of notes [mss-k34-elliptic]. Verified: QA*x^4 == P_A(x^2) with u = x-1/x; t^4*QA == a^8+132a^6b^2-250a^4b^4+132a^2b^6+b^8; same shape for QB.
+
+--- mss_k34_elliptic_p2.py
+Part 2: quartic -> Weierstrass derivation (subst V = xE*Xq^2 + 66*Xq + 1 for M_A; V = xE*Xq^2 - (46/3)Xq + 3 for M_B; discriminant cubics -> E_A: Y^2=X^3-250X^2+17420X+35848, E_B: Y^2=X^3+310X^2+8140X+51912).
+
+--- mss_k34_elliptic_p3.py
+Part 3: EC class (exact Fractions), maps, torsion smoke tests. Key outputs: all 10 then-known quartic points map on-curve; (126,512) on E_A not torsion <=24; (-2,0) order 2; (-146,1536) on E_B not torsion <=24.
+
+--- mss_k34_elliptic_p4.py
+Part 4: 2-isogeny descent, homogeneous spaces C_d, local kills (mod p^2, p<=97; mod 32 for p=2; primitive only). Results: alpha(E~_A)={1,2}; alpha(E~_B)={1,-2}; alpha'(E'_A) all of {+-1,+-2} soluble; alpha'(E'_B)={1,2,3,6} soluble.
+
+--- mss_k34_elliptic_p5.py
+Part 5: isogeny-partner checks, integral points, torsion via gcd #E(F_p) over p in {5,7,11,13,17,19} = 2 (all four curves) -> torsion Z/2. Correct discriminant formula Delta = -b2^2*b8-8b4^3-27b6^2+9b2b4b6 (fixed after wrong -b2^4*b6 variant).
+
+--- mss_k34_elliptic_p6.py
+Part 6: relation tests + C_d searches (superseded by p8 after negative-n infinite-loop fix). C_3/C_6 hits for E'_B: (8,1,64) -> points (192,1536),(384,3072).
+
+--- mss_k34_elliptic_p7.py
+Part 7: genus-3 killing-prime search. C3_A killing primes <400: [3,5,11,13]; C3_B: [3,5,19,29].
+
+--- mss_k34_elliptic_p8.py
+Part 8: fast modular EC ops; relation tests mod {10007,10009,10037,65537} then exact EC verification; integral points E~_A: [(0,0),(4,264),(128,512),(144,576),(4608,304128)]; E~_B: [(0,0),(16,192),(36,552)].
+
+--- mss_k34_elliptic_p9.py
+Part 9: MW sieve v1 (QR condition only) - does not collapse (density-1/2 condition keeps |S|/M constant).
+
+--- mss_k34_elliptic_p10.py
+Part 10: MW sieve v2 with killing-prime strong condition (X in {0,1} mod p at p in {3,5,11,13}). t=0: 379,620 survivor classes mod 653,083,200. t=1 (density-ordered): 16,322,040 classes mod 528,313,804,200, stopped at p=389 (modulus cap 1e13). NOT collapsed; OPEN.
+
+
+SESSION-3 VERBATIM OUTPUTS (p11, p11b, p12)
+========================================================================
+
+--- mss_k34_elliptic_p11.log
+[Part 11 (trace test): Frobenius traces a_p of E~_A vs claimed Jacobian y^2=x^3-27I2x-27I1 DIFFER at p=7,13,17,19,23,29,31 (same only p=11); E~_B vs claimed J_B differ at 7 of 8 primes. S2 of p11 had a sign bug (monic scaling of a cubic with negative leading coefficient) - superseded by p11b.]
+
+=== S1: Frobenius traces, Ẽ_A vs claimed Jacobian J_A ===
+p= 7  a_p(E~_A)= -4   a_p(J_A)= -3  DIFFER
+p=11  a_p(E~_A)=  4   a_p(J_A)=  4  SAME
+p=13  a_p(E~_A)=  4   a_p(J_A)= -3  DIFFER
+p=17  a_p(E~_A)= -2   a_p(J_A)=  0  DIFFER
+p=19  a_p(E~_A)= -4   a_p(J_A)=  1  DIFFER
+p=23  a_p(E~_A)= -8   a_p(J_A)= -1  DIFFER
+p=29  a_p(E~_A)= -8   a_p(J_A)=  6  DIFFER
+p=31  a_p(E~_A)= -4   a_p(J_A)=  4  DIFFER
+=== S1b: Ẽ_B vs claimed J_B ===
+p= 5  a_p(E~_B)=  0   a_p(J_B)= -4  DIFFER
+p= 7  a_p(E~_B)= -4   a_p(J_B)=  0  DIFFER
+p=11  a_p(E~_B)= -4   a_p(J_B)= -4  SAME
+p=13  a_p(E~_B)= -4   a_p(J_B)=  1  DIFFER
+p=17  a_p(E~_B)= -2   a_p(J_B)=  7  DIFFER
+p=19  a_p(E~_B)=  4   a_p(J_B)= -2  DIFFER
+p=23  a_p(E~_B)= -8   a_p(J_B)= -4  DIFFER
+p=31  a_p(E~_B)= -4   a_p(J_B)= -3  DIFFER
+=== S2: generic quartic->Weierstrass vs classical formula ===
+test quartic: quad coeffs xE**2 - 1 3*xE - 3 2*xE - 11/4
+  D(xE) = -2*(xE - 1)*(4*xE**2 - 6*xE - 1)
+  scaled monic cubic: y^2 = x^3 + (-5/2) x^2 + (-10) x + (16)
+  j(generic-method Jac) = 628864/235
+  I,J = 10 29  claimed Jac y^2=x^3-27Jx-27I; j = 10536048/6091
+  match: False
+M_A generic cubic: y^2 = x^3 + (125) x^2 + (-34840) x + (-286784)
+  j = 6937086288194500/3291025651317  equals j(E_A)=-8000/81: False
+M_B generic cubic: y^2 = x^3 + (-51) x^2 + (-5426) x + (-138432)
+  j = -430642544988096/141207251743  equals j(E_B)=2744000/9: False
+
+
+--- mss_k34_elliptic_p11b.log
+[Part 11b (corrected j-extraction via long-Weierstrass (B, A*C, A^2*D0)): test quartic v^2=x^4+3x^3+5x^2+3x+1: generic j = 256000/117 = j(x^3-27I1x-27I2), NOT j(swapped) = 10536048/6091. M_A generic cubic y^2=x^3-1000x^2+278720x+2294272, j = -8000/81 = j(E_A) MATCH; M_B generic cubic y^2=x^3+1240x^2+130240x+3322368, j = 2744000/9 = j(E_B) MATCH. Conclusion: correct Jacobian is y^2 = x^3-27*I1*x-27*I2 (brief had invariants swapped).]
+
+test quartic j (generic) = 256000/117
+test quartic j (claimed formula -27J,-27I): 10536048/6091
+test quartic j (claimed formula -27I,-27J): 256000/117
+
+M_A: D(xE) = -8*(xE - 1)*(xE**2 + 126*xE + 4481)
+   Weierstrass y^2 = x^3 + (-1000)x^2 + (278720)x + (2294272)
+   j = -8000/81   expected -8000/81   match: True
+M_B: D(xE) = -8*(xE - 3)*(9*xE**2 - 438*xE + 721)/3
+   Weierstrass y^2 = x^3 + (1240)x^2 + (130240)x + (3322368)
+   j = 2744000/9   expected 2744000/9   match: True
+
+M_A model from generic method: (-1000, 278720, 2294272)
+M_B model from generic method: (1240, 130240, 3322368)
+
+
+--- mss_k34_elliptic_p12.log
+[Part 12: all 12 known M_A and 12 known M_B points verified on the quartics (exact); all finite images verified on E_A/E_B; degenerate images (0,1)->(4606,-304128), (0,3)->(-674/9,-23552/27); torsion of every image = False; E_A 2-torsion (-2,0) (cubic (x+2)(x^2-252x+17924)), E_B (-18,0) ((x+18)(x^2+292x+2884)); independence witness search then CRT over primes <600: all E_B known images lie in <(-146,1536),(-18,0)> - specifically 4*P1+T = image of (209/414,943587), verified exactly. E_A images: all 12 known points = m*(126,512)+e*(-2,0), |m|<=4 (verified exactly). Rank corrections: rank E_A = 1, rank E_B = 1, torsion Z/2 both (earlier 'rank E_B = 2' was arithmetic slip 2*4=8=2^(r+2)).]
+
+=== S1: all 12 known M_A points on the quartic (exact) ===
+  A(0/1, +-1/..) on M_A: True
+  A(0/1, +-1/..) on M_A: True
+  A(1/1, +-4/..) on M_A: True
+  A(1/1, +-4/..) on M_A: True
+  A(31/35, +-4604/..) on M_A: True
+  A(31/35, +-4604/..) on M_A: True
+  A(35/31, +-4604/..) on M_A: True
+  A(35/31, +-4604/..) on M_A: True
+  A(66/1151, +-3693311/..) on M_A: True
+  A(66/1151, +-3693311/..) on M_A: True
+  A(1151/66, +-3693311/..) on M_A: True
+  A(1151/66, +-3693311/..) on M_A: True
+  B(0/1, +-3/..) on M_B: True
+  B(0/1, +-3/..) on M_B: True
+  B(1/1, +-12/..) on M_B: True
+  B(1/1, +-12/..) on M_B: True
+  B(5/41, +-2508/..) on M_B: True
+  B(5/41, +-2508/..) on M_B: True
+  B(41/5, +-2508/..) on M_B: True
+  B(41/5, +-2508/..) on M_B: True
+  B(209/414, +-943587/..) on M_B: True
+  B(209/414, +-943587/..) on M_B: True
+  B(414/209, +-943587/..) on M_B: True
+  B(414/209, +-943587/..) on M_B: True
+=== S2: map all non-degenerate points to E_A / E_B (origin (0,-1)/(0,-3) maps) ===
+  M_A (1/1,4) -> E_A (Fraction(126, 1), Fraction(-512, 1)) on:True
+  M_A (1/1,-4) -> E_A (Fraction(142, 1), Fraction(576, 1)) on:True
+  M_A (31/35,4604) -> E_A (Fraction(142, 1), Fraction(-576, 1)) on:True
+  M_A (31/35,-4604) -> E_A (Fraction(154878, 961), Fraction(21808640, 29791)) on:True
+  M_A (35/31,4604) -> E_A (Fraction(135934, 1225), Fraction(-21730752, 42875)) on:True
+  M_A (35/31,-4604) -> E_A (Fraction(126, 1), Fraction(512, 1)) on:True
+  M_A (66/1151,3693311) -> E_A (Fraction(1322623, 1089), Fraction(-1365584383, 35937)) on:True
+  M_A (66/1151,-3693311) -> E_A (Fraction(4606, 1), Fraction(304128, 1)) on:True
+  M_A (1151/66,3693311) -> E_A (Fraction(2, 1), Fraction(-264, 1)) on:True
+  M_A (1151/66,-3693311) -> E_A (Fraction(17422846, 1324801), Fraction(721654990848, 1524845951)) on:True
+  M_B (1/1,12) -> E_B (Fraction(-146, 1), Fraction(1536, 1)) on:True
+  M_B (1/1,-12) -> E_B (Fraction(-2, 1), Fraction(192, 1)) on:True
+  M_B (5/41,2508) -> E_B (Fraction(-146, 1), Fraction(-1536, 1)) on:True
+  M_B (5/41,-2508) -> E_B (Fraction(26446, 25), Fraction(4904256, 125)) on:True
+  M_B (41/5,2508) -> E_B (Fraction(-33458, 1681), Fraction(4784640, 68921)) on:True
+  M_B (41/5,-2508) -> E_B (Fraction(-2, 1), Fraction(-192, 1)) on:True
+  M_B (209/414,943587) -> E_B (Fraction(-10536786, 43681), Fraction(13199529984, 9129329)) on:True
+  M_B (209/414,-943587) -> E_B (Fraction(18, 1), Fraction(552, 1)) on:True
+  M_B (414/209,943587) -> E_B (Fraction(-674, 9), Fraction(23552, 27)) on:True
+  M_B (414/209,-943587) -> E_B (Fraction(-42017, 4761), Fraction(19522063, 328509)) on:True
+all finite images on-curve: A=True B=True
+=== S3: degenerate-point images ===
+  E_A (4606,-304128) on: True
+  E_B (-674/9,-23552/27) on: True
+  chiA(1,4) =  (Fraction(142, 1), Fraction(-576, 1))  (should be -mapA(1,-4))
+  chiA(0,1) -> O by construction; chiA(0,-1) -> -mapA(0,1) = (4606,304128)
+=== S4: torsion orders of all images (torsion group = {O, 2-torsion}) ===
+  E_A 2-torsion point (-2,0): True
+  E_A img (1, 1, 4): torsion=False
+  E_A img (1, 1, -4): torsion=False
+  E_A img (31, 35, 4604): torsion=False
+  E_A img (31, 35, -4604): torsion=False
+  E_A img (35, 31, 4604): torsion=False
+  E_A img (35, 31, -4604): torsion=False
+  E_A img (66, 1151, 3693311): torsion=False
+  E_A img (66, 1151, -3693311): torsion=False
+  E_A img (1151, 66, 3693311): torsion=False
+  E_A img (1151, 66, -3693311): torsion=False
+  E_B img (1, 1, 12): torsion=False
+  E_B img (1, 1, -12): torsion=False
+  E_B img (5, 41, 2508): torsion=False
+  E_B img (5, 41, -2508): torsion=False
+  E_B img (41, 5, 2508): torsion=False
+  E_B img (41, 5, -2508): torsion=False
+  E_B img (209, 414, 943587): torsion=False
+  E_B img (209, 414, -943587): torsion=False
+  E_B img (414, 209, 943587): torsion=False
+  E_B img (414, 209, -943587): torsion=False
+  E_B 2-torsion: solve x^3+310x^2+8140x+51912=0 over Q:
+   roots: (x + 18)*(x**2 + 292*x + 2884)
+  E_A cubic: (x + 2)*(x**2 - 252*x + 17924)
+=== S5: independence of E_B generators (rank 2 witness) ===
+  no distinguishing prime found in list
+
+

@@ -1,0 +1,13 @@
+test quartic j (generic) = 256000/117
+test quartic j (claimed formula -27J,-27I): 10536048/6091
+test quartic j (claimed formula -27I,-27J): 256000/117
+
+M_A: D(xE) = -8*(xE - 1)*(xE**2 + 126*xE + 4481)
+   Weierstrass y^2 = x^3 + (-1000)x^2 + (278720)x + (2294272)
+   j = -8000/81   expected -8000/81   match: True
+M_B: D(xE) = -8*(xE - 3)*(9*xE**2 - 438*xE + 721)/3
+   Weierstrass y^2 = x^3 + (1240)x^2 + (130240)x + (3322368)
+   j = 2744000/9   expected 2744000/9   match: True
+
+M_A model from generic method: (-1000, 278720, 2294272)
+M_B model from generic method: (1240, 130240, 3322368)

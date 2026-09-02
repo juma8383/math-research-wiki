@@ -1,0 +1,79 @@
+=== S1: all 12 known M_A points on the quartic (exact) ===
+  A(0/1, +-1/..) on M_A: True
+  A(0/1, +-1/..) on M_A: True
+  A(1/1, +-4/..) on M_A: True
+  A(1/1, +-4/..) on M_A: True
+  A(31/35, +-4604/..) on M_A: True
+  A(31/35, +-4604/..) on M_A: True
+  A(35/31, +-4604/..) on M_A: True
+  A(35/31, +-4604/..) on M_A: True
+  A(66/1151, +-3693311/..) on M_A: True
+  A(66/1151, +-3693311/..) on M_A: True
+  A(1151/66, +-3693311/..) on M_A: True
+  A(1151/66, +-3693311/..) on M_A: True
+  B(0/1, +-3/..) on M_B: True
+  B(0/1, +-3/..) on M_B: True
+  B(1/1, +-12/..) on M_B: True
+  B(1/1, +-12/..) on M_B: True
+  B(5/41, +-2508/..) on M_B: True
+  B(5/41, +-2508/..) on M_B: True
+  B(41/5, +-2508/..) on M_B: True
+  B(41/5, +-2508/..) on M_B: True
+  B(209/414, +-943587/..) on M_B: True
+  B(209/414, +-943587/..) on M_B: True
+  B(414/209, +-943587/..) on M_B: True
+  B(414/209, +-943587/..) on M_B: True
+=== S2: map all non-degenerate points to E_A / E_B (origin (0,-1)/(0,-3) maps) ===
+  M_A (1/1,4) -> E_A (Fraction(126, 1), Fraction(-512, 1)) on:True
+  M_A (1/1,-4) -> E_A (Fraction(142, 1), Fraction(576, 1)) on:True
+  M_A (31/35,4604) -> E_A (Fraction(142, 1), Fraction(-576, 1)) on:True
+  M_A (31/35,-4604) -> E_A (Fraction(154878, 961), Fraction(21808640, 29791)) on:True
+  M_A (35/31,4604) -> E_A (Fraction(135934, 1225), Fraction(-21730752, 42875)) on:True
+  M_A (35/31,-4604) -> E_A (Fraction(126, 1), Fraction(512, 1)) on:True
+  M_A (66/1151,3693311) -> E_A (Fraction(1322623, 1089), Fraction(-1365584383, 35937)) on:True
+  M_A (66/1151,-3693311) -> E_A (Fraction(4606, 1), Fraction(304128, 1)) on:True
+  M_A (1151/66,3693311) -> E_A (Fraction(2, 1), Fraction(-264, 1)) on:True
+  M_A (1151/66,-3693311) -> E_A (Fraction(17422846, 1324801), Fraction(721654990848, 1524845951)) on:True
+  M_B (1/1,12) -> E_B (Fraction(-146, 1), Fraction(1536, 1)) on:True
+  M_B (1/1,-12) -> E_B (Fraction(-2, 1), Fraction(192, 1)) on:True
+  M_B (5/41,2508) -> E_B (Fraction(-146, 1), Fraction(-1536, 1)) on:True
+  M_B (5/41,-2508) -> E_B (Fraction(26446, 25), Fraction(4904256, 125)) on:True
+  M_B (41/5,2508) -> E_B (Fraction(-33458, 1681), Fraction(4784640, 68921)) on:True
+  M_B (41/5,-2508) -> E_B (Fraction(-2, 1), Fraction(-192, 1)) on:True
+  M_B (209/414,943587) -> E_B (Fraction(-10536786, 43681), Fraction(13199529984, 9129329)) on:True
+  M_B (209/414,-943587) -> E_B (Fraction(18, 1), Fraction(552, 1)) on:True
+  M_B (414/209,943587) -> E_B (Fraction(-674, 9), Fraction(23552, 27)) on:True
+  M_B (414/209,-943587) -> E_B (Fraction(-42017, 4761), Fraction(19522063, 328509)) on:True
+all finite images on-curve: A=True B=True
+=== S3: degenerate-point images ===
+  E_A (4606,-304128) on: True
+  E_B (-674/9,-23552/27) on: True
+  chiA(1,4) =  (Fraction(142, 1), Fraction(-576, 1))  (should be -mapA(1,-4))
+  chiA(0,1) -> O by construction; chiA(0,-1) -> -mapA(0,1) = (4606,304128)
+=== S4: torsion orders of all images (torsion group = {O, 2-torsion}) ===
+  E_A 2-torsion point (-2,0): True
+  E_A img (1, 1, 4): torsion=False
+  E_A img (1, 1, -4): torsion=False
+  E_A img (31, 35, 4604): torsion=False
+  E_A img (31, 35, -4604): torsion=False
+  E_A img (35, 31, 4604): torsion=False
+  E_A img (35, 31, -4604): torsion=False
+  E_A img (66, 1151, 3693311): torsion=False
+  E_A img (66, 1151, -3693311): torsion=False
+  E_A img (1151, 66, 3693311): torsion=False
+  E_A img (1151, 66, -3693311): torsion=False
+  E_B img (1, 1, 12): torsion=False
+  E_B img (1, 1, -12): torsion=False
+  E_B img (5, 41, 2508): torsion=False
+  E_B img (5, 41, -2508): torsion=False
+  E_B img (41, 5, 2508): torsion=False
+  E_B img (41, 5, -2508): torsion=False
+  E_B img (209, 414, 943587): torsion=False
+  E_B img (209, 414, -943587): torsion=False
+  E_B img (414, 209, 943587): torsion=False
+  E_B img (414, 209, -943587): torsion=False
+  E_B 2-torsion: solve x^3+310x^2+8140x+51912=0 over Q:
+   roots: (x + 18)*(x**2 + 292*x + 2884)
+  E_A cubic: (x + 2)*(x**2 - 252*x + 17924)
+=== S5: independence of E_B generators (rank 2 witness) ===
+  no distinguishing prime found in list

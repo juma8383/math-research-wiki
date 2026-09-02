@@ -3746,3 +3746,108 @@ table transcription errors (K10 sig-, K13(-1,+1)) caught by 2,352-check test.
 
 Integrity: "## Cross-problem links" count in notes.md = 1; log.md appended
 via Add-Content only; no Set-Content on log.md.
+
+## 2026-09-01 - K34 attacked on elliptic-curve terms ([mss-k34-elliptic], magic-square-of-squares)
+- Reduction K34-A/B re-verified symbolically (exact): A(n)=square iff M_A: V^2=X^4+132X^3-250X^2+132X+1 has a point with X=(a/b)^2 a positive square (X=0,1 degenerate); same shape for M_B.
+- Weierstrass models proved with birational maps verified on all 12+12 known points both directions: M_A ~ E_A: Y^2=X^3-250X^2+17420X+35848 (j=-8000/81), M_B ~ E_B: Y^2=X^3+310X^2+8140X+51912 (j=2744000/9); E_A and E_B are 2-isogenous. Jacobian-formula correction: y^2=x^3-27*I1*x-27*I2 (brief had I1,I2 swapped; Frobenius-trace + j-invariant evidence).
+- Mordell-Weil PROVED by 2-isogeny descent: rank E_A = 1, rank E_B = 1, torsion Z/2 both; generators (126,512), (-146,1536); all 12+12 known quartic points are m*G+e*T, |m|<=4 (exact verification; earlier "rank E_B = 2" was a bookkeeping slip, tracked).
+- Genus-3 square covers: killing primes {3,5,11,13} (A) and {3,5,19,29} (B); any K34-A counterexample has 3*5*11*13 | ab(a^2-b^2).
+- MW sieve on the square-X condition built (strong condition at killing primes) but does NOT collapse with primes <400: 16,322,040 survivor classes mod 528,313,804,200 (t=1 coset). K34 remains OPEN; obstruction now precisely located at the sieve step.
+- Files: notes.md new section [mss-k34-elliptic]; scripts mss_k34_elliptic.py + parts p2..p12 + mss_k34_elliptic.log (consolidated). Tracked failures recorded append-only (8 items).
+
+## 2026-09-01 - K34 elliptic round: independent verification block ([mss-k34-elliptic], magic-square-of-squares)
+- Claude pre-round check (mss_k34_elliptic_claude_check.py+log): reduction identities A(n)=t^4(u^4+136u^2+16), B(n)=t^4(9u^4-56u^2+144), R^2+Y^2=n^4 verified exact on 1,125 primes <=2e4; master quartics M_A/M_B derived; non-degenerate points (31/35,4604/1225), (66/1151,...) found at p,q<=300. Tracked: first-draft infinite loop in the a^2+b^2 finder.
+- Search agent (mss_k34_ptssearch.py+log, mss_k34_cover_deep.log): square-X covers (genus-3) 0 hits through m,n<=10000 (~200M pairs), cover identity validated 2000 random pairs; census |p|,q<=5000: 6 points per quartic, all non-square X. K34 survives to height 1e4 (X up to 1e8 squared scale).
+- Theory agent (mss_k34_elliptic.py + parts p2..p12 + consolidated log): reduction proved symbolic; models M_A~=E_A: Y^2=X^3-250X^2+17420X+35848, M_B~=E_B: Y^2=X^3+310X^2+8140X+51912, 2-isogenous; THEOREM rank=1 torsion=Z/2 both (2-isogeny descent, rigorous one-way Selmer kills); killing primes {3,5,11,13}/{3,5,19,29} on the genus-3 covers; MW sieve built, not collapsed <400. K34 OPEN.
+- Claude verification (mss_k34_claude_mw_check.py+log): all 24 images on-curve, full m*G+eps*T table reproduced exactly, C_A/C_B reproduced; 3 transcription slips found and filed append-only in notes.md tracked failures (2 alpha-witness typos, 1 image-table T-partner swap between the 66/1151 and 1151/66 rows) - none load-bearing; rank/torsion theorem CONFIRMED. Tracked my own arithmetic slips en route (x3 sign, V denominator, mul-sign).
+
+## 2026-09-01 — [mss] Genus-3 Jacobian decomposition VERIFIED: rank J = 2 < 3; Chabauty gate named (Claude session)
+
+- Continued the K34 attack. The genus-3 round agent (report-only) delivered
+  the decomposition J(C3_A) ~ E_A x E_A x E_G, J(C3_B) ~ E_B x E_B x E_G.
+- Claude independent verification (mss_k34_g3jac_claude_check.py/.log, exact
+  arithmetic): (1) j-invariants exact (quotient cubics j = -8000/81 and
+  2744000/9 = master j's; E_G j = 1556068/81); (2) Frobenius trace agreement
+  master-vs-quotient over 45 good primes 7..211, ZERO mismatches both cases
+  -> Q-isogeny -> proved rank-1 carries over; (3) sigma1 = p+1-#C3(F_p)
+  cross-checked by hand at all 8 full primes against the trace triples -
+  all consistent; (4) independent re-derivation of the theta=-816 descent
+  chain for rank(E_G)<=0 (soluble classes [1,2,3,6], dual s_B<=0).
+- Verified theorem: rank E_G = 0 (sharp 2-isogeny descent at all three
+  2-torsion thetas; torsion = Z/2 x Z/4) => rank J(C3_A) = rank J(C3_B)
+  = 2 < 3 = genus => Coleman/Chabauty applies IN PRINCIPLE to both covers.
+- NAMED GAP filed (notes.md Section 8, "Chabauty gate"): the actual Coleman
+  computation at a good prime (p=11: #C3_A(F_11)=8 -> #C3_A(Q) <= 12, with
+  8 known points) is the first concrete proof PATH to K34-A; carrying it out
+  and getting "no further points" would PROVE K34-A; same for C3_B (K34-B).
+  This is the next-round proposal.
+- Tracked failure 10 appended: the agent's first decomposition attempt
+  (EBt x E_B pairing) failed its own checks (4/36 primes) and was
+  discarded pre-filing; Claude's own false-mismatch hand-count slip
+  (#E_A(F_7)) also recorded, with lesson (script, don't hand-count).
+- Files: notes.md [mss-k34-elliptic] Section 8 + failure 10;
+  scripts mss_k34_g3jac_{frobenius,quotients,rank}.py/.log (agent),
+  mss_k34_g3jac_claude_check.py/.log (Claude). K34 remains OPEN with a
+  named, computationally concrete gate.
+## [ATTACK mss-k34-sieve2] 2026-09-02 -- round 2: deepened MW sieve + sibling covers D_A/D_B + p-adic pole refinement
+Round 2 on K34 (magic square of squares, two-prime case), levers 1-3 of the
+round-2 brief. Notes: new section [mss-k34-sieve2] (appended before
+Cross-problem links; existing sections untouched).
+- Killing-prime correction (both cases): p=3 is VACUOUS (C3 mod 3 =
+  (x^4+1)^2, all x solvable; E~ singular mod 3); brute re-verification
+  p<=300 gives A {5,11,13}, B {5,19,29}. The 3 in 3*5*11*13 | ab(a^2-b^2)
+  is automatic mod 3, so the standing consequence stands.
+- Sibling covers settled: D_A w^2=z^4+128z^2-512 and D_B w^2=9z^4-128z^2+512
+  have invariants matching M_A/M_B, verified C3 correspondences and the
+  equivalence 'K34 <=> D point with z^2-4 a nonzero rational square'.
+  Sieve-equivalent to M (same C3 image) => no added sieve power. Twist
+  lesson recorded (tangent-method cubic of D_A is a nontrivial twist of
+  E_A; j-only validation insufficient).
+- Deepened MW sieve on E~_A (t=0; t=1 by exact flip): grow phase (primes
+  <=400, count cap 3e5) + 23 modulus-neutral hunt primes (ord_p(G) | M,
+  BSGS) => 5 survivor classes mod M_A = 42,078,090,600
+  (2^3*3^4*5^2*7*13*17*23*73), density 1.19e-10 (round 1: 3e-5). Four
+  survivors are the degenerate floor classes {0,+-2,-1}; one genuine extra
+  class M/2-1 (n = -1 mod odd part, 3 mod 8) not killed by p<=3e6.
+- NEW VERIFIED LEVER (p-adic refinement of pole classes): X extends
+  regularly at the removable pole (4,-264)=2G_A with value 1151/66, so
+  EVERY n = 2 mod 10 point has X = 1151/66 = 7 mod 13, a nonresidue =>
+  the whole class n=2 mod 10 (incl. n=2 itself, X=infinity) is DEAD.
+  Verified exactly (X(12G),X(22G),... = 7 mod 13). Branch (4,264) gives
+  the condition v_13(x-4) even, refining n=-2 mod 10 to mod 130.
+  Endgame (open, now concrete): iterate refinements over all primes to
+  drive every class onto the exact degenerate points => K34-A. Not yet
+  carried out [to-verify].
+- B-side first sieve: model E~_B y^2=x^3+256x^2-2048x, inverse
+  X=(6y-92x)/(x(x-36)) verified on all table rows; 5 classes mod 264 =
+  {0,1,2,-2,M/2+2}, density 1.9e-2 (weak: ord_p(G_B) rarely M-smooth);
+  grow+hunt continuation in flight.
+- Tracked failures appended (F11 composite-prime sieve bug - invalid
+  M=60,S=[0] state discarded; F12 pole 0/0 masquerading as flip failure;
+  F13 Fraction % misuse).
+- Files: notes.md [mss-k34-sieve2] section; scripts
+  mss_k34_sieve2_p1..p9.py, mss_k34_sieve2_state{A,B}.json. K34 remains
+  OPEN; two named gates now: Chabauty (Section 8) and the refined-sieve
+  collapse (Section 2c of the new section).
+
+## 2026-09-01 - [VERIFY mss-k34-sieve2-verify]
+Claude verification of the K34 round-2 sieve ([mss-k34-sieve2] Section 6 in
+notes.md). A-side: deterministic re-run of the agent's p3 driver reproduces
+M_A=42,078,090,600 with survivors {0,2,M/2-1,-2,-1} exactly; stress vs 624
+valid primes (ord_p(G)|M_A) <= 3e5: zero violations; 2c pole-refinement
+lever verified exactly (X = 7 mod 13 on all n = 2 mod 10; mod-169 values
+85,150,46,111,7; extension value 1151/66 via y'(4,-264) = -1027/33).
+B-side: exact X_B identities (1, 5/41, 41/5, 414/209, 2G=(36,-552));
+killing primes {5,19,29} re-derived from the C3_B octic; p5 driver re-run
+from scratch reproduces 5 classes mod 264 = {0,1,2,134,262} exactly
+(density 1.894e-2); stress vs 33 valid primes (ord|264) <= 2e5: zero
+violations. One text correction filed: "4 hunt primes <= 1e5" -> 5
+(1097, 1571, 5297, 9769, 93407). Two of the verifier's own initial
+discrepancies were semantic (grow-cap counts expected survivors; class
+conditions need ord|M) - recorded in notes.md so future rounds do not
+repeat them. W2b extension check 3e5..1e6 still in flight at filing time.
+Status: [mss-k34-sieve2] B-side [to-verify] flag lifted for the t=0 state.
+Addendum to [VERIFY mss-k34-sieve2-verify]: W2b extension landed - valid
+primes 3e5..1e6 with ord_p(G)|M_A: 231 primes, ZERO violations on the 5
+A-side survivor classes. "Hunt to 3e6 does not kill class M/2-1" confirmed
+at the 1e6 level. notes.md Section 6 amended accordingly.

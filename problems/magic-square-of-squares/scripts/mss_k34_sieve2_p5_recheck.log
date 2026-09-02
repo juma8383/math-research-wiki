@@ -1,0 +1,18 @@
+﻿2G_B=(36,-552) pole-branch x=36: True ; X(-G)=5/41 (5/41? True)
+X(3G)=41/5 (41/5? True); X(4G)=414/209 (414/209? True)
+== killing primes C3_B ==
+killing primes (x in {0,+-1} only): [5, 19, 29]
+p=3 solvable classes: 3/3 (vacuous if 3)
+kill p= 5 ord=   6 |OK|=  6 -> 6 mod 6
+kill p=19 ord=   8 |OK|=  6 -> 18 mod 24
+kill p=29 ord=  22 |OK|=  7 -> 66 mod 264
+after grow: 29 classes mod 264 support [2, 3, 11] (0s)
+hunt p=  1097 ord=    66 -> 21 classes mod 264 (0s)
+hunt p=  1571 ord=   132 -> 19 classes mod 264 (0s)
+hunt p=  5297 ord=   132 -> 11 classes mod 264 (0s)
+hunt p=  9769 ord=    88 -> 7 classes mod 264 (1s)
+hunt p= 93407 ord=     8 -> 5 classes mod 264 (91s)
+FINAL B t=0: 5 classes mod 264 density 1.894e-02
+survivors: [0, 1, 2, 134, 262]
+floor {0,1,2,-2} present: (True, True, True, True)
+elapsed 401s

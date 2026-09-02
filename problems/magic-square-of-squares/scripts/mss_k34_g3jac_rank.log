@@ -1,0 +1,74 @@
+========================================================================
+E_G: y^2 = x^3 -504576 x +131604480   (a2=0, a4=-504576, a6=131604480)
+2-torsion thetas: [-816, 336, 480]
+
+torsion / point orders (exact group law):
+  P=(-816, 0)        order = 2
+  P=(336, 0)         order = 2
+  P=(480, 0)         order = 2
+  P=(48, 10368)      order = 4
+  P=(912, 20736)     order = 4
+
+2-isogeny descent data per theta:
+  theta= -816 : shifted (A,B) = (-2448, 1492992)   E_i: (A',B') = (4896, 20736)
+  theta=  336 : shifted (A,B) = (1008, -165888)   E_i: (A',B') = (-2016, 1679616)
+  theta=  480 : shifted (A,B) = (1440, 186624)   E_i: (A',B') = (-2880, 1327104)
+
+sanity: #E_i(F_p) must equal #E_G(F_p) (2-isogenous)
+  theta= -816 : #E_i == #E_G at p in {5,7,11,13,17,19}: True
+  theta=  336 : #E_i == #E_G at p in {5,7,11,13,17,19}: True
+  theta=  480 : #E_i == #E_G at p in {5,7,11,13,17,19}: True
+
+Selmer upper bounds (rigorous one-way kills only, p <= 97, p^2 + 2^5):
+------------------------------------------------------------------------
+  curve y^2 = x^3 -2448 x^2 +1492992 x : 4/8 classes survive  [1, 2, 3, 6]
+  curve y^2 = x^3 +4896 x^2 +20736 x : 1/8 classes survive  [1]
+  theta= -816: a=4 b=1  ->  rank(E_G) <= a+b-2 = 3
+------------------------------------------------------------------------
+  curve y^2 = x^3 +1008 x^2 -165888 x : 2/8 classes survive  [-2, 1]
+  curve y^2 = x^3 -2016 x^2 +1679616 x : 2/8 classes survive  [1, 3]
+  theta=  336: a=2 b=2  ->  rank(E_G) <= a+b-2 = 2
+------------------------------------------------------------------------
+  curve y^2 = x^3 +1440 x^2 +186624 x : 4/8 classes survive  [-3, -1, 1, 3]
+  curve y^2 = x^3 -2880 x^2 +1327104 x : 1/8 classes survive  [1]
+  theta=  480: a=4 b=1  ->  rank(E_G) <= a+b-2 = 3
+
+cross-check: alpha-classes of known points must survive
+  theta= -816  P=(-816,0)       alpha=    0 (sqfree    0) : (zero)
+  theta= -816  P=(336,0)        alpha= 1152 (sqfree    2) : IN 
+  theta= -816  P=(480,0)        alpha= 1296 (sqfree    1) : IN 
+  theta= -816  P=(48,10368)     alpha=  864 (sqfree    6) : IN 
+  theta= -816  P=(912,20736)    alpha= 1728 (sqfree    3) : IN 
+  theta=  336  P=(-816,0)       alpha=-1152 (sqfree   -2) : IN 
+  theta=  336  P=(336,0)        alpha=    0 (sqfree    0) : (zero)
+  theta=  336  P=(480,0)        alpha=  144 (sqfree    1) : IN 
+  theta=  336  P=(48,10368)     alpha= -288 (sqfree   -2) : IN 
+  theta=  336  P=(912,20736)    alpha=  576 (sqfree    1) : IN 
+  theta=  480  P=(-816,0)       alpha=-1296 (sqfree   -1) : IN 
+  theta=  480  P=(336,0)        alpha= -144 (sqfree   -1) : IN 
+  theta=  480  P=(480,0)        alpha=    0 (sqfree    0) : (zero)
+  theta=  480  P=(48,10368)     alpha= -432 (sqfree   -3) : IN 
+  theta=  480  P=(912,20736)    alpha=  432 (sqfree    3) : IN 
+
+sharp version: im alpha_i is a SUBGROUP of the soluble classes, so
+s_A <= dim_F2 <S_A>, s_B <= dim_F2 <S_B>;  rank(E_G) + 2 = s_A + s_B.
+
+  theta= -816 : dim<S_A>=2  dim<S_B>=0  ->  rank(E_G) <= 0
+  theta=  336 : dim<S_A>=1  dim<S_B>=1  ->  rank(E_G) <= 0
+  theta=  480 : dim<S_A>=2  dim<S_B>=0  ->  rank(E_G) <= 0
+
+========================================================================
+SUMMARY
+  rank(E_G) <= 0 by all three 2-isogeny Selmer bounds (sharp;
+  for theta=-816 equality: im alpha_1 contains {1,2,3,6} = <2,3>,
+  dim exactly 2, and <S_B> = {1} forces s_B = 0).
+  ALL known points on E_G are torsion: 2*(48,10368) = (Fraction(480, 1), Fraction(0, 1)),
+  2*(912,20736) = (Fraction(480, 1), Fraction(0, 1))  -> E_G(Q)_tors = Z/2 x Z/4 (order 8).
+  => rank(E_G) = 0.
+  => rank J(C3_A) = rank J(C3_B) = rank(E_A) + rank(E_A) + rank(E_G)
+                                   = 1 + 1 + 0 = 2 < 3 = genus.
+  => Coleman/Chabauty applies IN PRINCIPLE to C3_A and C3_B.
+  NAMED GAP: the actual Coleman computation (p-adic annihilation of the
+  rank-2 MW basis of J, residue bound  #C(Q) <= #C(F_p) + 2g - 2) has
+  NOT been carried out; e.g. p=11 (11 > 2g+1, 11 | disc? no):
+  #C3_A(F_11) = 8 would give #C3_A(Q) <= 8 + 4 = 12.

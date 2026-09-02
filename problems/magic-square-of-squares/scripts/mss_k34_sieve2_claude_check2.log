@@ -1,0 +1,14 @@
+﻿=== W1: deterministic re-run of the agent's p3 driver ===
+  after killing primes: 33 classes mod 60
+  after grow: 291610 classes mod 42078090600 (merged 40, skipped 33) (2s)
+  modulus matches claim MA: True
+  hunt kills: 23 -> 5 classes mod 42078090600 (759s)
+  survivors: [0, 2, 21039045299, 42078090598, 42078090599]
+  match claim {0,2,M/2-1,-2,-1}: True
+  stateA.json rewritten with reproduced state
+=== W2: stress 5 classes, valid primes (ord | M) only ===
+  valid primes <= 3e5: 624 ; violations: NONE
+  (1509s)
+=== W2b: extension 3e5..1e6 (their claim: hunt to 3e6 did not kill) ===
+  valid primes 3e5..1e6: 231 ; violations: NONE
+  (8122s)

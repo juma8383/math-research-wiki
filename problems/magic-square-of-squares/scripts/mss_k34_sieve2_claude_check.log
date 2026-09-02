@@ -1,0 +1,31 @@
+﻿=== V1: X-function identities (exact Fractions) ===
+  X(G)   = 35/31  expect 35/31: True
+  X(-G)  = 1  expect 1   : True
+  X(2G)  = pole  expect pole->1151/66 (0/0): pole
+  X(3G)  = 1034501/1338365  expect 31/35: False
+  X(4G)  = 243758526/1519832195  expect 66/1151: False
+  X(-3G) = 31/35  expect 31/35: True
+  X(-4G) = 66/1151  expect 66/1151: True
+=== V2: pole-refinement lever (2c) ===
+  X(12G) mod 169 = 85 (expect one of 85,150,46,111,7)
+  X(22G) mod 169 = 150 (expect one of 85,150,46,111,7)
+  X(32G) mod 169 = 46 (expect one of 85,150,46,111,7)
+  X(42G) mod 169 = 111 (expect one of 85,150,46,111,7)
+  X(52G) mod 169 = 7 (expect one of 85,150,46,111,7)
+  n=2: pole; extension 1151/66 mod 13 = 7
+  all n=2..192 step10 give X = 7 mod 13: True
+=== V3: independent A-side sieve ===
+  after grow (primes<=400): |S|=20590  M=23736358800  skipped=27
+  hunting hunt primes <= 3e5 ...
+  [hunt enumeration via point counting too slow in pure python - using ord|M test instead]
+  hunt kills: 20 primes; |S|=2  M=23736358800
+  survivors: [0, 2]
+  claim: {0, 2, M/2-1, -2, -1} = {0, 2, 21039045299, 42078090598, 42078090599}
+  match: False
+  density: 4.753e-11 (claim 1.19e-10)
+  MA factor check 2^3*3^4*5^2*7*13*17*23*73: True
+=== V4: survivor stress (exact n, all primes <= 2e4) ===
+  violations: [(23, 21039045299, 17, 'qr'), (71, 21039045299, 44, 'qr'), (71, 42078090599, 7, 'qr'), (83, 42078090598, 6, 'qr'), (109, 21039045299, 72, 'qr'), (109, 42078090598, 52, 'qr'), (109, 42078090599, 59, 'qr'), (113, 42078090598, 46, 'qr'), (127, 21039045299, 112, 'qr'), (137, 21039045299, 3, 'qr')]
+=== V5: B-side (E~_B: y^2=x^3+256x^2-2048x, G=(-128,1536)) ===
+  X_B(G)   = 1  expect 1: True
+  X_B(-G)  = 5/41  expect 5/41: True

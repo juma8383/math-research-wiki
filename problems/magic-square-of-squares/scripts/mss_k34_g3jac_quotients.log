@@ -1,0 +1,59 @@
+(a) symbolic quotient maps
+  C3_A palindromic (g - x^8 g(1/x) = 0): True
+  rho-quotient identity g = x^4*D(x+1/x): True ; iota*rho identity g = x^4*G(x-1/x): True
+  C3_B palindromic (g - x^8 g(1/x) = 0): True
+  rho-quotient identity g = x^4*D(x+1/x): True ; iota*rho identity g = x^4*G(x-1/x): True
+
+(b) exact triple factorization of the degree-6 Frobenius polynomial
+----------------------------------------------------------------------
+C3_A
+  p=  7  #J=    1152  traces(iota,rho,ir)=[-4, -4, 0]  P6==prod: True
+  p= 11  #J=    1024  traces(iota,rho,ir)=[4, 4, -4]  P6==prod: True
+  p= 13  #J=    1600  traces(iota,rho,ir)=[4, 4, -2]  P6==prod: True
+  p= 17  #J=    6400  traces(iota,rho,ir)=[-2, -2, 2]  P6==prod: True
+  p= 19  #J=    9216  traces(iota,rho,ir)=[-4, -4, 4]  P6==prod: True
+  p= 23  #J=   16384  traces(iota,rho,ir)=[-8, -8, 8]  P6==prod: True
+  p= 29  #J=   34656  traces(iota,rho,ir)=[-8, -8, 6]  P6==prod: True
+  p= 31  #J=   51840  traces(iota,rho,ir)=[-4, -4, -8]  P6==prod: True
+  N1 prediction at 36 primes (7..211): 36 OK
+----------------------------------------------------------------------
+C3_B
+  p=  7  #J=    1152  traces(iota,rho,ir)=[-4, -4, 0]  P6==prod: True
+  p= 11  #J=    4096  traces(iota,rho,ir)=[-4, -4, -4]  P6==prod: True
+  p= 13  #J=    5184  traces(iota,rho,ir)=[-4, -4, -2]  P6==prod: True
+  p= 17  #J=    6400  traces(iota,rho,ir)=[-2, -2, 2]  P6==prod: True
+  p= 19  #J=    4096  traces(iota,rho,ir)=[4, 4, 4]  P6==prod: True
+  p= 23  #J=   16384  traces(iota,rho,ir)=[-8, -8, 8]  P6==prod: True
+  p= 29  #J=   11616  traces(iota,rho,ir)=[8, 8, 6]  P6==prod: True
+  p= 31  #J=   51840  traces(iota,rho,ir)=[-4, -4, -8]  P6==prod: True
+  N1 prediction at 36 primes (7..211): 36 OK
+
+(d) Jacobian cubics from classical invariants
+  C3_A/iota quartic invariants I=10240 J=-8912896 -> cubic y^2=x^3-276480x+240648192
+  C3_A/rho quartic invariants I=10240 J=-8912896 -> cubic y^2=x^3-276480x+240648192
+  C3_A/iota_rho quartic invariants I=18688 J=-4874240 -> cubic y^2=x^3-504576x+131604480
+  C3_B/iota quartic invariants I=71680 J=-38273024 -> cubic y^2=x^3-1935360x+1033371648
+  C3_B/rho quartic invariants I=71680 J=-38273024 -> cubic y^2=x^3-1935360x+1033371648
+  C3_B/iota_rho quartic invariants I=18688 J=-4874240 -> cubic y^2=x^3-504576x+131604480
+
+  quartic-vs-cubic Frobenius trace agreement (primes 7..211):
+  C3_A/iota: trace mismatches 7..211: NONE (cubic ~ Jac(quartic))
+  C3_A/rho: trace mismatches 7..211: NONE (cubic ~ Jac(quartic))
+  C3_A/iota_rho: trace mismatches 7..211: NONE (cubic ~ Jac(quartic))
+  C3_B/iota: trace mismatches 7..211: NONE (cubic ~ Jac(quartic))
+  C3_B/rho: trace mismatches 7..211: NONE (cubic ~ Jac(quartic))
+  C3_B/iota_rho: trace mismatches 7..211: NONE (cubic ~ Jac(quartic))
+
+(e) the common Prym factor E_G: y^2 = x^3 - 504576 x + 131604480
+  c4=24219648 c6=-113706270720
+  Delta=739537035580145664  j=1556068/81
+  gcd #E_G(F_p) over p in {5..43} = 8  -> torsion divides 8
+  rational roots of cubic (2-torsion x-coords): [-816, 336, 480]
+  small rational points on E_G (|x|<=4000 or denom<30): 7 found
+    (-816, 0)
+    (48, -10368)
+    (48, 10368)
+    (336, 0)
+    (480, 0)
+    (912, -20736)
+    (912, 20736)

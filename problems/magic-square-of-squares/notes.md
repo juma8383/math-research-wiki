@@ -918,7 +918,492 @@ condition. Next lever: the K34 conic descent (filed in
 `[mss-two-prime-k34]`: $n^2=2s^2-r^2$ or $n^2=s^2-2r^2$ with $rs=Y_n$), now
 the single named gap for the whole two-prime freeness theorem.
 
+## K34 as rational points on genus-1 quartics M_A, M_B (2026-09-01, `[mss-k34-elliptic]`)
+
+Goal: settle K3/K4 (the last gates for two-prime sum-freeness) by determining
+the rational points on the two master quartics. Result: the reduction, the
+Weierstrass models, and the full Mordell-Weil ranks are now PROVED with
+machine-checked descent; K34 itself (no non-degenerate square-X point)
+remains OPEN, with the Mordell-Weil sieve built but not collapsed. Scripts:
+`scripts/mss_k34_elliptic.py` (+ parts p2..p12) and
+`scripts/mss_k34_elliptic.log`.
+
+### 1. The reduction (verified, exact)
+
+With $n=a^2+b^2$ prime $\equiv 1 \pmod 4$, $s=a^2-b^2$, $t=ab$, $u=s/t$:
+$A(n)\ \Longleftrightarrow\ t^4(u^4+136u^2+16) = \square$ and
+$B(n)\ \Longleftrightarrow\ t^4(9u^4-56u^2+144) = \square$
+(re-verified from scratch: `QA*(x^4)-P_A(x^2) = 0`, `QB*(x^4)-P_B(x^2) = 0`
+with $u=x-1/x$, and $t^4Q_A = a^8+132a^6b^2-250a^4b^4+132a^2b^6+b^8$,
+$t^4Q_B = 9a^8-92a^6b^2+310a^4b^4-92a^2b^6+9b^8$, all exact in sympy).
+Hence, with $X=(a/b)^2$:
+
+- **K34-A** $\Longleftrightarrow$ $M_A:\ V^2 = X^4+132X^3-250X^2+132X+1$
+  has no rational point with $X$ a positive rational square other than the
+  degenerate $X=0,1$;
+- **K34-B** $\Longleftrightarrow$ $M_B:\ V^2 = 9X^4-92X^3+310X^2-92X+9$
+  likewise.
+
+### 2. Weierstrass models and birational maps (verified on all known points)
+
+- $M_A \leftrightarrow E_A:\ Y^2 = X^3-250X^2+17420X+35848$, via
+  $\psi_A(X,V):\ x_E=(V-1-66X)/X^2$,
+  $(X_E,Y_E)=(-2x_E,\ 2(x_E^2-1)X+132(x_E-1))$; inverse
+  $X = 2(y+66x)/(x(x-4))$ on the shifted model
+  $\tilde E_A:\ y^2=x^3-256x^2+18432x$ ($x=X_E+2$). Origin choice:
+  $(0,-1)\mapsto O$, $(0,1)\mapsto(4606,-304128)$; the standard conversion
+  with origin $(0,1)$ is $\chi_A=-\psi_A\circ(V\mapsto -V)$ (tangent-line
+  algorithm; $\chi_A(0,1)=O$).
+- $M_B \leftrightarrow E_B:\ Y^2 = X^3+310X^2+8140X+51912$, via
+  $\psi_B(X,V):\ x_E=(V-3+\tfrac{46}{3}X)/X^2$,
+  $(X_E,Y_E)=(-6x_E,\ 3(2(x_E^2-9)X-\tfrac{92}{3}(x_E-3)))$;
+  $(0,-3)\mapsto O$, $(0,3)\mapsto(-\tfrac{674}{9},-\tfrac{23552}{27})$.
+
+All 12 known $M_A$ points (including $X=\tfrac{66}{1151},\tfrac{1151}{66}$
+with $V=\pm\tfrac{3693311}{q^2}$; the search log stores $V\cdot q^2$) and all
+12 known $M_B$ points (including $X=\tfrac{209}{414},\tfrac{414}{209}$,
+$V=\pm\tfrac{943587}{q^2}$) map onto their curves and back (exact Fraction
+arithmetic, every point verified on-curve in both directions).
+
+**Jacobian correction (tracked failure, now fixed).** The binary-quartic
+invariants are $I_1=10240,\ I_2=-8912896$ for $M_A$ and $I_1=71680,\
+I_2=-38273024$ for $M_B$ (as previously claimed), but the Jacobian is
+$y^2=x^3-27I_1x-27I_2$ — the earlier claim $y^2=x^3-27I_2x-27I_1$ has the two
+invariants swapped. Evidence: (i) the generic tangent construction applied to
+the test quartic $v^2=x^4+3x^3+5x^2+3x+1$ gives $j=256000/117$, equal to
+$j(y^2=x^3-27I_1x-27I_2)$ and unequal to the swapped form
+($j=10536048/6091$); (ii) Frobenius traces of the swapped cubic differ from
+$\tilde E_A$ at $p=7,13,17,19,23,29,31$; (iii) $y^2=x^3-276480x+240648192$
+($=x^3-27I_1x-27I_2$ for $M_A$) is $\mathbb{Q}$-isomorphic to $E_A$ ($c_4$
+ratio $u^4=81$, $c_6$ ratio $u^6=729$, i.e. scaling $u=3$ plus shift), and
+$x^3-1935360x+1033371648\cong E_B$ likewise.
+`[to-verify]` cite the classical normalization from a primary source.
+
+### 3. Mordell-Weil groups (proved)
+
+**Theorem.** $E_A(\mathbb{Q}) \cong \mathbb{Z}\cdot(126,512)\oplus\mathbb{Z}/2$
+with torsion generator $(-2,0)$, and
+$E_B(\mathbb{Q}) \cong \mathbb{Z}\cdot(-146,1536)\oplus\mathbb{Z}/2$ with
+torsion generator $(-18,0)$. In particular $M_A(\mathbb{Q})$ and
+$M_B(\mathbb{Q})$ are infinite; the "exactly the known points"
+hypothesis is FALSE.
+
+*Proof.* (a) *Torsion:* the gcd of $\#E(\mathbb{F}_p)$ over
+$p\in\{5,7,11,13,17,19\}$ equals 2 for $E_A, E_B, \tilde E_A, \tilde E_B$,
+so the torsion divides 2; each curve has a rational 2-torsion point
+($x^3-250x^2+17420x+35848=(x+2)(x^2-252x+17924)$ and
+$x^3+310x^2+8140x+51912=(x+18)(x^2+292x+2884)$, quadratic factors
+irreducible over $\mathbb{Q}$) — torsion is exactly $\mathbb{Z}/2$.
+(b) *2-isogeny descent* (exact arithmetic; locally insoluble homogeneous
+spaces $C_d:\ N^2=dM^4+aM^2e^2+(b/d)e^4$, squarefree $d\mid b$, killed mod
+$p^2$ for $p\le97$ and mod 32 for $p=2$, primitive classes only — these are
+rigorous one-way obstruction kills):
+- $\tilde E_A:\ y^2=x^3-256x^2+18432x$ ($a=-256$, $b=18432=2^{11}\cdot3^2$):
+  $\alpha(\tilde E_A)=\{1,2\}$ (both realized: $(4,264)$ and $(128,512)$);
+  dual $E'_A:\ y^2=x^3+512x^2-8192x$: $\alpha'(E'_A)\subseteq\{\pm1,\pm2\}$
+  with all four locally soluble, so $|\alpha'|\le4$ and
+  $2^{r+2}=|\alpha|\,|\alpha'|\le8$, i.e. $r\le1$; $(128,512)$ is not
+  torsion (the torsion group has only $O$ and $(0,0)$) $\Rightarrow r=1$.
+- $\tilde E_B:\ y^2=x^3+256x^2-2048x$ ($b=-2048=-2^{11}$):
+  $\alpha(\tilde E_B)=\{1,-2\}$ (realized by $(16,192)$ and $(-2,192)$);
+  dual $E'_B:\ y^2=x^3-512x^2+73728x$: soluble classes $\{1,2,3,6\}$, so
+  $|\alpha'|\le4$ and $r\le1$; $(-146,1536)$ is not torsion
+  $\Rightarrow r=1$.
+
+**Correction (tracked failure):** an earlier session line "rank$(E_B)=2$"
+was a bookkeeping slip ($2\cdot4=8=2^{r+2}$ gives $r=1$, not 2). The descent
+record above is the corrected one. `[to-verify]` the kill implementation has
+not been independently reimplemented; the kills are load-bearing only for
+the upper bounds $r\le1$.
+
+(c) *Generators and known points.* $G_A=(126,512)$ and $G_B=(-146,1536)$
+have infinite order; every known point is a small combination. $M_A$
+(writing $T_A=(-2,0)$): $(1,4)\mapsto-G_A$; $(1,-4)\mapsto-G_A+T_A$;
+$(31/35,\pm\cdot)\mapsto G_A+T_A,\ -3G_A$; $(35/31,\pm\cdot)\mapsto
+-3G_A+T_A,\ G_A$; $(66/1151,\pm\cdot)\mapsto-4G_A,\ -4G_A+T_A$;
+$(1151/66,\pm\cdot)\mapsto2G_A,\ 2G_A+T_A$; $(0,1)\mapsto-2G_A+T_A$;
+$(0,-1)\mapsto O$. $M_B$ ($T_B=(-18,0)$): $(1,12)\mapsto G_B$; $(1,-12)\mapsto G_B+T_B$;
+$(5/41,2508)\mapsto-G_B$; $(41/5,2508)\mapsto3G_B$;
+$(209/414,943587)\mapsto4G_B+T_B$ (verified exactly in rational
+arithmetic); $(414/209,-943587)\mapsto4G_B$; $(0,3)\mapsto2G_B+T_B$
+(verified exactly). The complete on-curve image list is in
+`mss_k34_elliptic_p12.log`. Note the involution rule (checked on all
+verified pairs): the quartic sign flip $V\mapsto-V$ acts on $E(\mathbb{Q})$
+as $P\mapsto C-P$ with $C=\psi(0,v_0)$, i.e. $C=-2G_A+T_A$ for $M_A$ and
+$C=2G_B+T_B$ for $M_B$; this determines every paired image from its partner.
+Index of
+$\langle G\rangle$ inside the free part not proved `[to-verify]`; nothing
+below depends on index 1.
+
+### 4. Genus-3 square covers: killing primes
+
+Non-degenerate square-$X$ points of $M_A$ correspond to rational points
+$x\ne0,\pm1$ on the genus-3 double covers
+$C3_A:\ W^2=x^8+132x^6-250x^4+132x^2+1$ and
+$C3_B:\ W^2=9x^8-92x^6+310x^4-92x^2+9$ (take $W=V$, $X=x^2$). Brute-force
+residue classification gives **killing primes** (primes at which the only
+solvable residue classes are $x\equiv0,\pm1$): $C3_A$: $\{3,5,11,13\}$;
+$C3_B$: $\{3,5,19,29\}$. Consequence: any K34-A counterexample
+$n=a^2+b^2$ prime satisfies $3\cdot5\cdot11\cdot13\mid ab(a^2-b^2)$;
+any K34-B counterexample satisfies $3\cdot5\cdot19\cdot29\mid ab(a^2-b^2)$.
+
+### 5. Mordell-Weil sieve on the square-X condition: OPEN
+
+The square-X condition on the rank-1 group $\langle G_A\rangle\oplus
+\mathbb{Z}/2$ was sieved over $n\in\mathbb{Z}$ (condition
+$X(nG_A+tT_A)\in\{0,1\}$ at the killing primes $3,5,11,13$ and
+QR-or-infinity elsewhere, classes merged by CRT, primes ordered by
+constraint density). With primes $<400$ the sieve does NOT collapse: coset
+$t=0$ retains 379,620 classes mod 653,083,200; coset $t=1$ retains
+16,322,040 classes mod 528,313,804,200 (stopped at $p=389$ on modulus size;
+survivor density $\approx3\cdot10^{-5}$, still decreasing). So no proof and
+no refutation this round. Next levers: primes with
+$\mathrm{ord}_p(G_A)$ coprime to the accumulated modulus; sieving the
+genus-3 Jacobian directly; or the sibling 2-cover
+$D_A:\ w^2=z^4+128z^2-512$ (same invariants $I_1,I_2$, another 2-covering
+of $E_A$) with the extra condition $z^2-4=\square$.
+
+### 6. Tracked failures (append-only)
+
+1. The brief's Jacobian formula $y^2=x^3-27I_2x-27I_1$ is **wrong**
+   (invariants swapped); correct is $y^2=x^3-27I_1x-27I_2$ (Section 2).
+2. "rank$(E_B)=2$": arithmetic slip ($2\cdot4=8\Rightarrow r=1$); corrected
+   in Section 3.
+3. Discriminant $-b_2^4b_6-8b_4^3-27b_6^2+9b_2b_4b_6$ is wrong; correct:
+   $\Delta=-b_2^2b_8-8b_4^3-27b_6^2+9b_2b_4b_6$ (verified on
+   $y^2=x^3+ax^2+bx$ and by locating the singular point of $\tilde E_B$
+   mod 3).
+4. Infinite loop in the group-law `mul` for negative $n$ ($n\gg=1$ never
+   reaches 0) — hit twice.
+5. Sieve bookkeeping: skipping classes where $X\bmod p$ is undefined (the
+   infinity class) wrongly killed them; fix: keep those classes.
+6. Modular doubling slope is $(3x^2+2a_2x+a_4)/(2y)$ — dropping $a_4$
+   silently leaves the curve mod $p$.
+7. `Fraction % p` is not modular reduction of a rational; use
+   $n\cdot d^{-1}\bmod p$.
+8. Part-1 reduction first used $u=s/t-t/s$ (wrong identity); correct is
+   $u=s/t$.
+9. **Claude independent verification of Section 3 (exact arithmetic,
+   `mss_k34_claude_mw_check.py`): the rank/torsion theorem and maps are
+   CONFIRMED (all 24 images on-curve, all +V image classes reproduced,
+   $C_A=-2G_A+T_A=(4606,-304128)$ and $C_B=2G_B+T_B$ reproduced). Three
+   transcription slips found, none load-bearing:** (i) the Section 3 witness
+   "$(-2,192)$" for class $-2$ of $\alpha(\tilde E_B)$ is not on the curve —
+   the class is realized by the torsion point $(0,0)$ ($\alpha=b=-2048$);
+   (ii) the p4 script comment's witness "$(x=-144)$" for class $-1$ is not on
+   the curve (class $-1$ is Selmer-killed anyway, so no impact); (iii) the
+   Section 3 image table swaps the $T$-partners of the $(66/1151)$ and
+   $(1151/66)$ rows — correct entries (consistent with the verified flip
+   rule $P\mapsto C-P$): $(66/1151,-)\mapsto 2G_A+T_A$,
+   $(1151/66,-)\mapsto -4G_A+T_A$. The p12 log's on-curve image list remains
+   the authoritative record.
+10. **Genus-3 first decomposition attempt was WRONG and self-detected**: the
+    `mss_k34_g3jac_frobenius.py` run pairing the Prym against
+    ("EBt", $E_B$)-type candidates matched only 4/36 primes and failed 5/8
+    full Frobenius checks — the agent's own script caught it before any
+    claim was filed; the correct decomposition (quotient-involution route,
+    Section 8, 36/36 primes) supersedes it. Claude's first hand spot-check
+    also produced a false mismatch: miscounting $\#\tilde E_A(\mathbb{F}_7)$
+    as 5 (actual 6, $t=2$); with the correct quotient traces the
+    decomposition is consistent at all 8 full primes. Lesson: verify
+    elliptic-curve point counts by script, not by hand, before declaring a
+    Frobenius mismatch.
+
+### 7. Bottom line
+
+K3/K4 (K34) remain OPEN. New and proved here: the two-prime question is
+exactly a rational-point question on two genus-1 curves with **rank-1**
+Mordell-Weil groups (fully computed), the genus-3 covers have killing primes
+forcing $3\cdot5\cdot11\cdot13\mid ab(a^2-b^2)$ (A-case) and
+$3\cdot5\cdot19\cdot29$ (B-case), and the MW sieve machinery for the final
+square-X condition is built and running. The obstruction is now precisely
+located: the sieve must separate the rank-1 lattice from the square-X locus,
+and primes below 400 do not suffice.
+### 8. Genus-3 Jacobian decomposition and the Chabauty gate (NEW 2026-09-01)
+
+Both genus-3 covers are **bielliptic-hyperelliptic** (octic even in $x$; the
+three involutions $\iota:x\mapsto-x$, $\rho$, $\iota\rho$ have genus-1
+quotients), and their Jacobians split:
+
+$$J(C3_A)\sim E_{\iota}\times E_{\rho}\times E_G,\qquad
+J(C3_B)\sim E'_{\iota}\times E'_{\rho}\times E_G,$$
+
+with (classical binary-quartic invariants of the quotient quartics, Jacobian
+normalization $y^2=x^3-27I_1x-27I_2$ as in Section 2):
+- $C3_A/\iota$ and $C3_A/\rho$ both give $y^2=x^3-276480x+240648192$
+  ($I_1=10240$, $I_2=-8912896$) — $\mathbb{Q}$-isogenous to the **master
+  $E_A$** (equal $j=-8000/81$; Frobenius traces agree with $\tilde E_A$ at
+  **all 45 good primes $7\le p\le211$**, zero mismatches, independently
+  recomputed in `mss_k34_g3jac_claude_check.py`);
+- $C3_B/\iota$, $C3_B/\rho$ give $y^2=x^3-1935360x+1033371648$
+  ($I_1=71680$) — isogenous to the **master $E_B$** (same check, 0
+  mismatches);
+- the **common Prym factor** $E_G:\ y^2=x^3-504576x+131604480$
+  ($I_1=18688$, $I_2=-4874240$), $j=1556068/81$ (exact), with cubic
+  $(x-480)(x-336)(x+816)$ — full rational 2-torsion — and torsion group
+  exactly $\mathbb{Z}/2\times\mathbb{Z}/4$ (order-4 points $(48,\pm10368)$,
+  $(912,\pm20736)$; $\gcd\#E_G(\mathbb{F}_p)=8$ over $p\in\{5..43\}$).
+
+**Theorem (rank drop).** $\operatorname{rank}E_G=0$, rigorously, by sharp
+2-isogeny descent at all three 2-torsion points (same kill method as
+Section 3): at each $\theta\in\{-816,336,480\}$ the locally soluble classes
+give $s_A\le2,\ s_B\le0$ (resp. $1,1$; $2,0$), and the sharp subgroup bound
+$\operatorname{im}\alpha_1\subseteq\langle$ known-point images$\rangle$ with
+$\dim=2$ forces $\operatorname{rank}E_G\le0$ at all three $\theta$; equality
+since known points span. Hence
+
+$$\operatorname{rank}J(C3_A)=\operatorname{rank}J(C3_B)=1+1+0=2<3=\text{genus}.$$
+
+*Verification record (Claude, independent):* the degree-6 Frobenius
+polynomial of both covers equals the product of the three quotient
+char-polynomials at all 8 full primes $7\le p\le31$ (every
+$\sigma_1=p+1-\#C3(\mathbb{F}_p)$ cross-checked by hand against the trace
+triples) and the $\#C(\mathbb{F}_p)$ predictions hold at **36/36** primes up
+to 211; quartic-vs-cubic trace agreement 7..211 with zero mismatches; the
+$\theta=-816$ descent chain independently re-derived (soluble classes
+$[1,2,3,6]$, dual $s_B\le0$). Bad primes of both octics: $\{2,3\}$ only.
+Scripts: `mss_k34_g3jac_frobenius.py/.log` (superseded first attempt
+$P\sim$EBt$\,\times\,E_B$ FAILED its own checks, 4/36 primes — discarded;
+see tracked failure 10), `mss_k34_g3jac_quotients.py/.log` (final,
+authoritative), `mss_k34_g3jac_rank.py/.log`, `mss_k34_g3jac_claude_check.py/.log`.
+
+**Chabauty gate.** Since rank $J=2<g=3$, Coleman's method applies **in
+principle**: at a good prime $p>2g+1$, $\#C3_A(\mathbb{Q})\le
+\#C3_A(\mathbb{F}_p)+2g-2$. At $p=11$: $\#C3_A(\mathbb{F}_{11})=8$, giving
+$\#C3_A(\mathbb{Q})\le12$. The 8 already-known points ($x=0$: $W=\pm1$;
+$x=\pm1$: $W=\pm4$; two points at infinity) leave only 4 spare points.
+**NAMED GAP (the gate to K34-A): the actual Coleman computation** —
+$p$-adic annihilation of the rank-2 Mordell-Weil basis of
+$J(C3_A)(\mathbb{Q})$ (basis from $E_A$ copies $\times$ $E_G$ torsion; the
+Prym quotient is trivial on rank) via an honest annihilating differential
+$\omega\in H^0(C3_A,\Omega^1)$ with $\int_{\gamma}\omega=0$ for all MW
+classes, then a residue/Clarkson-type bound — has NOT been carried out.
+If it yields $\#C3_A(\mathbb{Q})=\{$the 8 known points$\}$, then K34-A is
+**PROVED** (no square-$X$ points $\ne0,1$ on $M_A$, hence no $\omega_1=2$
+counterexample). Same program for $C3_B$ ($\#C3_B(\mathbb{F}_{11})=24$,
+bound $\le28$) closes K34-B. This is the first proof *path* (not just
+evidence) found for K34; it is a standard-but-laborious computation
+(MW-basis p-adic precision, MWM integration à la Balakrishnan–Tuitman or
+Coleman integration in Sage).
+
+## K34 round 2: deepened sieve + sibling covers D_A/D_B (2026-09-02, `[mss-k34-sieve2]`)
+
+Scripts `mss_k34_sieve2_p1..p9.py` + state files `mss_k34_sieve2_state{A,B}.json`
+(scripts folder). Nothing here modifies the proved content of
+`[mss-k34-elliptic]`; it deepens the sieve (Section 7 there), settles the
+sibling covers (lever 2), and adds one genuinely new, **verified** mechanism
+(p-adic refinement of pole classes, 2c below) that is the first
+concrete path from "sieve says few classes survive" to an actual proof.
+
+### 1. Corrections to the killing-prime list (both cases)
+
+- **$p=3$ is vacuous, not killing.** $C3_A \bmod 3:\ W^2=(x^4+1)^2$ — all
+  three residue classes $x$ are solvable (likewise $C3_B$), and
+  $\tilde E_A,\tilde E_B$ are singular mod 3 ($T=(0,0)$ is the singular
+  point). Brute re-verification over $p\le300$
+  (`mss_k34_sieve2_p2/p5.py`) gives killing primes **A: $\{5,11,13\}$**,
+  **B: $\{5,19,29\}$** exactly. The standing divisibility consequence
+  $3\cdot5\cdot11\cdot13\mid ab(a^2-b^2)$ survives unchanged because the
+  factor 3 is automatic mod 3 ($a^2\equiv b^2\equiv1$ whenever $3\nmid ab$),
+  but 3 carries no sieve content. (Append-only note; the Section 7 summary
+  text above is left as filed.)
+- Floor classes (degenerate rational points) for the sieve, $t=0$ coset:
+  A: $\{0, \pm2, -1\}$ ($O$; $\pm2G_A$ map to the point at infinity,
+  $X=\infty$; $-G_A$ has $X=1$); B: $\{0, \pm2, 1\}$ ($X(G_B)=1$; the class
+  $-1$ has $X(-G_B)=\tfrac5{41}$, a non-square, so it is **not** protected
+  for B).
+
+### 2. Sibling covers D_A and D_B (lever 2: settled, sieve-equivalent)
+
+- $D_A:\ w^2=z^4+128z^2-512$ (`p1.py`): invariants $I_1=10240,\
+  I_2=-8912896$ match $M_A$; $f_D(x+\tfrac1x)\,x^4 \equiv$ the $C3_A$ octic
+  (symbolic identity); with $z^2=u^2+4$ it becomes $u^4+136u^2+16$; the
+  parametrization $z=(r^2+4)/(2r)$ ($r=2x$) realizes the correspondence.
+  Known points $(2,\pm4)$ correspond to $M_A(1,\pm1)$, image classes
+  $-G_A$ and $-G_A+T_A$. **K34-A $\iff$ $D_A(\mathbb{Q})$ point with
+  $z^2-4$ a nonzero rational square** (verified symbolically).
+- $D_B:\ w^2=9z^4-128z^2+512$ (`p6.py`): invariants $I_1=71680,\
+  I_2=-38273024$ match $M_B$; $f_B(x+\tfrac1x)x^4=$ the $C3_B$ octic; with
+  $z^2=u^2+4$: $9u^4-56u^2+144$; known point $(2,\pm12)$.
+  **K34-B $\iff$ $D_B(\mathbb{Q})$ point with $z^2-4$ a nonzero rational
+  square.**
+- **Sieve equivalence (honest outcome of lever 2):** all three quotients of
+  $C3$ ($M$, $D$, $D'$) impose the *same* local condition — the image of
+  $C3(\mathbb{F}_p)$ — so $D_A,D_B$ add **no sieve power**; their value is
+  the cleaner square-condition formulation ($z^2-4=\square$ instead of
+  "$X$ square") plus the descent lever below.
+- **Twist subtlety (tracked, general lesson):** the tangent-method cubic
+  for $D_A$ is a *nontrivial twist* of $E_A$ (matching $a_2/a_4$ forces
+  $\sigma^2=1/16$ but the $a_6$ equation fails) — $j$-only validation is
+  insufficient when claiming an explicit isomorphism (the trap p11 hit).
+- **Factorization descent lever (open):** $(R-W)(R+W)=4608a^4b^4$ with
+  $R=a^4+66a^2b^2+b^4$ and bounded $\gcd$ — a potential Fermat-style
+  descent on K34-A; not developed this round.
+
+### 2b. Flip rule made exact; pole subtlety resolved
+
+The flip $V\mapsto-V$ acts as $P\mapsto C-P$ ($C_A=-2G_A+T_A$,
+$C_B=2G_B+T_B$), i.e. $\mathrm{flip}_A(n,t)=(-2-n,\,1-t)$,
+$\mathrm{flip}_B(n,t)=(2-n,\,1-t)$ — **exact** on rational points, and
+$X\circ\mathrm{flip}=X$ (only $V$ changes sign). The round-1 "failures" of
+the mod-p flip check happen exactly when the reduced point sits on a pole
+of $X$ (a 0/0 evaluation); they are artifacts, not counterexamples.
+
+### 3. Deepened MW sieve on $\tilde E_A$ (t=0; t=1 by exact flip)
+
+Engine (`p2/p3.py`): killing primes $\{5,11,13\}$, then
+- *grow*: ordinary primes $\le400$ ordered by $|OK|/\mathrm{ord}_p(G)$,
+  merged while expected count $\le3\cdot10^5$;
+- *hunt*: modulus-neutral kills — primes $p$ with
+  $\mathrm{ord}_p(G)\mid M$ (found by BSGS order + factor support check,
+  $p\le3\cdot10^5$) shrink the count by $|OK|/\mathrm{ord}\approx\tfrac12$
+  at zero modulus cost.
+
+**Result:** 23 modulus-neutral hunt primes ($p\le3\cdot10^5$) on top of the
+grow phase (all shrinking ordinary primes $\le400$) give
+
+$$M_A=42{,}078{,}090{,}600 = 2^3\cdot3^4\cdot5^2\cdot7\cdot13\cdot17\cdot23\cdot73,$$
+
+with **5 survivor classes** $S=\{0,\ 2,\ \tfrac{M}2-1,\ -2,\ -1\}$, density
+$1.19\cdot10^{-10}$ (round 1: $3\cdot10^{-5}$, modulus
+$5.3\cdot10^{11}$, stopped at $p=389$). Four survivors are exactly the
+floor classes containing the degenerate points $O,\ 2G_A,\ -2G_A,\ -G_A$;
+the fifth, $c=\tfrac{M}2-1$ (i.e. $n\equiv-1$ mod the odd part of $M$, and
+$n\equiv3 \bmod 8$), is a **genuine non-degenerate survivor** — no known
+point lives in it, and the hunt to $p\le3\cdot10^6$ had not killed it at
+filing time (hunt still extensible). The $t=1$ coset by flip is
+$\{0,-1,-2,-4,-\tfrac{M}2-1\}$; note class $-4$ ($t=1$) contains the actual
+point $-4G_A+T_A$ with $X=\tfrac{1151}{66}$, a non-square, so it is **not**
+protected — it survives only through the pole escape at mod-$p$ precision
+(see 2c).
+
+**Honest status.** This is a congruence theorem, not a proof of K34-A:
+conditional on the (proved) structure
+$E_A(\mathbb{Q})=\langle G_A\rangle\oplus\langle T_A\rangle$ and on sieve
+exhaustiveness up to the stated prime bounds, **any K34-A counterexample
+point $nG_A+tT_A$ has $n$ in the listed classes mod $M_A$**. Degenerate
+points protect their classes at mod-$p$ precision forever, so a pure
+mod-$p$ sieve can never terminate; a proof needs the refinement below.
+
+### 2c. NEW VERIFIED LEVER: p-adic refinement kills pole classes
+
+$X=2(y+66x)/(x(x-4))$ is a rational function on $\tilde E_A$; at the point
+$(4,-264)=2G_A$ (reduction of every $n\equiv2 \bmod 10$ point mod 13) both
+numerator and denominator vanish, but the ratio extends **regularly** with
+value $\tfrac{1151}{66}$ (local computation: $x=4+\varepsilon,\
+y=-264-\tfrac{1027}{33}\varepsilon+\cdots$ gives $y+66x\sim\tfrac{1151}{33}\varepsilon$).
+Hence **every** rational point $nG_A$ with $n\equiv2\pmod{10}$ satisfies
+
+$$X(nG_A)\ \equiv\ \tfrac{1151}{66}\ \equiv\ 7 \pmod{13},$$
+
+and 7 is a **nonresidue** mod 13 (QRs: $\{0,1,3,4,9,10,12\}$). Verified in
+exact arithmetic: $X(12G_A),X(22G_A),X(32G_A),X(42G_A),X(52G_A)\equiv7
+\pmod{13}$ (units mod 169: 85, 150, 46, 111, 7). Therefore the whole
+survivor class $n\equiv2\pmod{10}$ — including $n=2$ itself (point at
+infinity, $X=\infty$) — is **dead as a K34-A candidate**: the class was
+protected only by the 0/0 pole at mod-$p$ precision. Same kill available at
+$p=17$ ($\tfrac{1151}{66}\equiv11$, nonresidue). For the other pole branch
+($n\equiv-2$, point $(4,264)$) the numerator does not vanish mod 13, so
+square-X forces $v_{13}(x(nG_A)-4)$ **even**; generically
+$\mathrm{ord}_{13}(G)\mid M$ makes $x\equiv4$ and the first-order term
+gives $v_{13}(x-4)=1+v_{13}(k)$ for members $n=-2+kM$, so the class
+refines to $n\equiv-2 \pmod{10\cdot13}$ (members with odd valuation die),
+and iterating drives the class $p$-adically onto the exact point $-2G_A$.
+
+**Endgame now concrete (open).** A rational point has $x=4$ *only* at
+$\pm2G_A$ (rank 1), so every non-degenerate member of a pole class has
+$x(nG_A)-4\ne0$. Iterating the refinement over all primes kills a member
+as soon as any $p\mid(x-4)$ has odd valuation or any resolved unit value is
+a nonresidue. If the refined sieve drives every class onto the exact
+degenerate points $n\in\{0,\pm1,\pm2\}$ (and their $t=1$ partners), whose
+$X$-values are $0,1,\infty$ — never a positive square $\ne0,1$ — **K34-A
+follows**. Carrying out this collapse is the named next-round gate,
+alongside the Chabauty gate of Section 8. Not yet done: the refinement is
+verified at $p=13$ (and structurally at 17); the full iteration +
+termination argument is open. `[to-verify]`
+
+### 4. B-side sieve (first sieving of $\tilde E_B$)
+
+Model: $\tilde E_B:\ y^2=x^3+256x^2-2048x$ ($E_B$ shifted by 18),
+$G=(-128,1536)$, $T=(0,0)$; inverse quartic
+$X=(6y-92x)/(x(x-36))$ with poles $x\in\{0,36\}$. Verified exactly:
+$X(G_B)=1$, $X(-G_B)=\tfrac5{41}$, $X(3G_B)=\tfrac{41}5$,
+$X(4G_B)=\tfrac{414}{209}$, $2G_B=(36,-552)$ (pole) — consistent with the
+Section 2 image table. Killing primes $\{5,19,29\}$ ($p=3$ vacuous).
+Sieve result (`p5/p9.py`): **5 classes mod $M_B=264=2^3\cdot3\cdot11$:**
+$\{0,1,2,-2,\ \tfrac{M}2+2\}$, density $1.9\cdot10^{-2}$ — much weaker than
+A because $\mathrm{ord}_p(G_B)$ is rarely $M_B$-smooth (only 4 hunt primes
+$\le10^5$). Floor $\{0,1,2,-2\}$ all contain degenerate points. The
+grow+hunt continuation (to $p\le2\cdot10^6$) was still running at filing
+time — final B numbers `[to-verify]` in `mss_k34_sieve2_stateB.json`.
+Note B's mod-8 ambiguity mirrors A: the extra class is "class 2 with
+twisted 2-part" ($\equiv6 \bmod 8$).
+
+### 5. Tracked failures (append-only)
+
+- **F11 (composite-prime sieve bug).** The round-2 phase-1 loop iterated
+  `range(7,400,2)`, including odd composites (39, 57, ...): the "group law"
+  over composite moduli is invalid and illegitimately killed the protected
+  classes 2, 58, 59, leaving the invalid state $M=60, S=\{0\}$
+  (`mss_k34_sieve2_stateA.json`, discarded and regenerated). Fix: explicit
+  prime sieving; lesson — assert primality inside sieve loops.
+- **F12 (pole 0/0 masquerading as flip failure).** The mod-p flip check
+  fails exactly at pole classes; resolved via the regular-extension
+  refinement (2c). A related self-correction this round: briefly concluding
+  "$X(2G)=\tfrac{1151}{66}$ makes $2G$ a finite $M_A$-point" — false;
+  $2G_A$ is the image of the point at infinity, and $\tfrac{1151}{66}$ is
+  the holomorphic extension value of the *function* $X$, which is exactly
+  what the refinement exploits.
+- **F13 (Fraction `%` misuse).** `Fraction % p` is rational remainder, not
+  modular reduction; using it for "residues of exact rational points" gave
+  garbage valuations before being caught by cross-checking against the
+  mod-$p$ group law. Lesson: reduce via `num * den^{-1} mod p` with
+  separately tracked valuations.
+
+### 6. Claude verification record (2026-09-01, `[mss-k34-sieve2-verify]`)
+
+Independent re-verification of Sections 1–4 by deterministic re-runs of the
+agent's own drivers plus fresh stress tests (`mss_k34_sieve2_claude_check2.py`,
+`mss_k34_sieve2_b_check.py`, `mss_k34_sieve2_b_stress.py`; logs alongside).
+
+**A-side — CONFIRMED.** (i) Driver `p3` re-run from scratch reproduces the
+state exactly: killing primes $\{5,11,13\}$ → 33 classes mod 60; grow →
+291 610 classes mod $M_A=42\,078\,090\,600$; hunt (23 kills) → **5 classes**
+$\{0,\,2,\,M_A/2-1,\,-2,\,-1\}$; `stateA.json` rewritten identically.
+(ii) Stress vs all good primes $p\le3\cdot10^5$ with
+$\mathrm{ord}_p(G)\mid M_A$ (624 primes): **zero violations**. Extension
+$3\cdot10^5$–$10^6$ (231 more valid primes): **zero violations** — the
+"hunt to $3\cdot10^6$ does not kill class $M_A/2-1$" claim is confirmed at
+the $10^6$ level. (iii) The 2c lever verified
+exactly: $X(nG_A)\equiv 7\pmod{13}$ for every $n\equiv2\bmod10$ tested
+(n up to 192), and $X(12,22,32,42,52\,G_A)\bmod169 = 85,150,46,111,7$;
+extension value $1151/66$ confirmed via the local expansion
+$y'(4,-264)=-1027/33$. (iv) Two of my own initial "discrepancies" were
+semantic, not agent errors — both instructive: the grow cap counts
+*expected survivors* $|S|\,|OK|/\gcd(M,N)$, not lifts; and the class-level
+condition is well-defined only when $\mathrm{ord}_p(G)\mid M$ (my unfiltered
+stress produced a spurious violation at $p=23$, since $\#$Ẽ$_A(\mathbb F_{23})=32$
+and $M_A$ carries only $2^3$). Recorded here so future rounds don't repeat them.
+
+**B-side — CONFIRMED, `[to-verify]` lifted for the $t=0$ state.** (i) Exact
+$X_B$ identities re-derived independently: $X(G_B)=1$, $X(-G_B)=\tfrac5{41}$,
+$X(3G_B)=\tfrac{41}5$, $X(4G_B)=\tfrac{414}{209}$, $2G_B=(36,-552)$ (pole) —
+all match the Section 2 image table. (ii) Killing primes re-derived from the
+$C3_B$ octic: $\{5,19,29\}$; $p=3$ vacuous (all 3 classes solvable mod 3).
+(iii) Driver `p5` re-run from scratch: kill → 66 classes mod
+$\mathrm{lcm}(6,8,22)=264$; grow → 29; hunt kills at
+$p=1097,1571,5297,9769,93407$ → **5 classes mod 264**:
+$\{0,1,2,134,262\}=\{0,1,2,-2,M/2+2\}$, density $1.894\cdot10^{-2}$ — exact
+match to `stateB.json`. (iv) Stress vs valid primes ($\mathrm{ord}\mid264$,
+$p\le2\cdot10^5$, 33 primes): **zero violations**. Floor claim confirmed:
+$\{0,1,2,-2\}$ all contain degenerate points; $-1$ dies ($X(-G)=5/41\equiv8$
+mod 19, a nonresidue). One text correction: "only 4 hunt primes $\le10^5$"
+should read **5** (1097, 1571, 5297, 9769, 93407). The $p9$ continuation
+(grow to 3000, hunt to $2\cdot10^6$) found no further kills — consistent
+with the filed state.
+
 ## Cross-problem links
+
 
 - Engine: `scripts/mss_census_pythagorean.py` (validated 3 ways — see
   problem.md frontier block).

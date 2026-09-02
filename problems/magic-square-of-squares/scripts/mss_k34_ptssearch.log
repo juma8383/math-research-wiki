@@ -1,0 +1,89 @@
+=== K34 independent point search, start ===
+--- Part 0: sanity, known points on small boxes ---
+census-A TOTAL: 4 points, t=0.0s
+census-B TOTAL: 4 points, t=0.0s
+known-in-box M_A (expect (0,1),(1,4),(31,35),(35,31) as (p,q,Vq^2) bases):
+   (0,1) V*q^2=1
+   (1,1) V*q^2=4
+   (35,31) V*q^2=4604
+   (31,35) V*q^2=4604
+known-in-box M_B (expect (0,3),(1,12),(5,41),(41,5)):
+   (0,1) V*q^2=3
+   (1,1) V*q^2=12
+   (41,5) V*q^2=2508
+   (5,41) V*q^2=2508
+--- Task 1: square-X (genus-3 cover) searches, m,n <= 3000 ---
+progress cover-A m in [1,250] done; hits=0; t=0.4s
+progress cover-A m in [251,500] done; hits=0; t=0.8s
+progress cover-A m in [501,750] done; hits=0; t=1.2s
+progress cover-A m in [751,1000] done; hits=0; t=1.7s
+progress cover-A m in [1001,1250] done; hits=0; t=2.1s
+progress cover-A m in [1251,1500] done; hits=0; t=2.5s
+progress cover-A m in [1501,1750] done; hits=0; t=2.9s
+progress cover-A m in [1751,2000] done; hits=0; t=3.3s
+progress cover-A m in [2001,2250] done; hits=0; t=3.8s
+progress cover-A m in [2251,2500] done; hits=0; t=4.2s
+progress cover-A m in [2501,2750] done; hits=0; t=4.7s
+progress cover-A m in [2751,3000] done; hits=0; t=5.1s
+cover-A TOTAL pairs-with-gcd-check done, hits=0, t=5.1s
+progress cover-B m in [1,250] done; hits=0; t=0.4s
+progress cover-B m in [251,500] done; hits=0; t=0.9s
+progress cover-B m in [501,750] done; hits=0; t=1.3s
+progress cover-B m in [751,1000] done; hits=0; t=1.8s
+progress cover-B m in [1001,1250] done; hits=0; t=2.2s
+progress cover-B m in [1251,1500] done; hits=0; t=2.7s
+progress cover-B m in [1501,1750] done; hits=0; t=3.1s
+progress cover-B m in [1751,2000] done; hits=0; t=3.6s
+progress cover-B m in [2001,2250] done; hits=0; t=4.0s
+progress cover-B m in [2251,2500] done; hits=0; t=4.5s
+progress cover-B m in [2501,2750] done; hits=0; t=5.0s
+progress cover-B m in [2751,3000] done; hits=0; t=5.4s
+cover-B TOTAL pairs-with-gcd-check done, hits=0, t=5.4s
+cover-A square-X hits: 0 ; cover-B square-X hits: 0
+--- Task 2: general rational-point census, |p|,q <= 5000 ---
+progress census-A q<=500 done; hits=5; t=1.8s
+progress census-A q<=1000 done; hits=5; t=3.6s
+progress census-A q<=1500 done; hits=6; t=5.5s
+progress census-A q<=2000 done; hits=6; t=7.4s
+progress census-A q<=2500 done; hits=6; t=9.2s
+progress census-A q<=3000 done; hits=6; t=11.1s
+progress census-A q<=3500 done; hits=6; t=13.0s
+progress census-A q<=4000 done; hits=6; t=14.9s
+progress census-A q<=4500 done; hits=6; t=16.9s
+progress census-A q<=5000 done; hits=6; t=18.8s
+census-A TOTAL: 6 points, t=18.8s
+progress census-B q<=500 done; hits=6; t=2.0s
+progress census-B q<=1000 done; hits=6; t=4.2s
+progress census-B q<=1500 done; hits=6; t=6.3s
+progress census-B q<=2000 done; hits=6; t=8.5s
+progress census-B q<=2500 done; hits=6; t=10.8s
+progress census-B q<=3000 done; hits=6; t=12.9s
+progress census-B q<=3500 done; hits=6; t=15.1s
+progress census-B q<=4000 done; hits=6; t=17.4s
+progress census-B q<=4500 done; hits=6; t=19.6s
+progress census-B q<=5000 done; hits=6; t=21.9s
+census-B TOTAL: 6 points, t=21.9s
+--- Task 3: height-stratified point report ---
+--- M_A: 6 points (p,q,V with (V q^2)^2 = quartic) ---
+  X=0              V=+-1  (p=0,q=1)  height=1  
+  X=1              V=+-4  (p=1,q=1)  height=1  SQUARE-X (Y=1)
+  X=31/35          V=+-4604  (p=31,q=35)  height=35  
+  X=35/31          V=+-4604  (p=35,q=31)  height=35  
+  X=66/1151        V=+-3693311  (p=66,q=1151)  height=1151  
+  X=1151/66        V=+-3693311  (p=1151,q=66)  height=1151  
+M_A summary: 6 distinct X values, 1 with square X
+--- M_B: 6 points (p,q,V with (V q^2)^2 = quartic) ---
+  X=0              V=+-3  (p=0,q=1)  height=1  
+  X=1              V=+-12  (p=1,q=1)  height=1  SQUARE-X (Y=1)
+  X=5/41           V=+-2508  (p=5,q=41)  height=41  
+  X=41/5           V=+-2508  (p=41,q=5)  height=41  
+  X=209/414        V=+-943587  (p=209,q=414)  height=414  
+  X=414/209        V=+-943587  (p=414,q=209)  height=414  
+M_B summary: 6 distinct X values, 1 with square X
+--- SUMMARY ---
+square-X cover hits: A=0 B=0
+census (p,q) hits: M_A=6 M_B=6
+K34 refutation verdicts: none (no square-X hits)
+=== done ===
+--- ADDENDUM: deep square-X cover extension (m,n <= 10000), see mss_k34_cover_deep.log ---
+deep cover-A hits=0 (t=76s); deep cover-B hits=0 (t=79s); no square-X point with m,n <= 10000, X != 1.

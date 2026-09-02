@@ -1,0 +1,16 @@
+﻿=== (1) j-invariants (exact) ===
+  master E_A j: -8000/81  expected -8000/81  match: True
+  master E_B j: 2744000/9  expected 2744000/9  match: True
+  C3_A/iota cubic j: -8000/81  vs master A: True
+  C3_B/iota cubic j: 2744000/9  vs master B: True
+  E_G j: 1556068/81  expected 1556068/81: True
+=== (2)+(3) trace comparison over p = 7..211 ===
+  bad primes: masterA [2, 3]  quotA [2, 3]  quotB [2, 3]  E_G [2, 3]
+  A: 45 good primes checked, trace mismatches: 0
+  B: mismatches: 0 []
+=== (4) independent rank(E_G)<=0 spot recheck (theta=-816 chain) ===
+  theta=-816: soluble classes alpha: [1, 2, 3, 6]
+  theta=-816: soluble classes dual : [-1, 1]
+  known-point alpha sqfree classes: [1, 2, 3, 6]  all in soluble list: True
+  dim span(soluble A) = 2  (s_A <= this)
+  dim span(soluble B) = 0  (s_B <= this)
