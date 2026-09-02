@@ -12,6 +12,20 @@ diagonals equal) whose nine entries are **distinct perfect squares**?
 square of *distinct* integers is trivial; the all-squares constraint is the
 open part.
 
+**State of the attack (2026-09-02, notes.md §§2d–2h):** the two-prime
+($\omega_1=2$) sum-freeness gate — Conjecture K34 — is the single standing
+obstruction, reduced to square-X points on the genus-1 quartics $M_A, M_B$
+and further to an elliptic-coset structure: candidate indices $n$ lie in 5
+classes mod $M_A=4.2\cdot10^{10}$ (resp. $M_B=264$), with kernel-depth
+parity the exact obstruction (Lemma 2 proved). Two structural results
+sharpen the remaining gap: class-0 hypothetical solutions are forced to
+$n\ge R_0M_A>10^{2721}$, past the effective (Verzobio) primitive-divisor
+constant; and a validated depth-parity sieve (new kill layer) removes
+42–78% of the remaining candidate space per nonzero coset. Named proof
+paths: Chabauty–Coleman on $C3_A$ at $p=11$ (rank $J=2<3$), and the
+Wall–Sun–Sun-type odd-depth primitive-divisor gate (Lang/abc-conditional
+routes exist). K34 remains open.
+
 ## Frontier (one line)
 No example found despite extensive search; no impossibility proof.
 Related: $4\times4$ magic squares of squares *do* exist (Euler).
