@@ -3851,3 +3851,25 @@ Addendum to [VERIFY mss-k34-sieve2-verify]: W2b extension landed - valid
 primes 3e5..1e6 with ord_p(G)|M_A: 231 primes, ZERO violations on the 5
 A-side survivor classes. "Hunt to 3e6 does not kill class M/2-1" confirmed
 at the 1e6 level. notes.md Section 6 amended accordingly.
+## 2026-09-02 - [ATTACK mss-k34-refine] Refinement round: congruence
+endgame impossible; coset reduction + primitive-divisor gate
+Claude round (notes.md Sec 2d). Exact: denom(x(3G_A))=961=31^2,
+denom(x(4G_A))=1089=3^2*11^2 => the only primes that could reduce
+survivor classes onto the 0/0 pole 2G_A are p=31 (ord 3; constant
+1151/66 is a RESIDUE there -> classes -1, M/2-1 survive) and p=11
+(ord 4; constant has v_11=-1 -> class -2 dies only at kernel depth 1).
+STRUCTURAL FINDING: 2G_A is the only 0/0 point of X with a unit
+constant; at -2G_A the numerator 528 != 0 (genuine pole, parity-only
+constraints on the free parameter k); at -G_A, X=1 regular (X = 1 mod p
+at every odd valid prime, no kill); at O, X -> 0 with free leading term.
+CRT-independence of distinct primes => no congruence refinement kills
+classes -2,-1,M/2-1,0: the 2c collapse onto degenerate points is
+impossible as stated. Sharp reduction: non-degenerate K34-A candidates
+lie exactly in four k-cosets of <H_A>, H_A = M_A*G_A; t=1 coset is
+flip-equivalent (X preserved). NEW NAMED GATE: primitive-divisor route
+(Ingram primitive divisors + numerator-cancellation lemma) => v_q(X)=1
+odd at a primitive prime q => X not a square => K34-A; ports to K34-B.
+Reduced to two lemmas, neither proved. Tracked-failure note: an initial
+claim "class -2 killed outright at p=11 by valuation parity" was
+self-caught by the local expansion at (4,264) (528 = 48*11 makes it a
+0/0 mod 11) - corrected before filing.

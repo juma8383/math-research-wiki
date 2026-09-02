@@ -1,0 +1,9 @@
+﻿3G_A = (Fraction(156800, 961), Fraction(-21808640, 29791))
+4G_A = (Fraction(1324801, 1089), Fraction(1365584383, 35937))
+denom(x(3G)) = 961 = {31: 2}
+denom(x(4G)) = 1089 = {3: 2, 11: 2}
+--- class kill via g=3: primes p | denom(x(3G)) ---
+  p=31: CONST resiresidue -> class survives lever
+--- class kill via g=4: primes p | denom(x(4G)) ---
+  p=3: (excluded: p | 66 or bad reduction)
+  p=11: (excluded: p | 66 or bad reduction)
