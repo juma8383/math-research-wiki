@@ -1,0 +1,9 @@
+﻿=== curve A: W_2=1024 W_3=130023424 (identity checks passed) ===
+  engine vs exact: 378 checks, 0 failures
+  census q<=20000 (2260 primes, 8s): depth histogram {1: 2259, 2: 1}
+  odd-Wieferich (even depth) primes: [(167, 84, 2)]
+=== curve B: W_2=3072 W_3=-1547698176 (identity checks passed) ===
+  engine vs exact: 378 checks, 0 failures
+  census q<=20000 (2260 primes, 8s): depth histogram {1: 2257, 2: 3}
+  odd-Wieferich (even depth) primes: [(13, 18, 2), (419, 200, 2), (2351, 610, 2)]
+total 16s

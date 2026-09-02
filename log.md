@@ -1,4 +1,4 @@
-# Log
+﻿# Log
 
 > Append-only audit trail. Every Attack / Continue / Query / Lint gets a dated
 > entry with a parseable prefix. Newest at the bottom. This is how a fresh
@@ -17,26 +17,26 @@ removed stray empty `BealsConjecture/` folder.
 Filed theory: definitions/beal-equation; methods pairwise-coprime-reduction,
 exponent-reduction, frey-modularity, abc-finiteness; theorems fermat-last,
 darmon-granville, catalan-mihailescu.
-Key results: (1) locked the two reductions (Beal ⟺ no pairwise-coprime soln;
-WLOG exponents in {odd primes}∪{4}). (2) Identified the entire open content as
-"finitely-many → zero" per signature (Darmon–Granville gives finiteness
-unconditionally; abc gives no more). (3) Computational probe (bases ≤120,
+Key results: (1) locked the two reductions (Beal âŸº no pairwise-coprime soln;
+WLOG exponents in {odd primes}âˆª{4}). (2) Identified the entire open content as
+"finitely-many â†’ zero" per signature (Darmonâ€“Granville gives finiteness
+unconditionally; abc gives no more). (3) Computational probe (bases â‰¤120,
 exponents {3,4,5,7}) found 0 coprime exact solutions, 55 gcd>1 solutions, and
-the headline finding: Beal is "tight by 1" — coprime ≥3-power triples can land
-exactly 1 below a ≥3-power (e.g. $9^3+10^3=12^3+1=1729$, Ramanujan taxicab), so
+the headline finding: Beal is "tight by 1" â€” coprime â‰¥3-power triples can land
+exactly 1 below a â‰¥3-power (e.g. $9^3+10^3=12^3+1=1729$, Ramanujan taxicab), so
 metric/density arguments cannot prove it. (4) Localized the modular-method
 barrier to mixed-exponent incommensurability in the Frey conductor.
 Status: in-progress; outcome of attempt-01 = partial. Next: catalogue
 already-resolved signatures and attack the smallest open one (attempt-02).
 
 ## [INGEST 2026-08-24] rg2024
-Ingested Ratcliffe & Grechuk 2024 (arXiv:2412.11933) — survey of solved
+Ingested Ratcliffe & Grechuk 2024 (arXiv:2412.11933) â€” survey of solved
 generalized-Fermat cases. Filed sources/ratcliffe-grechuk-2024.md with claim
 tags [rg2024-fc-vs-beal, -10-solns, -solved-sigs, -357-smallest, -comp-bound,
--faltings-algorithm]. Corrections vs attempt-01: Beal ≠ Fermat–Catalan
-(distinct conjectures; Beal strictly stronger in ≥3 regime); 10 known primitive
+-faltings-algorithm]. Corrections vs attempt-01: Beal â‰  Fermatâ€“Catalan
+(distinct conjectures; Beal strictly stronger in â‰¥3 regime); 10 known primitive
 solutions all have a 2 (none a Beal counterexample); verification is to
-z^r≤2^100 (not bases ≤120); (3,3,4) is SOLVED (part of (3,3,n), n≤10^9), so not
+z^râ‰¤2^100 (not bases â‰¤120); (3,3,4) is SOLVED (part of (3,3,n), nâ‰¤10^9), so not
 the frontier.
 
 ## [ATTACK 2026-08-24] beals-conjecture (attempt-02)
@@ -45,10 +45,10 @@ methods/frey-level-lowering-obstruction (new key page); conjectures/fermat-catal
 Wrote attempts/attempt-02.md; rewrote progress.md to the new frontier.
 Headline: the smallest open Beal signature is (3,5,7) [rg2024-357-smallest], NOT
 (3,3,4). Explicit Frey computation: for A^3+B^5=C^7 the curve
-Y^2=X(X-A^3)(X+B^5) has Δ=16 A^6 B^10 C^14; a single level-lowering prime ℓ
-strips all bad primes only if ℓ | gcd(6,10,14)=2, so only ℓ=2 (useless; Mazur
-irreducibility needs ℓ large). Generalized: for any pairwise-distinct odd-prime
-signature (p,q,r), stripping all needs ℓ | 2·gcd(p,q,r)=2 — so the WHOLE
+Y^2=X(X-A^3)(X+B^5) has Î”=16 A^6 B^10 C^14; a single level-lowering prime â„“
+strips all bad primes only if â„“ | gcd(6,10,14)=2, so only â„“=2 (useless; Mazur
+irreducibility needs â„“ large). Generalized: for any pairwise-distinct odd-prime
+signature (p,q,r), stripping all needs â„“ | 2Â·gcd(p,q,r)=2 â€” so the WHOLE
 distinct-prime class is structurally blocked for the classical Frey/Ribet
 method. This explains why every solved Beal signature repeats an exponent.
 Path forward: Darmon's program (Frey abelian varieties of GL2-type over totally
@@ -60,7 +60,7 @@ A^3+B^5 factors over a number field to give a usable Frey abelian variety for
 (3,5,7); develop the Mordell-curve side thread on the gap-1 near-misses.
 
 ## [INGEST 2026-08-24] dv2022
-Ingested Billerey–Chen–Dieulefait–Freitas 2022 (arXiv:2205.15861), Darmon's
+Ingested Billereyâ€“Chenâ€“Dieulefaitâ€“Freitas 2022 (arXiv:2205.15861), Darmon's
 program I. Filed sources/darmon-program-2022.md [dv2022-frey-av,
 -irreduc-conjecture, -repeated-only, -55p-cartan, -1111n] and
 methods/darmon-program.md.
@@ -69,10 +69,10 @@ methods/darmon-program.md.
 Ingested Darmon's program. Key finding: it is REAL and attaches bounded-conductor
 residual 2-dim Galois reps for ALL signatures (construction is general), BUT the
 developed modular method treats only repeated-exponent signatures (r,r,p) and
-(p,p,r) — three-distinct-prime signatures have only a Frey-variety CLASSIFICATION
+(p,p,r) â€” three-distinct-prime signatures have only a Frey-variety CLASSIFICATION
 (Remark 2.4), no working modular method. AND it is gated on Darmon Conjecture
 1.2 (a generalized-Mazur irreducibility theorem for GL2-type abelian varieties
-over totally real fields), which is WIDE OPEN — even repeated-exponent results
+over totally real fields), which is WIDE OPEN â€” even repeated-exponent results
 are mostly conditional on it. Refinement of attempt-02: (3,5,7) is blocked at
 TWO levels (scope + irreducibility), not one. (3,5,7) is beyond BOTH the
 classical Frey method and Darmon's program. Filed attempt-03.md (outcome partial);
@@ -80,7 +80,7 @@ updated progress.md. Self-paced loop: 1 of 20 cycles done.
 
 ## [ATTACK 2026-08-24] beals-conjecture (attempt-04, loop cycle 2/20)
 Computational probe of signature (3,5,7) (scripts/search_357.py, A<=6000,
-B<=600, C<=200). Results: 0 exact solutions (coprime OR not — (3,5,7) is
+B<=600, C<=200). Results: 0 exact solutions (coprime OR not â€” (3,5,7) is
 empirically more rigid than cubic, no small Fermat-Catalan scaffolding);
 gap-1 near-misses present but ALL degenerate (one base=1) from universal
 families t^21+1 (A=t^7,B=1,C=t^3) and t^35+1 (A=1,B=t^7,C=t^5); degenerate
@@ -99,10 +99,10 @@ x^3+y^3=N <-> Y^2=X^3-432N^2 via X=12N/(x+y), Y=36N(x-y)/(x+y). Ramanujan
 point (9,10), N=1729=12^3+1 maps to (1092,-3276); 6^3+8^3=728=9^3-1 maps to
 (624,-3744). Filed methods/mordell-curve-lens.md. Key finding: the gap-1 vs
 gap-0 distinction = integral points on Mordell family E_{z^3} (none, =FLT n=3)
-vs E_{z^3±1} (some, Ramanujan). DECISIVE SCOPE LIMIT: the lens is cubic-only —
+vs E_{z^3Â±1} (some, Ramanujan). DECISIVE SCOPE LIMIT: the lens is cubic-only â€”
 the curve x^a+y^b=N has genus (a-1)(b-1)/2-ish; (3,3)->g=1 elliptic, but
 (3,5)->g=4, (4,4)->g=9, (5,5)->g=21 are higher genus (Faltings only). So the
-Mordell angle does NOT reach the frontier (3,5,7) — consistent with attempt-04's
+Mordell angle does NOT reach the frontier (3,5,7) â€” consistent with attempt-04's
 degenerate near-misses there (no elliptic structure). Honest: the lens is a
 reformulation of Euler FLT n=3 for gap-0, explanatory not a new proof, and
 cubic-specific. Filed attempt-05.md; updated index.md.
@@ -112,8 +112,8 @@ Descent thread. Filed methods/infinite-descent.md. Distilled the 3
 requirements of classical descent: (1) matching algebraic factorization (only
 when both LHS terms share an exponent); (2) factor-power = RHS-power (only
 when r=p); (3) cyclotomic UFD (fails for large p, Kummer, first irregular
-prime 37). Failure table: (p,p,p) passes all; (p,p,r) r!=p fails (2) — why it
-needed modular methods; (p,q,r) distinct fails (1) — x^p+y^q has NO cyclotomic
+prime 37). Failure table: (p,p,p) passes all; (p,p,r) r!=p fails (2) â€” why it
+needed modular methods; (p,q,r) distinct fails (1) â€” x^p+y^q has NO cyclotomic
 factorization, descent cannot begin. CONVERGENT 4-THREAD DIAGNOSIS: modular
 method, Darmon program, Mordell lens, and descent ALL break at the
 distinct-prime case (3,5,7), each for a different reason. Cubic-cubic-cubic is
@@ -149,7 +149,7 @@ exhausted, confirms existing state. Honest flag: mechanism reconstructed from
 principles, attribution to verify against the paper. Filed attempt-08.md;
 updated index.md.
 ## [ATTACK 2026-08-24] beals-conjecture (attempt-09, loop cycle 7/20)
-Wrote the consolidated synthesis page problems/beals-conjecture/synthesis.md —
+Wrote the consolidated synthesis page problems/beals-conjecture/synthesis.md â€”
 the five-thread obstruction map frozen for cross-session continuity. Captures:
 the two reductions; the (3,5,7) frontier and open region; the open content =
 "finitely many -> zero" per signature; the five-thread table (Frey/modular,
@@ -167,10 +167,10 @@ First Lint of the ~23-page wiki. Enumerated all 34 .md files; extracted every
 and claim tags defined in sources/. Findings: NO broken links or claim tags
 (all resolve); NO contradictions (the 4-vs-5-thread difference is historical, not
 conflicting); NO stale claims (both sources current). FIXED: (1) orphan
-theory/definitions/beal-equation.md — added [[def-beal-equation]] inbound from
-problem.md (tools + Provenance); (2) missing pointer to synthesis.md — added
+theory/definitions/beal-equation.md â€” added [[def-beal-equation]] inbound from
+problem.md (tools + Provenance); (2) missing pointer to synthesis.md â€” added
 top-of-progress.md pointer + problem.md synthesis field; (3) stale problem.md
-tools list — rebuilt to all 15 method/theorem/definition/conjecture pages.
+tools list â€” rebuilt to all 15 method/theorem/definition/conjecture pages.
 Cross-ref graph now complete: problem.md -> progress.md -> synthesis.md reaches
 every concept page. Outcome: confirmed, wiki healthy. Filed attempt-10.md;
 updated index.md.
@@ -185,14 +185,14 @@ reduction-to-finite mechanism uses a shared exponent, an even exponent, or a
 spherical parametrization; (3,5,7) has none. One-sentence need: a reduction-
 to-finite-curves mechanism using none of those three. Two candidate directions:
 (A) modular = extend Darmon Frey-variety method to 3 distinct primes AND prove
-Darmon Conjecture 1.2 (generalized-Mazur, wide open) — two programs away, most
+Darmon Conjecture 1.2 (generalized-Mazur, wide open) â€” two programs away, most
 principled; (B) geometric = a non-spherical reduction to finitely many genus>=2
-curves + effective Chabauty — closest to tractable but NO such reduction known
+curves + effective Chabauty â€” closest to tractable but NO such reduction known
 (that IS the crux), plus a rank<genus hurdle. Ruled out (recapitulate known
 walls): abc (finiteness only), cleverer descent (no factorization), density/
 metric (tight-by-1 refutes), "compute the Faltings set" (ineffective = the
 missing reduction). Refined synthesis.md "what a proof requires" section with
-the reduction-vs-resolution framing. Outcome: partial — converts "Beal is
+the reduction-vs-resolution framing. Outcome: partial â€” converts "Beal is
 hard" into a precise falsifiable machinery target. Filed attempt-11.md; updated
 index.md.
 
@@ -205,13 +205,13 @@ t^21+1 (A=t^7,B=1,C=t^3) and t^35+1 (A=1,B=t^7,C=t^5); (3) min non-degenerate
 coprime gap via floor-cbrt nearest-cube search. Results: total gap-1 hits=4,
 ALL degenerate (a base==1), ALL on a universal family (t=1,2,3 of t^21+1 and
 t=2 of t^35+1), 0 genuine gap-1, 0 unclassified. Min non-degenerate coprime
-near-miss gap = 29 at (5,2,2) [5^3+2^5=157, 2^7=128] — matches attempt-04
+near-miss gap = 29 at (5,2,2) [5^3+2^5=157, 2^7=128] â€” matches attempt-04
 exactly. STRENGTHENED claim: from "all degenerate" to "exhaustively classified,
 zero genuine gap-1 in box, min genuine gap 29." Honest scope caveat: A<=6000
 cap rules out genuine gap-1 only for A<=6000 (~C<=90); degenerate families are
 parametric (all t) so explained fully; small-base concentration means box
 likely holds the global min but not proven. Outcome: confirmed. (3,5,7)
-empirically more rigid than cubic (which has non-degenerate gap-1 Ramanujan) —
+empirically more rigid than cubic (which has non-degenerate gap-1 Ramanujan) â€”
 consistent with five-thread diagnosis. Filed attempt-12.md; updated index.md.
 
 ## [ATTACK 2026-08-24] beals-conjecture (attempt-13, loop cycle 11/20)
@@ -223,7 +223,7 @@ t^lcm(q,r)+1 (A=1); for (3,5,11) -> t^33+1 (A=t^11,B=1,C=t^3) and t^55+1
 (coprime or not); 3 gap-1 hits ALL degenerate, ALL on universal families
 (t^33+1 t=1,2; t^55+1 t=2); 0 genuine gap-1; min non-degenerate coprime gap=77
 at (12,3,2) [12^3+3^5=1971, 2^11=2048]. FINDING: (3,5,11) reproduces (3,5,7)'s
-qualitative rigidity EXACTLY, and the min gap GROWS with exponents (29->77) —
+qualitative rigidity EXACTLY, and the min gap GROWS with exponents (29->77) â€”
 rigidity is uniform across the open class and monotone in the exponents,
 matching the class-wide five-thread structural diagnosis. Honest scope caveat:
 box more constraining for (3,5,11) (C^11 grows fast; t>=3 family members at
@@ -234,8 +234,8 @@ index.md.
 Targeted literature check on direction (B) (attempt-11's geometric route).
 CORRECTION to attempt-11: "no non-spherical reduction is known" was too strong.
 Darmon-Granville's PROOF is itself a reduction to finitely many genus>1 curves
-(unramified coverings of P^1-{0,1,∞} signature (p,q,r) + Chevalley-Weil ->
-Faltings) — but INEFFECTIVE (Faltings doesn't enumerate). So the gap is "no
+(unramified coverings of P^1-{0,1,âˆž} signature (p,q,r) + Chevalley-Weil ->
+Faltings) â€” but INEFFECTIVE (Faltings doesn't enumerate). So the gap is "no
 EFFECTIVE reduction for distinct-prime signatures," not "no reduction."
 The one effective precedent: Poonen-Schaefer-Stoll 2007 (x^2+y^3=z^7, all 16
 primitive solutions) via NONABELIAN DESCENT through finite PSL2(F7) (order 168)
@@ -246,10 +246,10 @@ quotient of the triangle group Delta(2,3,7), which is FINITE iff 1/p+1/q+1/r>1
 (spherical). (2,3,7) spherical -> finite group -> descent works. (3,5,7)
 HYPERBOLIC (1/3+1/5+1/7<1) -> infinite triangle group -> NO finite descent
 group -> PSS technique unavailable. RE-FRAMING: direction (B) is NOT
-independent of thread 5 (spherical reduction) — both gated on the same
+independent of thread 5 (spherical reduction) â€” both gated on the same
 spherical/hyperbolic divide. Diagnosis now 6 angles converging on
 hyperbolicity / no-finite-structure at (3,5,7). Updated synthesis.md direction
-(B). Outcome: partial — a correction that sharpens (slightly more pessimistic).
+(B). Outcome: partial â€” a correction that sharpens (slightly more pessimistic).
 Filed attempt-14.md; updated index.md.
 
 ## [LINT 2026-08-24] beals-conjecture (attempt-15, loop cycle 13/20)
@@ -257,7 +257,7 @@ Second Lint after attempt-14 ingest. Grepped new slugs method-triangle-group-
 descent, pss2007, and pss2007-* tags. Findings: NO broken links/claim tags
 (new method linked from synthesis + pss2007 source; tags all defined). NO
 orphans. FIXED: (1) stale problem.md tools list missing method-triangle-group-
-descent — added (16 entries); (2) superseded claim — attempt-11 direction (B)
+descent â€” added (16 entries); (2) superseded claim â€” attempt-11 direction (B)
 "no reduction known" corrected by attempt-14; per append-only discipline the
 original text was NOT rewritten, a correction blockquote inserted at top of (B)
 subsection pointing to method-triangle-group-descent + corrected synthesis,
@@ -270,7 +270,7 @@ consolidation. Filed attempt-15.md; updated index.md.
 
 ## [ATTACK 2026-08-24] beals-conjecture (attempt-16, loop cycle 14/20)
 Close-out consolidation of synthesis.md to reflect the full 15-attempt arc.
-Changes: (1) "hard kernel" section now states the unifying lens — five threads
+Changes: (1) "hard kernel" section now states the unifying lens â€” five threads
 are five symptoms of ONE structural absence (no finite group at a hyperbolic
 signature); spherical/hyperbolic triangle-group distinction (Delta(p,q,r)
 finite iff 1/p+1/q+1/r>1) explains why both thread 5 and direction (B)/PSS are
@@ -311,31 +311,31 @@ corrected synthesis.md unifying-lens + direction (B); fixed index descriptions.
 Structural conclusion unchanged but sharper: obstruction at distinct-odd-prime
 = deep hyperbolicity + no exponent 2 (gates modular, spherical, AND PSS routes).
 Outcome: confirmed with correction. Good example of why flagged to-verify
-items matter — a plausible first-principles framing had a silent arithmetic
+items matter â€” a plausible first-principles framing had a silent arithmetic
 error (41/42>1) surfaced by primary-source verification. Filed attempt-17.md;
 updated index.md.
 
 ## [LINT 2026-08-24] beals-conjecture (attempt-18, loop cycle 16/20)
 Final Lint after attempt-17 corrections (touched 4 files + index). Checks:
-(1) grep 41/42 — every occurrence now in a correction blockquote, the
+(1) grep 41/42 â€” every occurrence now in a correction blockquote, the
 superseded historical log entry, or the corrected table row (41/42<1
 hyperbolic); NO live page states 41/42>1 as current fact. (2) grep spherical
-(case-insensitive) — all current uses correctly attached to genuinely
+(case-insensitive) â€” all current uses correctly attached to genuinely
 spherical signatures (2,3,5 31/30>1 and the spherical family); "near-spherical"
 qualifier used consistently for (2,3,7). (3) ONE STALE LINE FIXED: index.md
-attempt-14 one-liner still said "PSS (2,3,7) needs spherical signature" — the
+attempt-14 one-liner still said "PSS (2,3,7) needs spherical signature" â€” the
 old wrong framing, contradicting attempt-14's own correction blockquote and
 method-triangle-group-descent.md. Fixed inline (mutable nav file): now
 "effective via finite quotient PSL2(F7) of the *infinite* Delta(2,3,7) needs
 near-spherical + exponent 2 [corrected in attempt-17: (2,3,7) is hyperbolic,
-chi=-1/42]". This was the sole live inconsistency — a one-line summary the prior
+chi=-1/42]". This was the sole live inconsistency â€” a one-line summary the prior
 pass had not touched. (4) Cross-refs: all 20 real [[page-slugs]] + 4 claim tags
 (rg2024-357-smallest, rg2024-comp-bound, rg2024-faltings-algorithm,
 dv2022-irreduc-conjecture) + 3 source ids resolve to existing files; the
 [[...]]/[[<other-slug>]]/[[method-pmi]]/[[dv2022-...]] tokens are illustrative
 placeholders in SCHEMA.md and attempt-10's convention explanation. No broken
-links. (5) Orphans: none — every wiki page has inbound links; progress.md and
-notes.md are working files by convention. Outcome: confirmed — wiki
+links. (5) Orphans: none â€” every wiki page has inbound links; progress.md and
+notes.md are working files by convention. Outcome: confirmed â€” wiki
 internally consistent; append-only discipline held (old wrong statement
 survives only as flagged history, never as current fact in a mutable page).
 4 cycles remain; honesty guard active (avoid padding, declare arc complete if
@@ -344,25 +344,25 @@ no genuine new angle). Filed attempt-18.md; updated index.md.
 ## [ATTACK 2026-08-24] beals-conjecture (attempt-19, loop cycle 17/20)
 Developed the unexplored probabilistic side: the counting/volume heuristic for
 generalized Fermat. Expected primitive count up to height H scales as H^(r*chi),
-chi=1/p+1/q+1/r-1 — the reciprocal invariant of def-beal-equation made
+chi=1/p+1/q+1/r-1 â€” the reciprocal invariant of def-beal-equation made
 predictive. Trichotomy as growth rate: chi>0 -> infinite (spherical families);
 chi=0 -> constant/borderline (Euclidean (3,3,3) etc.); chi<0 -> sparse-finite
 (H^(r*chi)->0). Three honest wins: (1) qualitatively parallels rigorous
 Darmon-Granville finiteness; (2) PREDICTS the monotone sparsity the searches
-found ((3,5,7) gap 29 -> (3,5,11) gap 77) — a theoretical sub-thread now
+found ((3,5,7) gap 29 -> (3,5,11) gap 77) â€” a theoretical sub-thread now
 explains the empirical monotonicity, not just records it; (3) explains why
 (3,3,3) (chi=0, H^(r*chi)=H^0 constant, heuristic inconclusive) forced the
-modular engine — the hard-kernel diagnosis mirrored heuristically. Honest
+modular engine â€” the hard-kernel diagnosis mirrored heuristically. Honest
 limit: gives finiteness, NOT zero (heuristic constant rounding <1 is not a
-theorem) — so every route (5 rigorous threads + PSS + counting) delivers at
+theorem) â€” so every route (5 rigorous threads + PSS + counting) delivers at
 most finiteness; zero is the common open content across all six angles. Soft
 angle (6*) is a different KIND of obstruction (expectation, not reduction) so
-it cannot fill the reduction-step gap — consistent, not a contradiction.
+it cannot fill the reduction-step gap â€” consistent, not a contradiction.
 Filed method-counting-heuristic.md (flagged heuristic, not theorem); added to
 problem.md tools list (16 entries); synthesis obstruction map retitled "five
 rigorous threads + one soft angle" with thread 6* row + note; bottom line
 updated (19 attempts, six angles, monotonicity now predicted not just
-observed). Outcome: partial — a genuine sixth angle, not padding. 3 cycles
+observed). Outcome: partial â€” a genuine sixth angle, not padding. 3 cycles
 remain; honesty guard: next cycle makes the close-out call.
 
 ## [ATTACK 2026-08-24] beals-conjecture (attempt-20, loop cycle 18/20)
@@ -385,7 +385,7 @@ made), attempt index. Outcome: confirmed. 2 cycles remain; next = loop
 close-out.
 
 ## [LINT/CONSOLIDATION 2026-08-24] beals-conjecture (attempt-21, loop cycle 19/20)
-Consolidated progress.md (the read-first file) — was stale past attempt-08 (its
+Consolidated progress.md (the read-first file) â€” was stale past attempt-08 (its
 "Best partial result" and "five-thread diagnosis" sections ended at attempt-08,
 12 cycles behind synthesis). Rewrote to be current through attempt-20, concise,
 pointing to synthesis.md for structural depth (no duplication). New sections:
@@ -399,12 +399,12 @@ PREDICTED (attempt-19) then CONFIRMED (attempt-20); one-line-per-attempt log
 Consistency checks during rewrite: all wikilinks resolve (per attempt-18
 index audit), chi values/min gaps match computations exactly, no stale
 "spherical" label reintroduced, degenerate-family general fact preserved. No
-new content invented — consolidation of verified results into the navigational
+new content invented â€” consolidation of verified results into the navigational
 entry point. Updated index.md. Outcome: confirmed. 1 cycle remains = loop
 close-out.
 
 ## [CLOSE-OUT 2026-08-24] beals-conjecture (attempt-22, loop cycle 20/20)
-END OF 20-CYCLE AUTONOMOUS LOOP. No new research (by design — honesty guard:
+END OF 20-CYCLE AUTONOMOUS LOOP. No new research (by design â€” honesty guard:
 genuine angles exhausted within arc scope; declare complete rather than pad).
 Final summary filed as attempt-22.md. The arc produced (no proof of Beal, by
 design): two clean reductions; exact frontier (3,5,7) = smallest open, open
@@ -440,21 +440,21 @@ bsd-kolyvagin-conj, bsd-skinner-converse, bsd-comp-verified; flagged [summary] +
 to-verify). Verified the load-bearing status facts via two web searches BEFORE
 committing (the discipline Beal's attempt-17 taught: a plausible first-pass had
 a silent 41/42>1 arithmetic error caught only by primary-source check).
-Key results: (1) located the EXACT frontier — BSD rank equality + Sha finiteness
+Key results: (1) located the EXACT frontier â€” BSD rank equality + Sha finiteness
 proven for analytic rank <=1 (Gross-Zagier + Kolyvagin + modularity +
 nonvanishing); refined leading-coefficient formula OPEN in general even at
 rank 0 (comp. verified conductor <5000 only); analytic rank >=2 fully open,
 no curve of analytic rank >=4 even proven to have that rank; parity proven
 ($p$-parity unconditionally). (2) Named the open content: "analytic rank <=1 ->
 arbitrary rank" (rank part) + "Sha finite -> exact order of Sha" (refined
-part) — the BSD analog of Beal's "finitely many -> zero". (3) Mapped the
+part) â€” the BSD analog of Beal's "finitely many -> zero". (3) Mapped the
 OBSTRUCTION to the Selmer-group CONTROL step, NOT the resolution step:
 Kolyvagin's Euler system has the SHAPE OF A SINGLE POINT, bounding a rank-<=1
 Selmer group but not rank >=2; the resolution tools (descent, Tamagawa,
 regulator, Sha computation) work in all ranks. Parity is the one general
 rank->=2 tool but only pins rank mod 2 GIVEN an upper bound (the missing
 Euler-system step). (4) Cross-problem compounding: the "obstruction at
-control/reduction not resolution" lens developed on Beal transfers directly —
+control/reduction not resolution" lens developed on Beal transfers directly â€”
 related link added both ways; recorded as a candidate reusable methodology in
 notes.md. Three forward directions: (A) higher-rank Euler systems (higher
 Heegner points, Beilinson-Flach, Kato derivatives, Kolyvagin Conjectures
@@ -480,7 +480,7 @@ ns-serrin, ns-ess-endpoint, ns-ckn, ns-tao-averaged-blowup, ns-tao-quant-l3,
 ns-buckmaster-vicol, ns-supercritical; flagged [summary] + to-verify). Verified
 the load-bearing status facts via two web searches BEFORE committing (same
 discipline as BSD; Beal's attempt-17 caught a silent arithmetic error this way).
-Key results: (1) located the EXACT frontier — Fefferman's four statements (A/B
+Key results: (1) located the EXACT frontier â€” Fefferman's four statements (A/B
 global regularity on R^3/T^3, C/D breakdown on R^3/T^3), domains without
 boundary, smooth + bounded energy; 2D fully solved (Ladyzhenskaya); 3D local
 well-posedness + small-data global; global Leray-Hopf weak (uniqueness OPEN);
@@ -490,20 +490,20 @@ regularity (CKN singular set parabolic dim <=1); Tao averaged-NS blowup
 (model) + quantitative L^3 blowup rate (triple log, Barker/Palasek).
 (2) Named the open content: regularity side "small/local data -> arbitrary
 large-data global regularity"; counterexample side "averaged-NS blowup ->
-true-NS blowup" — the NS analog of Beal's "finitely many -> zero" and BSD's
+true-NS blowup" â€” the NS analog of Beal's "finitely many -> zero" and BSD's
 "rank <=1 -> arbitrary rank". (3) Mapped the OBSTRUCTION to the
 critical-norm CONTROL step, NOT the resolution step: the only unconditional
 global bound is the energy (L^2, SUBCRITICAL under NS scaling); regularity
 needs a CRITICAL norm (L^3, scale-invariant) bounded; a subcritical bound
 cannot control a critical norm = supercriticality. Structural reason: Serrin
 index S_nonlin=d+1 vs S_lin=d/2+2, EQUAL in 2D (3=3, solved) and 4>3.5 in 3D
-(open) — the cleanest 2D/3D divide fact, parallel to Beal's cubic coincidence
+(open) â€” the cleanest 2D/3D divide fact, parallel to Beal's cubic coincidence
 and BSD's one-point Euler system. (4) Cross-problem compounding: the
 "obstruction at control/reduction not resolution" lens is now 3-for-3 (Beal
 reduction, BSD Selmer-control, NS critical-norm-control); related links added
 across all three problems; candidate reusable methodology recorded in notes.md.
 Three forward directions: (A) a critical a priori bound (new global monotone
-quantity at critical regularity — directly the missing control step);
+quantity at critical regularity â€” directly the missing control step);
 (B) blowup construction (Fefferman C/D; remove the averaging in Tao's model
 while keeping blowup, axisymmetric ansatz); (C) quantitative critical program
 (Luo/Barker sharpen the conditional criteria and quantify the supercritical
@@ -528,17 +528,17 @@ load-bearing status facts via two web searches BEFORE committing (same
 discipline as BSD/NS; Beal's attempt-17 caught a silent arithmetic error this
 way). HONESTY NOTE on recent claims: a 2025-26 preprint flurry (Faizal-Shabir
 2026, Gutierrez Ule 2025, Agawa 2025 addendum RETRACTED, Eriksson 2026) is
-flagged ym-recent-claims-unverified as attempts-to-study NOT solutions —
+flagged ym-recent-claims-unverified as attempts-to-study NOT solutions â€”
 Eriksson concedes O(4) covariance unproved (only hypercubic W^4), Agawa
 retracted, others assume Balaban/AFS bounds as unverified hypotheses. Same
 discipline that caught Beal's (2,3,7) spherical mislabel.
-Key results: (1) located the EXACT frontier — Jaffe-Witten requires BOTH a
-rigorous 4D quantum YM (Wightman/OS axioms) AND a mass gap Δ>0; neither is
+Key results: (1) located the EXACT frontier â€” Jaffe-Witten requires BOTH a
+rigorous 4D quantum YM (Wightman/OS axioms) AND a mass gap Î”>0; neither is
 known; the problem is UNIQUELY hard because even a precise non-perturbative
 4D definition is open (framework itself part of the problem; Gribov
 ambiguity). (2) Named the open content: "lattice-discretized + numerically
 confirmed -> continuum-rigorous 4D QFT with proven spectral gap" =
-"asymptotic freedom (UV) -> confinement (IR) rigorously" — the YM analog of
+"asymptotic freedom (UV) -> confinement (IR) rigorously" â€” the YM analog of
 Beal's "finitely many -> zero", BSD's "rank <=1 -> arbitrary rank", NS's
 "small/local -> arbitrary large-data global". (3) Mapped the OBSTRUCTION to
 the continuum-limit + IR-gap CONTROL step, NOT the resolution step: the
@@ -547,7 +547,7 @@ reflection positivity, Luscher transfer matrix, strong-coupling area law +
 gap); asymptotic freedom gives perturbative UV control; the gap is (i)
 continuum-limit convergence with full O(4) covariance and (ii) gap transport
 uniform in the lattice spacing a, across the RG from the strong-coupling
-gapped IR to the weak-coupling UV — bridged by dimensional transmutation
+gapped IR to the weak-coupling UV â€” bridged by dimensional transmutation
 (Lambda_YM = mu*exp(-1/(2*beta0*g^2)), the continuum limit and the mass gap
 are the same RG problem). (4) Cross-problem compounding: the "obstruction at
 control/reduction not resolution" lens is now 4-for-4 (Beal reduction, BSD
@@ -591,37 +591,37 @@ not a proof; Hajebi & Hajebi 2025 arXiv 2507.12173 asserts an unproved
 "spanning property") is flagged hodge-recent-claims-unverified as
 attempts-to-study NOT solutions. Same discipline as YM's preprint flagging
 and Beal's (2,3,7) spherical-mislabel correction.
-Key results: (1) located the EXACT frontier — by hard Lefschetz only the
+Key results: (1) located the EXACT frontier â€” by hard Lefschetz only the
 middle codimensions 2<=p<=n-2 (n>=4) are genuinely new; the only general
 known cases are degrees 0,2,2n-2,2n (codim 0,1,n-1,n); the smallest open case
 is CODIMENSION-2 HODGE CLASSES ON A 4-FOLD (Deligne: "known when dim<4; open
 in dimension >=4"). (2) Named the open content: "Hodge class (analytic,
 defined by Hodge theory) -> algebraic cycle in codimension >=2" = surjectivity
-of cl tensor Q in the middle codimensions — the Hodge analog of Beal's
+of cl tensor Q in the middle codimensions â€” the Hodge analog of Beal's
 "finitely many -> zero", BSD's "rank <=1 -> arbitrary rank", NS's
 "small/local -> arbitrary large-data", YM's "lattice-discretized ->
 continuum-rigorous". (3) Mapped the OBSTRUCTION to the
 analytic->algebraic CONTROL step, NOT the resolution step: the resolution
-layer works — Chow groups + cycle class map defined in all codimensions, and
+layer works â€” Chow groups + cycle class map defined in all codimensions, and
 for p=1 the EXPONENTIAL SEQUENCE makes Hdg^1 = ker(H^2(Z)->H^2(O)) subset Pic,
-with projective -> NS = algebraic divisors (GAGA) — the bridge works for
+with projective -> NS = algebraic divisors (GAGA) â€” the bridge works for
 divisors; the gap is that the Picard-variety / exponential-sequence engine has
 no effective higher-codimension analogue (the Griffiths intermediate Jacobian
 is transcendental for p>=2 and does not control algebraicity). WRINKLE unique
 to Hodge: the integral Hodge conjecture is FALSE (Atiyah-Hirzebruch, Kollar,
-torsion in the AHSS), so only the Q-version is conjectured — a built-in "naive
+torsion in the AHSS), so only the Q-version is conjectured â€” a built-in "naive
 strong statement is false" absent in the other four problems. (4)
 Cross-problem compounding: the "obstruction at control/reduction not
 resolution" lens is now 5-FOR-5 (Beal reduction, BSD Selmer-control, NS
 critical-norm-control, YM continuum-limit+IR-gap-control, Hodge
 analytic->algebraic conversion); a sharper "one-dimensional engine stops"
 sub-pattern identified (cubic coincidence / one-point Euler system / 2D Serrin
-equality / single RG scale / Picard-variety one-codimension) — recorded as a
+equality / single RG scale / Picard-variety one-codimension) â€” recorded as a
 candidate reusable methodology in notes.md; related links added across all
 five problems. Three forward directions: (A) motive / standard-conjecture
 reduction (algebraicity of inverse Lefschetz B + Kunneth components C, known
 for surfaces/abelian/hyper-Kahler K3^[n], reduces HC to a fully-faithful
-functor — the finite-class reduction, closest analog of Beal's
+functor â€” the finite-class reduction, closest analog of Beal's
 reduction-to-finite-curves); (B) codim-2 directly via Griffiths intermediate
 Jacobians / normal functions / Abel-Jacobi at the frontier; (C) structured
 abelian sub-cases (Weil type, type III) with absolute Hodge / motivated cycles
@@ -655,38 +655,38 @@ non-probabilistic but uses E[k]=2 which IS distributional; Nwankpa 2025
 mod-4/12 residue analysis with gaps in the accelerated-map accounting; Chang
 2026 burst-gap decomposition HONESTLY conditional on an open "Orbit
 Equidistribution Conjecture"; viXra 2408.0100, 2505.0010) is flagged
-collatz-recent-claims-unverified as attempts-to-study NOT solutions — and
+collatz-recent-claims-unverified as attempts-to-study NOT solutions â€” and
 crucially they ALL fail at exactly the average-vs-pointwise control step that
 IS the obstruction. Same discipline as YM/Hodge's preprint flagging and
 Beal's (2,3,7) spherical-mislabel correction.
-Key results: (1) located the EXACT frontier — two failure modes (a nontrivial
+Key results: (1) located the EXACT frontier â€” two failure modes (a nontrivial
 cycle, a divergent trajectory); density/average-case results are strong:
 Terras 1976 / Everett (a.a. Col_min < N, natural density), Allouche 1979 /
 Korec 1994 (a.a. < N^theta, theta down to ~0.79), Krasikov-Lagarias 2003
 (count reaching 1 >= x^0.84), Tao 2019/2022 (a.a. Col_min(N) < f(N) for any
-f->infty, log-density — "almost all orbits attain almost bounded values", the
+f->infty, log-density â€” "almost all orbits attain almost bounded values", the
 apex); cycle exclusion via transcendence: Steiner 1977 (no 1-cycles), Simons
 2004 (no 2-cycles), Simons-de Weger 2010 (no m-cycles m<=75); computational
 verification to N <= 2^68 (Barina 2020). The gap is the leap from DENSITY
 (almost all) to POINTWISE (every N). (2) Named the open content: "almost all
 (density) -> every N (pointwise/universal)" = exclude both failure modes for
-every start — the Collatz analog of Beal's "finitely many -> zero", BSD's
+every start â€” the Collatz analog of Beal's "finitely many -> zero", BSD's
 "rank <=1 -> arbitrary rank", NS's "small/local -> arbitrary large-data", YM's
 "lattice-discretized -> continuum-rigorous", Hodge's "Hodge class -> algebraic
 cycle in codim >=2". (3) Mapped the OBSTRUCTION to the average/density ->
 pointwise/universal CONTROL step, NOT the resolution step: the resolution
 layer works for average-case (Terras/Allouche/Korec/Krasikov-Lagarias/Tao) and
-for small cycles (Steiner/Simons-de Weger); the gap is pointwise control — the
+for small cycles (Steiner/Simons-de Weger); the gap is pointwise control â€” the
 average contraction 3/4<1 (E[k]=2 > log_2 3) is DISTRIBUTIONAL over parity
 sequences, and a given N's parity sequence is deterministic and uncontrolled,
 so density-1 results cannot exclude a measure-zero exceptional set (where a
 divergent trajectory or nontrivial cycle would live). Tao: replacing f->infty
 by a constant is "likely almost as hard as the full conjecture." UNIQUELY
 among the six problems, the obstruction SPLITS into two prior-problem flavors
-— (a) cycle exclusion = Diophantine / transcendence (linear form
+â€” (a) cycle exclusion = Diophantine / transcendence (linear form
 Lambda=(K+L)log2 - K log3, Beal-flavored, echoes generalized-Fermat); (b)
 divergent-trajectory exclusion = analytic / ergodic control (need a
-per-trajectory Lyapunov, NS-flavored) — genuine cross-problem COMPOUNDING. (4)
+per-trajectory Lyapunov, NS-flavored) â€” genuine cross-problem COMPOUNDING. (4)
 Cross-problem compounding: the "obstruction at control/reduction not
 resolution" lens is now 6-FOR-6 (Beal reduction, BSD Selmer-control, NS
 critical-norm-control, YM continuum-limit+IR-gap-control, Hodge
@@ -697,11 +697,11 @@ parity-sequence average); Collatz is the CANONICAL EXEMPLAR (the
 average-contraction heuristic IS the obstruction, made visceral) and the
 cleanest introductory example; related links added across all six problems.
 WRINKLE echoing YM: Conway 1972 proved generalized Collatz maps universal /
-halting undecidable, but for GENERAL maps NOT 3n+1 specifically — the
+halting undecidable, but for GENERAL maps NOT 3n+1 specifically â€” the
 possibility 3n+1 itself is undecidable is real but unproved (flagged, not
 asserted; Matthews-Watts: 3n+1 is contracting, mu=3<4). Three forward
 directions: (A) density -> pointwise (strengthen Tao log-density to natural
-density then to a pointwise bound — the direct "almost all -> all" attack);
+density then to a pointwise bound â€” the direct "almost all -> all" attack);
 (B) cycle exclusion to all m (push Steiner/Simons-de Weger beyond m<=75 via
 sharper linear-form-in-logs / transcendence, the Beal-flavored Diophantine
 sub-problem); (C) divergent-trajectory Lyapunov (find a rigorous per-
@@ -716,7 +716,7 @@ against primary sources, then deepen direction (A).
 
 ## [GOVERNANCE 2026-08-24] standing policies installed
 Installed the two cross-cutting governance artifacts requested for every
-session. (1) research-protocol.md — the standing 10-step research discipline
+session. (1) research-protocol.md â€” the standing 10-step research discipline
 applied to EVERY conjecture Attack/Continue: generate evidence AND
 counterevidence; produce >=3 distinct proof approaches; seek counterexamples;
 formalize all assumptions; track failed attempts (append-only); derive
@@ -727,7 +727,7 @@ specialize/reverse/dual); critique every conclusion before accepting it.
 Wired into SCHEMA.md Attack workflow (blockquote governing Attack+Continue;
 step 3 now requires >=3 approaches; directory-layout lists the file) and
 index.md (new "Methodology & governance" section). (2) .claude/usage-policy.md
-— the Ollama Pro usage/quota policy: zones Green(<60%,<=4 subagents)/
+â€” the Ollama Pro usage/quota policy: zones Green(<60%,<=4 subagents)/
 Yellow(>=60%,<=2)/Orange(>=80%,<=1)/Red(>=90%,0)/Emergency(>=95%,stop+summarize+
 save+notify); subagent budgeting (prefer 1 agent->many subtasks over 1 task->
 many agents); large-task 3-phase planning (Analysis/Implementation/Validation,
@@ -736,9 +736,9 @@ check usage before each phase); context conservation >70%; model selection
 primary rule = maximize likelihood of completing the project, not parallelism.
 HONESTY NOTE in the file: the model context exposes NO tool to read live
 Ollama/session/weekly usage %, so zones are applied HEURISTICALLY by task
-scale/context and any % the user reports is AUTHORITATIVE — the policy does
+scale/context and any % the user reports is AUTHORITATIVE â€” the policy does
 not silently claim a capability that does not exist. (3) CLAUDE.md at repo
-root — the actual auto-load mechanism (plain .claude/*.md does NOT auto-load
+root â€” the actual auto-load mechanism (plain .claude/*.md does NOT auto-load
 in Claude Code); states the wiki + research-protocol + usage-policy apply to
 every session and subagent, embeds the zone table + subagent caps concisely,
 and points to the full files. Memory saved: feedback (research protocol,
@@ -764,7 +764,7 @@ out" honestly if the page is logged out, never fabricates). Updated
 schema + honest note that the model context itself still has no direct
 usage-% tool; the browser read is the live source when the loop is active,
 else heuristic fallback) and CLAUDE.md (points to usage-status.json as the
-live source). HONESTY LIMITS recorded: (1) the loop is session-scoped —
+live source). HONESTY LIMITS recorded: (1) the loop is session-scoped â€”
 lives only in this Claude session, dies on close, recurring crons auto-expire
 after 7 days; relaunch the monitor in a new session to re-arm. (2) Each
 check actively drives the browser (manual pull, not a background live feed).
@@ -782,7 +782,7 @@ VERIFIED [bsd-rank-le-1-proven] CONFIRMED UNCONDITIONAL via primary sources:
 Bump-Friedberg-Hoffstein (Inventiones 102, 1990, DOI 10.1007/bf01233440) +
 Murty-Murty (Annals 133, 1991, DOI 10.2307/2944316) guarantee existence of an
 imaginary quadratic K satisfying the Heegner hypothesis AND
-L'(E/K,1)<>0 (via metaplectic Eisenstein series) — so GZ+Kolyvagin give BSD
+L'(E/K,1)<>0 (via metaplectic Eisenstein series) â€” so GZ+Kolyvagin give BSD
 rank<=1 + Sha finiteness with NO ad-hoc K. The ad-hoc-K hedge in the to-verify
 item is resolved; fact upgraded to-verify -> verified. Filed NEW theory page
 theory/theorems/bfh-murty-nonvanishing.md (the nonvanishing input that makes
@@ -792,17 +792,17 @@ and Kolyvagin", Annals 191(2) (2020), DOI 10.4007/annals.2020.191.2.1,
 conditional (Iwasawa hypotheses); soft p-converse Kim 2022 (Math. Annalen).
 SHARPENED [bsd-refined-open]: the FULL leading coefficient (exact |Sha| as a
 square integer) is still open, BUT the p-PART of the BSD formula is now known
-under mild conditions — rank 0 (Skinner-Urban 2014, Iwasawa main conjecture
+under mild conditions â€” rank 0 (Skinner-Urban 2014, Iwasawa main conjecture
 GL2) and rank 1 (Jetchev-Skinner-Wan 2017). So "refined open at rank 0" =
 full leading coefficient only; p-part largely settled at rank<=1.
 Re-confirmed frontier against Stein's BSD book (wstein.org/books/bsd/bsd.pdf):
 beyond rank<=1 "not a single new result directly about the [rank conjecture]
-has been proved"; "A new idea is needed" (Katz) — matches progress.md.
-DEEPENED direction (A) — concretized the block on a rank>=2 Euler system:
+has been proved"; "A new idea is needed" (Katz) â€” matches progress.md.
+DEEPENED direction (A) â€” concretized the block on a rank>=2 Euler system:
 needs BOTH (i) a supply of r_an independent points via HIGHER-DERIVATIVE
 Gross-Zagier (Yuan-Zhang-Zhang; GZ gives only the 1st derivative) AND (ii) a
 multi-point / multi-variable KOLYVAGIN system bounding a rank-r Selmer group
-to size r_an — the existing engine is single-Heegner-point-shaped and bounds
+to size r_an â€” the existing engine is single-Heegner-point-shaped and bounds
 rank<=1 only. Neither exists; Kolyvagin Conjectures 3.32-3.35 (Stein) the
 named unproven target. This is the control-step obstruction, parallel to
 Beal's reduction step ("one-dimensional engine stops" sub-pattern, now 6-for-6).
@@ -814,8 +814,8 @@ confirmed); NEW theory/theorems/bfh-murty-nonvanishing.md; UPDATED
 progress.md (to-verify items resolved/sharpened, direction (A) block,
 consolidated through attempt-02), index.md (attempt-02 + new theory page).
 Outcome: confirmed (verification goal met; partial for the conjecture
-overall — rank>=2 frontier unchanged). Next (attempt-03): verify
-[bsd-parity-proven] (Nekovář / Dokchitser-Dokchitser, the remaining
+overall â€” rank>=2 frontier unchanged). Next (attempt-03): verify
+[bsd-parity-proven] (NekovÃ¡Å™ / Dokchitser-Dokchitser, the remaining
 to-verify) OR survey higher-GZ + Beilinson-Flach/Kato for the closest
 rank-2-shaped system and diagnose where its Selmer bound falls short.
 
@@ -825,19 +825,19 @@ against primary sources, then deepen direction (B). Zone green (17.6% session
 / 39.8% weekly, max 4 subagents; used 0 subagents, direct work).
 VERIFIED [ns-tao-quant-l3] CONFIRMED against primary source: Tao, "Quantitative
 bounds for critically bounded solutions to the NS equations", Proc. Symp. Pure
-Math (2021), arXiv:1908.04958, DOI 10.1090/pspum/104/01874 — exact rate
+Math (2021), arXiv:1908.04958, DOI 10.1090/pspum/104/01874 â€” exact rate
 limsup ||u||_L3 / (log log log 1/(T*-t))^c = infinity (TRIPLE log, first
 slightly-supercritical criterion; 3 logs = Bourgain pigeonholing + Carleman +
 stacking scales). Refinements: Barker-Prange 2021 (Comm. Math. Phys. 385, DOI
 10.1007/s00220-021-04122-x, spatial concentration), Barker 2022
 (arXiv:2209.15627, localized). VERIFIED [ns-ess-endpoint] CONFIRMED:
 Escauriaza-Seregin-Sverak, Russian Math. Surveys 58:2 (2003), 211-250, DOI
-10.1070/RM2003v058n02ABEH000609 — L^inf_t L^3_x solutions smooth (endpoint
+10.1070/RM2003v058n02ABEH000609 â€” L^inf_t L^3_x solutions smooth (endpoint
 Serrin 3/s+2/l=1) via backward uniqueness + Carleman; corollary L^3 must blow up
 at a singularity (the qualitative precursor Tao quantified). Convention note:
 our 2/r+3/s=1 (time,space) = their 3/s+2/l=1 (space,time), same condition.
 MISLABEL CAUGHT + corrected append-only: progress.md/attempt-01 said "Palasek
-sharpened it for axisymmetric data" — WRONG. Palasek (2022, J. Math. Fluid
+sharpened it for axisymmetric data" â€” WRONG. Palasek (2022, J. Math. Fluid
 Mech., arXiv:2111.08991) extended Tao's rate to DIMENSIONS d>=4 (a QUADRUPLE
 log, one more than 3D), NOT axisymmetric. Corrected in progress.md running
 state; attempt-01 left intact with a dated [CORRECTION 2026-08-24] blockquote
@@ -845,14 +845,14 @@ pointer to attempt-02. The axisymmetric program is real but lives in
 Hou/Seregin (different authors). Same discipline as Beal (2,3,7)
 spherical->hyperbolic.
 DEEPENED direction (B): Tao's averaged-NS blowup (JAMS 2016, DOI 10.1090/jams/838)
-— averaged operator B-tilde = int T1 B(T2 u, T3 v) dmu (rotations/dilations/
+â€” averaged operator B-tilde = int T1 B(T2 u, T3 v) dmu (rotations/dilations/
 order-0 multipliers) preserves energy identity + all harmonic estimates yet
 blows up via a self-replicating "quadratic circuit"/"von Neumann machine".
 CONCRETE BLOCK on removing the averaging: B-tilde has TUNABLE degrees of
 freedom the RIGID true nonlinearity (u.grad)u lacks; removing averaging =
 building "fluid logic gates" from the rigid operator (Tao: "no mathematical
 barrier... immense engineering barrier"). Equivalently, energy-identity +
-abstract-estimate proofs CANNOT work — must exploit finer structure
+abstract-estimate proofs CANNOT work â€” must exploit finer structure
 (vorticity, unique continuation). Axisymmetric ansatz = leading geometric
 candidate: Hou (2024, arXiv:2405.10916, PREPRINT to-verify) strong NUMERICAL
 evidence for nearly-self-similar blowup as effective dimension n(t)->3.188
@@ -921,10 +921,10 @@ Deligne's official Clay write-up (hodge.pdf, Millennium Prize Problems pp.45-53)
 rational linear combination of classes cl(Z) of algebraic cycles." Confirms
 rational-not-integral (integral fails, Atiyah-Hirzebruch Remark iv) and known
 for H^2 (Kodaira-Spencer via exponential sequence = Lefschetz (1,1)). KEY
-DIRECTION-(A) FIND from Deligne §4/§5: the standard conjectures B (inverse
+DIRECTION-(A) FIND from Deligne Â§4/Â§5: the standard conjectures B (inverse
 Lefschetz) and C (Kunneth components of the diagonal) are OPEN SPECIAL CASES
-OF HC ITSELF (Deligne §4 Examples 1-2), not merely a reduction pathway; and
-§5, given B and C, motives over C are semi-simple abelian and HC <=> a
+OF HC ITSELF (Deligne Â§4 Examples 1-2), not merely a reduction pathway; and
+Â§5, given B and C, motives over C are semi-simple abelian and HC <=> a
 fully-faithful motives->Hodge-structures functor. So direction (A) is a
 two-stage control problem: (i) prove B,C (open special cases of HC; the
 one-dimensional Picard-variety engine stops here - no analogue for the
@@ -943,7 +943,7 @@ control (YM). Cross-problem: 6-for-6 control-step spine holds; Hodge
 components, Lambda) from the primary source.
 Files: NEW problems/hodge-conjecture/attempts/attempt-02.md (outcome
 confirmed); UPDATED progress.md (consolidated through attempt-02, CDK line
-sharpened, direction A deepened with Deligne §4/§5, to-verify items moved).
+sharpened, direction A deepened with Deligne Â§4/Â§5, to-verify items moved).
 index.md (attempt-02 line). Outcome: confirmed (verification goal met +
 direction A sharpened via primary source); partial overall (no HC proof).
 Next (attempt-03): verify standard-conjecture known cases (Charles-Markman
@@ -1214,7 +1214,7 @@ control for divisors, Verbitsky-twistor for K3^[n], NEITHER for general
 varieties). Companion: Charles, "Remarks on the Lefschetz Standard Conjecture
 and Hyperkahler Varieties", Comment. Math. Helv. 88(2) (2013), 449-468, DOI
 10.4171/CMH/291 (variational/local approach in degree 2). SHARPENS attempt-02
-(B/C are open special cases of HC per Deligne §4) with a POSITIVE known-case
+(B/C are open special cases of HC per Deligne Â§4) with a POSITIVE known-case
 island: those open special cases are KNOWN for K3^[n]-type, so direction (A)
 is not uniformly hopeless - it has a verified deformation-control precedent in
 one geometric class, but the precedent is class-specific. Cross-problem:
@@ -1281,7 +1281,7 @@ beals-conjecture (occasional cycle-in) OR birch-swinnerton-dyer attempt-04
 
 [CONTINUE 2026-08-24] birch-swinnerton-dyer (cycle 12/24, second pass)
 Deepening Continue (direction A tested against current higher-rank GZ /
-Euler-system literature; NOT a verification — all BSD to-verify items were
+Euler-system literature; NOT a verification â€” all BSD to-verify items were
 resolved in attempts 02-03). Orange zone 82.7% session / 51.3% weekly, 0
 subagents (direct work). Tested the load-bearing premise of direction (A):
 "need (i) higher-derivative GZ supply of r_an independent points (GZ gives
@@ -1403,7 +1403,7 @@ a-priori-bound survey. Rotation advances to yang-mills (attempt-04)
 [CONTINUE 2026-08-24] yang-mills (cycle 14/24, second pass)
 Primary-source verification Continue (direction C, Chatterjee 2021) +
 recent-claims flag (2025-26 preprint wave). Green zone 7.4% session /
-53.7% weekly, 0 subagents — fresh budget after the session reset.
+53.7% weekly, 0 subagents â€” fresh budget after the session reset.
 CHATTERJEE 2021 CONFIRMED: "A Probabilistic Mechanism for Quark
 Confinement," Comm. Math. Phys. (2021), DOI 10.1007/s00220-021-04086-y.
 Theorem 2.2: unbroken center symmetry => confinement (area law,
@@ -1412,23 +1412,23 @@ correlations (under arbitrary BCs) => unbroken center symmetry =>
 confinement. First RIGOROUS definition of center symmetry for lattice
 gauge theories (previously a 't Hooft physics heuristic). KEY SHARPENING
 (the load-bearing fact): the implication chain is mass-gap (exponential
-decay) => center-symmetry => confinement — the MASS GAP IS THE
+decay) => center-symmetry => confinement â€” the MASS GAP IS THE
 HYPOTHESIS, NOT THE CONCLUSION. Chatterjee proves confinement FOLLOWS
 FROM the mass gap, he does NOT prove the mass gap exists. Paper's own
 caveat: does NOT prove 4D SU(N) satisfies exponential decay at all
-coupling strengths — easy at strong coupling (cluster expansion),
+coupling strengths â€” easy at strong coupling (cluster expansion),
 open/believed at weak coupling. In lattice QFT exponential decay of
 correlations IS the mass gap, so Chatterjee reads "mass gap =>
 confinement." WHAT THIS MEANS FOR THE OBSTRUCTION MAP: direction (C) is
 NOT an escape from the control step; it RELOCATES it. Chatterjee gives a
 resolution-side tool (center symmetry => confinement, given exponential
-decay); the control step — proving exponential decay (mass gap) at weak
-coupling — remains open and is exactly the UV->IR bridge of attempts
+decay); the control step â€” proving exponential decay (mass gap) at weak
+coupling â€” remains open and is exactly the UV->IR bridge of attempts
 02-03. The mass gap is now the single load-bearing open piece,
 triangulated from a THIRD angle (after Balaban's UV half and the SUSY
 dual-Meissner mechanism). CONTROL-STEP ECHO (6-for-6): Chatterjee's
 center-symmetry engine CONTROLS the center-symmetry=>confinement slice
-(resolution); the mass-gap-at-weak-coupling slice is where it STOPS —
+(resolution); the mass-gap-at-weak-coupling slice is where it STOPS â€”
 the "one-dimensional engine stops" shape. Parallel to NS Seregin
 (controls self-similar slice, stops at non-self-similar slice, attempt-04)
 and BSD cyclotomic/anticyclotonic disjointness (attempt-04). YM's
@@ -1436,15 +1436,15 @@ instance is now sharpest: the named mechanism (confinement) is the
 CONSEQUENCE, and the cause (mass gap) is the open control step.
 RECENT-CLAIMS FLAG (2025-26 preprint wave, honesty discipline): NONE
 peer-reviewed, each with conditional assumptions or identified gaps.
-Shabir & Faizal 2026 (arXiv:2606.19362, ~200+pp) — reflection-positive
+Shabir & Faizal 2026 (arXiv:2606.19362, ~200+pp) â€” reflection-positive
 lattice + OS + finite-range decomposition + strong-coupling cluster +
 RG interlacing + Wilson-loop step-scaling + OS reconstruction; claims
 Delta >= min(Delta_*, m_*) > 0, continuum area law, universality;
 unpeer-reviewed, companions IJGMMP 2026. Agawa 2025 (Cambridge Open
-Engage) — non-local holonomy + Balaban-type cluster + holonomy gauge-
+Engage) â€” non-local holonomy + Balaban-type cluster + holonomy gauge-
 fixing (claims no Gribov) + OS via checkerboard; unpeer-reviewed,
 AI-assisted, unaffiliated, addendum needed for continuum limit + finite
-Gribov. Eriksson 2026 (viXra) — already flagged (attempt-02); search
+Gribov. Eriksson 2026 (viXra) â€” already flagged (attempt-02); search
 confirms Eriksson's OWN honest assessment: does not prove RG-Cauchy,
 postulates transfer-matrix spectral gap, no renormalized local fields as
 operator-valued distributions; still not load-bearing. ALL THREE flagged
@@ -1489,17 +1489,17 @@ generator alpha of H^4(X,Z) is non-algebraic (every curve has degree
 divisible by p) yet D*alpha = h^k IS algebraic; NOT torsion, NOT
 topological (depends on complex structure; algebraic on a dense
 parameter subset). (4) SOULE-VOISIN 2005 (Adv. Math. 198:107-127, DOI
-10.1016/j.aim.2004.10.022, arXiv:math/0403254): Thm 1 — the AH/Totaro
-obstruction detects only p-torsion with p <= dim_C(X); Thm 3 — for any
+10.1016/j.aim.2004.10.022, arXiv:math/0403254): Thm 1 â€” the AH/Totaro
+obstruction detects only p-torsion with p <= dim_C(X); Thm 3 â€” for any
 p>=5, p-torsion in H^6 of 5-folds that is non-algebraic yet ESCAPES ALL
 topological obstructions (in the image of Totaro's phi^k, algebraic on a
-dense subset); Thm 4 — torsion cycles annihilated by Deligne cycle class
+dense subset); Thm 4 â€” torsion cycles annihilated by Deligne cycle class
 + Totaro yet non-divisible (nontrivial Griffiths), vanishing on a smooth
 deformation so no locally constant invariant detects them. TWO SOURCES
 OF FAILURE: (A) torsion (AH/Totaro/Soule-Voisin); (B) non-torsion
 (Kollar). THE Q-RETREAT REMOVES BOTH: torsion -> 0 in H*(X,Q) so the AH
 obstruction vanishes; Kollar's alpha is algebraic over Q via D*alpha
-algebraic. So the Q-version is NOT an arbitrary weakening — it is the
+algebraic. So the Q-version is NOT an arbitrary weakening â€” it is the
 exact retreat that removes the two known obstruction mechanisms while
 retaining the geometric content (algebraic over Q = a nonzero multiple is
 algebraic). The remaining open content (cl tensor Q surjective in the
@@ -1507,7 +1507,7 @@ middle codimensions, smallest case codim-2 on a 4-fold) is untouched by
 either counterexample class. CONTROL-STEP ECHO (6-for-6): the integral
 counterexamples obstruct the RESOLUTION claim (exhibit the cycle) over
 Z; the Q-refinement removes both, leaving the codim>=2 analytic->
-algebraic CONTROL as the sole open piece — now triangulated from the
+algebraic CONTROL as the sole open piece â€” now triangulated from the
 NEGATIVE side (why Z fails, attempt-04) as well as the positive
 (Charles-Markman K3^[n], attempt-03). Honesty: no proof of HC; rational
 conjecture remains open; the "integral HC fails" load-bearing fact is now
@@ -1533,12 +1533,12 @@ zone 23.5% session / 56.5% weekly, 0 subagents. CONWAY 1972 CONFIRMED
 ("Unpredictable Iterations", 1972): generalized Collatz functions
 g(n)=a_i n+b_i (n = i mod p), rational a_i,b_i integral-valued. Main
 Thm: for any computable f there is such a g with g^k(2^n)=2^{f(n)} for
-minimal k. Corollary: NO algorithm decides whether g^k(n)=1 — the
+minimal k. Corollary: NO algorithm decides whether g^k(n)=1 â€” the
 generalized "orbit hits 1" problem is UNDECIDABLE. Mechanism = Minsky
 machines -> vector games -> rational games -> FRACTRAN (1987, a
 universal fraction-list language). KURTZ-SIMON 2007 CONFIRMED (TAMC,
 LNCS 4484, 542-553): the GCP (every forward orbit of a generalized
-Collatz function contains 1) is Pi^0_2-COMPLETE — stronger than Conway.
+Collatz function contains 1) is Pi^0_2-COMPLETE â€” stronger than Conway.
 The forall n exists k: T^k(n)=1 shape matches the specific 3n+1
 conjecture; the UNIFORM (all T) problem is undecidable, the specific
 (fixed T) statement is open. CONTRACTING FRAMING CONFIRMED (Matthews-
@@ -1547,24 +1547,24 @@ Watts / Lagarias): shortcut map T(x)=x/2 (even), (3x+1)/2 (odd), d=2,
 (3/4)^{1/2} ~ 0.866 < 1 -> contracting regime (convergence expected),
 opposite the expanding regime (product > d^d, almost all diverge).
 HONESTY FLAG (load-bearing): the Matthews-Watts criterion is a
-CONJECTURAL HEURISTIC, not a theorem — "product < d^d => all
+CONJECTURAL HEURISTIC, not a theorem â€” "product < d^d => all
 trajectories cycle" is itself the Collatz conjecture for 3n+1. Conway's
 amusical permutation mu (Amer. Math. Monthly 120(3), 2013, "On
 Unsettleable Arithmetical Problems"): 2k->3k, 4k+1->3k+1, 4k-1->3k-1,
 is CONTRACTING by the same criterion (3^4=81 < 256=4^4) yet conjectured
-to have INFINITE orbits ("probviously" unsettleable) — the criterion
+to have INFINITE orbits ("probviously" unsettleable) â€” the criterion
 does not settle convergence even in the contracting regime. WHAT THIS
 SHARPENS FOR THE OBSTRUCTION MAP: progress.md's "Conway 1972 ... 3n+1 is
 a weak/contracting case (mu=3<4=2^2)" is now primary-source-backed.
 THE Pi^0_2-COMPLETENESS IS THE NEW LOAD-BEARING FACT: any UNIFORM (all
 generalized T) argument is impossible (undecidable); a 3n+1 proof MUST
 exploit the concrete contracting structure (exact multipliers 1,3; the
-3<4 margin; the 3/4<1 geometric mean) — a per-INSTANCE CONTROL argument,
+3<4 margin; the 3/4<1 geometric mean) â€” a per-INSTANCE CONTROL argument,
 exactly the open piece. The resolution (a general decision procedure) is
 ruled out by undecidability; the control (per-instance contracting-
 structure -> pointwise convergence) is the only route and is open.
 CONTROL-STEP ECHO (6-for-6): the generalized problem being Pi^0_2-
-complete is the hardest "no uniform method exists" wall — the Collatz
+complete is the hardest "no uniform method exists" wall â€” the Collatz
 analog of Beal's reduction-to-finite-curves, with the wall here LOGICAL
 (undecidability) rather than analytic, but the same role: forces any
 attack onto the specific structure. The "one-dimensional engine stops"
@@ -1904,23 +1904,23 @@ OR birch-swinnerton-dyer (attempt-06) per the rotation order.
 ## [CONTINUE 2026-08-24] beals-conjecture (cycle 22/24, second pass; occasional cycle-in)
 
 Fifth-signature (5,7,13) computation (`scripts/search_5713.py`, mirroring
-`search_5711.py`; box A≤6000,B≤600,C≤40; χ=-264/455≈-0.580). Results: 0 exact
+`search_5711.py`; box Aâ‰¤6000,Bâ‰¤600,Câ‰¤40; Ï‡=-264/455â‰ˆ-0.580). Results: 0 exact
 solutions; 0 genuine gap-1 (only the trivial t=1 degenerate instance, on the
-universal t^65+1 family — the t^65/t^91 families escape the box for t≥2);
+universal t^65+1 family â€” the t^65/t^91 families escape the box for tâ‰¥2);
 **min non-degenerate coprime near-miss gap = 1771** at (A,B,C)=(6,3,2):
 6^5+3^7-2^13 = 7776+2187-8192 = 1771, gcd=1. Counting-heuristic monotone
 prediction RE-CONFIRMED (29<77<277<288<1771). SHARPENING (append-only
-correction): the attempt-23 deceleration REVERSES — the smallest -χ step
-(+0.014; p,q fixed, only r:11→13) gives by far the largest gap step (+1483,
-6.1×). Trend stays monotone but the rate is erratic, NOT a smooth function
-of -χ; the min gap is governed by exponent-specific small-base arithmetic
+correction): the attempt-23 deceleration REVERSES â€” the smallest -Ï‡ step
+(+0.014; p,q fixed, only r:11â†’13) gives by far the largest gap step (+1483,
+6.1Ã—). Trend stays monotone but the rate is erratic, NOT a smooth function
+of -Ï‡; the min gap is governed by exponent-specific small-base arithmetic
 (C^r granularity near small A^p+B^q; min sits at smallest C,A corner where
-5th-power spacing ~A^4 is smallest), not by the scalar χ. Qualitative Beals
-prediction survives; any smooth quantitative χ↦gap law does not. Honesty:
+5th-power spacing ~A^4 is smallest), not by the scalar Ï‡. Qualitative Beals
+prediction survives; any smooth quantitative Ï‡â†¦gap law does not. Honesty:
 box-min flagged to-verify by a wider-box run; not a proof move (soft 6th
 angle [[method-counting-heuristic]]); obstruction map untouched. Outcome
 confirmed (clean continue/reverse answer), partial overall. Yellow zone
-(session 73%/weekly 65.3%, 0 subagents — direct computation to conserve
+(session 73%/weekly 65.3%, 0 subagents â€” direct computation to conserve
 budget). Next: wider-box (5,7,13) run OR sixth signature (7,11,13)
 (reverse-direction, less hyperbolic) OR return to the five-problem rotation
 (likely BSD attempt-06).
@@ -1939,14 +1939,14 @@ impossibility (flagged); quote is search-surfaced, minor PDF-location
 to-verify remains. All three sub-walls now primary-source-confirmed;
 direction (A) fully anchored.
 
-NEW sharpening (Kataoka–Sano 2024, J. Assoc. Math. Res., DOI
-10.56994/jamr.002.002.001 — flagged to-verify against the paper body):
+NEW sharpening (Kataokaâ€“Sano 2024, J. Assoc. Math. Res., DOI
+10.56994/jamr.002.002.001 â€” flagged to-verify against the paper body):
 Heegner points form a RANK-2 Euler system over K (basic rank r_T=2); the
 two rank-1 engines (cyclotomic Kato, anticyclotomic Heegner) are its two
-summands via Sel(K) ≃ Sel(Q) ⊕ Sel(Q,E^K). Thm 1.5 constructs the rank-2
+summands via Sel(K) â‰ƒ Sel(Q) âŠ• Sel(Q,E^K). Thm 1.5 constructs the rank-2
 system (assuming Heegner MC); Thm 1.11: Heegner MC + Darmon-derivative conj.
-+ Bockstein regulator ≠ 0 ⟹ p-part of BSD for E/K. REFRAMES the
-obstruction: not "compare two rank-1 engines" (disjoint, can't — the
++ Bockstein regulator â‰  0 âŸ¹ p-part of BSD for E/K. REFRAMES the
+obstruction: not "compare two rank-1 engines" (disjoint, can't â€” the
 verified sub-wall (3)) but "control the rank-2 system's Darmon derivatives."
 Sharpens the two-engine 6-for-6 echo (BSD/Collatz/NS/YM) from "both rank-1
 engines stop at rank 1" to "two summands of a rank-2 system; the
@@ -1957,41 +1957,41 @@ rank-1-to-rank-1 comparison." Wei Zhang 2013 CDM survey (DOI
 (Compositio, Heegner-point Kolyvagin system, one divisibility of
 Perrin-Riou anticyclotomic MC); Bertolini-Darmon 2005 (Annals,
 anticyclotomic MC, root-number +1 via Shimura curves). No proof move;
-rank ≥2 and exact |Sha| untouched. Outcome confirmed (sub-wall 3 closed;
+rank â‰¥2 and exact |Sha| untouched. Outcome confirmed (sub-wall 3 closed;
 two-engine echo sharpened), partial overall. Yellow zone (session
-78.3%/weekly 66.2%, 0 subagents — direct WebSearch; session resets ~1h).
+78.3%/weekly 66.2%, 0 subagents â€” direct WebSearch; session resets ~1h).
 Next: navier-stokes (attempt-06) per rotation, OR primary-source-verify
-Kataoka–Sano (attempt-07 BSD target), OR direction (C) refined-BSD.
+Kataokaâ€“Sano (attempt-07 BSD target), OR direction (C) refined-BSD.
 
-## [CONTINUE 2026-08-24] navier-stokes (cycle 24/24, second pass — FINAL cycle)
+## [CONTINUE 2026-08-24] navier-stokes (cycle 24/24, second pass â€” FINAL cycle)
 
 Verified the Hou-group quasi-exact 1D model (option (c) of attempt-05's
 Next; budget-cheapest, thematically load-bearing). Hou & Wang, *Blowup
-analysis for a quasi-exact 1D model of 3D Euler and Navier–Stokes*,
+analysis for a quasi-exact 1D model of 3D Euler and Navierâ€“Stokes*,
 **Nonlinearity 37 (2024)**, DOI 10.1088/1361-6544/ad1c2f (arXiv:2306.04146),
 peer-reviewed, CONFIRMED. The Hou-Li (2008, CPAM) 1D model is "quasi-exact"
 (solutions construct exact 3D Euler/NS solutions when angular
-velocity/vorticity/stream are linear in r — a special ansatz). Achieves
+velocity/vorticity/stream are linear in r â€” a special ansatz). Achieves
 RIGOROUS finite-time blowup in three WEAKENED regimes: (1) inviscid +
 weakened advection (a<1, smooth, self-similar, c_l=0); (2) original inviscid
-(a=1) with Hölder C^α data (Hou-Li C^1 well-posedness sharp); (3) viscous +
-weakened advection (a<1, ν>0, finite-time, no exact self-similar profile).
-Method = dynamic rescaling formulation + singularly weighted L² (weight
-1/(2π(1-cos x))) + sharp nonlocal estimates (exact Fourier low-mode +
+(a=1) with HÃ¶lder C^Î± data (Hou-Li C^1 well-posedness sharp); (3) viscous +
+weakened advection (a<1, Î½>0, finite-time, no exact self-similar profile).
+Method = dynamic rescaling formulation + singularly weighted LÂ² (weight
+1/(2Ï€(1-cos x))) + sharp nonlocal estimates (exact Fourier low-mode +
 damping extraction high-mode), computer-assisted (interval arithmetic,
 Matlab, 200 modes).
 
 SHARPENS the cross-problem "one-dimensional engine stops" 6-for-6
 sub-pattern: the naive read ("1D model too weak to blow up, so it stops")
-is CORRECTED — the 1D quasi-exact engine does NOT stop at blowup; it
+is CORRECTED â€” the 1D quasi-exact engine does NOT stop at blowup; it
 ACHIEVES rigorous blowup (resolution, in weakened slices). It stops at the
 CONTROL STEP: every blowup regime requires a weakening (weakened advection,
-or rougher Hölder data, or viscous-without-exact-profile); full-strength 3D
+or rougher HÃ¶lder data, or viscous-without-exact-profile); full-strength 3D
 NS (smooth data, full advection a=1, the Millennium problem) is exactly
 where the rigorous blowup proof does NOT extend. Cleanest NS mirror of the
 Beal/Hodge/BSD control-step framing: a tool that fully resolves a slice but
 cannot bridge to the universal case. Viscosity alone does NOT prevent
-blowup in the 1D model with weakened advection (regime 3) — isolates
+blowup in the 1D model with weakened advection (regime 3) â€” isolates
 vortex-stretching vs advection; the full 3D question (full advection +
 viscosity) remains open. Pairs with Hou's 3D nearly-self-similar candidate
 (attempt-05, FoCM 2026): 1D = rigorous blowup (resolution); 3D generalized
@@ -2001,12 +2001,12 @@ ANALYTIC Schauder fixed-point blowup (computer-free complement);
 Hou-Qin-Wang, arXiv:2606.26658 (2026 preprint), weak-advection Hou-Li
 periodic. Active 2024-26 program, two methods (computer-assisted DRF +
 purely analytic Schauder). Honesty: blowup is in REDUCED/weakened models,
-NOT full 3D smooth-data — Millennium problem untouched; "quasi-exact"
+NOT full 3D smooth-data â€” Millennium problem untouched; "quasi-exact"
 linear-in-r ansatz is the slice boundary, general smooth 3D data is the
 control step. No change to the critical-a-priori-bound direction-(A)
 control obstruction. Outcome confirmed (1D quasi-exact model verified +
 pattern sharpened), partial overall. Orange zone (session 85.2%/weekly
-67.4%, 0 subagents — one targeted WebSearch; session resets ~1h).
+67.4%, 0 subagents â€” one targeted WebSearch; session resets ~1h).
 
 === 24-CYCLE LOOP COMPLETE (cycles 1-24) ===
 Second pass visited: NS(18), YM(19), Hodge(20), Collatz(21), beals(22),
@@ -2018,26 +2018,26 @@ Recovery summary to follow.
 ## [CONTINUE 2026-08-25] yang-mills (cycle 1 / new run)
 Preprint-wave re-check Continue on YM (resumed /loop, new stop rule:
 pause when weekly > 75%; weekly 69.8% at cycle start, ~5% headroom;
-session fresh 1.3% after midnight reset, yellow, 0 subagents — one
+session fresh 1.3% after midnight reset, yellow, 0 subagents â€” one
 targeted WebSearch). Attempt-05's deferred option (a): re-check Agawa
-2025 / Eriksson 2026. **Agawa 2025 — addendum RETRACTED** (DOI
+2025 / Eriksson 2026. **Agawa 2025 â€” addendum RETRACTED** (DOI
 10.33774/coe-2025-3jmcf, both v1/v2 marked "Retracted"; Cambridge Open
 Engage explicitly not peer-reviewed; unaffiliated, AI-assisted, 0
-citations): the "addendum needed" flag RESOLVED IN THE NEGATIVE — posted
-then retracted → a non-result, removed from active to-verify. **Eriksson
-2026** — still ai.viXra.org ("AI assisted e-prints," not peer-reviewed),
-68-paper programme; author's own §8.2 self-concedes the exact control
+citations): the "addendum needed" flag RESOLVED IN THE NEGATIVE â€” posted
+then retracted â†’ a non-result, removed from active to-verify. **Eriksson
+2026** â€” still ai.viXra.org ("AI assisted e-prints," not peer-reviewed),
+68-paper programme; author's own Â§8.2 self-concedes the exact control
 step. Assumption A undischarged in three forms: blocking-map oscillation
-summability (viXra:2602.0077, conditional); gradient-flow L¹ scale-
+summability (viXra:2602.0077, conditional); gradient-flow LÂ¹ scale-
 consistency (viXra:2602.0085, unconditional for standard observables via
-Wilson-flow Thm 3.11, conditional for the full algebra — a resolution-
-side improvement); two-layer RG-Cauchy (viXra:2602.0063) — naive
+Wilson-flow Thm 3.11, conditional for the full algebra â€” a resolution-
+side improvement); two-layer RG-Cauchy (viXra:2602.0063) â€” naive
 asymptotic freedom gives a NON-SUMMABLE O(1/k) rate (logarithmic
 divergence), "we do not prove the RG-Cauchy estimate from first
-principles." Non-summability IS the UV→IR-bridge / "one-dimensional
+principles." Non-summability IS the UVâ†’IR-bridge / "one-dimensional
 engine stops" obstruction, independently conceded from inside an
-attempted proof — corroborative not probative (AI-assisted preprint, a
-flawed attempt failing ≠ problem hard); weak but real convergent signal.
+attempted proof â€” corroborative not probative (AI-assisted preprint, a
+flawed attempt failing â‰  problem hard); weak but real convergent signal.
 Substantive-acceptance flag (Faizal-Shabir, attempt-05) REINFORCED: even
 the most extensive preprint-wave attempt explicitly concedes the control
 step. Reflection positivity / OS reconstruction / thermodynamic limit /
@@ -2045,156 +2045,156 @@ mass gap all OPEN in the programme. Frontier + control-step obstruction
 unchanged. Outcome confirmed (Agawa retraction + Eriksson self-concession
 both confirmed; both AI-assisted preprints, corroborative only),
 partial overall. Files: attempt-06.md created; progress.md
-(consolidated→attempt-06, best-partial block, [ym-recent-claims-
+(consolidatedâ†’attempt-06, best-partial block, [ym-recent-claims-
 unverified] updated), index.md, log.md updated.
 
 ## [CONTINUE 2026-08-25] hodge-conjecture (cycle 2 / new run)
-Primary-source verification of the Tate⟺BSD-for-Jacobian bridge
+Primary-source verification of the TateâŸºBSD-for-Jacobian bridge
 (attempt-05 option (b), the load-bearing cross-problem link). VERIFIED
 + REFINED. For a smooth projective surface X/F_q FIBERED over a curve
 (generic fiber C/F_q(t), J=Jac(C) over the global function field
-F_q(t)): Tate-for-divisors(X) ⟺ Artin-Tate(X) ⟺ Br(X) finite ⟺
-III(J/F_q(t)) finite ⟺ BSD(J). Chain = Tate-Milne 1975 (AT⟺Br(ℓ)-
+F_q(t)): Tate-for-divisors(X) âŸº Artin-Tate(X) âŸº Br(X) finite âŸº
+III(J/F_q(t)) finite âŸº BSD(J). Chain = Tate-Milne 1975 (ATâŸºBr(â„“)-
 finite, incl. p-part by Milne via flat/de Rham-Witt/crystalline;
-jmilne.org article page) + Artin-Grothendieck (Br⟺III) + Kato-Trihan
-2003 (BSD⟺III(ℓ)-finite), re-proven DIRECTLY by Lichtenbaum-
-Ramachandran-Suzuki 2022 (Épijournal G.A., DOI 10.46298/epiga.2022.7482
+jmilne.org article page) + Artin-Grothendieck (BrâŸºIII) + Kato-Trihan
+2003 (BSDâŸºIII(â„“)-finite), re-proven DIRECTLY by Lichtenbaum-
+Ramachandran-Suzuki 2022 (Ã‰pijournal G.A., DOI 10.46298/epiga.2022.7482
 / arXiv:2101.10222, two proofs: Tate-strategy localization+Tate-Shioda+
-height; Weil-étale cohomology+derived categories); Gordon 1979 +
-Geisser 2020 (order relation [Br]·α²·δ²=[III]·∏δ'_v/δ_v) corroborate.
-Dictionary: Br(X)↔III(J/F), NS(X)↔Mordell-Weil J(F), intersection
-pairing↔Néron-Tate pairing. Two honest refinements of attempt-05's
-"BSD for the Jacobian": (1) FUNCTION-FIELD (char-p) BSD — the
+height; Weil-Ã©tale cohomology+derived categories); Gordon 1979 +
+Geisser 2020 (order relation [Br]Â·Î±Â²Â·Î´Â²=[III]Â·âˆÎ´'_v/Î´_v) corroborate.
+Dictionary: Br(X)â†”III(J/F), NS(X)â†”Mordell-Weil J(F), intersection
+pairingâ†”NÃ©ron-Tate pairing. Two honest refinements of attempt-05's
+"BSD for the Jacobian": (1) FUNCTION-FIELD (char-p) BSD â€” the
 geometric avatar, shares formulation with but is NOT the number-field
 Millennium BSD over Q (function-field BSD substantially proven via
-Kato-Trihan); a genuine avatar-level LOGICAL EQUIVALENCE — the
+Kato-Trihan); a genuine avatar-level LOGICAL EQUIVALENCE â€” the
 deepest cross-problem link, sharpening 6-for-6 from "linked" to
-"logically equivalent in one avatar" — but NOT a direct bridge to
+"logically equivalent in one avatar" â€” but NOT a direct bridge to
 [[birch_swinnerton_dyer]]'s Q-target. (2) requires the FIBERED-surface
 setting (Artin-Tate is general; the BSD link needs a fibration to
 produce J over a global field). Artin-Grothendieck/Kato-Trihan links
 search-surfaced (minor to-verify against 2003 body). HC frontier
-(char-0 rational HC, codim ≥2) unchanged. Outcome confirmed (bridge
+(char-0 rational HC, codim â‰¥2) unchanged. Outcome confirmed (bridge
 verified + scope-refined), partial overall. Files: attempt-06.md
-created; progress.md (consolidated→attempt-06, verified-base bridge
+created; progress.md (consolidatedâ†’attempt-06, verified-base bridge
 note refined to function-field/fibered, to-verify BSD-bridge entry +
 attempt-07 targets), index.md, log.md updated. Yellow zone (weekly
-70.9% / session 7.5%, 0 subagents — one targeted WebSearch).
+70.9% / session 7.5%, 0 subagents â€” one targeted WebSearch).
 
 ## [CONTINUE 2026-08-25] collatz-conjecture (cycle 3 / new run)
 Status-check of the 2024-26 claimed-proof preprints (attempt-05 option
 (a), the deferred attempt-04 target). NONE peer-accepted; ALL fail at
-the average-vs-pointwise control step — the 6-for-6 wall reinforced from
+the average-vs-pointwise control step â€” the 6-for-6 wall reinforced from
 the negative side (corroborative, not probative). Fathi 2025 = THREE
 Zenodo preprints (entropy-descent / potential-descent+mod-32 / Kolmogorov;
 DOIs 10.5281/zenodo.{15191755,15313916,15549017}), 0-citation unreviewed;
 the load-bearing one = standard average-contraction heuristic E[k]=2>
-log₂ 3 (distributional, not pointwise). Nwankpa 2025 (Preprints.org,
-DOI 10.20944/preprints202503.0929.v9) = mod-9 17-state FSM reduction —
+logâ‚‚ 3 (distributional, not pointwise). Nwankpa 2025 (Preprints.org,
+DOI 10.20944/preprints202503.0929.v9) = mod-9 17-state FSM reduction â€”
 CORRECTION (append-only): mod-9 FSM not "mod-4/12"; flaw = modular-
-residue≠magnitude (finite-slice engine can't control unbounded
+residueâ‰ magnitude (finite-slice engine can't control unbounded
 magnitude). Chang 2026 (arXiv:2603.11066) = honestly conditional,
 explicitly NOT a proof, reduces to open Orbit Equidistribution
-Conjecture, machine-reviewed by Pith (NOT human peer review) →
+Conjecture, machine-reviewed by Pith (NOT human peer review) â†’
 CONDITIONAL, self-corrected a false Gap Lemma. Sibling claims surfaced:
 Santana 2026 (arXiv:2601.03297) REJECTED by Pith, main theorem REFUTED
-by counterexample f₀(n)=n (fixed points in the paper's own family);
+by counterexample fâ‚€(n)=n (fixed points in the paper's own family);
 Kawasaki 2025 (arXiv:2502.20642, fixed-point approach, flawed);
 Trifaro 2025 (viXra). Honesty: Zenodo/Preprints.org/arXiv/viXra assign
 DOIs but are NOT peer-reviewed; Pith = machine review not human; Santana
 refutation search-surfaced (minor to-verify directly). The amateur wave
 hits the SAME wall the positive frontier derived (Tao log-density limit,
-Terras/Krasikov-Lagarias density-1 stop, Π²₀-completeness) — a negative-
+Terras/Krasikov-Lagarias density-1 stop, Î Â²â‚€-completeness) â€” a negative-
 side convergent signal. Collatz frontier unchanged (pointwise/universal
 control open; Tao 2019/22 strongest; 2^68 peer-reviewed / 2^71 project-
 reported). Outcome confirmed (all flagged preprints status-resolved;
 Nwankpa mechanism corrected; sibling claims + a refutation surfaced;
 6-for-6 wall reinforced from the negative side), partial overall.
-Files: attempt-06.md created; progress.md (consolidated→attempt-06,
-to-verify→attempt-07 targets, honesty-check expanded with status-check +
+Files: attempt-06.md created; progress.md (consolidatedâ†’attempt-06,
+to-verifyâ†’attempt-07 targets, honesty-check expanded with status-check +
 Nwankpa correction), index.md, log.md updated. Yellow zone (weekly
-71.9% / session 13%, 0 subagents — one targeted WebSearch).
+71.9% / session 13%, 0 subagents â€” one targeted WebSearch).
 
 ## [CONTINUE 2026-08-25] birch-swinnerton-dyer (cycle 4/new run)
 
 Budget-light sub-thread DEVELOPMENT Continue on BSD (yellow zone; weekly 73.6%
 / session 23.1% at STEP-0 live-check, <74% so cycle proceeds budget-light;
-0 subagents; NO WebSearch — file-writes only, to minimize weekly drain ~1.4%
+0 subagents; NO WebSearch â€” file-writes only, to minimize weekly drain ~1.4%
 below the 75% pause threshold).
 
-**Move:** developed the Kataoka–Sano 2024 rank-2 Euler-system reframing
-(attempt-06) structurally from existing notes + standard Mazur–Rubin
+**Move:** developed the Kataokaâ€“Sano 2024 rank-2 Euler-system reframing
+(attempt-06) structurally from existing notes + standard Mazurâ€“Rubin
 rank-r Kolyvagin-system theory (a synthesis/development cycle, NOT a
 verification). Four structural results:
-- **Selmer-decomposition keystone:** Sel(K,E) ≃ Sel(Q,E) ⊕ Sel(Q,E^K) IS
-  the rank-2 structure — the two one-directional engines (cyclotomic Kato,
+- **Selmer-decomposition keystone:** Sel(K,E) â‰ƒ Sel(Q,E) âŠ• Sel(Q,E^K) IS
+  the rank-2 structure â€” the two one-directional engines (cyclotomic Kato,
   anticyclotomic Heegner) are the two direct summands of one Selmer group;
   disjointness-as-field-variations = the direct-summand split.
-- **Reframed obstruction:** rank-2 Euler system → rank-2 Kolyvagin system
-  (Mazur–Rubin) controlling Sel(K,E) to corank ≤2 (= the missing r_an=2
+- **Reframed obstruction:** rank-2 Euler system â†’ rank-2 Kolyvagin system
+  (Mazurâ€“Rubin) controlling Sel(K,E) to corank â‰¤2 (= the missing r_an=2
   piece); the control step = the Darmon-derivative construction, a
   THREE-FOLD conditional (Heegner MC / Darmon-derivative Conj. 1.9 /
-  Bockstein regulator ≠ 0) — not a vague "rank-2 is hard." Resolution
+  Bockstein regulator â‰  0) â€” not a vague "rank-2 is hard." Resolution
   (each summand's MC) works; control (rank-2 composition) is the wall.
-- **6-for-6 two-engine sharpening refined:** "both stop at rank 1" →
+- **6-for-6 two-engine sharpening refined:** "both stop at rank 1" â†’
   "two engines combine into a rank-2 object; the composition-to-control
-  step is the wall" — same spine as NS (resolve a slice, stop at the
-  universal control) / Collatz (density→pointwise).
-- **NEW cross-problem link — BSD's two avatars:** the function-field BSD
-  (char p, the Hodge Tate⟺BSD-for-Jacobian bridge from attempt-06-Hodge,
-  substantially proven via Kato–Trihan) and the number-field BSD (the
-  Millennium target, conditional via Kataoka–Sano) are two faces of the
+  step is the wall" â€” same spine as NS (resolve a slice, stop at the
+  universal control) / Collatz (densityâ†’pointwise).
+- **NEW cross-problem link â€” BSD's two avatars:** the function-field BSD
+  (char p, the Hodge TateâŸºBSD-for-Jacobian bridge from attempt-06-Hodge,
+  substantially proven via Katoâ€“Trihan) and the number-field BSD (the
+  Millennium target, conditional via Kataokaâ€“Sano) are two faces of the
   same "control the multi-summand Selmer group" control step, in two
-  cohomological theories (étale/crystalline on a surface vs Galois-
+  cohomological theories (Ã©tale/crystalline on a surface vs Galois-
   cohomology Euler systems on a curve). Sharpens 6-for-6 from "BSD
   parallel to Hodge" to "two avatars of one control step, one proven one
   open."
 
-**Files:** attempt-07.md created; progress.md (consolidated→attempt-07 +
-attempt-07 best-partial block + Kataoka–Sano to-verify note updated);
+**Files:** attempt-07.md created; progress.md (consolidatedâ†’attempt-07 +
+attempt-07 best-partial block + Kataokaâ€“Sano to-verify note updated);
 index.md (BSD attempt-07 line after attempt-06).
 
 **Honesty:** SYNTHESIS/DEVELOPMENT, not verification. No WebSearch; the
-Kataoka–Sano Thm 1.5/1.9/1.11 specifics (rank-2 Euler-system construction,
+Kataokaâ€“Sano Thm 1.5/1.9/1.11 specifics (rank-2 Euler-system construction,
 Darmon-derivative Conj. 1.9, Bockstein regulator, three-fold conditional)
-are NOT primary-source-verified this cycle — they remain the load-bearing
-to-verify flag from attempt-06, the natural attempt-08 target. The Mazur–
+are NOT primary-source-verified this cycle â€” they remain the load-bearing
+to-verify flag from attempt-06, the natural attempt-08 target. The Mazurâ€“
 Rubin rank-r Kolyvagin-system framework and the function-field-BSD-proven /
 number-field-BSD-open split are standard (not re-verified). No proof of
 BSD. Outcome confirmed (coherent structural development + cross-problem
 two-avatar link), partial overall.
 
 **Loop state:** rotation restarts after Collatz; beals skipped (24
-attempts). Next: navier-stokes (attempt-07). Weekly near 74% — STEP-5
+attempts). Next: navier-stokes (attempt-07). Weekly near 74% â€” STEP-5
 live-check will decide pause vs continue at the 75% threshold.
 
 ---
 
-[INGEST 2026-08-25] PvsNP — ingested a separate session's self-contained
+[INGEST 2026-08-25] PvsNP â€” ingested a separate session's self-contained
 P-vs-NP wiki into the main wiki.
 
 A folder pasted in from a different session (originally misnamed
-`Riemann-Hypothesis` — the content is complexity theory, not the Riemann
+`Riemann-Hypothesis` â€” the content is complexity theory, not the Riemann
 Hypothesis; user renamed it `PvsNP` on 2026-08-25) was integrated. The
 folder `problems/PvsNP/` contains a complete nested LLM-wiki at `wiki/`
-(own SCHEMA.md / index.md / log.md / pages/ / sources/) — a 28-cycle / 7-loop
-attack on P vs NP (2026-08-21 → 2026-08-24), self-cataloged.
+(own SCHEMA.md / index.md / log.md / pages/ / sources/) â€” a 28-cycle / 7-loop
+attack on P vs NP (2026-08-21 â†’ 2026-08-24), self-cataloged.
 
 **Content:** P vs NP / computational complexity (GCT, MCSP, meta-complexity,
 disjoint NP pairs, proof complexity, resource-bounded measure, descriptive
 complexity, KW communication). NOT the Riemann Hypothesis.
 
 **Unifying meta-finding `[witness-needs-explicit-lb]` (the nested wiki's
-7-loop product):** every live P≠NP-adjacent route bottlenecks on ONE open
-non-compositional construction — an explicit balanced-point {expensive ∧
+7-loop product):** every live Pâ‰ NP-adjacent route bottlenecks on ONE open
+non-compositional construction â€” an explicit balanced-point {expensive âˆ§
 small-gap} lower-bound-carrying witness for a restricted class = the
 circuit-LB / natural-proofs frontier. The three local barriers
 (relativization / natural-proofs / algebrization) are local symptoms; the
 construction lock is universal `[barriers-and-construction-are-complementary]`
 (GCT escapes all three yet still hits the lock). Single live thread = (A),
-the S1.a/AC⁰ face `[s1a-is-the-live-thread]`, Gate 1 (recognizability) soft
+the S1.a/ACâ° face `[s1a-is-the-live-thread]`, Gate 1 (recognizability) soft
 from three directions, Gate 2 (tight window) binding. No breakthrough
-`[honest-ceiling]` — the wall is an open construction (not a proven
+`[honest-ceiling]` â€” the wall is an open construction (not a proven
 impossibility), alive at the hardest known point. All web-grounded findings
 are search/arXiv-summary-level, not PDF-line-verified (the to-verify flags).
 
@@ -2213,7 +2213,7 @@ six number-theory/PDE problems).
 
 **Cross-problem link:** P vs NP extends the wiki's 6-for-6 control-vs-
 resolution methodology to 7-for-7, with a qualification (structural analogy,
-not mathematical equivalence — P vs NP is complexity theory; its wall is
+not mathematical equivalence â€” P vs NP is complexity theory; its wall is
 uniquely an open construction blocked by natural-proofs-conditional-on-OWFs,
 a status the number-theory problems do not share). The nested wiki's own
 `[two-faces-two-np-variants]` (mining face closes / S1.a face stays open) is
@@ -2228,78 +2228,78 @@ Attempts, pointing to the nested wiki's own catalog rather than duplicating
 **Honesty:** INGEST (structural integration + summary), not verification. No
 new primary-source verification; no WebSearch this session. The nested
 wiki's content and its `[honest-ceiling]`/to-verify flags are inherited
-as-is. Folder name `PvsNP` is PascalCase, not the kebab-case convention —
+as-is. Folder name `PvsNP` is PascalCase, not the kebab-case convention â€”
 kept at the user's explicit choice; cross-problem wikilink `[[PvsNP]]`.
 
 **Loop state:** the /loop remains PAUSED on the weekly cap (83.4%, resets
 Sun Aug 30). This ingestion was a user-requested side task, not a loop
 cycle; the next loop cycle on resume is navier-stokes (attempt-07), and
 the highest-value WebSearch move remains BSD primary-source-verify
-Kataoka–Sano 2024.
+Kataokaâ€“Sano 2024.
 
 ---
 
-[ATTACK 2026-08-25] poincare-conjecture (attempt-01) — the eighth problem folder, set up at user request as "the perfect stopping point" giving a folder for every famous math problem. HONESTY CAVEAT surfaced up front: the Poincaré Conjecture is **SOLVED** (Perelman 2002–03; the only solved Clay Millennium problem; Fields Medal 2006 + Clay prize 2010 both declined), so "1 attempt" is an exposition/verification, not an open-problem attack. Folder `problems/poincare-conjecture/` created with standard layout (problem.md / progress.md read-first / notes.md / attempts/attempt-01.md), kebab-case like the other six main-wiki problems (unlike PascalCase PvsNP). Cross-problem wikilink `[[poincare_conjecture]]`.
+[ATTACK 2026-08-25] poincare-conjecture (attempt-01) â€” the eighth problem folder, set up at user request as "the perfect stopping point" giving a folder for every famous math problem. HONESTY CAVEAT surfaced up front: the PoincarÃ© Conjecture is **SOLVED** (Perelman 2002â€“03; the only solved Clay Millennium problem; Fields Medal 2006 + Clay prize 2010 both declined), so "1 attempt" is an exposition/verification, not an open-problem attack. Folder `problems/poincare-conjecture/` created with standard layout (problem.md / progress.md read-first / notes.md / attempts/attempt-01.md), kebab-case like the other six main-wiki problems (unlike PascalCase PvsNP). Cross-problem wikilink `[[poincare_conjecture]]`.
 
-VERIFICATION (two targeted WebSearches, orange zone, no subagents): Perelman's three arXiv preprints — 0211159 (W-entropy F/W functionals, reduced volume, no-local-collapsing), 0303109 (canonical neighborhoods, δ-cutoff surgery, discrete surgery times, long-time existence), 0307245 (finite extinction, sketched) — confirmed; finite extinction made rigorous by Colding–Minicozzi JAMS 2005 / Geom Topol 2008 via the width (min-max 2-sphere area) with Gauss–Bonnet −4π forcing finite extinction on a homotopy 3-sphere; four independent verification accounts (Kleiner–Lott 2008, Cao–Zhu 2006, Morgan–Tian 2007, Bessières et al. 2010) confirmed. CORRECTION (append-only): third preprint is arXiv:math/0307245, not 0307249 (prior session working note).
+VERIFICATION (two targeted WebSearches, orange zone, no subagents): Perelman's three arXiv preprints â€” 0211159 (W-entropy F/W functionals, reduced volume, no-local-collapsing), 0303109 (canonical neighborhoods, Î´-cutoff surgery, discrete surgery times, long-time existence), 0307245 (finite extinction, sketched) â€” confirmed; finite extinction made rigorous by Coldingâ€“Minicozzi JAMS 2005 / Geom Topol 2008 via the width (min-max 2-sphere area) with Gaussâ€“Bonnet âˆ’4Ï€ forcing finite extinction on a homotopy 3-sphere; four independent verification accounts (Kleinerâ€“Lott 2008, Caoâ€“Zhu 2006, Morganâ€“Tian 2007, BessiÃ¨res et al. 2010) confirmed. CORRECTION (append-only): third preprint is arXiv:math/0307245, not 0307249 (prior session working note).
 
-METHODOLOGICAL CONTRIBUTION — Poincaré framed as the wiki's **positive-validation case** for the 7-for-7 control-step lens: Hamilton (1982) had the resolution machinery (Ricci flow) but stalled at the control step (finite-time singularities; could not classify / cut / terminate); every Perelman contribution (W-entropy monotonicity, canonical-neighborhood classification, δ-surgery, finite extinction) is at the *control* step, not the resolution step — the one problem in the wiki where the identified obstruction was actually discharged. Contrast with the seven open problems (each has a resolution engine working on a slice + a control-to-full-strength wall not yet dischargeable). CROSS-PROBLEM LINK: [[navier_stokes]] is the closest structural twin — both geometric-PDE singularity-control problems; Ricci flow does blow up and Perelman closed control with a monotone Lyapunov functional (W-entropy); 3D NS asks whether blowup does NOT occur and no critical-coercive monotone quantity is known for the supercritical L³ norm (Tao triple-log rate quantifies the gap) — the structural suggestion is that the missing NS ingredient is an entropy-type monotone functional (analogy, not equivalence; same disclaimer as PvsNP 7-for-7). More-general statement = Thurston Geometrization (Poincaré = simply-connected corollary); higher-dim analogues Smale n≥5 1961, Freedman n=4 1982; n=3 the last and hardest (low dimension blocks h-cobordism/Whitney trick).
+METHODOLOGICAL CONTRIBUTION â€” PoincarÃ© framed as the wiki's **positive-validation case** for the 7-for-7 control-step lens: Hamilton (1982) had the resolution machinery (Ricci flow) but stalled at the control step (finite-time singularities; could not classify / cut / terminate); every Perelman contribution (W-entropy monotonicity, canonical-neighborhood classification, Î´-surgery, finite extinction) is at the *control* step, not the resolution step â€” the one problem in the wiki where the identified obstruction was actually discharged. Contrast with the seven open problems (each has a resolution engine working on a slice + a control-to-full-strength wall not yet dischargeable). CROSS-PROBLEM LINK: [[navier_stokes]] is the closest structural twin â€” both geometric-PDE singularity-control problems; Ricci flow does blow up and Perelman closed control with a monotone Lyapunov functional (W-entropy); 3D NS asks whether blowup does NOT occur and no critical-coercive monotone quantity is known for the supercritical LÂ³ norm (Tao triple-log rate quantifies the gap) â€” the structural suggestion is that the missing NS ingredient is an entropy-type monotone functional (analogy, not equivalence; same disclaimer as PvsNP 7-for-7). More-general statement = Thurston Geometrization (PoincarÃ© = simply-connected corollary); higher-dim analogues Smale nâ‰¥5 1961, Freedman n=4 1982; n=3 the last and hardest (low dimension blocks h-cobordism/Whitney trick).
 
-OUTCOME: confirmed (proof status verified + control-step reframing coherent + NS twin link established), partial as an attack (nothing to attack). HONESTY: exposition of a solved problem, no new mathematics; Perelman-preprint line-level details and the Colding–Minicozzi width inequality are search/arXiv-summary-level, flagged [to-verify] against primary sources. NO theory/ promotion yet (optional future: theory/theorems/geometrization-poincare.md, theory/methods/ricci-flow-surgery-control.md). Wiki now spans 8 problems: 7 open (beals, BSD, NS, YM, Hodge, Collatz, PvsNP) + 1 solved contrast case (poincare). — *Budget: orange (weekly ~83.4%), 0 subagents, 2 WebSearches. Loop still PAUSED (weekly reset Sun Aug 30 7PM local).*
-
----
-
-[ATTACK 2026-08-25] riemann-hypothesis (attempt-01) — the 9th problem folder, set up at user request: "yes set up the Riemann Hypothesis folders." This was the one Clay Millennium problem missing from the wiki (the prior session's "Riemann-Hypothesis" folder turned out to be PvsNP content). OPEN — a genuine attack (unlike the solved [[poincare_conjecture]] contrast case). Folder `problems/riemann-hypothesis/` created standard layout (problem.md / progress.md read-first / notes.md / attempts/attempt-01.md), kebab-case. Cross-problem wikilink `[[riemann_hypothesis]]`.
-
-VERIFICATION (4 WebSearches, orange zone, 0 subagents; 2 succeeded richly, 2 rate-failed): classical facts search-confirmed — Weil 1940s (RH for curves over finite fields), Deligne 1973/74 (Weil conjectures, RH for all varieties over F_q, via étale cohomology + Lefschetz trace + Rosati-positivity); Hilbert-Pólya spectral program; Connes 1997 (numdam 10.5802/jedp.516) + 2019 essay (adele-class space spectral interpretation, RH ⟺ trace formula validity, minus-sign/Riemannian obstruction); Li criterion 1997 (JNT 65, λ_n ≥ 0 ⟺ RH); Bombieri-Lagarias 1999 (JNT 77, generalization); Lagarias 1999 (Acta Arith. 89, ξ-positivity); Suzuki 2023 (JLMS DOI 10.1112/jlms.12785, screw-function/Kreĭn equivalents). Computational record: Platt-Trudgian 2021, all zeros on the line to height T = 3×10^12 (standing record; no newer height record found). 2024 advances (status-checked): Guth-Maynard 2024 new zero-density bound at σ=3/4 breaking Ingham's 1940 80-year record (harmonic analysis + Dirichlet-polynomial matrix eigenvalues; sharper prime counts in short intervals) — RESOLUTION-ON-AVERAGE, not the control wall; Chourasiya 2024 (arXiv:2412.02068) first explicit Carlson estimate N(σ,T) ≤ K T^{4σ(1−σ)} (log T)^{5−2σ}. Proportion-on-line: Levinson 1/3 (1974) → Conrey 2/5 (1989) → 5/12 (2020); a 2024 claim of 2/3 (linear-algebraic/Weil-explicit-formula + Montgomery pair-correlation, Lean-4 core) flagged [rh-2024-claims-unverified] (NOT peer-reviewed; even if true a proportion ≠ all). CORRECTION (append-only): the prior session's working memory had no RH folder; none mislabeled here.
-
-METHODOLOGICAL CONTRIBUTION — RH framed through the control-step lens as the 8th OPEN problem (7 prior open + Poincaré solved contrast): resolution works on a slice/on average (computation up to T, Selberg almost-all, zero-density, zero-free regions, proportion) and stops at the control-to-full-strength step (EVERY zero, every height). The functional equation is resolution-layer symmetry (pairs zeros) that does NOT pin the line — forcing β=0 is the open content. THREE EXACT CONTROL-REDUCTIONS, each turning RH into a single undischarged property: (A) Hilbert-Pólya self-adjointness (no operator known; Connes reduces RH to trace-formula validity = Weil positivity); (B) Weil/Li/Bombieri-Lagarias positivity (λ_n ≥ 0 / explicit-formula distribution ≥ 0); (C) function-field Frobenius/Rosati positivity — PROVEN (Weil/Deligne), stops at the number field (no Frobenius/Rosati in char 0) = canonical "one-dimensional engine stops."
-
-DEEPEST FINDING — the TWO-AVATARS structure: function-field RH (varieties/F_q, PROVEN Weil/Deligne) vs number-field RH (ζ(s)/Q, OPEN Millennium). Same shape as [[birch_swinnerton_dyer]] (function-field BSD proven Kato-Trihan / number-field BSD open) and [[PvsNP]] (two faces, one closes one open). Two-avatars now in THREE problems → sharpens 6-for-6/7-for-7 from "parallel control-step walls" to "two avatars of one control step, one proven one open." In all three, the function-field/geometric control tool has no char-0/number-field translation. HODGE LINK: the standard conjectures (Lefschetz B = algebraicity of inverse Lefschetz → Rosati-type positivity) are the SAME control step for [[hodge_conjecture]] (HC ⇔ standard conjectures ⇒ motives ⇒ HC) and for a motivic RH (number-field Rosati positivity) — shared control tool, both open. Slice→full echo to [[collatz_conjecture]] (density→pointwise) and [[navier_stokes]] (slice→full 3D).
-
-≥3 approaches named (A Hilbert-Pólya, B positivity, C zero-density/computational, D function-field analogy, E de Branges tracked failed). Simpler-equivalent (Li/Weil/Bombieri-Lagarias), more-general (GRH/Selberg class/function-field RH). Counterevidence: symmetry-doesn't-pin; de Branges failure (coefficient inequality fails); average/density structurally cannot reach "all"; the un-peer-reviewed 2/3 claim. Confidence: RH almost certainly true (computation + GUE statistics + function-field precedent); confidence in a near-term proof LOW (each control-reduction lands on an undischarged property).
-
-OUTCOME: partial (frontier mapped, obstruction framed as control step, BSD twin identified, Hodge standard-conjectures link drawn). No proof move; honest ceiling = map + framing + twin. HONESTY: 2024/preprint items + Connes/Li/Bombieri-Lagarias/Suzuki line-level details flagged [to-verify] against primary sources. NO theory/ promotion yet (optional future: theory/methods/function-field-two-avatars.md for the RH‖BSD twin; theory/methods/standard-conjectures-control.md for the RH‖Hodge link). Wiki now spans 9 problems: 8 open (beals, BSD, NS, YM, Hodge, Collatz, PvsNP, RH) + 1 solved contrast case (poincare). All 7 Clay Millennium problems are now in the wiki (Poincaré solved; RH/BSD/NS/YM/Hodge/PvsNP open). — *Budget: orange (weekly ~83.4%), 0 subagents, 4 WebSearches. Loop still PAUSED (weekly reset Sun Aug 30 7PM local).*
+OUTCOME: confirmed (proof status verified + control-step reframing coherent + NS twin link established), partial as an attack (nothing to attack). HONESTY: exposition of a solved problem, no new mathematics; Perelman-preprint line-level details and the Coldingâ€“Minicozzi width inequality are search/arXiv-summary-level, flagged [to-verify] against primary sources. NO theory/ promotion yet (optional future: theory/theorems/geometrization-poincare.md, theory/methods/ricci-flow-surgery-control.md). Wiki now spans 8 problems: 7 open (beals, BSD, NS, YM, Hodge, Collatz, PvsNP) + 1 solved contrast case (poincare). â€” *Budget: orange (weekly ~83.4%), 0 subagents, 2 WebSearches. Loop still PAUSED (weekly reset Sun Aug 30 7PM local).*
 
 ---
 
-[ATTACK/STUB 2026-08-25] unsolvedproblems.org sweep — user asked: "What about all of the problems on this website? Can we make sure we start a folder for each unsolved problem that we do not have yet?" Authoritative 24-problem list obtained by loading the site in the browser (Playwright) and reading the frame nav (the sidebar is frame-based and dropped by page→markdown; 3 WebFetches failed to capture it; one problem (dorabella) was hidden by an earlier find truncation). Classification of all 24:
+[ATTACK 2026-08-25] riemann-hypothesis (attempt-01) â€” the 9th problem folder, set up at user request: "yes set up the Riemann Hypothesis folders." This was the one Clay Millennium problem missing from the wiki (the prior session's "Riemann-Hypothesis" folder turned out to be PvsNP content). OPEN â€” a genuine attack (unlike the solved [[poincare_conjecture]] contrast case). Folder `problems/riemann-hypothesis/` created standard layout (problem.md / progress.md read-first / notes.md / attempts/attempt-01.md), kebab-case. Cross-problem wikilink `[[riemann_hypothesis]]`.
+
+VERIFICATION (4 WebSearches, orange zone, 0 subagents; 2 succeeded richly, 2 rate-failed): classical facts search-confirmed â€” Weil 1940s (RH for curves over finite fields), Deligne 1973/74 (Weil conjectures, RH for all varieties over F_q, via Ã©tale cohomology + Lefschetz trace + Rosati-positivity); Hilbert-PÃ³lya spectral program; Connes 1997 (numdam 10.5802/jedp.516) + 2019 essay (adele-class space spectral interpretation, RH âŸº trace formula validity, minus-sign/Riemannian obstruction); Li criterion 1997 (JNT 65, Î»_n â‰¥ 0 âŸº RH); Bombieri-Lagarias 1999 (JNT 77, generalization); Lagarias 1999 (Acta Arith. 89, Î¾-positivity); Suzuki 2023 (JLMS DOI 10.1112/jlms.12785, screw-function/KreÄ­n equivalents). Computational record: Platt-Trudgian 2021, all zeros on the line to height T = 3Ã—10^12 (standing record; no newer height record found). 2024 advances (status-checked): Guth-Maynard 2024 new zero-density bound at Ïƒ=3/4 breaking Ingham's 1940 80-year record (harmonic analysis + Dirichlet-polynomial matrix eigenvalues; sharper prime counts in short intervals) â€” RESOLUTION-ON-AVERAGE, not the control wall; Chourasiya 2024 (arXiv:2412.02068) first explicit Carlson estimate N(Ïƒ,T) â‰¤ K T^{4Ïƒ(1âˆ’Ïƒ)} (log T)^{5âˆ’2Ïƒ}. Proportion-on-line: Levinson 1/3 (1974) â†’ Conrey 2/5 (1989) â†’ 5/12 (2020); a 2024 claim of 2/3 (linear-algebraic/Weil-explicit-formula + Montgomery pair-correlation, Lean-4 core) flagged [rh-2024-claims-unverified] (NOT peer-reviewed; even if true a proportion â‰  all). CORRECTION (append-only): the prior session's working memory had no RH folder; none mislabeled here.
+
+METHODOLOGICAL CONTRIBUTION â€” RH framed through the control-step lens as the 8th OPEN problem (7 prior open + PoincarÃ© solved contrast): resolution works on a slice/on average (computation up to T, Selberg almost-all, zero-density, zero-free regions, proportion) and stops at the control-to-full-strength step (EVERY zero, every height). The functional equation is resolution-layer symmetry (pairs zeros) that does NOT pin the line â€” forcing Î²=0 is the open content. THREE EXACT CONTROL-REDUCTIONS, each turning RH into a single undischarged property: (A) Hilbert-PÃ³lya self-adjointness (no operator known; Connes reduces RH to trace-formula validity = Weil positivity); (B) Weil/Li/Bombieri-Lagarias positivity (Î»_n â‰¥ 0 / explicit-formula distribution â‰¥ 0); (C) function-field Frobenius/Rosati positivity â€” PROVEN (Weil/Deligne), stops at the number field (no Frobenius/Rosati in char 0) = canonical "one-dimensional engine stops."
+
+DEEPEST FINDING â€” the TWO-AVATARS structure: function-field RH (varieties/F_q, PROVEN Weil/Deligne) vs number-field RH (Î¶(s)/Q, OPEN Millennium). Same shape as [[birch_swinnerton_dyer]] (function-field BSD proven Kato-Trihan / number-field BSD open) and [[PvsNP]] (two faces, one closes one open). Two-avatars now in THREE problems â†’ sharpens 6-for-6/7-for-7 from "parallel control-step walls" to "two avatars of one control step, one proven one open." In all three, the function-field/geometric control tool has no char-0/number-field translation. HODGE LINK: the standard conjectures (Lefschetz B = algebraicity of inverse Lefschetz â†’ Rosati-type positivity) are the SAME control step for [[hodge_conjecture]] (HC â‡” standard conjectures â‡’ motives â‡’ HC) and for a motivic RH (number-field Rosati positivity) â€” shared control tool, both open. Sliceâ†’full echo to [[collatz_conjecture]] (densityâ†’pointwise) and [[navier_stokes]] (sliceâ†’full 3D).
+
+â‰¥3 approaches named (A Hilbert-PÃ³lya, B positivity, C zero-density/computational, D function-field analogy, E de Branges tracked failed). Simpler-equivalent (Li/Weil/Bombieri-Lagarias), more-general (GRH/Selberg class/function-field RH). Counterevidence: symmetry-doesn't-pin; de Branges failure (coefficient inequality fails); average/density structurally cannot reach "all"; the un-peer-reviewed 2/3 claim. Confidence: RH almost certainly true (computation + GUE statistics + function-field precedent); confidence in a near-term proof LOW (each control-reduction lands on an undischarged property).
+
+OUTCOME: partial (frontier mapped, obstruction framed as control step, BSD twin identified, Hodge standard-conjectures link drawn). No proof move; honest ceiling = map + framing + twin. HONESTY: 2024/preprint items + Connes/Li/Bombieri-Lagarias/Suzuki line-level details flagged [to-verify] against primary sources. NO theory/ promotion yet (optional future: theory/methods/function-field-two-avatars.md for the RHâ€–BSD twin; theory/methods/standard-conjectures-control.md for the RHâ€–Hodge link). Wiki now spans 9 problems: 8 open (beals, BSD, NS, YM, Hodge, Collatz, PvsNP, RH) + 1 solved contrast case (poincare). All 7 Clay Millennium problems are now in the wiki (PoincarÃ© solved; RH/BSD/NS/YM/Hodge/PvsNP open). â€” *Budget: orange (weekly ~83.4%), 0 subagents, 4 WebSearches. Loop still PAUSED (weekly reset Sun Aug 30 7PM local).*
+
+---
+
+[ATTACK/STUB 2026-08-25] unsolvedproblems.org sweep â€” user asked: "What about all of the problems on this website? Can we make sure we start a folder for each unsolved problem that we do not have yet?" Authoritative 24-problem list obtained by loading the site in the browser (Playwright) and reading the frame nav (the sidebar is frame-based and dropped by pageâ†’markdown; 3 WebFetches failed to capture it; one problem (dorabella) was hidden by an earlier find truncation). Classification of all 24:
 
 ALREADY HAVE (3): beals-conjecture, collatz-conjecture, riemann-hypothesis.
-SOLVED / NON-MATH — NOT given math-attack folders (4): Fermat's Last Theorem (solved, Wiles 1995; covered via [[beals_conjecture]] since Beal⟹FLT); Dorabella Cipher (solved decipherment); Zodiac Cipher (solved decipherment — z340 cracked 2020); Voynich Manuscript (open but DECIPHERMENT, not a conjecture — does not fit the wiki's 10-step attack protocol; flagged to user, not added).
-NEW STUB FOLDERS CREATED (17 — open math/computational problems, problem.md only, full attack pending budget):
-  Number theory / combinatorics: abc-conjecture, goldbach-conjecture, twin-prime-conjecture, legendre-conjecture, brocard-problem, grimm-conjecture, lonely-runner-conjecture, odd-perfect-number, perfect-cuboid, 4d-euler-brick, rational-distance, magic-square-of-squares, square-of-cubes (semi-magic of cubes, statement confirmed via fetch: 3×3 semi-magic of 9 distinct positive cubes, known 8/9 near-miss), chromatic-number-of-the-plane (Hadwiger–Nelson, 5≤χ≤7; de Grey 2018 χ≥5).
-  Computational / crypto (overlap [[PvsNP]], each flagged as a subface): rsa-factoring (integer factorization in P?), discrete-logarithm (DLP), diffie-hellman (CDH; DLP⟹CDH, converse open).
+SOLVED / NON-MATH â€” NOT given math-attack folders (4): Fermat's Last Theorem (solved, Wiles 1995; covered via [[beals_conjecture]] since BealâŸ¹FLT); Dorabella Cipher (solved decipherment); Zodiac Cipher (solved decipherment â€” z340 cracked 2020); Voynich Manuscript (open but DECIPHERMENT, not a conjecture â€” does not fit the wiki's 10-step attack protocol; flagged to user, not added).
+NEW STUB FOLDERS CREATED (17 â€” open math/computational problems, problem.md only, full attack pending budget):
+  Number theory / combinatorics: abc-conjecture, goldbach-conjecture, twin-prime-conjecture, legendre-conjecture, brocard-problem, grimm-conjecture, lonely-runner-conjecture, odd-perfect-number, perfect-cuboid, 4d-euler-brick, rational-distance, magic-square-of-squares, square-of-cubes (semi-magic of cubes, statement confirmed via fetch: 3Ã—3 semi-magic of 9 distinct positive cubes, known 8/9 near-miss), chromatic-number-of-the-plane (Hadwigerâ€“Nelson, 5â‰¤Ï‡â‰¤7; de Grey 2018 Ï‡â‰¥5).
+  Computational / crypto (overlap [[PvsNP]], each flagged as a subface): rsa-factoring (integer factorization in P?), discrete-logarithm (DLP), diffie-hellman (CDH; DLPâŸ¹CDH, converse open).
 
-Each stub = statement + status + one-line frontier + one-line control-step framing + cross-problem wikilinks, all load-bearing facts flagged [to-verify]. Registered in index.md under a new "## Problem stubs (folders started, full attack pending)" section. Honesty: depth = stubs only (orange budget weekly ~83.4% — a full 17×4-file attack is infeasible now); "start a folder" = the literal ask. Scope decisions surfaced: (i) the 3 cipher problems excluded as non-conjectures (offered to add a decipherment category if the user wants); (ii) the 3 crypto problems included but flagged as subfaces of [[PvsNP]]'s [witness-needs-explicit-lb] / one-way-function hardness (a full attack would route through PvsNP, not duplicate it). Control-step framing honest where weak (the Diophantine "search→global" problems: perfect-cuboid, 4d-euler-brick, rational-distance, magic-square-of-squares, square-of-cubes, odd-perfect-number, brocard — framed as slice→global / simultaneous-Diophantine control, the weakest fit, flagged as such).
+Each stub = statement + status + one-line frontier + one-line control-step framing + cross-problem wikilinks, all load-bearing facts flagged [to-verify]. Registered in index.md under a new "## Problem stubs (folders started, full attack pending)" section. Honesty: depth = stubs only (orange budget weekly ~83.4% â€” a full 17Ã—4-file attack is infeasible now); "start a folder" = the literal ask. Scope decisions surfaced: (i) the 3 cipher problems excluded as non-conjectures (offered to add a decipherment category if the user wants); (ii) the 3 crypto problems included but flagged as subfaces of [[PvsNP]]'s [witness-needs-explicit-lb] / one-way-function hardness (a full attack would route through PvsNP, not duplicate it). Control-step framing honest where weak (the Diophantine "searchâ†’global" problems: perfect-cuboid, 4d-euler-brick, rational-distance, magic-square-of-squares, square-of-cubes, odd-perfect-number, brocard â€” framed as sliceâ†’global / simultaneous-Diophantine control, the weakest fit, flagged as such).
 
-Wiki now spans 26 problem folders: 9 full (beals, BSD, NS, YM, Hodge, Collatz, PvsNP, poincaré-solved-contrast, riemann) + 17 stubs. All 7 Clay Millennium problems present; the unsolvedproblems.org open set fully covered. — *Budget: orange (weekly ~83.4%), 0 subagents. Loop still PAUSED (weekly reset Sun Aug 30 7PM local).*
+Wiki now spans 26 problem folders: 9 full (beals, BSD, NS, YM, Hodge, Collatz, PvsNP, poincarÃ©-solved-contrast, riemann) + 17 stubs. All 7 Clay Millennium problems present; the unsolvedproblems.org open set fully covered. â€” *Budget: orange (weekly ~83.4%), 0 subagents. Loop still PAUSED (weekly reset Sun Aug 30 7PM local).*
 
 [ATTACK/STUB 2026-08-25] user-requested additions (outside the unsolvedproblems.org sweep):
-  (a) conway-thrackle-conjecture — Conway's Thrackle Conjecture: any thrackle on n
-      vertices has m ≤ n edges. OPEN; US$1000 Conway prize (unclaimed). Verified by
-      computer to n=11. Best upper bound m ≤ 1.393(n−1) (Yian Xu 2021, Appl. Math.
-      Comput., DOI 10.1016/j.amc.2020.125573; confirmed by Keszegh–Suk–Tardos–Zeng
+  (a) conway-thrackle-conjecture â€” Conway's Thrackle Conjecture: any thrackle on n
+      vertices has m â‰¤ n edges. OPEN; US$1000 Conway prize (unclaimed). Verified by
+      computer to n=11. Best upper bound m â‰¤ 1.393(nâˆ’1) (Yian Xu 2021, Appl. Math.
+      Comput., DOI 10.1016/j.amc.2020.125573; confirmed by Keszeghâ€“Sukâ€“Tardosâ€“Zeng
       2025, arXiv:2512.04795 [to-verify]); lower bound m = n attained (odd cycles of
-      length ≥5). Improvement history: 2n−3 (Lovász–Pach–Szegedy 1997) → 3/2(n−1)
-      (Cairns–Nikolayevsky 2000) → 1.428n (Fulek–Pach 2011) → 1.3984n (2019) → 1.393.
-      Solved special cases: geometric/straight-line (Erdős; short proof Perles),
-      outerplanar, x-monotone (Pach–Sterling 2011). Structural localization: if
+      length â‰¥5). Improvement history: 2nâˆ’3 (LovÃ¡szâ€“Pachâ€“Szegedy 1997) â†’ 3/2(nâˆ’1)
+      (Cairnsâ€“Nikolayevsky 2000) â†’ 1.428n (Fulekâ€“Pach 2011) â†’ 1.3984n (2019) â†’ 1.393.
+      Solved special cases: geometric/straight-line (ErdÅ‘s; short proof Perles),
+      outerplanar, x-monotone (Pachâ€“Sterling 2011). Structural localization: if
       false, minimal counterexample = two even cycles sharing a vertex. Control
-      framing: two-sided-bound squeeze (Conway thrackle constant C_78 ∈ [1, 1.393]),
-      twin to [[chromatic_number_of_the_plane]] (5≤χ≤7).
-  (b) aaronson-quantum-prize — Aaronson's US$100,000 wager (2012, IEEE Spectrum)
+      framing: two-sided-bound squeeze (Conway thrackle constant C_78 âˆˆ [1, 1.393]),
+      twin to [[chromatic_number_of_the_plane]] (5â‰¤Ï‡â‰¤7).
+  (b) aaronson-quantum-prize â€” Aaronson's US$100,000 wager (2012, IEEE Spectrum)
       that scalable quantum computing is IMPOSSIBLE in the physical world (the
       skeptics' burden: supply a physical reason scalable QC fails AND the fast
       classical algorithm simulating Nature's quantum systems). OPEN; prize
       unclaimed [to-verify: status]. Underlying open problem: is scalable,
       fault-tolerant quantum computation physically realizable? Frontier: finite/
       noisy "quantum supremacy" demonstrations (Google Sycamore 2019 53-qubit RCS;
-      BosonSampling) are CONDITIONAL-hardness results (QUATH/XQUATH; Aaronson–Chen
-      2017, Aaronson–Gunn 2020); unconditional hardness would need P≠PSPACE (open).
+      BosonSampling) are CONDITIONAL-hardness results (QUATH/XQUATH; Aaronsonâ€“Chen
+      2017, Aaronsonâ€“Gunn 2020); unconditional hardness would need Pâ‰ PSPACE (open).
       Threshold theorem = conditional physical scalability. Control framing:
-      two-avatars (twin to BSD/RH) — complexity avatar (unconditional classical
-      hardness = a P≠PSPACE-type lower bound, subface of [[PvsNP]]
+      two-avatars (twin to BSD/RH) â€” complexity avatar (unconditional classical
+      hardness = a Pâ‰ PSPACE-type lower bound, subface of [[PvsNP]]
       [witness-needs-explicit-lb] / natural-proofs frontier) + physics avatar
       (impossibility = a [[yang_mills]]-grade new physical theory). Resolution runs
       on the finite/noisy supremacy slice; control-to-scalable is the wall on both
@@ -2310,49 +2310,49 @@ Wiki now spans 26 problem folders: 9 full (beals, BSD, NS, YM, Hodge, Collatz, P
 
 ---
 
-[CONTINUE 2026-08-30] birch-swinnerton-dyer (attempt-08) — primary-source
-verification of Kataoka–Sano 2024 against the published PDF body, executed
+[CONTINUE 2026-08-30] birch-swinnerton-dyer (attempt-08) â€” primary-source
+verification of Kataokaâ€“Sano 2024 against the published PDF body, executed
 under the user's "Spend now" choice (orange zone, weekly ~83.4%, 0 subagents,
 resetting Sun Aug 30 7 PM local). This is the attempt-07 "Next (attempt-08)"
 target: upgrade [bsd-kataoka-sano-2024] from to-verify to CONFIRMED.
 
-METHOD: the published PDF (J. Assoc. Math. Res. 2(2):154–208, 2024, DOI
+METHOD: the published PDF (J. Assoc. Math. Res. 2(2):154â€“208, 2024, DOI
 10.56994/jamr.002.002.001) was downloaded and text-extracted with a raw
 zlib/FlateDecode stream extractor written in Python (no PDF library available
-— fitz/pypdf/PyPDF2/pdfplumber/pdfminer all missing; Read's pdftoppm also
-absent). The extractor decompressed each `stream…endstream` block and pulled
-`(…)Tj` / `[…]TJ` text operators, yielding 139 KB of fragmented text (spaces
-dropped, accents mangled) — sufficient to read theorem numbers and formulas
+â€” fitz/pypdf/PyPDF2/pdfplumber/pdfminer all missing; Read's pdftoppm also
+absent). The extractor decompressed each `streamâ€¦endstream` block and pulled
+`(â€¦)Tj` / `[â€¦]TJ` text operators, yielding 139 KB of fragmented text (spaces
+dropped, accents mangled) â€” sufficient to read theorem numbers and formulas
 verbatim.
 
 NUMBERING DISCREPANCY RESOLVED: the published version renumbered the
 introduction. Authoritative published numbers (read from the PDF): Thm 1.4
-(Thm 5.17) Heegner MC ⟺ Iwasawa MC for z^Hg_∞; Thm 1.5 (Thm 5.18) Heegner MC
-⟹ rank-two Euler system c with c_{K_∞}=z^Hg_∞; Conj 1.9 (Prop 5.26)
-Darmon-derivative explicit formula κ^Hg_∞ = L*_S(E/K,1)·|D_K|·Ω_{E/K}·R_{E/K}·
-R^Boc_{K_∞}; Thm 1.10 (Thm 5.27) algebraic variant of Conj 1.9 ⟸ Heegner MC
-up to Z_p^×; Thm 1.11 (Thm 5.29) Heegner MC + Conj 1.9 + R^Boc_{K_∞}≠0 ⟹
+(Thm 5.17) Heegner MC âŸº Iwasawa MC for z^Hg_âˆž; Thm 1.5 (Thm 5.18) Heegner MC
+âŸ¹ rank-two Euler system c with c_{K_âˆž}=z^Hg_âˆž; Conj 1.9 (Prop 5.26)
+Darmon-derivative explicit formula Îº^Hg_âˆž = L*_S(E/K,1)Â·|D_K|Â·Î©_{E/K}Â·R_{E/K}Â·
+R^Boc_{K_âˆž}; Thm 1.10 (Thm 5.27) algebraic variant of Conj 1.9 âŸ¸ Heegner MC
+up to Z_p^Ã—; Thm 1.11 (Thm 5.29) Heegner MC + Conj 1.9 + R^Boc_{K_âˆž}â‰ 0 âŸ¹
 p-part of BSD for E/K. The arXiv v1 had Conj 1.6 / Thm 1.8 (pre-revision).
 The wiki's existing citation (Conj 1.9 / Thm 1.11) is CORRECT for the
 published version; both numberings now recorded.
 
 ALL FIVE LOAD-BEARING CLAIMS CONFIRMED verbatim, plus the basic-rank r_T=2
-claim ("the basic rank r_T is two in this setting, since we have ⊕_{v∈S_∞(K)}
+claim ("the basic rank r_T is two in this setting, since we have âŠ•_{vâˆˆS_âˆž(K)}
 H^0(K_v,T*(1)) = H^0(C,T*(1)) = T*(1) and this is a free Z_p-module of rank
 two") and the abstract's "natural interpretation of the Heegner point main
 conjecture in terms of rank two Euler systems."
 
 BCK21 SHARPENING (the cycle's most consequential new fact): Remark 1.6 reads
-"Burungale–Castella–Kim has recently proved the Heegner point main conjecture
+"Burungaleâ€“Castellaâ€“Kim has recently proved the Heegner point main conjecture
 under mild [conditions] (BCK21). [Theorem] 1.5 gives an unconditional
 construction of a rank two Euler system which is related to Heegner points.
 However, it should be noted that our [construction is not canonical]." So
-Burungale–Castella–Kim (Algebra & Number Theory 15, 2021) discharges the
-FIRST leg of the three-fold conditional — Thm 1.5's rank-2 Euler system now
+Burungaleâ€“Castellaâ€“Kim (Algebra & Number Theory 15, 2021) discharges the
+FIRST leg of the three-fold conditional â€” Thm 1.5's rank-2 Euler system now
 exists UNCONDITIONALLY (non-canonically). The three-fold conditional of
-Thm 1.11 is now TWO-fold: Conj 1.9 (Darmon-derivative) + R^Boc_{K_∞}≠0
+Thm 1.11 is now TWO-fold: Conj 1.9 (Darmon-derivative) + R^Boc_{K_âˆž}â‰ 0
 (Bockstein regulator). This is a clean confirmation of attempt-07's
-"obstruction at the control step, not the resolution step" — the resolution
+"obstruction at the control step, not the resolution step" â€” the resolution
 step (rank-2 Euler system existence) is now discharged by a named theorem,
 and the control step (Darmon-derivative Kolyvagin system + non-degeneracy)
 is the wall. Direction (A) is anchored to a named two-condition target.
@@ -2361,111 +2361,111 @@ HONESTY: (i) the PDF text is fragmented (raw stream extractor), but every
 content claim rests on an unambiguous fragment; (ii) BCK21's exact hypotheses
 are flagged to-verify (Remark 1.6 says "under mild conditions" without
 spelling them out in the extracted text); (iii) Thm 1.10's precise "up to
-Z_p^×" qualifier is read from the PDF but not line-by-line re-derived. No
-proof move; BSD remains open (rank ≥2 and exact |Sha| untouched).
+Z_p^Ã—" qualifier is read from the PDF but not line-by-line re-derived. No
+proof move; BSD remains open (rank â‰¥2 and exact |Sha| untouched).
 
 FILES: attempt-08.md written; progress.md consolidated through attempt-08
 ([bsd-kataoka-sano-2024] upgraded to CONFIRMED with published numbering +
 BCK21 note); index.md attempt-08 line added; this log entry appended.
 
 NEXT (attempt-09, when budget allows): primary-source-verify BCK21
-(Burungale–Castella–Kim 2021, ANT 15) — the exact hypotheses under which the
+(Burungaleâ€“Castellaâ€“Kim 2021, ANT 15) â€” the exact hypotheses under which the
 Heegner MC is now proven, since that determines how "unconditional" Thm 1.5's
 rank-2 Euler system really is. Secondary: verify Thm 1.10 and Conj 1.9's
-algebraic variant against §5.4. — *Budget: orange (weekly ~83.4%), 0
+algebraic variant against Â§5.4. â€” *Budget: orange (weekly ~83.4%), 0
 subagents. Loop still PAUSED (weekly reset Sun Aug 30 7 PM local).*
 
 ---
 
-[CONTINUE 2026-08-30] birch-swinnerton-dyer (attempt-09) — primary-source
+[CONTINUE 2026-08-30] birch-swinnerton-dyer (attempt-09) â€” primary-source
 verification of BCK21, executed under the user's "run until 99% weekly used"
 directive. Live usage checked via Playwright on the Ollama settings page:
 **weekly 94.5% used** (resets Sun Aug 30 7 PM, ~18h), session 26.5%. The
 stale usage-status.json (83.4%, Aug 25) was superseded by the live read.
 
-VERIFIED (1 WebSearch, primary source): Burungale–Castella–Kim, *A proof of
+VERIFIED (1 WebSearch, primary source): Burungaleâ€“Castellaâ€“Kim, *A proof of
 Perrin-Riou's Heegner point main conjecture*, Algebra & Number Theory 15:7
-(2021), 1627–1653, DOI 10.2140/ant.2021.15.1627, arXiv:1908.09512. This pins
-down the "mild conditions" of Kataoka–Sano's Remark 1.6 (attempt-08). Theorem
+(2021), 1627â€“1653, DOI 10.2140/ant.2021.15.1627, arXiv:1908.09512. This pins
+down the "mild conditions" of Kataokaâ€“Sano's Remark 1.6 (attempt-08). Theorem
 A: E/Q conductor N, p>3 good ordinary, K imaginary quadratic with (Heeg)
 generalized Heegner hypothesis (N^- squarefree product of an EVEN number of
-primes) + (disc) D_K odd ≠ −3, Hypothesis ♠ (three ramification conditions on
-E[p]), ρ surjective, p nonanomalous ⟹ the Heegner MC (Perrin-Riou Conj 1.1)
-holds. So Kataoka–Sano Thm 1.5's rank-2 Euler system exists UNCONDITIONALLY
-within this class — the three-fold conditional is now TWO-fold (Conj 1.9 +
-R^Boc_{K_∞}≠0). Theorem B (bonus): + p splits ⟹ Iwasawa–Greenberg MC for the
-BDP p-adic L-function Char_Λ(X^{∅,0}) = (L_p^BDP)² — the anticyclotomic
+primes) + (disc) D_K odd â‰  âˆ’3, Hypothesis â™  (three ramification conditions on
+E[p]), Ï surjective, p nonanomalous âŸ¹ the Heegner MC (Perrin-Riou Conj 1.1)
+holds. So Kataokaâ€“Sano Thm 1.5's rank-2 Euler system exists UNCONDITIONALLY
+within this class â€” the three-fold conditional is now TWO-fold (Conj 1.9 +
+R^Boc_{K_âˆž}â‰ 0). Theorem B (bonus): + p splits âŸ¹ Iwasawaâ€“Greenberg MC for the
+BDP p-adic L-function Char_Î›(X^{âˆ…,0}) = (L_p^BDP)Â² â€” the anticyclotomic
 summand, so BOTH summands' main conjectures (cyclotomic Kato + anticyclotomic
 BDP) are proven and the wall is purely the rank-2 composition control.
-Theorem 3.2: modular-form generalization (Hypothesis ♥, fourth condition
-H¹(Q_ℓ,A_f[℘])=H⁰(Q_ℓ,A_f[℘])={0} for ℓ²|N⁺). Appendix Thm A.1: rank-one
-alternative without nonanomalous (Hypothesis ♠ + ρ surjective + p splits +
+Theorem 3.2: modular-form generalization (Hypothesis â™¥, fourth condition
+HÂ¹(Q_â„“,A_f[â„˜])=Hâ°(Q_â„“,A_f[â„˜])={0} for â„“Â²|Nâº). Appendix Thm A.1: rank-one
+alternative without nonanomalous (Hypothesis â™  + Ï surjective + p splits +
 ord_{s=1}L(E/K,s)=1). Methods: Howard bipartite Euler systems (2006), Wei
-Zhang Kolyvagin-conjecture (2014), Bertolini–Darmon (2005), Pollack–Weston
-(2011), Chida–Hsieh (2015), Castella–Hsieh explicit reciprocity extended to
-N^-≠1; dispenses with Xin Wan's Rankin–Selberg results; allows N^-=1, N with
+Zhang Kolyvagin-conjecture (2014), Bertoliniâ€“Darmon (2005), Pollackâ€“Weston
+(2011), Chidaâ€“Hsieh (2015), Castellaâ€“Hsieh explicit reciprocity extended to
+N^-â‰ 1; dispenses with Xin Wan's Rankinâ€“Selberg results; allows N^-=1, N with
 square factors, p inert.
 
-SHARPENING: the BSD obstruction is now the cleanest it has ever been — a
-TWO-fold conditional (Conj 1.9 Darmon-derivative + R^Boc_{K_∞}≠0 Bockstein
+SHARPENING: the BSD obstruction is now the cleanest it has ever been â€” a
+TWO-fold conditional (Conj 1.9 Darmon-derivative + R^Boc_{K_âˆž}â‰ 0 Bockstein
 regulator) over a PROVEN base (Heegner MC, BCK21 Thm A). Both summands'
 main conjectures are theorems; the wall is purely the rank-2 composition
 control (Darmon-derivative Kolyvagin system + non-degeneracy). This is the
 sharpest statement of the "obstruction at control, not resolution" thesis.
 
-HONESTY: (i) no proof move — BSD open, rank ≥2 and exact |Sha| untouched;
+HONESTY: (i) no proof move â€” BSD open, rank â‰¥2 and exact |Sha| untouched;
 (ii) the Heegner MC is proven for a large explicit class, NOT all E/Q (good
-ordinary, p>3, Hypothesis ♠, ρ surjective, p nonanomalous); (iii) Theorem B's
-Char_Λ ideal equality and Theorem 3.2's Hypothesis ♥ fourth condition are
+ordinary, p>3, Hypothesis â™ , Ï surjective, p nonanomalous); (iii) Theorem B's
+Char_Î› ideal equality and Theorem 3.2's Hypothesis â™¥ fourth condition are
 recorded from the search summary (primary-source-consistent, not line-by-line
-re-derived) — flagged to-verify if load-bearing.
+re-derived) â€” flagged to-verify if load-bearing.
 
 FILES: attempt-09.md written; progress.md consolidated through attempt-09
 ([bsd-bck21-2021] added CONFIRMED); index.md attempt-09 line added; this log
 entry appended.
 
 NEXT (attempt-10): survey what is known toward Conj 1.9 (the Darmon-derivative
-explicit formula — Thm 1.10 already reduces it to the Heegner MC up to Z_p^×,
-so the gap is the explicit Z_p^× unit = the Bockstein regulator) and whether
-R^Boc_{K_∞}≠0 is known in any case. — *Budget: weekly 94.5% → spending toward
+explicit formula â€” Thm 1.10 already reduces it to the Heegner MC up to Z_p^Ã—,
+so the gap is the explicit Z_p^Ã— unit = the Bockstein regulator) and whether
+R^Boc_{K_âˆž}â‰ 0 is known in any case. â€” *Budget: weekly 94.5% â†’ spending toward
 the user's 99% target; 0 subagents.*
 
 ---
 
-[CONTINUE 2026-08-30] birch-swinnerton-dyer (attempt-10) — survey of the
-remaining two-fold conditional (Conj 1.9 + R^Boc_{K_∞}≠0), under the user's
+[CONTINUE 2026-08-30] birch-swinnerton-dyer (attempt-10) â€” survey of the
+remaining two-fold conditional (Conj 1.9 + R^Boc_{K_âˆž}â‰ 0), under the user's
 "run until 99% weekly used" directive. Live usage: weekly 95.1% (up 0.6% from
 one cycle).
 
 VERIFIED (1 WebSearch): the remaining gap is located in the literature. Sano
 2023, *Derived Bockstein regulators and anticyclotomic p-adic Birch and
-Swinnerton-Dyer conjectures*, arXiv:2308.08875 — introduces "derived Bockstein
-regulators" (Nekovář's Selmer complexes, Astérisque 310); general descent
-formalism (Thm 2.13); Thm 3.10 (Bertolini–Darmon BSD-type conjecture for
-Heegner points ⟸ Heegner MC up to a p-adic unit, UNCONDITIONAL corollary via
-BCK21); Thm 4.13 (Agboola–Castella p-adic BSD for BDP ⟸ Iwasawa–Greenberg MC
-up to a unit); Conj 5.5 (derived setting for Kataoka–Sano derivative
-conjectures). Cyclotomic twin: Burns–Kurihara–Sano 2025 (IMRN, DOI
+Swinnerton-Dyer conjectures*, arXiv:2308.08875 â€” introduces "derived Bockstein
+regulators" (NekovÃ¡Å™'s Selmer complexes, AstÃ©risque 310); general descent
+formalism (Thm 2.13); Thm 3.10 (Bertoliniâ€“Darmon BSD-type conjecture for
+Heegner points âŸ¸ Heegner MC up to a p-adic unit, UNCONDITIONAL corollary via
+BCK21); Thm 4.13 (Agboolaâ€“Castella p-adic BSD for BDP âŸ¸ Iwasawaâ€“Greenberg MC
+up to a unit); Conj 5.5 (derived setting for Kataokaâ€“Sano derivative
+conjectures). Cyclotomic twin: Burnsâ€“Kuriharaâ€“Sano 2025 (IMRN, DOI
 10.1093/imrn/rnaf012, Kato derivatives + Mazur-Tate). Original: Darmon 2007
 refined Mazur-Tate for Heegner points.
 
 STRUCTURAL INSIGHT: the regulator is DERIVED because the anticyclotomic p-adic
-height pairing degenerates — this is WHY the remaining gap is a derived
+height pairing degenerates â€” this is WHY the remaining gap is a derived
 control step, not a classical one. It is a concrete, named mechanism, not a
 vague "rank-2 is hard."
 
 SHARPENING: the entire BSD-for-E/K chain is now proven UP TO A SINGLE p-adic
 unit (the derived Bockstein regulator). Conj 1.9 is the explicit formula for
-that unit; R^Boc_{K_∞}≠0 is its non-vanishing. So the BSD obstruction is now:
+that unit; R^Boc_{K_âˆž}â‰ 0 is its non-vanishing. So the BSD obstruction is now:
 one explicit p-adic unit (the derived Bockstein regulator) separates the
 proven "up to a unit" results from the full p-part of BSD for E/K. The
 two-summand structure persists to the control step (cyclotomic Kato
 derivatives + anticyclotomic Heegner derivatives).
 
-HONESTY: (i) no proof move — BSD open, rank ≥2 and exact |Sha| untouched;
+HONESTY: (i) no proof move â€” BSD open, rank â‰¥2 and exact |Sha| untouched;
 (ii) Sano 2023 is an arXiv preprint (publication status not confirmed);
 (iii) the theorem statements (Sano Thm 2.13/3.10/4.13, Conj 5.5; BKS 2025)
-are recorded from the search summary, not line-by-line re-derived — flagged
+are recorded from the search summary, not line-by-line re-derived â€” flagged
 to-verify; (iv) the "degenerate height pairing" mechanism is search-derived.
 
 FILES: attempt-10.md written; progress.md consolidated through attempt-10
@@ -2473,31 +2473,31 @@ FILES: attempt-10.md written; progress.md consolidated through attempt-10
 added; this log entry appended.
 
 NEXT (attempt-11): primary-source-verify Sano 2023 (arXiv:2308.08875) against
-the paper body — the exact statements of Thm 3.10/4.13 and whether Conj 5.5
-subsumes Kataoka–Sano's Conj 1.9. — *Budget: weekly 95.1% → spending toward
+the paper body â€” the exact statements of Thm 3.10/4.13 and whether Conj 5.5
+subsumes Kataokaâ€“Sano's Conj 1.9. â€” *Budget: weekly 95.1% â†’ spending toward
 the user's 99% target; 0 subagents.*
 
 ---
 
-[CONTINUE 2026-08-30] birch-swinnerton-dyer (attempt-11) — primary-source
+[CONTINUE 2026-08-30] birch-swinnerton-dyer (attempt-11) â€” primary-source
 verification of Sano 2023 against the arXiv abstract (WebFetch of
 arxiv.org/abs/2308.08875), under the user's "run until 99% weekly used"
 directive. Live usage: weekly 96% (up 0.9% from one cycle).
 
 CONFIRMED from the abstract: Takamichi Sano, *Derived Bockstein regulators and
 anticyclotomic p-adic Birch and Swinnerton-Dyer conjectures*, arXiv:2308.08875,
-submitted 17 Aug 2023 — ARXIV-ONLY (no journal reference; a preprint, not
+submitted 17 Aug 2023 â€” ARXIV-ONLY (no journal reference; a preprint, not
 peer-reviewed). "Derived Bockstein regulators" introduced "by using an idea of
-Nekovář" + "a general descent formalism involving derived Bockstein
-regulators." Three applications confirmed: (1) Bertolini–Darmon BSD-type
-conjecture for Heegner points ⟸ Perrin-Riou's Heegner MC up to a p-adic unit;
-(2) Agboola–Castella p-adic BSD for BDP ⟸ Iwasawa–Greenberg MC up to a
-p-adic unit; (3) Kataoka–Sano derivative conjectures extended to a "natural
+NekovÃ¡Å™" + "a general descent formalism involving derived Bockstein
+regulators." Three applications confirmed: (1) Bertoliniâ€“Darmon BSD-type
+conjecture for Heegner points âŸ¸ Perrin-Riou's Heegner MC up to a p-adic unit;
+(2) Agboolaâ€“Castella p-adic BSD for BDP âŸ¸ Iwasawaâ€“Greenberg MC up to a
+p-adic unit; (3) Kataokaâ€“Sano derivative conjectures extended to a "natural
 derived setting."
 
 DOWNGRADED to to-verify (NOT in the abstract): the exact theorem numbers
 (2.13/3.10/4.13/5.5), the "unconditional corollary via BCK21," and the
-"degenerate height pairing" mechanism (attempt-10's structural explanation) —
+"degenerate height pairing" mechanism (attempt-10's structural explanation) â€”
 all search-derived, need the PDF body. The core "one explicit p-adic unit"
 sharpening survives at the abstract level.
 
@@ -2507,14 +2507,14 @@ index.md attempt-11 line added; this log entry appended.
 
 NEXT (attempt-12): either fetch the Sano 2023 PDF body to confirm Thm
 3.10/4.13 exact statements, or rotate to navier-stokes (attempt-07) per the
-standing rotation — the BSD direction-(A) chain is now mapped to a single
+standing rotation â€” the BSD direction-(A) chain is now mapped to a single
 named target (the derived Bockstein regulator), so further BSD verification
-is PDF-body-level detail. — *Budget: weekly 96% → spending toward the user's
+is PDF-body-level detail. â€” *Budget: weekly 96% â†’ spending toward the user's
 99% target; 0 subagents.*
 
 ---
 
-[CONTINUE 2026-08-30] navier-stokes (attempt-07) — rotation turn, under the
+[CONTINUE 2026-08-30] navier-stokes (attempt-07) â€” rotation turn, under the
 user's "run until 99% weekly used" directive. Two WebSearches; resolves the
 two remaining attempt-06 to-verify items.
 
@@ -2524,34 +2524,34 @@ on potential Type II blowups of axisymmetric solutions to the Navier-Stokes
 equations" (dedicated to Nadirashvili). Decisive evidence: Seregin's own July
 2025 preprint (arXiv:2507.08733) cites 2402.13229 as a preprint. The
 PUBLISHED Seregin piece is the predecessor: *Remarks on Type II blowups of
-solutions to the Navier-Stokes equations*, CPAA 23(10) (2024), 1389–1406, DOI
-10.3934/cpaa.2023108 (dedicated to Šverák). NEW: Seregin July 2025 preprint
+solutions to the Navier-Stokes equations*, CPAA 23(10) (2024), 1389â€“1406, DOI
+10.3934/cpaa.2023108 (dedicated to Å verÃ¡k). NEW: Seregin July 2025 preprint
 arXiv:2507.08733, "A note on certain scenarios of Type II blowups of suitable
-weak solutions to the Navier-Stokes equations" — the Type II exclusion
+weak solutions to the Navier-Stokes equations" â€” the Type II exclusion
 program continues. The Hou/Seregin peer-review asymmetry persists (Hou 2024
 published Found. Comput. Math. 2026; Seregin 2024 preprint) but the fence now
 has a published predecessor + a 2025 extension.
 
-(ii) HUANG–QIN–WANG–WEI CMP 406:243 (2025) CONFIRMED: *Exact Self-Similar
-Finite-Time Blowup of the Hou–Luo Model with Smooth Profiles*, DOI
+(ii) HUANGâ€“QINâ€“WANGâ€“WEI CMP 406:243 (2025) CONFIRMED: *Exact Self-Similar
+Finite-Time Blowup of the Houâ€“Luo Model with Smooth Profiles*, DOI
 10.1007/s00220-025-05429-9, arXiv:2308.01528 (received 3 Nov 2024, accepted
 29 July 2025, published 1 Sept 2025, communicated by A. Ionescu). PURELY
 ANALYTIC: Schauder fixed-point argument on a compact convex set in a weighted
-L^∞ Banach space, NO computer assistance; C^∞ smooth profiles with proven
-monotonicity/convexity + algebraic far-field decay; scaling bound 2 < c_l ≤
-2(α+1)/(α−1) ≈ 4.5298 (cruder than Chen–Hou–Huang's computer-assisted
-2.99870±6×10⁻⁵, Ann. PDE 2022, but analytic); builds on their ARMA 248 (2024)
+L^âˆž Banach space, NO computer assistance; C^âˆž smooth profiles with proven
+monotonicity/convexity + algebraic far-field decay; scaling bound 2 < c_l â‰¤
+2(Î±+1)/(Î±âˆ’1) â‰ˆ 4.5298 (cruder than Chenâ€“Houâ€“Huang's computer-assisted
+2.99870Â±6Ã—10â»âµ, Ann. PDE 2022, but analytic); builds on their ARMA 248 (2024)
 generalized-CLM framework; next target 2D Boussinesq.
 
-SHARPENING: the 1D Hou–Luo engine now achieves exact self-similar blowup
-FULLY ANALYTICALLY (upgraded from computer-assisted) — the resolution side of
-the 1D slice is analytic; the control step (1D/weakened → full 3D smooth
+SHARPENING: the 1D Houâ€“Luo engine now achieves exact self-similar blowup
+FULLY ANALYTICALLY (upgraded from computer-assisted) â€” the resolution side of
+the 1D slice is analytic; the control step (1D/weakened â†’ full 3D smooth
 data) remains the wall. The cleanest NS mirror of the "obstruction at
 control, not resolution" thesis.
 
-HONESTY: (i) no proof move — Millennium problem untouched; (ii) Seregin 2025
+HONESTY: (i) no proof move â€” Millennium problem untouched; (ii) Seregin 2025
 (2507.08733) content recorded from the search summary (title + citation
-behavior confirmed; content to-verify); (iii) Hou–Qin–Wang arXiv:2606.26658
+behavior confirmed; content to-verify); (iii) Houâ€“Qinâ€“Wang arXiv:2606.26658
 (2026) remains to-verify (not searched); (iv) HQWW details from the search
 summary, not line-by-line re-derived from the CMP PDF.
 
@@ -2559,46 +2559,46 @@ FILES: attempt-07.md written; progress.md consolidated through attempt-07
 (Seregin status resolved; HQWW CMP 2025 upgraded to verified); index.md
 attempt-07 line added; this log entry appended.
 
-NEXT (attempt-08): verify Seregin 2025 (arXiv:2507.08733) and Hou–Qin–Wang
-2026 (arXiv:2606.26658) — whether the fence has moved or the
-generalized→true-viscosity gap has narrowed. — *Budget: weekly ~96% →
+NEXT (attempt-08): verify Seregin 2025 (arXiv:2507.08733) and Houâ€“Qinâ€“Wang
+2026 (arXiv:2606.26658) â€” whether the fence has moved or the
+generalizedâ†’true-viscosity gap has narrowed. â€” *Budget: weekly ~96% â†’
 spending toward the user's 99% target; 0 subagents.*
 
 ---
 
-[CONTINUE 2026-08-30] navier-stokes (attempt-08) — two WebSearches, under the
+[CONTINUE 2026-08-30] navier-stokes (attempt-08) â€” two WebSearches, under the
 user's "run until 99% weekly used" directive. Live usage: weekly 97.4%.
 
 (i) SEREGIN 2025 (arXiv:2507.08733) CONFIRMED: *A note on certain scenarios
 of Type II blowups of suitable weak solutions to the Navier-Stokes equations*
 (July 11, 2025, preprint, math.AP; Leverhulme Emeritus Fellowship 2023).
 Technique: Euler scaling + LIOUVILLE-TYPE THEOREMS FOR ANCIENT EULER
-SOLUTIONS — a new engine for the Type II exclusion fence. Thm 2.1: parameter
-region for m, m₀ completely excluding a Type II scenario (growth (1.2) +
+SOLUTIONS â€” a new engine for the Type II exclusion fence. Thm 2.1: parameter
+region for m, mâ‚€ completely excluding a Type II scenario (growth (1.2) +
 boundedness (1.4)); shows a CPAA 2024 restriction was TOO STRONG (the fence
 is widening). Sec 3: modified scenario, necessary condition = non-trivial
 ancient Euler solution in a specific class. Sec 4: Liouville theorems
 (self-similar, discrete self-similar, axisymmetric zero-swirl). Thm 5.1:
 exclusion under an LPS-type condition (classical LPS when m=1).
 
-(ii) HOU–QIN–WANG 2026 (arXiv:2606.26658) CONFIRMED: *Exact Blowup Analysis
-for the Weak-Advection Hou–Li Model* (June 25, 2026, preprint). Exact
+(ii) HOUâ€“QINâ€“WANG 2026 (arXiv:2606.26658) CONFIRMED: *Exact Blowup Analysis
+for the Weak-Advection Houâ€“Li Model* (June 25, 2026, preprint). Exact
 finite-time self-similar blowup: periodic 2/3<a<1 (profiles neither focusing
-nor expanding); whole-space + Neumann 0<a≤1 (focusing / non-expanding-non-
+nor expanding); whole-space + Neumann 0<aâ‰¤1 (focusing / non-expanding-non-
 focusing / expanding trichotomy by the sign of the scaling parameter).
 Fixed-point near origin + ODE extension + regularity/asymptotics/monotonicity/
 uniqueness. The 1D resolution side is now essentially complete.
 
-(iii) NEW MAJOR — HOU–WANG–YANG 2026 (arXiv:2509.25116v2, v2 Aug 11, 2026):
-*Nonuniqueness of Leray–Hopf solutions to the unforced incompressible 3D
-Navier–Stokes Equation*. Claims the first rigorous COMPUTER-ASSISTED proof of
-Leray–Hopf nonuniqueness: infinitely many distinct SUITABLE Leray–Hopf
+(iii) NEW MAJOR â€” HOUâ€“WANGâ€“YANG 2026 (arXiv:2509.25116v2, v2 Aug 11, 2026):
+*Nonuniqueness of Lerayâ€“Hopf solutions to the unforced incompressible 3D
+Navierâ€“Stokes Equation*. Claims the first rigorous COMPUTER-ASSISTED proof of
+Lerayâ€“Hopf nonuniqueness: infinitely many distinct SUITABLE Lerayâ€“Hopf
 solutions with the same divergence-free initial data; code at
 github.com/HouGroup2026/3d-navier-stokes-nonuniqueness. This is exactly the
-attempt-03 "MAJOR OPEN problem" (Buckmaster–Vicol 2019 proved nonuniqueness
-only below Leray–Hopf, β<1/2). If confirmed, the Leray–Hopf uniqueness
+attempt-03 "MAJOR OPEN problem" (Buckmasterâ€“Vicol 2019 proved nonuniqueness
+only below Lerayâ€“Hopf, Î²<1/2). If confirmed, the Lerayâ€“Hopf uniqueness
 question (open since Leray 1934) is settled NEGATIVELY. FLAGS: preprint,
-computer-assisted (validity depends on the code), search-surfaced — the
+computer-assisted (validity depends on the code), search-surfaced â€” the
 single most consequential NS to-verify item. Does NOT resolve the Millennium
 problem (regularity/breakdown), but sharpens the weak-solution landscape.
 
@@ -2607,9 +2607,9 @@ FILES: attempt-08.md written; progress.md consolidated through attempt-08
 to-verify HIGH PRIORITY); index.md attempt-08 line added; this log entry
 appended.
 
-NEXT (attempt-09): primary-source-verify Hou–Wang–Yang 2026
-(arXiv:2509.25116v2) against the arXiv HTML/PDF (and the code) — the claimed
-Leray–Hopf nonuniqueness proof. — *Budget: weekly 97.4% → spending toward the
+NEXT (attempt-09): primary-source-verify Houâ€“Wangâ€“Yang 2026
+(arXiv:2509.25116v2) against the arXiv HTML/PDF (and the code) â€” the claimed
+Lerayâ€“Hopf nonuniqueness proof. â€” *Budget: weekly 97.4% â†’ spending toward the
 user's 99% target; 0 subagents.*
 
 ## [CONTINUE 2026-08-31] beals-conjecture (attempt-25) + breakthrough-hunt session (ultracode)
@@ -2662,7 +2662,7 @@ Sha-finiteness fix; (e) YM corrections (2505.16585 = Cao-Nissim-Sheffield,
 not Chatterjee; Zenodo SU(3) flag); (f) RH + stubs hunt scans when budget
 allows. - Budget: weekly 43%, session 41.5% at last check; waves <= 3 agents.
 
-## [CONTINUE 2026-08-31] addendum — collatz kill, BSD/YM filings, cycle-bounds page update
+## [CONTINUE 2026-08-31] addendum â€” collatz kill, BSD/YM filings, cycle-bounds page update
 
 1. COLLATZ: the hunt's "m=92 deadlock" candidate KILLED by prior art found in
    the decisive novelty check - Wang 2026 (Zenodo preprints, June 2026,
@@ -2691,7 +2691,7 @@ allows. - Budget: weekly 43%, session 41.5% at last check; waves <= 3 agents.
    Eriksson Thm 3.11), (F) g^2-vs-g^4 defect-threshold conjecture
    (certified python-runnable). Index line added.
 
-## [CONTINUE 2026-08-31] robustness CONFIRMED — Corner Principle holds in the wider box
+## [CONTINUE 2026-08-31] robustness CONFIRMED â€” Corner Principle holds in the wider box
 
 near_miss_robustness.py (C<=100, B<=1e5, all 56 signatures, 942s exact
 integer arithmetic): **0 violations of corner==full**; every full-box
@@ -2721,7 +2721,7 @@ pages).
 Paper: papers/beal-near-miss-stratification.md now has zero placeholder
 claims; all to-verify flags in it are resolved except the one noted.
 
-## [HUNT 2026-08-31] RH + stubs breakthrough-hunt — scan wave + adversarial
+## [HUNT 2026-08-31] RH + stubs breakthrough-hunt â€” scan wave + adversarial
 ## verify wave + filing, CLOSED
 
 The deferred item (f) of the prior breakthrough-hunt: scan +
@@ -2732,7 +2732,7 @@ touched a candidate until its verdict arrived.
 
 ### Verify verdicts (3 candidates + 1)
 
-1. **RH bandwidth-one ceiling (arXiv:2608.13637) — CONFIRMED, 3
+1. **RH bandwidth-one ceiling (arXiv:2608.13637) â€” CONFIRMED, 3
    corrections.** (a) Exact rational is $p_0 \le 0.6818287$ ("approximately
    0.682"); the scanned 0.68185 was a misrounding. (b) A scan trajectory
    "0.70/0.80/0.90 need Fourier support 1.04/1.26/1.70" is NOT in the paper
@@ -2741,21 +2741,21 @@ touched a candidate until its verdict arrived.
    pair-correlation data beyond Fourier support 1; HL*(4) -> 13/18;
    HL*(k0) for all k0 or full Montgomery form factor -> 100%; "RH itself
    is out of reach of the mechanism" (paper's own words). (c) Authors are
-   Alpöge–Furman only; "Claude" appears solely in the arXiv Comments field
+   AlpÃ¶geâ€“Furman only; "Claude" appears solely in the arXiv Comments field
    (autonomous-discovery note), not as an author. Lean repo is
    `anthropics/formal-math`, project `zeta23/` (not `zeta-23-lean`).
-   §7.2 certificate-class definition obtained verbatim (bandwidth-one
+   Â§7.2 certificate-class definition obtained verbatim (bandwidth-one
    certificates = first two trace moments against Fourier support
    [-1,1]; Lean thm `Zeta23.PairCeiling.ceiling_law256`). Filed in
    problem.md + progress.md with tag `[rh-bandwidth-ceiling-verified]`.
    The ceiling is the control step made quantitative: a certificate can
-   never certify >~0.682 — the remaining third is unreached, not shown
+   never certify >~0.682 â€” the remaining third is unreached, not shown
    off-line.
-2. **DH-transfer question — PLAUSIBLE, heavily undercut (KILLED as
-   candidate, filed as question).** Prior art = Bombieri–Hejhal (Duke
-   80 (1995) 821–862) lineage + the paper's own §1.4 concession
-   ("insensitive to o(N) off-line zeros"; Davenport–Heilbronn/Epstein
-   covered); "RH itself out of reach of the mechanism" is §7.2's own
+2. **DH-transfer question â€” PLAUSIBLE, heavily undercut (KILLED as
+   candidate, filed as question).** Prior art = Bombieriâ€“Hejhal (Duke
+   80 (1995) 821â€“862) lineage + the paper's own Â§1.4 concession
+   ("insensitive to o(N) off-line zeros"; Davenportâ€“Heilbronn/Epstein
+   covered); "RH itself out of reach of the mechanism" is Â§7.2's own
    sentence. The scan's "if it fails, the failing input is the Euler
    product" dichotomy is likely ILL-POSED (the 2/3 mechanism never used
    the Euler product) -> KILLED. Narrow honest residue recorded in
@@ -2763,23 +2763,23 @@ touched a candidate until its verdict arrived.
    carry over verbatim, and with what constant. Noise flagged:
    arXiv:2503.24275 (DH zeros all on the line) contradicts established
    theorems -> `[rh-dh-noise-flagged]`, disregard.
-3. **Grimm near-miss census — KILLED as claimed, salvaged as data.**
+3. **Grimm near-miss census â€” KILLED as claimed, salvaged as data.**
    Soundness verified (Kuhn bipartite matching, independent re-run
    reproduces 148,931 runs / 0 failures / 11,409 k-smooth; run count =
    pi(2e6)-2 exactly). But (a) the k-smooth reduction + census =
    van Delden / Rivera / Noe (PrimePuzzles 430, to 1e8-1e9), and
-   (b) Laishram–Shorey 2006 (IJNT 2(2) 207-211) already proves Hall's
-   condition for ALL runs with n <= 1.92e10 — the census range
+   (b) Laishramâ€“Shorey 2006 (IJNT 2(2) 207-211) already proves Hall's
+   condition for ALL runs with n <= 1.92e10 â€” the census range
    (<2e6) cannot contain a violation by theorem. First-occurrence list
    in the scan WRONG (skipped 16 = 2^4 in run 14-16); corrected and
    filed as an attributed reproduction in grimm-conjecture/problem.md;
    probe script salvaged to `problems/grimm-conjecture/scripts/
    grimm_census.py` with provenance header (was in %TEMP%, unreproducible
-   from the repo — verify agent's catch).
-4. **MSS census (magic-square-of-squares box 440,000) — SURVIVES.**
+   from the repo â€” verify agent's catch).
+4. **MSS census (magic-square-of-squares box 440,000) â€” SURVIVES.**
    Soundness: reproduced + independently re-derived (different
    architecture, two box sizes; degenerate/repeated-entry superset
-   tracked = 0 extra classes; uniqueness robust). Novelty: CONFIRMED —
+   tracked = 0 extra classes; uniqueness robust). Novelty: CONFIRMED â€”
    no published bounded census exists (Bremner 1999 Acta Arith. 88 is
    "only known example", not a uniqueness statement; OEIS A221669 /
    multimagie.com checked). FILED: the Bremner/Sallows square (magic
@@ -2791,26 +2791,26 @@ touched a candidate until its verdict arrived.
    Robertson 1996 rank-4 elliptic-curve reduction retained [to-verify].
 
 ### Main-loop filing (literature corrections, ~14 stub/problem edits)
-riemann-hypothesis (problem.md + progress.md: authorship Alpöge–Furman
-corrected — "Claude" is a Comments-field note, not an author; Lean repo =
+riemann-hypothesis (problem.md + progress.md: authorship AlpÃ¶geâ€“Furman
+corrected â€” "Claude" is a Comments-field note, not an author; Lean repo =
 anthropics/formal-math project zeta23/, correcting the scan's zeta-23-lean;
 Chourasiya downgrade; the deleted trajectory), twin-prime (246 confirmed
 current; two-layer engine stop: sieve exhausted at 246, even full EH gives
 only 6 not 2; Lean-4 machine verification of Polymath8b/Maynard 2025),
-conway-thrackle (1.393 verified current via Keszegh–Suk–Tardos–Zeng 2025
-citation; Fulek–Pach 1.375 discharging floor), lonely-runner (k<=6, MSS
+conway-thrackle (1.393 verified current via Keszeghâ€“Sukâ€“Tardosâ€“Zeng 2025
+citation; Fulekâ€“Pach 1.375 discharging floor), lonely-runner (k<=6, MSS
 finite-checking), 4d-euler-brick, square-of-cubes (fully-magic variant
 RESOLVED NEGATIVE, Wroblewski mod-9), odd-perfect-number (omega>=10
-Nielsen 2015, Omega>=115, N>10^2200 — combined constraint), aaronson-
+Nielsen 2015, Omega>=115, N>10^2200 â€” combined constraint), aaronson-
 quantum-prime (provenance + Willow), chromatic-number-of-the-plane (509-
-vertex Parts 2020 record), goldbach (exceptional-set ladder: M–V -> Li
+vertex Parts 2020 record), goldbach (exceptional-set ladder: Mâ€“V -> Li
 0.879 -> Pintz 0.72 -> Zhao Nov 2025 X^0.7), abc (BLT X^{33/50}
-exceptional set; Pasten Invent. Math. 236; Stewart–Yu; Bright kappa=6.563),
+exceptional set; Pasten Invent. Math. 236; Stewartâ€“Yu; Bright kappa=6.563),
 legendre (BHP 0.525; log-gap framing; implication lattice), brocard
-(Berndt–Galway 1e9 / Matson 1e12; Kurz 10^850; Overholt abc => finite;
+(Berndtâ€“Galway 1e9 / Matson 1e12; Kurz 10^850; Overholt abc => finite;
 Maiti 1e-228287 near-miss). Crypto stubs (rsa-factoring,
 discrete-logarithm, diffie-hellman): scanned, NO findings requiring
-edits — statements verified current as written.
+edits â€” statements verified current as written.
 
 ### Hunt tally
 3 candidates verified: 1 confirmed-with-corrections (RH ceiling),
@@ -2824,20 +2824,20 @@ literature corrections across stubs, 1 script salvaged into the tree
 
 ### Honesty / flags
 All confirmed figures above are verify-agent primary-source reads (paper
-§7.2 verbatim, Bremner 1999 PDF, Laishram–Shorey PDF, OEIS/multimagie),
+Â§7.2 verbatim, Bremner 1999 PDF, Laishramâ€“Shorey PDF, OEIS/multimagie),
 not abstract-level. Remaining to-verify: Robertson rank-4 curve (MSS),
 Bremner 1999 exact citation (kept `[summary]`), Grimm=>Legendre
-Erdős–Selfridge link (`[to-verify]`), Connes/Li/Bombieri–Lagarias/
+ErdÅ‘sâ€“Selfridge link (`[to-verify]`), Connes/Li/Bombieriâ€“Lagarias/
 Deligne paper-body checks (RH, classical). Deferred: two-avatars theory
 page + zero-density ladder theory page (attempt-02 batch; budget),
 Pillai-2 bound extension (preprint), submission decision (user).
 ## [CONTINUE 2026-08-31 late] RH theory-page batch (attempt-02 "deepest
-## productive direction") — DONE in main loop, GREEN zone
+## productive direction") â€” DONE in main loop, GREEN zone
 
 Filed 3 theory pages from the RH attack's own verified content (no new
 external claims; all load-bearing facts carry the session's verify tags):
 
-1. `theory/methods/two-avatars-control-step.md` — the sharpest compounding
+1. `theory/methods/two-avatars-control-step.md` â€” the sharpest compounding
    unit to date: RH + BSD each = one statement proven over F_q (Weil/
    Deligne; function-field BSD) and open over Q because the discharging
    tool (Frobenius + Rosati positivity; Euler systems + etale cohomology)
@@ -2845,7 +2845,7 @@ external claims; all load-bearing facts carry the session's verify tags):
    shared Rosati-type positivity; PvsNP extension kept under the standing
    structural-analogy disclaimer; a 3-step "how to use it in an attack"
    procedure. used-in: RH, BSD, Hodge, PvsNP.
-2. `theory/theorems/zero-density-ladder.md` — the N(sigma,T) rungs with the
+2. `theory/theorems/zero-density-ladder.md` â€” the N(sigma,T) rungs with the
    corrected history (Huxley 1972 = the correct prior anchor in
    sigma<=3/4, not "Ingham directly"), Guth-Maynard Annals 203(2) 2026,
    the Chourasiya downgrade + Chourasic-Simonic superseding log exponent,
@@ -2853,7 +2853,7 @@ external claims; all load-bearing facts carry the session's verify tags):
    the proportion ladder, but the bandwidth-one certificate ceiling
    p0<=0.6818287 is a proved quantitative stop of the density engine.
    used-in: RH, legendre, twin-prime, goldbach.
-3. `theory/methods/rh-positivity-equivalences.md` — Weil / Li / Bombieri-
+3. `theory/methods/rh-positivity-equivalences.md` â€” Weil / Li / Bombieri-
    Lagarias / Suzuki 2023 compressed as the four EXACT sign-control
    reductions of RH (the isolated control step), incl. the B-L point that
    the equivalence is a Selberg-CLASS statement (Davenport-Heilbronn input:
@@ -2873,7 +2873,7 @@ Lagarias 1999, Deligne 1974, de Branges, Wu 2015 rung, PRZZ venue - all
 classical, flagged.
 ## [LOOP 2026-08-31 ~22:50] Recovery summary (per usage-policy long-task rule)
 
-OBJECTIVE: user-directed loop — continue work blocks until a genuine
+OBJECTIVE: user-directed loop â€” continue work blocks until a genuine
 solve-level advance or significant verifiable breakthrough on any problem
 (or until usage zone forces stop; last read GREEN 21:33, weekly 53.6%).
 
@@ -2921,12 +2921,12 @@ remaining classical RH paper-body checks (Connes/Deligne/de Branges).
 STOP CONDITION (per user instruction): a genuine solve-level advance;
 otherwise keep looping within usage zones.
 ## [LOOP 2026-08-31 ~23:05] PILLAI-2 EXTENDED to 1e21, FULL odd-prime
-## exponent range — result landed
+## exponent range â€” result landed
 
 `problems/beals-conjecture/scripts/pillai2_ext_search.py` (Newton integer
 k-th roots, unit-tested 5000 random a^k+-1 cases after one seed bug caught
 and fixed): NO solutions of X^u - Y^v = 2 with Y^v <= 1e21 over the FULL
-odd-prime range — v in {3..67} exhaustive (2^v <= Y^v <= bound), u to
+odd-prime range â€” v in {3..67} exhaustive (2^v <= Y^v <= bound), u to
 log2(N) per N (exhaustive). 10,017,017 (v,Y) pairs, 174,141,873 u-th-root
 checks, exact integer arithmetic. Cross-checks at 1e6 and 1e9: clean; the
 old u,v<=23 cap never binds (2^23 ~ 8.4e6 << 1e9), so this genuinely
@@ -2936,7 +2936,7 @@ subsumes and widens the preprint's 1e18/u,v<=23 evidence (exponents
 (Pillai-2 search bound) by ~1000x in value and full-range in exponents.
 Status: preprint gate note to be updated only after the 1e22 run lands
 (either direction).
-## 2026-08-31 ~23:20 — MSS flagship census landed (loop block)
+## 2026-08-31 ~23:20 â€” MSS flagship census landed (loop block)
 
 - **Flagship W=10^6 census (triples-driven, primitive quotient) COMPLETE and
   clean:** raw configs 7056 (= 3 x 2352 Bremner scalings exactly), primitive
@@ -2951,7 +2951,7 @@ Status: preprint gate note to be updated only after the 1e22 run lands
 - Still in flight: W=10^7 census (centers <= 10^14), Pillai-2 1e22 run.
 - Stop rule check: frontier extension (uniqueness box x 2.3e6), not a
   solve-level advance -> loop continues.
-## 2026-08-31 ~23:30 — odd-odd Pillai-2 prior-art mapping (loop block)
+## 2026-08-31 ~23:30 â€” odd-odd Pillai-2 prior-art mapping (loop block)
 
 - Flagship W=1e6 census processed and filed (see ~23:20 entry).
 - Prior-art block for [[odd-odd-pillai-2]] (search-level, `[summary]`,
@@ -2968,7 +2968,7 @@ Status: preprint gate note to be updated only after the 1e22 run lands
   (2001); Bennett-Siksek ANT 17 (2023) 1789-1845. Search-derived, tagged.
 - Loop continues; W=1e7 census + Pillai 1e22 in flight (logs buffer until
   completion; do not treat empty logs as failure).
-## 2026-08-31 ~23:45 — MSS structural lemmas proven + filed (loop block)
+## 2026-08-31 ~23:45 â€” MSS structural lemmas proven + filed (loop block)
 
 - New `problems/magic-square-of-squares/notes.md` with three verified
   lemmas (`[mss-structural-lemmas-verified]`):
@@ -2988,7 +2988,7 @@ Status: preprint gate note to be updated only after the 1e22 run lands
   off-by-one in the iff test); lemmas themselves unaffected - final
   validation run is the all-clean one quoted above.
 - Loop continues: W=1e7 census + Pillai 1e22 in flight.
-## 2026-08-31 ~23:55 — MSS Lemma 4 (24-divisibility) verified + filed
+## 2026-08-31 ~23:55 â€” MSS Lemma 4 (24-divisibility) verified + filed
 
 - For EVERY w>=2, every d in D(w^2): 24 | d  (mod 8: w odd => u even case
   forces 4|u via u^2 = w^2 - v^2 = 0 mod 8; w even => u,v even. mod 3: the
@@ -3001,7 +3001,7 @@ Status: preprint gate note to be updated only after the 1e22 run lands
   Zimmermann-Pierrat-Thiriet "sum = 3 mod 72" condition for their
   non-square-center 7-square searches.
 - Loop continues; W=1e7 + Pillai 1e22 in flight.
-## 2026-08-31 ~00:05 — RH classical reductions: Connes + de Branges resolved at search level
+## 2026-08-31 ~00:05 â€” RH classical reductions: Connes + de Branges resolved at search level
 
 - rh/progress.md to-verify shrunk further: Connes 1999 now precisely
   sourced (Selecta Math. N.S. 5(1) 1999, 29-106; absorption spectrum;
@@ -3021,7 +3021,7 @@ Status: preprint gate note to be updated only after the 1e22 run lands
   partial-positivity observation.
 - Remaining to-verify: Suzuki 2023 paper-body, Wu 2015 rung, Deligne
   (conditional).
-## 2026-08-31 ~00:20 — Pillai-2 1e22 landed clean; preprint's LAST gate discharged
+## 2026-08-31 ~00:20 â€” Pillai-2 1e22 landed clean; preprint's LAST gate discharged
 
 - **No solutions X^u - Y^v = 2 with Y^v <= 1e+22, full odd-prime range**
   (v in {3..73} exhaustive, u <= log2(N) <= 73 exhaustive per value)
@@ -3039,11 +3039,11 @@ Status: preprint gate note to be updated only after the 1e22 run lands
 - Next rung launched: Pillai-2 1e23 in background (blginkf98,
   pillai2_1e23.log; expected ~12h since 1e22 took ~75 min).
 - Still in flight: MSS W=1e7 census (b0jm0pqfj, centers <= 10^14).
-## 2026-08-31 ~00:35 — Wu 2015 rung resolved with genre correction; RH to-verify list now nearly empty
+## 2026-08-31 ~00:35 â€” Wu 2015 rung resolved with genre correction; RH to-verify list now nearly empty
 
 - Wu 2015 = Quart. J. Math. 66 (2015) 759-771, "Distinct zeros of the
   Riemann zeta-function": the 0.6603 record is for DISTINCT zeros, not
-  simple-and-on-line — wiki ladder note corrected (genre fix, same
+  simple-and-on-line â€” wiki ladder note corrected (genre fix, same
   discipline as the Chourasiya/Bombieri-Lagarias corrections).
 - On-line ladder now precisely: Levinson 1/3 (simple: Heath-Brown 1979) ->
   Conrey 2/5 (1989) -> Bui-Conrey-Young 41.05% (2011) -> Feng 41.28%
@@ -3053,7 +3053,7 @@ Status: preprint gate note to be updated only after the 1e22 run lands
   to conditional). The wiki's RH frontier record is now fully verified to
   search level + the two adversarial-verified anchors (bandwidth ceiling,
   attribution).
-## 2026-08-31 ~00:45 — CORRECTION: first draft of MSS Lemma 3 was wrong (caught by self-check); fixed in place
+## 2026-08-31 ~00:45 â€” CORRECTION: first draft of MSS Lemma 3 was wrong (caught by self-check); fixed in place
 
 - Hand-checking the Bremner pair structure exposed the error: its 7
   squares = 2 COMPLETE pairs (a+-b, a+-(b+c)) + 2 ACCIDENTAL half-pairs
@@ -3062,13 +3062,13 @@ Status: preprint gate note to be updated only after the 1e22 run lands
   there is NO additive-closure condition at the 7-square level.
 - notes.md Lemma 3 rewritten with correction history; "additive closure is
   the control step" framing downgraded: the control step lives in the
-  3rd/4th pair completions (full solution needs |D| >= 4 — that corollary
+  3rd/4th pair completions (full solution needs |D| >= 4 â€” that corollary
   survives). problem.md summary line corrected to match.
 - Unaffected: census engine + all filed census results (independently
   validated), Lemma 1 (closed form), Lemma 2 (primitivity <=> w odd),
   Lemma 4 (24-divisibility), index.md line (states only the census claim).
 - Honesty note: this is the third self-caught error this session (root
-  seed, trivial-scalings confusion, Lemma 3 overclaim) — all caught before
+  seed, trivial-scalings confusion, Lemma 3 overclaim) â€” all caught before
   or during filing, all corrected in place with history.
 
 RECOVERY SUMMARY (objective/done/outstanding/next):
@@ -3084,7 +3084,7 @@ RECOVERY SUMMARY (objective/done/outstanding/next):
 - Next on loop: file W=1e7 when landed; then decide W=1e8 chunked census
   (Analysis -> Implementation -> Validation per policy) vs lighter blocks;
   Suzuki 2023 paper-body check; report status.
-## 2026-08-31 ~01:05 — chunked census engine built + validated; deep nsq9 hunt launched
+## 2026-08-31 ~01:05 â€” chunked census engine built + validated; deep nsq9 hunt launched
 
 - New engine problems/magic-square-of-squares/scripts/mss_census_chunked.py:
   memory-bounded (count pass into array('I') + block collection), two
@@ -3096,14 +3096,14 @@ RECOVERY SUMMARY (objective/done/outstanding/next):
   Bremner, 1 class, non-Bremner 0); 'nsq9' at W=1e6 finds 0 (consistent
   with flagship's 0 nsq>=8 among 7056 configs), 24 s runtime.
 - LAUNCHED: deep hunt python mss_census_chunked.py 100000000 nsq9 2000000
-  (census_nsq9_W1e8.log) — tests whether the full 9-square magic square of
+  (census_nsq9_W1e8.log) â€” tests whether the full 9-square magic square of
   squares exists with center w^2 <= 10^16 (100x beyond the W=1e7 full
   census's reach for the headline question).
 - Label fix filed: full solution = nsq9 (notes.md + problem.md); nsq=8
   alone needs only |D| >= 3 (3 complete pairs + 2 accidental halves).
 - In flight summary: W=1e7 full census (b0jm0pqfj), Pillai 1e23
   (blginkf98), nsq9 @ W=1e8 (bve8cs91r).
-## 2026-09-01 ~00:30 — Pillai-2 reached 1e24 (run over-delivered; filed)
+## 2026-09-01 ~00:30 â€” Pillai-2 reached 1e24 (run over-delivered; filed)
 
 - The "1e23" launch actually carried B = 1e24 (one extra zero in the
   argument; caught by reading the run's own output line, log renamed
@@ -3113,14 +3113,14 @@ RECOVERY SUMMARY (objective/done/outstanding/next):
 - Updated: odd-odd-pillai-2.md evidence (1e22 + 1e24), preprint abstract +
   section 3 Evidence 1 + section 9 (now 10^24; "No remaining
   pre-submission gates" reaffirmed).
-- Next rung launched: 1e25 (b0gh4sirn, pillai2_1e25.log) — diminishing
+- Next rung launched: 1e25 (b0gh4sirn, pillai2_1e25.log) â€” diminishing
   returns but zero-attention background cost; will stop the ladder here
   unless something anomalous appears.
 - Honest note: exponent range now v <= 79; each +2 to the max odd prime v
-  costs ~10x work, so this route saturates — future Pillai-2 evidence
+  costs ~10x work, so this route saturates â€” future Pillai-2 evidence
   should shift from "bound pushing" to structure (e.g. the X - Y = 2 mod 8
   condition, Jacobi-symbol analysis, or modular sieves a la Bennett-Siksek).
-## 2026-09-01 ~00:50 — Suzuki 2023 resolved; RH to-verify layer COMPLETE at search level
+## 2026-09-01 ~00:50 â€” Suzuki 2023 resolved; RH to-verify layer COMPLETE at search level
 
 - Suzuki 2023 (JLMS DOI 10.1112/jlms.12785 / arXiv:2206.03682) verified at
   search level with theorem-level detail: Thm 1.2 (RH <=> -Psi(t) is a
@@ -3130,9 +3130,9 @@ RECOVERY SUMMARY (objective/done/outstanding/next):
   t)), section 8 (moments <-> Li coefficients).
 - rh-positivity-equivalences.md item 4 rewritten (was abstract-level
   "Ths 1.2/1.5/1.8" only); progress.md: RH to-verify layer now fully
-  resolved at search level — no load-bearing to-verify remains.
+  resolved at search level â€” no load-bearing to-verify remains.
 - In flight: W=1e7 census (~2h CPU), nsq9 @ W=1e8 hunt, Pillai 1e25.
-## 2026-09-01 ~01:20 — nsq9 @ W=1e8 landed: 0 hits — and the novelty check DEMOTED it to verification
+## 2026-09-01 ~01:20 â€” nsq9 @ W=1e8 landed: 0 hits â€” and the novelty check DEMOTED it to verification
 
 - Result: no full 9-square config with center <= 1e16 (15,915,492
   primitive triples, all center blocks, 0 hits).
@@ -3140,7 +3140,7 @@ RECOVERY SUMMARY (objective/done/outstanding/next):
   multimagie.com + Bremner (Acta Arith. 99, 2001) record **Buell 1999**:
   no 7-square MAGIC HOURGLASS (top row + center + bottom row = necessary
   subsystem of any 9-square solution) with center < 25x10^24 => any
-  9-square solution has center > 2.5e25 — 9 orders beyond our 1e16.
+  9-square solution has center > 2.5e25 â€” 9 orders beyond our 1e16.
   Morgenstern 2014 independently re-verified Buell's null (~5e12).
   OUR RUN = third independent verification (deeper than Morgenstern's
   verification searches by ~200x in center value), exercising the new
@@ -3157,66 +3157,66 @@ RECOVERY SUMMARY (objective/done/outstanding/next):
   port (Python engine estimated multi-day at W=1e9).
 - Honesty: the excitement in my interim report ("big negative result")
   was premature; corrected by the verification wave before wiki overclaim.
-## 2026-09-01 ~01:55 — Pillai-2 ladder final rung: 1e25 clean; ladder declared saturated
+## 2026-09-01 ~01:55 â€” Pillai-2 ladder final rung: 1e25 clean; ladder declared saturated
 
 - **NO solutions X^u - Y^v = 2 with Y^v <= 1e25, full odd-prime range**
   (v <= 83, u <= 83 exhaustive): 215,547,548 (v,Y) pairs, 4,472,139,830
   root checks [pillai2_1e25.log].
 - Preprint updated in all three places (abstract, section 3 Evidence 1,
-  section 9): now 1e25; ladder declared saturated — future evidence
+  section 9): now 1e25; ladder declared saturated â€” future evidence
   shifts to structure (mod-8 residue, Jacobi, modular sieves).
 - odd-odd-pillai-2.md evidence updated with the same statement + the
   saturation note.
 - In flight: MSS W=1e7 full census only (~3h+; extends the 7-square
-  Bremner-uniqueness claim to centers <= 1e14 — not subsumed by Buell,
+  Bremner-uniqueness claim to centers <= 1e14 â€” not subsumed by Buell,
   whose hourglass bound covers only the hourglass 7-subset).
-## 2026-09-01 ~02:40 — MSS additive-parallelogram reduction + Euler-product heuristic [mss-parallelogram-reduction]
+## 2026-09-01 ~02:40 â€” MSS additive-parallelogram reduction + Euler-product heuristic [mss-parallelogram-reduction]
 
 - **Exact reduction proven (notes.md):** a 3x3 magic square of 9 distinct
   squares exists IFF some D(w^2) contains an additive parallelogram
   {x, y, x+y, y-x} (four distinct elements, y != 2x). The magic hourglass
   (Buell's object) is exactly the weaker additive triple {b, c, b+c} in
-  D(w^2) — so Buell 1999 is exactly "no additive triple in any D(w^2)
+  D(w^2) â€” so Buell 1999 is exactly "no additive triple in any D(w^2)
   with w <= 5e12".
 - **New census** (mss_d_additive_patterns.py, reuses the validated chunked
-  builder): all w <= 1e6 (centers <= 1e12) — 257,824 w with |D|>=3, ZERO
+  builder): all w <= 1e6 (centers <= 1e12) â€” 257,824 w with |D|>=3, ZERO
   additive triples, ZERO parallelograms, 0 Lemma-4 violations.
   Independent small-w re-verification of Buell by a different engine
-  (subsumed — filed honestly as re-verification).
+  (subsumed â€” filed honestly as re-verification).
 - **Euler-product heuristic** (mss_hourglass_heuristic.py): expected total
   number of hourglass triples over the ENTIRE infinite plane of centers
   collapses to exact Euler products S_k = zeta(2) * prod_{p=1(4)}
   (1-1/p^2) T_p(k) and evaluates to H ~ 1.01 (naive density |D|) / 0.53
-  (strict density |D|-2) — both UPPER bounds (invalid pairs x+y>w^2 only
+  (strict density |D|-2) â€” both UPPER bounds (invalid pairs x+y>w^2 only
   overcount). Reading: at most about ONE hourglass triple should exist
   anywhere; Buell's null is the expected global behavior.
 - Build notes (honesty): three successive formulation bugs caught before
-  landing — v1 summed C(n,2) with a broken sieve-slice; v2 inverted the
+  landing â€” v1 summed C(n,2) with a broken sieve-slice; v2 inverted the
   non-1-mod-4 local factor (violated the pointwise bound
   sum_w P(w)/w^2 >= zeta(2)); v3 called mp.euler instead of mp.zeta. v4
   passes monotonicity S0 < S1 < S2 < S3 and cross-checks against direct
   partial sums.
 - In flight: W=1e7 flagship full census (uniqueness box to centers 1e14).
-## 2026-09-01 ~03:00 — MSS slope-form reformulation + partner bound (same block)
+## 2026-09-01 ~03:00 â€” MSS slope-form reformulation + partner bound (same block)
 
 - Slope-form: the additive-triple condition is a rational surface; with
   the common-hypotenuse constraint it reduces to a ternary condition
   k1^2*u1*v1 + k2^2*u2*v2 = k3^2*u3*v3 on primitive Pythagorean triples
-  — congruent-form/elliptic-curve shape, consistent with Robertson 1996.
+  â€” congruent-form/elliptic-curve shape, consistent with Robertson 1996.
 - Factor-form corollary proved: x + y in D(w^2) with x = 2uv requires
   2ab = xy, a+b = u^2-v^2; hence the sharp partner bound
-  y <= (u^2-v^2)^2/(4uv) — any counterexample's second element is
+  y <= (u^2-v^2)^2/(4uv) â€” any counterexample's second element is
   bounded by the first rep's co-leg (strong search asymmetry).
 - Calibration result (mss_heuristic_partial.py): the naive model places
   1.0086 of its 1.0142 expected mass at w <= 1e6; observed 0; Poisson
-  P(0|1.01) ~ 36% — Buell's null consistent, model is a loose upper
+  P(0|1.01) ~ 36% â€” Buell's null consistent, model is a loose upper
   bound. Max |D| = 94 in range; weight dominated by |D|=4, 13, 7.
 - Heuristic model constants (mpmath 40dps): S1=1.8319312238,
   S2=2.4731143927, S3=5.1530044130, H=1.014223, H_strict=0.533073.
-## 2026-09-01 ~03:20 — MSS flagship W=1e7 landed: Bremner uniqueness box extends to centers <= 1e14 [mss-census-w1e7-verified]
+## 2026-09-01 ~03:20 â€” MSS flagship W=1e7 landed: Bremner uniqueness box extends to centers <= 1e14 [mss-census-w1e7-verified]
 
 - Full census at W=10^7 (entry box 3e17, not binding): raw configs
-  70,587 (= Bremner scalings; exactly x10.0 vs W=1e6's 7,056 — the
+  70,587 (= Bremner scalings; exactly x10.0 vs W=1e6's 7,056 â€” the
   scaling-window ratio), primitive configs 3, dihedral classes 1,
   non-Bremner primitives 0, nsq>=8 0 (log census_W1e7.log).
 - => the ONLY square-center nsq>=7 config with center <= 1e14 is
@@ -3225,7 +3225,7 @@ RECOVERY SUMMARY (objective/done/outstanding/next):
 - Not subsumed by Buell: his hourglass theorem constrains only
   hourglass-containing configs; the >=7-square Bremner tier sits below
   that threshold (Bremner's own center 425^2 is far below Buell's
-  bound) — this census is the load-bearing evidence at that tier.
+  bound) â€” this census is the load-bearing evidence at that tier.
 - MSS loop block data points now filed: W=1e6 flagship, W=1e7 flagship,
   W=1e8 nsq9 (Buell re-verification), D-pattern census to w=1e6,
   Euler-product heuristic (H ~ 1.01/0.53, upper bounds).
@@ -3421,18 +3421,18 @@ exact hits EXACTLY the 3 known Brown numbers; N=1e7 run (20 primes) in flight.
     Subsumed by Berndt-Galway's 1e9 - filed as independent re-verification with documented code
     (same framing as the Buell/MSS re-verifications). Log brocard_sieve_N10000000.log; problem.md updated.
 
-## [CONTINUE 2026-09-01] brocard-problem — approach 3: Overholt's abc mechanism made explicit `[brocard-abc-explicit]`
+## [CONTINUE 2026-09-01] brocard-problem â€” approach 3: Overholt's abc mechanism made explicit `[brocard-abc-explicit]`
 Approach 3 of the Brocard attack filed in `problems/brocard-problem/problem.md`:
 for $n!+1=m^2$ the abc triple is $(1, n!, m^2)$ with
 rad$(abc)=e^{\theta(n)}\cdot$rad$(m)$, giving quality
-$q \gtrsim \frac{n\log n}{n + \frac12 n\log n} \to 2$ — Overholt's
+$q \gtrsim \frac{n\log n}{n + \frac12 n\log n} \to 2$ â€” Overholt's
 abc-implies-finite mechanism derived explicitly; abc for any fixed
 $\varepsilon<1$ would reduce the conjecture to a finite check beyond the
 searched $n\le10^{15}$.
 
 **Self-caught error (honesty over optimism):** the first version of the
 paragraph filed the known solutions' qualities as $q\approx1.26/1.32/1.35$
-— figures that were never recomputed and are WRONG. Direct computation
+â€” figures that were never recomputed and are WRONG. Direct computation
 (factorint): $q\approx0.946/0.827/0.887$ for $n=4,5,7$ (all $<1$,
 comfortably abc-consistent). Corrected in problem.md with an inline
 correction note; the asymptotic $q\to2$ statement is unaffected.
@@ -3442,7 +3442,7 @@ $10^7$; Lemmas B1/B2; explicit abc mechanism). Usage: yellow (weekly 61.8%),
 solo work.
 
 
-## [CONTINUE 2026-09-01] brocard-problem — root-of-unity window heuristic `[brocard-rootofunity-heuristic]`
+## [CONTINUE 2026-09-01] brocard-problem â€” root-of-unity window heuristic `[brocard-rootofunity-heuristic]`
 Corollary to Lemma B2, quantified and verified (`scripts/brocard_rootofunity_heuristic.py`,
 log `brocard_rootofunity_heuristic.log`): a solution m is one of exactly
 R(n) = 2^(pi(n)+1) square roots of unity mod n! (verified by enumeration,
@@ -3450,15 +3450,15 @@ n <= 12) confined to the window (sqrt(n!), 2*sqrt(n!)] of relative width
 ~ 1/sqrt(n!). Equidistribution gives E(n) = 2^(pi(n)+1) * sqrt(n!)/n! ->
 0 superexponentially (log10 E = -71 at n=100, -1233 at n=1000). Exact
 enumeration matches: window hits at n=4,5,7 are exactly the known m
-values 5, 11, 71 (plus non-solutions 7, 19 — window occupancy necessary,
+values 5, 11, 71 (plus non-solutions 7, 19 â€” window occupancy necessary,
 not sufficient); E(4)=1.63, E(7)=0.45. This is the abc-independent
 heuristic underlying the sieve's observed per-prime halving. Filed in
 problem.md + index.md.
 
 
-## [METHOD 2026-09-01] theory — necessary-window heuristics distilled
+## [METHOD 2026-09-01] theory â€” necessary-window heuristics distilled
 `theory/methods/necessary-window-heuristics.md`: toolbox method page
-extracting the shared shape of two independent blocks this session — the
+extracting the shared shape of two independent blocks this session â€” the
 MSS partner-window theorem (13x sharpening of the hourglass heuristic;
 parallelogram expectation ~3e-6) and the Brocard root-of-unity window
 (E(n) = 2^(pi(n)+1) * sqrt(n!)/n! -> 0 superexponentially). Five-step
@@ -3467,7 +3467,7 @@ re-run counting model -> verify empirically -> separate theorem from
 model). Filed in index.md Theory-Methods.
 
 
-## [THEOREM 2026-09-01] magic-square-of-squares — prime-power freeness theorem `[mss-primepower-freeness]`
+## [THEOREM 2026-09-01] magic-square-of-squares â€” prime-power freeness theorem `[mss-primepower-freeness]`
 First PROVED additive-freeness family for D-sets: for w = 2^e * p^k
 (p = 1 mod 4 prime, e >= 0, k >= 1), D(w^2) contains no additive triple,
 no 3-term AP, and no additive parallelogram. Proof (filed in full in
@@ -3491,7 +3491,7 @@ omega_1 = 2 case (Bremner's home turf), whether the UFD trick extends
 to p^k q^l. Filed notes.md + problem.md + index.md.
 
 
-## [CONTINUE 2026-09-01] magic-square-of-squares — additive-freeness census W=1e7 LANDED
+## [CONTINUE 2026-09-01] magic-square-of-squares â€” additive-freeness census W=1e7 LANDED
 `mss_d_additive_W1e7.py` (corrected D-builder, self-tested): all
 w <= 1e7, 7,449,349 with nonempty D, 2,952,907 with |D| >= 3, 99,124,984
 pairs: A2 (additive triples) = 0, A3 (parallelograms) = 0, AP = 0.
@@ -3499,7 +3499,7 @@ Freeness box extends to centers <= 1e14 (log mss_d_additive_W1e7.log,
 107 s). Filed problem.md + index.md.
 
 
-## [CONTINUE 2026-09-01] magic-square-of-squares — two-prime structure + census, open `[mss-two-prime]`
+## [CONTINUE 2026-09-01] magic-square-of-squares â€” two-prime structure + census, open `[mss-two-prime]`
 The flagged omega_1 = 2 frontier of the prime-power theorem, attacked:
 (1) CLOSED FORM derived and builder-verified: for w = p q,
 D((pq)^2) = { p^2 Y_q, q^2 Y_p, |X-Y|, X+Y } with pi = a+bi,
@@ -3518,7 +3518,7 @@ OPEN even at |D| = 4; a proof would cover Bremner's own center
 problem.md.
 
 
-## [THEOREM-STRENGTHENED 2026-09-01] magic-square-of-squares — prime-power freeness theorem, final form `[mss-primepower-freeness]`
+## [THEOREM-STRENGTHENED 2026-09-01] magic-square-of-squares â€” prime-power freeness theorem, final form `[mss-primepower-freeness]`
 Pattern-extraction step (recurring mechanism: r = 3 mod 4 prime forces
 r | u,v in every rep, since -1 is a non-residue mod r) yields a free
 generalization: D((s m)^2) = s^2 D(m^2) for ANY s whose prime factors
@@ -3532,7 +3532,7 @@ omega_1(w) >= 2 -- unconditional, unbounded. Filed notes.md +
 problem.md.
 
 
-## [VERIFIED 2026-09-01] magic-square-of-squares — adversarial verification of the freeness theorem `[mss-primepower-freeness]`
+## [VERIFIED 2026-09-01] magic-square-of-squares â€” adversarial verification of the freeness theorem `[mss-primepower-freeness]`
 Dedicated SKEPTIC/VERIFIER pass (report-only subagent, per the
 multi-role research loop) on the prime-power freeness theorem + 3-mod-4
 strengthening. VERDICT: NO FLAW FOUND. Attacks run and survived:
@@ -3556,7 +3556,7 @@ confidence ~97% per the verifier; theorem now rests on proof +
 33,843-config exhaustive null + cross-validated builders.
 
 
-## [CONTINUE mss-omega1-stratification] 2026-09-01 — omega_1-stratified hourglass heuristic `[mss-omega1-stratification]`
+## [CONTINUE mss-omega1-stratification] 2026-09-01 â€” omega_1-stratified hourglass heuristic `[mss-omega1-stratification]`
 
 Question: the freeness theorem forces omega_1(w) >= 2 for any 9-square
 center; where does the window-corrected model's expected hourglass mass
@@ -3568,36 +3568,36 @@ actually live as a function of omega_1(w)?
   omega_1 via factorint).
 - SELF-CAUGHT BUG (validation trap): window upper end is (u-v)^2-1 =
   w^2-x-1, NOT (rp-rm)^2-1 = (2v)^2-1. With the bug: one-sided total 1.05
-  (above naive — impossible for a restriction) exposed it. Corrected:
+  (above naive â€” impossible for a restriction) exposed it. Corrected:
   total 0.07753 reproduces the filed window-corrected H2 = 0.077531
-  EXACTLY — stratification sits on the validated engine.
+  EXACTLY â€” stratification sits on the validated engine.
 - Results W=1e6 (276,569 centers |D|>=2): naive 1.00858 splits
   {0.14743, 0.71272, 0.14030, 0.00812} over omega_1={1,2,3,4};
   window-corrected 0.07753 splits {0.00004, 0.04710, 0.02843, 0.00196}.
 - Findings: (1) the partner-window theorem ALONE suppresses the
   proved-free omega_1=1 stratum 3700x (0.147 -> 4e-5); theorem-conditioned
-  total 0.07749 vs 0.07753 — conditioning the model on the proved theorem
+  total 0.07749 vs 0.07753 â€” conditioning the model on the proved theorem
   changes essentially nothing (mutual consistency; the corollary
   omega_1>=2 is independently visible in the window arithmetic).
   (2) 97.5% of surviving expected mass at omega_1 in {2,3} (60.7% + 36.7%);
   per-center intensity rises with omega_1 (2.1e-7 -> 2.0e-6) but center
   counts decay faster (220,288 -> 982). Under the model a 9-square center
-  has omega_1=2 or 3 — consistent with Bremner's 425 = 5^2*17.
+  has omega_1=2 or 3 â€” consistent with Bremner's 425 = 5^2*17.
   (3) An omega_1=2 freeness theorem (open, mss-two-prime) would prune the
   model's largest stratum: expected total 0.077 -> ~0.030, P(0) ~ 97%.
 - Filed: notes.md (new section, incl. the validation trap), problem.md
   (frontier paragraph), index.md line extended. W=1e7 run in flight.
 
 
-## [CONTINUE mss-omega1-stratification addendum] 2026-09-01 — W=1e7 confirmation
+## [CONTINUE mss-omega1-stratification addendum] 2026-09-01 â€” W=1e7 confirmation
 
 W=1e7 (3,116,858 centers |D|>=2): window total 0.07856; strata shares
-{0.05%, 60.00%, 36.71%, 3.17%, 0.06%} at omega_1={1..5} — the 96.7%
+{0.05%, 60.00%, 36.71%, 3.17%, 0.06%} at omega_1={1..5} â€” the 96.7%
 concentration at omega_1 in {2,3} and the 3700x-suppressed omega_1=1
 stratum are box-stable. One-line addendum filed in notes.md.
 
 
-## [CONTINUE lonely-runner-t1-scan] 2026-09-01 — Conjecture T1 deep boxes `[lonely-runner-t1-scan]`
+## [CONTINUE lonely-runner-t1-scan] 2026-09-01 â€” Conjecture T1 deep boxes `[lonely-runner-t1-scan]`
 
 New exact integer fast-path engine (cross-validated vs the reference
 Fraction engine, 1001/1001) with the two PROVED filters (Lemma T3;
@@ -3605,37 +3605,37 @@ t0=1/(n+1) attainment check) pre-rejecting non-tight candidates. Boxes
 run (the "Testable next" items filed with Conjecture T1/T2):
 - n=6 [1,30] (was [1,22]): 588,559 primitive sets, 257,302 full evals,
   tight = {1..6} only, T1 violations 0.
-- n=7 [1,22] (was [1,16]): 170,213 sets, the SAME 3 tight sets — no new
+- n=7 [1,22] (was [1,16]): 170,213 sets, the SAME 3 tight sets â€” no new
   sporadics beyond 16 (answers the filed testable-next question: no);
   T1 violations 0.
 - n=10 [1,14] (first n=10 box): 1,001 sets, tight = {1..10} only, T1
   violations 0; box lies BEYOND the proved LRC frontier (theorems reach
-  9 speeds) — census evidence only, flagged as such.
+  9 speeds) â€” census evidence only, flagged as such.
 Verdict: T1 evidence 11/11 tight sets, zero containing a multiple of
 n+1, now in deeper boxes; T2 absence pattern extends (n=6 to [1,30]).
 The n>=3 stall stands (multiple of n+1 could be a non-tight runner at
 the maximizer). Filed: problem.md (new T1-scan block above
 control-step framing), script + log. Engine note: all-integer kappa via
-||t*v|| = dist(p*v, qZ)/q at t=p/q — no Fractions in the hot path.
+||t*v|| = dist(p*v, qZ)/q at t=p/q â€” no Fractions in the hot path.
 
 
-## [CONTINUE lonely-runner-n3-deep] 2026-09-01 — tight-triple classification box [1,200] `[lonely-runner-t1-scan]`
+## [CONTINUE lonely-runner-n3-deep] 2026-09-01 â€” tight-triple classification box [1,200] `[lonely-runner-t1-scan]`
 
 n=3 box pushed [1,40] -> [1,200] (1,098,601 primitive triples, 651,143
 full kappa evals, 70 s): {1,2,3} is the ONLY tight 3-set in the box;
 0 violations of kappa >= 1/4; 0 tight sets with 4|v. Upgraded to
 Conjecture T4 (new, filed in problem.md): the only primitive tight 3-set
-is {1,2,3} — implies T1 at n=3 and sharpens T2 (absence at n=3 not a box
+is {1,2,3} â€” implies T1 at n=3 and sharpens T2 (absence at n=3 not a box
 artifact). Hand proof = equality-case analysis of the classical n<=6 LRC
 proof; open. Script lonely_runner_n3_deep.py + log filed; index line
 updated next session if frontier moves further.
 
 
-## [CONTINUE lonely-runner-openfrontier] 2026-09-01 — first census in open territory `[lonely-runner-t1-scan]`
+## [CONTINUE lonely-runner-openfrontier] 2026-09-01 â€” first census in open territory `[lonely-runner-t1-scan]`
 
 Exact integer engine (cross-validated n=5 [1,12], 0 mismatches) on the
 first cheap exhaustive boxes at the LRC frontier: n=11 [1,20] (167,960
-sets), n=12 [1,18] (18,564), n=13 [1,18] (8,568 — FIRST OPEN CASE, 14
+sets), n=12 [1,18] (18,564), n=13 [1,18] (8,568 â€” FIRST OPEN CASE, 14
 runners, beyond both the n<=9 theorems and the n<=12 preprint claims):
 zero kappa < 1/(n+1) violations in all three; only tight set in each box
 is {1..n}; T1 and T2 clean. First-probe boxes, flagged as such. Filed:
@@ -3661,34 +3661,34 @@ chars, tail verified against the pre-truncation tail observed in-session.
 Line-level lesson recorded: NEVER use Set-Content to rewrite log.md; appends
 only (Add-Content), and verify file size after any whole-file write.
 
-## [ATTACK mss-two-prime-freeness] 2026-09-01 — omega_1=2 slice theorems + complete kill-equation case tree `[mss-two-prime-freeness]`
-- [magic-square-of-squares / two-prime-freeness](problems/magic-square-of-squares/scripts/mss_two_prime_freeness_closedform.py) -- Attack on the top open target: sum-freeness of D((pq)^2) (omega_1=2 stratum, 60% of heuristic mass). PROVED slice theorems on the verified closed form {A,B,C,D0}: S1 A+B>D0 strictly (kills A+B); S2 C+D0=2max(X,Y) and C+D0=A (X>=Y) iff 2Rp=p^2, dead by parity (odd=even) + mirror (kills C+D0 in the matching sign case); S3 p∤Yp, p∤Rp (0/53956 pairs); dead-parity kills A+C=D0 (X<Y) and B+C=D0 (Y<X); distinctness of all 4 elements (4465 pairs). STALL filed precisely: freeness is now EQUIVALENT to no solution of the kill-equation list K1-K4 (incl. X=3Y i.e. 2C=D0) + K5-K16 (doubles and cross sums), case tree mechanically verified as iff-reductions (666 pairs, 0 mismatches). Census on closed form p<q<=1500 (6670 pairs): ZERO relations, consistent with builder census to 1e7. Twin regime q=p+2 vacuous (twin primes not both 1 mod 4). p|Yq regime 2617 pairs: clean. Counterevidence hunt: K3 near-miss at (173,7933), |log(X/3Y)|~4e-5, ratios dense near 1 => no congruence/size kill possible pointwise; K1 forces p^2|Rq, K2 forces p^2|Yq — named next lever. Verdict: SLICED (3 theorems + exact stall equation list); full freeness OPEN. Notes entry filed before cross-problem links (heading verified x1). Confirmed/partial.
+## [ATTACK mss-two-prime-freeness] 2026-09-01 â€” omega_1=2 slice theorems + complete kill-equation case tree `[mss-two-prime-freeness]`
+- [magic-square-of-squares / two-prime-freeness](problems/magic-square-of-squares/scripts/mss_two_prime_freeness_closedform.py) -- Attack on the top open target: sum-freeness of D((pq)^2) (omega_1=2 stratum, 60% of heuristic mass). PROVED slice theorems on the verified closed form {A,B,C,D0}: S1 A+B>D0 strictly (kills A+B); S2 C+D0=2max(X,Y) and C+D0=A (X>=Y) iff 2Rp=p^2, dead by parity (odd=even) + mirror (kills C+D0 in the matching sign case); S3 pâˆ¤Yp, pâˆ¤Rp (0/53956 pairs); dead-parity kills A+C=D0 (X<Y) and B+C=D0 (Y<X); distinctness of all 4 elements (4465 pairs). STALL filed precisely: freeness is now EQUIVALENT to no solution of the kill-equation list K1-K4 (incl. X=3Y i.e. 2C=D0) + K5-K16 (doubles and cross sums), case tree mechanically verified as iff-reductions (666 pairs, 0 mismatches). Census on closed form p<q<=1500 (6670 pairs): ZERO relations, consistent with builder census to 1e7. Twin regime q=p+2 vacuous (twin primes not both 1 mod 4). p|Yq regime 2617 pairs: clean. Counterevidence hunt: K3 near-miss at (173,7933), |log(X/3Y)|~4e-5, ratios dense near 1 => no congruence/size kill possible pointwise; K1 forces p^2|Rq, K2 forces p^2|Yq â€” named next lever. Verdict: SLICED (3 theorems + exact stall equation list); full freeness OPEN. Notes entry filed before cross-problem links (heading verified x1). Confirmed/partial.
 marker-verify-freeness-20260901
-## [ATTACK mss-two-prime-crossdiv] 2026-09-01 — K2/K9/K11 dead (cross-prime size kill), K1 gated mod 8, Wieferich census `[mss-two-prime-crossdiv]`
-- [magic-square-of-squares / two-prime-crossdiv](problems/magic-square-of-squares/scripts/mss_two_prime_k1_crossdiv.py) + [census](problems/magic-square-of-squares/scripts/mss_two_prime_k12_census.py) -- Continuation of [mss-two-prime-freeness] at the K1-K16 stall; attacks the named cross-divisibility lever. CORRECTION (append-only): the filed K2 annotation "forces p^2|Yq" is wrong — v_p(K2) forces p∤Yq (vacuous); the load-bearing valuation is at q. PROVED: T1 K2 DEAD — K2 => v_q(Rp)=2+v_q(Yp)>=2 => q^2|Rp, but 0<Rp<p^2<q^2 (|Re pi^4|<|pi^4|=p^2 since Im pi^4!=0; Rp!=0 since 3+-2sqrt2 irrational) — impossible (0 hits/53,956 pairs q<=5000, inequality chain 0 violations). T2 K9 (2A=B) and K11 (2B=A) DEAD by the same valuation pattern (v_p>=2 vs 0). T3 Lemma A (necessity only): p|Rq => p=1 mod 8 AND chi_p(q)=chi_p((2+sqrt2)/4) (single coset; roots of 8x^2-8x+1=0, x=c^2/q, share character since x1*x2=1/8) — verified 22,155 pairs q<=3000: 182 hits, 0 mod-8 violations, 0 coset violations, 11,823 p=5-mod-8 pairs 0 hits, root count 4 (40/40); REVERSE FALSE (tracked): coset necessary not sufficient (4966/5148 coset pairs p∤Rq — actual rep is one circle point, not one of the 8 root points). CONSEQUENCE: K1 vacuous for p=5 mod 8 (half the pair space); but p^2|Rq DOES occur — 99 pairs q<=1e5, 79 at p=17 (uniform model predicts ~17; ~5x over — Rq-Wieferich anomaly at 17, also 41:9; new structured regime), closest K1 residual |log(p^2Yq/2YpRq)|=0.062 at (17,86509). K12 checked: forces only R_p*Y_q = -Y_p*R_q mod q (cancellation escape) — the q^2|p^4 trick does NOT apply. Extended census: all sums+doubles over {A,B,C,D0} for ALL p<q<=1e5 (PAIRS pairs, w<=1e10, 3 orders past the builder census): HITS relations. Status: K2/K9/K11 dead, K1 gated; open K1,K3,K4,K5-K8,K10,K12-K16. Notes entry filed before cross-problem links (heading verified x1). Confirmed/partial (3 theorems, full freeness OPEN).
+## [ATTACK mss-two-prime-crossdiv] 2026-09-01 â€” K2/K9/K11 dead (cross-prime size kill), K1 gated mod 8, Wieferich census `[mss-two-prime-crossdiv]`
+- [magic-square-of-squares / two-prime-crossdiv](problems/magic-square-of-squares/scripts/mss_two_prime_k1_crossdiv.py) + [census](problems/magic-square-of-squares/scripts/mss_two_prime_k12_census.py) -- Continuation of [mss-two-prime-freeness] at the K1-K16 stall; attacks the named cross-divisibility lever. CORRECTION (append-only): the filed K2 annotation "forces p^2|Yq" is wrong â€” v_p(K2) forces pâˆ¤Yq (vacuous); the load-bearing valuation is at q. PROVED: T1 K2 DEAD â€” K2 => v_q(Rp)=2+v_q(Yp)>=2 => q^2|Rp, but 0<Rp<p^2<q^2 (|Re pi^4|<|pi^4|=p^2 since Im pi^4!=0; Rp!=0 since 3+-2sqrt2 irrational) â€” impossible (0 hits/53,956 pairs q<=5000, inequality chain 0 violations). T2 K9 (2A=B) and K11 (2B=A) DEAD by the same valuation pattern (v_p>=2 vs 0). T3 Lemma A (necessity only): p|Rq => p=1 mod 8 AND chi_p(q)=chi_p((2+sqrt2)/4) (single coset; roots of 8x^2-8x+1=0, x=c^2/q, share character since x1*x2=1/8) â€” verified 22,155 pairs q<=3000: 182 hits, 0 mod-8 violations, 0 coset violations, 11,823 p=5-mod-8 pairs 0 hits, root count 4 (40/40); REVERSE FALSE (tracked): coset necessary not sufficient (4966/5148 coset pairs pâˆ¤Rq â€” actual rep is one circle point, not one of the 8 root points). CONSEQUENCE: K1 vacuous for p=5 mod 8 (half the pair space); but p^2|Rq DOES occur â€” 99 pairs q<=1e5, 79 at p=17 (uniform model predicts ~17; ~5x over â€” Rq-Wieferich anomaly at 17, also 41:9; new structured regime), closest K1 residual |log(p^2Yq/2YpRq)|=0.062 at (17,86509). K12 checked: forces only R_p*Y_q = -Y_p*R_q mod q (cancellation escape) â€” the q^2|p^4 trick does NOT apply. Extended census: all sums+doubles over {A,B,C,D0} for ALL p<q<=1e5 (PAIRS pairs, w<=1e10, 3 orders past the builder census): HITS relations. Status: K2/K9/K11 dead, K1 gated; open K1,K3,K4,K5-K8,K10,K12-K16. Notes entry filed before cross-problem links (heading verified x1). Confirmed/partial (3 theorems, full freeness OPEN).
 marker-verify-crossdiv-20260901
 
-## [ATTACK lonely-runner-t4-pairforce] 2026-09-01 — predicate bug corrected; T4 reduced to ONE pair (T4-f) `[lonely-runner-t4-pairforce]`
-- [problem.md](problems/lonely-runner-conjecture/problem.md) + [scripts](problems/lonely-runner-conjecture/scripts/lonely_runner_t4_pairforce.py) -- T4 continue. CORRECTION (append-only): the `[lonely-runner-t4-windows]` containment predicate had swapped arc-index bounds (tested ceil((r*lo-1)/4) <= floor((r*hi+1)/4); correct is ceil((r*hi-1)/4) <= k <= floor((r*lo+1)/4)) — far too permissive; the stall note's "{2,4,5}-type candidates surviving the pair-{a,b} condition" were an artifact. Filed conclusions re-validated with the corrected predicate: window<=>tight EXHAUSTIVE over 235,258 primitive triples [1,120] (0 mismatches, was 400 sampled); tight sets [1,120] = {(1,2,3)}. NEW Conjecture T4-f (census-verified [1,200], self-tests pass, 1 hit = (1,2,3); pair-level: {1,2} is the ONLY coprime pair admitting any c>b, c=3): windows of {a,b} in single B_c arcs (c largest) => (a,b,c)=(1,2,3); combined with Lemma T4-a this gives T4 <=> T4-f — the gap collapses from simultaneous three-pair to ONE-pair. Proof structure data: 19,200/19,900 pairs die by length alone (max window >= 2/(b+1)); 700 exceptions = multiples of small reduced ratios (1,2),(2,3),(3,4),(5,6) dying on position. New stall: length lemma (L) for reduced sums >= 5 + position argument (P) for small reduced ratios, both open. Confidence: T4-f-as-conjecture high; unproven. Notes entry filed before cross-problem links (heading verified x1). Confirmed/partial (correction + T4-f census + reframed stall; T4 OPEN).
+## [ATTACK lonely-runner-t4-pairforce] 2026-09-01 â€” predicate bug corrected; T4 reduced to ONE pair (T4-f) `[lonely-runner-t4-pairforce]`
+- [problem.md](problems/lonely-runner-conjecture/problem.md) + [scripts](problems/lonely-runner-conjecture/scripts/lonely_runner_t4_pairforce.py) -- T4 continue. CORRECTION (append-only): the `[lonely-runner-t4-windows]` containment predicate had swapped arc-index bounds (tested ceil((r*lo-1)/4) <= floor((r*hi+1)/4); correct is ceil((r*hi-1)/4) <= k <= floor((r*lo+1)/4)) â€” far too permissive; the stall note's "{2,4,5}-type candidates surviving the pair-{a,b} condition" were an artifact. Filed conclusions re-validated with the corrected predicate: window<=>tight EXHAUSTIVE over 235,258 primitive triples [1,120] (0 mismatches, was 400 sampled); tight sets [1,120] = {(1,2,3)}. NEW Conjecture T4-f (census-verified [1,200], self-tests pass, 1 hit = (1,2,3); pair-level: {1,2} is the ONLY coprime pair admitting any c>b, c=3): windows of {a,b} in single B_c arcs (c largest) => (a,b,c)=(1,2,3); combined with Lemma T4-a this gives T4 <=> T4-f â€” the gap collapses from simultaneous three-pair to ONE-pair. Proof structure data: 19,200/19,900 pairs die by length alone (max window >= 2/(b+1)); 700 exceptions = multiples of small reduced ratios (1,2),(2,3),(3,4),(5,6) dying on position. New stall: length lemma (L) for reduced sums >= 5 + position argument (P) for small reduced ratios, both open. Confidence: T4-f-as-conjecture high; unproven. Notes entry filed before cross-problem links (heading verified x1). Confirmed/partial (correction + T4-f census + reframed stall; T4 OPEN).
 
 ## [magic-square-of-squares] 2026-09-01 - K3/K4 quartic-to-quadratic reduction + per-prime square sieve `[mss-two-prime-k34]`
 
 Attacked the two open kill-equations NOT gated by the R_q-Wieferich anomaly.
 (1) Near-miss (173,7933) confirmed exactly (X-3Y = 50,004,240, |log(X/3Y)| = 3.589e-5); CORRECTION (append-only): the filed argmin range "q<=2e5" was overstated (prime table capped at 20000) - extended range gives K3 argmin (101,47681) 1.18e-5, K4 (61,198221) 3.2e-5. (2) THEOREM K34: K3 (R_p Y_q = 3 Y_p R_q) collapses from a quartic in q's rep ratio to a QUADRATIC in u = x - 1/x; positive rational root forces Delta = 16(R_p^2 + 9 Y_p^2) square; mirrored quartic gives K3 => A(p) and B(q), K4 => B(p) and A(q), with A(n): R_n^2+9Y_n^2 = square, B(n): 9R_n^2+Y_n^2 = square - per-prime tests, iff-verified 10,731 pairs (0 mismatches). Equivalent primitive-Pythagorean/Pell characterization: A(n) <=> exists coprime m>n with mn = 3Y_n/2, |m^2-n^2| = R_n (mirror for B); equivalently n^2 = 2s^2-r^2 or s^2-2r^2 with rs = Y_n (named descent gap, not discharged). (3) Census: A/B = 0 hits on all 12,980 1mod4 primes <= 3e5 => K3 AND K4 dead for every pair with min(p,q) <= 3e5, other side unbounded (any solution needs p,q > 3e5, w = pq > 9e10); direct pair census p<q<=3e5: 84,233,710 pairs, 0 hits. New Conjecture K34: A,B never hold (probability ~n^-2 per prime, summable) - if proved, K3+K4 die outright. Files: scripts/mss_two_prime_k34_quartic.py + .log; notes.md section [mss-two-prime-k34] (inserted before Cross-problem links, heading intact); index.md magic-square line extended.
 
-## [PUBLISH math-research-wiki] 2026-09-01 — repo created public + v0.1.0 release for Zenodo DOI
-- [GitHub](https://github.com/juma8383/math-research-wiki) — public repo, branch main at 6655aa2, 383 files.
+## [PUBLISH math-research-wiki] 2026-09-01 â€” repo created public + v0.1.0 release for Zenodo DOI
+- [GitHub](https://github.com/juma8383/math-research-wiki) â€” public repo, branch main at 6655aa2, 383 files.
 - Prep: .gitignore excludes .claude/ (private operational state: usage status, recovery summaries) and .playwright-mcp/; LICENSE.md added (CC BY 4.0 content / MIT code); README extended with audit-trail rationale, [to-verify]/[summary]/heuristic honesty conventions, and not-peer-reviewed status disclaimer.
 - Flags audit pre-push: 53 [to-verify] + 121 [summary] markers live and labeled inline (published flagged, never silently); no secrets found (scanned for tokens/keys/personal paths).
-- Release [v0.1.0](https://github.com/juma8383/math-research-wiki/releases/tag/v0.1.0) published 2026-09-01T20:29:39Z at 6655aa2 — the tag Zenodo's GitHub integration keys on for the versioned DOI (integration enablement pending on user side).
+- Release [v0.1.0](https://github.com/juma8383/math-research-wiki/releases/tag/v0.1.0) published 2026-09-01T20:29:39Z at 6655aa2 â€” the tag Zenodo's GitHub integration keys on for the versioned DOI (integration enablement pending on user side).
 - Incident note: the first `git init` landed in the scripts/ subfolder (shell cwd) creating a nested repo with a 46-file commit; deleted within the minute and re-initialized at the repo root. Recorded here per append-only transparency.
 - lonely-runner-conjecture / T4 one-pair close-out (2026-09-01, `[lonely-runner-t4-onepair]`): **Conjecture T4 RESOLVED - the only primitive tight 3-set is {1,2,3}, now a THEOREM.** Both open halves of the T4-f program proved on paper + exact-Fraction verification (scripts/lonely_runner_t4_lengthlemma.py, _t4_consecutive.py, _t4_onepair.py + logs): (1) **Theorem L** (exact max window length): for coprime a<b, ml = 2/b if b-a>=2 (a FULL gap of G_b exhibited inside G_a via a(4i+1) mod 4b in [b,3b-2a] - a full residue class mod 4 meets the 2(b-a)+1>=5-integer interval; cases a odd / 2 mod 4 / 0 mod 4), ml = (2k-1)/(k(k+1)) for (k,k+1) - so the (L) threshold is reduced sum 3 and the 700-exception census structure (exceptions exactly small-scaled consecutive ratios) is a theorem; (2) **Theorem P-kill** (position kill, all scales at once): for (a,b)=(dk,d(k+1)), c>d(k+1), the exact window w0=(1/k,3/(k+1)) (verified W1 k<=200) forces 3k <= c/d <= 2k(k+1)/(2k-1) => k=1, then the second window pins c/d=3 and gcd(c,d)=1 forces d=1 - a scale-free argument, no finite per-ratio check needed; (3) **Theorem T4** = T4-a + L + P-kill (+ L3 for the converse); Corollary: **T4-f is a theorem** (one-pair condition alone, no tightness needed). Verified: W1-W4 all 0 violations, W3 re-confirms exactly one hit (1,2,3) in [1,200]; problem.md new section inserted before Control-step framing (heading intact); index.md lonely-runner line updated. Next open: tight 4-sets ({1,3,4,7} sporadic), T1/T2 at larger n.
 
 ## [ATTACK mss-two-prime-k58] K5-K8 dead: branch-split + rep-ratio injectivity (2026-09-01)
 
-Continuation of the two-prime kill-equation attack (`[mss-two-prime-freeness]` -> `[mss-two-prime-crossdiv]` -> `[mss-two-prime-k34]`). Script `problems/magic-square-of-squares/scripts/mss_two_prime_k58_branch.py` (+ .log). The six separated kill-equations K5-K8 all have the shape $Y_q(p^2\pm R_p)=Y_p(q^2\pm R_q)$; the branch-split lemma ($\{n^2\pm R_n\}=\{2s^2,8t^2\}$, $s=a^2-b^2$, $t=ab$, S-branch iff $u=s/t>2$) plus rep-ratio injectivity kills all four sign combos: same-branch forces $u_p=u_q\Rightarrow p=q$; cross-branch forces $u_pu_q=4\Rightarrow x_q=(x_p+1)/(x_p-1)\Rightarrow q=(a_p+b_p)^2+(a_p-b_p)^2=2p$, impossible for distinct odd primes. THEOREM K58: all of K5, K6a/b, K7a/b, K8 DEAD (no conjectures used). Verified: branch split 0 violations / 2,549 primes <=5e4; equation-iff check 0 mismatches / 1,296,855 pairs q<=3e4; K5-K8 relations 0 hits; extended census 11,436,153 pairs q<=1e5, 0 hits. Kill list down to K1 (Wieferich-gated), K3/K4 (K34-gated), K10, K12-K16. Flagged: T2 in `[mss-two-prime-crossdiv]` kills "2B=A" (= K10 under the sequential labeling) yet its status line lists K10 open — discrepancy to resolve next visit. notes.md new section inserted before "## Cross-problem links" (heading count verified 1); index.md MSS line extended.
+Continuation of the two-prime kill-equation attack (`[mss-two-prime-freeness]` -> `[mss-two-prime-crossdiv]` -> `[mss-two-prime-k34]`). Script `problems/magic-square-of-squares/scripts/mss_two_prime_k58_branch.py` (+ .log). The six separated kill-equations K5-K8 all have the shape $Y_q(p^2\pm R_p)=Y_p(q^2\pm R_q)$; the branch-split lemma ($\{n^2\pm R_n\}=\{2s^2,8t^2\}$, $s=a^2-b^2$, $t=ab$, S-branch iff $u=s/t>2$) plus rep-ratio injectivity kills all four sign combos: same-branch forces $u_p=u_q\Rightarrow p=q$; cross-branch forces $u_pu_q=4\Rightarrow x_q=(x_p+1)/(x_p-1)\Rightarrow q=(a_p+b_p)^2+(a_p-b_p)^2=2p$, impossible for distinct odd primes. THEOREM K58: all of K5, K6a/b, K7a/b, K8 DEAD (no conjectures used). Verified: branch split 0 violations / 2,549 primes <=5e4; equation-iff check 0 mismatches / 1,296,855 pairs q<=3e4; K5-K8 relations 0 hits; extended census 11,436,153 pairs q<=1e5, 0 hits. Kill list down to K1 (Wieferich-gated), K3/K4 (K34-gated), K10, K12-K16. Flagged: T2 in `[mss-two-prime-crossdiv]` kills "2B=A" (= K10 under the sequential labeling) yet its status line lists K10 open â€” discrepancy to resolve next visit. notes.md new section inserted before "## Cross-problem links" (heading count verified 1); index.md MSS line extended.
 
-## [PUBLISH zenodo-doi] 2026-09-01 — concept DOI minted and wired into README
+## [PUBLISH zenodo-doi] 2026-09-01 â€” concept DOI minted and wired into README
 - Zenodo skipped the pre-existing v0.1.0 (webhook only fires on releases arriving after enablement); fallback executed as pre-announced: v0.1.1 published -> DOI minted within 1 minute.
 - Version DOI 10.5281/zenodo.22238400 (v0.1.1, verified HTTP 200 -> zenodo.org/records/22238400); concept DOI (all versions) 10.5281/zenodo.22238399.
 - README: DOI badge (concept DOI) + Cite section added. Two-layer publish complete: GitHub (open notebook) + Zenodo (citable layer).
@@ -3761,7 +3761,7 @@ via Add-Content only; no Set-Content on log.md.
 - Theory agent (mss_k34_elliptic.py + parts p2..p12 + consolidated log): reduction proved symbolic; models M_A~=E_A: Y^2=X^3-250X^2+17420X+35848, M_B~=E_B: Y^2=X^3+310X^2+8140X+51912, 2-isogenous; THEOREM rank=1 torsion=Z/2 both (2-isogeny descent, rigorous one-way Selmer kills); killing primes {3,5,11,13}/{3,5,19,29} on the genus-3 covers; MW sieve built, not collapsed <400. K34 OPEN.
 - Claude verification (mss_k34_claude_mw_check.py+log): all 24 images on-curve, full m*G+eps*T table reproduced exactly, C_A/C_B reproduced; 3 transcription slips found and filed append-only in notes.md tracked failures (2 alpha-witness typos, 1 image-table T-partner swap between the 66/1151 and 1151/66 rows) - none load-bearing; rank/torsion theorem CONFIRMED. Tracked my own arithmetic slips en route (x3 sign, V denominator, mul-sign).
 
-## 2026-09-01 — [mss] Genus-3 Jacobian decomposition VERIFIED: rank J = 2 < 3; Chabauty gate named (Claude session)
+## 2026-09-01 â€” [mss] Genus-3 Jacobian decomposition VERIFIED: rank J = 2 < 3; Chabauty gate named (Claude session)
 
 - Continued the K34 attack. The genus-3 round agent (report-only) delivered
   the decomposition J(C3_A) ~ E_A x E_A x E_G, J(C3_B) ~ E_B x E_B x E_G.
@@ -3876,13 +3876,13 @@ self-caught by the local expansion at (4,264) (528 = 48*11 makes it a
 
 ---
 
-## [ATTACK mss-k34-refine2] 2026-09-02 — K34: cancellation lemma PROVED; gate reduced to odd-depth primitive divisors
+## [ATTACK mss-k34-refine2] 2026-09-02 â€” K34: cancellation lemma PROVED; gate reduced to odd-depth primitive divisors
 
-**Round target** (from 2d): the two lemmas of the primitive-divisor route — (a) cancellation/numerator lemma, (b) applicability of Ingram's primitive-divisor theorem to the coset EDS.
+**Round target** (from 2d): the two lemmas of the primitive-divisor route â€” (a) cancellation/numerator lemma, (b) applicability of Ingram's primitive-divisor theorem to the coset EDS.
 
 **Outcome: Lemma (a) PROVED outright, no exceptions.** For any good prime q and any kernel point P = nG_A of depth s = v_q(denom x(P))/2 >= 1: writing x = phi/psi^2, y = phi3/psi^3 in lowest terms (standard integrality: gcd(phi3,psi)=gcd(phi,psi)=1, so v(phi3)=v(phi)=0):
-- y+66x = (phi3 + 66 phi psi)/psi^3 — second term has valuation >= s > -3s, no cancellation possible, v = -3s exactly;
-- x-4 = (phi - 4 psi^2)/psi^2 — numerator = phi mod q, v = -2s exactly;
+- y+66x = (phi3 + 66 phi psi)/psi^3 â€” second term has valuation >= s > -3s, no cancellation possible, v = -3s exactly;
+- x-4 = (phi - 4 psi^2)/psi^2 â€” numerator = phi mod q, v = -2s exactly;
 - hence v_q(X(P)) = -3s - (-4s) = +s UNCONDITIONALLY.
 The 0/0 exceptional points of X (poles (4,-/+264), zero T=(0,0)) never coincide with kernel points. Verified exactly on 256 kernel-prime cases (n <= 60, all good q <= 4000 with ord_q(G) | n): 0 failures (mss_k34_refine2.py/.log).
 
@@ -3892,12 +3892,24 @@ The 0/0 exceptional points of X (poles (4,-/+264), zero T=(0,0)) never coincide 
 
   K34-A reduces to: for every coset index n (n = c mod M_A, c in {0,2,M_A/2-1,-2,-1}), some primitive divisor q of psi_n has v_q(psi_n) ODD (equivalently: not all primitive divisors are odd-Wieferich, v_q(psi_n) in {2,4,...}).
 
-That is the exact residue of the problem: ruling out "all primitive divisors have even depth" unconditionally requires a non-Wieferich bound for EDS — the direct analogue of the Wall-Sun-Sun obstruction for Lucas sequences. Silverman's conditional-on-abc sparsity result suggests the gate holds heuristically, but unconditionally this is open. [to-verify] exact hypotheses of Ingram's theorem (n >= 13 for all nonsingular E/Q, infinite-order G, or curve-dependent exceptions?).
+That is the exact residue of the problem: ruling out "all primitive divisors have even depth" unconditionally requires a non-Wieferich bound for EDS â€” the direct analogue of the Wall-Sun-Sun obstruction for Lucas sequences. Silverman's conditional-on-abc sparsity result suggests the gate holds heuristically, but unconditionally this is open. [to-verify] exact hypotheses of Ingram's theorem (n >= 13 for all nonsingular E/Q, infinite-order G, or curve-dependent exceptions?).
 
-**Empirical gate evidence:** depth census v_q(psi_ord) over all good q <= 4000 with ord_q(G) <= 60 for (E~_A, G_A): 78/78 primes have depth exactly 1, depth histogram {1:78} — zero odd-Wieferich primes found.
+**Empirical gate evidence:** depth census v_q(psi_ord) over all good q <= 4000 with ord_q(G) <= 60 for (E~_A, G_A): 78/78 primes have depth exactly 1, depth histogram {1:78} â€” zero odd-Wieferich primes found.
 
 **B-side port (Lemma a only):** same argument for X_B = (6y-92x)/(x(x-36)): 6phi3 - 92 phi psi has valuation 0 at kernel points for q >= 5, x - 36 gives -2s, so v_q(X_B(P)) = +s; identical reduction for the four k-cosets of <H_B> (M_B = 264). Lemma a fully ports; Lemma b is the shared gap.
 
 **Files:** notes.md sec 2e [mss-k34-refine2]; scripts/mss_k34_refine2.py + .log.
 
 **K34 status: OPEN.** Gate sharpened from "two unproven lemmas" to "one unproven lemma (odd-depth primitive divisors, a Wieferich-type gap)".
+
+[ATTACK mss-k34-refine3] 2026-09-02 ~11:00 | magic-square-of-squares | K34 / elliptic EDS depth census
+- Built Shipsey-style EDS engine (7-window, valuation-tracked mod p^8, O(log n)) computing W_n = psi_n(x_G) for large indices. Validated 378/378 vs exact W_n on both curves. First time kernel depths are computable for large n.
+- DEPTH CENSUS (all good q <= 20000, 2260 primes/curve): A: {1: 2259, 2: 1}; B: {1: 2257, 2: 3}. FIRST odd-Wieferich primes found: q=167 (A, ord 84, depth 2); q=13/419/2351 (B, depths 2). Rate consistent with Poisson( sum 1/q ~ 2.5 ).
+- Depth-decomposition theorem PROVED via formal group: depth_q(nG) = b_d + v_q(n/d), d = ord_q(G) | n. Class-0 constraint theorem: X(kH_A) = w^2 forces v_p(k) = b_p + v_p(M_A) + v_p(d) (mod 2) for every valid prime p; k must absorb R_0 = product of odd-depth valid primes.
+- Significance: odd-Wieferich primes exist (depth 1 NOT universal) but are rare (~0.1%); gate = "some primitive divisor of each psi_n has odd depth" remains a Wall-Sun-Sun-type gap with measured base-rate support. K34 stays OPEN.
+- Files: scripts/mss_k34_refine3.py + .log (engine + census q<=20000); scripts/mss_k34_refine3_valid.py (valid-prime census <= 3e5/2e5, validA/validB_primes.json). notes.md sec 2f filed. To-verify: Ingram primitive-divisor hypotheses.
+
+[ATTACK mss-k34-refine3] 2026-09-02 ~11:55 | magic-square-of-squares | valid-prime census + class recount (correction)
+- Valid-prime depth census LANDED (35 min): curve A 640 valid primes (ord|MA) <= 3e5, depth histogram {1:639, 2:1} (only even-depth valid prime: p=167); R0 = product of 639 odd-depth valid primes, log10(R0) = 2712.0 (lower bound). Curve B: 34 valid primes <= 2e5, ALL depth 1, R0^(B) log10 = 103.2. Files: validA_primes.json / validB_primes.json.
+- APPEND-ONLY CORRECTION to [mss-k34-sieve2]: the W2 count "624 valid primes <= 3e5" was an UNDERCOUNT -- its bsgs_order returned None for 16 primes (silently skipped); complete order-finding (trial-division factorization of #E(F_p)) gives 640. Class conclusions UNAFFECTED: re-check of all 5 survivor classes on all 640 (A) and 34 (B) valid primes gives 0 violations (mss_k34_refine3_classcheck.py).
+- Notes sec 2g filled: class-0 size forcing now quantitative -- any X(kH_A)=w^2 solution has n = k*MA >= R0*MA > 10^2721 >> C(E_A) ~ 1e39-42 (Verzobio), so primitive-divisor existence for class-0 cosets is unconditional; nonzero cosets retain the window [MA-2, C(E_A)] ~ [4.2e10, 1e40]. K34 OPEN.

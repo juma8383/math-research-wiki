@@ -1527,6 +1527,117 @@ $v_q(X_B(P))=+s$ and the identical reduction holds for the four $k$-cosets
 of $\langle H_B\rangle$ ($n\equiv c\bmod M_B$, $M_B=264$). **Lemma 2 is
 fully ported; Lemma 1 (odd-depth primitive divisors) is the shared gap.**
 
+### §2f Depth census via a Shipsey EDS engine; the class-0 constraint; first odd-Wieferich primes `[mss-k34-refine3]` (2026-09-02)
+
+**The depth-decomposition theorem.** *Proof (no LTE needed — pure formal
+group).* Let $q\ge5$ be a good prime, $Q=d\,G\in E_1(\mathbb{Q}_q)$ a kernel
+point of base depth $b_d=v_q(\psi_d(x_G))\ge1$ (so $Q\in E_b\setminus E_{b+1}$
+under the depth filtration). Multiplication-by-$m$ on the formal group
+satisfies $t(mQ)=m\,t(Q)+O(t^2)$ where $t$ is the local parameter, so
+$v_q(t(mQ))=v_q(m)+b$ for every $m\ge1$: the map $Q\mapsto mQ$ sends depth
+$s$ to $s+v_q(m)$ exactly. Hence for $P=nG$ with $d=\mathrm{ord}_q(G)\mid n$:
+$$\mathrm{depth}_q(nG)\;=\;b_d+v_q(n/d).$$
+**The class-0 constraint theorem.** For the coset $n=kM_A$ ($c=0$), every
+valid prime $p$ (i.e. $\mathrm{ord}_p(G_A)=d\mid M_A$) is a kernel prime of
+$kH_A$, and $X(kH_A)=w^2$ forces $b_p+v_p(k)+v_p(M_A)-v_p(d)\equiv0\pmod2$.
+Since typically $p\nmid\#E(\mathbb{F}_p)$ (so $v_p(d)=0$) and $p\nmid M_A$:
+$v_p(k)\equiv b_p\pmod2$ — **$k$ must absorb every valid prime with odd base
+depth**. Define $R_0=\prod\{p\text{ valid}:b_p\text{ odd},\ p\nmid M_A\}$;
+then $k=R_0k'$. (For $c\in\{2,-1,-2,M_A/2-1\}$ no valid prime is a kernel
+prime of the coset point, so this constraint is exclusive to class 0.)
+
+**The engine.** Shipsey-style elliptic-divisible-sequence recurrence
+$W_{m+n}W_{m-n}=W_{m+1}W_{m-1}W_n^2-W_{n+1}W_{n-1}W_m^2$ ($W_n=\psi_n(x_G)$,
+$W_1=1$, $W_2=2y_G$), maintained as a 7-window $(W_{n-3}..W_{n+3})$ over the
+binary expansion of $N$: doubling divides only by $W_2=2y_G$ (a power of
+2 — invertible at $p\ge5$), the add step divides by $W_n$ with
+valuation-tracked arithmetic mod $p^{8}$. Computes $v_p(W_N)$ in $O(\log N)$
+steps — **first time these depths are computable for large indices**
+(`scripts/mss_k34_refine3.py`, validated 378/378 against exact $W_n$ on both
+curves).
+
+**Census results (all good primes $q\le20000$, 2260 primes per curve).**
+- $(Ẽ_A,G_A)$: depth histogram $\{1:2259,\ 2:1\}$ — **first odd-Wieferich
+  prime: $q=167$, $\mathrm{ord}_{167}(G_A)=84$, $v_{167}(\psi_{84})=2$**.
+- $(Ẽ_B,G_B)$: histogram $\{1:2257,\ 2:3\}$ — odd-Wieferich primes
+  $q=13$ (ord 18), $q=419$ (ord 200), $q=2351$ (ord 610), all depth 2.
+- Rate check: heuristic $\sum_{q\le B}1/q\approx2.5$ expected odd-Wieferich
+  primes per curve; observed 1 (A) and 3 (B) — consistent with Poisson.
+  Higher-depth ($\ge3$) defects: none found.
+
+**What this means for the gate.** Odd-Wieferich primes exist for both curves
+— depth 1 is *not* universal, so a naive "every primitive divisor has odd
+depth" lemma is false as stated. But they are rare (~0.1%), and the gate only
+requires *some* primitive divisor of each $\psi_n$ to have odd depth —
+ruling out "all primitive divisors odd-Wieferich" remains a
+Wall–Sun–Sun-type gap (Silverman's abc-conditional sparsity supports it).
+The census is the measured base-rate evidence that the gate is satisfiable.
+
+**Valid-prime census** (`scripts/mss_k34_refine3_valid.py`, saved to
+`validA_primes.json` / `validB_primes.json`): all valid primes
+($\mathrm{ord}_p(G)\mid M_A$, resp. $\mid M_B$) with their base depths $b_p$
+and the exact class-0 constraint $v_p(k)\equiv b_p+v_p(M_A)+v_p(d)\pmod2$;
+$R_0$ computed from the odd-depth subset. **Results (35 min run):** curve A
+has **640 valid primes $\le3e5$** with depth histogram $\{1:639,\,2:1\}$ —
+the only even-depth valid prime is $p=167$ — so
+$R_0=\prod_{\text{639 primes}}p$, $\log_{10}R_0=2712.0$ (lower bound: the
+true $R_0$ over all valid primes is larger). Curve B has **34 valid primes
+$\le2e5$, all depth 1** ($R_0^{(B)}$, $\log_{10}=103.2$). Class re-check
+(`mss_k34_refine3_classcheck.py`): the five survivor classes hold on all 640
+(A) and 34 (B) valid primes, 0 violations. **Append-only correction to
+[mss-k34-sieve2]**: the W2 count "624 valid primes $\le3e5$" was an
+undercount — its `bsgs_order` returned None for 16 primes (silently
+skipped); complete order-finding (trial-division factorization of
+$\#E(\mathbb{F}_p)$) gives 640. Class conclusions unaffected (0 violations). `[to-verify→verified-with-caveat,
+2026-09-02]` Primitive-divisor status: Ingram's rank-one $Z\le12$ ($n\ge13$)
+is **conditional on Lang's height conjecture** (Ingram, *JNT* 123 (2007),
+473–486); unconditional: Silverman 1988 gives $Z<\infty$ but *ineffective*;
+**Verzobio 2023 (Pacific J. Math 325, 331–352) gives an explicitly
+computable constant $C(E/K)$ beyond which every term has a primitive
+divisor** — the right tool for the gate (compute $C$ for $(Ẽ_A,G_A)$,
+$(Ẽ_B,G_B)$); Ingram–Silverman 2012 gives a uniform bound conditional on
+abc. Sources: Verzobio arXiv:2001.02987 ($C$ depends only on the model —
+computable for $(Ẽ_A,G_A)$, $(Ẽ_B,G_B)$: next-round task); Ingram
+math/0409540; msp.org/pjm/2023/325-2/p07.
+
+### §2g Class-0 descent: hypothetical solutions are forced past the effective primitive-divisor constant `[mss-k34-refine3]` (2026-09-02)
+
+**Proposition (class-0 size forcing).** If $X(kH_A)=w^2$ for some $k\ge1$,
+then for every valid prime $p$ the constraint of §2f fixes $v_p(k)\bmod2$,
+so $k\ge R_0=\prod\{p\text{ valid}: b_p+v_p(M_A)+v_p(d)\equiv1\pmod2\}$ and
+$$n=kM_A\ \ge\ R_0\,M_A .$$
+With 640 valid primes $\le3e5$ and depth-1 the norm (§2f census: 2259/2260
+primes odd depth), $\log_{10}R_0=2712.0$ from the census (a lower bound), so
+$n\ge R_0M_A>10^{2721}\gg10^{42}$.
+
+**Verzobio's constant for our curves (order of magnitude).** Equation 13 of
+arXiv:2001.02987 with $K=\mathbb{Q}$ ($D=1$, $\Delta_K=1$), $h(j(Ẽ_A))\approx2.5$
+($j\approx-12.6$), $\log|\Delta_{Ẽ_A}|\approx34.5$, $\sigma\approx2$:
+the bottleneck is $C_2'=54\,c_1 D^6\log V_1'\log V_2'$ with $c_1=3.6\cdot10^{41}$
+(David's elliptic-logarithm bound), giving $C(E_A)\approx10^{39}$–$10^{42}$
+**[to-verify: recompute exactly]** — either way $\gg M_A=4.2\cdot10^{10}$ but
+$\ll R_0M_A$.
+
+**Consequence — the two coset families split.**
+- **Class 0** ($n=kM_A$): any hypothetical solution has
+  $n\ge R_0M_A>C(E_A)$, so $\psi_n$ **provably has a primitive divisor**
+  (Verzobio, unconditional and effective). The class-0 gate reduces to pure
+  depth: *some primitive divisor of $\psi_{kM_A}$ has $v_q(\psi_{kM_A})$
+  odd* — an odd-Wieferich question about specific enormous terms, no
+  existence gap.
+- **Nonzero cosets** ($n\equiv\pm1,\pm2,M_A/2-1$): $n$ ranges over
+  $[M_A-2,\,C(E_A)]\approx[4.2\cdot10^{10},\,10^{40}]$ with no effective
+  primitive-divisor guarantee — this finite but astronomically large window
+  is the honest remaining existence gap, bridgeable conditionally via
+  Lang's conjecture (Ingram's $n\ge13$) or abc (Silverman's odd-Wieferich
+  sparsity).
+
+**Sharper statement of the total remaining gap (K34-A).** (i) effective
+primitive divisors for the nonzero-coset window; (ii) odd depth of some
+primitive divisor for all cosets. Both are Wall–Sun–Sun-type; (i) has a
+conditional resolution (Lang/abc), (ii) is supported by the §2f census base
+rate (odd-Wieferich rate $\sim0.1\%$).
+
 ## Cross-problem links
 
 
