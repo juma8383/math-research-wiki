@@ -1638,6 +1638,59 @@ primitive divisor for all cosets. Both are Wall–Sun–Sun-type; (i) has a
 conditional resolution (Lang/abc), (ii) is supported by the §2f census base
 rate (odd-Wieferich rate $\sim0.1\%$).
 
+### §2h The depth-parity sieve: a strictly new kill layer the depth-0 sieve cannot see `[mss-k34-refine4]` (2026-09-02)
+
+**The layer.** The [mss-k34-sieve2] CRT sieve killed indices using only
+depth-0 information ($X(nG)\not\in\mathrm{QR}\bmod p$). By Lemma 2 a
+*kernel* prime ($d=\mathrm{ord}_q(G)\mid n$) has $X(nG)\equiv0\pmod q$ —
+always a QR — so kernel primes **never killed in the old sieve**. But the
+*parity* of their depth is new kill information: writing
+$\mathrm{depth}_q(nG)=b_d+v_q(n)-v_q(d)$ (§2f), a hypothetical solution
+needs this even at every kernel prime, so $n$ is killed by $q$ iff
+$$d\mid n,\quad q\nmid n,\quad b_d+v_q(d)\ \text{odd}.$$
+For $n=kM+c$ the kill is the progression $k\equiv k_0\bmod D$,
+$D=d/\gcd(d,M)$ (needs $\gcd(d,M)\mid c$), minus the $q\mid n$
+exclusion class (CRT-exact). **Valid primes never kill the nonzero
+cosets** ($\gcd(d,M)\mid c$ and $d\mid M$ force $d\mid c$, impossible for
+$d\ge4$) — consistent with the class-0 constraint theorem; the killers are
+exactly non-valid primes, which the original (cap-restricted, ord-dividing)
+sieve never exploited.
+
+**Parity table** (`mss_k34_refine4_table.py`, `parityA/B.json`): all good
+primes $\le3e5$ (A, 25,995) and $\le2e5$ (B, 17,982): 25,993 / 17,979 have
+odd base depth (killers), 2 / 3 even (incl. $p=167$ for A).
+
+**Results** (`mss_k34_refine4_sieve.py`, $k\le2\cdot10^5$, 4 nonzero
+classes per curve; validation: sieve vs direct per-$k$ brute check **exact
+match on all 4 B-classes at $K=3000$, $q\le2e4$**, plus 2,945 $k_0$
+spot-checks $(k_0M+c)\equiv0\pmod d$):
+
+| curve, class $c$ | killed | survivors |
+|---|---|---|
+| A $c=2$, $-2$ | 64.0%, 63.9% | 72,042 / 72,121 of 200,001 |
+| A $c=M/2-1$, $-1$ | 42.1%, 42.1% | 115,713 / 115,833 |
+| B $c=1$ | 56.1% | 87,765 |
+| B $c=2,134,262$ | 78.0% | ~44,020 |
+
+**Kill correlation (why per-prime density models fail).** The kill
+condition depends only on $d\mid n$ — primes *sharing an order* impose
+identical conditions, so per-prime density products overestimate kill power
+by up to 25$\times$ (predicted survivor 0.029 vs observed 0.360 for A
+$c=2$). Distinct-$(D,k_0)$ class counts: 4,759 (A $c=\pm2$),
+906 (A $c=\pm1$, $M/2-1$), 5,612 (B $c\ne1$), 853 (B $c=1$); the
+$\exp(-\sum 1/D)$ model then matches A $c=\pm1$ well (0.554 vs 0.579) but
+still overkills B $c\ne1$ (0.105 vs 0.780) — nested/overlapping progressions
+cluster further. **Observed densities are the ground truth.**
+
+**Honest assessment.** The layer kills 42–78% of the $k$-space per coset at
+$B=3e5$ but does not collapse any class; survivor density thins as $B$
+grows (new primes add distinct realized $d$'s, and $\sum_{\text{distinct
+realized }d}g/d$ grows — but slowly), so no finite-$B$ collapse is
+available and none is claimed. The refined candidate set
+($k\le2\cdot10^5$ survivors listed in `mss_k34_refine4.log` context) is the
+input to deeper layers; the total remaining gap stays as structured in §2g
+(primitive-divisor existence window + odd-depth gate).
+
 ## Cross-problem links
 
 

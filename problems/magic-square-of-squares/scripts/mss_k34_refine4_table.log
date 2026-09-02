@@ -1,0 +1,27 @@
+﻿  A: 0 primes (0s)
+  A: 2000 primes (6s)
+  A: 4000 primes (27s)
+  A: 6000 primes (66s)
+  A: 8000 primes (131s)
+  A: 10000 primes (204s)
+  A: 12000 primes (291s)
+  A: 14000 primes (393s)
+  A: 16000 primes (517s)
+  A: 18000 primes (660s)
+  A: 20000 primes (823s)
+  A: 22000 primes (1009s)
+  A: 24000 primes (1232s)
+=== A: 25995 primes <= 300000 (1462s) ===
+  base-depth histogram: {1: 25993, 2: 2}
+  B: 0 primes (0s)
+  B: 2000 primes (6s)
+  B: 4000 primes (24s)
+  B: 6000 primes (58s)
+  B: 8000 primes (108s)
+  B: 10000 primes (175s)
+  B: 12000 primes (259s)
+  B: 14000 primes (362s)
+  B: 16000 primes (486s)
+=== B: 17982 primes <= 200000 (630s) ===
+  base-depth histogram: {1: 17979, 2: 3}
+total 2092s
