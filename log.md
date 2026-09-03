@@ -4049,3 +4049,36 @@ That is the exact residue of the problem: ruling out "all primitive divisors hav
   proof path; the odd-depth primitive-divisor gate remains the structural
   gap. Quota: RED zone honored (no subagents, direct work only).
 
+## [ATTACK mss-k34-tooling] 2026-09-03 ~13:45 | magic-square-of-squares
+
+- TOOLING LANDED: WSL2 Ubuntu 26.04 (already present, started) now hosts
+  PARI/GP 2.17.3 + eclib/mwrank 20250122 (apt); SageMath 10.9 building
+  from source (github.com/sagemath/sage, 45 system packages auto-detected;
+  build in flight at filing time). Magma = commercial, no free tier - not
+  installable; the free Magma online calculator is the fallback for
+  one-off heavy computations.
+- IMMEDIATE PAYOFF - CORRECTED 2i Verzobio inputs (append-only correction
+  in notes.md descent section; source page updated): the 2i Delta values
+  (10019299708108800 / 118197499985920) and the sigma in [1,6] bracketing
+  were WRONG (short-form discriminant formula misapplied to curves with
+  an x^2-term). PARI ellminimalmodel + ellglobalred: tE_A min disc =
+  -2654208 = -2^15*3^4, N = 768 = 2^8*3, sigma = 2.2264; tE_B min disc =
+  +294912 = 2^15*3^2, N = 768, sigma = 1.8957. Corrected Verzobio C
+  (mss_k34_verzobio_constant_v2.py, exact invariants): C = 7.2e42 (tE_A),
+  8.4e42 (tE_B) - inside the filed 1e41-1e44 band, every conclusion
+  unchanged (class-0 margin 10^2721 >> C; nonzero-coset window still
+  below the effective constant). To-verify item "conductor/sigma"
+  DISCHARGED.
+- Also corrected: the tooling session's first mwrank rank-check used a
+  typo'd input (a1=2111 instead of 0) and "confirmed" a different curve;
+  correct inputs give rank(tE_A)=1, rank(tE_B)=1 unconditionally with
+  full MW bases (mwrank), independently re-confirming the sec 3 rank
+  theorem. j-invariants re-verified exactly (j_A = -8000/81,
+  j_B = 2744000/9). Lesson: when new tooling lands, re-run every numeric
+  claim it can check - two silent slips surfaced on the first pass.
+- Files: scripts/pari_k34_minred.gp, scripts/check_discriminants.py,
+  scripts/mss_k34_verzobio_constant_v2.py/.log; notes.md correction
+  block; sources/verzobio-2023.md use-section updated.
+- Verdict: K34 OPEN, unchanged. Tooling now available for the Chabauty
+  gate (sec 8) once the Sage build completes.
+

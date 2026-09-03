@@ -70,11 +70,15 @@ $4\le n\le10^5$ directly.
 
 ## Use in this wiki
 
-Evaluated for the two K34 sieve curves
-(`problems/magic-square-of-squares/scripts/mss_k34_verzobio_constant.py`,
-2026-09-03): $\Delta(\tilde E_A)=10019299708108800$,
-$\Delta(\tilde E_B)=118197499985920$; dominant term gives
-$C\in[1.4\cdot10^{41},\,2.6\cdot10^{44}]$ ($\tilde E_A$),
-$[3.7\cdot10^{41},\,6.8\cdot10^{44}]$ ($\tilde E_B$) over the unconditional
-Szpiro range $\sigma\in[1,6]$ (conductor not computed; bracketed by
-sensitivity). See notes.md §2i for the attribution correction it supports.
+Evaluated for the two K34 sieve curves (`problems/magic-square-of-squares/scripts/`,
+2026-09-03; Δ/N values CORRECTED by the tooling round — PARI `ellminimalmodel`
++ `ellglobalred`, mwrank-consistent): $\tilde E_A$:
+$\Delta_{\min}=-2654208=-2^{15}\cdot3^4$, $N=768=2^8\cdot3$,
+$\sigma=2.2264$; $\tilde E_B$: $\Delta_{\min}=+294912=2^{15}\cdot3^2$,
+$N=768$, $\sigma=1.8957$. Dominant term gives
+$C\approx1.5\cdot10^{41}$ ($\tilde E_A$), $1.9\cdot10^{41}$ ($\tilde E_B$) at
+the true σ values (within the $10^{41}$–$10^{44}$ band filed 2026-09-03; an
+earlier quick script had used misapplied discriminant formulas and σ-range
+bracketing — superseded by the PARI values, see notes.md correction).
+Consistent with the paper's own Example 9.1 ($C\approx5.88\cdot10^{42}$) and
+the author's stated $\sim10^{38}$ method floor.

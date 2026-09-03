@@ -1864,6 +1864,35 @@ insolvability of the necessary quartics; the obstruction is exactly the
 $(a\pm b)^2$ lift, consistent with the `[mss-k34-refine]` finding that
 congruence conditions alone cannot terminate.
 
+**CORRECTION (2026-09-03 ~13:30, tooling round — supersedes parts of §2i and
+this section's Verzobio numbers).** The tooling round (PARI/GP 2.17.3 +
+eclib/mwrank 20250122 installed in WSL2 Ubuntu 26.04, SageMath 10.9 building)
+immediately paid for itself: the §2i "$\Delta(\tilde E_A)=10019299708108800$,
+$\Delta(\tilde E_B)=118197499985920$" values and the $\sigma\in[1,6]$
+bracketing were WRONG — the quick script misapplied the short-form
+discriminant formula $\Delta=-16(4A^3+27B^2)$ to curves with an $x^2$-term.
+Correct values (PARI `ellminimalmodel` + `ellglobalred`, mwrank-consistent,
+`scripts/pari_k34_*`):
+$$\tilde E_A:\ \Delta_{\min}=-2654208=-2^{15}\cdot3^4,\quad
+  N=768=2^8\cdot3,\quad \sigma=\tfrac{\log|\Delta_{\min}|}{\log N}
+  =2.2264;$$
+$$\tilde E_B:\ \Delta_{\min}=+294912=2^{15}\cdot3^2,\quad
+  N=768,\quad \sigma=1.8957.$$
+Both $\sigma$ sit INSIDE the bracketed range, so every Verzobio-C conclusion
+of §2i survives with the sharper inputs: $J_E\approx$
+$\log(2654208)/(10^{15}\cdot\sigma^6\log^2(104613\sigma^2))$ with
+$\sigma=2.226$ (A) resp. $\sigma=1.896$ (B) — the C values move within the
+already-filed $10^{41}$–$10^{44}$ band (recomputed in the tooling round;
+class-0 margin $10^{2721}\gg C$ unchanged; nonzero-coset window still below
+the effective constant). Also corrected: an mwrank rank-check in the
+tooling session initially ran on a typo'd input (a1=2111 instead of 0) and
+"confirmed" a different curve — the correct inputs give rank(tE_A)=1,
+rank(tE_B)=1 unconditionally (full MW basis, mwrank), independently
+re-confirming the §3 rank theorem; j-invariants re-verified exactly
+($j_A=-8000/81$, $j_B=2744000/9$). Lesson (generalizing the wiki's own
+verification discipline): when tooling lands, re-run every numeric claim it
+can check — two silent input/parameter slips surfaced on the first pass.
+
 **Tracked failures (append-only).**
 1. Hand "kill" of splits $(14,17),(17,14)$ by mod 16 was WRONG (checked the
    wrong parity class; $(r,s)=(\text{even},\text{odd})$ gives $u^2\equiv17\equiv1$
