@@ -1914,6 +1914,143 @@ Verification gap note: the agent's saved p5 log is PRE-fix (shows 8
 mod-survivors + the wrong sign test), so the final 16$\to$4 table is
 confirmed by this run, not by p5's saved log.
 
+### §2i Continuation (2026-09-03, `[mss-k34-continuation]`): primitive-divisor attribution corrected (Ingram → Verzobio), leaf census extended (0 hits), layer-1 bookkeeping reconciled, Bennett–Walsh scope clarified
+
+Continuation round (Hermes session, RED quota zone, no subagents). Scripts:
+`mss_k34_descver_symbolic.py/.out`, `mss_k34_leaf_census_ext.py/.log`,
+`mss_k34_layer1_recount.py/.log`, `mss_k34_verzobio_constant.py/.log` (all
+exact integer arithmetic; sympy 1.13.1 for the symbolic round).
+
+**1. ATTRIBUTION CORRECTION (append-only; resolves the §2e to-verify on
+"Ingram's theorem").** The §2e sentence "By Ingram's primitive-divisor theorem
+(primitive divisors of $\psi_n$ exist for $n\ge13$)" cites a theorem that does
+not exist in that generality. Verified state of the literature (primary
+sources checked 2026-09-03):
+- Silverman 1988 (J. Number Theory 30, Prop 10): for $E/\mathbb Q$ minimal,
+  non-torsion $P$, $B_n$ has primitive divisors for all but finitely many $n$
+  — INEFFECTIVE (no bound; via Siegel).
+- Cheon–Hahn 1999 (Acta Arith. 88, 219–222): number-field generalization;
+  still ineffective.
+- Ingram–Silverman 2012 (*Number theory, analysis and geometry*, Springer,
+  243–271): uniform $|Z(P,E)|\le\min(M_1(K,\nu),M_2(K,\sigma))$; uniform in
+  twists only under abc (Szpiro ratio).
+- Family-specific explicit bounds only: Everest–McLaren–Ward 2006 (JNT 118,
+  71–89): $Z_e\le10$, $Z_o\le21$ (congruent-number twists
+  $y^2=x^3-T^2x$); Ingram 2009 (JTNB 21(3) 609–634, **verified verbatim**,
+  Thm 4): congruent number curves $E_N$ ($N\ge70$, called spurious) have at
+  most one Zsigmondy index $>2$; Voutier–Yabuta 2012 (Acta Arith. 151,
+  165–190, $y^2=x^3+ax$, $j{=}1728$): Thm 1.3 (odd $n$ with $x(P)$ square,
+  or even $n$ $\Rightarrow n\le2$; odd otherwise Lang-conditional, Remark 5.3
+  "$n<14.01$, so $n\le13$" in the two-component setting) — **the likely
+  origin of the stray "13"**. Known no-primitive-divisor examples on MINIMAL
+  models reach $n=18,21$ ($B_{18}=B_{21}=17^2$, VY2012) and $n=39$ (Ingram's
+  thesis, cited in Verzobio 2021) — no uniform small bound exists even on
+  minimal models.
+- THE CORRECT CITATION for our use: **Verzobio 2023**, *Some effectivity
+  results for primitive divisors of elliptic divisibility sequences*,
+  Pacific J. Math. 325 (2023) 331–351, DOI 10.2140/pjm.2023.325.331
+  (arXiv:2001.02987v3; **abstract + Thm 1.2 + Eq. (13) + Example 9.1 verified
+  verbatim from the paper body**): Theorem 1.2 — for a FIXED curve + model,
+  $B_n$ has a primitive divisor for $n>C(E/K,\mathcal M)$, effectively
+  computable, model-dependent. Our EDS is Ingram's $D_n$ (denominator of
+  $x(nG)$); a prime $q$ with $\mathrm{ord}_q(G)=n$ is exactly a primitive
+  divisor, and the depth decomposition of §2f applies to it unchanged.
+- Constant computed from Eq. (13) for OUR two sieve curves
+  (`mss_k34_verzobio_constant.py`): with
+  $J_E=\log\Delta/(10^{15}\sigma^6\log^2(104613\sigma^2))$,
+  $\Delta(\tilde E_A)=10019299708108800$,
+  $\Delta(\tilde E_B)=118197499985920$, the dominant term gives
+  $C\in[1.4\cdot10^{41},\,2.6\cdot10^{44}]$ ($\tilde E_A$),
+  $[3.7\cdot10^{41},\,6.8\cdot10^{44}]$ ($\tilde E_B$) over the unconditional
+  Szpiro range $\sigma\in[1,6]$ (conductor not computed — no mwrank on this
+  box; $\sigma$ sensitivity bracketed instead). Consistent with the paper's
+  own Example 9.1 ($C\approx5.88\cdot10^{42}$) and the author's stated
+  $\sim10^{38}$ method floor.
+
+**Consequences (append-only sharpening of §2g).**
+(a) *Class-0 conclusion unchanged, now correctly cited:*
+$n\ge R_0M_A>10^{2721}\gg C$ for every $\sigma\in[1,6]$ — primitive-divisor
+existence for class-0 cosets is unconditional AND effective (Verzobio Thm
+1.2). (b) *Sharpening:* the filed window top "$C(E_A)\sim10^{39\text{--}42}$"
+is corrected UPWARD: even at $\sigma=1$, $C\approx1.4\cdot10^{41}>10^{40}$ —
+the ENTIRE nonzero-coset window $[M_A-2,\sim10^{40}]$ lies BELOW the
+effective constant, so primitive-divisor existence there is guaranteed only
+ineffectively (Silverman/Cheon–Hahn); no effective theorem reaches the
+window. (c) The odd-depth gate itself is UNCHANGED — Verzobio certifies
+existence of some primitive divisor, not odd depth; the Wall–Sun–Sun-type
+gap stands. (d) The "$n\ge13$" in §2e is superseded; §2e text preserved
+append-only, this section authoritative. Sources verified against full
+texts: arXiv:2001.02987v3, jtnb.centre-mersenne.org 10.5802/jtnb.691,
+arXiv math/0409540, arXiv 1009.0872. New source page filed:
+`sources/verzobio-2023.md`.
+
+**Leaf census extension (exact integer arithmetic).** All four live layer-2
+leaf quartics re-searched on extended boxes; deciding tests exact ($F>0$,
+$\mathrm{br}>0$ integer comparisons; floats only bound scan rows):
+$$\begin{array}{ll}
+\text{D1 Q-pos-}(238,1): & r\le610\ (6|r),\ s\ \text{odd},\ s^4>238r^4\
+  \text{(exact)},\ s\le2400:\ 37{,}117\ \text{pairs},\ \mathbf{0};\\
+\text{D2 Q-neg-}(119,2): & s\le3000\ \text{(exact interval)}:\ 41{,}725,\
+  \mathbf{0};\\
+\text{D3 N-pos-}(17,14): & r\le1000,\ s\le4000:\ 352{,}101,\ \mathbf{0};\\
+\text{D4 N-neg-}(34,7): & s\le3000:\ 39{,}018,\ \mathbf{0}.
+\end{array}$$
+VERIFICATION IMPROVEMENT (append-only): the saved
+`mss_k34_descent_claude_check.py` [D] loops have PARITY SLIPS — D1 ranges
+from even $4r$ step 2 (only even $s$, condition wants $s$ odd), D2/D4 take
+start parity from `int(float)` unforced, D1 lacks the gcd filter (D3
+correct). Its "0 hits" is true but under-inclusive (wrong-parity subsets);
+this extension covers the true parity classes exhaustively in the extended
+boxes — 0 hits stands, now correctly evidenced. Script
+`mss_k34_leaf_census_ext.py` + `.log`.
+
+**Layer-1 recount (bookkeeping reconciliation; no substantive change).**
+`mss_k34_layer1_recount.py`: no-filter $n^2$-square survivors **16** at
+$\max(u,v)\le900$ ($n\bmod4$ breakdown $\{1{:}2,\,2{:}12,\,3{:}2\}$) and
+**20** at $\le2000$ ($\{1{:}2,\,2{:}16,\,3{:}2\}$); full hits (lift
+$n\pm2uv$ both squares, $0$ allowed): **exactly 2 at both limits**, both
+$(u,v)=(1,1)$, $n=2$, on $(c_1,c_2)=(8,9),(9,8)$, $j=3$ — the $X=1$ mirror
+pair ($n\equiv2\ (4)$); **0 non-degenerate full hits**. This reconciles the
+three filed numbers: the §"Claude main-loop verification" "**16**"
+(no-filter count, reproduced exactly at LIM 900), the saved claude_check
+log's "**2**" (its $n\equiv1\ (4)$ pre-filter, which also excluded the
+degenerate $n=2$ full hits from its printed list), and the filed p2[A]
+"**12**" (its condition set). Substance confirmed: no $n\equiv1\ (4)$
+layer-1 solution passes the lift at either limit; the $n^2$-square
+solutions concentrate at $n\equiv2\ (4)$ (the even degenerate stratum).
+
+**Symbolic verification (sympy).** `mss_k34_descver_symbolic.py`: octic
+identity $R^2-4608a^4b^4=$ expansion (I1), $R=n^2+64P^2$ (I2),
+$V'^2=n^4+128n^2P^2-512P^4$ (I3) all expand to 0; delta witnesses
+$(0,1)\to\delta=2$, $(1,1)\to\delta=8$ (I5). (Self-note: a this-session
+probe of the §2e B-side numerator identity as
+"$9\varphi_3-92\varphi\psi=x^9+92x^5-64x^3$" FAILED — that was this
+session's own reconstruction, not filed content; the §2e port argument
+"$6\varphi_3$ has valuation 0 at kernel points, second term $\ge s$, no
+cancellation" is independent and unaffected.)
+
+**Bennett–Walsh scope note (resolves part of the §"HONEST STALL" item (i)).**
+Bennett–Walsh 1999 verified verbatim (PAMS 127(12), 3771–3777; abstract +
+Thm 1.2): $b^2X^4-dY^2=1$ has **at most one** positive solution, with
+explicit unit characterization; Ljunggren lineage ($X^4-dY^2=1$, at most
+two; sharp at $d=1785$) confirmed. BUT it is a ONE-PARAMETER Pell-type
+result — our leaf quartics are two-variable
+($u^2$ or $9u^2=c_1r^4+32r^2s^2+c_2s^4$) and are NOT instances of it; the
+named machinery (Tzanakis-type linear forms in elliptic logarithms /
+2-descent on the Weierstrass models) remains the actual route.
+Ljunggren-1967-`Math. Scand. 21` attribution remains `[summary, to-verify]`
+(the classical Ljunggren quartic results are anchored; the exact 1967
+citation is not).
+
+**Bottom line: K34 OPEN — unchanged.** This round: attribution corrected to
+Verzobio 2023 (published, primary-verified) with the effective constant
+computed for OUR models ($10^{41}$–$10^{44}$, so the whole nonzero-coset
+window sits below it); leaf census extended with correct parity classes
+(0 hits, 470k pairs total); layer-1 bookkeeping reconciled (three counts
+explained by filters, substance confirmed); Bennett–Walsh scope clarified.
+Next: the Chabauty gate (§8) remains the named proof path; the odd-depth
+gate remains the structural gap.
+
 ## Cross-problem links
 
 

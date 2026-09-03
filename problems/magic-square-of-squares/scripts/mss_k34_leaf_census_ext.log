@@ -1,0 +1,8 @@
+== mss_k34_leaf_census_ext ==
+extension ranges: D1 r<=610 (6|r), s<=2400; D2 s<=3000; D3 r<=1000, s<=4000; D4 s<=3000
+[TOTALS] (hits, scanned-after-filters):
+    D1 Q-pos(238,1) (0, 37117)
+    D2 Q-neg(119,2) (0, 41725)
+    D3 N-pos(17,14) (0, 352101)
+    D4 N-neg(34,7) (0, 39018)
+== done ==

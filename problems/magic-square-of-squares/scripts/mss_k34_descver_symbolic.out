@@ -1,0 +1,7 @@
+== mss_k34_descver_symbolic ==
+[I1] expand(R^2 - 4608*a^4*b^4 - octic) == 0: True
+[I2] expand(R - (n^2 + 64P^2)) == 0: True
+[I3] expand(V'^2 - (n^4 + 128 n^2 P^2 - 512 P^4)) == 0: True
+[I5] (a,b)=(0,1) delta=2 expected=2 ok=True
+[I5] (a,b)=(1,1) delta=8 expected=8 ok=True
+[J1] expand(F - (x^9+92x^5-64x^3)) == 0: False

@@ -1,0 +1,15 @@
+== mss_k34_layer1_recount ==
+[LIM=900] n^2-square survivors (no n%4 filter): 16
+[LIM=900] n%4 breakdown: {1: 2, 2: 12, 3: 2}
+[LIM=900] full hits (lift ok, 0 allowed): 2
+[LIM=900]    u,v,c1,c2,j,n,n%4 = 1 1 8 9 3 2 2
+[LIM=900]    u,v,c1,c2,j,n,n%4 = 1 1 9 8 3 2 2
+[LIM=900] with n%4==1 filter: 2  of which lift ok: 0
+[LIM=900] full hits excluding degenerate (u,v)=(1,1): 0
+[LIM=2000] n^2-square survivors (no n%4 filter): 20
+[LIM=2000] n%4 breakdown: {1: 2, 2: 16, 3: 2}
+[LIM=2000] full hits (lift ok, 0 allowed): 2
+[LIM=2000]    u,v,c1,c2,j,n,n%4 = 1 1 8 9 3 2 2
+[LIM=2000]    u,v,c1,c2,j,n,n%4 = 1 1 9 8 3 2 2
+[LIM=2000] with n%4==1 filter: 2  of which lift ok: 0
+[LIM=2000] full hits excluding degenerate (u,v)=(1,1): 0

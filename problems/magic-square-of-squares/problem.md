@@ -12,7 +12,7 @@ diagonals equal) whose nine entries are **distinct perfect squares**?
 square of *distinct* integers is trivial; the all-squares constraint is the
 open part.
 
-**State of the attack (2026-09-02, notes.md §§2d–2h):** the two-prime
+**State of the attack (2026-09-03, notes.md §§2d–2i):** the two-prime
 ($\omega_1=2$) sum-freeness gate — Conjecture K34 — is the single standing
 obstruction, reduced to square-X points on the genus-1 quartics $M_A, M_B$
 and further to an elliptic-coset structure: candidate indices $n$ lie in 5
@@ -24,7 +24,15 @@ constant; and a validated depth-parity sieve (new kill layer) removes
 42–78% of the remaining candidate space per nonzero coset. Named proof
 paths: Chabauty–Coleman on $C3_A$ at $p=11$ (rank $J=2<3$), and the
 Wall–Sun–Sun-type odd-depth primitive-divisor gate (Lang/abc-conditional
-routes exist). K34 remains open.
+routes exist). **§2i (2026-09-03):** the primitive-divisor attribution is
+corrected to Verzobio 2023 (PJM 325, effective constant computed for our
+models: $10^{41}$–$10^{44}$, so the entire nonzero-coset window sits BELOW
+it — existence there is ineffective-only); the four K34-descent leaf
+quartics re-censused on extended boxes with corrected parity classes
+(0 hits, ~470k pairs); layer-1 survivor bookkeeping reconciled (16/12/2 =
+filter differences; only the degenerate $X=1$ mirror pair passes the
+lift); Bennett–Walsh 1999 scope clarified (one-parameter — does not reach
+our two-variable leaf quartics). K34 remains open.
 
 ## Frontier (one line)
 No example found despite extensive search; no impossibility proof.

@@ -3992,3 +3992,60 @@ That is the exact residue of the problem: ruling out "all primitive divisors hav
   kill rates rise ~3 pts per class (64.0->67.4 pct, 42.1->45.5 pct);
   NO class collapses - consistent with the kill-correlation finding.
   K34 OPEN.
+
+## [ATTACK mss-k34-continuation] 2026-09-03 ~10:45 | magic-square-of-squares
+
+- Primitive-divisor ATTRIBUTION CORRECTED (append-only; resolves the 2e
+  to-verify): "Ingram's theorem, psi_n primitive divisors for n>=13" is not
+  a theorem in that generality - explicit bounds are family-specific
+  (EMW 2006 Z_e<=10/Z_o<=21 congruent-number; Ingram 2009 JTNB Thm 4
+  congruent-number <=1 Zsigmondy index >2, verbatim-verified; VY 2012
+  j=1728 Lang-conditional odd bound n<=13 = likely origin of the stray
+  "13"; minimal-model counterexamples at n=18,21,39). Correct effective
+  citation: Verzobio 2023 (PJM 325(2) 331-351, DOI 10.2140/pjm.2023.325.331,
+  Thm 1.2 + Eq. (13) verbatim-verified): primitive divisors exist for
+  n > C(E/K,M), effectively computable, model-dependent. Constant computed
+  for OUR sieve curves (mss_k34_verzobio_constant.py): C in
+  [1.4e41, 2.6e44] (tE_A), [3.7e41, 6.8e44] (tE_B) over unconditional
+  Szpiro range sigma in [1,6] (conductor not computed - bracketed).
+  Consequences: (a) class-0 conclusion unchanged and now correctly cited
+  (10^2721 >> C for all sigma in [1,6]); (b) filed window top "C ~ 1e39-42"
+  corrected UPWARD - the ENTIRE nonzero-coset window [M_A-2, ~1e40] lies
+  BELOW the effective constant (existence there ineffective-only);
+  (c) the odd-depth gate itself unchanged (Verzobio gives existence, not
+  depth parity). Source page sources/verzobio-2023.md with claim tags.
+- K34 leaf quartic census EXTENDED (mss_k34_leaf_census_ext.py, exact
+  integer tests): D1 37,117 / D2 41,725 / D3 352,101 / D4 39,018 pairs,
+  0 hits on all four leaves (r to 610-1000, s to 2400-4000). Includes the
+  sliver s^4 > 238 r^4 below s = 4r skipped by the filed census, and
+  CORRECTED PARITY (the saved claude_check D-loops scanned only even s on
+  D1 and unforced start parity on D2/D4 - 0-hits now correctly evidenced).
+- Layer-1 survivor bookkeeping RECONCILED (mss_k34_layer1_recount.py,
+  LIM 900 + 2000): no-filter n^2-square survivors 16 (n mod 4:
+  {1:2, 2:12, 3:2}) and 20 ({1:2, 2:16, 3:2}); full hits (lift ok):
+  exactly 2 at both limits = the degenerate (u,v)=(1,1), n=2 mirror pair
+  on (8,9)/(9,8), j=3; 0 non-degenerate. The filed "16" vs saved-log "2"
+  vs p2[A] "12" are filter differences; substance (no n=1 mod 4 lift) holds
+  at both box limits.
+- Symbolic verification (mss_k34_descver_symbolic.py, sympy 1.13.1): octic
+  identity, R = n^2+64P^2, V'^2 master form all expand to 0; delta
+  witnesses (0,1)->2, (1,1)->8.
+- Bennett-Walsh 1999 verbatim-verified (PAMS 127(12) 3771-3777): at most
+  one positive solution to b^2 X^4 - d Y^2 = 1; SCOPE = one-parameter
+  Pell-type - does NOT cover the two-variable leaf quartics (the named
+  Tzanakis/2-descent route remains). Source page
+  sources/bennett-walsh-1999.md.
+- Lint: index.md Pillai-2 line and Papers line updated to the landed
+  10^25 saturation (paper + conjecture page were already current; the
+  index lines were stale). problem.md frontier block extended to 2i.
+- Files: notes.md sec 2i; scripts/mss_k34_descver_symbolic.py/.out,
+  scripts/mss_k34_leaf_census_ext.py/.log, scripts/mss_k34_layer1_recount.py/.log,
+  scripts/mss_k34_verzobio_constant.py/.log; sources/verzobio-2023.md,
+  sources/bennett-walsh-1999.md; index.md, problem.md.
+- Verdict: K34 OPEN, unchanged. Attribution + evidence hygiene improved;
+  no new proof move. To-verify (carry): Ljunggren 1967 exact citation;
+  conductor/sigma of tE_A, tE_B (needs mwrank or TeX-analyze of Verzobio
+  sigma for sharp sigma); the Chabauty gate (sec 8) remains the named
+  proof path; the odd-depth primitive-divisor gate remains the structural
+  gap. Quota: RED zone honored (no subagents, direct work only).
+

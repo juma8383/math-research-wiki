@@ -1,0 +1,15 @@
+== Verzobio Eq.(13) constants (model-dependent; K=Q, D=1) ==
+[tE_A] Delta=10019299708108800, j=0.439, h(j)=6.592, h(1:g2:g3)=19.469, logV1=19.47, logV2=19.47, C2'=7.368e+45, C_E=9.93, C4=271.53
+[tE_A] sigma=1.0: J_E=2.758e-16, last-term C=1.419e+41
+[tE_A] sigma=2.0: J_E=3.436e-18, last-term C=2.640e+42
+[tE_A] sigma=4.0: J_E=4.380e-20, last-term C=4.838e+43
+[tE_A] sigma=6.0: J_E=3.444e-21, last-term C=2.635e+44
+[tE_A] C1~=1.724e+03 (rough), exp(eh)=9.628e+22
+[tE_A] headline: C dominated by the last term (see lines above)
+[tE_B] Delta=118197499985920, j=12762.791, h(j)=13.215, h(1:g2:g3)=20.926, logV1=20.93, logV2=66.03, C2'=2.686e+46, C_E=10.84, C4=527.53
+[tE_B] sigma=1.0: J_E=2.426e-16, last-term C=3.661e+41
+[tE_B] sigma=2.0: J_E=3.022e-18, last-term C=6.812e+42
+[tE_B] sigma=4.0: J_E=3.852e-20, last-term C=1.248e+44
+[tE_B] sigma=6.0: J_E=3.029e-21, last-term C=6.800e+44
+[tE_B] C1~=2.814e+03 (rough), exp(eh)=5.057e+24
+[tE_B] headline: C dominated by the last term (see lines above)
