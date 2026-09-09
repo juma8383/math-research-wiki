@@ -1,0 +1,51 @@
+m | alive | r mod 5 | s mod 5 | passes W_5 (s≡0,±r mod 5)?
+m=  8: r%5=3 s%5=2  passes-Z_D-W5: True
+m= 10: r%5=2 s%5=3  passes-Z_D-W5: True
+m= 16: r%5=3 s%5=3  passes-Z_D-W5: True
+m= 18: r%5=0 s%5=4  passes-Z_D-W5: False
+m= 24: r%5=0 s%5=4  passes-Z_D-W5: False
+m= 26: r%5=3 s%5=3  passes-Z_D-W5: True
+m= 34: r%5=2 s%5=2  passes-Z_D-W5: True
+m= 36: r%5=0 s%5=1  passes-Z_D-W5: False
+m= 42: r%5=0 s%5=1  passes-Z_D-W5: False
+m= 44: r%5=2 s%5=2  passes-Z_D-W5: True
+m= 50: r%5=3 s%5=2  passes-Z_D-W5: True
+m= 52: r%5=2 s%5=3  passes-Z_D-W5: True
+m= 60: r%5=0 s%5=4  passes-Z_D-W5: False
+m= 68: r%5=2 s%5=3  passes-Z_D-W5: True
+m= 70: r%5=3 s%5=2  passes-Z_D-W5: True
+m= 76: r%5=2 s%5=2  passes-Z_D-W5: True
+m= 78: r%5=0 s%5=1  passes-Z_D-W5: False
+m= 86: r%5=2 s%5=2  passes-Z_D-W5: True
+m= 94: r%5=3 s%5=3  passes-Z_D-W5: True
+m= 96: r%5=0 s%5=4  passes-Z_D-W5: False
+m=102: r%5=0 s%5=4  passes-Z_D-W5: False
+m=104: r%5=3 s%5=3  passes-Z_D-W5: True
+m=110: r%5=2 s%5=3  passes-Z_D-W5: True
+m=112: r%5=3 s%5=2  passes-Z_D-W5: True
+m=120: r%5=0 s%5=1  passes-Z_D-W5: False
+m=128: r%5=3 s%5=2  passes-Z_D-W5: True
+m=130: r%5=2 s%5=3  passes-Z_D-W5: True
+m=136: r%5=3 s%5=3  passes-Z_D-W5: True
+m=138: r%5=0 s%5=4  passes-Z_D-W5: False
+m=146: r%5=3 s%5=3  passes-Z_D-W5: True
+m=154: r%5=2 s%5=2  passes-Z_D-W5: True
+m=156: r%5=0 s%5=1  passes-Z_D-W5: False
+m=162: r%5=0 s%5=1  passes-Z_D-W5: False
+m=164: r%5=2 s%5=2  passes-Z_D-W5: True
+m=170: r%5=3 s%5=2  passes-Z_D-W5: True
+m=172: r%5=2 s%5=3  passes-Z_D-W5: True
+m=180: r%5=0 s%5=4  passes-Z_D-W5: False
+m=182: r%5=3 s%5=3  passes-Z_D-W5: True
+m=188: r%5=2 s%5=3  passes-Z_D-W5: True
+m=190: r%5=3 s%5=2  passes-Z_D-W5: True
+m=196: r%5=2 s%5=2  passes-Z_D-W5: True
+m=198: r%5=0 s%5=1  passes-Z_D-W5: False
+m=206: r%5=3 s%5=2  passes-Z_D-W5: True
+m=214: r%5=3 s%5=3  passes-Z_D-W5: True
+m=216: r%5=0 s%5=4  passes-Z_D-W5: False
+m=222: r%5=0 s%5=4  passes-Z_D-W5: False
+m=224: r%5=3 s%5=3  passes-Z_D-W5: True
+m=230: r%5=2 s%5=3  passes-Z_D-W5: True
+m=232: r%5=3 s%5=2  passes-Z_D-W5: True
+m=240: r%5=0 s%5=1  passes-Z_D-W5: False

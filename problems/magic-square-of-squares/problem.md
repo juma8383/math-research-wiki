@@ -12,7 +12,7 @@ diagonals equal) whose nine entries are **distinct perfect squares**?
 square of *distinct* integers is trivial; the all-squares constraint is the
 open part.
 
-**State of the attack (2026-09-03, notes.md §§2d–2i):** the two-prime
+**State of the attack (2026-09-07, notes.md §§2d–2j):** the two-prime
 ($\omega_1=2$) sum-freeness gate — Conjecture K34 — is the single standing
 obstruction, reduced to square-X points on the genus-1 quartics $M_A, M_B$
 and further to an elliptic-coset structure: candidate indices $n$ lie in 5
@@ -24,7 +24,139 @@ constant; and a validated depth-parity sieve (new kill layer) removes
 42–78% of the remaining candidate space per nonzero coset. Named proof
 paths: Chabauty–Coleman on $C3_A$ at $p=11$ (rank $J=2<3$), and the
 Wall–Sun–Sun-type odd-depth primitive-divisor gate (Lang/abc-conditional
-routes exist). **§2i (2026-09-03):** the primitive-divisor attribution is
+routes exist). **§2j (2026-09-07, `[mss-k34-jacobian]`):** the descent
+tree's terminal layer is now fully analyzed — the four leaf quartics share
+ONE Jacobian $E_a: y^2=x^3+32x^2+238x$ (they are its four α-descent covers,
+$ae=238$); rank$(E_a)=1$ unconditional (mwrank), image$(\alpha)$ =
+{1, 238, −14, −17}; **three of the four leaves are PROVED INSOLUBLE**
+(nontrivial Sha[φ] elements) — the (8,9)/(9,8) sub-tree and the ℤ[√2] UFD
+descent are closed; the live leaf C_238 is parametrized by the rank-1 fiber
+$T_a+2mP_a$, its first admissible point (852, 3727, 25318369) sits outside
+the filed census boxes (the "0 hits" was box-limited), and the Fermat/Germain
+loop on it is exactly the index-halving map (verified m = 2..28) closing
+benignly at odd indices — stall item (ii) resolves negatively; the remaining
+tamable piece is the lift-condition lemma $s\pm2\rho\sigma\ne\square$
+(census-failed at every tested index; Jacobian of the (1,72) quartic is the
+twist partner ≅ E_a, so the same α-descent machinery applies). **§2k
+(2026-09-08, `[mss-k34-liftgate]`):** §2j's lift test corrected (append-only)
+— the K34-A candidate-chain lift is n²−4u²(rs)² = r⁸·N(s²/r²) with
+N(x) = x⁴−4x³−604x²−952x+56644: a THIRD quartic D with Jacobian
+J_L : y² = x³−27894240x+56491485696 (rank 1 unconditional, mwrank; generator
+(2472, 51408); shifted image(α^L) = {1, 238, 271, 64498} — the 238
+recurrence). D's known points: (0, ±238) and (−33/2, ±5/4); no positive-
+square-x point found. The K34-A candidate lift is thus the class-1 fiber of
+α^L on J_L — **structurally identical to K34-A itself** (same square-x
+question shape, one level up): the lift gate does not collapse, and the
+new structural question is whether the lift tower (covers of the same curve
+**§2l (2026-09-08, `[mss-k34-liftgate2]`):** two-parents structure — every
+admissible leaf point has TWO layer-1 parents: Parent A (u, ±rs, n), the
+K34-A chain, is a **FIXED POINT** of the Germain step (split (238r⁴, s⁴)
+recovers the leaf point itself — no descent contradiction available on the
+K34-A chain; the §2j halving map ran on Parent B, whose child lands in the
+killed (1,238) cell). New provable **sign gate**: the candidate lift
+n − 2urs ≥ 0 ⟺ P(Y) = 56644Y⁴−952Y³−604Y²−4Y+1 ≥ 0 (Y = (r/s)², integer
+form s⁸−4r⁶s²−604r⁴s⁴−952r²s⁶+56644r⁸ ≥ 0; no rational factorization);
+inside the admissible window the boundary is the quartic irrational
+X* = 0.1974773589… — **dead band X ∈ (X*, 238^-1/4), 22.4% of the window,
+proved dead**. Full gate sweep m = 2..60 (16 admissible points, integers
+to 10³⁶⁰): **0 candidates** — sign kills m = 2, 58; the D-gate (product
+square) fails at all 14 alive indices. The K34-A candidate gate is now
+22.4% dead by theorem + census-failed to m = 60 on the rest; the named
+next step is proving N(X²) never square on the admissible fiber (= no
+positive-square-x point on the C₁ cover y² = 8x⁴+1016x²+9 — the §2k
+tower shape). K34 remains open. **§2m (2026-09-08, `[mss-k34-tower1]`):**
+7–17 kernel lemma PROVED — gcd(n+2urs, n−2urs) = 1 unconditionally (odd
+p | gcd ⟹ p ∈ {7,17}; the valuation lemma kills 7|s, 17|s always:
+v₇(238r⁴)=1 odd contradicts u² square; 7|n ⟺ 7|s) — so the **D-gate is
+EXACTLY the lift condition** (no gcd artifact possible). Direct lift census
+m = 2..240: 59 admissible indices, 9 sign-dead, 50 alive, **0 lifts**
+(exact integers to 708110 bits). Tower height 1: a C₁ square-x point = a
+rational point of the GENUS-3 curve Z : y² = 8w⁸+1016w⁴+9; PARI
+hyperellcharpoly: **Jac(Z) splits into 3 elliptic factors at 11/11 split
+primes** — one is J_L (rank 1 unconditional), the other two are a
+quadratic-twist pair (traces (t,−t) at every split prime; ranks open).
+Correction: the §2k "E_Z = Prym" claim retracted (wrong substitution).
+NAMED GATE: if the ±pair has rank 0, rank Jac(Z) = 1 < 3 ⟹ Chabauty on Z;
+Z(ℚ) has only the degenerate points (0,±3) ⟹ no square-x on C₁ ⟹ the
+K34-A candidate chain closes unconditionally. K34 remains open.
+**§2n (2026-09-08, `[mss-k34-tower2]`):** mod-5 correction — the tower
+curve for the lift gate is Z_D : V² = w⁸−4w⁶−604w⁴−952w²+56644 (w = s/r),
+NOT the C₁-octic (round-4 claim self-caught pre-filing and corrected).
+**W₅(Z_D) = {0, ±1}** (proved): s ≡ 0, ±r (mod 5) required — kills 17 of
+the 50 alive indices (provable). ±pair identification: the 7-prime
+candidate A=2178,B=225 discarded (fails 4 of 11 trace constraints);
+full-filter search running. K34 remains open. **Addendum-2:** the §2m
+3-way split is for the C₁-octic tower; for the lift-gate tower the involution
+(w,V) ↦ (−w,−V) has quotient **P : y² = x·N(x) (genus 2, rational Weierstrass
+point x=0)**, and **Jac(Z_D) ~ J_L × Jac(P) CONFIRMED 9/9 primes**
+(t(Z_D) = ap(J_L) + t(P), p = 23…59 exact) — rank Jac(Z_D) = 1 + rank Jac(P);
+P's charpoly is a quadratic SQUARED at p=23, 41 (Jac(P) ~ E × E^χ). The
+Chabauty gate needs rank Jac(P) ≤ 1; P's rational Weierstrass point makes a
+hand 2-descent on Jac(P) the realistic next computation. K34 remains open.
+**§2o (2026-09-08, `[mss-k34-tower3]`):** the **full Z_D mod-p sieve kills
+ALL 50 alive admissible fiber indices (m ≤ 240)** — w = s/r mod p ∈ W_p
+necessary for every p ≤ 499 (exact; p | r excluded via the rational infinity
+points); first-killing primes p = 7, 29, 41, … (all exact). P(ℚ) search:
+only the branch point (0,0) in p ≤ 3000, q ≤ 40. The complete closure still
+needs the Jac(P) rank gate (Chabauty on Z_D) or a descent argument — the
+sieve kills finite ranges only. **§2p (2026-09-08, `[mss-k34-tower4]`):**
+**±pair RESOLVED — K = ℚ(√238)**: Jac(P)'s charpolys split exactly at the
+split primes of ℚ(√238) and are irreducible palindromic at exactly the inert
+primes (27/27 verified, exact) — **Jac(P) = Res_{K/ℚ}(E_K), rank Jac(P) =
+rank E(ℚ(√238))**. Chabauty on Z_D needs rank E(ℚ(√238)) ≤ 1 (standard
+2-descent over K — next). The 238 recurrence is structural: leaf-Jacobian
+family, lift-gate Jacobian J_L, and the Prym base field. K34 remains open.
+**§2q:** K verified 34/34 primes (new-prime predictions 157, 163, 179, 197,
+211, 223, 241 all confirmed: split ⟹ x³-term charpolys, inert ⟹ palindromic
+even forms); E_a DISCONFIRMED as the factor (p=101: factor traces (−12,+18)
+vs ap(E_a)=10 — coincidence caught pre-filing); analytic rank of Jac(P)
+(model-independent) in flight. K34 remains open. **§2r (2026-09-08,
+`[mss-k34-tower6]`):** **analytic rank Jac(P) = 0** — sum a_p/p flat at
+~−0.7 through p = 5000 (bad primes {2,3,7,17,271}; rank 1 would add ~+1.0
+per log-log unit, rank 2 ~+2.0; no slope observed) — so **rank Jac(Z_D) =
+1 < 3: Chabauty applies to Z_D**, #Z_D(ℚ) ≤ #Z_D(F_p) + 4 at good p.
+Known Z_D(ℚ) = degenerate orbit only; if Coleman yields exactly that, the
+K34-A candidate lift fails for every m and the leaf chain closes
+unconditionally. Rank 0 is analytic evidence; rigorous completion via
+2-descent on Jac(P) or L(1) nonvanishing. Two Chabauty targets: C3_A
+(main gate) and Z_D (leaf chain), both rank 1 < 3. K34 remains open.
+**§2u (2026-09-08, `[mss-k34-tower9]`):** the **Z_D sieve density
+quantified**: ρ = ∏_{5≤p≤499} |W_p|/p ≈ 8.92×10⁻²⁵⁵ (exact per-prime QR
+computations) — for any height-bounded candidate box the expected
+survivors is (#candidates)·ρ: the mod-p layer is essentially exhaustive
+for any enumerable set, and the bottleneck is exactly the HEIGHT BOUND
+(which effective Chabauty supplies once rank Jac(P) = 0 is rigorous).
+The closure program is now explicit: (1) rank Jac(P) = 0 rigorous;
+(2) height bound; (3) Coleman on Z_D. K34 remains open. **§2x (2026-09-08, `[mss-k34-sage2]`):**
+**SageMath 10.9 INSTALLED** (Miniforge/conda-forge, user-local) — Simon
+2-descent over number fields now live (the tool for rank E(ℚ(√238)));
+Jac(P) confirmed SIMPLE over ℚ (irreducible charpoly at 31/53/59) splitting
+over K as E × E^σ; Stoll's genus-2 two-descent remains Magma-only; Sage's
+bundled gp spawn broken in this env (local standalone gp via subprocess
+works). Next named: construct the Prym curve E/K from its trace signature,
+then rank E(K) via simon_two_descent over K. K34 remains open.
+**§2y (2026-09-08, `[mss-k34-richelot]`):** **RICHELOT STRUCTURE FOUND
+(exact)** — N(x) = (x²−2x+238)² − 1084x² with 1084 = 4·271: the
+decomposable shape y² = x(h²−d·x²); the two elliptic quotients over
+L = ℚ(√−271) are E± : y² = x³+(±2√−271−2)x²+238x (conjugate, L-rational
+2-torsion at (0,0)); **rank Jac(P) = rank E₊(ℚ(√−271))** via the Richelot
+isogeny — the rank gate is an explicit Sage descent over L (running).
+Reconciliation: K = ℚ(√238) (Frobenius-factorization field) and
+L = ℚ(√−271) (Richelot isogeny field) are different, both real. K34
+remains open.
+**§2s (2026-09-08, `[mss-k34-tower7]`):** the hand 2-descent on Jac(P) is
+NOT directly available — Gordon-Grant/Stoll requires all five Weierstrass
+points rational, but **N(x) has NO rational root** (all divisors of
+56644 = 2²·7²·17² tested); the Galois descent from ℚ(J[2]) is the missing
+ingredient. **rank Jac(P) = 0 honestly filed as ANALYTIC/BSD-CONDITIONAL**
+(flat sum through p = 5000); the Chabauty-on-Z_D gate is conditional at the
+first link and computational at the last. No proof of K34-A claimed. K34
+remains open. Addendum: numerical L(s) evaluation running (5 s-values,
+primes ≤ 30000; cache-then-evaluate pattern noted for future runs).
+**L(s) job killed 2026-09-08 as redundant** once the rigorous Sage descent
+on rank E₊(ℚ(√−271)) was in flight (§2y); its last logged value
+L(1.5) = 0.783 corroborates non-vanishing L. Re-runnable via k34j_ls_eval.gp.
+**§2i (2026-09-03):** the primitive-divisor attribution is
 corrected to Verzobio 2023 (PJM 325, effective constant computed for our
 models: $10^{41}$–$10^{44}$, so the entire nonzero-coset window sits BELOW
 it — existence there is ineffective-only); the four K34-descent leaf

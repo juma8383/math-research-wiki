@@ -1,0 +1,34 @@
+=== Sage capability check for the K34 gates ===
+E_a: Elliptic Curve defined by y^2 = x^3 + 32*x^2 + 238*x over Rational Field
+  rank = 1
+P = Hyperelliptic Curve over Rational Field defined by y^2 = x^5 - 4*x^4 - 604*x^3 - 952*x^2 + 56644*x
+Traceback (most recent call last):
+  File "sage/structure/category_object.pyx", line 856, in sage.structure.category_object.CategoryObject.getattr_from_category
+    return self._cached_methods[name]
+KeyError: 'two_descent'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/linux/miniforge3/envs/sage/bin/sage", line 5, in <module>
+    from sage.cli.__main__ import main
+  File "/home/linux/miniforge3/envs/sage/lib/python3.13/site-packages/sage/cli/__main__.py", line 9, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/home/linux/miniforge3/envs/sage/lib/python3.13/site-packages/sage/cli/__init__.py", line 56, in main
+    return RunFileCmd(options).run()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/linux/miniforge3/envs/sage/lib/python3.13/site-packages/sage/cli/run_file_cmd.py", line 50, in run
+    eval(compile(open(input_file, 'rb').read(), input_file, 'exec'), sage_globals())
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/linux/mss-k34/sage_check.py", line 18, in <module>
+    res = J.two_descent(verbose=False)
+          ^^^^^^^^^^^^^
+  File "sage/structure/category_object.pyx", line 850, in sage.structure.category_object.CategoryObject.__getattr__
+    return self.getattr_from_category(name)
+  File "sage/structure/category_object.pyx", line 865, in sage.structure.category_object.CategoryObject.getattr_from_category
+    attr = getattr_from_other_class(self, cls, name)
+  File "sage/cpython/getattr.pyx", line 357, in sage.cpython.getattr.getattr_from_other_class
+    raise AttributeError(dummy_error_message)
+AttributeError: 'HyperellipticJacobian_g2_generic_with_category' object has no attribute 'two_descent'
+EXIT:1

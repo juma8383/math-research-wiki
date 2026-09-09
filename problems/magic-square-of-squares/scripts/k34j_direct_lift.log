@@ -1,0 +1,63 @@
+m | admissible | sign | f1 sq | f2 sq | prod sq | gcd-square-class
+m=  2: SIGN-DEAD f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=48
+m=  8:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=787
+m= 10:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=1229
+m= 16:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=3147
+m= 18:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=3984
+m= 24:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=7081
+m= 26:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=8311
+m= 34:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=14212
+m= 36:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=15932
+m= 42:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=21686
+m= 44:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=23801
+m= 50:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=30734
+m= 52:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=33242
+m= 58: SIGN-DEAD f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=41354
+m= 60:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=44257
+m= 62: SIGN-DEAD f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=47256
+m= 68:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=56846
+m= 70:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=60239
+m= 76:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=71008
+m= 78:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=74795
+m= 84: SIGN-DEAD f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=86743
+m= 86:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=90924
+m= 94:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=108626
+m= 96:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=113297
+m=102:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=127903
+m=104:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=132968
+m=110:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=148752
+m=112:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=154211
+m=120:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=177028
+m=122: SIGN-DEAD f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=182977
+m=128:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=201418
+m=130:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=207761
+m=136:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=227382
+m=138:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=234119
+m=144: SIGN-DEAD f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=254918
+m=146:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=262050
+m=148: SIGN-DEAD f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=269277
+m=154:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=291555
+m=156:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=299176
+m=162:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=322633
+m=164:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=330648
+m=170:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=355284
+m=172:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=363693
+m=180:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=398312
+m=182:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=407212
+m=188:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=434504
+m=190:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=443798
+m=196:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=472269
+m=198:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=481957
+m=204: SIGN-DEAD f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=511608
+m=206:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=521690
+m=208: SIGN-DEAD f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=531868
+m=214:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=562996
+m=216:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=573568
+m=222:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=605876
+m=224:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=616842
+m=230:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=650329
+m=232:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=661689
+m=240:     alive f1sq=False f2sq=False prodsq=False gcd_sq=True v7s=0 v17s=0 bits(f1)=708110
+
+total admissible m in (0,240]: 59
+DONE

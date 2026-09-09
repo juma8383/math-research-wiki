@@ -1,0 +1,134 @@
+Using multiprecision floating point with 50 bits precision.
+Curve [0,0,0,-27894240,56491485696] :	Working with minimal curve [0,-1,0,-21523,1217983] via [u,r,s,t] = [6,-12,0,0]
+
+1 points of order 2:
+[-169:0:1]
+
+(c,d)  =(-508,64498)
+(c',d')=(1016,72)
+Using 2-isogenous curve [0,1016,0,72,0] (minimal model [0,-1,0,-344013,77777109])
+-------------------------------------------------------
+First step, determining 1st descent Selmer groups
+-------------------------------------------------------
+Finding els gens for E (c= -508, d= 64498)
+Support (length 5): [ -1 2 7 17 271 ]
+Adding (torsion) els generator #1: d1 = 64498
+Adding els generator #2: d1 = 2
+Adding els generator #3: d1 = 7
+Adding els generator #4: d1 = 17
+After els sieving, nelsgens = 4
+2-rank of S^{phi}(E') = 4
+(els)gens: [ 64498 2 7 17 ]
+
+Finding els gens for E' (c'= 1016, d'= 72)
+Support (length 3): [ -1 2 3 ]
+Adding (torsion) els generator #1: d1 = 2
+After els sieving, nelsgens = 1
+2-rank of S^{phi'}(E) = 1
+(els)gens: [ 2 ]
+After first local descent, rank bound = 3
+rk(S^{phi}(E'))=	4
+rk(S^{phi'}(E))=	1
+
+-------------------------------------------------------
+Second step, determining 2nd descent Selmer groups
+-------------------------------------------------------
+Finding els2 gens for E (c= -508, d= 64498) which lift to S^2(E)
+Adding (torsion) els2 generator #1: d1 = 64498
+Adding els2 generator #2: d1 = 238
+After els2 sieving, nels2gens = 2
+2-rank of phi'(S^2(E)) = 2
+(els2)gens: [ 64498 238 ]
+
+Finding els2 gens for E' (c'= 1016, d'= 72) which lift to S^2(E')
+Adding (torsion) els2 generator #1: d1 = 2
+After els2 sieving, nels2gens = 1
+2-rank of phi(S^2(E')) = 1
+(els2)gens: [ 2 ]
+After second local descent, rank bound = 1
+rk(phi'(S^{2}(E)))=	2
+rk(phi(S^{2}(E')))=	1
+rk(S^{2}(E))=	2
+rk(S^{2}(E'))=	4
+
+Third step, determining E(Q)/phi(E'(Q)) and E'(Q)/phi'(E(Q))
+-------------------------------------------------------
+1. E(Q)/phi(E'(Q))
+-------------------------------------------------------
+(c,d)  =(-508,64498)
+(c',d')=(1016,72)
+Adding (torsion) gls generator #1: d1 = 64498
+First stage (no second descent yet)...
+(238,0,-508,0,271):  (x:y:z) = (1:1:1)
+	Curve E 	Point [238:238:1], height = 1.4044641127335
+Adding gls generator #2: d1 = 238
+After first global descent, this component of the rank = 2
+
+After gls sieving, nglsgens = 2
+shortfall in rank from first  descent = 0
+shortfall in rank from second descent = 0
+(gls)gens: [ 64498 238 ]
+-------------------------------------------------------
+2. E'(Q)/phi'(E(Q))
+-------------------------------------------------------
+Adding (torsion) gls generator #1: d1 = 2
+This component of the rank is 0
+After gls sieving, nglsgens = 1
+shortfall in rank from first  descent = 0
+shortfall in rank from second descent = 0
+(gls)gens: [ 2 ]
+
+-------------------------------------------------------
+Summary of results:
+-------------------------------------------------------
+	rank(E) = 1
+	#E(Q)/2E(Q) = 4
+
+Information on III(E/Q):
+	#III(E/Q)[phi']    = 1
+	#III(E/Q)[2]       = 1
+
+Information on III(E'/Q):
+	#phi'(III(E/Q)[2]) = 1
+	#III(E'/Q)[phi]    = 4
+	#III(E'/Q)[2]      = 4
+
+-------------------------------------------------------
+
+List of points on E = [0,-1,0,-21523,1217983]:
+
+I.  Points on E mod phi(E')
+Point [69:238:1], height = 1.4044641127335
+
+II.  Points on phi(E') mod 2E
+--none (modulo torsion).
+
+-------------------------------------------------------
+Computing full set of 2 coset representatives for
+2E(Q) in E(Q) (modulo torsion), and sorting into height order....done.
+
+
+Used descent via 2-isogeny with isogenous curve E' = [0,-1,0,-344013,77777109]
+Rank = 1
+Rank of S^2(E)  = 2
+Rank of S^2(E') = 4
+Rank of S^phi(E') = 4
+Rank of S^phi'(E) = 1
+
+Searching for points (bound = 8)...done:
+  found points which generate a subgroup of rank 1
+  and regulator 1.4044641127335
+Processing points found during 2-descent...done:
+  now regulator = 1.4044641127335
+Saturating (with bound = 1000)...done:
+  points were already saturated.
+Transferring points from minimal curve [0,-1,0,-21523,1217983] back to original curve [0,0,0,-27894240,56491485696]
+
+Generator 1 is [2472:51408:1]; height 1.4044641127335
+
+Regulator = 1.4044641127335
+
+The rank and full Mordell-Weil basis have been determined unconditionally.
+ (0.253603 seconds)
+
+DONE

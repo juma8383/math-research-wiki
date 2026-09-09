@@ -1,0 +1,9 @@
+Construct E+ over L = Q(sqrt(-271)) and compute rank bounds.
+E+: y^2 = x(h(x) + 2*s*x), h = x^2-2x+238, s^2 = -271
+     = x^3 + (2s-2) x^2 + 238 x + 2s x^2  -- expand h + 2sx = x^2 + (2s-2)x + 238
+E+: y^2 = x^3 + (2s-2)x^2 + 238x + 2s x^3?? NO: y^2 = x*(h + 2s x) = x*h + 2s x^2
+   = x*(x^2-2x+238) + 2s x^2 = x^3 - 2x^2 + 238x + 2s x^2
+   = x^3 + (2s-2) x^2 + 238 x.  <-- that IS a Weierstrass form over L!
+E+: [a1,a2,a3,a4,a6] = [0, 2s-2, 0, 238, 0] over L. It even has rational
+2-torsion at x=0! And the point (0,0) is on it.
+E+ = Elliptic Curve defined by y^2 = x^3 + (2*t-2)*x^2 + 238*x over Number Field in t with defining polynomial x^2 + 271 with t = 16.46207763315433?*I

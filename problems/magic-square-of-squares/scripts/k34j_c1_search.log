@@ -1,0 +1,3 @@
+no square-x point on C1 in p<=3000, q<=200
+note: x=0 (degenerate, y=+-3) always present; excluded from the gate.
+DONE

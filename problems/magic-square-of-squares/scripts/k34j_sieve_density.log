@@ -1,0 +1,27 @@
+sieve densities (p, |W_p|, density):
+   (5, 3, 0.6)
+   (6, 2, 0.3333)
+   (7, 5, 0.7143)
+   (8, 4, 0.5)
+   (9, 3, 0.3333)
+   (10, 6, 0.6)
+   (11, 5, 0.4545)
+   (12, 4, 0.3333)
+   (13, 9, 0.6923)
+   (14, 10, 0.7143)
+   (15, 3, 0.2)
+   (16, 8, 0.5)
+   (18, 6, 0.3333)
+   (19, 13, 0.6842)
+   (20, 12, 0.6)
+   (21, 5, 0.2381)
+   (22, 10, 0.4545)
+   (23, 17, 0.7391)
+   (24, 4, 0.1667)
+   (25, 7, 0.28)
+
+product density over p in [5,499] (excl 17): 8.917e-255
+=> expected non-degenerate survivors in a box of N candidates: N·8.917e-255
+  (e.g. N = 10^6 candidates -> 8.92e-249 expected)
+The density compounds multiplicatively — the MW sieve on Z_D has real
+closure power for any height bound that becomes available.

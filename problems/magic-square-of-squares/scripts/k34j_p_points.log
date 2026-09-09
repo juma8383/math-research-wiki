@@ -1,0 +1,6 @@
+== 1. integer points on P: y^2 = x*N(x), x in [-300, 3000] ==
+integer hits: [(0, 0)]
+
+== 2. rational points on P, x = p/q, q <= 30, p in [-200, 2000] ==
+  HIT: x = 0, y = 0
+rational hits (q<=40): 1

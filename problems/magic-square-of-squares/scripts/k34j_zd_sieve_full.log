@@ -1,0 +1,6 @@
+alive admissible points m<=240 tested against W_p (p<=499):
+  surviving the full sieve: 0 (m values: [])
+  killed: 50
+
+(the survivor list needs deeper primes/structure; each survivor is a
+ candidate requiring the Jac(P) rank gate)

@@ -1,0 +1,2 @@
+?hyperellcharpoly
+quit
