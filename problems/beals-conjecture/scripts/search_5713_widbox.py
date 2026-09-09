@@ -9,16 +9,22 @@ flagged to-verify. This run widens the box to
 preserving the gap definitions of search_5713.py / near_miss_package.py
 EXACTLY:
   genuine near-miss gap = min |A^5 + B^7 - C^13| over coprime (gcd(A,B,C)=1)
-  bases with A,B,C >= 2, excluding exact solutions (gap 0); gap-1 hits are
-  enumerated separately and labeled per the T1 universal families; the
-  quasi-degenerate layer (A^5==C^13 or B^7==C^13, gap = B^7 resp. A^5) is
-  excluded from the genuine min and tracked separately (T3).
+  bases with A,B,C >= 2 and gap > 1; excluded from the genuine min: exact
+  solutions (gap 0), gap-1 hits (enumerated separately, labeled per the T1
+  universal families), and the quasi-degenerate layer (A^5==C^13 or
+  B^7==C^13, gap = B^7 resp. A^5; tracked separately, T3).
 
-Scan pattern = the CORRECTED scan of near_miss_package.py: the overshoot
-region B^7 > C^13 is INCLUDED (candidates A in {2,3,4} there), fixing the
-break-at-BQ>CR bug that the original search_5713.py min-gap loop carried.
-A best-based break cuts the B loop once overshoot gaps provably exceed the
-running best (mathematically safe: B^7 is increasing in B).
+Scan pattern (final-review fix): the overshoot region B^7 > C^13 stays
+INCLUDED (fixing the break-at-BQ>CR bug of the original search_5713.py
+min-gap loop), and the best-based break is REMOVED so the distinct-gaps
+readout is complete over the whole box. Candidate window per (C,B):
+for rem = C^13 - B^7 >= 2^5 the candidates are {fl-1, fl, fl+1}
+(fl = floor(rem^(1/5)), clamped to A >= 2) -- the window contains the
+unrestricted minimizer of |A^5-rem| (unimodality in A), and the
+coprime-restricted column min too when fl is non-coprime (realized:
+4939 @ (A,B,C)=(5,2,2)); for rem in [1,31] and overshoot the small-A
+pattern is consecutive bases {2,3,4,5} (corrected-scan {2,3,4} extended
+by one more A).
 
 Universal degenerate gap-(+1) families for (p,q,r) = (5,7,13):
   t^65 + 1 : A = t^13, B = 1, C = t^5   [lcm(5,13) = 65]
@@ -141,13 +147,32 @@ for C in range(2, C_MAX + 1):
     for B in range(2, B_MAX + 1):
         bqv = BQ[B]
         rem = CR - bqv
-        if best is not None and rem < TWO_P and bqv - CR + TWO_P > best[0]:
-            break   # overshoot gap >= bqv-CR+32 only grows with B
+        # NO best-based break (final-review fix): the distinct-gaps readout
+        # must stay complete over the whole box -- the old break truncated
+        # small-C overshoot entries.
         if rem >= TWO_P:
             fl = iroot(rem, P)
-            cands = (fl, fl + 1)
+            # Widened candidate window (final-review fix): |A^5-rem| is
+            # unimodal in A (rem-A^5 decreasing for A<=fl, A^5-rem increasing
+            # for A>=fl+1), so the UNRESTRICTED minimizer of |A^5-rem| lies
+            # in {fl-1, fl, fl+1} (clamped to A >= 2), and every A outside
+            # the window has |A^5-rem| >= the envelope value on its side
+            # (left: g(fl-1); right: g(fl+1)). The coprime-restricted column
+            # min can sit at fl-1 when fl is non-coprime (realized:
+            # 4939 @ (A,B,C)=(5,2,2), beating 8743 @ (7,2,2)). COMPLETENESS
+            # RESIDUAL (flagged, not overclaimed): if the in-window
+            # candidates all share a factor with (B,C), the restricted min
+            # is not PROVED to lie in the window -- it would then sit at the
+            # nearest coprime layer beyond, with gap >= its side's envelope
+            # value; the reviewer's independent census found no such further
+            # miss in-box.
+            cands = (fl - 1, fl, fl + 1)
         else:
-            cands = (2, 3, 4)   # small-rem AND overshoot region (corrected scan)
+            # small-rem (1 <= rem < 2^5) AND overshoot (rem < 0): val grows
+            # with A, so the honest pattern is consecutive small bases from 2
+            # -- corrected-scan {2,3,4} extended by one more A (final-review
+            # fix) so the readout is not truncated at the small-C edge.
+            cands = (2, 3, 4, 5)
         for A in cands:
             if A < 2:
                 continue

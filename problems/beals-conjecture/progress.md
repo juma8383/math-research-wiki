@@ -145,6 +145,17 @@ above. Orchestrator reproduction run + target-reviewer APPROVED
 (first live harness-trial dispatch). The counting-heuristic rate
 claims resting on this datum stand on verified ground.
 
+**attempt-26 CORRECTION (2026-09-09, same day; final-review finding):**
+the runner-up scale above is incomplete — the coprime-restricted
+minimizer of $|A^5-\mathrm{rem}|$ is not always in
+$\{\lfloor\mathrm{rem}^{1/5}\rfloor,\lfloor\cdot\rfloor+1\}$ (when
+floor is non-coprime the restricted min can sit at floor$-1$: 4939 @
+$(5,2,2)$ beats 8743 @ $(7,2,2)$). Corrected 3rd-smallest: 4939; 8th:
+69965. **The min 1771 @ $(6,3,2)$ is UNAFFECTED** (two independent
+scans). Script fixed to $\{fl{-}1,fl,fl{+}1\}$ candidates, break
+dropped; the 56-signature table's per-signature minima carry the same
+assumption — flagged `to-verify` for a cheap widened-window re-run.
+
 **attempt-25 CORRECTION (2026-08-31; supersedes parts of the table and the
 monotone claims above, which are retained for the record):**
 `search_3711.py`/`search_5711.py` have an overshoot-exclusion bug (break at

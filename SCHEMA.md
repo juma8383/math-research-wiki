@@ -120,7 +120,7 @@ Body: one indented block per node:
   status: open | proven | conditional | dead
   uses: [<node-id>, ...]
   (convention: `uses:` is a single line — put every dependency id on that one line; the linter validates only the first line of a value)
-  source: [[<theory/conjecture page>]] or problems/<slug>/attempts/attempt-NN.md
+  source: [[<theory/conjecture page>]] or problems/<slug>/attempts/attempt-NN.md or problems/<slug>/progress.md (allowed anchor for `open`/`conditional` nodes)
   next: <one line — what proving this unlocks>
 
 Rules: a `status: proven` node is valid only when `source` is a
@@ -241,6 +241,7 @@ Health pass, run every several attacks or when things drift:
   as a logged `[LINT]` pass (the linter is report-only; edits are
   logged here).
 Fix inline, append `[LINT <date>]` to `log.md` with what was found and fixed.
+Entry-type prefixes in log headings are single-word `[A-Z]+` (hyphenated types are unparseable; use e.g. `[HARNESS]`).
 
 ---
 

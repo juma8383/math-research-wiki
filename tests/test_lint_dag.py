@@ -137,5 +137,14 @@ class LintTests(unittest.TestCase):
         self.assertNotIn("warning", buf.getvalue().lower())
 
 
+    def test_multiline_uses_list_fully_validated(self):
+        p = self.tmp / "problems" / "demo-problem" / "dag.md"
+        old = "  uses: [demo-thm]\n"
+        new = "  uses:\n    - demo-thm\n    - ghost-node\n"
+        p.write_text(p.read_text(encoding="utf-8").replace(old, new, 1),
+                     encoding="utf-8")
+        self.assertTrue(any("ghost-node" in b
+                            for b in self.report().blockers))
+
 if __name__ == "__main__":
     unittest.main()

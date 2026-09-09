@@ -202,6 +202,7 @@ def _check_dag(dag_path, text, texts, pages, rep):
     rel = dag_path.relative_to(dag_path.parents[2]).as_posix()
     nodes = []
     node = None
+    uses_key_indent = None
     for raw in text.splitlines():
         s = raw.strip()
         m = NODE_LINE.match(s)
@@ -209,19 +210,31 @@ def _check_dag(dag_path, text, texts, pages, rep):
             if node:
                 nodes.append(node)
             node = {"id": m.group(1)}
+            uses_key_indent = None
             continue
-        if s.startswith("- ") and node is not None:
+        indent = len(raw) - len(raw.lstrip())
+        if s.startswith("- ") and node is not None and (
+                uses_key_indent is None or indent <= uses_key_indent):
             nodes.append(node)
             node = None
+            uses_key_indent = None
             continue
         if node is not None and s:
             kv = FIELD_LINE.match(s)
             if kv and kv.group(1) in ("kind", "status", "uses", "source",
                                       "next") and kv.group(1) not in node:
                 node[kv.group(1)] = kv.group(2)
+                if kv.group(1) == "uses":
+                    uses_key_indent = indent
+                else:
+                    uses_key_indent = None
+                continue
+            # continuation line under a "uses:" key (multi-line list)
+            if uses_key_indent is not None and indent > uses_key_indent:
+                node["uses"] = ((node.get("uses") or "") + " " +
+                                s.lstrip("- ").strip())
     if node:
         nodes.append(node)
-
     ids = [nd.get("id") for nd in nodes]
     for nd in nodes:
         nid = nd.get("id", "?")
@@ -229,6 +242,11 @@ def _check_dag(dag_path, text, texts, pages, rep):
         if status not in ("open", "proven", "conditional", "dead"):
             rep.blockers.append("%s: node %s bad status '%s'"
                                 % (rel, nid, status))
+        kind = nd.get("kind")
+        if kind and kind not in ("definition", "conjecture", "theorem",
+                                 "lemma", "method"):
+            rep.warnings.append("%s: node %s unknown kind '%s'"
+                                % (rel, nid, kind))
         if ids.count(nid) > 1:
             continue  # duplicate reported once below
         src = (nd.get("source") or "").strip()
