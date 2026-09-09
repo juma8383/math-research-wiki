@@ -4511,3 +4511,11 @@ bf30870). Task review: spec + quality approved, 3 minor wording items
 parked in the SDD ledger. Orchestrator remains the main session;
 `.claude/` is gitignored wholesale so the three files were force-added —
 `!.claude/agents/` negation queued for the next [LINT] pass.
+
+## [VERIFIER 2026-09-09] lint_dag.py v1
+Deterministic structure verifier landed (scripts/lint_dag.py +
+tests/test_lint_dag.py, 9 TDD tests, commit d1881f6): wikilink/claim-tag
+parity, frontmatter validity, index/log parity, DAG status parity,
+orphans. Report-only; `--ci` exits 1 on blockers only. Full-repo run
+recorded (863 blockers / 95 warnings, lint-report-phase-a.txt) feeding
+the logged [LINT] close-out pass.
