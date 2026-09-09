@@ -68,3 +68,16 @@ heuristic-verified near-miss stratification).
   next: open leaves for the (3,5,7) attack are the modular (A) and
     geometric (B) directions (attempt-11/17) — dispatch targets when
     the harness goes live
+- id: beal-nearmiss-5713-widbox-verify
+  kind: method
+  status: proven
+  uses: [near-miss-stratification]
+  source: [[near-miss-stratification]]
+  next: RESOLVED — widened-box census (attempt-26,
+    `scripts/search_5713_widbox.py`): min genuine coprime gap 1771
+    CONFIRMED at $(6,3,2)$ over $C\le120$, $B\le2\cdot10^4$ (0 exact;
+    2 gap-1, both T1 universal-family; Corner Principle holds;
+    quasi-degenerate min 2187 strictly above); attempt-24's
+    `to-verify` discharged. Anchors: attempts/attempt-26.md + the
+    `review:` line appended there (target-reviewer 2026-09-09
+    APPROVED)

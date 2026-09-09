@@ -5329,3 +5329,27 @@ it is 4533/4533 CRLF. Of these, 441 lines outside the appended entry are
 byte-identical in content with only the EOL flipped LF to CRLF,
 and 34 lines differ in content - every one a fix logged in the [LINT] entry.
 Disclosed per controller ruling; EOLs are NOT reverted.
+## [HARNESS 2026-09-09] end-to-end harness trial (overhaul Task 8)
+
+First live run of the harness: Orchestrator selected open leaf
+`beal-nearmiss-5713-widbox-verify` from problems/beals-conjecture/dag.md
+(computational census — the plan's preferred candidate (a)); Scout gate:
+web/literature search -> `not-found` (no existing (5,7,13) gap census;
+recorded in attempt-26 frontmatter); Worker (worker-prover contract)
+filed attempts/attempt-26.md + `scripts/search_5713_widbox.py` —
+widened box $C\le120$, $B\le2\cdot10^4$: min genuine coprime gap
+**1771 at $(6,3,2)$ CONFIRMED** (0 exact; 2 gap-1 both on the universal
+$t^{65}+1$ family; quasi-degenerate 2187 strictly above; 617,334
+triples / 3.5 s); Orchestrator independently reproduced the headline
+numbers (exact match); Target Reviewer verdict `review: target-reviewer
+2026-09-09 APPROVED` (semantic/numeric parity, novelty, honesty — all
+items). Status delta: dag node `beal-nearmiss-5713-widbox-verify` open
+-> **proven** (source [[near-miss-stratification]] proven — linter
+parity); attempt-24's `to-verify` discharged (progress.md dated note);
+SCHEMA attempt-outcome vocabulary amended additively to include
+`confirmed` (12 attempts use it as folder precedent; linter checks
+presence, not enum). Friction noted in the trial report:
+worker-prover agent-type fell back to general-purpose (not registered
+in this running session — contract inlined verbatim, spec-honest);
+EOL-preserving binary edits throughout; push of main still parked on
+`workflow` scope (user: `! gh auth refresh -h github.com -s workflow`).

@@ -80,13 +80,17 @@ problem: <slug>
 attempt: NN
 date: <YYYY-MM-DD>
 approach: <one-line summary of the angle>
-outcome: stuck | partial | breakthrough | solved | dead-end
+outcome: stuck | partial | breakthrough | solved | dead-end | confirmed
 tags: [tags touched this session]
 ---
 ```
 Body: the actual working — reasoning, computations, dead ends, what was tried
 and why it did/didn't work. **Be honest about failures**; they are the most
 reusable part. End with a "Next" section pointing at the most promising thread.
+
+`confirmed` = a completed verification/census whose central claim is
+confirmed (e.g. a wider re-run confirming a prior `to-verify` datum) —
+distinct from `solved`, which means a proof.
 
 ### `progress.md`  (per problem)
 Running summary of the **current frontier**: what is known, what has been

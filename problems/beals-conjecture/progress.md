@@ -130,6 +130,21 @@ Scripts: `search.py`, `search_357.py`, `search_357_nearmiss.py`,
 ($C=2$ or $3$), so boxes likely contain the genuine minima (attempt-24's 1771
 flagged `to-verify` by a wider-box run).
 
+**attempt-26 (2026-09-09): the `to-verify` above RESOLVED — 1771
+CONFIRMED.** Widened-box census via new
+`scripts/search_5713_widbox.py` ($C\le120$, $B\le2\cdot10^4$, all
+$A$; overshoot-inclusive scan per the attempt-25 correction + T3
+filter; 617,334 triples, 3.5 s): 0 exact solutions; 2 gap-1 hits,
+both unit-base on the universal $t^{65}+1$ family ($t=1,2$ — the
+wider box now *catches* the $t=2$ member attempt-24's box
+truncated); min genuine coprime gap **1771 at $(6,3,2)$ CONFIRMED**
+as unique argmin (runner-ups 2880 @ $(5,3,2)$, 8743 @ $(7,2,2)$,
+11405 @ $(15,7,3)$; per-$C$ minima grow steeply — Corner Principle
+holds); quasi-degenerate layer min 2187 @ $(8192,3,32)$ strictly
+above. Orchestrator reproduction run + target-reviewer APPROVED
+(first live harness-trial dispatch). The counting-heuristic rate
+claims resting on this datum stand on verified ground.
+
 **attempt-25 CORRECTION (2026-08-31; supersedes parts of the table and the
 monotone claims above, which are retained for the record):**
 `search_3711.py`/`search_5711.py` have an overshoot-exclusion bug (break at
