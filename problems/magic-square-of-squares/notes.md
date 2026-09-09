@@ -3498,3 +3498,20 @@ known-point reduction data for the residue bound:
 Machinery note: the full residue bound additionally needs the
 genus-3-cycle integrals (through the correspondence) — this round
 assembles the data the bound consumes. `[to-verify]`: none added.
+
+## §2af DUAL-PRIME ANNIHILATION (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`)
+
+`mss_c3a_annihilator_p13.sage`/`.log`. The E_G-torsion annihilation is
+now verified at BOTH tight primes: at p = 13, ALL FIVE independent
+torsion representatives integrate to 0 exactly
+(∫_O^{(480,0)} = 0, ∫_O^{(−816,0)} = 0, ∫_O^{(336,0)} = 0,
+∫_O^{(48,10368)} = O(13⁸) = 0, ∫_O^{(912,20736)} = O(13⁸) = 0),
+matching the p = 11 results point-for-point. The E_ι period at p = 13
+(7·13 + 4·13² + 5·13⁴ + …) agrees with the §2ae groundwork run, and
+the 2G linearity workaround (2·∫ instead of ∫ at 2G) is exercised.
+
+**Status: the annihilator mechanism is dual-prime verified.** The E_G
+side of the annihilation is complete (torsion ⟹ 0, two independent
+primes, five representatives each). The single remaining step of the
+residue bound is the correspondence-level integral for the ι/ρ-side MW
+cycles — the same step identified in §2ac §4. No new `[to-verify]`.

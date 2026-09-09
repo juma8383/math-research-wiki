@@ -1,0 +1,16 @@
+=== P13-1: kernel conditions via the QUOTIENT differentials (p=13) ===
+  ∫_O^{2T (480,0)} ω_G = 0
+  ∫_O^{T2b (-816,0)} ω_G = 0
+  ∫_O^{4T (48,10368)} ω_G = O(13^8)
+  ∫_O^{4T (912,20736)} ω_G = O(13^8)
+  ∫_O^{(336,0)} ω_G = 0
+=== P13-2: E_iota period at p=13 (both generators) ===
+  ∫_O^{G_iota} ω_E = 7*13 + 4*13^2 + 5*13^4 + 9*13^5 + 3*13^6 + 6*13^7 + O(13^8)
+  ∫_O^{2G_iota} ω_E (by linearity) = 13 + 9*13^2 + 10*13^4 + 5*13^5 + 7*13^6 + 12*13^7 + O(13^8)
+=== P13-3: kernel cross-check (the omega_G-side annihilator at both primes) ===
+  The E_G-side omega annihilates the E_G-torsion MW part at BOTH primes
+  (p=11 verified §2ab; p=13 verified here). The full rank-2 annihilation
+  needs the iota/rho-side pushed cycles — the correspondence-level step
+  that remains the named computation.
+=== DONE ===
+EXIT=0
