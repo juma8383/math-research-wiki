@@ -9,3 +9,6 @@ __pycache__/
 # OS noise
 Thumbs.db
 .DS_Store.sage.py
+
+# Lint reports
+lint-report-*.txt
