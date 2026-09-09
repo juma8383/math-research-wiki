@@ -4503,3 +4503,11 @@ Harness section (Orchestrator/Worker/Reviewer/Refiner contracts), Lint
 extended with DAG/status parity. research-protocol.md: Scout gate +
 Reviewer gate added additively. Per spec 3.3/3.5,
 docs/superpowers/specs/2026-09-09-math-wiki-overhaul-design.md.
+
+## [HARNESS 2026-09-09] agent ensemble landed (.claude/agents/)
+worker-prover.md, target-reviewer.md, refiner.md per spec 3.3
+(commit c107d98; SCHEMA.md Harness section is their contract source,
+bf30870). Task review: spec + quality approved, 3 minor wording items
+parked in the SDD ledger. Orchestrator remains the main session;
+`.claude/` is gitignored wholesale so the three files were force-added —
+`!.claude/agents/` negation queued for the next [LINT] pass.
