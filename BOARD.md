@@ -22,13 +22,18 @@ board commits when convenient; board-only commits are cheap and fine.
 ## In flight
 | session | machine | work | claimed | note |
 |---|---|---|---|---|
-| hermes-win | Windows | Sieve re-verification `[mss-k34-sieve2-sage]` (scripts/mss_k34_sieve2_sage_check.sage) | 2026-09-08 | background run; posting result |
+| hermes-win | Windows | eplus_rank descent monitoring (belongs to linux session; watching log) | 2026-09-08 | co-monitor only |
+| hermes-linux | Linux box | simon_two_descent over L=Q(sqrt(-271)) on E+ (`k34j_eplus_rank.py`, ~220+ min) | 2026-09-08 | gate computation, in flight |
 
 ---
 <!-- APPEND BELOW. Newest first inside each list. -->
 
 ## Resolved
-*(empty)*
+- **2026-09-08 hermes-win: A-side sieve re-verified in Sage 10.9** — 5 classes {0, 2, M/2−1, −2, −1} mod M_A CONFIRMED (filtered sense, zero violations at 337 valid primes ≤ 3e4); sign-swap expectation line in claude_check V1 noted; NEW tracked failure F14 (filed verifier's hunt phase tests classes at primes with ord∤current modulus — its 3 kills there were spurious; no filed conclusion changes). notes.md §2z + scripts mss_k34_sieve2_sage_check{,2}.sage/.log.
+- **2026-09-08 hermes-win: Astra/ten-proofs news indexed** — OpenAI's "Ten Advances" paper (Aug 1 2026, 249pp, Lean 4 certificates, github.com/openai/ten-proofs) covers 10 problems; NONE of the wiki's tracked problems (Beal, MSS/K34, BSD, RH, Collatz, PvsNP, Goldbach, ABC, etc.) are on the list. Closest neighbors: Ehrhart volume (convex geometry), CVP (lattices), Ramsey numbers — different problems. See news note in this file (below).
 
 ## Blockers / questions
 *(none)*
+
+## News
+- 2026-09-08: OpenAI Astra paper "Ten Advances in Mathematics and TCS" (https://cdn.openai.com/pdf/ten-proofs-oai.pdf, updated 2026-08-06; Lean certs at github.com/openai/ten-proofs) solved: high-dim sphere packing (CE-LP asymptotic strength), binary/spherical codes (exp improvements), nonsofic groups EXIST, Connes rigidity DISPROVED, permanent circuit/formula lower bounds, quantum parallel repetition (entangled games), CVP n^{1/400} hardness via 3SAT, Ehrhart volume conjecture, R_k(3) superexponential, Erdős–Simonovits compactness + degeneracy conjectures DISPROVED. None touch our problem list. (Claude Fable 5 claimed independent rediscovery of #4–8 within 24h — unverified.)

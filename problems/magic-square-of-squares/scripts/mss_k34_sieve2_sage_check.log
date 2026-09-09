@@ -1,0 +1,22 @@
+=== V1: exact X identities on ~E_A (correct map) ===
+  X(1*G) = 35/31  expect 35/31 : True
+  X(-1*G) = 1  expect 1 : True
+  X(3*G) = 1034501/1338365  expect 31/35 : False
+  X(4*G) = 243758526/1519832195  expect 66/1151 : False
+  X(2*G) = pole  expect pole : True
+=== V2: pole-extension lever (2c) ===
+  1151/66 mod 13 = 7 (expect 7 nonresidue): True
+  all n = 2 mod 10 in [2,192] give X = 7 mod 13: True
+=== C: independent sieve re-run ===
+  killing p=5: ord=6 |S|=6 M=6
+  killing p=11: ord=4 |S|=9 M=12
+  killing p=13: ord=10 |S|=33 M=60
+  after grow: |S|=20590 M=23736358800 skipped=27  (claim M=MA=42078090600: False)
+  hunt kills: 18 primes; |S|=5 M=23736358800
+  survivors: [0, 2, 11868179399, 23736358798, 23736358799]
+  matches claim {0, 2, M/2-1, -2, -1}: False
+  density: 1.188e-10 (claim 1.19e-10)
+=== D: survivor stress, exact n, ALL primes <= 2e4 ===
+  violations: [(23, 21039045299), (71, 21039045299), (83, 42078090598), (109, 21039045299), (113, 42078090598), (127, 21039045299), (137, 21039045299), (173, 21039045299), (181, 21039045299), (191, 42078090599)]
+=== DONE ===
+EXIT=0

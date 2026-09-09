@@ -1,0 +1,21 @@
+=== E1: exact X on negative multiples ===
+  X(-3*G) = 31/35
+  X(-4*G) = 66/1151
+=== E2: ord_p(G) at the V4 violation primes ===
+  p=23: ord=16, ord|M_A: False
+  p=71: ord=32, ord|M_A: False
+  p=83: ord=44, ord|M_A: False
+  p=109: ord=106, ord|M_A: False
+  p=113: ord=16, ord|M_A: False
+  p=127: ord=31, ord|M_A: False
+  p=137: ord=66, ord|M_A: False
+  p=173: ord=58, ord|M_A: False
+  p=181: ord=178, ord|M_A: False
+  p=191: ord=11, ord|M_A: False
+=== E3: FILTERED stress (ord | M_A), primes <= 3e4 ===
+  valid primes: 337 ; violations: NONE
+=== E4: my re-run modulus ===
+  M' = 23736358800 = 2^4 * 3^3 * 5^2 * 7 * 11 * 17 * 23 * 73
+  M_A = 2^3 * 3^4 * 5^2 * 7 * 13 * 17 * 23 * 73
+=== DONE ===
+EXIT=0
