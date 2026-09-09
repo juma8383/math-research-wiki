@@ -16,7 +16,7 @@ triangle-group finiteness criterion is standard.)
 
 ## The reduction that already exists: Darmon–Granville covering descent
 
-[[thm-darmon-granville]] does more than assert finiteness: its *proof* is a
+[[darmon-granville]] does more than assert finiteness: its *proof* is a
 **reduction to finitely many curves**. Via unramified coverings of
 $\mathbb P^1\setminus\{0,1,\infty\}$ of signature $(p,q,r)$ plus the
 Chevalley–Weil theorem, infinitely many primitive solutions of

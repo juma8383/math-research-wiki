@@ -7,9 +7,9 @@ difficulty: famous-open-problem
 created: 2026-08-24
 last-updated: 2026-08-24
 tags: [number-theory, exponential-diophantine, generalized-fermat]
-tools: [[def-beal-equation], [method-pairwise-coprime-reduction], [method-exponent-reduction], [thm-fermat-last], [thm-darmon-granville], [method-frey-modularity], [method-abc-finiteness], [thm-catalan-mihailescu], [thm-solved-generalized-fermat-signatures], [method-frey-level-lowering-obstruction], [method-darmon-program], [method-mordell-curve-lens], [method-infinite-descent], [method-spherical-reduction], [method-triangle-group-descent], [method-counting-heuristic], [conj-fermat-catalan]]
-synthesis: [synthesis]
-related: [[birch_swinnerton_dyer], [navier_stokes], [yang_mills], [hodge_conjecture], [collatz_conjecture]]
+tools: [[beal-equation]] [[pairwise-coprime-reduction]] [[exponent-reduction]] [[fermat-last]] [[darmon-granville]] [[frey-modularity]] [[abc-finiteness]] [[catalan-mihailescu]] [[solved-generalized-fermat-signatures]] [[frey-level-lowering-obstruction]] [[darmon-program]] [[mordell-curve-lens]] [[infinite-descent]] [[spherical-reduction]] [[triangle-group-descent]] [[counting-heuristic]] [[fermat-catalan]]
+synthesis: synthesis
+related: [[birch_swinnerton_dyer]] [[navier_stokes]] [[yang_mills]] [[hodge_conjecture]] [[collatz_conjecture]]
 target-signature: (3,5,7)
 ---
 
@@ -28,7 +28,7 @@ counterexample (sponsored by the AMS / Beal Prize Fund).
 
 ## Equivalent coprime form (the working target)
 
-Using [[method-pairwise-coprime-reduction]], $\gcd(A,B,C)=1$ forces $A,B,C$ to
+Using [[pairwise-coprime-reduction]], $\gcd(A,B,C)=1$ forces $A,B,C$ to
 be **pairwise coprime**. So the conjecture is equivalent to:
 
 > There are **no** positive-integer solutions to $A^x + B^y = C^z$ with
@@ -39,12 +39,12 @@ have $\gcd(A,B,C) > 1$ (e.g. $3^3 + 6^3 = 3^5$, $\gcd=3$).
 
 ## Provenance / context
 
-- Generalizes Fermat's Last Theorem [[thm-fermat-last]] (the case $x=y=z$).
+- Generalizes Fermat's Last Theorem [[fermat-last]] (the case $x=y=z$).
 - Falls under the *generalized Fermat equation* $x^p + y^q = z^r$ literature
-  [[def-beal-equation]].
-- Per [[method-exponent-reduction]], it suffices to rule out pairwise-coprime
+  [[beal-equation]].
+- Per [[exponent-reduction]], it suffices to rule out pairwise-coprime
   solutions with each exponent an odd prime or $4$.
-- Best unconditional result toward it: [[thm-darmon-granville]] gives
+- Best unconditional result toward it: [[darmon-granville]] gives
   *finiteness* of primitive solutions per exponent triple (when
   $1/x+1/y+1/z < 1$); the open gap is reducing "finitely many" to "zero."
 

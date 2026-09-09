@@ -37,6 +37,6 @@ Euclidean↔Minkowski bridge.
 No 4D interacting QFT is known to satisfy these [ym-existence-open]; even a
 precise non-perturbative *definition* of 4D quantum gauge theory is open. The
 "existence" part of the Millennium problem is precisely constructing such a
-measure/operator realization for YM [[method-constructive-continuum-limit]]. A
+measure/operator realization for YM [[constructive-continuum-limit]]. A
 key open sub-step: **full $O(4)$ covariance** (Eriksson 2026 gets only
 hypercubic $W^4$ [ym-recent-claims-unverified]).

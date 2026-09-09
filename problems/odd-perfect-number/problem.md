@@ -1,3 +1,16 @@
+---
+type: problem
+slug: odd-perfect-number
+title: Odd Perfect Number Problem
+status: stub
+difficulty: unknown
+created: 2026-08-25
+last-updated: 2026-09-09
+tags: [to-verify]
+tools: []
+related: []
+---
+
 # Odd Perfect Number Problem
 
 > **STUB — folder started 2026-08-25; full attack pending.** Load-bearing
@@ -148,7 +161,7 @@ $t_p=\sigma(p^{a_p})/p^{a_p}$:
 
 - (i) $\prod_{p\in S}\left(1+\tfrac1p\right)<2$;
 - (ii) $\sum_{p\in S}\tfrac1{p-1}>\log 2$;
-- (iii) [budget] for **every** choice $p_0\in S$, $p_0\equiv1\pmod4$:
+- (iii) budget for **every** choice $p_0\in S$, $p_0\equiv1\pmod4$:
   $\tfrac1{p_0}+\sum_{p\in S,\,p\neq p_0}\left(\tfrac1p+\tfrac1{p^2}\right)<1$;
 - (iv) [Euler corollary] $\sum_{p\in S}\tfrac1p<1$.
 

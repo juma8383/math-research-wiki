@@ -112,9 +112,10 @@ last-updated: <YYYY-MM-DD>
 Body: one indented block per node:
 
 - id: <kebab-slug>
-  kind: conjecture | theorem | lemma | method
+  kind: definition | conjecture | theorem | lemma | method
   status: open | proven | conditional | dead
   uses: [<node-id>, ...]
+  (convention: `uses:` is a single line — put every dependency id on that one line; the linter validates only the first line of a value)
   source: [[<theory/conjecture page>]] or problems/<slug>/attempts/attempt-NN.md
   next: <one line — what proving this unlocks>
 
@@ -279,7 +280,7 @@ Subagent definitions live in `.claude/agents/`. Enforcement is contract
 - **Attempt numbering**: zero-padded, monotonically increasing —
   `attempt-01.md`, `attempt-02.md`. Never edit a past attempt in place; write
   the next one. (Progress.md may be edited; attempts are append-only in spirit.)
-- **Cross-references**: use `[[page-slug]]` / `[[method-pmi]]` style links
+- **Cross-references**: use `[[<page-slug>]]` / `[[<method-pmi>]]` style links
   liberally. A page with no inbound links is an orphan waiting to be connected.
 - **Claim tags**: short stable ids in sources, e.g. `[beal-2026-coprime]`.
   Cite them from wiki pages instead of restating the claim.

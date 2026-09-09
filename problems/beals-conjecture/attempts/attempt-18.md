@@ -60,7 +60,7 @@ claim tags resolve.
    - claim tags `rg2024-357-smallest`, `rg2024-comp-bound`,
      `rg2024-faltings-algorithm`, `dv2022-irreduc-conjecture` — all defined
      in their source pages;
-   - the `[[…]]`, `[[<other-slug>]]`, `[[method-pmi]]`, `[[dv2022-…]]` tokens
+   - the `[[…]]`, `[[<other-slug>]]`, `[[<method-pmi>]]`, `[[dv2022-…]]` tokens
      are illustrative placeholders in `SCHEMA.md` and `attempt-10.md`'s
      convention explanation, not real references.
    No broken links. ✓

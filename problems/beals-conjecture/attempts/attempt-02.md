@@ -11,13 +11,13 @@ tags: [ingest, generalized-fermat, signature-catalogue, frey-curve, level-loweri
 # Attempt 02 — Locate the exact frontier and the exact obstruction
 
 attempt-01 mapped the problem qualitatively. This attempt **ingests real
-literature** [[rg2024]] to replace guesses with verified facts, then runs the
+literature** [[ratcliffe-grechuk-2024]] to replace guesses with verified facts, then runs the
 explicit Frey / level-lowering computation on the smallest open signature to
 pin down *precisely* why the known method fails there.
 
 ---
 
-## 1. Ingest — corrections from the literature [[rg2024]]
+## 1. Ingest — corrections from the literature [[ratcliffe-grechuk-2024]]
 
 Three facts from the survey (claim tags in `sources/ratcliffe-grechuk-2024.md`)
 that correct or sharpen attempt-01:
@@ -26,7 +26,7 @@ that correct or sharpen attempt-01:
    across all signatures with $1/p+1/q+1/r<1$ (exponents vary, may include a 2);
    Beal = *zero* solutions when $\min\geq3$. Beal is strictly stronger in the
    $\geq3$ regime. They are distinct — a conflation to avoid.
-   → filed [[conj-fermat-catalan]].
+   → filed [[fermat-catalan]].
 
 2. **The 10 known primitive Fermat–Catalan solutions all have a $2$**
    [rg2024-10-solns] (e.g. $2^5+7^2=3^4$, $43^8+96222^3=30042907^2$). **None is a
@@ -38,7 +38,7 @@ that correct or sharpen attempt-01:
    [rg2024-comp-bound]: Proposition 1.3 — no coprime solutions beyond the 10
    known for $z^r\leq 2^{100}$. Beal is verified to $2^{100}$.
 
-## 2. Catalogue of solved Beal signatures [[thm-solved-generalized-fermat-signatures]]
+## 2. Catalogue of solved Beal signatures [[solved-generalized-fermat-signatures]]
 
 Verified solved (zero primitive solutions), all exponents $\geq3$:
 
@@ -66,7 +66,7 @@ is solved (it lies in the $(3,3,n)$ family, $n=4\leq10^9$).
 
 ## 4. The explicit Frey / level-lowering computation on $(3,5,7)$
 
-This is the core of the attempt. [[method-frey-level-lowering-obstruction]]
+This is the core of the attempt. [[frey-level-lowering-obstruction]]
 
 ### 4a. Candidate Frey curve
 

@@ -1,3 +1,16 @@
+---
+type: problem
+slug: magic-square-of-squares
+title: Magic Square of Squares (Euler's problem)
+status: in-progress
+difficulty: famous-open-problem
+created: 2026-08-25
+last-updated: 2026-09-09
+tags: [to-verify]
+tools: []
+related: []
+---
+
 # Magic Square of Squares (Euler's problem)
 
 > **STUB — folder started 2026-08-25; full attack pending.** Load-bearing
@@ -24,7 +37,7 @@ constant; and a validated depth-parity sieve (new kill layer) removes
 42–78% of the remaining candidate space per nonzero coset. Named proof
 paths: Chabauty–Coleman on $C3_A$ at $p=11$ (rank $J=2<3$), and the
 Wall–Sun–Sun-type odd-depth primitive-divisor gate (Lang/abc-conditional
-routes exist). **§2j (2026-09-07, `[mss-k34-jacobian]`):** the descent
+routes exist). **§2j (2026-09-07, `mss-k34-jacobian`):** the descent
 tree's terminal layer is now fully analyzed — the four leaf quartics share
 ONE Jacobian $E_a: y^2=x^3+32x^2+238x$ (they are its four α-descent covers,
 $ae=238$); rank$(E_a)=1$ unconditional (mwrank), image$(\alpha)$ =
@@ -38,7 +51,7 @@ benignly at odd indices — stall item (ii) resolves negatively; the remaining
 tamable piece is the lift-condition lemma $s\pm2\rho\sigma\ne\square$
 (census-failed at every tested index; Jacobian of the (1,72) quartic is the
 twist partner ≅ E_a, so the same α-descent machinery applies). **§2k
-(2026-09-08, `[mss-k34-liftgate]`):** §2j's lift test corrected (append-only)
+(2026-09-08, `mss-k34-liftgate`):** §2j's lift test corrected (append-only)
 — the K34-A candidate-chain lift is n²−4u²(rs)² = r⁸·N(s²/r²) with
 N(x) = x⁴−4x³−604x²−952x+56644: a THIRD quartic D with Jacobian
 J_L : y² = x³−27894240x+56491485696 (rank 1 unconditional, mwrank; generator
@@ -48,7 +61,7 @@ square-x point found. The K34-A candidate lift is thus the class-1 fiber of
 α^L on J_L — **structurally identical to K34-A itself** (same square-x
 question shape, one level up): the lift gate does not collapse, and the
 new structural question is whether the lift tower (covers of the same curve
-**§2l (2026-09-08, `[mss-k34-liftgate2]`):** two-parents structure — every
+**§2l (2026-09-08, `mss-k34-liftgate2`):** two-parents structure — every
 admissible leaf point has TWO layer-1 parents: Parent A (u, ±rs, n), the
 K34-A chain, is a **FIXED POINT** of the Germain step (split (238r⁴, s⁴)
 recovers the leaf point itself — no descent contradiction available on the
@@ -64,7 +77,7 @@ square) fails at all 14 alive indices. The K34-A candidate gate is now
 22.4% dead by theorem + census-failed to m = 60 on the rest; the named
 next step is proving N(X²) never square on the admissible fiber (= no
 positive-square-x point on the C₁ cover y² = 8x⁴+1016x²+9 — the §2k
-tower shape). K34 remains open. **§2m (2026-09-08, `[mss-k34-tower1]`):**
+tower shape). K34 remains open. **§2m (2026-09-08, `mss-k34-tower1`):**
 7–17 kernel lemma PROVED — gcd(n+2urs, n−2urs) = 1 unconditionally (odd
 p | gcd ⟹ p ∈ {7,17}; the valuation lemma kills 7|s, 17|s always:
 v₇(238r⁴)=1 odd contradicts u² square; 7|n ⟺ 7|s) — so the **D-gate is
@@ -79,7 +92,7 @@ Correction: the §2k "E_Z = Prym" claim retracted (wrong substitution).
 NAMED GATE: if the ±pair has rank 0, rank Jac(Z) = 1 < 3 ⟹ Chabauty on Z;
 Z(ℚ) has only the degenerate points (0,±3) ⟹ no square-x on C₁ ⟹ the
 K34-A candidate chain closes unconditionally. K34 remains open.
-**§2n (2026-09-08, `[mss-k34-tower2]`):** mod-5 correction — the tower
+**§2n (2026-09-08, `mss-k34-tower2`):** mod-5 correction — the tower
 curve for the lift gate is Z_D : V² = w⁸−4w⁶−604w⁴−952w²+56644 (w = s/r),
 NOT the C₁-octic (round-4 claim self-caught pre-filing and corrected).
 **W₅(Z_D) = {0, ±1}** (proved): s ≡ 0, ±r (mod 5) required — kills 17 of
@@ -93,13 +106,13 @@ point x=0)**, and **Jac(Z_D) ~ J_L × Jac(P) CONFIRMED 9/9 primes**
 P's charpoly is a quadratic SQUARED at p=23, 41 (Jac(P) ~ E × E^χ). The
 Chabauty gate needs rank Jac(P) ≤ 1; P's rational Weierstrass point makes a
 hand 2-descent on Jac(P) the realistic next computation. K34 remains open.
-**§2o (2026-09-08, `[mss-k34-tower3]`):** the **full Z_D mod-p sieve kills
+**§2o (2026-09-08, `mss-k34-tower3`):** the **full Z_D mod-p sieve kills
 ALL 50 alive admissible fiber indices (m ≤ 240)** — w = s/r mod p ∈ W_p
 necessary for every p ≤ 499 (exact; p | r excluded via the rational infinity
 points); first-killing primes p = 7, 29, 41, … (all exact). P(ℚ) search:
 only the branch point (0,0) in p ≤ 3000, q ≤ 40. The complete closure still
 needs the Jac(P) rank gate (Chabauty on Z_D) or a descent argument — the
-sieve kills finite ranges only. **§2p (2026-09-08, `[mss-k34-tower4]`):**
+sieve kills finite ranges only. **§2p (2026-09-08, `mss-k34-tower4`):**
 **±pair RESOLVED — K = ℚ(√238)**: Jac(P)'s charpolys split exactly at the
 split primes of ℚ(√238) and are irreducible palindromic at exactly the inert
 primes (27/27 verified, exact) — **Jac(P) = Res_{K/ℚ}(E_K), rank Jac(P) =
@@ -111,7 +124,7 @@ family, lift-gate Jacobian J_L, and the Prym base field. K34 remains open.
 even forms); E_a DISCONFIRMED as the factor (p=101: factor traces (−12,+18)
 vs ap(E_a)=10 — coincidence caught pre-filing); analytic rank of Jac(P)
 (model-independent) in flight. K34 remains open. **§2r (2026-09-08,
-`[mss-k34-tower6]`):** **analytic rank Jac(P) = 0** — sum a_p/p flat at
+`mss-k34-tower6`):** **analytic rank Jac(P) = 0** — sum a_p/p flat at
 ~−0.7 through p = 5000 (bad primes {2,3,7,17,271}; rank 1 would add ~+1.0
 per log-log unit, rank 2 ~+2.0; no slope observed) — so **rank Jac(Z_D) =
 1 < 3: Chabauty applies to Z_D**, #Z_D(ℚ) ≤ #Z_D(F_p) + 4 at good p.
@@ -120,14 +133,14 @@ K34-A candidate lift fails for every m and the leaf chain closes
 unconditionally. Rank 0 is analytic evidence; rigorous completion via
 2-descent on Jac(P) or L(1) nonvanishing. Two Chabauty targets: C3_A
 (main gate) and Z_D (leaf chain), both rank 1 < 3. K34 remains open.
-**§2u (2026-09-08, `[mss-k34-tower9]`):** the **Z_D sieve density
+**§2u (2026-09-08, `mss-k34-tower9`):** the **Z_D sieve density
 quantified**: ρ = ∏_{5≤p≤499} |W_p|/p ≈ 8.92×10⁻²⁵⁵ (exact per-prime QR
 computations) — for any height-bounded candidate box the expected
 survivors is (#candidates)·ρ: the mod-p layer is essentially exhaustive
 for any enumerable set, and the bottleneck is exactly the HEIGHT BOUND
 (which effective Chabauty supplies once rank Jac(P) = 0 is rigorous).
 The closure program is now explicit: (1) rank Jac(P) = 0 rigorous;
-(2) height bound; (3) Coleman on Z_D. K34 remains open. **§2x (2026-09-08, `[mss-k34-sage2]`):**
+(2) height bound; (3) Coleman on Z_D. K34 remains open. **§2x (2026-09-08, `mss-k34-sage2`):**
 **SageMath 10.9 INSTALLED** (Miniforge/conda-forge, user-local) — Simon
 2-descent over number fields now live (the tool for rank E(ℚ(√238)));
 Jac(P) confirmed SIMPLE over ℚ (irreducible charpoly at 31/53/59) splitting
@@ -135,7 +148,7 @@ over K as E × E^σ; Stoll's genus-2 two-descent remains Magma-only; Sage's
 bundled gp spawn broken in this env (local standalone gp via subprocess
 works). Next named: construct the Prym curve E/K from its trace signature,
 then rank E(K) via simon_two_descent over K. K34 remains open.
-**§2y (2026-09-08, `[mss-k34-richelot]`):** **RICHELOT STRUCTURE FOUND
+**§2y (2026-09-08, `mss-k34-richelot`):** **RICHELOT STRUCTURE FOUND
 (exact)** — N(x) = (x²−2x+238)² − 1084x² with 1084 = 4·271: the
 decomposable shape y² = x(h²−d·x²); the two elliptic quotients over
 L = ℚ(√−271) are E± : y² = x³+(±2√−271−2)x²+238x (conjugate, L-rational
@@ -143,7 +156,7 @@ L = ℚ(√−271) are E± : y² = x³+(±2√−271−2)x²+238x (conjugate, L-
 isogeny — the rank gate is an explicit Sage descent over L (running).
 Reconciliation: K = ℚ(√238) (Frobenius-factorization field) and
 L = ℚ(√−271) (Richelot isogeny field) are different, both real. K34
-remains open. **§2aj (2026-09-09, `[mss-k34-selmer2i]`):** **RANK GATE
+remains open. **§2aj (2026-09-09, `mss-k34-selmer2i`):** **RANK GATE
 CLOSED UNCONDITIONALLY** — Sage's NF descent wedged at 24h (killed,
 tracked failure 28); replaced by a hand 2-isogeny descent (b = 238
 rational ⇒ explicit candidates; exact local conditions incl. 2-adic ring
@@ -154,7 +167,7 @@ upgraded from BSD-conditional (§2r) to unconditional; Sha[φ] = (Z/2)²,
 Sha[φ′] = Z/2. **rank Jac(Z_D) = 1 < 3 unconditional: Chabauty gate
 PASSES**; named remaining: height bound, then Coleman on Z_D. K34
 remains open.
-**§2s (2026-09-08, `[mss-k34-tower7]`):** the hand 2-descent on Jac(P) is
+**§2s (2026-09-08, `mss-k34-tower7`):** the hand 2-descent on Jac(P) is
 NOT directly available — Gordon-Grant/Stoll requires all five Weierstrass
 points rational, but **N(x) has NO rational root** (all divisors of
 56644 = 2²·7²·17² tested); the Galois descent from ℚ(J[2]) is the missing
@@ -192,7 +205,7 @@ of $\ge$ 8-digit numbers ($>10^{14}$); Boyer 2004: no $>6$-square
 solutions for vast families of 1-mod-4 center types up to
 $10^{26}$–$10^{30}$. 8-square records are step-value searches (see the
 census bullet below).
-**2026-08-31 census, adversarially verified `[mss-census-verified]`:**
+**2026-08-31 census, adversarially verified `mss-census-verified`:**
 this session enumerated **all square-center $\ge7$-square magic squares of
 squares with entries $e\le440{,}000$** (parametrization around center
 $a=u^2+v^2$: entries $a\pm b,\ a\pm c,\ a\pm(b+c),\ a\pm(b-c)$ with
@@ -213,7 +226,7 @@ records are a **step-value** search to $d\le6\times10^{23}$
 solutions and sum $\equiv3\pmod{72}$ for 7-square configurations
 (Zimmermann–Pierrat–Thiriet 2015); Robertson (Math. Mag. 69 (1996) 289–293)
 reduces the problem to an elliptic curve of rank 4 `[to-verify vs primary]`.
-**2026-09-01 additive-parallelogram reduction `[mss-parallelogram-reduction]`:**
+**2026-09-01 additive-parallelogram reduction `mss-parallelogram-reduction`:**
 the full problem is now *exactly* an additive-combinatorics statement —
 **a 9-distinct-square solution exists iff some $D(w^2)$ contains an
 additive parallelogram** $\{x,\,y,\,x+y,\,y-x\}$ (four distinct elements);
@@ -287,8 +300,8 @@ its clean primitive-quotient form — "the only *primitive* square-center
 $\ge7$-square config with center $w^2\le W^2$ is Bremner/Sallows" — the
 published-search box ($\le440{,}000$) was implicitly primitive-only; the
 triple engine extends $W$ by orders of magnitude at negligible cost.
-**Flagship W=10⁶ LANDED `[mss-census-w1e6-verified]`; extended W=10⁷
-LANDED `[mss-census-w1e7-verified]` (2026-09-01):** W=10⁷ (centers ≤
+**Flagship W=10⁶ LANDED `mss-census-w1e6-verified`; extended W=10⁷
+LANDED `mss-census-w1e7-verified` (2026-09-01):** W=10⁷ (centers ≤
 10¹⁴): raw 70,587 (= Bremner scalings; ×10.0 vs W=10⁶, the scaling-window
 ratio), primitive 3, dihedral classes **1**, non-Bremner **0**, nsq ≥ 8
 **0** — the Bremner/Sallows uniqueness box extends to **centers ≤ 10¹⁴**
@@ -303,7 +316,7 @@ square-center ≥7-square magic square of squares with center w² ≤ 10¹² is
 Bremner/Sallows, up to its global scalings** (box extension 4.4×10⁵ →
 10¹², ≈2.3×10⁶ in center value). W=10⁷ (centers ≤ 10¹⁴) in flight.
 **nsq9 deep hunt (2026-09-01) — independent verification, not a new
-frontier** `[mss-nsq9-w1e8-verified]`: the chunked engine's full-solution
+frontier** `mss-nsq9-w1e8-verified`: the chunked engine's full-solution
 hunt (`scripts/mss_census_chunked.py`, mode nsq9 = all four role
 quantities |b|,|c|,|b+c|,|b−c| ∈ D(w²) ⟺ all 8 non-center entries
 square) at W=10⁸ found **0 full 9-square configs with center ≤ 10¹⁶**.
@@ -316,7 +329,7 @@ Buell the nsq9 hunt needs W > 1.6×10⁸ — a C/numpy port (the Python
 engine's cost scales as ~W log W with heavy constants; estimated
 multi-day at W=10⁹).
 **Structural lemmas filed** (see [notes.md](notes.md),
-`[mss-structural-lemmas-verified]`): (1) closed form
+`mss-structural-lemmas-verified`): (1) closed form
 $|D(w^2)|=(\prod_{p\equiv1(4)}(2v_p(w)+1)-1)/2$; (2) primitive ⟺ $w$ odd
 (even-$w$ configs are exactly the $4=k^2$ scalings); (3) $\ge7$-square ⟹
 $|D(w^2)|\ge2$ ⟹ center divisible by $p^2$ ($p\equiv1\bmod4$) or by two
@@ -327,7 +340,7 @@ nine entries of a primitive config ≡ 1 (mod 24). Full solution
 (nsq=9, all nine entries square) needs $|D|\ge4$; nsq=8 alone needs only
 $|D|\ge3$ (3 complete pairs + 2 accidental halves).
 
-**Prime-power freeness theorem — first proved family `[mss-primepower-freeness]`
+**Prime-power freeness theorem — first proved family `mss-primepower-freeness`
 (2026-09-01).** For $w=2^ep^k$ ($p\equiv1\bmod4$ prime), $D(w^2)$ is
 sum-free, AP-free, and parallelogram-free — *proved* (Gaussian-integer
 structure: elements $d_m=p^{2(k-m)}|\operatorname{Im}(\bar\pi^{4m})|$
@@ -344,14 +357,14 @@ census all $p<2000$, $p^k\le10^9$ (413 families) A2=A3=AP=0
 (`primepower_freeness.log`); full proof + failed-attempt tracking in
 [notes.md](notes.md).
 
-**Two-prime structure `[mss-two-prime]` (2026-09-01).** For $w=pq$:
+**Two-prime structure `mss-two-prime` (2026-09-01).** For $w=pq$:
 closed form $D((pq)^2)=\{p^2Y_q,\ q^2Y_p,\ |X-Y|,\ X+Y\}$ (derived,
 builder-verified); census all $p<q\le3000$ (22,155 pairs) A2=A3=AP=0;
 valuation profile $\{0,0,0,2{+}v_p(Y_q)\}$ — pigeonhole kills the
 prime-power proof's ultrametric mechanism, and the two-prime freeness
 question is **open** even at $|D|=4$ (stall + partial mod-$p$
 constraints recorded in notes.md).
-**$\omega_1$-stratified heuristic `[mss-omega1-stratification]` (2026-09-01,
+**$\omega_1$-stratified heuristic `mss-omega1-stratification` (2026-09-01,
 `mss_omega1_stratification.py`):** bucketing the window-corrected expected
 hourglass count by $\omega_1(w)$ (distinct 1-mod-4 primes of $w$) —
 validated by reproducing the filed window-corrected total
@@ -371,7 +384,7 @@ $\omega_1$, $2.1\cdot10^{-7}\to2.0\cdot10^{-6}$, but center counts decay
 faster). Under the model a 9-square center (if any exists) has $\omega_1=2$
 or $3$ — consistent with Bremner's $\omega_1=2$ center $425=5^2\cdot17$;
 the proved condition stops at $\omega_1\ge2$, and an $\omega_1=2$ freeness
-theorem (open, `[mss-two-prime]`) would prune the model's largest stratum,
+theorem (open, `mss-two-prime`) would prune the model's largest stratum,
 cutting the expected total to $\approx0.030$.
 
 Resolution on a slice (many near-misses; relaxed variants solved) → control

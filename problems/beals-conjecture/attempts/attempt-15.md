@@ -46,7 +46,7 @@ whole.)
 attempt-14 corrected (the Darmon–Granville covering descent *is* a reduction,
 but ineffective). Per append-only discipline the original text was **not**
 rewritten; instead a **correction blockquote** was inserted at the top of the
-(B) subsection pointing to `[[method-triangle-group-descent]]`, the corrected
+(B) subsection pointing to `[[triangle-group-descent]]`, the corrected
 synthesis, and stating the correction is authoritative. This keeps the audit
 trail honest while preventing a reader landing on attempt-11 from taking the
 stale claim as current.

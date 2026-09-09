@@ -9,7 +9,7 @@ last_touched: 2026-08-23
 # Geometric Complexity Theory
 
 ## Core
-Attack the algebraic analog — **permanent vs determinant** (VNP vs VP) — via representation-theoretic obstructions: a partition λ with multiplicity in the padded-permanent orbit closure coordinate ring exceeding that of the determinant orbit closure. Best unconditional bound is still quadratic `[mr-2014]` (dc(perm_m) ≥ m²/2).
+Attack the algebraic analog — **permanent vs determinant** (VNP vs VP) — via representation-theoretic obstructions: a partition λ with multiplicity in the padded-permanent orbit closure coordinate ring exceeding that of the determinant orbit closure. Best unconditional bound is still quadratic `mr-2014` (dc(perm_m) ≥ m²/2).
 
 ## The transfer is conditional, not direct `[vnp-separation-not-pneqnp]` (CORRECTION, Cycle 26)
 A prior version of this page claimed GCT "transfers to P≠NP via Valiant's #P-completeness of the permanent." That is **overstated**. VP≠VNP does **not** directly imply P≠NP. What is known (Bürgisser 2000; Valiant 1992; Koiran-Perifel): VP≠VNP ⟹ **P/poly ≠ NP/poly** (over F₂ by direct Boolean simulation; over general fields under GRH) — a *nonuniform* separation. Conversely VP=VNP ⟹ the **polynomial hierarchy collapses** (under GRH). Via depth reduction (Valiant-Skyum-Berkowitz-Rackoff 1983), VP is an algebraic analogue of **NC²**, so VP≠VNP ≈ algebraic nonuniform NC²≠#P — which does **not** rule out P=NP. So GCT's target is a **necessary but not sufficient** step toward boolean P≠NP; a complete GCT success leaves an open algebraic→Boolean, nonuniform→uniform transfer. Same "necessary-not-sufficient / transfer-gap" shape as the descriptive surface (CPT≠P ≠ P≠NP) and the Williams mining face (NEXP LB ≠ P≠NP).

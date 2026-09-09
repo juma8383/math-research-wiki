@@ -30,13 +30,13 @@ algebraic cycle gives an *integral* class $\mathrm{cl}(Z)\in H^{2p}(X,\mathbb
 Z)$; the failure is that some integral Hodge classes are divisible only after
 passing to $\mathbb Q$ (torsion in the spectral sequence differentials $d_r$).
 The conjectural salvage — the $\mathbb Q$-statement — removes exactly this
-torsion obstruction [[def-hodge-class-cycle-map]].
+torsion obstruction [[hodge-class-cycle-map]].
 
 ## Role in the obstruction map
 
 Unlike the other four problems in this wiki, Hodge has a built-in **"the naive
 strong statement is false"**: even granting the analytic→algebraic bridge
-[[method-analytic-algebraic-bridge]], the *integral* version fails for a
+[[analytic-algebraic-bridge]], the *integral* version fails for a
 *separate* reason (torsion). The $\mathbb Q$-Hodge conjecture bundles "remove
 the torsion obstruction" (done: use $\mathbb Q$) with "build the
 analytic→algebraic bridge in codim $\ge2$" (the open part). Worth tracking

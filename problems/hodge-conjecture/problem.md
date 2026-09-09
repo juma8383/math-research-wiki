@@ -7,8 +7,8 @@ difficulty: famous-open-problem
 created: 2026-08-24
 last-updated: 2026-08-24
 tags: [algebraic-geometry, hodge-theory, algebraic-cycles, motives]
-tools: [[def-hodge-class-cycle-map], [thm-lefschetz-1-1], [thm-hard-lefschetz-reduction], [thm-integral-hodge-fails], [thm-absolute-hodge-motivated], [thm-cattani-deligne-kaplan], [thm-standard-conjectures-motives], [method-analytic-algebraic-bridge], [conj-generalized-hodge]]
-related: [[beals_conjecture], [birch_swinnerton_dyer], [navier_stokes], [yang_mills], [collatz_conjecture]]
+tools: [[hodge-class-cycle-map]] [[lefschetz-1-1]] [[hard-lefschetz-reduction]] [[integral-hodge-fails]] [[absolute-hodge-motivated]] [[cattani-deligne-kaplan]] [[standard-conjectures-motives]] [[analytic-algebraic-bridge]] [[generalized-hodge]]
+related: [[beals_conjecture]] [[birch_swinnerton_dyer]] [[navier_stokes]] [[yang_mills]] [[collatz_conjecture]]
 target-frontier: codimension-2 Hodge classes on a 4-fold
 ---
 
@@ -21,7 +21,7 @@ The Hodge decomposition $H^n(X,\mathbb C)=\bigoplus_{p+q=n}H^{p,q}$ defines the
 **Hodge classes** of codimension $p$:
 $$\mathrm{Hdg}^p(X):=H^{2p}(X,\mathbb Q)\cap H^{p,p}(X)\subset H^{2p}(X,\mathbb C).$$
 Every codimension-$p$ algebraic cycle $Z$ has a cohomology class
-$\mathrm{cl}(Z)\in H^{2p}(X,\mathbb Z)$ of type $(p,p)$ [[def-hodge-class-cycle-map]].
+$\mathrm{cl}(Z)\in H^{2p}(X,\mathbb Z)$ of type $(p,p)$ [[hodge-class-cycle-map]].
 
 **Hodge Conjecture (Hodge 1950, as stated by Deligne):** On a non-singular
 projective variety over $\mathbb C$, every Hodge class is a $\mathbb Q$-linear
@@ -33,13 +33,13 @@ is **surjective** for all $p$.
 
 - **Divisors ($p=1$, degree $2$) — PROVEN.** The Lefschetz theorem on $(1,1)$-classes:
   every integral $(1,1)$ class is $\mathbb Z$-linear combination of divisor classes
-  [[thm-lefschetz-1-1]] [hodge-lefschetz-1-1]. Via the exponential sequence;
+  [[lefschetz-1-1]] [hodge-lefschetz-1-1]. Via the exponential sequence;
   the working engine.
-- **Hard Lefschetz reduction** [[thm-hard-lefschetz-reduction]]: HC in degree
+- **Hard Lefschetz reduction** [[hard-lefschetz-reduction]]: HC in degree
   $2p$ follows from degree $2(n-p)$. Hence the only general cases known are
   degrees $0,2,2n-2,2n$ — i.e. $p\in\{0,1,n-1,n\}$
   [hodge-known-degrees-0-2-2n] [hodge-hard-lefschetz-reduction].
-- **Integral version FAILS** [[thm-integral-hodge-fails]]: Atiyah–Hirzebruch
+- **Integral version FAILS** [[integral-hodge-fails]]: Atiyah–Hirzebruch
   and Kollár constructed varieties where integral Hodge classes are not
   algebraic — only the $\mathbb Q$-version is conjectured
   [hodge-integral-fails]. The $\mathbb Z$-statement is false; the obstruction
@@ -52,21 +52,21 @@ is **surjective** for all $p$.
   (Shioda), simple of prime dimension (Tankeev/Ribet), fourfolds of types
   I/II (Moonen–Zarhin), some Weil-type fourfolds (Schoen). But open for general
   abelian varieties (notably Weil type, type III).
-- **Absolute Hodge** [[thm-absolute-hodge-motivated]]: every Hodge class on an
+- **Absolute Hodge** [[absolute-hodge-motivated]]: every Hodge class on an
   abelian variety is **absolute Hodge** (Deligne) — the strongest known
   evidence (they behave well under all field automorphisms of $\mathbb C$)
   [hodge-absolute-hodge]. André's **motivated cycles** extend this.
-- **Hodge locus algebraic** [[thm-cattani-deligne-kaplan]]: the Hodge locus of
+- **Hodge locus algebraic** [[cattani-deligne-kaplan]]: the Hodge locus of
   a Hodge class in a family is a countable union of closed algebraic subsets
   (Cattani–Deligne–Kaplan) — Hodge classes behave "as if" algebraic
   [hodge-cattani-deligne-kaplan].
-- **Standard conjectures / motives** [[thm-standard-conjectures-motives]]
+- **Standard conjectures / motives** [[standard-conjectures-motives]]
   [hodge-standard-conjectures]: if the Künneth components of the diagonal and
   the inverse Lefschetz operators were algebraic (Grothendieck B, C) — known
   for surfaces, abelian varieties, hyper-Kähler $K3^{[n]}$ (Charles–Markman
   2013) — the category of motives becomes Tannakian and HC reduces to a
   functor being fully faithful. The motive reduction.
-- **Generalized Hodge Conjecture** [[conj-generalized-hodge]]
+- **Generalized Hodge Conjecture** [[generalized-hodge]]
   [hodge-generalized-conjecture]: Grothendieck's coniveau version; Hodge's
   original stronger form is false (Grothendieck); GHC = usual HC at $k=2r$.
 
@@ -82,7 +82,7 @@ Hodge class of codimension $\ge2$, there is no known mechanism producing a
 $\mathbb Q$-combination of algebraic cycles mapping to it. The Abel–Jacobi /
 normal-function machinery that bridged analytic and algebraic for divisors
 has no effective analogue producing cycles in higher codimension
-[[method-analytic-algebraic-bridge]].
+[[analytic-algebraic-bridge]].
 
 **Frontier (exact):** by hard Lefschetz only the "middle" codimensions
 $2\le p\le n-2$ are genuinely new; the smallest open case is **codimension-2

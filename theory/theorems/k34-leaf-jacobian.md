@@ -4,13 +4,13 @@ name: k34-leaf-jacobian-theorem
 created: 2026-09-07
 tags: [number-theory, elliptic-curves, sha, descent]
 used-in: [[magic_square_of_squares]]
-provenance: private notes ([mss-k34-jacobian], notes.md §2j)
+provenance: private notes (mss-k34-jacobian, notes.md §2j)
 ---
 
 # Theorem — K34 leaf quartics: one Jacobian, three insoluble leaves
 
 **Setting.** The four layer-2 leaf quartics of the K34 descent tree
-(`[mss-k34-descent]`):
+(`mss-k34-descent`):
 $$C_{238}:\ u^2=238r^4+32r^2s^2+s^4,\quad
   C_{-119}:\ u^2=32r^2s^2-119r^4-2s^4,$$
 $$C_{17}:\ 9u^2=17r^4+32r^2s^2+14s^4,\quad

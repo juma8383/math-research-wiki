@@ -13,7 +13,7 @@ tags: [frontier, obstruction-map, supercriticality, conditional-regularity, cros
 First cycle on NS. Mirrors Beal/BSD attempts 01: get the clean form, locate the
 exact frontier, name the open content, map where the obstruction sits.
 
-## Statement established [[def-navier-stokes-equation]]
+## Statement established [[navier-stokes-equation]]
 
 Fefferman's four Millennium statements [ns-millennium-fefferman]: (A) global
 smooth on $\mathbb R^3$; (B) global smooth on $\mathbb T^3$; (C) breakdown on
@@ -25,15 +25,15 @@ regularity OR finite-time blowup closes the problem.
 
 | piece | 2D | 3D |
 |---|---|---|
-| local smooth existence | known | known [[thm-local-wellposedness]] |
+| local smooth existence | known | known [[local-wellposedness]] |
 | small-data global | known | known |
-| global weak (Leray-Hopf) | known (unique) | known, **non-unique?** [[thm-leray-weak-solutions]] |
+| global weak (Leray-Hopf) | known (unique) | known, **non-unique?** [[leray-weak-solutions]] |
 | global smooth for large data | known [ns-2d-solved] | **OPEN** |
 | finite-time blowup counterexample | n/a | **OPEN** |
 
-Plus conditional regularity (Serrin/BKM [[thm-serrin-regularity]]
-[[thm-beale-kato-majda]]) and partial regularity (CKN
-[[thm-caffarelli-kohn-nirenberg]]) hold in 3D but are conditional.
+Plus conditional regularity (Serrin/BKM [[serrin-regularity]]
+[[beale-kato-majda]]) and partial regularity (CKN
+[[caffarelli-kohn-nirenberg]]) hold in 3D but are conditional.
 
 ## Open content (analog of Beal's "finitely many → zero", BSD's "rank ≤1 → arbitrary rank")
 
@@ -51,7 +51,7 @@ dim $\le1$). All say "IF a critical norm is bounded THEN smooth."
 The gap is the **global a priori bound on a critical norm** — a *control*
 step, exactly parallel to BSD's Selmer-group control and Beal's reduction step.
 The only unconditional global bound is the **energy** ($\|u\|_{L^2}$), which is
-**subcritical** in 3D [[method-energy-supercriticality]] [ns-supercritical].
+**subcritical** in 3D [[energy-supercriticality]] [ns-supercritical].
 Under NS scaling $u_\lambda(x,t)=\lambda u(\lambda x,\lambda^2 t)$:
 $\|u_\lambda\|_{L^2}=\lambda^{-1/2}\|u\|_{L^2}$ (weakens at small scales), but
 $\|u_\lambda\|_{L^3}=\|u\|_{L^3}$ (critical, scale-invariant). So the energy
@@ -106,7 +106,7 @@ candidate methodology page. `related` links added across all three problems.
   Tao's averaged-NS blowup [ns-tao-averaged-blowup] is the model, the gap is
   removing the averaging while keeping blowup.
 - **(C) Quantitative critical program**: sharpen conditional criteria (Luo
-  optimal frequency localization [[thm-beale-kato-majda]], Barker localized
+  optimal frequency localization [[beale-kato-majda]], Barker localized
   rates) and quantify the supercritical gap, narrowing what (A)/(B) must do.
 
 ## Theory toolbox filed this cycle

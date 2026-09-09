@@ -36,7 +36,7 @@ This is the **resolution layer that works** — the one codimension where the
 full mechanism (exponential sequence → Picard variety → GAGA) converts a
 Hodge class into an algebraic cycle, integrally. The obstruction is that this
 one-dimensional mechanism has no effective analogue in codimension $\ge2$
-[[method-analytic-algebraic-bridge]]. By hard Lefschetz [[thm-hard-lefschetz-reduction]]
+[[analytic-algebraic-bridge]]. By hard Lefschetz [[hard-lefschetz-reduction]]
 it also covers $p=n-1$. The structural reason it stops: the Picard variety is
 a *one-dimensional* analytic→algebraic object (abelian variety); the
 Griffiths intermediate Jacobian for $p\ge2$ is transcendental and does not

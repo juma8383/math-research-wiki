@@ -9,7 +9,7 @@ provenance: []
 
 # Frey curve / modularity / level lowering
 
-The engine that proved FLT [[thm-fermat-last]] and that Beal's mixed-exponent
+The engine that proved FLT [[fermat-last]] and that Beal's mixed-exponent
 case resists.
 
 ## The recipe (equal-exponent / FLT case)
@@ -47,7 +47,7 @@ mixed-exponent argument is known**.
 ## When to reach for it
 
 This is *the* framework for any attempt on a specific Beal signature after
-[[method-exponent-reduction]]. The first concrete step on a target signature is
+[[exponent-reduction]]. The first concrete step on a target signature is
 always: write the Frey curve, compute the conductor and discriminant
 explicitly, and check whether level lowering closes. (Catalogued as the
 attempt-02 plan in [[beals_conjecture]].)

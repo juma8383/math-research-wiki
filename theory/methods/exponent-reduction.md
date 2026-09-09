@@ -30,6 +30,6 @@ cases to finitely many — there are infinitely many signatures — but it
 standardizes them.
 
 **When to reach for it.** At the start of any Beal/generalized-Fermat attack:
-first apply [[method-pairwise-coprime-reduction]], then this, so the target is a
+first apply [[pairwise-coprime-reduction]], then this, so the target is a
 clean signature $(p,q,r)\in\{\text{odd primes}\}\cup\{4\}^3$ with
 $1/p+1/q+1/r\leq 1$.

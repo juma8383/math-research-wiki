@@ -84,4 +84,4 @@ per-quartic work.
 K34 leaf quartics of the magic-square-of-squares wiki: four "separate"
 open quartics → one Jacobian → three proved insoluble + one parametrized +
 its descent loop identified as the halving map (notes.md §2j of
-`[mss-k34-jacobian]`, 2026-09-07).
+`mss-k34-jacobian`, 2026-09-07).

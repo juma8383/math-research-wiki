@@ -1,3 +1,9 @@
+---
+title: Cycle 3 — The non-amplification average-case route: CLOSED (the class drift is in the reconstruction machinery, not the XOR lemma) (Williams side)
+date: 2026-08-23
+status: raw
+---
+
 # Cycle 3 — The non-amplification average-case route: CLOSED (the class drift is in the reconstruction machinery, not the XOR lemma) (Williams side)
 
 **Date:** 2026-08-23

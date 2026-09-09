@@ -30,7 +30,7 @@ complementary. [used-in: [[navier_stokes]]]
 
 ## [ns-2d-solved] 2D solved
 [summary] Global smooth unique solutions (Ladyzhenskaya, 1960s). Main
-difficulties absent in 2D; see [ns-supercritical]. [used-in: [[def-navier-stokes-equation]]]
+difficulties absent in 2D; see [ns-supercritical]. [used-in: [[navier-stokes-equation]]]
 
 ## [ns-local-wp] 3D local well-posedness + small-data global
 [summary] Leray 1934 (local strong, $u_0\in L^2\cap L^\infty$); Fujita-Kato
@@ -38,54 +38,54 @@ difficulties absent in 2D; see [ns-supercritical]. [used-in: [[def-navier-stokes
 Blow-up time $T\gtrsim C/\|u_0\|_\infty^2$ etc. Small critical-norm data
 $\Rightarrow$ global. Blowup rate
 $\|u(t)\|_{L^p}\gtrsim (T^*-t)^{-\frac12(1-3/p)}$, $3<p\le\infty$.
-[used-in: [[thm-local-wellposedness]]]
+[used-in: [[local-wellposedness]]]
 
 ## [ns-leray-weak] Leray-Hopf weak solutions
 [summary] Leray 1934 ($\mathbb R^3$), Hopf 1951. Global weak solutions for any
 $u_0\in L^2$ (divergence-free), energy inequality; singular-time set box-dim
-$\le1/2$. **Uniqueness open.** [used-in: [[thm-leray-weak-solutions]]]
+$\le1/2$. **Uniqueness open.** [used-in: [[leray-weak-solutions]]]
 
 ## [ns-bkm] Beale-Kato-Majda (1984)
 [summary] $\int_0^T\|\omega\|_\infty\,dt<\infty\Leftrightarrow$ regular on
 $[0,T]$ (Euler & NS). Refinements: Planchon 2003, Cheskidov-Shvydkoy 2014,
 Cheskidov-Dai 2015, **Luo 2019** (optimal frequency+temporal localization,
-modes below $\lambda_q=c(T-t)^{-1/2}$). [used-in: [[thm-beale-kato-majda]]]
+modes below $\lambda_q=c(T-t)^{-1/2}$). [used-in: [[beale-kato-majda]]]
 
 ## [ns-serrin] Ladyzhenskaya-Prodi-Serrin
 [summary] $u\in L^r_tL^s_x$, $2/r+3/s\le1$, $s>3\Rightarrow$ smooth & unique.
 Gallagher-Koch-Planchon 2016 (Besov extension); Chemin-Gallagher 2006
-(nearly-2D large data). [used-in: [[thm-serrin-regularity]]]
+(nearly-2D large data). [used-in: [[serrin-regularity]]]
 
 ## [ns-ess-endpoint] Escauriaza-Seregin-Šverák (2003)
 [summary] $u\in L^\infty_tL^3_x\Rightarrow$ smooth (the critical endpoint of
 Serrin, via backward uniqueness + unique continuation). A global
-$L^\infty_tL^3_x$ bound would prove global regularity. [used-in: [[thm-serrin-regularity]]]
+$L^\infty_tL^3_x$ bound would prove global regularity. [used-in: [[serrin-regularity]]]
 
 ## [ns-ckn] Caffarelli-Kohn-Nirenberg (1982)
 [summary] Suitable weak solutions: space-time singular set has parabolic
 Hausdorff dimension $\le1$ (cannot contain a space-time curve). Does not rule
 out blowup; strongest unconditional structural singularity bound.
-[used-in: [[thm-caffarelli-kohn-nirenberg]]]
+[used-in: [[caffarelli-kohn-nirenberg]]]
 
 ## [ns-tao-averaged-blowup] Tao (2016) averaged-NS blowup
 [summary] Finite-time blowup for an AVERAGED (modified) 3D NS preserving
 energy/scaling/dissipation. A model, NOT the true equations. Most credible
-evidence true-NS blowup may exist. [used-in: [[thm-tao-averaged-blowup]]]
+evidence true-NS blowup may exist. [used-in: [[tao-averaged-blowup]]]
 
 ## [ns-tao-quant-l3] Tao quantitative L³ blowup rate
 [summary] If smoothness lost at $T^*$:
 $\limsup_{t\uparrow T^*}\|u\|_{L^3}(\log\log\log(1/(T^*-t)))^c=\infty$.
 Improvements: Barker-Prange 2021, Palasek 2021/22 (axisymmetric, to double
-log), Barker 2022 (localized $L^3$ rate). [used-in: [[thm-tao-averaged-blowup]] [[method-energy-supercriticality]]]
+log), Barker 2022 (localized $L^3$ rate). [used-in: [[tao-averaged-blowup]] [[energy-supercriticality]]]
 
 ## [ns-buckmaster-vicol] Buckmaster-Vicol (2017)
 [summary] Non-uniqueness for "very weak" solutions (additional integrations by
 parts); these do NOT satisfy the energy inequality, so are NOT Leray-Hopf.
-Non-uniqueness known only below the Leray-Hopf class. [used-in: [[thm-leray-weak-solutions]]]
+Non-uniqueness known only below the Leray-Hopf class. [used-in: [[leray-weak-solutions]]]
 
 ## [ns-supercritical] The supercriticality obstruction
 [summary] 3D NS supercritical: energy ($L^2$, subcritical: $\lambda^{-1/2}$
 scaling) is the only global bound; regularity needs critical $L^3$
 (scale-invariant). Nonlinear advection Serrin index $S_{\text{nonlin}}=d+1$
 vs linear $S_{\text{lin}}=d/2+2$: equal in 2D ($3=3$, solved), $4>3.5$ in 3D
-(open). [used-in: [[def-navier-stokes-equation]] [[method-energy-supercriticality]]]
+(open). [used-in: [[navier-stokes-equation]] [[energy-supercriticality]]]

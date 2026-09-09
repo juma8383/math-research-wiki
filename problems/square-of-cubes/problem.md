@@ -1,3 +1,16 @@
+---
+type: problem
+slug: square-of-cubes
+title: Semi-Magic Square of Cubes
+status: stub
+difficulty: unknown
+created: 2026-08-25
+last-updated: 2026-09-09
+tags: [to-verify]
+tools: []
+related: []
+---
+
 # Semi-Magic Square of Cubes
 
 > **STUB — folder started 2026-08-25; full attack pending.** Load-bearing
@@ -35,7 +48,7 @@ $235{,}788{,}435$ "the ninth entry" misdescribed the near-miss (corrected).
 Open: semi-magic with nine *positive distinct* cubes.
 
 ## The cubic D-set vanishes (2026-09-01, answers the MSS cross-link question)
-`[cubic-dset-vanishes]`
+`cubic-dset-vanishes`
 
 The sibling problem [[magic_square_of_squares]] runs on the set
 $D(w^2)=\{2uv: u^2+v^2=w^2\}$ — the $d$ for which both $w^2\pm d$ are

@@ -1,3 +1,16 @@
+---
+type: problem
+slug: riemann-hypothesis
+title: Riemann Hypothesis
+status: open
+difficulty: famous-open-problem
+created: 2026-09-01
+last-updated: 2026-09-09
+tags: []
+tools: []
+related: []
+---
+
 # Riemann Hypothesis
 
 > Problem statement. For the running state of the attack, read
@@ -50,7 +63,7 @@ automorphic).
   estimate with log exponent $5-2\sigma$, but an automated audit flags that
   the proof as written concludes Carlson's original $(\log T)^4$, and
   Chourasiya–Simonič (arXiv:2507.15184, 2025) explicitly supersedes it —
-  downgraded `[rh-chourasiya-flagged]` `[summary]`, superseding estimate =
+  downgraded `rh-chourasiya-flagged` `[summary]`, superseding estimate =
   $(7-5\sigma)/(2-\sigma)$.
 - **Proportion on the line.** Levinson (1974) $\ge\tfrac13$; Conrey (1989)
   $\ge\tfrac25=40\%$; Pratt–Robles–Zaharescu–Zeindler 2020 $\ge\tfrac{5}{12}
@@ -63,7 +76,7 @@ automorphic).
   (no `sorry`; repo `github.com/anthropics/formal-math`, project `zeta23/`),
   read by Conrey and Goldston, **not journal-peer-reviewed**
   — the 2024 date and bare "not peer-reviewed" status in the earlier wiki
-  text were both imprecise; updated to `[rh-2026-claims-non-journal]`.
+  text were both imprecise; updated to `rh-2026-claims-non-journal`.
   Still a proportion result — resolution-on-average, not the control step.
 - **Bandwidth-one ceiling (verify-wave confirmed verbatim, §7.2),** corrected
   against the paper by the 2026-08-31 adversarial verify: the exact rational
@@ -79,7 +92,7 @@ automorphic).
   form factor would certify 100%, while "RH itself is out of reach of the
   mechanism." A trajectory "0.70/0.80/0.90 need support 1.04/1.26/1.70"
   circulating in the scan is **not in the paper — deleted as scan-fabricated**
-  `[rh-bandwidth-ceiling-verified]`. The ceiling is exactly the
+  `rh-bandwidth-ceiling-verified`. The ceiling is exactly the
   control/reduction shape: it limits what the certificate can *certify* —
   the remaining third is not shown off-line, merely unreached.
 - **The gap.** Every result above works on a **slice** (up to height $T$) or

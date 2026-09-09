@@ -24,12 +24,12 @@ only finitely many rational/integer points.
 **Relevance to Beal.** Every Beal signature has $1/x+1/y+1/z\leq 1$, and every
 one except $(3,3,3)$ is strictly $<1$. So Darmon–Granville gives *finiteness* of
 primitive solutions per signature unconditionally; $(3,3,3)$ is FLT
-[[thm-fermat-last]] (zero solutions). **The entire open content of Beal is
+[[fermat-last]] (zero solutions). **The entire open content of Beal is
 upgrading "finitely many" to "zero" for each signature** — i.e. showing each
 finite Darmon–Granville set is empty.
 
 **Important contrast.** This is *finiteness*, not *nonexistence*. The abc
-conjecture gives the same finiteness (see [[method-abc-finiteness]]); neither
+conjecture gives the same finiteness (see [[abc-finiteness]]); neither
 alone reaches the "zero" claim that Beal needs.
 
 **Provenance note.** Exact attribution and statement to be verified against the

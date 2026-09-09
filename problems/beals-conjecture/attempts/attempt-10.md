@@ -21,20 +21,20 @@ Enumerated all 34 `.md` files (Glob), extracted every `[[…]]` cross-reference
 (Grep), and checked each against (a) page slugs derived from filenames with
 type prefixes `method-`/`thm-`/`conj-`/`def-`/source-id, and (b) claim tags
 defined in `sources/`. SCHEMA placeholder links in `SCHEMA.md`
-(`[[<other-slug>]]`, `[[method-pmi]]`, etc.) excluded as examples.
+(`[[<other-slug>]]`, `[[<method-pmi>]]`, etc.) excluded as examples.
 
 ## Findings
 
 ### Broken links / claim tags — NONE
 All page-slug cross-references resolve to an existing page. All claim-tag
-references (`[[rg2024-357-smallest]]`, `[[rg2024-comp-bound]]`,
-`[[rg2024-faltings-algorithm]]`, `[[dv2022-…]]`) are defined in their source
+references (`[[ratcliffe-grechuk-2024]]`, `[[ratcliffe-grechuk-2024]]`,
+`[[ratcliffe-grechuk-2024]]`, `[[dv2022-…]]`) are defined in their source
 files. No dangling references.
 
 ### Orphan pages — 1 (FIXED)
 `theory/definitions/beal-equation.md` had **no inbound** `[[…]]` reference —
 it defined the central equation but nothing pointed to it. Fixed by adding
-`[[def-beal-equation]]` to `problem.md` (tools list + Provenance section). The
+`[[beal-equation]]` to `problem.md` (tools list + Provenance section). The
 `def-` prefix is consistent with the existing `method-`/`thm-`/`conj-` slug
 convention.
 
@@ -42,7 +42,7 @@ convention.
 `synthesis.md` (the consolidated five-thread map, attempt-09) was reachable only
 via the index markdown link. Added a pointer line at the top of `progress.md`
 directing readers to `synthesis.md` for the structural picture. Also added a
-`synthesis: [synthesis]` field to `problem.md` frontmatter.
+`synthesis: synthesis` field to `problem.md` frontmatter.
 
 ### Stale tools list — 1 (FIXED)
 `problem.md` frontmatter `tools:` listed only the first 10 pages; it was missing

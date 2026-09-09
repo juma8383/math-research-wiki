@@ -12,8 +12,8 @@ provenance: []
 The non-modular engine that closed FLT for $n=3$ (Euler) and $n=4$ (Fermat).
 Understanding its three structural requirements explains *why* it cannot reach
 the mixed/distinct-exponent Beal cases — complementing the modular-method
-obstruction [[method-frey-level-lowering-obstruction]] and the cubic-only
-Mordell lens [[method-mordell-curve-lens]].
+obstruction [[frey-level-lowering-obstruction]] and the cubic-only
+Mordell lens [[mordell-curve-lens]].
 
 ## The two classical descents
 
@@ -28,7 +28,7 @@ $$x^3+y^3=(x+y)(x+\omega y)(x+\bar\omega y).$$
 $\mathbb Z[\omega]$ is a **UFD**; the three factors are "almost coprime" (up to
 the prime $1-\omega$); UFD + the unit structure forces each factor to be a cube
 up to a unit, producing a smaller solution — descent. (This is exactly the
-gap-0 statement the Mordell lens [[method-mordell-curve-lens]] reformats as
+gap-0 statement the Mordell lens [[mordell-curve-lens]] reformats as
 "$E_{z^3}$ has no non-trivial integral points".)
 
 ## The three requirements (and where each fails for mixed exponents)
@@ -48,7 +48,7 @@ gap-0 statement the Mordell lens [[method-mordell-curve-lens]] reformats as
    - **Fails for $(p,p,r)$ with $r\neq p$**: factors want to be $p$-th powers, but
      the equation only supplies an $r$-th power on the RHS. The mismatch prevents
      the "smaller solution" construction from closing. *This is why $(p,p,r)$
-     needed the modular method [[method-frey-modularity]], not descent.*
+     needed the modular method [[frey-modularity]], not descent.*
 
 3. **Unique factorization in the factorization ring.** Even when (1) and (2)
    hold, descent needs the cyclotomic ring $\mathbb Z[\zeta_p]$ to be a UFD.
@@ -80,9 +80,9 @@ small primes via Kummer). For anything mixed or with large primes, descent is
 structurally unavailable; the modular method (or nothing) remains.
 
 ## Cross-reference
-This is the descent companion to [[method-mordell-curve-lens]] (which reframes
+This is the descent companion to [[mordell-curve-lens]] (which reframes
 the *cubic* descent in elliptic-curve language) and to
-[[method-frey-level-lowering-obstruction]] (the modular-method version of "why
+[[frey-level-lowering-obstruction]] (the modular-method version of "why
 distinct exponents resist"). All three converge: the cubic case is the unique
 meeting point of (genus 1) + (cyclotomic UFD factorization) + (FLT self-power
 match) — which is why it alone fell to classical methods.

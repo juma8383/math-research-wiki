@@ -7,8 +7,8 @@ difficulty: famous-open-problem
 created: 2026-08-24
 last-updated: 2026-08-24
 tags: [pde, fluid-mechanics, analysis, nonlinear]
-tools: [[def-navier-stokes-equation], [thm-local-wellposedness], [thm-leray-weak-solutions], [thm-serrin-regularity], [thm-beale-kato-majda], [thm-caffarelli-kohn-nirenberg], [thm-tao-averaged-blowup], [method-energy-supercriticality]]
-related: [[beals_conjecture], [birch_swinnerton_dyer], [yang_mills], [hodge_conjecture], [collatz_conjecture]]
+tools: [[navier-stokes-equation]] [[local-wellposedness]] [[leray-weak-solutions]] [[serrin-regularity]] [[beale-kato-majda]] [[caffarelli-kohn-nirenberg]] [[tao-averaged-blowup]] [[energy-supercriticality]]
+related: [[beals_conjecture]] [[birch_swinnerton_dyer]] [[yang_mills]] [[hodge_conjecture]] [[collatz_conjecture]]
 target-frontier: global regularity for large 3D data
 ---
 
@@ -16,7 +16,7 @@ target-frontier: global regularity for large 3D data
 
 ## Statement (Fefferman / Clay, 2000)
 
-The 3D incompressible Navier-Stokes equations [[def-navier-stokes-equation]]
+The 3D incompressible Navier-Stokes equations [[navier-stokes-equation]]
 $$\partial_t u + (u\cdot\nabla)u - \nu\Delta u = -\nabla p,\qquad \nabla\cdot u = 0$$
 on domains WITHOUT boundary. The Millennium problem asks for a proof OR
 counterexample of one of four statements [ns-millennium-fefferman]:
@@ -34,25 +34,25 @@ regularity OR a finite-time singularity closes the problem.
 
 - **2D — fully solved**: global smooth unique solutions (Ladyzhenskaya, 1960s)
   [ns-2d-solved].
-- **3D local well-posedness** [[thm-local-wellposedness]]: smooth unique
+- **3D local well-posedness** [[local-wellposedness]]: smooth unique
   solutions on $[0,T)$ with $T$ depending on the data; **small data $\Rightarrow$
   global** [ns-local-wp].
-- **3D global weak (Leray-Hopf) solutions** [[thm-leray-weak-solutions]]:
+- **3D global weak (Leray-Hopf) solutions** [[leray-weak-solutions]]:
   exist for all time, satisfy the energy inequality; **uniqueness open**
   [ns-leray-weak].
-- **Conditional regularity** [[thm-serrin-regularity]] [[thm-beale-kato-majda]]:
+- **Conditional regularity** [[serrin-regularity]] [[beale-kato-majda]]:
   IF a critical norm (e.g. $L^\infty_t L^3_x$ [ns-ess-endpoint], or
   $\int\|\omega\|_\infty$ [ns-bkm]) stays bounded THEN smooth — but no
   unconditional global critical bound is known.
-- **Partial regularity** [[thm-caffarelli-kohn-nirenberg]] (CKN 1982): the
+- **Partial regularity** [[caffarelli-kohn-nirenberg]] (CKN 1982): the
   space-time singular set has parabolic Hausdorff dimension $\le1$ [ns-ckn].
-- **Averaged-NS blowup** [[thm-tao-averaged-blowup]] (Tao 2016): a *modified*
+- **Averaged-NS blowup** [[tao-averaged-blowup]] (Tao 2016): a *modified*
   NS blows up in finite time — a model, not the true equations
   [ns-tao-averaged-blowup].
 
 ## The obstruction
 
-3D NS is **supercritical** [[method-energy-supercriticality]] [ns-supercritical]:
+3D NS is **supercritical** [[energy-supercriticality]] [ns-supercritical]:
 the only known unconditional global a priori bound is the energy
 ($\|u\|_{L^2}$, subcritical), while regularity requires a **critical** norm
 ($L^3$, scaling-invariant) to be controlled. The nonlinear advection

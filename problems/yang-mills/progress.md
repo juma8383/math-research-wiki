@@ -1,3 +1,8 @@
+---
+type: progress
+problem: yang-mills
+---
+
 # Progress — Yang-Mills existence and mass gap
 
 > Running state of the attack. Read this first when resuming. Consolidated
@@ -12,20 +17,20 @@ The Millennium problem (Jaffe-Witten) [ym-clay-jaffe-witten] has TWO coupled
 open pieces, both required:
 1. **Existence**: a rigorous non-perturbative construction of 4D quantum YM
    for a compact simple $G$ satisfying Wightman/OS axioms
-   [[def-wightman-os-axioms]] [ym-existence-open].
+   [[wightman-os-axioms]] [ym-existence-open].
 2. **Mass gap** $\Delta>0$: the lightest excitation is massive
-   [[def-mass-gap-confinement]] [ym-mass-gap].
+   [[mass-gap-confinement]] [ym-mass-gap].
 
 Known (the verified base):
-- Classical YM [[def-yang-mills-theory]]; asymptotic freedom (perturbative UV)
-  [[thm-asymptotic-freedom]] [ym-asymptotic-freedom].
+- Classical YM [[yang-mills-theory]]; asymptotic freedom (perturbative UV)
+  [[asymptotic-freedom]] [ym-asymptotic-freedom].
 - Lattice YM rigorously defined at finite spacing; reflection positivity,
-  transfer matrix, strong-coupling area law [[thm-lattice-gauge-constructive]]
+  transfer matrix, strong-coupling area law [[lattice-gauge-constructive]]
   [ym-lattice-constructive]; mass gap **numerically** confirmed.
-- RG machinery (Balaban, Magnen-Rivasseau-Sénéor, AFS) [[thm-balaban-rg]]
+- RG machinery (Balaban, Magnen-Rivasseau-Sénéor, AFS) [[balaban-rg]]
   [ym-balaban-rg] — the continuum-limit control machinery, incomplete.
 - Supersymmetric YM (Seiberg-Witten, Nekrasov)
-  [[thm-seiberg-witten-supersymmetric]] [ym-supersymmetric] — a solved RELATED
+  [[seiberg-witten-supersymmetric]] [ym-supersymmetric] — a solved RELATED
   problem, not the original.
 
 The **open content** (analog of Beal's "finitely many → zero", BSD's "rank ≤1
@@ -38,13 +43,13 @@ a proven spectral gap"**, equivalently **"asymptotic freedom (perturbative UV)
 
 The *resolution* machinery works and finished the verified base:
 - **Lattice YM** is rigorously defined (finite-dim integrals over holonomies)
-  [[thm-lattice-gauge-constructive]].
+  [[lattice-gauge-constructive]].
 - **Reflection positivity / transfer matrix** (OS, Lüscher) give a sensible
   Euclidean QFT at finite spacing.
 - **Strong-coupling cluster expansion** gives confinement/area law at finite
   spacing.
 - **Asymptotic freedom** gives perturbative control in the UV
-  [[thm-asymptotic-freedom]].
+  [[asymptotic-freedom]].
 
 The gap is a **control step**, exactly parallel to the other three problems:
 - **(1) Continuum-limit control**: prove convergence as $a\to0$ to a
@@ -57,7 +62,7 @@ The gap is a **control step**, exactly parallel to the other three problems:
 
 Both are *control* (of the limit / of the IR spectrum), not *resolution*. The
 lattice object is built; the gap is **controlling the limit and transporting
-the spectral gap across RG scales** [[method-constructive-continuum-limit]].
+the spectral gap across RG scales** [[constructive-continuum-limit]].
 
 **attempt-02 precision (Balaban scope, primary-source verified):** Balaban's
 11 papers (CMP 95–122, 1984–89) prove **UV stability** — effective-density
@@ -99,7 +104,7 @@ non-perturbative IR. The obstruction is precisely the UV→IR bridge.
 ## Candidate forward directions
 
 - **(A) Lattice → continuum constructive program**
-  [[method-constructive-continuum-limit]]: Balaban RG + cluster expansions +
+  [[constructive-continuum-limit]]: Balaban RG + cluster expansions +
   OS reconstruction; transport a lattice spectral gap to the continuum with a
   uniform-in-$a$ bound. The Faizal-Shabir / Eriksson / Gutierrez Ule attempts
   are this direction [ym-recent-claims-unverified], but all conditional on
@@ -296,7 +301,7 @@ non-perturbative IR. The obstruction is precisely the UV→IR bridge.
   engine stops" obstruction, independently conceded from inside an
   attempted proof — corroborative, not probative (AI-assisted preprint).
   Substantive-acceptance flag (Faizal-Shabir) REINFORCED.
-- [ym-chatterjee-confinement]: **CONFIRMED (attempt-04, primary source).**
+- ym-chatterjee-confinement: **CONFIRMED (attempt-04, primary source).**
   Chatterjee, *Comm. Math. Phys.* (2021), DOI 10.1007/s00220-021-04086-y.
   Thm 2.2 unbroken center symmetry $\Rightarrow$ confinement (area law);
   Thm 2.4 exponential decay $\Rightarrow$ unbroken center symmetry

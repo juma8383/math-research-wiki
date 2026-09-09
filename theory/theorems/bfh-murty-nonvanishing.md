@@ -6,6 +6,7 @@ created: 2026-08-24
 last-updated: 2026-08-24
 tags: [nonvanishing, l-functions, heegner-points, rank-one, bsd]
 used-in: [[birch_swinnerton_dyer]]
+name: Bump-Friedberg-Hoffstein / Murty-Murty nonvanishing
 ---
 
 # Bump–Friedberg–Hoffstein / Murty–Murty nonvanishing
@@ -44,9 +45,9 @@ an *ad-hoc* imaginary quadratic field $K$ satisfying the Heegner hypothesis
 exist unconditionally, so:
 
 - **Gross–Zagier** (1986) gives $L'(E/K,1)\neq0 \iff$ Heegner point $P_K$
-  non-torsion [[thm-kolyvagin-gross-zagier]].
+  non-torsion [[kolyvagin-gross-zagier]].
 - **Kolyvagin** (1989) then gives $E(K)$ rank $1$ and $\Sha(E/K)$ finite
-  [[method-heegner-point-euler-system]].
+  [[heegner-point-euler-system]].
 - $\Sha(E/K)$ finite $\Rightarrow$ $\Sha(E/\mathbb Q)$ finite.
 
 Hence BSD rank $+$ Sha-finiteness hold **unconditionally** for analytic rank

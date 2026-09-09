@@ -18,12 +18,12 @@ $$Z=\int\prod_\ell \mathrm dU_\ell\;e^{-S_{\text{lat}}[U]}.$$
 ## Rigorous results at finite $a$
 
 - **Osterwalder-Seiler (1978)**: **reflection positivity** of lattice YM —
-  the Euclidean measure satisfies OS positivity [[def-wightman-os-axioms]].
+  the Euclidean measure satisfies OS positivity [[wightman-os-axioms]].
 - **Lüscher (1977)**: a **positive transfer matrix** (Hamiltonian
   interpretation) for lattice gauge theory.
 - **Strong-coupling cluster expansion** ($g$ large): yields the **Wilson-loop
   area law** (confinement) and a spectral gap at finite $a$
-  [[def-mass-gap-confinement]].
+  [[mass-gap-confinement]].
 
 ## Role in the obstruction
 
@@ -32,7 +32,7 @@ defined and exhibits confinement + a gap at finite spacing. The mass gap is
 **numerically** confirmed in this setting. The gap is the **continuum limit**
 $a\to0$: proving convergence to a non-trivial 4D QFT (existence) AND that the
 spectral gap survives with a bound uniform in $a$ (mass gap) — both *control*
-steps [[method-constructive-continuum-limit]]. Asymptotic freedom
-[[thm-asymptotic-freedom]] fixes $\Lambda_{\text{YM}}$ as $a\to0$ ($g(a)\to0$),
+steps [[constructive-continuum-limit]]. Asymptotic freedom
+[[asymptotic-freedom]] fixes $\Lambda_{\text{YM}}$ as $a\to0$ ($g(a)\to0$),
 so the strong-coupling (gapped) regime and the continuum limit live at
 opposite ends of the RG — the gap must be transported across scales.

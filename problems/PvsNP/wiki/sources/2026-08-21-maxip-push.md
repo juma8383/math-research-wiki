@@ -1,3 +1,9 @@
+---
+title: Source: The Chen-2018 Max-IP / Furthest-Pair shave push
+date: 2026-08-21
+status: raw
+---
+
 # Source: The Chen-2018 Max-IP / Furthest-Pair shave push
 
 **Provenance (honest):** A focused main-loop research push on the open-problems ⭐ target "Chen 2018: polylog shaving of Max-IP / ℓ₂-Furthest-Pair ⟹ NEXP ⊄ poly-size THR∘THR." Executed in the main loop (no subagent fan-out — the prior fan-out exhausted the dispatching account's session usage limit, HTTP 429) with primary-literature grounding via web search. The push **attempted the shave** via the natural routes, found each blocked for a *specific* reason, and **reframed the live target** to a strictly-weaker derandomization route. Under `[honest-ceiling]`: no lower bound is claimed; the product is a sharpened obstruction + a concrete new falsifiable target, faithfully reported.

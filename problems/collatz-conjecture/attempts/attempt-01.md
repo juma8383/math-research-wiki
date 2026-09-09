@@ -1,3 +1,13 @@
+---
+type: attempt
+problem: collatz-conjecture
+attempt: 01
+date: 2026-08-24
+approach: frontier + obstruction + toolbox map (web-verified survey)
+outcome: partial - frontier and open content established; no proof claimed
+tags: []
+---
+
 # Attempt 01 — Collatz Conjecture: frontier, obstruction, toolbox
 
 > First attack. Establishes the clean form, exact frontier, open content,
@@ -8,7 +18,7 @@
 
 ## Clean form
 
-Collatz map $T(n)=n/2$ (even), $3n+1$ (odd) [[def-collatz-map]]. Conjecture:
+Collatz map $T(n)=n/2$ (even), $3n+1$ (odd) [[collatz-map]]. Conjecture:
 every $N\in\mathbb N^+$ reaches $1$ (cycle $1\to4\to2\to1$); i.e.
 $\mathrm{Col}_{\min}(N):=\min_k T^k(N)=1$ for all $N$. Two failure modes: a
 nontrivial cycle, or a divergent trajectory.
@@ -41,17 +51,17 @@ divergent trajectory. Analog of:
 Resolution layer (works):
 - Density machinery: Terras (a.a. $<N$), Allouche/Korec (a.a. $<N^\theta$),
   Krasikov–Lagarias (count $\gg x^{0.84}$), Tao (a.a. $<f\to\infty$)
-  [[thm-collatz-density-results]] [[thm-collatz-tao-almost-bounded]].
+  [[collatz-density-results]] [[collatz-tao-almost-bounded]].
 - Cycle exclusion: Steiner (no 1-cycles), Simons (no 2-cycles),
   Simons–de Weger (no $m$-cycles $m\le75$) via the linear form
   $\Lambda=(K+L)\log2-K\log3$ + transcendence
-  [[thm-collatz-cycle-bounds]] [[method-cycle-exclusion-linear-forms]].
+  [[collatz-cycle-bounds]] [[cycle-exclusion-linear-forms]].
 
 Control step (the gap): **pointwise / universal** control. The average
 contraction $3/4<1$ ($\mathbb E[k]=2>\log_2 3$) is *distributional* over parity
 sequences; a given $N$'s parity sequence is deterministic and uncontrolled, so
 density-1 results cannot exclude a measure-zero exceptional set (a divergent
-trajectory or a nontrivial cycle) [[method-average-vs-pointwise-control]].
+trajectory or a nontrivial cycle) [[average-vs-pointwise-control]].
 Tao: replacing $f\to\infty$ by a constant is "likely almost as hard as the
 full conjecture."
 
@@ -69,7 +79,7 @@ The obstruction **splits** into two prior-problem flavors (unique to Collatz):
   shrinks on average, $\mathbb E[k]=2>\log_2 3\approx1.585$, geometric mean
   $3/4<1$ per two steps — the resolution tool *and* the thing that fails to be
   pointwise.
-- Conway undecidability [[thm-collatz-conway-undecidability]]
+- Conway undecidability [[collatz-conway-undecidability]]
   [collatz-conway-undecidable]: generalized Collatz maps universal → halting
   undecidable in general; 3n+1 is a weak/contracting case ($\mu=3<4=2^2$,
   Matthews–Watts [collatz-matthews-watts]). A "framework" wrinkle echoing YM —
@@ -93,10 +103,10 @@ uniquely *compounds* two earlier flavors (Beal-cycle + NS-divergence).
 
 ## Forward directions
 
-- **(A) Density → pointwise** [[method-average-vs-pointwise-control]]:
+- **(A) Density → pointwise** [[average-vs-pointwise-control]]:
   strengthen Tao's log-density to natural density, then to a pointwise bound;
   the direct "almost all → all" attack.
-- **(B) Cycle exclusion to all $m$** [[method-cycle-exclusion-linear-forms]]:
+- **(B) Cycle exclusion to all $m$** [[cycle-exclusion-linear-forms]]:
   push Steiner/Simons–de Weger beyond $m\le75$ via sharper linear-form-in-logs
   / transcendence (Beal-flavored Diophantine sub-problem).
 - **(C) Divergent-trajectory Lyapunov** [[navier_stokes]] echo: find a

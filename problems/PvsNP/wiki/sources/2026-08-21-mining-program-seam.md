@@ -1,3 +1,9 @@
+---
+title: Source — the mining program: framework + the seam located and VERIFIED (2026-08-21)
+date: 2026-08-21
+status: raw
+---
+
 # Source — the mining program: framework + the seam located and VERIFIED (2026-08-21)
 
 **Tags:** `[honest-ceiling]` `[mining-program]` `[hmpt-1993]` `[chen-williams-2019]` `[chen-ren-2020]` `[tell-2018-quantified]` `[majmaj-capp-route]` `[majmaj-symmetry-deflated]` `[n2-wall]` `[witness-needs-explicit-lb]` `[mining-nw-seam]` `[mining-worst-vs-average]` `[css-2018]` `[kane-williams-2016]`

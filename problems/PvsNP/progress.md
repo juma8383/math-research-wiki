@@ -1,3 +1,8 @@
+---
+type: progress
+problem: PvsNP
+---
+
 # Progress — P vs NP
 
 > Running state of the attack. **Read this first when resuming.** The

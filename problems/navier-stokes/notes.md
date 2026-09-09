@@ -1,3 +1,8 @@
+---
+type: notes
+problem: navier-stokes
+---
+
 # Notes — Navier-Stokes existence and smoothness
 
 Scratch / sparks / dead ends. Promote good ones into attempts.

@@ -30,7 +30,7 @@ Mathematics** (Springer, 2026), DOI
 (= arXiv:2405.10916; arXiv v2 also covered "and Boussinesq equations,"
 v3 drops it). **FoCM is a strong, peer-reviewed journal** — so the Hou
 blowup claim (for *generalized* axisymmetric NS) is now **published**, not
-just a preprint. This resolves the `[ns-hou-2024]` publication-status flag:
+just a preprint. This resolves the `ns-hou-2024` publication-status flag:
 **upgrade from "preprint, evidence" to "peer-reviewed publication."**
 
 The published content matches attempt-04's verification (the two-section
@@ -77,7 +77,7 @@ this 2024 piece." So:
 
 ## What this changes in the obstruction map
 
-- `[ns-hou-2024]` publication-status flag **RESOLVED** — upgraded to
+- `ns-hou-2024` publication-status flag **RESOLVED** — upgraded to
   peer-reviewed (FoCM 2026, DOI 10.1007/s10208-026-09748-8). The
   complementary-not-contradictory Hou/Seregin picture (attempt-04) is
   now **asymmetric in peer-review status**: Hou published, Seregin

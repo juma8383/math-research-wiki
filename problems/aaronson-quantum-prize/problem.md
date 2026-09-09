@@ -1,3 +1,16 @@
+---
+type: problem
+slug: aaronson-quantum-prize
+title: Aaronson's $100,000 Quantum-Computing Prize
+status: stub
+difficulty: unknown
+created: 2026-08-25
+last-updated: 2026-09-09
+tags: [to-verify]
+tools: []
+related: []
+---
+
 # Aaronson's $100,000 Quantum-Computing Prize
 
 > **STUB — folder started 2026-08-25; full attack pending.** Load-bearing

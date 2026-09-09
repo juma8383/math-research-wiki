@@ -18,3 +18,15 @@ run); fix findings as a logged `[LINT <date>]` pass per SCHEMA.md.
 The linter is report-only. Fix the named files (bookkeeping may be
 edited in place; content pages under the append-only discipline), then
 push. Never bypass a red check to merge.
+
+## Warnings (Task 5, 2026-09-09)
+
+Lint `warning:` lines NEVER fail CI and are not selectable as a
+required check until the workflow has run at least once; branch
+protection is tightened only after the green baseline (and admins
+bypass by default unless "do not allow bypassing" is set). Current
+honest leaves that stay: unknown page type '' / 'progress' / 'notes'
+(the nested PvsNP wiki's own convention and the working-notebook
+pages — SCHEMA.md defines no type for them), and `claim tag defined
+but never cited` on sources pages (defined for future use). Do not
+"fix" these by inventing types or deleting definitions.

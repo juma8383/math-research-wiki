@@ -1,3 +1,8 @@
+---
+type: progress
+problem: magic-square-of-squares
+---
+
 # Progress — Magic Square of Squares
 
 > Read-first file (SCHEMA Continue protocol). This problem's full state lives
@@ -8,7 +13,7 @@
 ## Current frontier (2026-09-07)
 
 **Conjecture K34** (two-prime/ω₁=2 sum-freeness of $D((pq)^2)$) is the single
-standing obstruction — two-prime freeness ⟺ K34 (`[mss-two-prime-uquad]`,
+standing obstruction — two-prime freeness ⟺ K34 (`mss-two-prime-uquad`,
 all other kill-equations K1/K2/K5–K16 dead). K34 is reduced to:
 
 1. **Square-X points on the genus-1 quartics $M_A, M_B$** — MW groups fully
@@ -22,9 +27,9 @@ all other kill-equations K1/K2/K5–K16 dead). K34 is reduced to:
    C ~ 10⁴¹–10⁴⁴ — §2i, correctly cited); nonzero cosets sit in a window
    BELOW the effective constant (existence there ineffective-only). This is
    a Wall–Sun–Sun-type gap — open unconditionally.
-3. **The descent tree** (§2i-adjacent, `[mss-k34-descent]`) — **terminal
-   layer now ANALYZED (§2j, `[mss-k34-jacobian]`, 2026-09-07; §2k
-   `[mss-k34-liftgate]`, 2026-09-08)**: the four leaf quartics share ONE
+3. **The descent tree** (§2i-adjacent, `mss-k34-descent`) — **terminal
+   layer now ANALYZED (§2j, `mss-k34-jacobian`, 2026-09-07; §2k
+   `mss-k34-liftgate`, 2026-09-08)**: the four leaf quartics share ONE
    Jacobian $E_a: y^2=x^3+32x^2+238x$ and are exactly its four α-descent
    covers. **Three of the four leaves are PROVED INSOLUBLE** (classes −119,
    17, −34 ∉ image(α) = {1, 238, −14, −17}; rank(E_a)=1 unconditional via
@@ -123,35 +128,35 @@ freeness + two-prime structure 2026-09-01 → K34 elliptic + sieve2 + refine
 2d–2h + descent 2026-09-01/02 → continuation §2i 2026-09-03
 (attribution corrected to Verzobio 2023; leaf census extended 0 hits;
 layer-1 bookkeeping reconciled; Bennett–Walsh scope clarified) →
-**§2j 2026-09-07** (`[mss-k34-jacobian]`: shared Jacobian E_a of all four
+**§2j 2026-09-07** (`mss-k34-jacobian`: shared Jacobian E_a of all four
 leaves; three leaves insoluble; rank-1 parametrization; halving identity;
 stall item (ii) negative; local PARI/GP + mwrank tooling) →
-**§2k 2026-09-08** (`[mss-k34-liftgate]`: §2j lift test corrected — the
+**§2k 2026-09-08** (`mss-k34-liftgate`: §2j lift test corrected — the
 candidate-chain lift is a third quartic gate D with Jacobian J_L (rank 1
 unconditional; image(α^L) = {1, 238, 271, 64498}); candidate lift =
 class-1 fiber = structurally K34-A again; lift tower open) →
-**§2l 2026-09-08** (`[mss-k34-liftgate2]`: two-parents structure — Parent A
+**§2l 2026-09-08** (`mss-k34-liftgate2`: two-parents structure — Parent A
 is a Germain FIXED POINT (no descent on the K34-A chain), Parent B dies in
 the killed cell; new proved sign gate X < X* = 0.19748 (22.4% of the
 admissible window dead); full gate sweep m = 2..60: 0 candidates) →
-**§2m 2026-09-08** (`[mss-k34-tower1]`: 7–17 kernel lemma — gcd(f₁,f₂)=1
+**§2m 2026-09-08** (`mss-k34-tower1`: 7–17 kernel lemma — gcd(f₁,f₂)=1
 unconditionally, D-gate ⟺ lift exactly; census m=2..240: 59 admissible,
 9 sign-dead, 0 lifts; tower height 1 = genus-3 Z: y²=8w⁸+1016w⁴+9,
 Jac(Z) splits 3-ways = J_L + twist pair (11/11 split primes); E_Z-Prym
 claim retracted; Chabauty-on-Z named as the sharpest gate on K34-A) →
-**§2n 2026-09-08** (`[mss-k34-tower2]`: lift-gate tower corrected to
+**§2n 2026-09-08** (`mss-k34-tower2`: lift-gate tower corrected to
 Z_D : V² = w⁸−4w⁶−604w⁴−952w²+56644; W₅(Z_D) = {0,±1} proved, killing
 17 of the 50 alive indices; ±pair candidate A=2178,B=225 discarded on the
 full 11-prime filter) → **Addendum-2** (Jac(Z_D) ~ J_L × Jac(P) confirmed
 9/9 primes, P : y² = x·N(x) genus 2 with rational Weierstrass point; the
 3-way split belongs to the C₁-octic tower; rank Jac(P) ≤ 1 is the gate) →
-**§2o 2026-09-08** (`[mss-k34-tower3]`: the full Z_D mod-p sieve kills ALL
+**§2o 2026-09-08** (`mss-k34-tower3`: the full Z_D mod-p sieve kills ALL
 50 alive admissible indices (m ≤ 240) — w = s/r mod p ∈ W_p for every
 K = ℚ(√238), 27/27 prime character match; gate = rank E(ℚ(√238)) ≤ 1) →
-**§2q 2026-09-08** (`[mss-k34-tower5]`: K verified 34/34 primes; E_a
-disconfirmed as the factor) → **§2r 2026-09-08** (`[mss-k34-tower6]`:
+**§2q 2026-09-08** (`mss-k34-tower5`: K verified 34/34 primes; E_a
+disconfirmed as the factor) → **§2r 2026-09-08** (`mss-k34-tower6`:
 analytic rank Jac(P) = 0 (flat sum); rank Jac(Z_D) = 1 < 3, Chabauty
 applies to Z_D; two Chabauty targets: C3_A, Z_D) → **§2s 2026-09-08**
-(`[mss-k34-tower7]`: hand 2-descent blocked — N(x) has no rational root,
+(`mss-k34-tower7`: hand 2-descent blocked — N(x) has no rational root,
 Gordon-Grant hypothesis fails; rank Jac(P) = 0 filed ANALYTIC/
 BSD-CONDITIONAL; Chabauty-on-Z_D gate honestly conditional).

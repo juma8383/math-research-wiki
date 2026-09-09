@@ -1,3 +1,13 @@
+---
+type: attempt
+problem: collatz-conjecture
+attempt: 07
+date: 2026-09-02
+approach: exponent-word sieve for positive Syracuse cycles (external AI session, independently verified)
+outcome: partial - cyclic-normalization lemma verified; no proof claimed
+tags: [to-verify]
+---
+
 # Attempt 07 — Exponent-word sieve for positive Syracuse cycles
 
 > **Provenance:** external AI session (GitHub Copilot), produced 2026-09-02;
@@ -96,7 +106,7 @@ smaller integer.
 certificate valid mod $2^r3^s$ may lose descent after lifting because the
 affine constant changes. **This is the control-step obstruction verbatim:
 average contraction does not provide a uniform pointwise descent
-certificate** [[method-average-vs-pointwise-control]].
+certificate** [[average-vs-pointwise-control]].
 *Confidence:* medium for larger certified covers; low for finite closure
 without a compactness/monotonicity lemma.
 

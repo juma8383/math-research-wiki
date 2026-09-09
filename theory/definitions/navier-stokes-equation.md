@@ -50,6 +50,6 @@ $S_{\text{nonlin}}=d/2+(d/2+1)=d+1$.
 - **3D**: $S_{\text{lin}}=3.5<4=S_{\text{nonlin}}$ — the nonlinearity dominates
   at small scales; **supercritical**.
 
-This is the structural heart of the obstruction [[method-energy-supercriticality]]:
+This is the structural heart of the obstruction [[energy-supercriticality]]:
 the controlled quantity (energy, subcritical) is at lower regularity than the
 critical norm ($L^3$) that regularity needs.

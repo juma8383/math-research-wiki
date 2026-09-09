@@ -4,12 +4,12 @@ name: k34-lift-gate-quartic
 created: 2026-09-08
 tags: [number-theory, elliptic-curves, descent, covering-towers]
 used-in: [[magic_square_of_squares]]
-provenance: private notes ([mss-k34-liftgate], notes.md §2k)
+provenance: private notes (mss-k34-liftgate, notes.md §2k)
 ---
 
 # Lemma — the K34-A candidate lift is a square-x question on a third quartic
 
-**Setting.** Leaf fiber point of C₂₃₈ (on E_a, `[mss-k34-jacobian]`):
+**Setting.** Leaf fiber point of C₂₃₈ (on E_a, `mss-k34-jacobian`):
 $(r,s,u)$, $n_{L2}=s^4-238r^4$, candidate-chain layer-1 preimage
 $(u,\pm rs,\ n_{L2})$ with lift condition $n_{L2}\pm2u\cdot(rs)=(a\pm b)^2$.
 

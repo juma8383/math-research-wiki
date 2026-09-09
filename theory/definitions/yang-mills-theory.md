@@ -29,12 +29,12 @@ a purely quantum effect.
 ## Dimensional transmutation [ym-dimensional-transmutation]
 
 Quantum mechanically the bare coupling runs with the scale. The 1-loop
-β-function (asymptotic freedom [[thm-asymptotic-freedom]]):
+β-function (asymptotic freedom [[asymptotic-freedom]]):
 $$\beta(g)=-\beta_0 g^3+\cdots,\qquad \beta_0=\frac{11N}{48\pi^2}>0\quad(SU(N)).$$
 Solving $\mu\,\mathrm dg/\mathrm d\mu=\beta(g)$ generates a scale
 $$\Lambda_{\text{YM}}=\mu\,e^{-1/(2\beta_0 g(\mu)^2)}$$
 — a **quantum-generated mass scale** from a classically scale-invariant
 theory. The mass gap is expected to be $\Delta\sim\Lambda_{\text{YM}}>0$
-[[def-mass-gap-confinement]]. This transmutation is the heart of the problem:
+[[mass-gap-confinement]]. This transmutation is the heart of the problem:
 the continuum limit (fix $\Lambda_{\text{YM}}$ as the UV cutoff $\to\infty$,
 $g_0\to0$) and the mass gap are the same RG question.

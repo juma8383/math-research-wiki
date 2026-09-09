@@ -8,6 +8,9 @@ venue: Duke Math. J. 137(1), 103–140
 url: https://doi.org/10.1215/s0012-7094-07-13714-1
 ingested: 2026-08-24
 tags: [pss2007-237-solns, pss2007-klein-quartic, pss2007-psl2-7, pss2007-nonabelian-descent, pss2007-mordell-weil-sieve]
+author: Poonen, Schaefer, Stoll
+date: 2007
+provenance: ingested 2026-08-24 (web)
 ---
 
 # Poonen–Schaefer–Stoll 2007 — $x^2+y^3=z^7$
@@ -45,7 +48,7 @@ note called $\Delta(2,3,7)$ "spherical"/finite — wrong, since
 $1/2{+}1/3{+}1/7=41/42<1$; it is hyperbolic.)* The crucial enablers are the
 **near-spherical position** ($\chi=-1/42$, closest to $0$) and the **exponent
 $2$** (giving the $X(7)$ modular-curve interpretation); see
-[[method-triangle-group-descent]].
+[[triangle-group-descent]].
 
 ## [pss2007-nonabelian-descent] Chabauty + descents for the easy curves (VERIFIED)
 
@@ -71,7 +74,7 @@ direction (B) in attempt-11. It works because $(2,3,7)$ is **near-spherical**
 ($\chi=-1/42$) **and has an exponent $2$** (the $X(7)$ modular interpretation).
 The Beal frontier $(3,5,7)$ is **deeply hyperbolic** ($\chi=-34/105$) **with no
 exponent $2$** → no known finite-quotient descent and no modular-curve
-interpretation → the PSS technique is unavailable [[method-triangle-group-descent]].
+interpretation → the PSS technique is unavailable [[triangle-group-descent]].
 PSS *demonstrates* the geometric route can work in principle; the
 near-spherical/$2$-exponent requirement *explains* why it does not reach the
 distinct-odd-prime regime.

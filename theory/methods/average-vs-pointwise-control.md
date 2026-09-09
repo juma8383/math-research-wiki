@@ -18,14 +18,14 @@ provenance: [[collatz-survey]]
 
 ## The average-contraction heuristic (the resolution tool)
 
-For the accelerated Syracuse map [[def-collatz-map]], one odd step multiplies
+For the accelerated Syracuse map [[collatz-map]], one odd step multiplies
 by 3 and divides by $2^{k(n)}$, $k(n)=\nu_2(3n+1)$. Under the heuristic that
 $3n+1$ is "random" modulo powers of 2, $\mathbb E[k(n)]=2$, so each odd step
 multiplies the value by $\approx 3/2^{2}=3/4<1$ on average
 [collatz-average-contraction]. Since $\mathbb E[k]=2>\log_2 3\approx1.585$,
 the entropy / log-size decreases on average. This *predicts* convergence —
-and is borne out by density results [[thm-collatz-density-results]]
-[[thm-collatz-tao-almost-bounded]].
+and is borne out by density results [[collatz-density-results]]
+[[collatz-tao-almost-bounded]].
 
 ## The obstruction (control step, not resolution step)
 
@@ -36,7 +36,7 @@ as random. But the parity sequence $(k(T^i(n)))$ of a *specific* $n$ is
 trajectory or a nontrivial cycle would live. The gap from "almost all" to
 "every $N$" is the obstruction.
 
-Tao [[thm-collatz-tao-almost-bounded]] quantifies the frontier: a.a.
+Tao [[collatz-tao-almost-bounded]] quantifies the frontier: a.a.
 $\mathrm{Col}_{\min}<f\to\infty$ (log-density). The two explicit control steps:
 - **$f\to\infty$ → constant**: "likely almost as hard as the full conjecture."
 - **a.a. → all $N$**: the exceptional set is uncontrolled.

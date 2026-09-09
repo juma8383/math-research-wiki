@@ -10,7 +10,7 @@ provenance: [[ym-survey]]
 # Balaban RG and the constructive-continuum machinery
 
 The machinery aimed at controlling the continuum limit of lattice YM
-[[thm-lattice-gauge-constructive]].
+[[lattice-gauge-constructive]].
 
 ## Balaban (1984-89)
 
@@ -34,7 +34,7 @@ attempts [ym-recent-claims-unverified]).
 ## Role in the obstruction
 
 This is the **continuum-limit control machinery** — the engine for direction
-(A) [[method-constructive-continuum-limit]]. It is **incomplete**: full
+(A) [[constructive-continuum-limit]]. It is **incomplete**: full
 control (convergence + $O(4)$ covariance + uniform-in-$a$ gap transport) is
 not proved. Recent preprints rely on its bounds as (often unverified)
 hypotheses [ym-recent-claims-unverified]. [to-verify: exactly what Balaban's

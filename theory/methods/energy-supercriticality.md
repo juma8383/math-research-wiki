@@ -16,7 +16,7 @@ provenance: [[ns-survey]]
 
 ## The energy estimate (the only global a priori bound)
 
-Testing 3D NS [[def-navier-stokes-equation]] against $u$ kills the advection
+Testing 3D NS [[navier-stokes-equation]] against $u$ kills the advection
 $(u\cdot\nabla)u$ in the $L^2$ inner product (divergence-free), leaving the
 **energy inequality** — the unique unconditional global bound:
 $$\|u(t)\|_{L^2}^2+2\nu\int_0^t\|\nabla u\|_{L^2}^2\le\|u_0\|_{L^2}^2.$$
@@ -30,7 +30,7 @@ Under NS scaling $u_\lambda(x,t)=\lambda u(\lambda x,\lambda^2 t)$:
 - $\|u_\lambda\|_{\dot H^{1/2}}=\|u\|_{\dot H^{1/2}}$ — critical.
 
 The energy controls only the subcritical $L^2$. Regularity (via Serrin
-[[thm-serrin-regularity]], ESS endpoint) needs the critical $L^3$ bounded. A
+[[serrin-regularity]], ESS endpoint) needs the critical $L^3$ bounded. A
 subcritical bound cannot control a critical norm — the **supercriticality
 gap** [ns-supercritical].
 
@@ -53,9 +53,9 @@ balance, and the energy + 2D Sobolev inequalities close the estimates.
 ## Place in the obstruction map
 
 This is the analog of Beal's "reduction step" and BSD's "Selmer-control step":
-the *resolution* tools (local existence [[thm-local-wellposedness]],
-conditional regularity [[thm-serrin-regularity]] [[thm-beale-kato-majda]],
-partial regularity [[thm-caffarelli-kohn-nirenberg]]) all work but are
+the *resolution* tools (local existence [[local-wellposedness]],
+conditional regularity [[serrin-regularity]] [[beale-kato-majda]],
+partial regularity [[caffarelli-kohn-nirenberg]]) all work but are
 conditional. The gap is the **control step**: an unconditional global bound on
 a critical norm. Tao's triple-log blowup rate [ns-tao-quant-l3] quantifies how
 close to bounded that critical norm can stay without regularity. See

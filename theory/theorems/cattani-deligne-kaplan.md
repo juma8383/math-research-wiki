@@ -23,7 +23,7 @@ If Hodge classes were "random analytic" objects, their loci would be
 arbitrary analytic subsets. The theorem says they are *algebraic* — Hodge
 classes behave "as if" they came from algebraic cycles (whose loci are
 tautologically algebraic). It is a global/family version of the
-analytic→algebraic principle [[method-analytic-algebraic-bridge]]: at the level
+analytic→algebraic principle [[analytic-algebraic-bridge]]: at the level
 of *loci*, the analytic Hodge condition already forces algebraicity.
 
 ## Role in the obstruction
@@ -31,7 +31,7 @@ of *loci*, the analytic Hodge condition already forces algebraicity.
 This is **evidence, not resolution**: it controls where Hodge classes persist
 in families, but does not produce an algebraic cycle for a given Hodge class
 (the actual Hodge conjecture). It is part of the controlled-adjacent layer
-alongside absolute Hodge [[thm-absolute-hodge-motivated]]. Note the locus is
+alongside absolute Hodge [[absolute-hodge-motivated]]. Note the locus is
 only a *countable union* (not necessarily a single algebraic set) — a
 quantitative gap, parallelling Voisin's "no uniform bound on cycle complexity"
 recorded in the [[hodge_conjecture]] notes.

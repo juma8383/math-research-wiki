@@ -42,7 +42,8 @@ INDEXED_TYPES = {"problem", "theorem", "lemma", "method", "definition",
                  "conjecture", "source", "attempt", "dag"}
 ROOT_BOOKKEEPING = {"index.md", "log.md", "board.md", "readme.md",
                     "qwen.md", "math wiki contribution plan.md",
-                    "schema.md", "claude.md", "research-protocol.md"}
+                    "schema.md", "claude.md", "research-protocol.md",
+                    "license.md"}
 
 
 @dataclass
@@ -67,6 +68,8 @@ def _pages(root):
             pages.setdefault(p.stem.lower(), p)
     for p in (root / "problems").glob("*/problem.md"):
         pages.setdefault(p.parent.name.lower(), p)
+    for p in (root / "problems").glob("*/wiki/**/*.md"):
+        pages.setdefault(p.stem.lower(), p)
     for name in ("index.md", "SCHEMA.md", "README.md", "CLAUDE.md",
                  "research-protocol.md", "log.md", "BOARD.md"):
         p = root / name

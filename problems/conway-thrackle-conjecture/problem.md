@@ -1,3 +1,16 @@
+---
+type: problem
+slug: conway-thrackle-conjecture
+title: Conway's Thrackle Conjecture
+status: stub
+difficulty: unknown
+created: 2026-08-25
+last-updated: 2026-09-09
+tags: [to-verify]
+tools: []
+related: []
+---
+
 # Conway's Thrackle Conjecture
 
 > **STUB — folder started 2026-08-25; full attack pending.** Load-bearing

@@ -28,7 +28,7 @@ Checks (all exact, via `fractions.Fraction`):
 - trivial $1^3+12^3=1729$ → $(1596,-52668)$ on same curve. ✓
 - $6^3+8^3=728=9^3-1$ → $(624,-3744)$ on $Y^2=X^3-432\cdot728^2$. ✓
 
-Filed as [[method-mordell-curve-lens]].
+Filed as [[mordell-curve-lens]].
 
 ## Reframing the gap-1 vs gap-0 distinction
 
@@ -53,7 +53,7 @@ $g=\frac{(a-1)(b-1)-(\gcd(a,b)-1)}{2}$:
 every other Beal signature — crucially including the frontier $(3,5,7)$, whose
 $x^3+y^5=N$ has genus $4$ — the "sum of two powers" curve is genus $\geq 2$,
 where only Faltings (finiteness, ineffective; effective only at rank-0 Jacobian
-[[rg2024-faltings-algorithm]]) is available, and there is no explicit
+[[ratcliffe-grechuk-2024]]) is available, and there is no explicit
 integral-point theory. This *explains* attempt-04's empirical observation that
 $(3,5,7)$ near-misses are degenerate: there is no elliptic structure to generate
 genuine non-degenerate near-misses there.

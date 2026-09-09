@@ -1,3 +1,9 @@
+---
+title: Source: Meta-complexity / MCSP primer
+date: 2026-08-21
+status: raw
+---
+
 # Source: Meta-complexity / MCSP primer
 
 **Provenance:** Synthesized to fill the critic's biggest identified gap — the meta-complexity program was absent from the 8-angle P-vs-NP fan-out. Distills the canonical meta-complexity facts to be ingested as a first class angle. (Researcher-assembled; verify specific theorem attributions against primary literature before citing in any publication.)

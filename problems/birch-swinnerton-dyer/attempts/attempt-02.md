@@ -22,7 +22,7 @@ unconditional; no ad-hoc Heegner field is assumed. The load-bearing input is:
 
 - **Bump–Friedberg–Hoffstein**, *Nonvanishing theorems for L-functions of
   modular forms and their derivatives*, Inventiones Math. **102** (1990),
-  543–618 (DOI 10.1007/bf01233440) [[thm-bfh-murty-nonvanishing]].
+  543–618 (DOI 10.1007/bf01233440) [[bfh-murty-nonvanishing]].
 - **Murty–Murty**, *Mean Values of Derivatives of Modular L-Series*, Annals
   Math. **133** (1991), 447–475 (DOI 10.2307/2944316).
 
@@ -43,16 +43,16 @@ $L'(k/2,f\otimes\chi_D)\neq0$.
    - $\varepsilon(E/\mathbb Q)=+1$ (analytic rank even, i.e. 0): $K$ with
      $L(E^D/\mathbb Q,1)=0$, $L'(E^D/\mathbb Q,1)\neq0$.
 3. **Gross–Zagier** (1986): $L'(E/K,1)\neq0 \iff$ the Heegner point $P_K$ is
-   non-torsion [[thm-kolyvagin-gross-zagier]].
+   non-torsion [[kolyvagin-gross-zagier]].
 4. **Kolyvagin** (1989): $P_K$ non-torsion $\Rightarrow$ $E(K)$ rank $1$ and
-   $\Sha(E/K)$ finite [[method-heegner-point-euler-system]].
+   $\Sha(E/K)$ finite [[heegner-point-euler-system]].
 5. Finiteness of $\Sha(E/K)$ $\Rightarrow$ finiteness of $\Sha(E/\mathbb Q)$
    (the restriction kernel has finite 2-torsion).
 
 **Conclusion:** the rank-$\le1$ base in `progress.md` is correct and is
 unconditional. The to-verify hedge ("vs needing an ad-hoc $K$") is resolved:
 BFH/Murty–Murty remove the ad-hoc $K$. **Fact upgraded from `to-verify` to
-verified.** New theory page [[thm-bfh-murty-nonvanishing]] filed (it is the
+verified.** New theory page [[bfh-murty-nonvanishing]] filed (it is the
 crux that makes the base unconditional and was not previously recorded).
 
 ## Sharpening: [bsd-refined-open] — p-part is further than recorded

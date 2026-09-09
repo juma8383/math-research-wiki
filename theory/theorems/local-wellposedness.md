@@ -10,7 +10,7 @@ provenance: [[ns-survey]]
 # Local well-posedness (Leray / Fujita-Kato / Koch-Tataru)
 
 For smooth divergence-free initial data, the 3D NS equations
-[[def-navier-stokes-equation]] are **locally well-posed** [ns-local-wp]: there
+[[navier-stokes-equation]] are **locally well-posed** [ns-local-wp]: there
 is a unique smooth solution on $[0,T)$ with the "blow-up time" $T$ depending
 on the data, e.g. $T\gtrsim C/\|u_0\|_{L^\infty}^2$ or
 $T\gtrsim C/\|\nabla u_0\|_{L^2}^{-4}$.
@@ -39,4 +39,4 @@ Local well-posedness is the **resolution** layer working perfectly: it gives
 existence/uniqueness/smoothness for short times. The Millennium question is
 whether $T$ can be taken $=\infty$ for ALL smooth data. The obstruction is not
 local existence (known) but a **global critical bound**
-[[method-energy-supercriticality]].
+[[energy-supercriticality]].

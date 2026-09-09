@@ -1,3 +1,8 @@
+---
+type: notes
+problem: poincare-conjecture
+---
+
 # Notes — Poincaré Conjecture
 
 > Methodology + cross-problem links. Running notes for [[poincare_conjecture]].

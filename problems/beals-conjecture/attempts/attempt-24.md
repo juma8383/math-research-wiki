@@ -63,7 +63,7 @@ REVERSES, sharply:** here the **smallest** $-\chi$ jump ($+0.014$, barely
 moving — both triples share $p=5,q=7$, only $r$ changes $11\to13$) gives by
 far the **largest** gap increase ($+1483$, a $6.1\times$ jump).
 
-## What this means for the counting heuristic [[method-counting-heuristic]]
+## What this means for the counting heuristic [[counting-heuristic]]
 
 The honest sharpening: **the min gap is NOT a smooth function of $-\chi$.**
 The five points are monotone in $-\chi$ but the rate is wildly erratic — the
@@ -113,7 +113,7 @@ and corrected by this point).
 - The degenerate-family box-truncation caveat (only $t=1$ in box) is noted
   above; it does not touch the min-gap result.
 - **Not a proof of Beals.** This is the soft 6th angle
-  [[method-counting-heuristic]]; the five rigorous threads (Mordell-type
+  [[counting-heuristic]]; the five rigorous threads (Mordell-type
   finiteness, ABC-implication, modularity, etc.) remain the load-bearing
   structure. No change to the obstruction map (the open content "finitely
   many → zero" is untouched); this sharpens only the empirical heuristic's

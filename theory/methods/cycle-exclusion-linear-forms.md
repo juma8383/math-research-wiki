@@ -18,7 +18,7 @@ provenance: [[collatz-survey]]
 ## The cycle equation
 
 A nontrivial Collatz cycle of $m$ odd values $o_0,\dots,o_{m-1}$ with total
-$L$ halvings [[def-collatz-map]] satisfies
+$L$ halvings [[collatz-map]] satisfies
 $$2^L=\prod_{i=0}^{m-1}\frac{3o_i+1}{o_i}.$$
 Taking logs gives a linear form
 $$\Lambda=(K+L)\log 2-K\log 3$$
@@ -31,7 +31,7 @@ Lower bounds on linear forms in logarithms (Laurent–Mignotte–Nesterenko;
 Rhin) force $\Lambda$ to be only **subexponentially** small — contradicting
 the exponential smallness a cycle requires, *for small $m$*. Combined with
 continued-fraction approximations to $\log3/\log2$ and diophantine-approximation
-lattice methods, this yields [[thm-collatz-cycle-bounds]]:
+lattice methods, this yields [[collatz-cycle-bounds]]:
 - Steiner: no 1-cycles; Simons: no 2-cycles; Simons–de Weger: no $m$-cycles
   $m\le75$ [collatz-cycle-steiner] [collatz-cycle-simons-deweger].
 
@@ -50,7 +50,7 @@ to ruling out solutions of generalized-Fermat equations.
 This sub-problem makes Collatz a **compound** of two earlier problems:
 - **cycle exclusion** = Diophantine / transcendence = Beal flavor (here);
 - **divergent-trajectory exclusion** = analytic / ergodic control = NS flavor
-  [[navier_stokes]] [[method-average-vs-pointwise-control]].
+  [[navier_stokes]] [[average-vs-pointwise-control]].
 
 A genuine cross-problem compounding artifact: the Beal-flavored machinery
 (linear forms in logs, Diophantine approximation) is exactly what

@@ -1,3 +1,13 @@
+---
+type: attempt
+problem: poincare-conjecture
+attempt: 01
+date: 2026-09-01
+approach: exposition + verification of Perelman's proof (control-step reframing)
+outcome: confirmed - known proof verified; not an open-problem attack
+tags: []
+---
+
 # Attempt 01 — Poincaré Conjecture (exposition + verification)
 
 > **Honesty headline:** the Poincaré Conjecture is **SOLVED** (Perelman

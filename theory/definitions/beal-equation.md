@@ -29,6 +29,6 @@ Beal lives entirely in the $\leq 1$ regime (all exponents $\geq 3$ forces
 $1/x+1/y+1/z\leq 1$, equality only at $(3,3,3)$).
 
 **Primitive / coprime form.** A solution is *primitive* if $\gcd(X,Y,Z)=1$; by
-[[method-pairwise-coprime-reduction]] this is equivalent to pairwise coprime
+[[pairwise-coprime-reduction]] this is equivalent to pairwise coprime
 whenever the equation holds. Beal ⟺ "no primitive solution with all exponents
 $\geq 3$."

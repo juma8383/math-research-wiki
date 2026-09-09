@@ -15,12 +15,12 @@ $\mathrm{Col}_{\min}(N)<f(N)$ for **almost all** $N$ (in **logarithmic
 density**) [collatz-tao-almost-bounded]. E.g. $\mathrm{Col}_{\min}(N)<\log\log
 \log\log N$ for a.a. $N$. "Almost all orbits attain almost bounded values."
 
-This is the apex of the density line [[thm-collatz-density-results]]: from
+This is the apex of the density line [[collatz-density-results]]: from
 Terras ($<N$) through Allouche/Korec ($<N^\theta$) to Tao ($<f\to\infty$).
 
 ## Techniques
 
-- **Syracuse map** [[def-collatz-map]] (one $\times3$ per iteration).
+- **Syracuse map** [[collatz-map]] (one $\times3$ per iteration).
 - **3-adic** analysis (not 2-adic) of Syracuse iterates; Syracuse random
   variables $\mathbf{Syrac}(\mathbb Z/3^n\mathbb Z)$.
 - **Approximately invariant probability measures** transported to each other
@@ -36,7 +36,7 @@ Terras ($<N$) through Allouche/Korec ($<N^\theta$) to Tao ($<f\to\infty$).
 
 Tao reaches the **quantitative frontier of the average-case engine**: a.a.
 $<f\to\infty$ (log-density). The two explicit gaps to the full conjecture
-[[method-average-vs-pointwise-control]]:
+[[average-vs-pointwise-control]]:
 - **Log-density → natural density**: plausible upgrade, requires more work.
 - **$f\to\infty$ → absolute constant**: Tao — "likely almost as hard as the
   full Collatz conjecture." This *is* the density→pointwise obstruction made

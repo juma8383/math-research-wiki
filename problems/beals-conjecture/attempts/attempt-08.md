@@ -14,7 +14,7 @@ loop_cycle: 6 of 20
 The one classical tool flagged in attempt-07 as not-yet-examined: how the
 sporadic solved signature $(3,4,5)$ was cracked (Siksek–Stoll), and whether any
 of that machinery reaches toward $(3,5,7)$. Filed
-[[method-spherical-reduction]].
+[[spherical-reduction]].
 
 ## The mechanism (reconstructed)
 
@@ -55,9 +55,9 @@ form $(3,4,n)$ with $n\geq7$ benefits.
 ## Synthesis — the fifth convergent thread
 
 This is the **fifth** independent structural reason (after modular method
-[[method-frey-level-lowering-obstruction]], Darmon program
-[[method-darmon-program]], Mordell lens [[method-mordell-curve-lens]], descent
-[[method-infinite-descent]]) that the distinct-odd-prime frontier is beyond
+[[frey-level-lowering-obstruction]], Darmon program
+[[darmon-program]], Mordell lens [[mordell-curve-lens]], descent
+[[infinite-descent]]) that the distinct-odd-prime frontier is beyond
 current methods. The full diagnosis now spans *five* angles, all breaking at
 $(3,5,7)$ for distinct reasons:
 

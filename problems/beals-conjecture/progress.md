@@ -1,3 +1,8 @@
+---
+type: progress
+problem: beals-conjecture
+---
+
 # Progress — Beal's Conjecture
 
 > Running state of the attack. Read this first when resuming. For the
@@ -6,7 +11,7 @@
 > — this file is the current frontier in brief; synthesis is the durable
 > handoff. Consolidated current through attempt-24 (cross-problem loop cycle 22).
 
-## Where Beal actually stands (sourced [[rg2024]])
+## Where Beal actually stands (sourced [[ratcliffe-grechuk-2024]])
 
 1. **Beal ≠ Fermat–Catalan** [rg2024-fc-vs-beal]. Fermat–Catalan = finiteness
    across signatures (may include a 2); Beal = *zero* when $\min\geq3$.
@@ -14,7 +19,7 @@
    have a $2$ [rg2024-10-solns] — none is a Beal counterexample.
 2. **Computationally verified to $z^r\leq2^{100}$** [rg2024-comp-bound].
 3. **Solved signatures all have a repeated odd exponent**
-   [[thm-solved-generalized-fermat-signatures]]: $(p,p,p)$, $(n,n,3)$,
+   [[solved-generalized-fermat-signatures]]: $(p,p,p)$, $(n,n,3)$,
    $(3,3,n)$ ($n\leq10^9$), $(5,5,7),(5,5,19),(7,7,5)$, $(3,4,5)$,
    $(2j,2k,n)$-family. **No solved Beal signature has three pairwise-distinct
    odd-prime exponents.**
@@ -28,9 +33,9 @@ $\{(3,5,7),(3,5,11),(3,7,11),\dots\}$.
 
 ## The entire open content = "finitely many → zero"
 
-Darmon–Granville [[thm-darmon-granville]] gives, unconditionally, *finitely many*
+Darmon–Granville [[darmon-granville]] gives, unconditionally, *finitely many*
 primitive solutions per signature with $1/p+1/q+1/r<1$ (via Faltings). The abc
-conjecture gives no more than this [[method-abc-finiteness]]. **Beal's open
+conjecture gives no more than this [[abc-finiteness]]. **Beal's open
 content is exactly the upgrade "finitely many → zero" per signature.** No
 existing theorem or heuristic makes that upgrade for any distinct-prime
 signature.
@@ -43,12 +48,12 @@ table in synthesis.md; in brief:
 
 | # | angle | needs | why (3,5,7) breaks it |
 |---|---|---|---|
-| 1 | Frey/modularity/Ribet [[method-frey-modularity]] | one $\ell$ strips all bad primes | $\ell\mid2\gcd(p,q,r)=2$, only $\ell=2$; useless |
-| 2 | Darmon program [[method-darmon-program]] | repeated-exponent signature | distinct-prime only *classified*; + wide-open generalized-Mazur |
-| 3 | Mordell lens [[method-mordell-curve-lens]] | genus 1 | $(3,5,7)\to$ genus 4 (Faltings only) |
-| 4 | Infinite descent [[method-infinite-descent]] | cyclotomic factorization of $x^p+y^q$ | no factorization for $p\neq q$ |
-| 5 | Spherical reduction [[method-spherical-reduction]] | even exponent → spherical $(2,\cdot,\cdot)$ | no even exponent; reduction unwritable |
-| 6* | Counting heuristic [[method-counting-heuristic]] *(soft)* | controlled constant <1 | gives "small expected count" ($H^{r\chi}\to0$); finiteness, **not zero** |
+| 1 | Frey/modularity/Ribet [[frey-modularity]] | one $\ell$ strips all bad primes | $\ell\mid2\gcd(p,q,r)=2$, only $\ell=2$; useless |
+| 2 | Darmon program [[darmon-program]] | repeated-exponent signature | distinct-prime only *classified*; + wide-open generalized-Mazur |
+| 3 | Mordell lens [[mordell-curve-lens]] | genus 1 | $(3,5,7)\to$ genus 4 (Faltings only) |
+| 4 | Infinite descent [[infinite-descent]] | cyclotomic factorization of $x^p+y^q$ | no factorization for $p\neq q$ |
+| 5 | Spherical reduction [[spherical-reduction]] | even exponent → spherical $(2,\cdot,\cdot)$ | no even exponent; reduction unwritable |
+| 6* | Counting heuristic [[counting-heuristic]] *(soft)* | controlled constant <1 | gives "small expected count" ($H^{r\chi}\to0$); finiteness, **not zero** |
 
 ## The unifying lens (attempt-14/17, corrected)
 
@@ -57,7 +62,7 @@ position** ($\chi=1/p{+}1/q{+}1/r-1$ close to $0$, giving a distinguished finite
 triangle-group quotient) **or an exponent $2$** (giving an $X(r)$ modular-curve
 interpretation). $(3,5,7)$ is **deeply hyperbolic** ($\chi=-34/105$) **with no
 exponent $2$** → it has neither. The one effective precedent at a hyperbolic
-signature — PSS $x^2+y^3=z^7$ [[pss2007]] [[method-triangle-group-descent]] —
+signature — PSS $x^2+y^3=z^7$ [[poonen-schaefer-stoll-2007]] [[triangle-group-descent]] —
 works via the finite quotient $\mathrm{PSL}_2(\mathbb F_7)$ of the *infinite*
 $\Delta(2,3,7)$, enabled by $(2,3,7)$'s near-spherical position ($\chi=-1/42$)
 *and* its exponent $2$. *(Correction, attempt-17: $(2,3,7)$ is hyperbolic, not
@@ -76,7 +81,7 @@ structure.
 Two candidate directions (attempt-11, refined 14/17):
 - **(A) Modular:** extend Darmon's Frey-variety method to three distinct primes
   *and* prove Darmon Conjecture 1.2 (generalized-Mazur irreducibility, wide open
-  [[dv2022-irreduc-conjecture]]). "Two programs away."
+  [[darmon-program-2022]]). "Two programs away."
 - **(B) Geometric:** an *effective* finiteness mechanism not relying on a finite
   triangle group. The Darmon–Granville reduction *exists* but is ineffective;
   PSS made it effective only via the near-spherical + exponent-$2$ structure

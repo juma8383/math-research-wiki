@@ -7,8 +7,8 @@ difficulty: famous-open-problem
 created: 2026-08-24
 last-updated: 2026-08-24
 tags: [mathematical-physics, qft, gauge-theory, constructive-qft]
-tools: [[def-yang-mills-theory], [def-wightman-os-axioms], [def-mass-gap-confinement], [thm-asymptotic-freedom], [thm-lattice-gauge-constructive], [thm-balaban-rg], [thm-seiberg-witten-supersymmetric], [method-constructive-continuum-limit]]
-related: [[beals_conjecture], [birch_swinnerton_dyer], [navier_stokes], [hodge_conjecture], [collatz_conjecture]]
+tools: [[yang-mills-theory]] [[wightman-os-axioms]] [[mass-gap-confinement]] [[asymptotic-freedom]] [[lattice-gauge-constructive]] [[balaban-rg]] [[seiberg-witten-supersymmetric]] [[constructive-continuum-limit]]
+related: [[beals_conjecture]] [[birch_swinnerton_dyer]] [[navier_stokes]] [[hodge_conjecture]] [[collatz_conjecture]]
 target-frontier: rigorous 4D quantum YM existence + mass gap
 ---
 
@@ -21,35 +21,35 @@ Yang-Mills theory exists on $\mathbb R^4$** and has a **mass gap $\Delta>0$**
 [ym-clay-jaffe-witten].
 
 - **Existence**: construct a QFT satisfying axioms at least as strong as the
-  Wightman / Osterwalder-Schrader axioms [[def-wightman-os-axioms]] (Poincaré
+  Wightman / Osterwalder-Schrader axioms [[wightman-os-axioms]] (Poincaré
   covariance, spectral condition, unique vacuum, local commutativity; OS
   positivity + Euclidean covariance).
 - **Mass gap**: the two-point function decays as
   $\langle\phi(0,t)\phi(0,0)\rangle\sim\sum_n A_n e^{-\Delta_n t}$ with
   $\Delta_0>0$ — the lightest excitation (glueball) has strictly positive mass
-  [[def-mass-gap-confinement]].
+  [[mass-gap-confinement]].
 
 Compact simple $G$ (e.g. $SU(3)$ for QCD) is chosen because **asymptotic
-freedom** [[thm-asymptotic-freedom]] makes non-abelian YM the simplest
+freedom** [[asymptotic-freedom]] makes non-abelian YM the simplest
 nontrivial constructive QFT in 4D (most other 4D interacting QFTs have Landau
 poles and would be trivial). $1{,}000{,}000$ prize.
 
 ## Known partial results (frontier)
 
-- **Classical YM** [[def-yang-mills-theory]]: well-defined, scale-invariant in
+- **Classical YM** [[yang-mills-theory]]: well-defined, scale-invariant in
   4D (dimensionless coupling).
-- **Asymptotic freedom** [[thm-asymptotic-freedom]] [ym-asymptotic-freedom]:
+- **Asymptotic freedom** [[asymptotic-freedom]] [ym-asymptotic-freedom]:
   perturbative UV control (Gross-Wilczek-Politzer 1973); the IR (confinement)
   is where it fails.
-- **Lattice YM** [[thm-lattice-gauge-constructive]] [ym-lattice-constructive]:
+- **Lattice YM** [[lattice-gauge-constructive]] [ym-lattice-constructive]:
   rigorously defined at finite lattice spacing (Wilson; Osterwalder-Seiler
   reflection positivity; Lüscher transfer matrix; strong-coupling area law).
   Mass gap **confirmed numerically**, not proven in the continuum.
-- **RG machinery** [[thm-balaban-rg]] [ym-balaban-rg]: Balaban 1984-89
+- **RG machinery** [[balaban-rg]] [ym-balaban-rg]: Balaban 1984-89
   multi-scale RG (UV stability); Magnen-Rivasseau-Sénéor 1993 (YM₄ with IR
   cutoff); AFS 1982 infrared bound — the continuum-limit control machinery,
   incomplete.
-- **Supersymmetric YM** [[thm-seiberg-witten-supersymmetric]]
+- **Supersymmetric YM** [[seiberg-witten-supersymmetric]]
   [ym-supersymmetric]: Seiberg-Witten 1994 (N=2), Nekrasov instantons —
   mass-gap-like results in a DIFFERENT (supersymmetric) theory, not the
   original.
@@ -67,7 +67,7 @@ Millennium problems:
 - **Continuum-limit control**: prove the lattice theory converges as the
   spacing $a\to0$ to a non-trivial 4D QFT satisfying OS/Wightman axioms —
   including full $O(4)$ Euclidean covariance (Eriksson 2026 explicitly does
-  NOT prove this) [[method-constructive-continuum-limit]].
+  NOT prove this) [[constructive-continuum-limit]].
 - **IR mass-gap control**: prove $\Delta>0$ survives the limit (a positive
   bound uniform in $a$) in the strongly-coupled IR where asymptotic freedom
   gives no expansion parameter.

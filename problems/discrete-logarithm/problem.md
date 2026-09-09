@@ -1,3 +1,16 @@
+---
+type: problem
+slug: discrete-logarithm
+title: Discrete Logarithm Problem (DLP)
+status: stub
+difficulty: unknown
+created: 2026-08-25
+last-updated: 2026-09-09
+tags: [to-verify]
+tools: []
+related: []
+---
+
 # Discrete Logarithm Problem (DLP)
 
 > **STUB — folder started 2026-08-25; full attack pending.** Load-bearing

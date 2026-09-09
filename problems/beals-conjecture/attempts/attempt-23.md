@@ -21,7 +21,7 @@ signature if a new prediction is worth testing."* This cycle does exactly that
 ## The prediction being tested
 
 The counting heuristic (attempt-19, the soft 6th angle
-[[method-counting-heuristic]]) predicts that the **min non-degenerate coprime
+[[counting-heuristic]]) predicts that the **min non-degenerate coprime
 near-miss gap** grows monotonically as $\chi=1/p+1/q+1/r-1$ grows more negative.
 Confirmed at three signatures:
 

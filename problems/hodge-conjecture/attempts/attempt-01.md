@@ -1,3 +1,13 @@
+---
+type: attempt
+problem: hodge-conjecture
+attempt: 01
+date: 2026-08-24
+approach: frontier + obstruction + toolbox map (web-verified survey)
+outcome: partial - frontier and open content established; no proof claimed
+tags: []
+---
+
 # Attempt 01 — Hodge Conjecture: frontier, obstruction, toolbox
 
 > First attack. Establishes the clean form, exact frontier, open content,
@@ -9,7 +19,7 @@
 
 On a smooth projective $X/\mathbb C$, the cycle class map
 $\mathrm{cl}:\mathrm{CH}^p(X)\otimes\mathbb Q\to\mathrm{Hdg}^p(X)$ is
-surjective for all $p$ [[def-hodge-class-cycle-map]]. Hodge classes
+surjective for all $p$ [[hodge-class-cycle-map]]. Hodge classes
 $\mathrm{Hdg}^p(X)=H^{2p}(X,\mathbb Q)\cap H^{p,p}(X)$ are analytic; algebraic
 cycles are algebraic; the conjecture is the analytic→algebraic bridge.
 
@@ -18,8 +28,8 @@ cycles are algebraic; the conjecture is the analytic→algebraic bridge.
 | Codim $p$ | Degree | Status | Reference |
 |---|---|---|---|
 | $0$ | $0$ | trivial | $[\mathrm{pt}]$ |
-| $1$ | $2$ | **PROVEN** | Lefschetz $(1,1)$ [[thm-lefschetz-1-1]] [hodge-lefschetz-1-1] |
-| $\in\{n-1,n\}$ | $2n-2,2n$ | proven (hard Lefschetz / trivial) | [[thm-hard-lefschetz-reduction]] [hodge-hard-lefschetz-reduction] |
+| $1$ | $2$ | **PROVEN** | Lefschetz $(1,1)$ [[lefschetz-1-1]] [hodge-lefschetz-1-1] |
+| $\in\{n-1,n\}$ | $2n-2,2n$ | proven (hard Lefschetz / trivial) | [[hard-lefschetz-reduction]] [hodge-hard-lefschetz-reduction] |
 | $2\le p\le n-2$ ($n\ge4$) | middle | **OPEN** | first case $p=2,n=4$ [hodge-codim-2-open] |
 
 Only middle codimensions are new (hard Lefschetz). Smallest open case:
@@ -39,12 +49,12 @@ Analog of:
 
 Resolution layer (works):
 - Chow groups $\mathrm{CH}^p(X)$ and cycle class map $\mathrm{cl}$ defined for
-  all $p$ [[def-hodge-class-cycle-map]].
+  all $p$ [[hodge-class-cycle-map]].
 - For $p=1$: exponential sequence $0\to\mathbb Z\to\mathcal O\to\mathcal O^*\to0$
   gives $\mathrm{Hdg}^1=\ker(H^2(\mathbb Z)\to H^2(\mathcal O))\subset\mathrm{Pic}$;
   for projective $X$, $\mathrm{NS}(X)=\mathrm{Pic}/\mathrm{Pic}^0$ is algebraic
-  divisors (GAGA) — **the bridge works for divisors** [[thm-lefschetz-1-1]].
-- Hard Lefschetz propagates $p=1$ to $p=n-1$ [[thm-hard-lefschetz-reduction]].
+  divisors (GAGA) — **the bridge works for divisors** [[lefschetz-1-1]].
+- Hard Lefschetz propagates $p=1$ to $p=n-1$ [[hard-lefschetz-reduction]].
 
 Control step (the gap):
 - For codim $\ge2$, given an arbitrary Hodge class, no mechanism produces a
@@ -55,7 +65,7 @@ Control step (the gap):
 - Unifying lens: the **analytic→algebraic bridge** works for $p=1$
   (exponential sequence, one-dimensional Picard object) and is conjectured for
   all $p$; the control over this bridge in codim $\ge2$ is the obstruction
-  [[method-analytic-algebraic-bridge]].
+  [[analytic-algebraic-bridge]].
 
 Structural "one-dimensional engine stops" (5-for-5 pattern): the working tool
 is intrinsically one-codimension / one-dimensional (Picard variety via
@@ -66,7 +76,7 @@ Serrin equality, YM's single RG scale.
 ## Wrinkle: integral version is FALSE
 
 Atiyah–Hirzebruch and Kollár: integral Hodge classes need not be algebraic
-[[thm-integral-hodge-fails]] [hodge-integral-fails]. Only $\mathbb Q$-version
+[[integral-hodge-fails]] [hodge-integral-fails]. Only $\mathbb Q$-version
 conjectured. Unlike the other four problems, Hodge has a built-in "naive
 strong statement is false" (torsion/divisibility obstruction). The
 $\mathbb Z$-version killed by differentials in the Atiyah–Hirzebruch spectral
@@ -77,18 +87,18 @@ sequence; the conjectural salvage is the $\mathbb Q$-statement. Park as a
 
 - **Absolute Hodge** (Deligne): every Hodge class on an abelian variety is
   absolute Hodge — behaves well under all $\mathrm{Aut}(\mathbb C)$
-  [[thm-absolute-hodge-motivated]] [hodge-absolute-hodge]. André's motivated
+  [[absolute-hodge-motivated]] [hodge-absolute-hodge]. André's motivated
   cycles extend. Strongest evidence; a "controlled" substitute where full
   algebraicity is out of reach.
 - **Hodge locus algebraic** (Cattani–Deligne–Kaplan): Hodge locus is a
   countable union of algebraic subsets — Hodge classes behave "as if"
-  algebraic [[thm-cattani-deligne-kaplan]] [hodge-cattani-deligne-kaplan].
+  algebraic [[cattani-deligne-kaplan]] [hodge-cattani-deligne-kaplan].
 - **Standard conjectures / motives**: if inverse Lefschetz (B) and Künneth
   components (C) are algebraic — known for surfaces, abelian, hyper-Kähler
   $K3^{[n]}$ (Charles–Markman 2013) — motives are Tannakian and HC reduces to
-  a fully-faithful functor [[thm-standard-conjectures-motives]]
+  a fully-faithful functor [[standard-conjectures-motives]]
   [hodge-standard-conjectures]. The motive reduction.
-- **Generalized HC** (Grothendieck coniveau) [[conj-generalized-hodge]]
+- **Generalized HC** (Grothendieck coniveau) [[generalized-hodge]]
   [hodge-generalized-conjecture]: finer; Hodge's original stronger form false.
 
 ## Cross-problem compounding (5-for-5)
@@ -106,15 +116,15 @@ Recorded as candidate reusable methodology in notes.md.
 
 ## Forward directions
 
-- **(A) Motive / standard-conjecture reduction** [[thm-standard-conjectures-motives]]:
+- **(A) Motive / standard-conjecture reduction** [[standard-conjectures-motives]]:
   prove algebraicity of the inverse Lefschetz (B) and Künneth components (C) —
   the "reduction to specific Hodge classes" that makes HC a clean motive
   statement. Known for surfaces, abelian, hyper-Kähler $K3^{[n]}$; open
   generally. Closest analog of Beal's reduction-to-finite-curves.
-- **(B) Codim-2 directly** [[method-analytic-algebraic-bridge]]: attack the
+- **(B) Codim-2 directly** [[analytic-algebraic-bridge]]: attack the
   first open case (codim-2 on a 4-fold) via Griffiths intermediate Jacobians /
   normal functions / Abel–Jacobi — the direct bridge at the frontier.
-- **(C) Structured sub-cases** [[thm-absolute-hodge-motivated]]: deepen the
+- **(C) Structured sub-cases** [[absolute-hodge-motivated]]: deepen the
   abelian program (Weil type, type III); absolute Hodge / motivated cycles as
   the controlled evidence layer.
 

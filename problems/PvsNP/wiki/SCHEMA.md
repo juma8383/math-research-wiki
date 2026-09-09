@@ -36,16 +36,16 @@ A claim tag (lowercase-kebab, e.g. `[bip-2019]`, `[coarsening-gap]`) is **define
 5. A source touching <5 pages was under-ingested — chase the cross-links.
 
 ### Query (answer from the wiki)
-1. Scan `index.md` → open relevant pages → follow cross-refs (`[[page]]`).
+1. Scan `index.md` → open relevant pages → follow cross-refs (`[[<page>]]`).
 2. Synthesize the answer citing source tags, e.g. "GCT evades natural proofs `[rr-1997]` because…".
 3. If the answer is reusable, file it as a new page and index it.
 4. Append `[QUERY YYYY-MM-DD] <topic> — <one-line>` to `log.md`.
 
 ### Lint (health pass)
-Find and fix: contradictions between pages, stale claims (source superseded), orphan pages (no inbound `[[refs]]`), missing cross-references, gaps in `index.md` vs actual files. Append `[LINT YYYY-MM-DD] <summary>` to `log.md`.
+Find and fix: contradictions between pages, stale claims (source superseded), orphan pages (no inbound `[[<refs>]]`), missing cross-references, gaps in `index.md` vs actual files. Append `[LINT YYYY-MM-DD] <summary>` to `log.md`.
 
 ## Conventions
-- Cross-reference pages with `[[page-name]]` (page slug, no `.md`).
+- Cross-reference pages with `[[<page-name>]]` (page slug, no `.md`).
 - Cite claims with `[tag]`.
 - Never edit `sources/` after the initial ingest (immutable). Corrections/refinements live in pages and get a new source if needed.
 - `index.md` is the single map of "what exists"; `log.md` is the single map of "what was done."

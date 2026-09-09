@@ -1,10 +1,15 @@
+---
+type: notes
+problem: magic-square-of-squares
+---
+
 ﻿# Notes — Magic Square of Squares
 
 > Session findings and structural lemmas. Read [problem.md](problem.md)
 > first for status and censuses. Wikilinks: problem slugs use UNDERSCORE,
 > theory slugs kebab.
 
-## Structural lemmas (2026-08-31 loop block) `[mss-structural-lemmas-verified]`
+## Structural lemmas (2026-08-31 loop block) `mss-structural-lemmas-verified`
 
 Setup: square-center config = center $a=w^2$, entries
 $a\pm b,\ a\pm c,\ a\pm(b+c),\ a\pm(b-c)$ (distinct). A pair $a\pm d$ is
@@ -83,7 +88,7 @@ predicted to extend cleanly because D-sets are divisor-structured, not
 random.
 
 ## The additive-parallelogram reduction (2026-09-01 loop block)
-`[mss-parallelogram-reduction]`
+`mss-parallelogram-reduction`
 
 **Theorem (exact reduction, provable).** A 3×3 magic square of 9 distinct
 squares exists **iff** for some $w$ the set $D(w^2)$ contains an *additive
@@ -206,7 +211,7 @@ $D$-sets appear to be additive-triple-free in every searched range.
 **3-term-AP census (2026-09-01, later block; `mss_d_ap_census.py`).**
 The natural sibling pattern: does $D(w^2)$ contain a 3-term arithmetic
 progression $\{x,m,z\}$ ($x+z=2m$)? For the cubic sibling this is
-trivially impossible (`[[square_of_cubes]]` `[cubic-dset-vanishes]` —
+trivially impossible (`[[square_of_cubes]]` `cubic-dset-vanishes` —
 Legendre's no-three-cubes-in-AP theorem IS the empty cubic D-set). For
 the square D-sets, censused over all $w\le10^6$ (257,824 w with
 $|D|\ge3$): **zero 3-term APs** — matching the A2 triple count exactly
@@ -321,7 +326,7 @@ D-elements that stays in $D$ must clear $x$ by more than $2\sqrt{w^2+x}$
 test over all $w\le10^6$ — see `window_spacing_W1e6.log` and the
 heuristic paragraph below.
 
-## The prime-power freeness theorem (2026-09-01, first proved family) `[mss-primepower-freeness]`
+## The prime-power freeness theorem (2026-09-01, first proved family) `mss-primepower-freeness`
 
 **Theorem.** Let $p\equiv1\pmod4$ be prime, $e\ge0$, $k\ge1$,
 $w=2^e p^k$. Then $D(w^2)$ contains **no additive triple**
@@ -406,7 +411,7 @@ center is the unique known config there — is $|D|=2$ with both primes
 squared the *only* possible shape?), and whether Step 2's UFD trick
 extends to $p^k q^\ell$.
 
-## The two-prime case (2026-09-01, structure + census, open) `[mss-two-prime]`
+## The two-prime case (2026-09-01, structure + census, open) `mss-two-prime`
 
 The natural next target after the prime-power theorem: $w=pq$ ($p,q$
 distinct $1\bmod4$ primes), $|D((pq)^2)|=4$ — Bremner's home turf
@@ -474,7 +479,7 @@ square of squares satisfies $\omega_1(w)\ge2$ — unconditional and
 unbounded.**
 
 ## Stratifying the hourglass heuristic by $\omega_1$ (2026-09-01)
-`[mss-omega1-stratification]`
+`mss-omega1-stratification`
 
 **Question.** The freeness theorem forces $\omega_1(w)\ge2$ for any
 9-square center. Under the window-corrected probabilistic model, how
@@ -548,7 +553,7 @@ $4\cdot10^{-5}$ of the model's window-corrected mass.
    complementing the proved unconditional $\omega_1\ge2$. The proved
    part stops at $\omega_1\ge2$; extending the proof to $\omega_1\ge3$
    would remove 60.7% of the model's remaining mass and is precisely
-   the open two-prime question `[mss-two-prime]` inverted: proving the
+   the open two-prime question `mss-two-prime` inverted: proving the
    $\omega_1=2$ stratum free would prune the model's single largest
    stratum — the census ($22{,}155$ two-prime centers,
    $A2=A3=AP=0$, plus all $w\le10^7$) says the truth is "free so far",
@@ -559,7 +564,7 @@ $4\cdot10^{-5}$ of the model's window-corrected mass.
    $\approx0.030$, $P(0)\approx97\%$).
 
 **W=1e7 extension (run completed 2026-09-01, filed 2026-09-02
-`[mss-omega1-stratification]`).** 3,116,858 centers with $|D|\ge2$ up to
+`mss-omega1-stratification`).** 3,116,858 centers with $|D|\ge2$ up to
 $W=10^7$ (`omega1_stratification_W1e7.log`): window-corrected total
 $H_2=0.07856$ (naive 1.01300) vs $0.07753$ at $W=10^6$ — the corrected
 expected total is **stable to $+1.3\%$ across a $10\times$ box
@@ -570,9 +575,9 @@ Stratum shares reproduce: $\omega_1=2$ 60.0% (vs 60.7%), $\omega_1=3$
 $\{199{,}528,\ 2{,}421{,}096,\ 468{,}910,\ 27{,}117,\ 207\}$ at
 $\omega_1=1..5$. All conclusions above carry over unchanged.
 
-## Two-prime sum-freeness: slice theorems + complete kill-equation case tree (2026-09-01, `[mss-two-prime-freeness]`)
+## Two-prime sum-freeness: slice theorems + complete kill-equation case tree (2026-09-01, `mss-two-prime-freeness`)
 
-Attack on the omega_1 = 2 stratum (`[mss-two-prime]` inverted). On the
+Attack on the omega_1 = 2 stratum (`mss-two-prime` inverted). On the
 verified closed form $D((pq)^2)=\{A,B,C,D_0\}$, $A=p^2Y_q$, $B=q^2Y_p$,
 $X=R_pY_q$, $Y=Y_pR_q$, $C=|X-Y|$, $D_0=X+Y$ (pi=a+bi, rho=c+di;
 $Y_p=|4ab(a^2-b^2)|$, $R_p=|a^4-6a^2b^2+b^4|$), script
@@ -628,15 +633,15 @@ OPEN — stalled exactly at K1-K4 + K5-K16, which need a descent / mod-$p^2$
 K1's necessary condition $p^2\mid R_q$ (= $p^2\mid q^2-8c^2d^2$) is a
 congruence condition on the rep of $q$ — check whether $p^2\mid R_q$ ever
 occurs at all, and whether K1 can be killed mod $p^2$ from it.
-## Cross-prime divisibility: K2/K9/K11 dead, K1 gated mod 8 (2026-09-01, `[mss-two-prime-crossdiv]`)
+## Cross-prime divisibility: K2/K9/K11 dead, K1 gated mod 8 (2026-09-01, `mss-two-prime-crossdiv`)
 
-Continuation of `[mss-two-prime-freeness]` (the K1-K16 stall). Scripts
+Continuation of `mss-two-prime-freeness` (the K1-K16 stall). Scripts
 `scripts/mss_two_prime_k1_crossdiv.py`, `scripts/mss_two_prime_k12_census.py`
 (self-tests inside: closed form == builder, 91 pairs q<=120; identity
 $R_q=|8c^4-8qc^2+q^2|$ exact). The named lever — the cross-prime divisibility
 conditions K1/K2 force — partially lands:
 
-**CORRECTION (append-only, to `[mss-two-prime-freeness]`).** The filed K2
+**CORRECTION (append-only, to `mss-two-prime-freeness`).** The filed K2
 annotation "(forces $v_p(Y_q)=2$, i.e. $p^2\mid Y_q$)" is **wrong**. The
 $p$-valuation of K2 ($2R_pY_q=q^2Y_p$) reads $v_p(\text{LHS})=0$ (S3:
 $p\nmid R_p$), forcing $v_p(Y_q)=0$ — vacuous. The load-bearing valuation is
@@ -697,17 +702,17 @@ touch K1 ($p^2\mid R_q$ is compatible with $R_q<q^2$). Next levers: (a)
 explain the $p=17$ $R_q$-Wieferich anomaly (positive density of $q$?); (b)
 K3/K4 remain the dense-near-miss wall — genuinely exponential Diophantine.
 
-## K3/K4: quartic-to-quadratic reduction, per-prime square sieve (2026-09-01, `[mss-two-prime-k34]`)
+## K3/K4: quartic-to-quadratic reduction, per-prime square sieve (2026-09-01, `mss-two-prime-k34`)
 
 Attack on the two open kill-equations NOT gated by the Wieferich anomaly
-(continuation of `[mss-two-prime-freeness]`, `[mss-two-prime-crossdiv]`).
+(continuation of `mss-two-prime-freeness`, `mss-two-prime-crossdiv`).
 Script `scripts/mss_two_prime_k34_quartic.py` (+ log). K3: $R_pY_q=3Y_pR_q$
 ($2C=D_0$, $X=3Y$ side); K4 the mirror.
 
 **Near-miss confirmed.** $(173,7933)$: $X-3Y=50{,}004{,}240$ exactly,
 $|\log(X/3Y)|=3.589\cdot10^{-5}$ (filed values reproduced).
 
-**CORRECTION (append-only, to `[mss-two-prime-freeness]`).** The filed
+**CORRECTION (append-only, to `mss-two-prime-freeness`).** The filed
 argmin line "over $p\le200$, $q\le2\cdot10^5$" overstated the range: that
 script's prime table was capped at 20000, so $(173,7933)$ is the closest
 K3 pair only for $q\le2\cdot10^4$. Extended to $q\le2\cdot10^5$ the argmins
@@ -763,10 +768,10 @@ Open: the conic-descent (case $lpha$: $n^2+r^2=2s^2$, case $eta$:
 $n^2+2r^2=s^2$, both with $rs=Y_n$) and the same treatment for K5-K8,
 K10, K13-K16.
 
-## K5-K8 DEAD: branch-split + rep-ratio injectivity (2026-09-01, `[mss-two-prime-k58]`)
+## K5-K8 DEAD: branch-split + rep-ratio injectivity (2026-09-01, `mss-two-prime-k58`)
 
 Attack on the six remaining separated kill-equations (continuation of
-`[mss-two-prime-freeness]`, `[mss-two-prime-crossdiv]`, `[mss-two-prime-k34]`).
+`mss-two-prime-freeness`, `mss-two-prime-crossdiv`, `mss-two-prime-k34`).
 Script `scripts/mss_two_prime_k58_branch.py` (+ log). Unlike K1-K4, K5-K8 are
 **separated** multiplicative equations $Y_q\alpha_p=Y_p\beta_q$ with
 $\alpha\in\{p^2\pm R_p\}$, $\beta\in\{q^2\pm R_q\}$ — the quartic reduction of
@@ -815,7 +820,7 @@ Fractions and re-verified).
 used). Sum-freeness kill list down to **K1** (Wieferich-gated:
 $p^2\mid R_q$, $p\equiv1\bmod8$), **K3/K4** (K34-conjecture-gated:
 $A(n),B(n)$ per-prime square conditions), **K10, K12-K16**. Flagged
-discrepancy (not touched here): the filed T2 in `[mss-two-prime-crossdiv]`
+discrepancy (not touched here): the filed T2 in `mss-two-prime-crossdiv`
 explicitly kills "$2B=A$", which under the sequential K9-K16 labeling
 (line order $2A{=}B, 2B{=}A,\ldots$) is K10 — yet that section's status line
 lists K10 as open; one of the two is mislabeled, resolve on next visit.
@@ -835,11 +840,11 @@ conjecture): every D-element factors as 4 t_p^2 t_q^2 x (u-only quantity) with u
 would reduce ALL kill-equations to quadratic curves in (u_p,u_q) and give per-prime Delta-square
 sieves for K1-K4, K10, K12-K16 uniformly.
 
-## u-factorization theorem; K1, K10, K12-K16 all DEAD; kill list down to K3/K4 (2026-09-01, `[mss-two-prime-uquad]`)
+## u-factorization theorem; K1, K10, K12-K16 all DEAD; kill list down to K3/K4 (2026-09-01, `mss-two-prime-uquad`)
 
 Attack on the six open doubles K10, K12-K16 + the gated K1 (continuation of
-`[mss-two-prime-freeness]`, `[mss-two-prime-crossdiv]`, `[mss-two-prime-k34]`,
-`[mss-two-prime-k58]`; the LABEL RESOLUTION lead is VERIFIED below). Scripts
+`mss-two-prime-freeness`, `mss-two-prime-crossdiv`, `mss-two-prime-k34`,
+`mss-two-prime-k58`; the LABEL RESOLUTION lead is VERIFIED below). Scripts
 `scripts/mss_two_prime_u_factorization.py`, `mss_two_prime_k10_16_sieve.py`,
 `mss_two_prime_k10_16_closedforms.py`, `mss_two_prime_k10_16_discsq.py`,
 `mss_two_prime_k1_k12_gates.py` (+ logs; two bugs found and fixed en route,
@@ -927,10 +932,10 @@ never hold for a 1 mod 4 prime; 0 hits on 12,980 primes $\le3\cdot10^5$).
 **Two-prime sum-freeness of $D((pq)^2)$ is now EQUIVALENT to Conjecture
 K34** -- the entire $\omega_1=2$ stratum hangs on one cheap per-prime square
 condition. Next lever: the K34 conic descent (filed in
-`[mss-two-prime-k34]`: $n^2=2s^2-r^2$ or $n^2=s^2-2r^2$ with $rs=Y_n$), now
+`mss-two-prime-k34`: $n^2=2s^2-r^2$ or $n^2=s^2-2r^2$ with $rs=Y_n$), now
 the single named gap for the whole two-prime freeness theorem.
 
-## K34 as rational points on genus-1 quartics M_A, M_B (2026-09-01, `[mss-k34-elliptic]`)
+## K34 as rational points on genus-1 quartics M_A, M_B (2026-09-01, `mss-k34-elliptic`)
 
 Goal: settle K3/K4 (the last gates for two-prime sum-freeness) by determining
 the rational points on the two master quartics. Result: the reduction, the
@@ -1198,11 +1203,11 @@ evidence) found for K34; it is a standard-but-laborious computation
 (MW-basis p-adic precision, MWM integration à la Balakrishnan–Tuitman or
 Coleman integration in Sage).
 
-## K34 round 2: deepened sieve + sibling covers D_A/D_B (2026-09-02, `[mss-k34-sieve2]`)
+## K34 round 2: deepened sieve + sibling covers D_A/D_B (2026-09-02, `mss-k34-sieve2`)
 
 Scripts `mss_k34_sieve2_p1..p9.py` + state files `mss_k34_sieve2_state{A,B}.json`
 (scripts folder). Nothing here modifies the proved content of
-`[mss-k34-elliptic]`; it deepens the sieve (Section 7 there), settles the
+`mss-k34-elliptic`; it deepens the sieve (Section 7 there), settles the
 sibling covers (lever 2), and adds one genuinely new, **verified** mechanism
 (p-adic refinement of pole classes, 2c below) that is the first
 concrete path from "sieve says few classes survive" to an actual proof.
@@ -1335,7 +1340,7 @@ verified at $p=13$ (and structurally at 17); the full iteration +
 termination argument is open. `[to-verify]`
 
 ### 2d. Refinement round: the congruence endgame is IMPOSSIBLE; coset
-reduction + primitive-divisor gate (2026-09-02, `[mss-k34-refine]`)
+reduction + primitive-divisor gate (2026-09-02, `mss-k34-refine`)
 
 Claude round, all computations exact (`mss_k34_refine1.py`/`.log`). Three
 findings that reshape gate 2c.
@@ -1430,7 +1435,7 @@ twisted 2-part" ($\equiv6 \bmod 8$).
   mod-$p$ group law. Lesson: reduce via `num * den^{-1} mod p` with
   separately tracked valuations.
 
-### 6. Claude verification record (2026-09-01, `[mss-k34-sieve2-verify]`)
+### 6. Claude verification record (2026-09-01, `mss-k34-sieve2-verify`)
 
 Independent re-verification of Sections 1–4 by deterministic re-runs of the
 agent's own drivers plus fresh stress tests (`mss_k34_sieve2_claude_check2.py`,
@@ -1472,7 +1477,7 @@ should read **5** (1097, 1571, 5297, 9769, 93407). The $p9$ continuation
 (grow to 3000, hunt to $2\cdot10^6$) found no further kills — consistent
 with the filed state.
 
-### 2e. The cancellation lemma is PROVED; K34-A reduced to odd-depth primitive divisors (2026-09-02, `[mss-k34-refine2]`)
+### 2e. The cancellation lemma is PROVED; K34-A reduced to odd-depth primitive divisors (2026-09-02, `mss-k34-refine2`)
 
 Of the two lemmas opening the primitive-divisor gate in 2d, **Lemma 2 (no
 cancellation) is now proved outright** — it needs no exceptions, no
@@ -1539,7 +1544,7 @@ $v_q(X_B(P))=+s$ and the identical reduction holds for the four $k$-cosets
 of $\langle H_B\rangle$ ($n\equiv c\bmod M_B$, $M_B=264$). **Lemma 2 is
 fully ported; Lemma 1 (odd-depth primitive divisors) is the shared gap.**
 
-### §2f Depth census via a Shipsey EDS engine; the class-0 constraint; first odd-Wieferich primes `[mss-k34-refine3]` (2026-09-02)
+### §2f Depth census via a Shipsey EDS engine; the class-0 constraint; first odd-Wieferich primes `mss-k34-refine3` (2026-09-02)
 
 **The depth-decomposition theorem.** *Proof (no LTE needed — pure formal
 group).* Let $q\ge5$ be a good prime, $Q=d\,G\in E_1(\mathbb{Q}_q)$ a kernel
@@ -1597,7 +1602,7 @@ true $R_0$ over all valid primes is larger). Curve B has **34 valid primes
 $\le2e5$, all depth 1** ($R_0^{(B)}$, $\log_{10}=103.2$). Class re-check
 (`mss_k34_refine3_classcheck.py`): the five survivor classes hold on all 640
 (A) and 34 (B) valid primes, 0 violations. **Append-only correction to
-[mss-k34-sieve2]**: the W2 count "624 valid primes $\le3e5$" was an
+mss-k34-sieve2**: the W2 count "624 valid primes $\le3e5$" was an
 undercount — its `bsgs_order` returned None for 16 primes (silently
 skipped); complete order-finding (trial-division factorization of
 $\#E(\mathbb{F}_p)$) gives 640. Class conclusions unaffected (0 violations).
@@ -1620,7 +1625,7 @@ abc. Sources: Verzobio arXiv:2001.02987 ($C$ depends only on the model —
 computable for $(Ẽ_A,G_A)$, $(Ẽ_B,G_B)$: next-round task); Ingram
 math/0409540; msp.org/pjm/2023/325-2/p07.
 
-### §2g Class-0 descent: hypothetical solutions are forced past the effective primitive-divisor constant `[mss-k34-refine3]` (2026-09-02)
+### §2g Class-0 descent: hypothetical solutions are forced past the effective primitive-divisor constant `mss-k34-refine3` (2026-09-02)
 
 **Proposition (class-0 size forcing).** If $X(kH_A)=w^2$ for some $k\ge1$,
 then for every valid prime $p$ the constraint of §2f fixes $v_p(k)\bmod2$,
@@ -1658,9 +1663,9 @@ primitive divisor for all cosets. Both are Wall–Sun–Sun-type; (i) has a
 conditional resolution (Lang/abc), (ii) is supported by the §2f census base
 rate (odd-Wieferich rate $\sim0.1\%$).
 
-### §2h The depth-parity sieve: a strictly new kill layer the depth-0 sieve cannot see `[mss-k34-refine4]` (2026-09-02)
+### §2h The depth-parity sieve: a strictly new kill layer the depth-0 sieve cannot see `mss-k34-refine4` (2026-09-02)
 
-**The layer.** The [mss-k34-sieve2] CRT sieve killed indices using only
+**The layer.** The mss-k34-sieve2 CRT sieve killed indices using only
 depth-0 information ($X(nG)\not\in\mathrm{QR}\bmod p$). By Lemma 2 a
 *kernel* prime ($d=\mathrm{ord}_q(G)\mid n$) has $X(nG)\equiv0\pmod q$ —
 always a QR — so kernel primes **never killed in the old sieve**. But the
@@ -1720,13 +1725,13 @@ available and none is claimed. The refined candidate set
 input to deeper layers; the total remaining gap stays as structured in §2g
 (primitive-divisor existence window + odd-depth gate).
 
-### Factorization descent on K34-A (R-V')(R+V') = 4608 a^4 b^4 (2026-09-02, `[mss-k34-descent]`)
+### Factorization descent on K34-A (R-V')(R+V') = 4608 a^4 b^4 (2026-09-02, `mss-k34-descent`)
 
 Claude round. Scripts `scripts/mss_k34_descent_p1..p6.py` (+ `.log` each),
-all arithmetic exact. Develops the lever named in `[mss-k34-sieve2]` Sec. 2
+all arithmetic exact. Develops the lever named in `mss-k34-sieve2` Sec. 2
 ("$(R-W)(R+W)=4608a^4b^4$ ... not developed this round"). NOTATION clash
 warning: this $R=a^4+66a^2b^2+b^4$ is NOT the $R_n=|a^4-6a^2b^2+b^4|$ of
-`[mss-two-prime-k34]`; write $n=a^2+b^2$, $P=ab$, $V'=Vb^4$.
+`mss-two-prime-k34`; write $n=a^2+b^2$, $P=ab$, $V'=Vb^4$.
 
 **1. Identity (proved, symbolic + numeric).** $R^2-V'^2=4608a^4b^4$,
 $4608=2^9\cdot3^2$ (`p1`: sympy-verified identity, plus the clearing step
@@ -1761,7 +1766,7 @@ prime $\equiv1\ (4)$) **only $j=1$ occurs**; $j=3$ is the even-$n$
 degenerate stratum. **No case admits $u=a,v=b$** ((8,9),(9,8): disc
 $66^2-224=4132$, nonsquare; (1,72),(72,1): forces $71b^4=66a^2b^2$) — the
 prime repartition is genuinely nontrivial, so this descent does NOT reduce
-to the $A(n)/B(n)$ conditions of `[mss-two-prime-k34]`.
+to the $A(n)/B(n)$ conditions of `mss-two-prime-k34`.
 
 **4. Layer-1 quartics (necessary, new objects).** Combining (3) with
 $R=n^2+64P^2$:
@@ -1861,7 +1866,7 @@ the structural home for the $238$-split bookkeeping.
 **Counterevidence check.** Layer-1 quartics have infinitely-many-looking
 rational points (rank $\ge1$), so "no square-X points" is NOT provable by
 insolvability of the necessary quartics; the obstruction is exactly the
-$(a\pm b)^2$ lift, consistent with the `[mss-k34-refine]` finding that
+$(a\pm b)^2$ lift, consistent with the `mss-k34-refine` finding that
 congruence conditions alone cannot terminate.
 
 **CORRECTION (2026-09-03 ~13:30, tooling round — supersedes parts of §2i and
@@ -1943,7 +1948,7 @@ Verification gap note: the agent's saved p5 log is PRE-fix (shows 8
 mod-survivors + the wrong sign test), so the final 16$\to$4 table is
 confirmed by this run, not by p5's saved log.
 
-### §2i Continuation (2026-09-03, `[mss-k34-continuation]`): primitive-divisor attribution corrected (Ingram → Verzobio), leaf census extended (0 hits), layer-1 bookkeeping reconciled, Bennett–Walsh scope clarified
+### §2i Continuation (2026-09-03, `mss-k34-continuation`): primitive-divisor attribution corrected (Ingram → Verzobio), leaf census extended (0 hits), layer-1 bookkeeping reconciled, Bennett–Walsh scope clarified
 
 Continuation round (Hermes session, RED quota zone, no subagents). Scripts:
 `mss_k34_descver_symbolic.py/.out`, `mss_k34_leaf_census_ext.py/.log`,
@@ -2088,7 +2093,7 @@ gate remains the structural gap.
   problem.md frontier block).
 - [[square_of_cubes]] — cubic sibling: the open question "is there a
   D-set closed form for the cubic case?" is now ANSWERED (2026-09-01,
-  `[cubic-dset-vanishes]`): the cubic D-set is provably **empty** —
+  `cubic-dset-vanishes`): the cubic D-set is provably **empty** —
   $w^3\pm d$ both cubes forces $x^3+y^3=2w^3$, whose only solutions are
   trivial ($x=y=z$, Euler descent in $\mathbb{Z}[\omega]$; brute-verified
   to 600). The MSS engine cannot transfer in principle, and the two
@@ -2109,7 +2114,7 @@ gate remains the structural gap.
   completions — i.e. needing 4 D-elements whose pairwise additive
   combinations stay inside $D$ (or accidental squares). The rarity
   escalates sharply between 7 (exists) and 9 (unknown).
-## §2j NEW SECTION (2026-09-07, `[mss-k34-jacobian]`): the four leaf quartics share ONE Jacobian; three are provably insoluble; the live leaf is rank-1-parametrized
+## §2j NEW SECTION (2026-09-07, `mss-k34-jacobian`): the four leaf quartics share ONE Jacobian; three are provably insoluble; the live leaf is rank-1-parametrized
 
 Continuation round (Hermes session, local model, no quota constraints; PARI/GP
 2.17.2 + eclib/mwrank 20250122 extracted from Ubuntu .debs onto the local box —
@@ -2118,7 +2123,7 @@ no root needed, `$HOME/pari/dl/ext*/usr/bin`). Scripts
 
 ### 1. The structural theorem (new; the wiki's descent tree never inspected its own terminal layer)
 
-The four layer-2 leaf quartics of `[mss-k34-descent]` Secs. 5–6 —
+The four layer-2 leaf quartics of `mss-k34-descent` Secs. 5–6 —
 Q-pos-(238,1) $u^2=238r^4+32r^2s^2+s^4$, Q-neg-(119,2)
 $u^2=32r^2s^2-119r^4-2s^4$, N-pos-(17,14) $9u^2=17r^4+32r^2s^2+14s^4$,
 N-neg-(34,7) $9u^2=32r^2s^2-34r^4-7s^4$ — have **binary-quartic invariants
@@ -2209,7 +2214,7 @@ $$(\sigma,\ \rho,\ s)\ \text{on the } (1,72) \text{ quartic } n'^2=u^4-64u^2v^2+
 (verified by direct substitution for m=2, 8, 10, 16; mirror on (72,1) fails —
 the roles are pinned). The Fermat loop structure:
 - m=2: regenerates $(u,v,n')=(71,6,3727)$, $n'=3727\equiv3\ (4)$ — NOT a
-  K34-A candidate; loop closes (matches the filed `[mss-k34-descent]` data).
+  K34-A candidate; loop closes (matches the filed `mss-k34-descent` data).
 - m=8: regenerates $(403586102600578,\ 108592361582156,\ s)$,
   $s\equiv3\ (4)$ — closes.
 - **m=10, 16: $n'=s\equiv1\ (4)$ — the mod-4 gate does NOT close the loop.**
@@ -2234,7 +2239,7 @@ condition on regenerated points is the remaining gate for stall item (ii));
  regenerates itself (fixed point), the structure is a genuine Wall-Sun-Sun
  type obstruction; (c) connection to the C3_A Chabauty gate: the leaf
  quartics are covers of C3_A's M_A quartic (the $z^2=u^2+4$ sibling
- structure of `[mss-k34-sieve2]` Sec. 2), so insolubility here does not
+ structure of `mss-k34-sieve2` Sec. 2), so insolubility here does not
  directly close K34 — K34-A still stands or falls at the Chabauty gate or
  the odd-depth primitive-divisor gate.
 
@@ -2265,7 +2270,7 @@ transfer needs the exact change-of-variable, not hand arithmetic).
    mwrank labels.
 3. **Sweep timeout.** `admissible_sweep.py` factored the Fermat splits
    (numbers to 10^40+) — 2/3 of the sweep never finished; replaced by
-   `admissible_sweep2.py` (isqrt-only, no factorization).## §2j ADDENDUM (2026-09-07, `[mss-k34-jacobian]`): the Fermat loop IS the index-halving map — stall item (ii) resolves NEGATIVELY
+   `admissible_sweep2.py` (isqrt-only, no factorization).## §2j ADDENDUM (2026-09-07, `mss-k34-jacobian`): the Fermat loop IS the index-halving map — stall item (ii) resolves NEGATIVELY
 
 Following §2j's filing, the loop behavior was computed exactly for ALL testable
 indices (`scripts/k34j_halving2.py`, `k34j_final_battery.py`):
@@ -2278,7 +2283,7 @@ the Germain step (`A = σ²−32ρ²`, `(A−n'/2)(A+n'/2) = 238ρ⁴`, coprime
 fiber point `T_a + m·P_a` (i.e. the `m/2` index), either untransposed
 (`(R,S) = (r_{m/2}, s_{m/2})`, constants `(238,1)`) or transposed
 (`(R,S) = (s_{m/2}, r_{m/2})`, constants `(1,238)`) — the transposition is the
-X↔Z role swap of `[mss-k34-descent]` (killed cell (1,238)). Which of the two
+X↔Z role swap of `mss-k34-descent` (killed cell (1,238)). Which of the two
 occurs depends on `m mod 4` (m ≡ 0, 2 mod 4 → untransposed for m ≡ 2 mod 4
 and odd multiples...; data: m = 2, 8, 12, 14, 18, 24, 28 transposed; m = 4,
 6, 10, 16, 20, 22, 26 untransposed). The regenerated `x` is always the
@@ -2332,7 +2337,7 @@ terminal layer.
    `P1·P2 = 238ρ⁴` FAILS at odd m — consistent with the odd-index child
    being the transposed point on C₁ (different quartic, different split
    constant 238→1): the odd branch exits the (238)-split machinery
-   entirely, as the filed (8,9)/(9,8) mirror analysis predicted.## §2k CORRECTION + NEW GATE (2026-09-08, `[mss-k34-liftgate]`): the §2j lift test was the WRONG condition; the true candidate-chain lift is a THIRD quartic D with Jacobian J_L
+   entirely, as the filed (8,9)/(9,8) mirror analysis predicted.## §2k CORRECTION + NEW GATE (2026-09-08, `mss-k34-liftgate`): the §2j lift test was the WRONG condition; the true candidate-chain lift is a THIRD quartic D with Jacobian J_L
 
 Append-only correction to §2j's Fermat-loop analysis, then the new structure.
 
@@ -2413,7 +2418,7 @@ halving-map analysis as §2j.
 
 Scripts: `k34j_lift_gate_D.py`, `k34j_lift_verify_m2.py`, `k34j_jl_shift.py`,
 `k34j_jl_alpha*.py`, `k34j_d_probe.py`, `k34j_d_points.py`,
-`k34j_d_square_x.py`, `k34j_gate_final.py`, mwrank log `k34j_mwrank_JL.log`.## §2l ROUND-3 (2026-09-08, `[mss-k34-liftgate2]`): two-parents structure; the K34-A chain's Germain step is a FIXED POINT; new provable sign gate kills 22.4% of the candidate window
+`k34j_d_square_x.py`, `k34j_gate_final.py`, mwrank log `k34j_mwrank_JL.log`.## §2l ROUND-3 (2026-09-08, `mss-k34-liftgate2`): two-parents structure; the K34-A chain's Germain step is a FIXED POINT; new provable sign gate kills 22.4% of the candidate window
 
 Continuation round. Scripts `scripts/k34j_two_parents.py`,
 `k34j_fixed_point.py`, `k34j_sign_gate.py`, `k34j_gate_pipeline.py`,
@@ -2433,7 +2438,7 @@ parents on the (1,72) quartic $n'^2=u'^4-64u'^2v'^2+72v'^4$:
   This resolves the §2j puzzle: the verified halving map ran on Parent B.
 - **Parent B (shadow chain):** $(\sigma,\rho,s)$ from the Fermat split
   $(72\rho^4,\sigma^4)$; its Germain split $(81,\ 3808)=(1\cdot3^4,\ 238\cdot2^4)$
-  lands in the **killed (1,238) cell** (`[mss-k34-descent]` kill table) —
+  lands in the **killed (1,238) cell** (`mss-k34-descent` kill table) —
   the shadow chain is not K34-A-reachable. Verified at m=2: Parent B
   regenerates (71, 6, 3727) — the filed layer-1 point — whose child is
   $(2,3,71)$-type, i.e. the m/1 fiber point in the killed cell.
@@ -2497,7 +2502,7 @@ a K34-A-shaped question (the tower of §2k).
     `sys.set_int_max_str_digits`; the sweep completed in background.
 11. `boundary_poly.py` factor search: first two attempts had syntax errors
     (walrus in condition / stray `f` variable); the third version runs and
-    proves non-factorization over ℤ.## §2m ROUND-4 (2026-09-08, `[mss-k34-tower1]`): the 7–17 kernel lemma (D-gate ⟺ lift, exactly); Jac(Z) decomposition; direct lift census to m=240
+    proves non-factorization over ℤ.## §2m ROUND-4 (2026-09-08, `mss-k34-tower1`): the 7–17 kernel lemma (D-gate ⟺ lift, exactly); Jac(Z) decomposition; direct lift census to m=240
 
 Append to §2k/§2l. Scripts `k34j_gcd_gate.py`, `k34j_val_lemma.py`,
 `k34j_val_check.py`, `k34j_direct_lift_census.py`/`.log`,
@@ -2515,7 +2520,7 @@ odd prime $p\mid\gcd(f_1,f_2)$ divides both $n$ and $u\cdot r\cdot s$:
 - $p\mid n,r$ impossible ($n\equiv s^4\not\equiv0$);
 - $p\mid n,s\Rightarrow p\mid238\Rightarrow p\in\{7,17\}$.
 Moreover **$7\nmid s$ and $17\nmid s$ ALWAYS** (valuation lemma, same shape as
-`[mss-primepower-freeness]` Lemma 1): if $7\mid s$ then
+`mss-primepower-freeness` Lemma 1): if $7\mid s$ then
 $v_7(u^2)=v_7(238r^4)=1$ is odd — impossible for a square; same for 17. And
 $7\mid n\iff7\mid s$ (as $n\equiv s^4$), so 7, 17 never divide $n$ either.
 Hence $\gcd(f_1,f_2)=1$ **unconditionally**, and
@@ -2587,7 +2592,7 @@ prime, modulo pinning down the ±pair curves and their ranks.
 14. gp scripting: three syntax variants of `if(...next)` inside `forprime`
     loops failed; the single-line `if(p != 17, ...)` form works (recorded in
     the skill). `ellinit` on singular (a,b) pairs returns a degenerate vector
-    — pre-filter with the discriminant formula before `ellinit`.## §2n ROUND-4b (2026-09-08, `[mss-k34-tower2]`): the mod-5 sieve on the lift tower — W₅(Z_D) = {0, ±1} kills 17 of 50 alive indices; C₁-tower correction; ±pair search status
+    — pre-filter with the discriminant formula before `ellinit`.## §2n ROUND-4b (2026-09-08, `mss-k34-tower2`): the mod-5 sieve on the lift tower — W₅(Z_D) = {0, ±1} kills 17 of 50 alive indices; C₁-tower correction; ±pair search status
 
 Append to §2m. Scripts `k34j_sieve_Wp.py`, `k34j_sieve_w5.py`,
 `k34j_zd_sieve.py`, `k34j_zd_w5_check.py`/`.log`,
@@ -2710,7 +2715,7 @@ Q(i)-curve (all conjugates isogenous), rank(E^χ) = rank(E), so rank Jac(P) ∈
 {0, 2, 4, ...} — rank 0 is exactly what the gate needs. Next round: hand
 2-descent on Jac(P) (or locate E in LMFDB via the trace signature
 (ap(23), ap(41)) = (−4, −6) with the squared-charpoly structure). No change
-to K34 status.## §2o ROUND-5 (2026-09-08, `[mss-k34-tower3]`): the FULL Z_D mod-p sieve kills ALL 50 alive admissible fiber indices (m ≤ 240)
+to K34 status.## §2o ROUND-5 (2026-09-08, `mss-k34-tower3`): the FULL Z_D mod-p sieve kills ALL 50 alive admissible fiber indices (m ≤ 240)
 
 Append to §2n. Scripts `k34j_p_points.py`/`.log`,
 `k34j_zd_sieve_full.py`/`.log`, `k34j_sieve_detail.py`.
@@ -2757,7 +2762,7 @@ prime ≤ 499.
 
 17. `zd_sieve_full.py` crashed on `pow(r, -1, p)` when p | r — the p|r case
     is legitimate (w ≡ ∞, allowed); guarded with gcd checks.
-18. `sieve_detail.py`: same bug; fixed identically.## §2p ROUND-6 (2026-09-08, `[mss-k34-tower4]`): Jac(P) = Res_{K/ℚ}(E_K) with **K = ℚ(√238)** — the 238 constant again; the gate is rank E(K)
+18. `sieve_detail.py`: same bug; fixed identically.## §2p ROUND-6 (2026-09-08, `mss-k34-tower4`): Jac(P) = Res_{K/ℚ}(E_K) with **K = ℚ(√238)** — the 238 constant again; the gate is rank E(K)
 
 Append to §2o. Scripts `k34j_p_points.py`/`.log`, `k34j_p_structure.py`,
 `k34j_pair_identity.py`, `k34j_ea_check.py`; PARI `find_factors.gp`
@@ -2810,7 +2815,7 @@ primitive-divisor gate unchanged as the alternative named path).
     fixed incrementally — the exact result stands.
 20. First identification attempt used (238/p) mixed signs before computing
     the split/inert classification; the character test over 27 primes
-    confirmed ℚ(√238) cleanly (no misidentification filed).## §2q ROUND-7a (2026-09-08, `[mss-k34-tower5]`): K = ℚ(√238) verified to 34/34 primes; analytic-rank computation running; E_a disconfirmed as the factor
+    confirmed ℚ(√238) cleanly (no misidentification filed).## §2q ROUND-7a (2026-09-08, `mss-k34-tower5`): K = ℚ(√238) verified to 34/34 primes; analytic-rank computation running; E_a disconfirmed as the factor
 
 Append to §2p. Scripts `k34j_k_verify.gp`, `k34j_res_check.py`,
 `k34j_gate_recap.py`, `k34j_analytic_rank.gp`/`.log`.
@@ -2851,7 +2856,7 @@ structure realizes the factors. Bad primes of P found empirically:
     before all bad primes were excluded (2, 3, 7, 17, 271).
 22. E_a's 6-prime trace match overturned by the p = 101 pointwise check
     (traces (−12, +18) vs ap(E_a) = 10) — coincidence caught before filing
-    any rank conclusion from it.## §2r ROUND-7b (2026-09-08, `[mss-k34-tower6]`): **analytic rank Jac(P) = 0 — Chabauty applies to Z_D; the K34-A candidate chain is one Coleman computation from closure**
+    any rank conclusion from it.## §2r ROUND-7b (2026-09-08, `mss-k34-tower6`): **analytic rank Jac(P) = 0 — Chabauty applies to Z_D; the K34-A candidate chain is one Coleman computation from closure**
 
 Append to §2q. Script `k34j_analytic_rank.gp`/`.log`.
 
@@ -2897,7 +2902,7 @@ odd-depth primitive-divisor gate (§2e–2g) and the B-side mirror.
 
 ### Tracked failures (append-only)
 
-23. (none this sub-round — the bad-prime exclusions from 21 held.)## §2s ROUND-8 (2026-09-08, `[mss-k34-tower7]`): rank Jac(P) = 0 filed as ANALYTIC/CONDITIONAL; the hand 2-descent is blocked by non-rational Weierstrass points; the Chabauty-on-Z_D gate is honestly conditional
+23. (none this sub-round — the bad-prime exclusions from 21 held.)## §2s ROUND-8 (2026-09-08, `mss-k34-tower7`): rank Jac(P) = 0 filed as ANALYTIC/CONDITIONAL; the hand 2-descent is blocked by non-rational Weierstrass points; the Chabauty-on-Z_D gate is honestly conditional
 
 Append to §2r. Scripts `k34j_round8_plan.py`, `k34j_descent_feasibility.py`,
 `k34j_ls_eval.gp`/`.log` (numerical L(s) evaluation running).
@@ -2985,7 +2990,7 @@ itself is trivial. Cache-then-evaluate is the right pattern for any future
 L-series work on this curve (or reuse hyperellcharpoly data already filed:
 the per-prime charpolys for p ≤ 5000 exist inside `k34j_analytic_rank.gp`'s
 computation — a cached-evaluation variant can reuse exactly that loop with
-a print of the coefficients).## §2s ADDENDUM-4 (2026-09-08): the L(s) evaluation take-3 running with the FULL bad-prime exclusion {2,3,7,17,271} — root cause of the earlier crashes: 271 IS a bad prime of P (repeated roots of x·N(x) mod 271 at x = 25 and 248; 271 | disc(x·N(x))), discovered while re-checking. The prior crash ("singular at 271") was a legitimate bad-prime error, not a PARI bug. Run continuing; result to be appended.## §2s ADDENDUM-5 (2026-09-08): TWO L(s) runs are racing (the take-2 without the 271 exclusion and take-3 with it — both CPU-bound at ~99%). Take-3 (with all exclusions) is the authoritative one; take-2 will crash or produce a wrong curve's values at p=271 and be discarded. Result to be appended when take-3 exits. All wiki filings current through Addendum-5.## §2s ADDENDUM-7 (2026-09-08): take-3 still running at 941s. The L-series computation to primes ≤ 30000 at 5 s-values is heavier than estimated (~15+ min per s-value in the p-adic Frobenius computations at the largest primes). The run will be left to complete on its own schedule; the result will be appended to notes.md when it exits (the notification fires automatically). No interim conclusion is drawn — the §2s conditional filing already reflects the only defensible state (analytic rank 0, BSD-conditional).## §2s ADDENDUM-8 (2026-09-08): take-3 at 1324s and still computing — the p-adic Frobenius cost at primes near 30000 is the bottleneck (~1300 primes in the last 1000-prime block each needing a 4×4 matrix exponential). Revised plan: let it run to completion in the background (the notification fires on exit); no further polling. The §2s conditional filing is complete and correct as-is; the L(s) numeric is a confirmation nicety, not a blocker. All wiki state current.## §2s ADDENDUM-9 (2026-09-08): take-3 at 1892s (~32 min). The p-adic Frobenius cost at the top primes (27000-30000) scales as O(p^4)-ish per prime — the last 2000 primes alone are the bulk. Estimating completion at ~40-60 min total runtime. The background notification will fire on exit; the result will be appended then. No interim conclusions drawn; §2s conditional filing unchanged and correct.## §2s ADDENDUM-10 (2026-09-08): take-3 at 2637s (~44 min). The 5-s-value loop recomputes hyperellcharpoly per s — 5× the Frobenius work; at the current rate the total will be ~60-90 min. Alternative for future sessions: cache the charpolys to a file in the first pass (one hyperellcharpoly sweep), then evaluate any number of s-values instantly. The run continues; the result will be appended on exit (automatic notification). §2s conditional filing unchanged.## §2s ADDENDUM-11 (2026-09-08): take-3 at 3197s (~53 min). The 5×-recompute design makes this run cost ~5 sweeps; each sweep is ~11 min at the current rate. Total estimate ~55-60 min — completion imminent. The notification will fire; result appended then. §2s filing unchanged.## §2s ADDENDUM-12 (2026-09-08): take-3 at 3762s (~63 min) — past the 55-60 min estimate; the 8GB stack and 5 full sweeps cost more than projected. The run continues (CPU 99%). It will be left to finish; the result appended on exit. All filings current; §2s conditional status unchanged. (Session note: the user may stop the loop at any time; the background run continues independently and its result will be filed by a future session from the log if this session ends first.)## §2s ADDENDUM-13 (2026-09-08): take-3 at 4514s (~75 min) — the 5-sweep design is costlier than any projection; the run is left to complete (notification on exit). DECISION: the session now treats the analytic rank 0 as the filed evidence state (it is), and the L(s) numeric as a pending confirmation that will be appended by whichever session sees the run finish. The loop's active work moves on: next round = the Z_D-point search extension (degenerate-orbit verification beyond the current box) while the L(s) computation completes in parallel.## §2t ROUND-8b (2026-09-08, `[mss-k34-tower8]`): Z_D(ℚ) point search extended — no non-degenerate points in a ≤ 20000, b ≤ 200
+a print of the coefficients).## §2s ADDENDUM-4 (2026-09-08): the L(s) evaluation take-3 running with the FULL bad-prime exclusion {2,3,7,17,271} — root cause of the earlier crashes: 271 IS a bad prime of P (repeated roots of x·N(x) mod 271 at x = 25 and 248; 271 | disc(x·N(x))), discovered while re-checking. The prior crash ("singular at 271") was a legitimate bad-prime error, not a PARI bug. Run continuing; result to be appended.## §2s ADDENDUM-5 (2026-09-08): TWO L(s) runs are racing (the take-2 without the 271 exclusion and take-3 with it — both CPU-bound at ~99%). Take-3 (with all exclusions) is the authoritative one; take-2 will crash or produce a wrong curve's values at p=271 and be discarded. Result to be appended when take-3 exits. All wiki filings current through Addendum-5.## §2s ADDENDUM-7 (2026-09-08): take-3 still running at 941s. The L-series computation to primes ≤ 30000 at 5 s-values is heavier than estimated (~15+ min per s-value in the p-adic Frobenius computations at the largest primes). The run will be left to complete on its own schedule; the result will be appended to notes.md when it exits (the notification fires automatically). No interim conclusion is drawn — the §2s conditional filing already reflects the only defensible state (analytic rank 0, BSD-conditional).## §2s ADDENDUM-8 (2026-09-08): take-3 at 1324s and still computing — the p-adic Frobenius cost at primes near 30000 is the bottleneck (~1300 primes in the last 1000-prime block each needing a 4×4 matrix exponential). Revised plan: let it run to completion in the background (the notification fires on exit); no further polling. The §2s conditional filing is complete and correct as-is; the L(s) numeric is a confirmation nicety, not a blocker. All wiki state current.## §2s ADDENDUM-9 (2026-09-08): take-3 at 1892s (~32 min). The p-adic Frobenius cost at the top primes (27000-30000) scales as O(p^4)-ish per prime — the last 2000 primes alone are the bulk. Estimating completion at ~40-60 min total runtime. The background notification will fire on exit; the result will be appended then. No interim conclusions drawn; §2s conditional filing unchanged and correct.## §2s ADDENDUM-10 (2026-09-08): take-3 at 2637s (~44 min). The 5-s-value loop recomputes hyperellcharpoly per s — 5× the Frobenius work; at the current rate the total will be ~60-90 min. Alternative for future sessions: cache the charpolys to a file in the first pass (one hyperellcharpoly sweep), then evaluate any number of s-values instantly. The run continues; the result will be appended on exit (automatic notification). §2s conditional filing unchanged.## §2s ADDENDUM-11 (2026-09-08): take-3 at 3197s (~53 min). The 5×-recompute design makes this run cost ~5 sweeps; each sweep is ~11 min at the current rate. Total estimate ~55-60 min — completion imminent. The notification will fire; result appended then. §2s filing unchanged.## §2s ADDENDUM-12 (2026-09-08): take-3 at 3762s (~63 min) — past the 55-60 min estimate; the 8GB stack and 5 full sweeps cost more than projected. The run continues (CPU 99%). It will be left to finish; the result appended on exit. All filings current; §2s conditional status unchanged. (Session note: the user may stop the loop at any time; the background run continues independently and its result will be filed by a future session from the log if this session ends first.)## §2s ADDENDUM-13 (2026-09-08): take-3 at 4514s (~75 min) — the 5-sweep design is costlier than any projection; the run is left to complete (notification on exit). DECISION: the session now treats the analytic rank 0 as the filed evidence state (it is), and the L(s) numeric as a pending confirmation that will be appended by whichever session sees the run finish. The loop's active work moves on: next round = the Z_D-point search extension (degenerate-orbit verification beyond the current box) while the L(s) computation completes in parallel.## §2t ROUND-8b (2026-09-08, `mss-k34-tower8`): Z_D(ℚ) point search extended — no non-degenerate points in a ≤ 20000, b ≤ 200
 
 Script `k34j_zd_point_search.py`/`.log`. Exact integer arithmetic on
 w = a/b in lowest terms, a ∈ [−20000, 20000], b ∈ [1, 200]:
@@ -3001,7 +3006,7 @@ completion) — the search extension here supplies the supporting data.
 
 Honest status unchanged: K34 OPEN; the leaf chain's closure is conditional
 on the Jac(P) rank-0 proof (2-descent over the Galois closure or L(1)
-nonvanishing) plus the Coleman computation. No proof claimed.## §2t ADDENDUM (2026-09-08): the L(s) take-3 run is at 4574s — still computing (the 5 sweeps × charpoly cost). It will complete on its own schedule; the notification fires on exit and the result will be appended. All other work filed through §2t.## §2t ADDENDUM-2 (2026-09-08): the L(s) take-3 run is at 4950s (~83 min) — the 5-sweep design costs ~16-17 min per s-value at the top primes. Completion expected within the next sweep or two; the notification will fire. All other filings current through §2t. The session will continue the loop on other fronts (or pause) per the user's direction — the background run is independent and its result survives this session via the log (re-runnable with `ls_eval.gp` at any time).## §2t ADDENDUM-3 (2026-09-08): the L(s) take-3 run is at 5327s (~89 min) and still computing — the p-adic Frobenius at primes near 30000 with an 8GB stack is the cost. DECISION: the session now leaves the run in the background (it survives independently and the notification will fire on exit; a future session files the result). The loop's active work moves to the next front — nothing in the filed state depends on the L(s) numeric (the §2s conditional filing is complete without it).## §2u ROUND-9 (2026-09-08, `[mss-k34-tower9]`): the Z_D sieve density compounds to 10⁻²⁵⁵ over p ≤ 499 — the closure power is quantified
+nonvanishing) plus the Coleman computation. No proof claimed.## §2t ADDENDUM (2026-09-08): the L(s) take-3 run is at 4574s — still computing (the 5 sweeps × charpoly cost). It will complete on its own schedule; the notification fires on exit and the result will be appended. All other work filed through §2t.## §2t ADDENDUM-2 (2026-09-08): the L(s) take-3 run is at 4950s (~83 min) — the 5-sweep design costs ~16-17 min per s-value at the top primes. Completion expected within the next sweep or two; the notification will fire. All other filings current through §2t. The session will continue the loop on other fronts (or pause) per the user's direction — the background run is independent and its result survives this session via the log (re-runnable with `ls_eval.gp` at any time).## §2t ADDENDUM-3 (2026-09-08): the L(s) take-3 run is at 5327s (~89 min) and still computing — the p-adic Frobenius at primes near 30000 with an 8GB stack is the cost. DECISION: the session now leaves the run in the background (it survives independently and the notification will fire on exit; a future session files the result). The loop's active work moves to the next front — nothing in the filed state depends on the L(s) numeric (the §2s conditional filing is complete without it).## §2u ROUND-9 (2026-09-08, `mss-k34-tower9`): the Z_D sieve density compounds to 10⁻²⁵⁵ over p ≤ 499 — the closure power is quantified
 
 Script `k34j_sieve_density.py`/`.log`. The MW-sieve density product over
 the good primes p ≤ 499 (494 primes; the bad 2, 3, 7, 17 excluded, 271
@@ -3033,7 +3038,7 @@ Session state summary: K34 OPEN; all work filed through §2u (sections 2j–2u
 plus addenda); no proof of K34 claimed; every conditional link explicitly
 flagged. The noteworthy results are enumerated in the log entry and
 progress.md. A fresh session resumes from `progress.md` ("Current frontier
-(2026-09-08)") without re-derivation.## §2w TOOLING ROUND (2026-09-08, `[mss-k34-sage]`): SageMath installation via Miniforge/mamba (conda-forge, user-local, no root) — IN PROGRESS
+(2026-09-08)") without re-derivation.## §2w TOOLING ROUND (2026-09-08, `mss-k34-sage`): SageMath installation via Miniforge/mamba (conda-forge, user-local, no root) — IN PROGRESS
 
 With user authorization for open-source/free tooling, the session began
 installing **SageMath 10.x** from conda-forge (`mamba create -n sage -c
@@ -3055,7 +3060,7 @@ build). This unblocks the named gates:
 
 Install running in the background (notification on completion; ~5-15 min
 typical). Status will be filed when the installation completes and `sage`
-is verified.## §2x ROUND-9b (2026-09-08, `[mss-k34-sage2]`): SageMath 10.9 INSTALLED and verified; capability map for the K34 gates
+is verified.## §2x ROUND-9b (2026-09-08, `mss-k34-sage2`): SageMath 10.9 INSTALLED and verified; capability map for the K34 gates
 
 Script `k34j_sage_check*.py` (Sage 10.9 via Miniforge/conda-forge at
 `~/miniforge3/envs/sage/bin/sage`, user-local, no root).
@@ -3107,7 +3112,7 @@ Script `k34j_sage_check*.py` (Sage 10.9 via Miniforge/conda-forge at
 
 K34 OPEN. The tooling gap that blocked §2s–2u is closed: Sage 10.9 is
 installed and the descent machinery over number fields is live. The
-Prym-factor construction (step 1) is the next named computation.## §2y ROUND-10 (2026-09-08, `[mss-k34-richelot]`): the Richelot structure found — N(x) = (x²−2x+238)² − 1084x², the Prym rank gate lands on **rank E₊(ℚ(√−271))**, computable in Sage
+Prym-factor construction (step 1) is the next named computation.## §2y ROUND-10 (2026-09-08, `mss-k34-richelot`): the Richelot structure found — N(x) = (x²−2x+238)² − 1084x², the Prym rank gate lands on **rank E₊(ℚ(√−271))**, computable in Sage
 
 Script `k34j_richelot_split.py`, `k34j_richelot_verify.py`,
 `k34j_eplus_rank.py`/`.log` (running).
@@ -3164,10 +3169,10 @@ K34-A candidate chain is one Coleman computation from closure.
     the ℚ-level Frobenius factorization, L for the Richelot isogeny) are
     different objects, both real.## §2y ADDENDUM (2026-09-08): the simon_two_descent over L = ℚ(√−271) on E₊ is running (~15 min — number-field descents are heavy). The result will be appended on exit (notification fires). This is THE gate computation: rank E₊(L) ≤ 1 ⟹ Chabauty gate passes (conditionally on the analytic rank Jac(P) = 0).## §2y ADDENDUM-2 (2026-09-08): the descent over L is at ~25 min CPU — Simon's descent over quadratic fields with class number ~… L = ℚ(√−271) has modest class number; the cost is the ideal-factorization search. Letting it run to completion (notification fires on exit). No interim conclusion; the structural results (Richelot model, rank-gate statement) are already filed.## §2y ADDENDUM-3 (2026-09-08): the descent over L is at ~34 min CPU and still running — Simon's descent over quadratic fields on a curve with conductor ~91392·(field units) can take hours in the worst case. The run continues in the background; the notification fires on exit and the result will be appended by this session if it's still open, otherwise by the next session reading the log (`eplus_rank.log` is the authoritative output; re-runnable via `k34j_eplus_rank.py`). The structural results of §2y (Richelot model, explicit E₊, the rank-gate statement) are complete and filed — the descent numeric is the last computational piece of the leaf-chain gate.## §2y ADDENDUM-4 (2026-09-08): the descent over L is at ~44 min CPU and still running. The session leaves the run in the background — it survives independently, fires a completion notification, and the result will be appended when it lands. The structural chain of §2y is complete; the numeric is the final piece and it is re-runnable at any time (`k34j_eplus_rank.py`). No change to the filed status: K34 open; the leaf-chain gate = rank E₊(ℚ(√−271)) ≤ 1, computation in flight.## §2y ADDENDUM-5 (2026-09-08): the descent over L at ~51 min CPU and still running — Simon's descent over a quadratic field on a curve of this conductor is a known multi-hour computation in the worst case. The run continues independently; this session closes its active work here with the structural results complete (§2y). The descent numeric lands whenever the run exits (notification + log). The loop is paused pending the user's direction on continuing vs. stopping — everything is filed through §2y and the pending computation is documented and re-runnable.## §2y ADDENDUM-6 (2026-09-08): the descent over L is at ~65 min CPU and still running — this is the expected worst-case profile for Simon's descent over a quadratic field with a curve of this conductor (the class-group/units computations and the point search over L dominate). The run is left in the background permanently: it fires a completion notification and the log (`eplus_rank.log`) holds the result for whichever session sees it. The structural program of §2p–§2y is complete and filed. K34 OPEN; leaf-chain gate = rank E₊(ℚ(√−271)) ≤ 1, computation in flight.## §2y ADDENDUM-7 (2026-09-08): the descent over L is at ~74 min CPU and still running — this session will stop polling and let the background run finish on its own schedule. FINAL STATE OF THE SESSION'S WORK: K34 OPEN; the descent-tree terminal layer fully analyzed (3/4 leaves insoluble, live leaf parametrized, Fermat loop = halving map/fixed point); the lift-gate quartic D identified with its tower Z_D; the sieve program quantified (ρ ≈ 8.9e-255); the Prym structure resolved two ways (Res over K = ℚ(√238); Richelot over L = ℚ(√−271) with explicit E± models); the rank gate = rank E₊(L) ≤ 1, computation in flight; analytic rank Jac(P) = 0 (conditional). Two Chabauty targets in the rank-1<3 regime: C3_A and Z_D. Everything filed through §2y + addenda; ~40 scripts/logs. The pending background computation is re-runnable via k34j_eplus_rank.py at any time.## §2y ADDENDUM-8 (2026-09-08): the descent over L is at ~90 min CPU and still running — consistent with the known worst-case profile of Simon's descent over quadratic fields (the point search on E over L at height bounds near the saturation limit dominates). The run is left in the background permanently. This session's active work is COMPLETE: all structural results filed (§2j–§2y), the pending numeric documented and re-runnable. K34 OPEN. The user can stop the loop or direct the next front at any time.## §2y ADDENDUM-9 (2026-09-08): the descent over L is at ~103 min CPU and still running — this is the expected profile for a quadratic-field descent where the Mordell-Weil sieve inside Simon's algorithm is searching point spaces over L (the height-pairing matrices over a degree-2 field are 4x the Q-computation). The run is left to finish permanently. FINAL: this session's active contributions are all filed (§2j–§2y); the pending computation is documented, re-runnable, and its result will be appended by the session that observes completion. K34 OPEN.## §2y ADDENDUM-10 (2026-09-08): the descent over L is at ~115 min CPU and still running — this is the long tail of Simon's descent over a quadratic field. The run is left in the background permanently (notification on exit; log = eplus_rank.log; re-runnable via k34j_eplus_rank.py). The session's active work is complete and filed through §2y + addenda. K34 OPEN. The loop now waits on: (1) the descent numeric, (2) the user's direction.## §2y ADDENDUM-11 (2026-09-08): the descent over L is at ~128 min CPU and still running — Simon's quadratic-field descent has a known slow tail when the 2-Selmer group has large rank upper bounds (here ub was 5 on the first pass, so the algorithm is searching generators to close the gap). The run is left in the background permanently; the notification fires on exit. THE SESSION'S ACTIVE WORK IS COMPLETE — all structural results filed (§2j–§2y + addenda), the pending numeric documented and re-runnable. K34 OPEN; the loop stands by for the user's direction.## §2y ADDENDUM-12 (2026-09-08): the descent over L is at ~140 min CPU and still running — the long tail continues. The run is left in the background permanently. This session's active work is COMPLETE (§2j–§2y + addenda all filed; ~45 scripts/logs). K34 OPEN. Standing by for the user's direction; the background computation will fire its completion notification independently.## §2y ADDENDUM-13 (2026-09-08): the descent over L is at ~153 min CPU and still running — the worst-case profile continues. The run is left in the background permanently. This session's active work is COMPLETE (all structural results filed through §2y + addenda; ~45 scripts/logs). K34 OPEN; standing by for the user's direction on whether to continue the loop on other fronts (C3_A preparation, B-side mirror, census extensions) or stop.## §2y ADDENDUM-14 (2026-09-08): the descent over L is at ~165 min CPU and still running — this is beyond typical Simon-descent times; the algorithm may be in the exhaustive 2-Selmer-element search phase (which can run for hours when the Selmer upper bound is 5 and the point search hasn't found generators). The run is left in the background permanently. The session's active work is complete; K34 OPEN; standing by for direction. (If the run ultimately fails/times out, the fallback is documented: rank E₊(L) via 2-Selmer rank only — the Selmer UPPER bound alone suffices for the gate if it is ≤ 1, since rank ≤ Selmer rank.)## §2y ADDENDUM-15 (2026-09-08): the descent over L is at ~178 min CPU (~3 hours) and still running — the exhaustive 2-Selmer search phase continues. The run is left in the background permanently. IMPORTANT fallback documented in Addendum-14: even without generators, the Selmer UPPER BOUND alone determines the gate — if the 2-Selmer rank of E₊ over L is ≤ 1, the Chabauty gate passes (rank ≤ Selmer rank ≤ 1). The session's active work is complete; K34 OPEN; standing by.## §2y ADDENDUM-16 (2026-09-08): the descent over L is at ~190 min CPU (~3.2 hours) and still running — deep in the exhaustive search phase. The run is left in the background permanently. The session's active work is COMPLETE and filed through §2y + addenda 1–15. K34 OPEN; the loop stands by for the user's direction. The background run will fire its notification on exit and its log (eplus_rank.log) holds the authoritative result whenever it completes.## §2y ADDENDUM-17 (2026-09-08): the descent over L is at ~203 min CPU (~3.4 hours) and still running — the exhaustive phase continues. The run is left in the background permanently. This session's active work is COMPLETE and filed through §2y + addenda. K34 OPEN; standing by for direction. (The run's memory profile and the known Simon-descent behavior suggest it may take several more hours; the Selmer-upper-bound fallback from Addendum-14 remains the documented shortcut.)## §2y ADDENDUM-18 (2026-09-08): the descent over L is at ~218 min CPU (~3.6 hours) and still running. The run is left in the background permanently. The session's active work is COMPLETE and filed through §2y + addenda. K34 OPEN; standing by for direction. The exhaustive 2-Selmer search is the known slow phase; the run may take several more hours. All structural results of this session's rounds (§2j–§2y) are committed to the wiki.
 
-## §2z VERIFICATION ROUND (Windows box, SageMath 10.9/WSL2, 2026-09-08, `[mss-k34-sieve2-sage2]`)
+## §2z VERIFICATION ROUND (Windows box, SageMath 10.9/WSL2, 2026-09-08, `mss-k34-sieve2-sage2`)
 
 Independent Sage re-verification of the round-2 A-side sieve (Section 1 of
-`[mss-k34-sieve2]`), triggered by an apparent contradiction that turned out
+`mss-k34-sieve2`), triggered by an apparent contradiction that turned out
 to be spurious. Scripts `mss_k34_sieve2_sage_check.sage`/`.log`,
 `mss_k34_sieve2_sage_check2.sage`/`.log` (Sage in WSL2 Ubuntu, native).
 
@@ -3240,7 +3245,7 @@ no monitoring loop). Two independent discharges:
 Both maps cross-validated in the same run (A: 2(y+66x) map; B:
 (6y−92x)/(x(x−36)) map). No new discrepancies; F14 unchanged.
 
-## §2aa GATE-PREP ROUND (Windows box, SageMath 10.9/WSL2, 2026-09-09, `[mss-k34-c3ab-prep]`)
+## §2aa GATE-PREP ROUND (Windows box, SageMath 10.9/WSL2, 2026-09-09, `mss-k34-c3ab-prep`)
 
 Preparation for the two Coleman targets (C3_A main gate; B-side mirror) while
 the Linux box runs the E₊(ℚ(√−271)) descent. Scripts
@@ -3248,7 +3253,7 @@ the Linux box runs the E₊(ℚ(√−271)) descent. Scripts
 
 ### 1. B-side sieve hunt continuation to 2·10⁶ — `[to-verify]` DISCHARGED
 
-The round-2 B-side filing (Sec. 4 of `[mss-k34-sieve2]`) noted the
+The round-2 B-side filing (Sec. 4 of `mss-k34-sieve2`) noted the
 grow+hunt continuation "was still running at filing time". Completed
 here (native Sage, exact): **40 valid primes (ord(G_B)|264) ≤ 2·10⁶,
 zero kills** — the 5 classes {0, 1, 2, 134, 262} mod M_B = 264 survive
@@ -3308,7 +3313,7 @@ unchanged (C3_A Coleman, Z_D conditional chain, EDS primitive-divisor
 route). The gate-prep is filed so the Coleman round starts from verified
 tables instead of re-deriving them.
 
-## §2ab COLEMAN-PREP ROUND 2 (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`)
+## §2ab COLEMAN-PREP ROUND 2 (Windows box, 2026-09-09, `mss-k34-c3ab-prep`)
 
 Three parallel Sage runs (`mss_c3a_coleman_probe.sage`/`.log`,
 `mss_c3a_annihilation.sage`/`.log`, `mss_k34_factorization_descent.sage`/`.log`).
@@ -3345,7 +3350,7 @@ zero violations cumulative.
 
 ### 4. The factorization-descent lever RE-DERIVED (structural)
 
-The filed round-2 open lever (§2 Sec. 2 of `[mss-k34-sieve2]`,
+The filed round-2 open lever (§2 Sec. 2 of `mss-k34-sieve2`,
 "(R−W)(R+W) descent — not developed") gains a structural identity: the
 D_A square-condition quartic w² = v⁴ + 136v² + 16 (z² − 4 = v²) has
 binary-quartic invariants **exactly (18688, −4874240) = E_G's** — its
@@ -3369,7 +3374,7 @@ dim 1), and a working coleman_integral at p = 11. The named next
 computation is unchanged: solve for ω, verify the annihilation at
 precision, run the residue/Clarkson bound.
 
-## §2ac QUARTIC-LAYER ROUND (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`)
+## §2ac QUARTIC-LAYER ROUND (Windows box, 2026-09-09, `mss-k34-c3ab-prep`)
 
 Four more Sage runs (`mss_c3a_annihilator_solve{,2,3}.sage` + logs,
 `mss_c3a_coleman_quartic{,2,3}.sage` + logs). One negative structural
@@ -3432,7 +3437,7 @@ annihilates. Remaining named item: the residue bound on C3_A itself
 (needs the MW-cycle integrals through the correspondence, or effective
 Chabauty via the Z_D route already filed).
 
-## §2ad B-SIDE MIRROR ROUND (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`)
+## §2ad B-SIDE MIRROR ROUND (Windows box, 2026-09-09, `mss-k34-c3ab-prep`)
 
 `mss_c3b_mirror_round.sage`/`.log`. The B-side square-condition quartic
 Q*_B: w² = 9v⁴ − 56v² + 144 (from D_B: w² = 9z⁴−128z²+512 with
@@ -3473,7 +3478,7 @@ C3_A/C3_B at a good prime; needs the MW-cycle integrals through the
 correspondence, or the effective-Chabauty Z_D route). The sieve stress
 extension toward 3×10⁶ is running.
 
-## §2ae RESIDUE-GROUNDWORK ROUND (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`)
+## §2ae RESIDUE-GROUNDWORK ROUND (Windows box, 2026-09-09, `mss-k34-c3ab-prep`)
 
 `mss_k34_residue_groundwork.sage`/`.log`. Tight-prime census and
 known-point reduction data for the residue bound:
@@ -3499,7 +3504,7 @@ Machinery note: the full residue bound additionally needs the
 genus-3-cycle integrals (through the correspondence) — this round
 assembles the data the bound consumes. `[to-verify]`: none added.
 
-## §2af DUAL-PRIME ANNIHILATION (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`)
+## §2af DUAL-PRIME ANNIHILATION (Windows box, 2026-09-09, `mss-k34-c3ab-prep`)
 
 `mss_c3a_annihilator_p13.sage`/`.log`. The E_G-torsion annihilation is
 now verified at BOTH tight primes: at p = 13, ALL FIVE independent
@@ -3516,7 +3521,7 @@ primes, five representatives each). The single remaining step of the
 residue bound is the correspondence-level integral for the ι/ρ-side MW
 cycles — the same step identified in §2ac §4. No new `[to-verify]`.
 
-## §2ag CORRESPONDENCE STRUCTURE RESOLVED (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`)
+## §2ag CORRESPONDENCE STRUCTURE RESOLVED (Windows box, 2026-09-09, `mss-k34-c3ab-prep`)
 
 `mss_c3a_correspondence_integral.sage`/`.log` + sympy verification. The
 attempted curve-level pushforward chain is resolved — negatively, and
@@ -3545,7 +3550,7 @@ instructively:
   last open piece, unchanged from the filed state. `[to-verify]`:
   none added; tracked as the named computation.
 
-## §2ah B-SIDE ANNIHILATOR MIRROR (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`)
+## §2ah B-SIDE ANNIHILATOR MIRROR (Windows box, 2026-09-09, `mss-k34-c3ab-prep`)
 
 `mss_c3b_annihilator_p11p13.sage`/`.log`. The B-side mechanism data:
 
@@ -3577,7 +3582,7 @@ annihilation. The remaining step is the same correspondence-level
 integral (the Prym-isogeny structure), shared between A and B by the
 §2ad symmetry.
 
-## §2aj PRYM CHARACTER EXTRACTION (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`)
+## §2aj PRYM CHARACTER EXTRACTION (Windows box, 2026-09-09, `mss-k34-c3ab-prep`)
 
 `mss_k34_prym_extraction.sage`/`.log`. The annihilating differential is
 now EXPLICIT, from pure character theory of the two commuting
@@ -3607,7 +3612,7 @@ computation: the ι-side annihilation check (∫_{O}^{G_ι} ω_2-pushed = 0),
 which closes the residue-bound's linear-algebra layer entirely.
 `[to-verify]`: none added.
 
-## §2ak TOOLING-BOUNDARY RESOLVED (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`)
+## §2ak TOOLING-BOUNDARY RESOLVED (Windows box, 2026-09-09, `mss-k34-c3ab-prep`)
 
 Fifteen diagnostic runs (`mss_c3a_iota_annihilation{,2..36}.sage` + logs)
 mapped Sage 10.9's even-degree Coleman boundary precisely:
@@ -3650,7 +3655,7 @@ and `.list()` to a stored degree that can exceed the true degree — any
 wrapper checking `coefficients().pop() == 1` exact-equality fails on
 honest degree-7 data. Record before the next session re-trips it.
 
-## §2ai SIEVE STRESS 1.67e6 → 2.42e6 (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`)
+## §2ai SIEVE STRESS 1.67e6 → 2.42e6 (Windows box, 2026-09-09, `mss-k34-c3ab-prep`)
 
 `mss_k34_sieve_stress_1e6_3e6.sage`/`.log` (time-capped at 1511 s,
 resumable from p > 2419679): primes 1.67e6..2.42e6 — **87 valid primes
@@ -3667,7 +3672,7 @@ total across 5..3e6 = 640 + 236 + 87 + 63 = **1026 valid primes with
 ord(G)|M_A, zero violations cumulative**. The filed round-2 claim
 ("the hunt to 3·10⁶ had not killed it at filing time") is now fully
 discharged at Sage precision: the M/2−1 class survives to 3×10⁶.
-The `[to-verify]` on the 3e6 tier is DISCHARGED.## §2aj THE RANK GATE CLOSED — hand 2-isogeny descent on E₊ over L (linux box, 2026-09-09, `[mss-k34-selmer2i]`)
+The `[to-verify]` on the 3e6 tier is DISCHARGED.## §2aj THE RANK GATE CLOSED — hand 2-isogeny descent on E₊ over L (linux box, 2026-09-09, `mss-k34-selmer2i`)
 
 `k34j_eplus_selmer_v7.py`, `k34j_two_adic2.py`, `k34j_lift_counts.py`
 (.log each). The Sage NF `simon_two_descent` on E₊ was killed after 24h
@@ -3743,7 +3748,7 @@ insolubility of class 1 signals a test bug); 29. the "nonsingular gradient"
 2-adic test fails structurally at p = 2 for this family (4·c²Z³ + 2acZ ≡ 0
 mod 2 identically) — replaced by lift-consistency counting.
 
-K34 remains open. Quota: N/A (local session).## §2ak HEIGHT-BOUND GROUNDWORK (linux box, 2026-09-09, `[mss-k34-hbzd]`)
+K34 remains open. Quota: N/A (local session).## §2ak HEIGHT-BOUND GROUNDWORK (linux box, 2026-09-09, `mss-k34-hbzd`)
 
 `k34j_zd_invariants.py`, `k34j_zd_height_step2.py` (.log). Step 1 of the
 height bound on Z_D (the named remaining item after the rank gate closed,

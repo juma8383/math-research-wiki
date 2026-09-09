@@ -19,7 +19,7 @@ Pillai's conjecture (explicitly listed as open in Waldschmidt's survey
 arXiv:0908.4031, quoting Bilu–Bugeaud–Mignotte Problem 3; only $k=1$ is
 solved — Catalan–Mihăilescu). Isolated in
 [[beals_conjecture]] attempt-25 because the stratification theorem
-([[near-miss-stratification]] T2) shows it is *exactly* the obstruction
+([[[near-miss-stratification]]] T2) shows it is *exactly* the obstruction
 between "all recorded gap-1 near-misses are degenerate" and a theorem: under
 it, the universal families $(t^r,1,t^p)$, $(1,t^r,t^q)$ are the only unit-base
 gap-1 near-misses of every Beal-open signature, globally.
@@ -45,7 +45,7 @@ gap-1 near-misses of every Beal-open signature, globally.
    $215{,}547{,}548$ $(v,Y)$ pairs and $4{,}472{,}139{,}830$ root checks
    (`scripts/pillai2_ext_search.py`, logs `pillai2_1e22.log`,
    `pillai2_1e24.log`, `pillai2_1e25.log`). This discharges the preprint's
-   final pre-submission gate ([near-miss-stratification], §9). **Bound-
+   final pre-submission gate ([[near-miss-stratification]], §9). **Bound-
    pushing declared saturated at $10^{25}$** — future evidence should be
    structural (mod-8 residue $X-Y\equiv2\pmod8$, Jacobi reciprocity,
    Bennett–Siksek-style modular sieves), not ladder extensions.
@@ -88,7 +88,7 @@ to-verify against paper bodies before load-bearing reuse).**
    odd, hence $X-Y\equiv2\pmod 8$ (odd bases, $x^u\equiv x\bmod 8$ for odd
    $u$) — a cheap necessary condition for targeted future searches.
 
-## Structural entry points (2026-09-01 loop block) `[pillai2-local-sieve]`
+## Structural entry points (2026-09-01 loop block) `pillai2-local-sieve`
 
 All three items below are **proved here** (two lines each), and the third
 is **quantified computationally** over the full exponent range. They amend
@@ -229,7 +229,7 @@ inside the searched boxes, Poisson $P(0)\approx68\%$).
 **What would prove/disprove it.** Disprove: any single solution of
 $X^u-Y^v=2$ with $u,v$ odd primes. Prove: even one instance pair (e.g.
 $X^5-Y^3=2$) completes the unit-base gap-1 classification for every
-signature containing that pair (via [[near-miss-stratification]] T2).
+signature containing that pair (via [[[near-miss-stratification]]] T2).
 
-**Status.** Open. Related: [[beal-equation]], [[near-miss-stratification]],
+**Status.** Open. Related: [[beal-equation]], [[[near-miss-stratification]]],
 [[corner-principle]].

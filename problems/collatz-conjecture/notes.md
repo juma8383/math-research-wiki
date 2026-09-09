@@ -1,9 +1,14 @@
+---
+type: notes
+problem: collatz-conjecture
+---
+
 # Collatz — notes (scratch / dead ends / half-formed ideas)
 
 > Appended 2026-08-31 (breakthrough-hunt session). Two entries: one candidate
 > KILLED by prior art, one literature update.
 
-## [2026-08-31] m-cycle exclusion frontier has MOVED: Wang 2026 (Zenodo) claims m ≤ 93 — kills the "m=92 deadlock" candidate
+## 2026-08-31 m-cycle exclusion frontier has MOVED: Wang 2026 (Zenodo) claims m ≤ 93 — kills the "m=92 deadlock" candidate
 
 The breakthrough-hunt produced a candidate ("the m=92 deadlock theorem": the
 CF partial quotient $a_{44}=37$ of $\log_2 3$ leaves no K-rung covering the

@@ -32,8 +32,8 @@ The conjecture fails iff one of:
 - **(a) a nontrivial cycle** $\neq\{1,4,2\}$: a finite orbit not through $1$.
   A cycle of odd values $o_0,\dots,o_{m-1}$ satisfies
   $2^L=\prod_{i}(3o_i+1)/o_i$ (a Diophantine relation; $L$ total halvings,
-  $m$ odd steps) — this is the cycle equation [[thm-collatz-cycle-bounds]]
-  [[method-cycle-exclusion-linear-forms]].
+  $m$ odd steps) — this is the cycle equation [[collatz-cycle-bounds]]
+  [[cycle-exclusion-linear-forms]].
 - **(b) a divergent trajectory** $T^k(n)\to\infty$.
 
 Both are open. Anchor of the [[collatz_conjecture]] attack.

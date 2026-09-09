@@ -1,3 +1,8 @@
+---
+type: progress
+problem: poincare-conjecture
+---
+
 # Progress — Poincaré Conjecture
 
 > Running state. **Read this first when resuming.** Consolidated through

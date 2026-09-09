@@ -1,3 +1,16 @@
+---
+type: problem
+slug: grimm-conjecture
+title: Grimm's Conjecture
+status: stub
+difficulty: unknown
+created: 2026-08-25
+last-updated: 2026-09-09
+tags: [to-verify]
+tools: []
+related: []
+---
+
 # Grimm's Conjecture
 
 > **STUB — folder started 2026-08-25; full attack pending.** Load-bearing

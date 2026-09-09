@@ -1,3 +1,16 @@
+---
+type: problem
+slug: rational-distance
+title: Rational Distance Problem
+status: stub
+difficulty: unknown
+created: 2026-08-25
+last-updated: 2026-09-09
+tags: [to-verify]
+tools: []
+related: []
+---
+
 # Rational Distance Problem
 
 > **STUB — folder started 2026-08-25; full attack pending.** Load-bearing

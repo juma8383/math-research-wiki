@@ -55,14 +55,14 @@ Every existing reduction mechanism uses one of those three; $(3,5,7)$ has none.
 ### (A) Modular — extend Darmon's Frey-variety program
 
 The Frey abelian variety *construction* is general (distinct-prime signatures
-are classified, Remark 2.4 in [[dv2022]]). What is undeveloped is the
+are classified, Remark 2.4 in [[darmon-program-2022]]). What is undeveloped is the
 *modular method* on it, plus the irreducibility input. Concretely a proof needs
 **both**:
 1. A level-lowering theorem for residual 2-dim Galois representations of
    GL₂-type abelian varieties over the totally real field
    $K=\mathbb Q(\zeta_r)^+$, for three-distinct-prime signatures.
 2. **Darmon Conjecture 1.2** — generalized-Mazur irreducibility for these
-   representations [[dv2022-irreduc-conjecture]] — currently wide open.
+   representations [[darmon-program-2022]] — currently wide open.
 
 This is the most *principled* direction (it generalizes the engine that
 actually closed FLT and the repeated-exponent cases). It is "two programs away,"
@@ -76,7 +76,7 @@ not one theorem. Real, but very hard.
 > curves, but it is **ineffective**. The effective precedent (Poonen–Schaefer–
 > Stoll, $(2,3,7)$) needs a **spherical** (finite) triangle group; $(3,5,7)$ is
 > hyperbolic, so the technique is unavailable. See
-> [[method-triangle-group-descent]] and the refined synthesis.md. The text is
+> [[triangle-group-descent]] and the refined synthesis.md. The text is
 > kept here unchanged as the append-only record; treat the correction as
 > authoritative.
 
@@ -92,9 +92,9 @@ not guaranteed for the curves that would arise.
 ## Directions that sound promising but recapitulate a known wall (ruled out)
 
 - **abc conjecture** — gives only Darmon–Granville-strength finiteness
-  [[method-abc-finiteness]]; no "finitely many → zero" upgrade. Not a path.
+  [[abc-finiteness]]; no "finitely many → zero" upgrade. Not a path.
 - **A cleverer descent** — descent needs the cyclotomic factorization of
-  $x^p+y^q$, which does not exist for $p\neq q$ [[method-infinite-descent]].
+  $x^p+y^q$, which does not exist for $p\neq q$ [[infinite-descent]].
   No algebraic factorization → no descent, regardless of cleverness.
 - **Density / metric / approximation arguments** — refuted empirically by
   "tight-by-1" (attempt-01): coprime triples can land exactly 1 below a

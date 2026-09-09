@@ -1,3 +1,16 @@
+---
+type: problem
+slug: brocard-problem
+title: Brocard's Problem (Brown Numbers)
+status: stub
+difficulty: unknown
+created: 2026-08-25
+last-updated: 2026-09-09
+tags: [to-verify]
+tools: []
+related: []
+---
+
 # Brocard's Problem (Brown Numbers)
 
 > **STUB — folder started 2026-08-25; full attack pending.** Load-bearing
@@ -41,7 +54,7 @@ Equivalence" theorem (Brown number ⟺ $n!/8$ triangular) + a generative
 p-adic sieve (LLL-reduction angle); non-peer-reviewed preprint, does not
 claim to resolve the problem `[summary — abstract-verified, body unread]`.
 
-## Structural lemmas (2026-09-01 attack block) `[brocard-structural]`
+## Structural lemmas (2026-09-01 attack block) `brocard-structural`
 
 **Lemma B1 (triangular reformulation).** For $n\ge4$, $n!+1=m^2$ ⟺
 $n!/8=T_{(m-1)/2}$ is a triangular number. *Proof:* $n\ge4$ ⟹

@@ -1,3 +1,8 @@
+---
+type: progress
+problem: hodge-conjecture
+---
+
 # Hodge Conjecture — progress (read-first file)
 
 > Start here. This is the navigational entry point; for structural depth see
@@ -13,13 +18,13 @@
 The Hodge conjecture asks that the cycle class map
 $\mathrm{cl}:\mathrm{CH}^p(X)\otimes\mathbb Q\to\mathrm{Hdg}^p(X)$ be
 **surjective** for all $p$ on every smooth projective $X/\mathbb C$
-[[def-hodge-class-cycle-map]].
+[[hodge-class-cycle-map]].
 
 | Codim $p$ | Degree $2p$ | Status |
 |---|---|---|
 | $0$ | $0$ | trivial ($[\mathrm{pt}]$) |
-| $1$ | $2$ | **PROVEN** — Lefschetz $(1,1)$ [[thm-lefschetz-1-1]] |
-| $n-1$ | $2n-2$ | proven (hard Lefschetz ← $p=1$) [[thm-hard-lefschetz-reduction]] |
+| $1$ | $2$ | **PROVEN** — Lefschetz $(1,1)$ [[lefschetz-1-1]] |
+| $n-1$ | $2n-2$ | proven (hard Lefschetz ← $p=1$) [[hard-lefschetz-reduction]] |
 | $n$ | $2n$ | trivial ($[X]$) |
 | $2\le p\le n-2$ ($n\ge4$) | middle | **OPEN** — first case $p=2,n=4$ |
 
@@ -34,7 +39,7 @@ dimension $\ge4$") [hodge-codim-2-open].
 - Hard Lefschetz: reduces $2p\leftrightarrow 2n-2p$; known degrees
   $0,2,2n-2,2n$ only [hodge-hard-lefschetz-reduction] [hodge-known-degrees-0-2-2n].
 - Integral HC FAILS: Atiyah–Hirzebruch, Kollár — only $\mathbb Q$ conjectured
-  [[thm-integral-hodge-fails]] [hodge-integral-fails].
+  [[integral-hodge-fails]] [hodge-integral-fails].
   **attempt-04 (primary-source, two sources of failure):** (1) **torsion** —
   Atiyah–Hirzebruch 1961 (Topology 1, 25–45): torsion Hodge classes trivially
   $(k,k)$ but non-algebraic for $k\ge2$ (true for $k=1$ by Lefschetz $(1,1)$),
@@ -98,9 +103,9 @@ dimension $\ge4$") [hodge-codim-2-open].
 - Algebraicity essential: Zucker tori (Kähler ≠ projective)
   [hodge-algebraicity-essential].
 - Absolute Hodge (Deligne): all Hodge classes on abelian varieties absolute
-  Hodge — strongest evidence [[thm-absolute-hodge-motivated]] [hodge-absolute-hodge].
+  Hodge — strongest evidence [[absolute-hodge-motivated]] [hodge-absolute-hodge].
 - Cattani–Deligne–Kaplan: Hodge locus algebraic
-  [[thm-cattani-deligne-kaplan]] [hodge-cattani-deligne-kaplan].
+  [[cattani-deligne-kaplan]] [hodge-cattani-deligne-kaplan].
   **attempt-02 (primary-source):** JAMS 8(2) 1995, Theorem 1.1 + Corollaries
   1.2–1.4; **UNCONDITIONAL** (answers André Weil's question; previously known
   only HC-conditionally) — "Hodge classes behave as if algebraic" is an
@@ -110,7 +115,7 @@ dimension $\ge4$") [hodge-codim-2-open].
 - Standard conjectures B/C (Grothendieck): inverse Lefschetz + Künneth
   algebraic; known for surfaces, abelian varieties, hyper-Kähler $K3^{[n]}$
   (Charles–Markman 2013); motive reduction of HC
-  [[thm-standard-conjectures-motives]] [hodge-standard-conjectures].
+  [[standard-conjectures-motives]] [hodge-standard-conjectures].
   **attempt-03 (primary-source):** Charles–Markman, *Compositio Math.* 149(3)
   (2013), 481–494, DOI 10.1112/S0010437X12000607 — Theorem 1.1 proves the
   **Lefschetz** standard conjecture (Conj. **B**) for all smooth projective
@@ -126,7 +131,7 @@ dimension $\ge4$") [hodge-codim-2-open].
 - Abelian sub-cases: products of elliptic curves, Fermat type (Shioda), simple
   prime-dim (Tankeev/Ribet), fourfolds I/II (Moonen–Zarhin), some Weil type
   (Schoen) [hodge-abelian-cases].
-- Generalized HC (Grothendieck coniveau) [[conj-generalized-hodge]]
+- Generalized HC (Grothendieck coniveau) [[generalized-hodge]]
   [hodge-generalized-conjecture]; Hodge's stronger original form false.
 
 ## Open content
@@ -147,11 +152,11 @@ all codimensions; Hodge classes are computable; for $p=1$ the **exponential
 sequence** makes $\mathrm{Hdg}^1=\ker(H^2(\mathbb Z)\to H^2(\mathcal O))\subset
 \mathrm{Pic}$, and for projective $X$ the Néron–Severi group is algebraic
 divisors (GAGA) — the **analytic→algebraic bridge works for divisors**
-[[thm-lefschetz-1-1]]. The gap is the **control over this bridge in
+[[lefschetz-1-1]]. The gap is the **control over this bridge in
 codimension $\ge2$**: given a Hodge class of codim $\ge2$, no known mechanism
 produces algebraic cycles realizing it. The Abel–Jacobi / normal-function
 construction has no effective cycle-producing analogue in higher codimension
-[[method-analytic-algebraic-bridge]].
+[[analytic-algebraic-bridge]].
 
 **Unifying lens (analytic↔algebraic):** Hodge classes are *analytic* (Hodge
 decomposition); algebraic cycles are *algebraic*. The bridge is GAGA +
@@ -175,7 +180,7 @@ Serrin-index equality, YM's one-scale asymptotic freedom.
 
 ## Forward directions
 
-- **(A) Motive / standard-conjecture reduction** [[thm-standard-conjectures-motives]]:
+- **(A) Motive / standard-conjecture reduction** [[standard-conjectures-motives]]:
   prove the inverse Lefschetz (Conj. B) and Künneth components (Conj. C) are
   algebraic — known for surfaces, abelian varieties, hyper-Kähler $K3^{[n]}$;
   this makes the motive category Tannakian and reduces HC to a fully-faithful
@@ -191,11 +196,11 @@ Serrin-index equality, YM's one-scale asymptotic freedom.
   Picard-variety engine has no analogue for the diagonal's Künneth components
   or $\Lambda$); (ii) HC reduces to fully-faithfulness. The reduction target
   is itself unproven — exactly the Beal-reduction-to-specific-curves shape.
-- **(B) Codim-2 directly** [[method-analytic-algebraic-bridge]]: attack the
+- **(B) Codim-2 directly** [[analytic-algebraic-bridge]]: attack the
   first open case (codim-2 Hodge classes on a 4-fold) via Griffiths
   intermediate Jacobians / normal functions / Abel–Jacobi — the direct
   analytic→algebraic bridge at the frontier.
-- **(C) Structured sub-cases** [[thm-absolute-hodge-motivated]]: deepen the
+- **(C) Structured sub-cases** [[absolute-hodge-motivated]]: deepen the
   abelian-variety program (Weil type, type III in Albert classification);
   absolute Hodge / motivated cycles as the controlled evidence layer.
 

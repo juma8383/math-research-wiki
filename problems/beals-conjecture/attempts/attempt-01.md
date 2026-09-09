@@ -21,7 +21,7 @@ obstruction, and (d) the exact barrier for the modular method.
 
 ## 1. Reduction to the coprime, prime-exponent regime
 
-### 1a. Pairwise-coprime equivalence [[method-pairwise-coprime-reduction]]
+### 1a. Pairwise-coprime equivalence [[pairwise-coprime-reduction]]
 
 **Claim.** For a solution $A^x+B^y=C^z$, $\gcd(A,B,C)=1 \iff A,B,C$ are pairwise
 coprime.
@@ -36,7 +36,7 @@ $\geq 3$.* This is the clean target. (A solution like $3^3+6^3=3^5$ has
 $\gcd=3>1$ and is *allowed* — it is a "witness" that without the coprimality
 demand, solutions abound.)
 
-### 1b. Exponent reduction [[method-exponent-reduction]]
+### 1b. Exponent reduction [[exponent-reduction]]
 
 **Claim.** It suffices to rule out primitive solutions with each exponent an odd
 prime or $4$.
@@ -53,11 +53,11 @@ reciprocal condition $1/p+1/q+1/r\leq 1$ (equality only at $(3,3,3)$).
 
 ## 2. What is known unconditionally
 
-**Fermat's Last Theorem** [[thm-fermat-last]] (Wiles 1995): no positive
+**Fermat's Last Theorem** [[fermat-last]] (Wiles 1995): no positive
 solutions to $a^n+b^n=c^n$ for $n\geq 3$. This resolves signature $(p,p,p)$
 *to zero* — the only signature with $1/p+1/q+1/r=1$.
 
-**Darmon–Granville** [[thm-darmon-granville]] (1995): for *fixed* $(p,q,r)$ with
+**Darmon–Granville** [[darmon-granville]] (1995): for *fixed* $(p,q,r)$ with
 $1/p+1/q+1/r<1$, the primitive (pairwise-coprime) equation
 $x^p+y^q=z^r$ has only **finitely many** solutions (via Faltings/Mordell).
 
@@ -70,7 +70,7 @@ signature, show that the finite Darmon–Granville set is empty.* This reframes
 Beal as infinitely many finite-but-possibly-nonempty sets to kill, signature
 by signature.
 
-### Does abc close it? [[method-abc-finiteness]]
+### Does abc close it? [[abc-finiteness]]
 
 Checked: applying abc to $a=A^x,\ b=B^y,\ c=C^z$ (pairwise coprime, $a+b=c$)
 gives $C^z \le K_\varepsilon\,\mathrm{rad}(ABC)^{1+\varepsilon}$. Using
@@ -125,7 +125,7 @@ sit on elliptic fibers. (Filed as a spark in notes.md.)
 
 ---
 
-## 4. The Frey/modularity barrier [[method-frey-modularity]]
+## 4. The Frey/modularity barrier [[frey-modularity]]
 
 Why did FLT fall but Beal hasn't? The FLT engine:
 

@@ -1,3 +1,8 @@
+---
+type: notes
+problem: PvsNP
+---
+
 # Notes — P vs NP
 
 > Methodology + cross-problem links. Running research notes for

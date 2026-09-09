@@ -1,3 +1,8 @@
+---
+type: notes
+problem: birch-swinnerton-dyer
+---
+
 # Notes — Birch and Swinnerton-Dyer Conjecture
 
 Scratch / sparks / dead ends. Promote good ones into attempts.

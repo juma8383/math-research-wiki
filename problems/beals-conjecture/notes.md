@@ -1,3 +1,8 @@
+---
+type: notes
+problem: beals-conjecture
+---
+
 # Notes — Beal's Conjecture
 
 > Loose scratch: observations not yet worthy of a full attempt, candidate
@@ -9,14 +14,14 @@
   $A^x + B^y = C^z + 1$. For the cubic-cubic-cubic sub-case $a^3+b^3=c^3+k$,
   fixing $k$ ties to integral points on Mordell-type curves. Is there a uniform
   bound on coprime solutions to $a^3+b^3-c^3 = k$ as $k$ ranges? (Catalan
-  [[thm-catalan-mihailescu]] is the $k=1$, two-term case.) Worth a literature
+  [[catalan-mihailescu]] is the $k=1$, two-term case.) Worth a literature
   check.
 
 - **abc does not suffice.** Worked through in attempt-01: the abc conjecture
   yields, for $1/p+1/q+1/r<1$, that $C$ is bounded — i.e. finiteness per
   signature, *no stronger* than the unconditional Darmon–Granville. So abc is
   not the missing ingredient for the "zero" claim. File this so we don't
-  revisit. [[method-abc-finiteness]]
+  revisit. [[abc-finiteness]]
 
 - **Parametric coprime families with $\gcd>1$.** Many exact solutions are
   scalings of a single primitive relation, e.g. $3^3+6^3=3^5$ is

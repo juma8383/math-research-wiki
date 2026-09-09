@@ -30,7 +30,7 @@ attempts 02/03/06). All such neighbors:
 | $(3,5,5) = (5,5,3)$ | $(n,n,3)$, $n\geq3$ ($n=5$) | Darmon–Merel [rg2024-solved-sigs] |
 
 All three repeated-exponent neighbors of $(3,5,7)$ are **solved (zero primitive
-solutions)**, sourced in [[thm-solved-generalized-fermat-signatures]].
+solutions)**, sourced in [[solved-generalized-fermat-signatures]].
 
 ## Why this confirms the boundary
 

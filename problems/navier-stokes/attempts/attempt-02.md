@@ -79,7 +79,7 @@ discipline as Beal's (2,3,7) spherical→hyperbolic correction.
 
 Tao, *Finite time blowup for an averaged three-dimensional Navier–Stokes
 equation*, J. Amer. Math. Soc. (2016), DOI
-[10.1090/jams/838](https://doi.org/10.1090/jams/838) [[thm-tao-averaged-blowup]].
+[10.1090/jams/838](https://doi.org/10.1090/jams/838) [[tao-averaged-blowup]].
 
 The **averaged** bilinear operator
 $$\tilde B(u,v)=\int T_1\,B(T_2u,\,T_3v)\,d\mu(\omega),$$

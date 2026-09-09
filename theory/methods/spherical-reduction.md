@@ -35,7 +35,7 @@ impose the extra condition $W=y^2$ (i.e. the $W$-coordinate is a perfect square)
 together with primitivity, and the surviving candidates form a finite set
 governed by curves of genus $\geq 2$; resolve those by **Chabauty / Mordell–Weil
 sieve** (effective when the Jacobian has rank $0$,
-[[rg2024-faltings-algorithm]]). Conclusion: no non-trivial primitive solution.
+[[ratcliffe-grechuk-2024]]). Conclusion: no non-trivial primitive solution.
 
 ## The decisive scope limit
 

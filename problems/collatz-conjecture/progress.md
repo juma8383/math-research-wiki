@@ -1,3 +1,8 @@
+---
+type: progress
+problem: collatz-conjecture
+---
+
 # Collatz Conjecture — progress (read-first file)
 
 > Start here. Navigational entry point; structural depth in
@@ -11,7 +16,7 @@
 ## Exact frontier
 
 Collatz map $T(n)=n/2$ (even), $3n+1$ (odd); conjecture: every $N$ reaches $1$
-[[def-collatz-map]]. $\mathrm{Col}_{\min}(N):=\min_k T^k(N)$; conjecture =
+[[collatz-map]]. $\mathrm{Col}_{\min}(N):=\min_k T^k(N)$; conjecture =
 $\mathrm{Col}_{\min}(N)=1$ for all $N$.
 
 | Result | Scope | Status |
@@ -21,7 +26,7 @@ $\mathrm{Col}_{\min}(N)=1$ for all $N$.
 | Allouche/Korec: $\mathrm{Col}_{\min}<N^\theta$ | almost all, $\theta\downarrow0.79$ | proven [collatz-density-allouche-korec] |
 | Krasikov–Lagarias: count reaches 1 | $\#\{\}\gg x^{0.84}$ | proven [collatz-kl-count] |
 | Tao: $\mathrm{Col}_{\min}<f(N)$, any $f\to\infty$ | almost all, log-density | proven [collatz-tao-almost-bounded] |
-| No nontrivial $m$-cycle | $m\le75$; **$m\le91$ (Hercher 2023, added attempt-07)** | proven [collatz-cycle-simons-deweger] [collatz-cycle-hercher] |
+| No nontrivial $m$-cycle | $m\le75$; **$m\le91$ (Hercher 2023, added attempt-07)** | proven [collatz-cycle-simons-deweger] collatz-cycle-hercher |
 | **Every $N$ reaches 1** | **all $N$** | **OPEN** |
 
 The gap is the leap from **density** (almost all) to **pointwise** (every $N$).
@@ -29,7 +34,7 @@ The gap is the leap from **density** (almost all) to **pointwise** (every $N$).
 ## Verified base
 
 - Terras 1976 / Everett 1977: a.a. $\mathrm{Col}_{\min}(N)<N$ (natural density)
-  [[thm-collatz-density-results]] [collatz-density-terras].
+  [[collatz-density-results]] [collatz-density-terras].
   **attempt-03 (primary-source):** Terras, *Acta Arith.* **30**, 241–252 (1976);
   Everett, *Adv. Math.* **25**, 42–45 (1977). The set with finite **stopping
   time** $\sigma(n):=\min\{k:T^k(n)<n\}$ has density **1 at an exponential
@@ -54,7 +59,7 @@ The gap is the leap from **density** (almost all) to **pointwise** (every $N$).
   neither reaches pointwise.
 - Tao 2019/2022: a.a. (log-density) $\mathrm{Col}_{\min}(N)<f(N)$ for any
   $f\to\infty$ — "almost all orbits attain almost bounded values"
-  [[thm-collatz-tao-almost-bounded]] [collatz-tao-almost-bounded].
+  [[collatz-tao-almost-bounded]] [collatz-tao-almost-bounded].
   **attempt-02 (primary-source, Forum Math. Pi 10, 2022, e12, DOI
   10.1017/fmp.2022.8):** Theorem 1.3 confirmed. The **trade-off is the key
   fact:** Korec had $\mathrm{Col}_{\min}\le N^\theta$ ($\theta>\log3/\log4\approx
@@ -68,7 +73,7 @@ The gap is the leap from **density** (almost all) to **pointwise** (every $N$).
 - Steiner 1977 (no 1-cycles), Simons 2004 (no 2-cycles), Simons–de Weger 2010
   (no $m$-cycles $m\le75$), via linear form $\Lambda=(K+L)\log2-K\log3$ +
   transcendence (Laurent–Mignotte–Nesterenko, Rhin)
-  [[thm-collatz-cycle-bounds]] [[method-cycle-exclusion-linear-forms]]
+  [[collatz-cycle-bounds]] [[cycle-exclusion-linear-forms]]
   [collatz-cycle-steiner] [collatz-cycle-simons-deweger].
   **attempt-02 (primary-source, Acta Arith. 117, 2005 + 2010 update v1.44):**
   the **$m\le75$ is the 2010 update** (Oliveira e Silva $x_{\min}>5\cdot2^{60}$);
@@ -81,7 +86,7 @@ The gap is the leap from **density** (almost all) to **pointwise** (every $N$).
   uniform transcendence improvement or a non-linear-form approach.
 - Conway 1972: generalized Collatz maps universal → halting undecidable in
   general; 3n+1 is a weak/contracting case ($\mu=3<4=2^2$)
-  [[thm-collatz-conway-undecidability]] [collatz-conway-undecidable]
+  [[collatz-conway-undecidability]] [collatz-conway-undecidable]
   [collatz-matthews-watts].
   **attempt-04 (primary-source):** Conway, *Unpredictable Iterations* (1972)
   — generalized $g(n)=a_i n+b_i$ ($n\equiv i\pmod p$); Main Thm + Corollary:
@@ -180,13 +185,13 @@ contraction $3/4<1$ is a *distributional* statement over parity sequences; the
 parity sequence of a given $N$ is deterministic and uncontrolled, so a
 density-1 result cannot exclude a measure-zero exceptional set (which could
 contain a divergent trajectory or a nontrivial cycle)
-[[method-average-vs-pointwise-control]]. Tao: replacing $f\to\infty$ by a
+[[average-vs-pointwise-control]]. Tao: replacing $f\to\infty$ by a
 constant is "likely almost as hard as the full conjecture."
 
 The obstruction **splits** into two prior-problem flavors:
 - **(a) No nontrivial cycle** — Diophantine / transcendence (linear forms in
   logs $\Lambda=(K+L)\log2-K\log3$; excluded $m\le75$, open beyond)
-  [[method-cycle-exclusion-linear-forms]] — echoes Beal's generalized-Fermat
+  [[cycle-exclusion-linear-forms]] — echoes Beal's generalized-Fermat
   flavor [[beals_conjecture]].
 - **(b) No divergent trajectory** — analytic / ergodic control (need a
   per-trajectory contraction / Lyapunov; average $<1$ but no pointwise
@@ -205,7 +210,7 @@ controls its slice, and the open content is the leap beyond:
 
 ## Forward directions
 
-- **(A) Upgrade density → pointwise** [[method-average-vs-pointwise-control]]:
+- **(A) Upgrade density → pointwise** [[average-vs-pointwise-control]]:
   strengthen Tao's log-density result to natural density, then to a pointwise
   bound; the direct "almost all → all" attack. Closest to the heart.
   **attempt-02 sharpening (two stages, each with a named blocker):**
@@ -219,7 +224,7 @@ controls its slice, and the open content is the leap beyond:
   the full conjecture" (i.e. (A-ii) pointwise-with-constant ≈ the conjecture).
   Realistic compounding frontier = (A-i), a *control* improvement (of the
   $\exp(O(n^{1/2}))$ error), not resolution.
-- **(B) Cycle exclusion to all $m$** [[method-cycle-exclusion-linear-forms]]:
+- **(B) Cycle exclusion to all $m$** [[cycle-exclusion-linear-forms]]:
   push Steiner/Simons–de Weger beyond $m\le75$ via sharper linear-form-in-logs
   / transcendence bounds (the Diophantine sub-problem, Beal-flavored).
   **attempt-02 sharpening (primary-source):** splits into **(B-finite)**

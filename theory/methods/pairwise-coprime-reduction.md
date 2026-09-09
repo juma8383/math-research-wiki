@@ -27,5 +27,5 @@ pairwise-coprime (primitive) case first; the non-coprime solutions are
 "scalings" and carry no structural difficulty (e.g. $3^3+6^3=3^5$ is
 $3^3(1+2^3)$, $\gcd=3$).
 
-See [[method-exponent-reduction]] for the companion reduction on the
+See [[exponent-reduction]] for the companion reduction on the
 exponents.

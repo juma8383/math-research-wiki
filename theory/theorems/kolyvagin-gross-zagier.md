@@ -36,6 +36,6 @@ when $r_{\text{an}}=1$, so the theorem is unconditional given modularity.
 Kolyvagin's Euler system has the **shape of a single point**: one non-torsion
 Heegner point produces a one-dimensional family of cohomology classes, which
 can bound a Selmer group of rank $\le1$ but **not** rank $\ge2$. This is the
-central obstruction — see [[method-heegner-point-euler-system]]. Kolyvagin's
+central obstruction — see [[heegner-point-euler-system]]. Kolyvagin's
 own **Conjectures 3.32–3.35** [bsd-kolyvagin-conj] would extend the method to
 higher rank but remain unproven.

@@ -1,3 +1,9 @@
+---
+title: Source — MCSP Route A push (uniform-AC⁰ NP-hardness ⟹ P≠NP) (2026-08-21)
+date: 2026-08-21
+status: raw
+---
+
 # Source — MCSP Route A push (uniform-AC⁰ NP-hardness ⟹ P≠NP) (2026-08-21)
 
 **Tags:** `[honest-ceiling]` `[route-a-route-b]` `[murray-williams-2017]` `[locality-barrier]` `[goldilocks-structure]` `[route-a-compression-crux]` `[route-a-variant-gap]` `[route-a-dual-locality]` `[route-a-owf-escape]` `[thesis-formal-vs-slogan]` `[mcsp-nphard-owf]` `[mazor-pass-2024]` `[ilango-2020]` `[choprs-2020]`

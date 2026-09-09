@@ -12,7 +12,7 @@ tags: [verification, primary-source, higher-gross-zagier, kurihara-numbers, selm
 
 Cycle-17 Continue on BSD (cross-problem loop, second pass; green zone
 29.4% session / 57.6% weekly, 0 subagents). Attempt-04 deepened direction
-(A) but flagged `[bsd-higher-gz-kim-2022]` **to-verify** — Kim 2022
+(A) but flagged `bsd-higher-gz-kim-2022` **to-verify** — Kim 2022
 arXiv:2203.12161's Thm 2.3 (the max{cork Sel} statement + the
 Kolyvagin-conjecture condition) and the Kurihara-number definition were
 from a search summary and needed primary-source verification before
@@ -106,7 +106,7 @@ partial** (a sharper statement than attempt-04's bare "conditional").
 
 ## What this upgrades in the obstruction map
 
-- `[bsd-higher-gz-kim-2022]` is **upgraded from `to-verify` to CONFIRMED**
+- `bsd-higher-gz-kim-2022` is **upgraded from `to-verify` to CONFIRMED**
   (primary source): arbitrary-rank structure theorem, Kurihara numbers =
   modular-symbol/Mazur-Tate derivatives (not $L$-derivatives),
   nontriviality⟺localized main conjecture, p-converse application — all

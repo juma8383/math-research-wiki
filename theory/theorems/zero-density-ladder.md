@@ -25,7 +25,7 @@ a *density* statement — it never forces any individual zero onto the line.
   is the first *substantive* improvement **since Huxley in that range**, not
   "since Ingham" — the earlier wiki wording was corrected 2026-08-31).
 - **Guth–Maynard 2024** (Annals of Math. (2) **203** (2026), no. 2, 623–675;
-  arXiv:2405.20552) `[verified]`: $c(\sigma)=\dfrac{15(1-\sigma)}{3+5\sigma}$,
+  arXiv:2405.20552) `verified`: $c(\sigma)=\dfrac{15(1-\sigma)}{3+5\sigma}$,
   so $c(3/4)=\tfrac{30}{13}\approx2.31<2.5$. Method: new "flexible"
   large-values estimates for Dirichlet polynomials (replacing the rigid
   Huxley approach); consequence PNT in intervals
@@ -34,7 +34,7 @@ a *density* statement — it never forces any individual zero onto the line.
   $(\log T)^{\delta(\sigma)}$ factor: Chourasiya 2024 (arXiv:2412.02068)
   advertised $\delta=5-2\sigma$ but an automated audit (Pith) flags the proof
   as written concludes Carlson's original $(\log T)^4$
-  `[rh-chourasiya-flagged]`; Chourasiya–Simonič 2025 (arXiv:2507.15184)
+  `rh-chourasiya-flagged`; Chourasiya–Simonič 2025 (arXiv:2507.15184)
   explicitly supersedes with $\delta=\dfrac{7-5\sigma}{2-\sigma}$. Cite the
   superseding estimate, not the advertised one.
 
@@ -48,7 +48,7 @@ factor, not the power of $x$ [[legendre_conjecture]]. Dually the ladder
 feeds the proportion-on-line ladder (Levinson → Conrey → PRZZ → Wu →
 Alpöge–Furman $\ge0.6725$) via Weil-type positivity on mollified moments —
 and there the *certificate ceiling*
-$p_0\le0.6818287$ (`[rh-bandwidth-ceiling-verified]`,
+$p_0\le0.6818287$ (`rh-bandwidth-ceiling-verified`,
 [[riemann_hypothesis]]) is a proved limit on any Fourier-support-1
 certificate: the density engine quantitatively cannot certify all zeros.
 
@@ -64,5 +64,5 @@ a rung stronger than proven (that is exactly the Chourasiya failure mode).
 
 - [[riemann_hypothesis]] — frontier table; the ladder is the
   resolution-on-average layer.
-- [[method-average-vs-pointwise-control]] — the density→pointwise wall the
+- [[average-vs-pointwise-control]] — the density→pointwise wall the
   ladder runs into.

@@ -1,3 +1,9 @@
+---
+title: Source — S1.a: verification against the primary source ECCC TR20-183 (2026-08-21)
+date: 2026-08-21
+status: raw
+---
+
 # Source — S1.a: verification against the primary source ECCC TR20-183 (2026-08-21)
 
 **Tags:** `[honest-ceiling]` `[ilango-2020]` `[s1-derandomization]` `[s1-chebyshev-moce-oracle]` `[s1-meta-vs-lowdegree]` `[s1-necessary-insufficient]` `[s1a-chebyshev-phantom]` `[s1a-lupanov-only-rng]` `[s1a-antiprox-obstruction]` `[hos-2018]`

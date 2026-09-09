@@ -29,13 +29,13 @@ nonvanishing (Bump-Friedberg-Hoffstein, Murty-Murty, Waldspurger, ensuring a
 suitable imaginary quadratic $K$ exists) ⟹ for $r_{\text{an}}\le1$:
 $r_{\text{alg}}=r_{\text{an}}$ AND $\text{Sha}(E/\mathbb Q)$ finite, with an
 explicit upper bound on $|\text{Sha}|$. (Stein's book, Theorem 1.2.)
-[used-in: [[thm-kolyvagin-gross-zagier]] [[method-heegner-point-euler-system]]]
+[used-in: [[kolyvagin-gross-zagier]] [[heegner-point-euler-system]]]
 
 ## [bsd-parity-proven] Parity
 [summary] Dokchitser-Dokchitser 2010 (Annals): $p$-parity (Selmer-rank parity =
 analytic-rank parity) unconditionally for all $E/\mathbb Q$, all $p$. Nekovář:
 full algebraic-rank parity assuming $\text{Sha}$ finite.
-[used-in: [[thm-parity]]]
+[used-in: [[parity]]]
 
 ## [bsd-refined-open] Refined / leading-coefficient BSD — OPEN in general
 [summary] The leading-coefficient formula (exact $|\text{Sha}|$, a perfect
@@ -55,8 +55,8 @@ conductor-234446 rank-4 candidate is only known to have $r_{\text{an}}\in
 ## [bsd-kolyvagin-conj] Kolyvagin's higher-rank conjectures — OPEN
 [summary] Kolyvagin's Conjectures 3.32–3.35 (Stein's book) would extend his
 Euler-system method to higher analytic rank; unproven. Named target for
-direction (A). [used-in: [[thm-kolyvagin-gross-zagier]]
-[[method-heegner-point-euler-system]]]
+direction (A). [used-in: [[kolyvagin-gross-zagier]]
+[[heegner-point-euler-system]]]
 
 ## [bsd-skinner-converse] The Iwasawa / converse direction
 [summary] Skinner 2020 (Annals): a converse to Gross-Zagier-Kolyvagin for

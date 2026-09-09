@@ -10,8 +10,8 @@ provenance: [[ym-survey]]
 # Constructive QFT continuum-limit machinery
 
 > **When to reach for it.** You want to pass from a rigorously-defined lattice
-> gauge theory [[thm-lattice-gauge-constructive]] to a continuum 4D QFT
-> satisfying OS/Wightman axioms [[def-wightman-os-axioms]] AND transport a
+> gauge theory [[lattice-gauge-constructive]] to a continuum 4D QFT
+> satisfying OS/Wightman axioms [[wightman-os-axioms]] AND transport a
 > spectral gap. This is the engine for direction (A) of the YM attack.
 
 ## The pipeline
@@ -20,7 +20,7 @@ provenance: [[ym-survey]]
    positive (Osterwalder-Seiler), positive transfer matrix (Lüscher).
 2. **RG control across scales**: Balaban multi-scale RG + finite-range
    decomposition (Brydges-Guadagni-Mitter 2004) control the UV renormalization
-   [[thm-balaban-rg]].
+   [[balaban-rg]].
 3. **Cluster / polymer expansion** (Kotecký-Preiss 1986) controls the
    strong-coupling regime and yields a lattice spectral gap.
 4. **OS reconstruction**: convergence of Schwinger functions + OS axioms
@@ -39,7 +39,7 @@ provenance: [[ym-survey]]
   weak-coupling UV.
 - **Gribov ambiguity**: continuum gauge-fixing non-uniqueness — a
   framework-level obstacle to even defining the measure
-  [[def-wightman-os-axioms]] [ym-existence-open].
+  [[wightman-os-axioms]] [ym-existence-open].
 
 ## Place in the obstruction map
 
@@ -47,7 +47,7 @@ This is the analog of Beal's "reduction step", BSD's "Selmer-control step",
 NS's "critical-norm control": the *resolution* tools (lattice definition,
 reflection positivity, cluster expansion, asymptotic freedom) all work; the gap
 is the **control** of the continuum limit + the IR spectrum. The unifying lens
-is dimensional transmutation [[def-yang-mills-theory]]: the continuum limit and
+is dimensional transmutation [[yang-mills-theory]]: the continuum limit and
 the mass gap are the same RG problem (fix $\Lambda_{\text{YM}}$ as $a\to0$).
 See [[yang_mills]] and the cross-problem analogy [[beals_conjecture]]
 [[birch_swinnerton_dyer]] [[navier_stokes]].

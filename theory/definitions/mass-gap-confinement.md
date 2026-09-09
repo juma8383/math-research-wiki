@@ -36,5 +36,5 @@ in the continuum exists.
 
 The mass gap is the "$\Delta>0$" half of the Millennium problem [[yang_mills]].
 It is the IR, strongly-coupled, non-perturbative phenomenon complementary to
-asymptotic freedom's UV control [[thm-asymptotic-freedom]]. The two are
-bridged by dimensional transmutation [[def-yang-mills-theory]].
+asymptotic freedom's UV control [[asymptotic-freedom]]. The two are
+bridged by dimensional transmutation [[yang-mills-theory]].

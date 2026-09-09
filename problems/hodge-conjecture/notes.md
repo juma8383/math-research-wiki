@@ -1,3 +1,8 @@
+---
+type: notes
+problem: hodge-conjecture
+---
+
 # Hodge Conjecture — notes / sparks
 
 > Working scratchpad. Not a polished page; sparks for later attempts.
@@ -70,7 +75,7 @@ subsets. Usual HC = GHC at $k=2r$. Hodge's original stronger conjecture was
 *false* (Grothendieck). The GHC is the "right" generalization — and it is
 mostly open beyond the coniveau-1 case (which reduces to Lefschetz $(1,1)$ via
 weak Lefschetz / blow-ups). Another instance of "the clean codim-1 / coniveau-1
-case works; the rest is open." [[conj-generalized-hodge]]
+case works; the rest is open." [[generalized-hodge]]
 
 ## Spark: is there a Hodge-side "counting / sparsity" angle?
 

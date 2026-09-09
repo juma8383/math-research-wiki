@@ -1,3 +1,8 @@
+---
+type: progress
+problem: navier-stokes
+---
+
 # Progress — Navier-Stokes existence and smoothness
 
 > Running state of the attack. Read this first when resuming. Consolidated
@@ -13,14 +18,14 @@ regularity (A/B) OR a breakdown counterexample (C/D) for 3D incompressible NS
 on domains without boundary.
 
 Known:
-- 2D solved [ns-2d-solved] [[def-navier-stokes-equation]].
-- 3D local well-posedness + small-data global [[thm-local-wellposedness]].
-- 3D global Leray-Hopf weak solutions; **uniqueness OPEN** [[thm-leray-weak-solutions]]
+- 2D solved [ns-2d-solved] [[navier-stokes-equation]].
+- 3D local well-posedness + small-data global [[local-wellposedness]].
+- 3D global Leray-Hopf weak solutions; **uniqueness OPEN** [[leray-weak-solutions]]
   (nonuniqueness proven only *below* Leray-Hopf — Buckmaster–Vicol, see attempt-03).
-- Conditional regularity (Serrin/BKM) [[thm-serrin-regularity]]
-  [[thm-beale-kato-majda]]; partial regularity (CKN)
-  [[thm-caffarelli-kohn-nirenberg]].
-- Averaged-NS blowup model [[thm-tao-averaged-blowup]].
+- Conditional regularity (Serrin/BKM) [[serrin-regularity]]
+  [[beale-kato-majda]]; partial regularity (CKN)
+  [[caffarelli-kohn-nirenberg]].
+- Averaged-NS blowup model [[tao-averaged-blowup]].
 
 Open: **global regularity for large 3D data** (no unconditional global critical
 bound; no blowup example for true NS).
@@ -34,19 +39,19 @@ The **open content** (analog of Beal's "finitely many → zero" and BSD's
 ## The obstruction: control step, not resolution step
 
 The *resolution* machinery works and finished the verified cases:
-- **Local existence** + **small-data global** [[thm-local-wellposedness]].
+- **Local existence** + **small-data global** [[local-wellposedness]].
 - **Conditional regularity**: BKM ($\int\|\omega\|_\infty<\infty \Leftrightarrow$
-  regular) [[thm-beale-kato-majda]], Serrin ($u\in L^r_tL^s_x$,
+  regular) [[beale-kato-majda]], Serrin ($u\in L^r_tL^s_x$,
   $2/r+3/s\le1\Rightarrow$ smooth; endpoint $L^\infty L^3$ by ESS)
-  [[thm-serrin-regularity]].
+  [[serrin-regularity]].
 - **Partial regularity** (CKN: singular set parabolic dim $\le1$)
-  [[thm-caffarelli-kohn-nirenberg]].
+  [[caffarelli-kohn-nirenberg]].
 
 These say "IF a critical norm is bounded THEN smooth." The gap is the missing
 **global a priori bound on a critical norm** — a *control* step, exactly
 parallel to BSD's Selmer-group control and Beal's reduction step. The only
 unconditional global bound is the **energy** ($\|u\|_{L^2}$), which is
-**subcritical** in 3D [[method-energy-supercriticality]] [ns-supercritical]:
+**subcritical** in 3D [[energy-supercriticality]] [ns-supercritical]:
 under NS scaling $u_\lambda(x,t)=\lambda u(\lambda x,\lambda^2 t)$,
 $\|u_\lambda\|_{L^2}=\lambda^{-1/2}\|u\|_{L^2}$ (weakens at small scales),
 while the critical norm $L^3$ is scale-invariant. So the energy cannot control
@@ -124,7 +129,7 @@ energy bound and the critical norm.
   cyclotomic/anticyclotonic disjointness attempt-04, Collatz two-engine
   attempt-03).
 - **(C) Critical-regularity / quantitative program**: sharpen conditional
-  criteria (Luo 2019 optimal frequency localization [[thm-beale-kato-majda]],
+  criteria (Luo 2019 optimal frequency localization [[beale-kato-majda]],
   Barker localized rates) and push the supercritical-to-critical gap
   quantitatively, narrowing what an (A) or (B) proof must achieve.
 
@@ -349,7 +354,7 @@ energy bound and the critical norm.
   equations* (July 11, 2025, preprint): Euler scaling + Liouville-type
   theorems for ancient Euler solutions; Thm 2.1 (parameter region excluding
   Type II, relaxing a CPAA 2024 restriction); Thm 5.1 (LPS-type condition).
-- [ns-hou-wang-yang-2026] (NEW, attempt-08, **to-verify — HIGH PRIORITY**):
+- ns-hou-wang-yang-2026 (NEW, attempt-08, **to-verify — HIGH PRIORITY**):
   Hou–Wang–Yang, *Nonuniqueness of Leray–Hopf solutions to the unforced
   incompressible 3D Navier–Stokes Equation*, arXiv:2509.25116v2 (v2 Aug 11,
   2026). Claims the first rigorous **computer-assisted** proof of Leray–Hopf

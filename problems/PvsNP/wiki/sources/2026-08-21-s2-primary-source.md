@@ -1,3 +1,9 @@
+---
+title: Source — S2: the non-uniform→uniform AC⁰ gap for MOCSP, pinned to an explicit exponential circuit lower bound (2026-08-21)
+date: 2026-08-21
+status: raw
+---
+
 # Source — S2: the non-uniform→uniform AC⁰ gap for MOCSP, pinned to an explicit exponential circuit lower bound (2026-08-21)
 
 **Tags:** `[honest-ceiling]` `[ilango-2020]` `[route-a-variant-gap]` `[murray-williams-2017]` `[route-a-route-b]` `[s1-meta-vs-lowdegree]` `[s2-irritable-witness-obstruction]` `[witness-needs-explicit-lb]`

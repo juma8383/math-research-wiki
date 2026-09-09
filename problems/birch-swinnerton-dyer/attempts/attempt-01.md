@@ -13,7 +13,7 @@ tags: [frontier, obstruction-map, heegner-points, euler-systems, parity, cross-p
 First cycle on BSD. Mirrors Beal attempts 01–02: get the clean form, locate the
 exact frontier, name the open content, and map where the obstruction sits.
 
-## Statement established [[def-elliptic-curve-L-function]]
+## Statement established [[elliptic-curve-L-function]]
 
 BSD for $E/\mathbb Q$: (rank) $r_{\text{alg}}=r_{\text{an}}$; (refined) the
 leading Taylor coefficient at $s=1$ equals
@@ -24,11 +24,11 @@ distinct open pieces (rank part; refined/leading-coefficient part).
 
 | piece | $r_{\text{an}}\le1$ | $r_{\text{an}}\ge2$ |
 |---|---|---|
-| rank equality | **proven** (Kolyvagin-Gross-Zagier [[thm-kolyvagin-gross-zagier]]) | **open** |
+| rank equality | **proven** (Kolyvagin-Gross-Zagier [[kolyvagin-gross-zagier]]) | **open** |
 | Sha finiteness | **proven** | **open** |
 | leading coeff. (exact $\|\text{Sha}\|$) | open in general (comp. verified) | open |
 
-Parity [[thm-parity]] holds in all ranks ($p$-parity unconditionally).
+Parity [[parity]] holds in all ranks ($p$-parity unconditionally).
 
 ## Open content (analog of Beal's "finitely many → zero")
 
@@ -38,16 +38,16 @@ Parity [[thm-parity]] holds in all ranks ($p$-parity unconditionally).
 ## The obstruction: control step, not resolution step
 
 The *resolution* layer works in all ranks and finished the verified cases:
-descent/Selmer (upper bounds, [[thm-mordell-weil]]), Tamagawa/regulator/period/
+descent/Selmer (upper bounds, [[mordell-weil]]), Tamagawa/regulator/period/
 Sha computation, Heegner points. The gap is the **Selmer-group *control***
 mechanism: Kolyvagin's Euler system is **one-point-shaped** — it bounds a
-Selmer group of rank $\le1$, not $\ge2$ [[method-heegner-point-euler-system]].
+Selmer group of rank $\le1$, not $\ge2$ [[heegner-point-euler-system]].
 For rank $\ge2$ one needs $r_{\text{an}}$ independent points (a
 higher-derivative Gross-Zagier) AND an Euler system bounding the full Selmer
 group to size $r_{\text{an}}$; neither is known in general. Kolyvagin's own
 higher-rank conjectures [bsd-kolyvagin-conj] are the named unproven target.
 
-Parity [[thm-parity]] is the one general rank-$\ge2$ tool, but it only pins
+Parity [[parity]] is the one general rank-$\ge2$ tool, but it only pins
 rank mod 2 *given* an upper bound — it cannot itself bound the Selmer group
 from above.
 

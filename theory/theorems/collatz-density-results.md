@@ -38,5 +38,5 @@ These establish a **density-1 / almost-all** control: the *average* behavior
 shrinks. They are the resolution tools for their slice. The gap is
 **pointwise** control — density-1 cannot exclude a measure-zero exceptional
 set, which is exactly where a divergent trajectory or nontrivial cycle would
-live [[method-average-vs-pointwise-control]]. Tao [[thm-collatz-tao-almost-bounded]]
+live [[average-vs-pointwise-control]]. Tao [[collatz-tao-almost-bounded]]
 is the apex of this line, taking "almost all" from $<N$ down to $<f\to\infty$.

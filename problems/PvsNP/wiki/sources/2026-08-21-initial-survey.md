@@ -1,3 +1,9 @@
+---
+title: Source: Initial P vs NP survey (pre-workflow)
+date: 2026-08-21
+status: raw
+---
+
 # Source: Initial P vs NP survey (pre-workflow)
 
 **Provenance:** The framing survey produced in-conversation before the fan-out workflow — the barriers primer, the two barrier-immune programs, the genuine attempt on Williams' door, the "barrier-treadmill" meta-observation, and the honest recommendation. Superseded in detail by [[2026-08-21-pnp-workflow]] but kept as the source of the framing concepts.

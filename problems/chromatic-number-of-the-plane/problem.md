@@ -1,3 +1,16 @@
+---
+type: problem
+slug: chromatic-number-of-the-plane
+title: Chromatic Number of the Plane (Hadwiger–Nelson)
+status: stub
+difficulty: unknown
+created: 2026-08-25
+last-updated: 2026-09-09
+tags: [to-verify]
+tools: []
+related: []
+---
+
 # Chromatic Number of the Plane (Hadwiger–Nelson)
 
 > **STUB — folder started 2026-08-25; full attack pending.** Load-bearing

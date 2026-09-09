@@ -1,3 +1,9 @@
+---
+title: Source: MCSP / meta-complexity deep-dive (second wave)
+date: 2026-08-21
+status: raw
+---
+
 # Source: MCSP / meta-complexity deep-dive (second wave)
 
 **Provenance (honest):** A focused 8-agent Workflow fan-out (`mcsp-deep-dive`, run `wf_d18f0de2-b2e`) was dispatched to go deeper than the MCSP primer (`sources/2026-08-21-mcsp-meta-complexity.md`). **Three of eight agents completed before the dispatching API account hit a hard session usage limit (HTTP 429)** and the remaining five agents (foundations+NP-completeness, Hirahara-distinguisher, crypto-OWF-worlds+recent, synthesizer, critic) could not run. The three that completed returned high-quality, attribution-verified findings (the CIKK triangle facet, the thesis-vs-milestone facet, and — most importantly — the adversarial barrier-evasion facet). The five missing deliverables were then **completed in-loop by the main researcher**: the three missing facet reports were synthesized from the three completed reports (which already overlapped the missing scopes substantially) plus primary-literature verification via web search (the AC⁰[p] and SZK attributions were independently confirmed). The synthesizer and critic roles were applied by the researcher to the assembled six facet reports under the same honest-ceiling mandate.

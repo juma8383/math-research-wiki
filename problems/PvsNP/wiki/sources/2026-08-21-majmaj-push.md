@@ -1,3 +1,9 @@
+---
+title: Source — MAJ∘MAJ CAPP derandomization push (2026-08-21)
+date: 2026-08-21
+status: raw
+---
+
 # Source — MAJ∘MAJ CAPP derandomization push (2026-08-21)
 
 **Tags:** `[honest-ceiling]` `[majmaj-capp-route]` `[chen-williams-2019]` `[chen-ren-2020]` `[hmpt-1993]` `[tell-2018-quantified]` `[dilv-2024]` `[n2-wall]` `[chen-tell-2019]` `[majmaj-symmetry-deflated]` `[mining-program]`

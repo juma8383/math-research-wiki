@@ -19,7 +19,7 @@ tags: [synthesis, obstruction-map, frontier, state-of-attack]
 > ($29<77<277<288<1771$) is **refuted** by the corrected 56-signature table
 > (e.g. 51 at $(3,5,13)$ < 77 at $(3,5,11)$ despite more-negative $\chi$).
 > The empirical "all gap-1 hits lie on the universal families" observation is
-> now a **theorem** ([[thm-near-miss-stratification]] T1; the −1 side is
+> now a **theorem** ([[near-miss-stratification]] T1; the −1 side is
 > exactly [[odd-odd-pillai-2]]), and the min-gap behavior is governed by the
 > [[corner-principle]] (verified 56/56). See
 > `attempts/attempt-25.md` and the preprint draft
@@ -32,25 +32,25 @@ cross-session continuity.
 ## The problem, reduced
 
 Beal's conjecture: if $A^x+B^y=C^z$ with $x,y,z\geq3$, then $\gcd(A,B,C)>1$.
-Equivalent (via [[method-pairwise-coprime-reduction]]) to: **no pairwise-coprime
-solution with exponents $\geq3$.** And (via [[method-exponent-reduction]]) it
+Equivalent (via [[pairwise-coprime-reduction]]) to: **no pairwise-coprime
+solution with exponents $\geq3$.** And (via [[exponent-reduction]]) it
 suffices to rule out exponents in $\{$odd primes$\}\cup\{4\}$.
 
 ## The exact frontier: signature $(3,5,7)$
 
 $(3,5,7)$ — $1/3+1/5+1/7<1$, three pairwise-distinct odd primes — is the smallest
-open Beal signature [[rg2024-357-smallest]]. Every smaller signature is solved:
+open Beal signature [[ratcliffe-grechuk-2024]]. Every smaller signature is solved:
 repeated-exponent neighbors $(3,3,7)$, $(5,5,7)$, $(3,5,5)$ are all zero
-[[thm-solved-generalized-fermat-signatures]]; signatures involving a $2$ are
+[[solved-generalized-fermat-signatures]]; signatures involving a $2$ are
 outside Beal's regime. So $(3,5,7)$ sits exactly on the solved/open boundary,
 with the open region being precisely the **all-distinct-odd-prime** signatures
 $\{(3,5,7),(3,5,11),(3,7,11),(5,7,11),\dots\}$.
 
 ## The entire open content = "finitely many → zero"
 
-Darmon–Granville [[thm-darmon-granville]] gives, unconditionally, *finitely many*
+Darmon–Granville [[darmon-granville]] gives, unconditionally, *finitely many*
 primitive solutions per signature with $1/p+1/q+1/r<1$ (via Faltings). The
-abc conjecture gives no more than this [[method-abc-finiteness]]. **Beal's open
+abc conjecture gives no more than this [[abc-finiteness]]. **Beal's open
 content is exactly the upgrade "finitely many → zero" per signature.** No
 existing theorem makes that upgrade for any distinct-prime signature.
 
@@ -62,12 +62,12 @@ probabilistic side:
 
 | # | thread | page | structure it needs | why $(3,5,7)$ breaks it |
 |---|---|---|---|---|
-| 1 | Frey curve / modularity / Ribet | [[method-frey-modularity]], [[method-frey-level-lowering-obstruction]] | one level-lowering prime $\ell$ strips all bad primes | $\ell\mid2\gcd(p,q,r)=2$, so only $\ell=2$; useless (parity; Mazur needs $\ell$ large) |
-| 2 | Darmon program (Frey abelian varieties, GL₂-type) | [[method-darmon-program]] | a *repeated-exponent* signature | distinct-prime signatures only *classified* (Remark 2.4), no working method; AND gated on the wide-open generalized-Mazur irreducibility conjecture |
-| 3 | Mordell-curve lens | [[method-mordell-curve-lens]] | genus 1 (cubic-cubic) | $(3,5,7)$ → genus 4 (Faltings only) |
-| 4 | Infinite descent (FLT $n=3,4$) | [[method-infinite-descent]] | cyclotomic factorization of $x^p+y^q$ | no factorization when $p\neq q$; descent cannot begin |
-| 5 | Spherical reduction (Siksek–Stoll $(3,4,5)$ route) | [[method-spherical-reduction]] | an even exponent → a spherical $(2,\cdot,\cdot)$ signature | no even exponent; the reduction cannot be written (and even $(3,4,7)\to(2,3,7)$ is hyperbolic, not parametrized) |
-| 6* | Counting heuristic *(soft, not rigorous)* | [[method-counting-heuristic]] | a controlled constant to round the expected count below $1$ | gives only "small expected count" ($H^{r\chi}\to0$); finiteness, **not zero** — and not even rigorous finiteness |
+| 1 | Frey curve / modularity / Ribet | [[frey-modularity]], [[frey-level-lowering-obstruction]] | one level-lowering prime $\ell$ strips all bad primes | $\ell\mid2\gcd(p,q,r)=2$, so only $\ell=2$; useless (parity; Mazur needs $\ell$ large) |
+| 2 | Darmon program (Frey abelian varieties, GL₂-type) | [[darmon-program]] | a *repeated-exponent* signature | distinct-prime signatures only *classified* (Remark 2.4), no working method; AND gated on the wide-open generalized-Mazur irreducibility conjecture |
+| 3 | Mordell-curve lens | [[mordell-curve-lens]] | genus 1 (cubic-cubic) | $(3,5,7)$ → genus 4 (Faltings only) |
+| 4 | Infinite descent (FLT $n=3,4$) | [[infinite-descent]] | cyclotomic factorization of $x^p+y^q$ | no factorization when $p\neq q$; descent cannot begin |
+| 5 | Spherical reduction (Siksek–Stoll $(3,4,5)$ route) | [[spherical-reduction]] | an even exponent → a spherical $(2,\cdot,\cdot)$ signature | no even exponent; the reduction cannot be written (and even $(3,4,7)\to(2,3,7)$ is hyperbolic, not parametrized) |
+| 6* | Counting heuristic *(soft, not rigorous)* | [[counting-heuristic]] | a controlled constant to round the expected count below $1$ | gives only "small expected count" ($H^{r\chi}\to0$); finiteness, **not zero** — and not even rigorous finiteness |
 
 Thread 6* is marked with an asterisk because it is a different *kind* of
 angle: it produces an expectation (density $\sim H^{r\chi}$), not a reduction
@@ -119,7 +119,7 @@ $(3,5,7)$ has none. So the one-sentence need:
 Two candidate directions (attempt-11, refined by attempt-14):
 - **(A) Modular:** extend Darmon's Frey-variety modular method to three-distinct
   primes **and** prove Darmon Conjecture 1.2 (generalized-Mazur irreducibility,
-  wide open [[dv2022-irreduc-conjecture]]). "Two programs away," most principled.
+  wide open [[darmon-program-2022]]). "Two programs away," most principled.
 - **(B) Geometric:** a reduction of $(3,5,7)$ to finitely many genus-$\geq2$
   curves, then effective Chabauty. *Refinement (attempt-14, corrected 17):* the
   reduction **already exists** — Darmon–Granville's covering descent
@@ -131,7 +131,7 @@ Two candidate directions (attempt-11, refined by attempt-14):
   modular-curve interpretation). $(3,5,7)$ is **deeply hyperbolic**
   ($\chi=-34/105$) **with no exponent $2$** → no known finite-quotient descent
   and no modular-curve interpretation → the PSS technique is unavailable
-  [[method-triangle-group-descent]]. So direction (B) is gated on the same
+  [[triangle-group-descent]]. So direction (B) is gated on the same
   "needs a $2$" structure as threads 1 and 5; it is not the independent escape
   route attempt-11 hoped.
 
@@ -164,7 +164,7 @@ descent (no factorization exists), density/metric ("tight-by-1" refutes), and
   exact (the one hit $(128,8,4)$ has $\gcd=4$, Beal-consistent), 0 genuine gap-1,
   gap-1's degenerate on $t^{33}+1$. **The heuristic survived its falsification
   test**; the empirical line now spans three signatures.
-- Survey verification to $z^r\le2^{100}$ [[rg2024-comp-bound]].
+- Survey verification to $z^r\le2^{100}$ [[ratcliffe-grechuk-2024]].
 - Mordell birational equivalence $x^3+y^3=N\leftrightarrow Y^2=X^3-432N^2$
   verified exactly (`scripts/mordell_check.py`).
 - Honest scope: all searches are box-limited; genuine gap-1 with large bases is

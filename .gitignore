@@ -12,3 +12,5 @@ Thumbs.db
 
 # Lint reports
 lint-report-*.txt
+# Task 5: agents dir is tracked despite .claude ignores
+!.claude/agents/

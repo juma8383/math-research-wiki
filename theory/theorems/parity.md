@@ -30,5 +30,5 @@ $r_0\equiv r_{\text{an}}\pmod2$, then parity *forces* $r_{\text{alg}}=r_0$
 **provided** an upper bound of the same parity is already known. So parity
 converts "at least $r_{\text{an}}$ points and the right parity" into exact rank
 — *but only if an upper bound exists*. The missing upper-bound step is exactly
-the Euler-system obstruction [[method-heegner-point-euler-system]]: parity +
+the Euler-system obstruction [[heegner-point-euler-system]]: parity +
 lower bound cannot, on its own, bound the Selmer group from above.

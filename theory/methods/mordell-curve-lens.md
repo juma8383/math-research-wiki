@@ -56,7 +56,7 @@ $$g = \frac{(a-1)(b-1)-(\gcd(a,b)-1)}{2}.$$
 cubic-cubic signature. For every other Beal signature — including the frontier
 $(3,5,7)$ (where the relevant $x^3+y^5=N$ has genus $4$) — the "sum of two
 powers" curve is genus $\geq 2$, where we have only Faltings (finiteness,
-ineffective [[rg2024-faltings-algorithm]] gives effective computation only at
+ineffective [[ratcliffe-grechuk-2024]] gives effective computation only at
 rank-0 Jacobian), and no explicit integral-point theory. This is consistent
 with attempt-04's empirical finding that $(3,5,7)$ near-misses are degenerate:
 there is no elliptic structure to generate genuine non-degenerate near-misses.

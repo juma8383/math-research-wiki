@@ -1,8 +1,16 @@
+---
+type: method
+name: Necessary-window heuristics
+created: 2026-09-01
+tags: []
+used-in: [[magic_square_of_squares]] [[brocard_problem]]
+---
+
 # Method: Necessary-window heuristics
 
 > Toolbox method distilled 2026-09-01 from two independent attacks
-> (`[mss-partner-window]` on [[magic_square_of_squares]],
-> `[brocard-rootofunity-heuristic]` on [[brocard_problem]]).
+> (`mss-partner-window` on [[magic_square_of_squares]],
+> `brocard-rootofunity-heuristic` on [[brocard_problem]]).
 > Reusable whenever a Diophantine solution set is cut by a *structural
 > necessity* into a much thinner slice than the naive count suggests.
 

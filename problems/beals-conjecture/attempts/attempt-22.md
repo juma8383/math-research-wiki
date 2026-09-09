@@ -26,29 +26,29 @@ No proof of Beal, and no proof of even $(3,5,7)$. The deliverable — as scoped
 from the start — is a **compounding, sourced, precisely-mapped research
 frontier**, not a proof. Concretely:
 
-- **Two clean reductions** (pairwise-coprime [[method-pairwise-coprime-reduction]];
-  exponents to {odd primes}∪{4} [[method-exponent-reduction]]).
+- **Two clean reductions** (pairwise-coprime [[pairwise-coprime-reduction]];
+  exponents to {odd primes}∪{4} [[exponent-reduction]]).
 - **The exact frontier located**: $(3,5,7)$ is the smallest open Beal signature
-  [[rg2024-357-smallest]]; the open region is the all-distinct-odd-prime class.
+  [[ratcliffe-grechuk-2024]]; the open region is the all-distinct-odd-prime class.
 - **The entire open content named**: the upgrade "finitely many → zero" per
-  signature — Darmon–Granville [[thm-darmon-granville]] gives finiteness, abc
-  gives no more [[method-abc-finiteness]], nothing makes the zero upgrade.
+  signature — Darmon–Granville [[darmon-granville]] gives finiteness, abc
+  gives no more [[abc-finiteness]], nothing makes the zero upgrade.
 - **Six convergent angles** (five rigorous + one soft), each breaking at
   $(3,5,7)$ for an independent reason, unified by one structural absence:
   **deep hyperbolicity + no exponent 2** (no near-spherical finite quotient,
   no $X(r)$ modular-curve interpretation).
-  - 1 Frey/modularity [[method-frey-modularity]] [[method-frey-level-lowering-obstruction]]
-  - 2 Darmon program [[method-darmon-program]]
-  - 3 Mordell lens [[method-mordell-curve-lens]]
-  - 4 infinite descent [[method-infinite-descent]]
-  - 5 spherical reduction [[method-spherical-reduction]]
-  - 6* counting heuristic (soft) [[method-counting-heuristic]]
+  - 1 Frey/modularity [[frey-modularity]] [[frey-level-lowering-obstruction]]
+  - 2 Darmon program [[darmon-program]]
+  - 3 Mordell lens [[mordell-curve-lens]]
+  - 4 infinite descent [[infinite-descent]]
+  - 5 spherical reduction [[spherical-reduction]]
+  - 6* counting heuristic (soft) [[counting-heuristic]]
 - **The obstruction located at the reduction step, not the resolution step**:
   Chabauty / effective Faltings / Mordell–Weil sieve all work and finished the
   solved cases; the missing piece is *getting to finitely many curves to
   resolve* without a shared/even/spherical structure. The one effective
-  precedent at a hyperbolic signature — PSS $x^2+y^3=z^7$ [[pss2007]]
-  [[method-triangle-group-descent]] — was verified against the paper and shown
+  precedent at a hyperbolic signature — PSS $x^2+y^3=z^7$ [[poonen-schaefer-stoll-2007]]
+  [[triangle-group-descent]] — was verified against the paper and shown
   to rely on exactly the structure $(3,5,7)$ lacks.
 - **Two concrete forward directions** (attempt-11, refined 14/17): (A) extend
   Darmon's Frey-variety method + prove generalized-Mazur irreducibility; (B) an

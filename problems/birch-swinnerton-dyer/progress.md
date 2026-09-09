@@ -1,3 +1,8 @@
+---
+type: progress
+problem: birch-swinnerton-dyer
+---
+
 # Progress — Birch and Swinnerton-Dyer Conjecture
 
 > Running state of the attack. Read this first when resuming. Consolidated
@@ -11,7 +16,7 @@
 BSD has two open pieces:
 1. **Rank part for $r_{\text{an}}\ge2$**: $r_{\text{alg}}=r_{\text{an}}$ is open.
    Proven only for $r_{\text{an}}\le1$ (Kolyvagin-Gross-Zagier
-   [[thm-kolyvagin-gross-zagier]]).
+   [[kolyvagin-gross-zagier]]).
 2. **Refined leading-coefficient** (exact $|\text{Sha}|$): open in general,
    *even at rank 0* [bsd-refined-open]; verified computationally for small
    conductor.
@@ -24,14 +29,14 @@ The **open content** (analog of Beal's "finitely many → zero"):
 
 The *resolution* machinery works in all ranks and finished the verified cases:
 - **Descent / Selmer groups** bound the rank above (Mordell-Weil
-  [[thm-mordell-weil]]).
+  [[mordell-weil]]).
 - **Tamagawa numbers, regulators, periods, Sha** are computable per-curve.
 - **Heegner points + Euler system** proved rank $\le1$
-  [[thm-kolyvagin-gross-zagier]].
+  [[kolyvagin-gross-zagier]].
 
 The gap is the **Selmer-group *control* mechanism** for rank $\ge2$:
 Kolyvagin's Euler system has the **shape of a single point** — it bounds a
-Selmer group of rank $\le1$ but not $\ge2$ [[method-heegner-point-euler-system]].
+Selmer group of rank $\le1$ but not $\ge2$ [[heegner-point-euler-system]].
 To crack rank $\ge2$ one needs (a) $r_{\text{an}}$ independent points (a
 higher-derivative Gross-Zagier) AND (b) an Euler system of "rank $\ge2$ shape"
 bounding the full Selmer group to size $r_{\text{an}}$. Neither is known;
@@ -39,7 +44,7 @@ Kolyvagin's own higher-rank conjectures [bsd-kolyvagin-conj] are unproven.
 
 ## Parity's role (the one general rank-$\ge2$ tool)
 
-Parity [[thm-parity]] pins $r_{\text{alg}}\pmod2$. It converts "≥$r_{\text{an}}$
+Parity [[parity]] pins $r_{\text{alg}}\pmod2$. It converts "≥$r_{\text{an}}$
 points + right parity" into exact rank — **but only given an upper bound of
 the right parity**, which is the missing Euler-system step. Parity + lower
 bound alone cannot bound the Selmer group from above.
@@ -105,7 +110,7 @@ bound alone cannot bound the Selmer group from above.
   *resolution* step.
 - **attempt-02 (primary-source verification):** rank-$\le1$ base CONFIRMED
   unconditional (BFH + Murty–Murty supply the Heegner $K$; new theory page
-  [[thm-bfh-murty-nonvanishing]]). `[bsd-skinner-converse]` confirmed
+  [[bfh-murty-nonvanishing]]). `[bsd-skinner-converse]` confirmed
   (Skinner 2020, conditional). `[bsd-refined-open]` sharpened — $p$-part of
   the formula now known rank $\le1$ (Skinner–Urban; Jetchev–Skinner–Wan); full
   $|\Sha|$ still open. Frontier re-confirmed against Stein's book. Direction
@@ -134,7 +139,7 @@ bound alone cannot bound the Selmer group from above.
   recorded. Kim/Wei-Zhang claims **flagged to-verify** against the arXiv PDF
   before load-bearing reuse.
 - **attempt-05 (primary-source verification — upgrade to CONFIRMED):**
-  `[bsd-higher-gz-kim-2022]` upgraded from to-verify to CONFIRMED. **Citation
+  `bsd-higher-gz-kim-2022` upgraded from to-verify to CONFIRMED. **Citation
   upgrade:** Kim's paper is **published in Trans. Amer. Math. Soc. (2024),
   DOI 10.1090/tran/9125** (= arXiv:2203.12161, v1 2022 → v7/published
   2024), peer-reviewed — not just an arXiv preprint. Verified from the
@@ -291,7 +296,7 @@ bound alone cannot bound the Selmer group from above.
 
 - [bsd-rank-le-1-proven]: **CONFIRMED (attempt-02, primary sources).** The
   rank-$\le1$ result is unconditional — no ad-hoc $K$. BFH (Inventiones 102,
-  1990) + Murty–Murty (Annals 133, 1991) [[thm-bfh-murty-nonvanishing]]
+  1990) + Murty–Murty (Annals 133, 1991) [[bfh-murty-nonvanishing]]
   guarantee a Heegner-hypothesis $K$ with $L'(E/K,1)\neq0$; GZ+Kolyvagin finish.
   Upgraded from `to-verify` to verified.
 - [bsd-parity-proven]: **CONFIRMED + SHARPENED (attempt-03, primary
@@ -315,7 +320,7 @@ bound alone cannot bound the Selmer group from above.
   a theorem of Gross, Zagier, and Kolyvagin*, Annals **191**(2) (2020),
   conditional (Iwasawa hypotheses); soft $p$-converse Kim 2022. Real but
   conditional — a direction-(B) ingredient.
-- [bsd-higher-gz-kim-2022]: **CONFIRMED (attempt-05, primary source — arXiv
+- bsd-higher-gz-kim-2022: **CONFIRMED (attempt-05, primary source — arXiv
   abstract + corroborating search).** Chan-Ho Kim, *A higher Gross-Zagier
   formula and the structure of Selmer groups*, **Trans. Amer. Math. Soc.
   (2024), DOI [10.1090/tran/9125](https://doi.org/10.1090/tran/9125)**
@@ -342,7 +347,7 @@ bound alone cannot bound the Selmer group from above.
   line-by-line PDF location of the disjointness quote — both
   structural-content-corroborated. Upgraded from `to-verify` to (almost
   fully) verified.
-- [bsd-kataoka-sano-2024]: **CONFIRMED (attempt-08, primary source — published
+- bsd-kataoka-sano-2024: **CONFIRMED (attempt-08, primary source — published
   PDF body).** Kataoka–Sano, *On Euler systems for motives and Heegner
   points*, **J. Assoc. Math. Res. 2(2):154–208 (2024)**, DOI
   10.56994/jamr.002.002.001 — Heegner points as a **rank-2 Euler system**
@@ -365,7 +370,7 @@ bound alone cannot bound the Selmer group from above.
   discharged; the control step (Darmon-derivative Kolyvagin system + its
   non-degeneracy) is the wall. BCK21's exact hypotheses flagged `to-verify`
   against its paper body. Upgraded from `to-verify` to CONFIRMED.
-- [bsd-bck21-2021]: **CONFIRMED (attempt-09, primary source).** Burungale–
+- bsd-bck21-2021: **CONFIRMED (attempt-09, primary source).** Burungale–
   Castella–Kim, *A proof of Perrin-Riou's Heegner point main conjecture*,
   **Algebra & Number Theory 15:7 (2021), 1627–1653**, DOI
   [10.2140/ant.2021.15.1627](https://doi.org/10.2140/ant.2021.15.1627),
@@ -381,7 +386,7 @@ bound alone cannot bound the Selmer group from above.
   generalization (Hypothesis ♥). **Appendix Thm A.1:** rank-one alternative
   without nonanomalous. The BDP ideal equality and Hypothesis ♥ fourth
   condition flagged `to-verify` against the PDF body if load-bearing.
-- [bsd-sano-2023-derived-bockstein] (NEW, attempt-10, **to-verify**): Sano,
+- bsd-sano-2023-derived-bockstein (NEW, attempt-10, **to-verify**): Sano,
   *Derived Bockstein regulators and anticyclotomic $p$-adic Birch and
   Swinnerton-Dyer conjectures*, arXiv:2308.08875 (2023). Introduces "derived
   Bockstein regulators" (Nekovář's Selmer complexes, Astérisque 310); general

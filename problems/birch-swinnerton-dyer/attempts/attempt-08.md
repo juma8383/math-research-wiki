@@ -72,7 +72,7 @@ point main conjecture in terms of rank two Euler systems") is confirmed.
 ## The BCK21 sharpening — the three-fold conditional is now TWO-fold
 
 **Remark 1.6** (read from the PDF): "Burungale–Castella–Kim has recently
-proved the Heegner point main conjecture under mild [conditions] (BCK21).
+proved the Heegner point main conjecture under mild conditions (BCK21).
 [Theorem] 1.5 gives an unconditional construction of a rank two Euler system
 which is related to Heegner points. However, it should be noted that our
 [construction is not canonical]."
@@ -98,7 +98,7 @@ This is a clean confirmation of the attempt-07 structural claim that the
 obstruction is at the **control** step, not the resolution step — now with
 the resolution step literally discharged by a named theorem (BCK21).
 
-**Honesty on BCK21's scope:** Remark 1.6 says "under mild [conditions]" — the
+**Honesty on BCK21's scope:** Remark 1.6 says "under mild conditions" — the
 exact hypotheses (good ordinary reduction at $p$, residual-representation
 conditions, etc.) are not spelled out in the extracted text (the PDF text cut
 off at "undermildBC"). The standard statement is: BCK21 proves the Heegner MC

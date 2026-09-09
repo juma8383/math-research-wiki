@@ -11,7 +11,7 @@ provenance: [heuristic — standard Fermat-Catalan/Tijdeman-type volume estimate
 
 > **Heuristic, not a theorem.** This page records a standard volume/counting
 > estimate for $X^p+Y^q=Z^r$. It is the soft-probabilistic analogue of
-> [[thm-darmon-granville]]'s rigorous finiteness. It is cited for *predictive*
+> [[darmon-granville]]'s rigorous finiteness. It is cited for *predictive*
 > insight (why zero is the expected answer; why sparsity is monotone in the
 > exponents), never as a proof.
 
@@ -27,7 +27,7 @@ to $H^r$). The expected number of hits scales as
 $$N_{p,q,r}(H)\;\sim\; H^{\,r\chi}, \qquad
 \chi=\tfrac1p+\tfrac1q+\tfrac1r-1 .$$
 
-This is the reciprocal invariant of [[def-beal-equation]] made *predictive*.
+This is the reciprocal invariant of [[beal-equation]] made *predictive*.
 
 ## The trichotomy, now as a growth rate
 
@@ -37,7 +37,7 @@ This is the reciprocal invariant of [[def-beal-equation]] made *predictive*.
 | Euclidean | $=0$ | constant | **borderline / inconclusive** |
 | hyperbolic | $<0$ | $\to 0$ | finitely many, sparse |
 
-The classification in [[def-beal-equation]] ($>1/=1/<1$ for $1/p{+}1/q{+}1/r$)
+The classification in [[beal-equation]] ($>1/=1/<1$ for $1/p{+}1/q{+}1/r$)
 becomes a statement about *solution density*, not just geometry.
 
 ## What it predicts, and what it does not
@@ -46,19 +46,19 @@ becomes a statement about *solution density*, not just geometry.
 - **Finiteness for $\chi<0$.** $H^{r\chi}\to0$ means the density of solutions
   thins to nothing; the total count is expected small and finite. This
   *parallels* — does not derive — the rigorous
-  [[thm-darmon-granville]] finiteness (Faltings) and the
-  [[method-abc-finiteness]] strength.
+  [[darmon-granville]] finiteness (Faltings) and the
+  [[abc-finiteness]] strength.
 - **Monotone sparsity.** As $\chi$ grows more negative, $H^{r\chi}$ shrinks
   faster, so solutions get sparser and near-miss gaps grow. This is *exactly*
   the empirical monotonicity observed computationally
-  [[rg2024-comp-bound]]: $(3,5,7)$ min non-degenerate coprime gap $29$ →
+  [[ratcliffe-grechuk-2024]]: $(3,5,7)$ min non-degenerate coprime gap $29$ →
   $(3,5,11)$ gap $77$, with $0$ exact and $0$ genuine gap-$1$ in both. The
   heuristic *predicts* the rigidity the searches found.
 - **Why the modular engine is forced at $(3,3,3)$.** $(3,3,3)$ has $\chi=0$,
   the Euclidean/borderline case where $H^{r\chi}=H^0$ is a *constant* — the
   heuristic is inconclusive (could be $0$, finite, or need finer structure).
   This is precisely where the soft estimate fails to decide and the hard
-  machinery (FLT's Frey/modularity/level-lowering, [[method-frey-modularity]])
+  machinery (FLT's Frey/modularity/level-lowering, [[frey-modularity]])
   is required. The "hard kernel" diagnosis of synthesis.md is now mirrored
   heuristically: the unique signature where all classical structures coincide
   is also the unique signature where the counting heuristic is borderline.

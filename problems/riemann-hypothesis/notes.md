@@ -1,3 +1,8 @@
+---
+type: notes
+problem: riemann-hypothesis
+---
+
 # Notes — Riemann Hypothesis
 
 > Methodology + cross-problem links. Running notes for [[riemann_hypothesis]].

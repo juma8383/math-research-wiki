@@ -18,7 +18,7 @@ from the reciprocal invariant $\chi=1/p{+}1/q{+}1/r-1$. It engages the open
 content ("finitely many → zero") from the probabilistic side that no prior
 cycle explored.
 
-Filed [[method-counting-heuristic]].
+Filed [[counting-heuristic]].
 
 ## The estimate
 
@@ -28,7 +28,7 @@ $\sim H^{1-r}$. Expected count
 
 $$N_{p,q,r}(H)\sim H^{r\chi},\qquad \chi=\tfrac1p+\tfrac1q+\tfrac1r-1.$$
 
-The trichotomy of [[def-beal-equation]] becomes a *growth rate*: $\chi>0$
+The trichotomy of [[beal-equation]] becomes a *growth rate*: $\chi>0$
 $\to\infty$ (spherical: infinite families); $\chi=0$ constant (Euclidean:
 borderline); $\chi<0$ $\to0$ (hyperbolic: sparse-finite).
 
@@ -36,8 +36,8 @@ borderline); $\chi<0$ $\to0$ (hyperbolic: sparse-finite).
 
 1. **Finiteness for $\chi<0$, qualitatively.** $H^{r\chi}\to0$ means the solution
    density thins to nothing — *parallels* (does not derive) the rigorous
-   Darmon–Granville/Faltings finiteness [[thm-darmon-granville]] and the
-   abc-strength [[method-abc-finiteness]].
+   Darmon–Granville/Faltings finiteness [[darmon-granville]] and the
+   abc-strength [[abc-finiteness]].
 
 2. **Monotone sparsity — and the heuristic *predicts* the computations.** As
    $\chi$ grows more negative, $H^{r\chi}$ shrinks faster, so solutions get
@@ -52,7 +52,7 @@ borderline); $\chi<0$ $\to0$ (hyperbolic: sparse-finite).
    heuristic is *inconclusive* — could be $0$, finite, or need finer
    structure. The soft estimate fails to decide *exactly there*, which is
    where the hard machinery (FLT: Frey/modularity/level-lowering
-   [[method-frey-modularity]]) is required. synthesis.md's "hard kernel"
+   [[frey-modularity]]) is required. synthesis.md's "hard kernel"
    diagnosis — $(3,3,3)$ is the unique signature where all classical
    structures coincide — is now mirrored heuristically: it is also the unique
    signature where the counting heuristic is borderline.

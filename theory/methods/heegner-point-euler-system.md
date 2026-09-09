@@ -12,7 +12,7 @@ provenance: [[bsd-survey]]
 > **When to reach for it.** You want to bound the Selmer group (hence the rank
 > and Sha) of an elliptic curve from a *nonvanishing of an L-function
 > derivative*. This is the engine that proved BSD for analytic rank $\le1$
-> [[thm-kolyvagin-gross-zagier]].
+> [[kolyvagin-gross-zagier]].
 
 ## The mechanism
 
@@ -21,7 +21,7 @@ provenance: [[bsd-survey]]
    points on modular curves map to a **Heegner point** $P_K\in E(K)$.
 2. **Gross-Zagier bridge.** $\hat h(P_K)\propto L'(E/K,1)$: analytic
    nonvanishing $\Leftrightarrow$ the point is non-torsion $\Leftrightarrow$ an
-   algebraic point exists [[thm-kolyvagin-gross-zagier]]. This is the *only*
+   algebraic point exists [[kolyvagin-gross-zagier]]. This is the *only*
    general bridge known from an L-value derivative to an algebraic point.
 3. **Kolyvagin's Euler system.** The "derived" points $D_K P_K$ (over
    ring-class fields) form an Euler system: their traces produce cohomology

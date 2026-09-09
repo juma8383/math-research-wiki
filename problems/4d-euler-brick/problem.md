@@ -1,3 +1,16 @@
+---
+type: problem
+slug: 4d-euler-brick
+title: 4D Euler Brick
+status: stub
+difficulty: unknown
+created: 2026-08-25
+last-updated: 2026-09-09
+tags: [to-verify]
+tools: []
+related: []
+---
+
 # 4D Euler Brick
 
 > **STUB — folder started 2026-08-25; full attack pending.** Load-bearing

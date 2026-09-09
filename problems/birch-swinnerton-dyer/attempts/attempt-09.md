@@ -12,7 +12,7 @@ tags: [primary-source-verification, heegner-point-main-conjecture, bck21, perrin
 
 Cycle-5 Continue on BSD (attempt-08's "Next" target). attempt-08 read
 Kataoka–Sano's Remark 1.6 — "Burungale–Castella–Kim has recently proved the
-Heegner point main conjecture under mild [conditions]" — but the extracted PDF
+Heegner point main conjecture under mild conditions" — but the extracted PDF
 text cut off at "undermildBC", leaving the exact hypotheses unspecified. This
 cycle pins them down from the primary source.
 

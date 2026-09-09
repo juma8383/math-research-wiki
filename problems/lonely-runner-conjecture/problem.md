@@ -1,7 +1,20 @@
+---
+type: problem
+slug: lonely-runner-conjecture
+title: Lonely Runner Conjecture
+status: stub
+difficulty: unknown
+created: 2026-08-25
+last-updated: 2026-09-09
+tags: [to-verify]
+tools: []
+related: []
+---
+
 # Lonely Runner Conjecture
 
 > **STUB — folder started 2026-08-25; attack opened 2026-09-01**
-> `[lonely-runner-structural]` (prior-art verification + structural lemmas L1–L3
+> `lonely-runner-structural` (prior-art verification + structural lemmas L1–L3
 > + exact census engine; scripts/lonely_runner_census.py). Load-bearing
 > facts flagged `[to-verify]`. Source: unsolvedproblems.org/index_files/LonelyRunner.htm.
 
@@ -57,7 +70,7 @@ Kleitman 2001 (simplified Renault 2004); $n{=}6$ **Barajas–Serra 2008**,
 DOI 10.37236/772 — VERBATIM-verified 2026-09-01: their "$k{+}1$ runners"
 count includes all moving runners, so their seven-runner case $= n{=}6$
 speeds, bound $1/7$; the stub's frontier line (proven $n\le6$, $n{=}7$ open)
-is CORRECT, and the first search summary's "Barajas–Serra covered 7 [speeds]"
+is CORRECT, and the first search summary's "Barajas–Serra covered 7 speeds"
 was the off-by-one. **New since the stub:** Rosenfeld 2025 (arXiv:2509.14111,
 v2 Oct 2025, PREPRINT — abstract verified 2026-09-01) claims **LRC for eight
 runners** ($n{=}7$ speeds) by computer verification + recent
@@ -89,7 +102,7 @@ exceptions (e.g. $\{1,3,4,7\}$ for $n=4$; Goddyn–Wong families)
 `[summary, to-verify vs Kravitz paper]` — see census A/B below for the
 exact box answer.
 
-## Structural lemmas (2026-09-01 attack block) `[lonely-runner-structural]`
+## Structural lemmas (2026-09-01 attack block) `lonely-runner-structural`
 
 **Lemma L1 (candidate-time finiteness — the exact engine).** For positive
 integers $V=\{v_1<\dots<v_n\}$, $\kappa(V)$ is a **maximum** (not just a
@@ -214,7 +227,7 @@ sporadic tight sets found have $\max V$ a sum of two earlier elements
 consistent with the hard instances being small-speed/combinatorial, the
 regime the finite-check reductions (MSS, Rosenfeld) exploit.
 
-## Literature update (2026-09-01 CONTINUE block) `[lonely-runner-frontier-update]`
+## Literature update (2026-09-01 CONTINUE block) `lonely-runner-frontier-update`
 
 **Rosenfeld verdict (Task 1 of the CONTINUE block; all items primary-source
 verified 2026-09-01 unless flagged):**
@@ -329,7 +342,7 @@ exactly one sporadic each even in the widened boxes. (4) Random
 probes far from tight again (min κ = 67/309 ≈ 0.217 > 1/10 at n=9;
 20/111 ≈ 0.180 > 1/11 at n=10): hardness lives at small speeds.
 
-## Tight-set structure (2026-09-01 CONTINUE block) `[lonely-runner-tightsets]`
+## Tight-set structure (2026-09-01 CONTINUE block) `lonely-runner-tightsets`
 
 Question (Task 3): *when do non-consecutive tight sets exist?* Data now:
 exhaustive boxes n=2 [1,60], n=3 [1,40], n=4 [1,30], n=5 [1,26] (tightscan),
@@ -491,7 +504,7 @@ censuses — but the pattern (consecutive-only tight sets, T1/T2 clean)
 now extends across the proved frontier into the open range.
 
 ## T4 attack (2026-09-01): window lemmas T4-a…T4-e — first PROVED structure
-`[lonely-runner-t4-windows]` (`scripts/lonely_runner_t4_windows.py`, log
+`lonely-runner-t4-windows` (`scripts/lonely_runner_t4_windows.py`, log
 `lonely_runner_t4_windows.log`; self-tests S1–S6 ALL PASSED verbatim in the
 log: S1 engine cross-validation [1,30] 0 mismatches; S3 window⟷tight
 equivalence 400 sampled triples [1,24] 0 mismatches; S4 exhaustive [1,60]
@@ -583,10 +596,10 @@ open here. The pair formula (Lemma P) is new-to-this-wiki and likely
 classical — flagged for a literature check before any external claim.
 
 ## T4 correction + Conjecture T4-f (2026-09-01): ONE pair condition suffices (census)
-`[lonely-runner-t4-pairforce]` (`scripts/lonely_runner_t4_threepair.py`,
+`lonely-runner-t4-pairforce` (`scripts/lonely_runner_t4_threepair.py`,
 `scripts/lonely_runner_t4_pairforce.py`, logs alongside).
 
-**CORRECTION (append-only, affects `[lonely-runner-t4-windows]`).** The
+**CORRECTION (append-only, affects `lonely-runner-t4-windows`).** The
 containment predicate used in the filed S3/S4 checks (and in the T4-e
 "$a\ge2$ reduced to a finite window-position check" derivation) had its
 arc-index bounds **swapped**: it tested $\lceil\frac{r\,lo-1}4\rceil\le
@@ -632,16 +645,16 @@ bounded. Confidence in T4-f as a conjecture: high (exact exhaustive
 [1,200], both stages cross-checked); as a theorem: unproven.
 
 ## T4 RESOLVED (2026-09-01): the one-pair length + position lemmas proved
-`[lonely-runner-t4-onepair]` (`scripts/lonely_runner_t4_lengthlemma.py`,
+`lonely-runner-t4-onepair` (`scripts/lonely_runner_t4_lengthlemma.py`,
 `lonely_runner_t4_consecutive.py`, `lonely_runner_t4_onepair.py`, logs
 alongside). Both open halves of the T4-f program — the (L) length lemma and
 the (P) position kill — are now **proved**, and with Lemma T4-a this closes
 Conjecture T4. All numerics exact (Fractions, circle $[0,4)$ in
-$T=4t$-units); window lists as in `[lonely-runner-t4-pairforce]`.
+$T=4t$-units); window lists as in `lonely-runner-t4-pairforce`.
 
 **Theorem L (exact max window length — PROVED).** For coprime $a<b$:
 $$\mathrm{ml}(a,b)=\max\text{-window-length of }\{a,b\}=\begin{cases}
-\tfrac{2}{b} & b-a\ge 2,\\[2pt]
+\tfrac{2}{b} & b-a\ge 2,\\2pt
 \tfrac{2k-1}{k(k+1)} & (a,b)=(k,k+1).\end{cases}$$
 In particular the (L) lemma holds with threshold **reduced sum $=3$**: the
 only coprime pair with $\mathrm{ml}<\frac{2}{b+1}$ is $(1,2)$, and the only
@@ -690,7 +703,7 @@ is closed; the next open questions are the tight 4-sets
 ($\{1,3,4,7\}$ sporadic) and T1/T2 at larger $n$.
 
 ## Tight 4-sets (2026-09-01): census + one-pair structure
-`[lonely-runner-tight4]` (`scripts/lonely_runner_tight4.py`,
+`lonely-runner-tight4` (`scripts/lonely_runner_tight4.py`,
 `lonely_runner_tight4_struct.py`, logs alongside; self-tests S1–S4 ALL
 PASSED verbatim in the log: S1 integer engine vs the Fraction reference
 engine, exhaustive primitive 4-sets [1,16], 0 mismatches; S2 Fan–Sun 7/30 +

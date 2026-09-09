@@ -18,7 +18,7 @@ loop_cycle: 12 of 20
 > The structural conclusion — PSS does not transfer to $(3,5,7)$ — is
 > unchanged, but the reason is "deep hyperbolicity + no exponent 2," not
 > "spherical vs hyperbolic." The corrected table and framing live in
-> [[method-triangle-group-descent]] and synthesis.md. The text below is kept
+> [[triangle-group-descent]] and synthesis.md. The text below is kept
 > unchanged as the append-only record.
 
 # Attempt 14 — Direction (B) literature check (and a correction to attempt-11)
@@ -31,7 +31,7 @@ independent of thread 5 than framed.
 
 ## Correction: the reduction already exists — but is ineffective
 
-Darmon–Granville [[thm-darmon-granville]] is not merely a finiteness assertion:
+Darmon–Granville [[darmon-granville]] is not merely a finiteness assertion:
 its *proof* is a reduction to finitely many curves. Via unramified coverings of
 $\mathbb P^1\setminus\{0,1,\infty\}$ of signature $(p,q,r)$ plus the
 Chevalley–Weil theorem, infinitely many primitive solutions would yield
@@ -44,13 +44,13 @@ known** for all-distinct-odd-prime signatures." (Attempt-11 corrected.)
 
 ## The one effective precedent: Poonen–Schaefer–Stoll (2,3,7)
 
-PSS 2007 [[pss2007]] made the reduction effective for $x^2+y^3=z^7$, listing all
+PSS 2007 [[poonen-schaefer-stoll-2007]] made the reduction effective for $x^2+y^3=z^7$, listing all
 16 primitive solutions. The engine: **nonabelian descent via the finite group
 $\mathrm{PSL}_2(\mathbb F_7)$** (order 168), reducing to **10 twists of the
 Klein quartic** (genus 3), then Chabauty–Coleman (where
 $\operatorname{rank}J<\operatorname{genus}$) plus a Mordell–Weil sieve +
 modularity/level-lowering for the hard $\operatorname{rank}=\operatorname{genus}$
-case. Filed [[method-triangle-group-descent]] and a source page [[pss2007]].
+case. Filed [[triangle-group-descent]] and a source page [[poonen-schaefer-stoll-2007]].
 
 ## The structural reason it stops there: spherical vs hyperbolic triangle groups
 

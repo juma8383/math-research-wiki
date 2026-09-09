@@ -15,7 +15,7 @@ $$2^L=\prod_{i=0}^{m-1}\frac{3o_i+1}{o_i},\qquad
 \Lambda=(K+L)\log2-K\log3\ \text{exponentially small},$$
 where $K=\sum(\text{odd-step contributions})$. If such a cycle exists, the
 linear form $\Lambda$ in logarithms must be *exponentially* small
-[[method-cycle-exclusion-linear-forms]].
+[[cycle-exclusion-linear-forms]].
 
 ## Results (transcendence rules out small cycles)
 
@@ -52,6 +52,6 @@ The gap (direction (B)) is pushing to **all $m$**: the transcendence bounds
 that suffice for $m\le75$ degrade for large $m$, and no argument rules out
 cycles of arbitrarily large period. This sub-problem is **Diophantine /
 transcendence** in flavor — the Collatz echo of Beal's generalized-Fermat
-character [[beals_conjecture]] [[method-cycle-exclusion-linear-forms]].
+character [[beals_conjecture]] [[cycle-exclusion-linear-forms]].
 Computational verification ($x_{\min}>5.76\times10^{18}$, $N\le2^{68}$
 [collatz-verified]) corroborates but does not replace the analytic exclusion.

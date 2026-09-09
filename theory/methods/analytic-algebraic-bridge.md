@@ -17,7 +17,7 @@ provenance: [[hodge-survey]]
 
 ## The bridge that works (codimension 1)
 
-For divisors ($p=1$) the bridge is fully constructive [[thm-lefschetz-1-1]]:
+For divisors ($p=1$) the bridge is fully constructive [[lefschetz-1-1]]:
 $$\text{Hodge class}\ \in H^2(X,\mathbb Z)\cap H^{1,1}
 \ \xleftarrow{c_1}\ \mathrm{Pic}(X)\ \twoheadleftarrow\ \text{algebraic line bundles}
 \ \xleftarrow[\text{GAGA}]{}\ \text{algebraic divisors}.$$
@@ -34,17 +34,17 @@ Abel–Jacobi map replace the Picard variety, but $J^p(X)$ is in general
 Abel–Jacobi does **not** characterize algebraicity the way $c_1(\mathrm{Pic})$
 does for divisors. There is no known mechanism that, given a Hodge class of
 codim $\ge2$, produces a $\mathbb Q$-combination of algebraic cycles mapping
-to it [[def-hodge-class-cycle-map]].
+to it [[hodge-class-cycle-map]].
 
 ## The open control steps (the obstruction)
 
 - **Cycle-producing mechanism in codim $\ge2$:** the Picard-variety /
   exponential-sequence engine has no effective higher-codimension analogue.
-- **Torsion wrinkle** [[thm-integral-hodge-fails]]: even the integral version
+- **Torsion wrinkle** [[integral-hodge-fails]]: even the integral version
   fails (Atiyah–Hirzebruch, Kollár); the $\mathbb Q$-version removes this but
   the analytic→algebraic gap remains.
 - **Reduction itself is open:** the motive reduction (standard conjectures
-  B, C) [[thm-standard-conjectures-motives]] would reduce HC to specific
+  B, C) [[standard-conjectures-motives]] would reduce HC to specific
   classes, but B, C are open in general (known only for surfaces, abelian,
   hyper-Kähler $K3^{[n]}$).
 

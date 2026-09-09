@@ -23,7 +23,7 @@ absolute Hodge).
 ## Motivated cycles (André)
 
 André enlarged the algebraic cycles by adjoining the inverses of Lefschetz
-operators (assumed algebraic — the Lefschetz standard conjecture [[thm-standard-conjectures-motives]])
+operators (assumed algebraic — the Lefschetz standard conjecture [[standard-conjectures-motives]])
 to form the **motivated cycles**, which form a Tannakian category and on
 which the Hodge conjecture holds tautologically. All Hodge classes on abelian
 varieties are motivated (unconditionally, via Deligne's absolute-Hodge result).
@@ -32,7 +32,7 @@ varieties are motivated (unconditionally, via Deligne's absolute-Hodge result).
 
 Absolute Hodge / motivated is the **controlled evidence layer** — a
 substitute for full algebraicity where the analytic→algebraic bridge
-[[method-analytic-algebraic-bridge]] is out of reach. It shows the obstruction
+[[analytic-algebraic-bridge]] is out of reach. It shows the obstruction
 is "genuinely algebraic, not Hodge-theoretic": on abelian varieties the
 Hodge-theoretic pathologies are all controlled; what remains is producing
 actual algebraic cycles. Direction (C) of the [[hodge_conjecture]] attack —

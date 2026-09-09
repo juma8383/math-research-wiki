@@ -7,8 +7,8 @@ difficulty: famous-open-problem
 created: 2026-08-24
 last-updated: 2026-08-24
 tags: [number-theory, elliptic-curves, L-functions, arithmetic-geometry]
-tools: [[def-elliptic-curve-L-function], [thm-mordell-weil], [thm-modularity], [thm-kolyvagin-gross-zagier], [method-heegner-point-euler-system], [thm-parity]]
-related: [[beals_conjecture], [navier_stokes], [yang_mills], [hodge_conjecture], [collatz_conjecture]]
+tools: [[elliptic-curve-L-function]] [[mordell-weil]] [[modularity]] [[kolyvagin-gross-zagier]] [[heegner-point-euler-system]] [[parity]]
+related: [[beals_conjecture]] [[navier_stokes]] [[yang_mills]] [[hodge_conjecture]] [[collatz_conjecture]]
 target-frontier: analytic rank >= 2
 ---
 
@@ -17,8 +17,8 @@ target-frontier: analytic rank >= 2
 ## Statement
 
 Let $E/\mathbb Q$ be an elliptic curve with Hasse-Weil L-function $L(E,s)$
-[[def-elliptic-curve-L-function]], Mordell-Weil rank $r_{\text{alg}}$
-[[thm-mordell-weil]], and analytic rank $r_{\text{an}}=\operatorname{ord}_{s=1}L(E,s)$.
+[[elliptic-curve-L-function]], Mordell-Weil rank $r_{\text{alg}}$
+[[mordell-weil]], and analytic rank $r_{\text{an}}=\operatorname{ord}_{s=1}L(E,s)$.
 
 **BSD (rank part):** $r_{\text{alg}}=r_{\text{an}}$.
 
@@ -33,15 +33,15 @@ Posed by Birch and Swinnerton-Dyer in the 1960s from computational
 observations (the "BSD ratio" $L(E,s)/(\Omega\prod c_p)$ near $s=1$ tracking
 the rank). One of the seven Clay Mathematics Institute **Millennium Prize
 Problems** ($1{,}000{,}000$). Unlike most Millennium problems, a large piece
-(analytic rank $\le1$) is already a **theorem** [[thm-kolyvagin-gross-zagier]].
+(analytic rank $\le1$) is already a **theorem** [[kolyvagin-gross-zagier]].
 
 ## Known partial results (frontier)
 
 - **Analytic rank $\le1$ — BSD proven** (rank equality + $\text{Sha}$
   finiteness): Gross-Zagier + Kolyvagin + modularity + nonvanishing
-  [[thm-kolyvagin-gross-zagier]] [bsd-rank-le-1-proven].
+  [[kolyvagin-gross-zagier]] [bsd-rank-le-1-proven].
 - **Parity — proven** ($r_{\text{alg}}\equiv r_{\text{an}}\pmod2$;
-  $p$-parity unconditionally): [[thm-parity]] [bsd-parity-proven].
+  $p$-parity unconditionally): [[parity]] [bsd-parity-proven].
 - **Refined leading-coefficient — open in general** (even at rank 0),
   verified computationally for conductor $<5000$ [bsd-refined-open]
   [bsd-comp-verified].

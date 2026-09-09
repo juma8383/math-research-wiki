@@ -4,7 +4,7 @@ name: near-miss stratification (unit-base gap-1 of generalized Fermat signatures
 created: 2026-08-31
 tags: [number-theory, generalized-fermat, near-misses, pillai]
 used-in: [[beals_conjecture]]
-provenance: [[beal-near-miss-stratification-preprint]]
+provenance: in-repo derivation (beals-conjecture attempts)
 ---
 
 # Near-miss stratification theorem

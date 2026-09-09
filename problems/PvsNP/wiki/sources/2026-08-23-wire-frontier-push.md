@@ -1,3 +1,9 @@
+---
+title: Cycle 2 — The CSS16/Tell wire-frontier push: two-dimensional characterization of the mining gap (Williams side)
+date: 2026-08-23
+status: raw
+---
+
 # Cycle 2 — The CSS16/Tell wire-frontier push: two-dimensional characterization of the mining gap (Williams side)
 
 **Date:** 2026-08-23

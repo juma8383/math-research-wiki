@@ -1,3 +1,9 @@
+---
+title: Source: P vs NP multi-angle workflow output
+date: 2026-08-21
+status: raw
+---
+
 # Source: P vs NP multi-angle workflow output
 
 **Provenance:** Produced by a 10-agent Workflow (`p-vs-np-attack`, run `wf_65eb3496-963`, 2026-08-21): 8 parallel angle deep-dives + 1 synthesizer + 1 completeness critic. ~508k tokens, 72 tool calls, ~11 min. Each angle agent was instructed to make a *genuine novel attempt*, not just survey, and to report honestly where it broke. Raw structured output stored in the session task output; this file captures the load-bearing claims with stable tags for wiki cross-reference.

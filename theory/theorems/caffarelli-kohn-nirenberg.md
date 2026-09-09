@@ -9,7 +9,7 @@ provenance: [[ns-survey]]
 
 # Caffarelli-Kohn-Nirenberg (CKN) partial regularity
 
-For **suitable weak solutions** of 3D NS [[def-navier-stokes-equation]], the
+For **suitable weak solutions** of 3D NS [[navier-stokes-equation]], the
 space-time singular set has **parabolic Hausdorff dimension $\le 1$** [ns-ckn]
 (Caffarelli-Kohn-Nirenberg, 1982; Acta Math.).
 
@@ -28,4 +28,4 @@ CKN does NOT rule out blowup, and does not prove regularity. It is consistent
 with both global regularity and a measure-$\le1$ blowup set. Like the
 conditional criteria, it is a resolution-layer tool that characterizes
 singularities without producing (or ruling out) them. The obstruction — a
-global critical bound [[method-energy-supercriticality]] — is untouched.
+global critical bound [[energy-supercriticality]] — is untouched.

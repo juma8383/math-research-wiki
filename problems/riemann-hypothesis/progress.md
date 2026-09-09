@@ -1,3 +1,8 @@
+---
+type: progress
+problem: riemann-hypothesis
+---
+
 # Progress — Riemann Hypothesis
 
 > Running state. **Read this first when resuming.** Consolidated through
@@ -108,7 +113,7 @@ extension.)
   $\sigma\le\tfrac34$ was **Huxley 1972** ($12/5$), not Ingham directly —
   the accurate claim is "first substantive improvement since Ingham 1940 in
   the $\sigma\le\tfrac34$ range." **Resolution-on-average.**
-- **Chourasiya 2024** (arXiv:2412.02068) — **DOWNGRADED** `[rh-chourasiya-flagged]`:
+- **Chourasiya 2024** (arXiv:2412.02068) — **DOWNGRADED** `rh-chourasiya-flagged`:
   an automated audit (Pith Review) flags that the proof as written concludes
   the original Carlson exponent $(\log T)^4$, not the advertised $5-2\sigma$
   (imported KLN lemma hypotheses unverified for the mollifier), and
@@ -117,7 +122,7 @@ extension.)
   "improves the log exponent from 4 to $5-2\sigma$" line was WRONG as a fact
   about what Chourasiya achieved. Same publication-status discipline as NS /
   Collatz / YM claimed-result flags.
-- **`[rh-2026-claims-non-journal]`** (was `[rh-2024-claims-unverified]` —
+- **`rh-2026-claims-non-journal`** (was `rh-2024-claims-unverified` —
   identified and upgraded 2026-08-31): the $\ge\tfrac23$ claim is
   **arXiv:2608.13637 (Aug 2026)**, Alpöge–Furman (two authors; the arXiv
   Comments field notes autonomous-AI discovery — do not credit Claude as an
@@ -132,7 +137,7 @@ extension.)
   `zeta-23-lean` URL was the scan's; no `sorry`), read by Conrey/Goldston,
   **no journal peer review**. Still proportion-only; does not touch the
   control-to-all wall — as predicted.
-- **Bandwidth-one ceiling — VERIFY-CONFIRMED 2026-08-31** `[rh-bandwidth-ceiling-verified]`
+- **Bandwidth-one ceiling — VERIFY-CONFIRMED 2026-08-31** `rh-bandwidth-ceiling-verified`
   (adversarial verify: §7.2 verbatim quotes obtained): the exact rational
   is $p_0\le0.6818287$ ("approximately 0.682") — the 0.68185 in the scan
   was a misrounding; a "0.70/0.80/0.90 need support 1.04/1.26/1.70"
@@ -162,7 +167,7 @@ extension.)
   that set has $\asymp T$ elements). The scan's "if it fails, the failing
   input is the Euler product" dichotomy is **likely ill-posed and KILLED**.
   Noise flag: arXiv:2503.24275 claims DH zeros are *all* on the line —
-  contradicts established theorems; disregard `[rh-dh-noise-flagged]`.
+  contradicts established theorems; disregard `rh-dh-noise-flagged`.
 
 ## Attempt log
 
@@ -188,7 +193,7 @@ extension.)
 
 Status after the 2026-08-31 hunt scan (search-verified, not paper-body read):
 Guth–Maynard (Annals 203(2) 2026, arXiv:2405.20552) — CONFIRMED published with
-exact exponent; `[rh-2024-claims-unverified]` RESOLVED-UPGRADED to the precise
+exact exponent; `rh-2024-claims-unverified` RESOLVED-UPGRADED to the precise
 arXiv:2608.13637 identity + non-journal status; Chourasiya 2024 flag DOWNGRADED
 (audited/superseded); Suzuki 2023 (JLMS DOI 10.1112/jlms.12785, Ths 1.2/1.5/1.8)
 CONFIRMED at abstract level; Platt–Trudgian 2021 CONFIRMED (BLMS,
@@ -197,10 +202,10 @@ downstream $\Lambda\le0.2$). Still open (not paper-body re-read):
 
 ~~The **bandwidth-one ceiling** and the §7.2 certificate-class details of
 arXiv:2608.13637~~ — **RESOLVED 2026-08-31** by the adversarial verify wave:
-exact rational $p_0\le0.6818287$ (`[rh-bandwidth-ceiling-verified]`); §7.2
+exact rational $p_0\le0.6818287$ (`rh-bandwidth-ceiling-verified`); §7.2
 verbatim; scan trajectory deleted as fabricated; attribution + Lean repo
-corrected. See also the new theory pages: [[method-rh-positivity-equivalences]],
-[[thm-zero-density-ladder]], [[method-two-avatars-control-step]].
+corrected. See also the new theory pages: [[rh-positivity-equivalences]],
+[[zero-density-ladder]], [[two-avatars-control-step]].
 ~~**Li 1997**, **Bombieri–Lagarias 1999**~~ — **RESOLVED at search level
 2026-08-31 (loop block):** Li 1997 = JNT 65, 325–333 (both forms of
 $\lambda_n$ equal); **Bombieri–Lagarias 1999 = JNT 77(2), 274–287 (NOT Acta
@@ -272,9 +277,9 @@ Still open (paper-body standard):
   listing; arXiv:2608.13637 §7.2 verbatim + ceiling figure; Chourasiya
   downgraded; authorship/Lean-repo corrected).
 - ~~Two-avatars `theory/methods/` page~~ — **DONE 2026-08-31**:
-  [[method-two-avatars-control-step]] (with the Hodge standard-conjectures
-  link), plus [[thm-zero-density-ladder]] and
-  [[method-rh-positivity-equivalences]] (Weil/Li/Bombieri–Lagarias/Suzuki
+  [[two-avatars-control-step]] (with the Hodge standard-conjectures
+  link), plus [[zero-density-ladder]] and
+  [[rh-positivity-equivalences]] (Weil/Li/Bombieri–Lagarias/Suzuki
   compressed into the toolbox).
 - Remaining open directions: paper-body verification of the classical
   reductions (Connes 1997/2019, Li 1997, Bombieri–Lagarias 1999, Deligne

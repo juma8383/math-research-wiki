@@ -25,7 +25,7 @@ degree $2(n-p)$. Consequently the only degrees known unconditionally are
 $$H^0,\ H^2,\ H^{2n-2},\ H^{2n}$$
 i.e. codimensions $p\in\{0,1,n-1,n\}$ [hodge-known-degrees-0-2-2n]:
 - $p=0$: $[X]$; $p=n$: $[\mathrm{pt}]$ — trivial.
-- $p=1$: Lefschetz $(1,1)$ [[thm-lefschetz-1-1]].
+- $p=1$: Lefschetz $(1,1)$ [[lefschetz-1-1]].
 - $p=n-1$: hard Lefschetz applied to $p=1$.
 
 ## Role in the obstruction

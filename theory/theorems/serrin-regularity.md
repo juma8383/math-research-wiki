@@ -9,7 +9,7 @@ provenance: [[ns-survey]]
 
 # Serrin-Prodi-Ladyzhenskaya conditional regularity
 
-If a weak solution $u$ of 3D NS [[def-navier-stokes-equation]] satisfies
+If a weak solution $u$ of 3D NS [[navier-stokes-equation]] satisfies
 $$u\in L^r_t(0,T;L^s_x),\qquad \frac{2}{r}+\frac{3}{s}\le 1,\quad s>3,$$
 then $u$ is smooth and unique on $[0,T]$ [ns-serrin] (Ladyzhenskaya-Prodi-Serrin).
 
@@ -21,7 +21,7 @@ $r=\infty,\ s=3$, i.e. $u\in L^\infty_t L^3_x$:
   $u\in L^\infty_t L^3_x\Rightarrow$ smooth (via backward uniqueness + unique
   continuation).
 - This is the **critical regularity criterion**: $L^3$ is scale-invariant
-  [[def-navier-stokes-equation]], so a global $L^\infty_t L^3_x$ bound would
+  [[navier-stokes-equation]], so a global $L^\infty_t L^3_x$ bound would
   prove global regularity.
 
 ## Extensions
@@ -34,6 +34,6 @@ $r=\infty,\ s=3$, i.e. $u\in L^\infty_t L^3_x$:
 Serrin criteria are **conditional** resolution: "IF a critical norm is bounded
 THEN smooth." They are exactly sharp (critical). The obstruction is that no
 unconditional GLOBAL bound on such a critical norm is known — the energy only
-gives the subcritical $L^2$ [[method-energy-supercriticality]]. Tao's
+gives the subcritical $L^2$ [[energy-supercriticality]]. Tao's
 quantitative $L^3$ blowup rate [ns-tao-quant-l3] measures how the critical
 endpoint can fail.

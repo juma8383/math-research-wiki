@@ -28,7 +28,7 @@ the geometric avatar:
 |---|---|---|---|
 | RH | Weil (curves, 1940s) / Deligne (all varieties, 1974): Frobenius eigenvalues are Weil numbers $\lvert\alpha\rvert=q^{-n/2}$ | RH for $\zeta(s)$, all $L$-functions [[riemann_hypothesis]] | **Frobenius + Rosati positivity** — no Frobenius in char 0 |
 | BSD | Function-field BSD (Birch–Swinnerton-Dyer over $\mathbb F_q(t)$) — proven | BSD for elliptic curves over $\mathbb Q$ [[birch_swinnerton_dyer]] | **Euler systems + étale cohomology** (Kato–Trihan route) — no known char-0 translation of the geometric mechanism |
-| Hodge (analogue) | Motivic / standard-conjectures world: Rosati positivity is *conjectural itself* (the standard conjectures) [[hodge_conjecture]] | — | The standard conjectures are the shared Rosati-type positivity both a motivic RH and the Hodge conjecture would rest on [[method-analytic-algebraic-bridge]] |
+| Hodge (analogue) | Motivic / standard-conjectures world: Rosati positivity is *conjectural itself* (the standard conjectures) [[hodge_conjecture]] | — | The standard conjectures are the shared Rosati-type positivity both a motivic RH and the Hodge conjecture would rest on [[analytic-algebraic-bridge]] |
 
 ## Why it is stronger than "parallel walls"
 
@@ -58,7 +58,7 @@ Known structural facts about the gap (all `[summary]`, classical):
 
 ## Relationship to the other cross-problem lenses
 
-- **Average-vs-pointwise** [[method-average-vs-pointwise-control]]: usually
+- **Average-vs-pointwise** [[average-vs-pointwise-control]]: usually
   the *stated* control step inside one avatar ("almost all → every"). The
   two-avatars lens is orthogonal and deeper: it explains why the tool that
   gets you pointwise control **in one world** does not export.
@@ -88,5 +88,5 @@ Known structural facts about the gap (all `[summary]`, classical):
 - [[riemann_hypothesis]] — the cleanest instance; three control-reductions
   in progress.md, avatar-(C) is this page.
 - [[birch_swinnerton_dyer]] — attempt-07 two-avatars twin.
-- [[method-average-vs-pointwise-control]] — the in-avatar control lens.
+- [[average-vs-pointwise-control]] — the in-avatar control lens.
 - [[hodge_conjecture]] — the standard conjectures as the shared positivity.

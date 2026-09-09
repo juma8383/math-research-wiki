@@ -1,3 +1,16 @@
+---
+type: problem
+slug: poincare-conjecture
+title: Poincaré Conjecture
+status: proven
+difficulty: famous-open-problem
+created: 2026-09-01
+last-updated: 2026-09-09
+tags: []
+tools: []
+related: []
+---
+
 # Poincaré Conjecture
 
 > Problem statement. For the running state, read [progress.md](progress.md)

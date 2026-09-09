@@ -40,5 +40,5 @@ $\mathrm{cl}\otimes\mathbb Q$ is **surjective** for every $p$ — every Hodge
 class is a $\mathbb Q$-linear combination of algebraic-cycle classes. This is
 the conjecture that the analytic objects (Hodge classes) are all algebraic
 (cycles). The obstruction is controlling this analytic→algebraic conversion in
-codimension $\ge2$ [[method-analytic-algebraic-bridge]]. Anchor of the
+codimension $\ge2$ [[analytic-algebraic-bridge]]. Anchor of the
 [[hodge_conjecture]] attack.

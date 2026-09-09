@@ -16,7 +16,7 @@ constant depending only on $\varepsilon$.
 ## Application to Beal signatures
 
 For a primitive $A^x+B^y=C^z$ set $a=A^x,\ b=B^y,\ c=C^z$ (pairwise coprime by
-[[method-pairwise-coprime-reduction]]). Then
+[[pairwise-coprime-reduction]]). Then
 $\mathrm{rad}(abc)=\mathrm{rad}(ABC)\le ABC$, and from $A^x,C^z$ sizes,
 $A<C^{z/x},\ B<C^{z/y}$. abc gives
 
@@ -30,7 +30,7 @@ positive (for small $\varepsilon$) precisely when $1/x+1/y+1/z<1$. Hence abc ⟹
 ## The limit (why abc does NOT prove Beal)
 
 This finiteness is **identical in strength** to the *unconditional*
-Darmon–Granville result [[thm-darmon-granville]] (which already gives finiteness
+Darmon–Granville result [[darmon-granville]] (which already gives finiteness
 via Faltings). abc yields no improvement toward the actual Beal claim of
 **zero** primitive solutions. The boundary case $1/x+1/y+1/z=1$ (only
 $(3,3,3)$) is outside abc's reach anyway and is covered by FLT.
@@ -40,4 +40,4 @@ $(3,3,3)$) is outside abc's reach anyway and is covered by FLT.
 Useful only as a **negative** reference: if tempted to argue "abc implies
 Beal," don't — it gives only finiteness, already known. Filed to prevent
 revisiting this as a shortcut. The real gap (finitely-many → zero) requires the
-modular machinery [[method-frey-modularity]], not abc.
+modular machinery [[frey-modularity]], not abc.

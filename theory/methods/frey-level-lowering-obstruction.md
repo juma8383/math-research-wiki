@@ -10,8 +10,8 @@ provenance: []
 # Level-lowering obstruction for pairwise-distinct odd-prime signatures
 
 The structural reason the classical Frey/modularity/level-lowering machine
-[[method-frey-modularity]] — which killed FLT and solved the repeated-exponent
-signatures [[thm-solved-generalized-fermat-signatures]] — **cannot close** on
+[[frey-modularity]] — which killed FLT and solved the repeated-exponent
+signatures [[solved-generalized-fermat-signatures]] — **cannot close** on
 signatures $(p,q,r)$ of three pairwise distinct odd primes (e.g. Beal's
 smallest open case $(3,5,7)$).
 
@@ -65,7 +65,7 @@ strips **both** $A$- and $B$-primes (since $p\mid 2p$), leaving only $C$-primes 
 the residual conductor — a structurally simpler, single-base residual that
 additional methods (image-of-inertia conditions, multi-Frey, Kraus-type
 arguments, Chabauty) can often close. This is how $(3,3,n)$,
-$(5,5,7)$, etc. were solved [[thm-solved-generalized-fermat-signatures]].
+$(5,5,7)$, etc. were solved [[solved-generalized-fermat-signatures]].
 
 For $(p,p,p)$ (FLT): $\Delta\propto(ABC)^{2p}$, lowering at $\ell=p$ strips
 **everything** → residual level a power of $2$ → no weight-2 form → instant

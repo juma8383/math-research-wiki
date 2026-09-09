@@ -1,3 +1,14 @@
+---
+type: attempt
+problem: riemann-hypothesis
+attempt: 01
+date: 2026-09-01
+approach: 3-approach protocol attack (web-verified; classical facts confirmed)
+partial - frontier + control reductions established; no proof claimed
+tags: []
+outcome: partial - frontier + control reductions established; no proof claimed
+---
+
 # Attempt 01 — Riemann Hypothesis (first attack)
 
 > First attack. Per the research protocol: ≥3 distinct approaches, evidence +
@@ -141,7 +152,7 @@ approach (A) heuristically without supplying the operator (the control tool).
   vanishing-but-nonzero exceptional set. The average side is *structurally*
   incapable of the all-zeros conclusion (the Collatz echo — Π²₀-completeness
   there; the symmetry-doesn't-pin gap here).
-- **`[rh-2024-claims-unverified]`**: the 2/3-of-zeros-on-the-line claim (2024,
+- **`rh-2024-claims-unverified`**: the 2/3-of-zeros-on-the-line claim (2024,
   linear-algebraic + Lean-4 core) is **not peer-reviewed**; treated as
   unverified (same discipline as YM/NS/Collatz preprints). Even if true it is
   a proportion, not the control step.
@@ -193,7 +204,7 @@ ceiling = map + framing + twin.
 ## To-verify (next moves)
 
 - Primary-source verify the 2024 advances: Guth–Maynard (statement, venue/DOI,
-  "breaks Ingham 1940"); `[rh-2024-claims-unverified]` (authorship, venue,
+  "breaks Ingham 1940"); `rh-2024-claims-unverified` (authorship, venue,
   peer-review, exact 2/3 vs 5/12); Chourasiya 2024 (arXiv:2412.02068, the
   $5-2\sigma$ Carlson exponent).
 - Suzuki 2023 (JLMS DOI 10.1112/jlms.12785) screw-function equivalents; Connes

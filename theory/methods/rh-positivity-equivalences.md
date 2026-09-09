@@ -4,7 +4,7 @@ name: RH positivity equivalences (Weil / Li / Bombieri–Lagarias / Suzuki)
 created: 2026-08-31
 tags: [number-theory, zeta, explicit-formula, equivalence, obstruction]
 used-in: [[riemann_hypothesis]]
-provenance: [[riemann-hypothesis-attempt-01]]
+provenance: problems/riemann-hypothesis/attempts/attempt-01.md
 ---
 
 # RH positivity equivalences — the exact sign-control reductions
@@ -73,7 +73,7 @@ positivity input*. The Weil form's prime side is only bounded below by
 positivity of $|\cdot|^2$ terms; the missing piece is exactly a positivity
 statement that is *itself* RH-equivalent in strength.
 
-**Bandwidth caution (new 2026-08-31, `[rh-bandwidth-ceiling-verified]`):**
+**Bandwidth caution (new 2026-08-31, `rh-bandwidth-ceiling-verified`):**
 the Alpöge–Furman ceiling $p_0\le0.6818287$ shows what happens when one
 *computes* with finite compressions of the Weil form: any certificate
 reading only the first two trace moments at Fourier support 1 is provably
@@ -100,7 +100,7 @@ entirely.
 
 - [[riemann_hypothesis]] — the three control-reductions in progress.md;
   (B) is this page.
-- [[thm-zero-density-ladder]] — the average/density engine these
+- [[zero-density-ladder]] — the average/density engine these
   equivalences would need to beat.
-- [[method-two-avatars-control-step]] — the Rosati-positivity parallel in
+- [[two-avatars-control-step]] — the Rosati-positivity parallel in
   the geometric avatar.

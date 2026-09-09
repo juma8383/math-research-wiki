@@ -1,3 +1,8 @@
+---
+type: notes
+problem: yang-mills
+---
+
 # Notes — Yang-Mills existence and mass gap
 
 Scratch / sparks / dead ends. Promote good ones into attempts.

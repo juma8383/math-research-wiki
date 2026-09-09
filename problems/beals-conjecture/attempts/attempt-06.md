@@ -12,10 +12,10 @@ loop_cycle: 4 of 20
 # Attempt 06 — Why descent dies for mixed exponents
 
 The non-modular counterpart to the modular-method obstruction
-[[method-frey-level-lowering-obstruction]]. Classical infinite descent closed
+[[frey-level-lowering-obstruction]]. Classical infinite descent closed
 FLT for $n=3$ (Euler, Eisenstein integers) and $n=4$ (Fermat, Pythagorean
 triples). Why does the same engine not touch $x^p+y^q=z^r$ with mixed/distinct
-exponents? Filed [[method-infinite-descent]] with the full analysis.
+exponents? Filed [[infinite-descent]] with the full analysis.
 
 ## The three requirements of descent
 
@@ -55,12 +55,12 @@ descent* — connecting this thread back to attempt-02/03.
 
 All three non-modular/modular threads now converge on the same structural fact:
 
-- **Modular method** [[method-frey-level-lowering-obstruction]]: distinct
+- **Modular method** [[frey-level-lowering-obstruction]]: distinct
   exponents ⟹ no single level-lowering prime strips all bases ($\gcd(2p,2q,2r)=2$).
-- **Darmon program** [[method-darmon-program]]: even the abelian-variety
+- **Darmon program** [[darmon-program]]: even the abelian-variety
   generalization is developed only for repeated exponents; distinct-prime case
   undeveloped.
-- **Mordell lens** [[method-mordell-curve-lens]]: elliptic structure exists
+- **Mordell lens** [[mordell-curve-lens]]: elliptic structure exists
   only at genus 1 = cubic-cubic; dies at $(3,5,7)$ (genus 4).
 - **Descent** (this cycle): no cyclotomic factorization for $x^p+y^q$, $p\neq q$.
 

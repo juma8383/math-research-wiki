@@ -13,12 +13,12 @@ loop_cycle: 1 of 20
 
 attempt-02 concluded the path to $(3,5,7)$ runs through Darmon's program, gated
 on a missing irreducibility theorem. This attempt ingests the program's primary
-source [[dv2022]] to check whether that path is even *open* for three-distinct-
+source [[darmon-program-2022]] to check whether that path is even *open* for three-distinct-
 prime signatures.
 
 ## Ingest
 
-[[dv2022]] = Billerey–Chen–Dieulefait–Freitas, "On Darmon's program for the
+[[darmon-program-2022]] = Billerey–Chen–Dieulefait–Freitas, "On Darmon's program for the
 generalized Fermat equation, I" (arXiv:2205.15861). Filed with claim tags
 [dv2022-frey-av, -irreduc-conjecture, -repeated-only, -55p-cartan, -1111n].
 
@@ -50,7 +50,7 @@ representations for three-distinct-prime signatures $(p,q,r)$, but "these are
 not considered in this work."
 
 > **Therefore Darmon's program does NOT currently reach $(3,5,7)$.** It is,
-> like the classical Frey method [[method-frey-modularity]], a repeated-exponent
+> like the classical Frey method [[frey-modularity]], a repeated-exponent
 > tool. $(3,5,7)$ is outside the scope of *both* the classical and the abelian-
 > variety modular methods as they stand.
 
@@ -77,8 +77,8 @@ theorem — each a major open project.
 
 **partial.** No progress toward a *proof*; instead a sharpened (and humbler)
 understanding of the frontier: $(3,5,7)$ is outside current modular methods
-entirely, not just gated on one theorem. Filed [[method-darmon-program]] and
-source [[dv2022]] so the wiki records this correctly.
+entirely, not just gated on one theorem. Filed [[darmon-program]] and
+source [[darmon-program-2022]] so the wiki records this correctly.
 
 ## Next threads (for subsequent cycles)
 

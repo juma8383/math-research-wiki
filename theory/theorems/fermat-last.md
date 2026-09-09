@@ -23,7 +23,7 @@ $n\geq 5$ plus these.
 **Relevance to Beal.** This is the signature $(p,p,p)$ case of Beal (and the
 only signature with reciprocal invariant $1/p+1/q+1/r = 1$, namely $(3,3,3)$).
 It is the prototype for the Frey-curve / modularity / level-lowering method
-[[method-frey-modularity]] that Beal's mixed-signature case resists.
+[[frey-modularity]] that Beal's mixed-signature case resists.
 
-See [[thm-darmon-granville]] for the general finiteness result that surrounds
+See [[darmon-granville]] for the general finiteness result that surrounds
 it.

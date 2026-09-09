@@ -39,7 +39,7 @@ $\|u\|_{L^\infty_t L^3_x}\le M\Rightarrow\|u\|_{L^\infty_{x,t}}\le
 ## Role in the obstruction
 
 The triple-log rate **quantifies the missing control step**
-[[method-energy-supercriticality]]: the critical $L^3$ norm must blow up
+[[energy-supercriticality]]: the critical $L^3$ norm must blow up
 faster than a triple log — blowup is barely possible, but not ruled out. This
 is the sharpest measure of the supercritical gap. Direction (B) (constructing
 true blowup) must produce a mechanism achieving this rate; direction (A) (a

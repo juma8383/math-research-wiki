@@ -66,6 +66,6 @@ prioritize *completing* work over *parallelizing* it. Conserve as usage grows:
   `python3`); set `PYTHONIOENCODING=utf-8`; avoid non-ASCII in script output.
 - Slug convention: problem folders kebab-case; cross-problem wikilinks use
   **UNDERSCORE** (`[[birch_swinnerton_dyer]]`); theory-page slugs kebab
-  (`[[thm-mordell-weil]]`).
+  (`[[mordell-weil]]`).
 - Verify load-bearing facts via web search before committing; flag search-
   derived facts `[summary]`/`to-verify` until primary-source-verified.

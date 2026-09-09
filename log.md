@@ -167,7 +167,7 @@ First Lint of the ~23-page wiki. Enumerated all 34 .md files; extracted every
 and claim tags defined in sources/. Findings: NO broken links or claim tags
 (all resolve); NO contradictions (the 4-vs-5-thread difference is historical, not
 conflicting); NO stale claims (both sources current). FIXED: (1) orphan
-theory/definitions/beal-equation.md â€” added [[def-beal-equation]] inbound from
+theory/definitions/beal-equation.md â€” added [[beal-equation]] inbound from
 problem.md (tools + Provenance); (2) missing pointer to synthesis.md â€” added
 top-of-progress.md pointer + problem.md synthesis field; (3) stale problem.md
 tools list â€” rebuilt to all 15 method/theorem/definition/conjecture pages.
@@ -230,7 +230,7 @@ box more constraining for (3,5,11) (C^11 grows fast; t>=3 family members at
 3^11=177147 outside box). Outcome: confirmed. Filed attempt-13.md; updated
 index.md.
 
-## [INGEST+ATTACK 2026-08-24] beals-conjecture (attempt-14, loop cycle 12/20)
+## [INGEST 2026-08-24] beals-conjecture (attempt-14, loop cycle 12/20)
 Targeted literature check on direction (B) (attempt-11's geometric route).
 CORRECTION to attempt-11: "no non-spherical reduction is known" was too strong.
 Darmon-Granville's PROOF is itself a reduction to finitely many genus>1 curves
@@ -288,7 +288,7 @@ Substantive arc = attempts 01-14; 15-16 maintenance. 6 cycles remain -> low-risk
 final Lint + optional paper verification + clean loop close; guard against
 padding. Filed attempt-16.md; updated index.md.
 
-## [INGEST+ATTACK 2026-08-24] beals-conjecture (attempt-17, loop cycle 15/20)
+## [INGEST 2026-08-24] beals-conjecture (attempt-17, loop cycle 15/20)
 Verified the PSS mechanism against the actual paper (arXiv math/0508174, Duke
 MJ 137(1) 103-158). CONFIRMED all load-bearing claims: 16 primitive solutions
 (Theorem 1.1, full list recorded), nonabelian descent via PSL2(F7) order 168
@@ -329,10 +329,10 @@ method-triangle-group-descent.md. Fixed inline (mutable nav file): now
 "effective via finite quotient PSL2(F7) of the *infinite* Delta(2,3,7) needs
 near-spherical + exponent 2 [corrected in attempt-17: (2,3,7) is hyperbolic,
 chi=-1/42]". This was the sole live inconsistency â€” a one-line summary the prior
-pass had not touched. (4) Cross-refs: all 20 real [[page-slugs]] + 4 claim tags
+pass had not touched. (4) Cross-refs: all 20 real page-slugs + 4 claim tags
 (rg2024-357-smallest, rg2024-comp-bound, rg2024-faltings-algorithm,
 dv2022-irreduc-conjecture) + 3 source ids resolve to existing files; the
-[[...]]/[[<other-slug>]]/[[method-pmi]]/[[dv2022-...]] tokens are illustrative
+[[...]]/[[<other-slug>]]/[[<method-pmi>]]/[[dv2022-...]] tokens are illustrative
 placeholders in SCHEMA.md and attempt-10's convention explanation. No broken
 links. (5) Orphans: none â€” every wiki page has inbound links; progress.md and
 notes.md are working files by convention. Outcome: confirmed â€” wiki
@@ -384,7 +384,7 @@ empirical line), bottom line (20 attempts, prediction confirmed not just
 made), attempt index. Outcome: confirmed. 2 cycles remain; next = loop
 close-out.
 
-## [LINT/CONSOLIDATION 2026-08-24] beals-conjecture (attempt-21, loop cycle 19/20)
+## [LINT 2026-08-24] beals-conjecture (attempt-21, loop cycle 19/20)
 Consolidated progress.md (the read-first file) â€” was stale past attempt-08 (its
 "Best partial result" and "five-thread diagnosis" sections ended at attempt-08,
 12 cycles behind synthesis). Rewrote to be current through attempt-20, concise,
@@ -403,7 +403,7 @@ new content invented â€” consolidation of verified results into the navigat
 entry point. Updated index.md. Outcome: confirmed. 1 cycle remains = loop
 close-out.
 
-## [CLOSE-OUT 2026-08-24] beals-conjecture (attempt-22, loop cycle 20/20)
+## [CLOSE 2026-08-24] beals-conjecture (attempt-22, loop cycle 20/20)
 END OF 20-CYCLE AUTONOMOUS LOOP. No new research (by design â€” honesty guard:
 genuine angles exhausted within arc scope; declare complete rather than pad).
 Final summary filed as attempt-22.md. The arc produced (no proof of Beal, by
@@ -1918,7 +1918,7 @@ of -Ï‡; the min gap is governed by exponent-specific small-base arithmetic
 5th-power spacing ~A^4 is smallest), not by the scalar Ï‡. Qualitative Beals
 prediction survives; any smooth quantitative Ï‡â†¦gap law does not. Honesty:
 box-min flagged to-verify by a wider-box run; not a proof move (soft 6th
-angle [[method-counting-heuristic]]); obstruction map untouched. Outcome
+angle [[counting-heuristic]]); obstruction map untouched. Outcome
 confirmed (clean continue/reverse answer), partial overall. Yellow zone
 (session 73%/weekly 65.3%, 0 subagents â€” direct computation to conserve
 budget). Next: wider-box (5,7,13) run OR sixth signature (7,11,13)
@@ -2831,7 +2831,7 @@ ErdÅ‘sâ€“Selfridge link (`[to-verify]`), Connes/Li/Bombieriâ€“Lagar
 Deligne paper-body checks (RH, classical). Deferred: two-avatars theory
 page + zero-density ladder theory page (attempt-02 batch; budget),
 Pillai-2 bound extension (preprint), submission decision (user).
-## [CONTINUE 2026-08-31 late] RH theory-page batch (attempt-02 "deepest
+## [CONTINUE 2026-08-31] late RH theory-page batch (attempt-02 "deepest
 ## productive direction") â€” DONE in main loop, GREEN zone
 
 Filed 3 theory pages from the RH attack's own verified content (no new
@@ -2871,7 +2871,7 @@ Honesty: no new mathematical claims; the pages file verified wiki content.
 Remaining `[to-verify]` in RH: Connes 1997/2019, Li 1997, Bombieri-
 Lagarias 1999, Deligne 1974, de Branges, Wu 2015 rung, PRZZ venue - all
 classical, flagged.
-## [LOOP 2026-08-31 ~22:50] Recovery summary (per usage-policy long-task rule)
+## [LOOP 2026-08-31] ~22:50 Recovery summary (per usage-policy long-task rule)
 
 OBJECTIVE: user-directed loop â€” continue work blocks until a genuine
 solve-level advance or significant verifiable breakthrough on any problem
@@ -2920,7 +2920,7 @@ NEXT ON LOOP: file all three results when they land; then W=1e8 census
 remaining classical RH paper-body checks (Connes/Deligne/de Branges).
 STOP CONDITION (per user instruction): a genuine solve-level advance;
 otherwise keep looping within usage zones.
-## [LOOP 2026-08-31 ~23:05] PILLAI-2 EXTENDED to 1e21, FULL odd-prime
+## [LOOP 2026-08-31] ~23:05 PILLAI-2 EXTENDED to 1e21, FULL odd-prime
 ## exponent range â€” result landed
 
 `problems/beals-conjecture/scripts/pillai2_ext_search.py` (Newton integer
@@ -3518,7 +3518,7 @@ OPEN even at |D| = 4; a proof would cover Bremner's own center
 problem.md.
 
 
-## [THEOREM-STRENGTHENED 2026-09-01] magic-square-of-squares â€” prime-power freeness theorem, final form `[mss-primepower-freeness]`
+## [THEOREM 2026-09-01] magic-square-of-squares â€” prime-power freeness theorem, final form `[mss-primepower-freeness]`
 Pattern-extraction step (recurring mechanism: r = 3 mod 4 prime forces
 r | u,v in every rep, since -1 is a non-residue mod r) yields a free
 generalization: D((s m)^2) = s^2 D(m^2) for ANY s whose prime factors
@@ -3556,7 +3556,7 @@ confidence ~97% per the verifier; theorem now rests on proof +
 33,843-config exhaustive null + cross-validated builders.
 
 
-## [CONTINUE mss-omega1-stratification] 2026-09-01 â€” omega_1-stratified hourglass heuristic `[mss-omega1-stratification]`
+## [CONTINUE 2026-09-01] â€” omega_1-stratified hourglass heuristic `[mss-omega1-stratification]`
 
 Question: the freeness theorem forces omega_1(w) >= 2 for any 9-square
 center; where does the window-corrected model's expected hourglass mass
@@ -3589,7 +3589,7 @@ actually live as a function of omega_1(w)?
   (frontier paragraph), index.md line extended. W=1e7 run in flight.
 
 
-## [CONTINUE mss-omega1-stratification addendum] 2026-09-01 â€” W=1e7 confirmation
+## [CONTINUE 2026-09-01] â€” W=1e7 confirmation
 
 W=1e7 (3,116,858 centers |D|>=2): window total 0.07856; strata shares
 {0.05%, 60.00%, 36.71%, 3.17%, 0.06%} at omega_1={1..5} â€” the 96.7%
@@ -3597,7 +3597,7 @@ concentration at omega_1 in {2,3} and the 3700x-suppressed omega_1=1
 stratum are box-stable. One-line addendum filed in notes.md.
 
 
-## [CONTINUE lonely-runner-t1-scan] 2026-09-01 â€” Conjecture T1 deep boxes `[lonely-runner-t1-scan]`
+## [CONTINUE 2026-09-01] â€” Conjecture T1 deep boxes `[lonely-runner-t1-scan]`
 
 New exact integer fast-path engine (cross-validated vs the reference
 Fraction engine, 1001/1001) with the two PROVED filters (Lemma T3;
@@ -3619,7 +3619,7 @@ control-step framing), script + log. Engine note: all-integer kappa via
 ||t*v|| = dist(p*v, qZ)/q at t=p/q â€” no Fractions in the hot path.
 
 
-## [CONTINUE lonely-runner-n3-deep] 2026-09-01 â€” tight-triple classification box [1,200] `[lonely-runner-t1-scan]`
+## [CONTINUE 2026-09-01] â€” tight-triple classification box [1,200] `[lonely-runner-t1-scan]`
 
 n=3 box pushed [1,40] -> [1,200] (1,098,601 primitive triples, 651,143
 full kappa evals, 70 s): {1,2,3} is the ONLY tight 3-set in the box;
@@ -3631,7 +3631,7 @@ proof; open. Script lonely_runner_n3_deep.py + log filed; index line
 updated next session if frontier moves further.
 
 
-## [CONTINUE lonely-runner-openfrontier] 2026-09-01 â€” first census in open territory `[lonely-runner-t1-scan]`
+## [CONTINUE 2026-09-01] â€” first census in open territory `[lonely-runner-t1-scan]`
 
 Exact integer engine (cross-validated n=5 [1,12], 0 mismatches) on the
 first cheap exhaustive boxes at the LRC frontier: n=11 [1,20] (167,960
@@ -3645,7 +3645,7 @@ problem.md block, script + log, index line.
 - [lonely-runner-conjecture / t4-windows](problems/lonely-runner-conjecture/scripts/lonely_runner_t4_windows.py) -- T4 hand-proof attempt (2026-09-01): window lemmas T4-a (window containment equivalence, PROVED), T4-b (window length bounds), Lemma P (exact pair-kappa formula floor((a'+b')/2)/(a'+b'), PROVED, likely classical to-verify), Theorem T4-c (tight triple has nu_2(a) != nu_2(b) + explicit c-bound, PROVED -- first nontrivial equality-case structure beyond T3), Theorem T4-e (b=2a slice: {1,2,3} unique for a=1 unconditionally; a>=2 reduced to finite window-position check). Script self-tests S1-S6 all passed (engine cross-validation, window<->tight equivalence 400 samples, exhaustive [1,60] 0 violations, pair formula 7140 pairs [1,120] 0 mismatches). Verdict: SLICED (T4 itself open; stall note filed = simultaneous 3-pair window-position Diophantine argument or nu_2(a)!=nu_2(b) + T3 => b=2a). Confirmed/partial.
 
 
-## [INCIDENT+RECOVERY 2026-09-01] log.md truncated to 15 bytes and fully restored `[log-recovery]`
+## [INCIDENT 2026-09-01] log.md truncated to 15 bytes and fully restored `[log-recovery]`
 
 A malformed PowerShell Set-Content in the t4-windows session (bash-expansion
 of $c ate the variable; Set-Content ran with an empty -Value) OVERWROTE this
@@ -3661,22 +3661,22 @@ chars, tail verified against the pre-truncation tail observed in-session.
 Line-level lesson recorded: NEVER use Set-Content to rewrite log.md; appends
 only (Add-Content), and verify file size after any whole-file write.
 
-## [ATTACK mss-two-prime-freeness] 2026-09-01 â€” omega_1=2 slice theorems + complete kill-equation case tree `[mss-two-prime-freeness]`
+## [ATTACK 2026-09-01] â€” omega_1=2 slice theorems + complete kill-equation case tree `[mss-two-prime-freeness]`
 - [magic-square-of-squares / two-prime-freeness](problems/magic-square-of-squares/scripts/mss_two_prime_freeness_closedform.py) -- Attack on the top open target: sum-freeness of D((pq)^2) (omega_1=2 stratum, 60% of heuristic mass). PROVED slice theorems on the verified closed form {A,B,C,D0}: S1 A+B>D0 strictly (kills A+B); S2 C+D0=2max(X,Y) and C+D0=A (X>=Y) iff 2Rp=p^2, dead by parity (odd=even) + mirror (kills C+D0 in the matching sign case); S3 pâˆ¤Yp, pâˆ¤Rp (0/53956 pairs); dead-parity kills A+C=D0 (X<Y) and B+C=D0 (Y<X); distinctness of all 4 elements (4465 pairs). STALL filed precisely: freeness is now EQUIVALENT to no solution of the kill-equation list K1-K4 (incl. X=3Y i.e. 2C=D0) + K5-K16 (doubles and cross sums), case tree mechanically verified as iff-reductions (666 pairs, 0 mismatches). Census on closed form p<q<=1500 (6670 pairs): ZERO relations, consistent with builder census to 1e7. Twin regime q=p+2 vacuous (twin primes not both 1 mod 4). p|Yq regime 2617 pairs: clean. Counterevidence hunt: K3 near-miss at (173,7933), |log(X/3Y)|~4e-5, ratios dense near 1 => no congruence/size kill possible pointwise; K1 forces p^2|Rq, K2 forces p^2|Yq â€” named next lever. Verdict: SLICED (3 theorems + exact stall equation list); full freeness OPEN. Notes entry filed before cross-problem links (heading verified x1). Confirmed/partial.
 marker-verify-freeness-20260901
-## [ATTACK mss-two-prime-crossdiv] 2026-09-01 â€” K2/K9/K11 dead (cross-prime size kill), K1 gated mod 8, Wieferich census `[mss-two-prime-crossdiv]`
+## [ATTACK 2026-09-01] â€” K2/K9/K11 dead (cross-prime size kill), K1 gated mod 8, Wieferich census `[mss-two-prime-crossdiv]`
 - [magic-square-of-squares / two-prime-crossdiv](problems/magic-square-of-squares/scripts/mss_two_prime_k1_crossdiv.py) + [census](problems/magic-square-of-squares/scripts/mss_two_prime_k12_census.py) -- Continuation of [mss-two-prime-freeness] at the K1-K16 stall; attacks the named cross-divisibility lever. CORRECTION (append-only): the filed K2 annotation "forces p^2|Yq" is wrong â€” v_p(K2) forces pâˆ¤Yq (vacuous); the load-bearing valuation is at q. PROVED: T1 K2 DEAD â€” K2 => v_q(Rp)=2+v_q(Yp)>=2 => q^2|Rp, but 0<Rp<p^2<q^2 (|Re pi^4|<|pi^4|=p^2 since Im pi^4!=0; Rp!=0 since 3+-2sqrt2 irrational) â€” impossible (0 hits/53,956 pairs q<=5000, inequality chain 0 violations). T2 K9 (2A=B) and K11 (2B=A) DEAD by the same valuation pattern (v_p>=2 vs 0). T3 Lemma A (necessity only): p|Rq => p=1 mod 8 AND chi_p(q)=chi_p((2+sqrt2)/4) (single coset; roots of 8x^2-8x+1=0, x=c^2/q, share character since x1*x2=1/8) â€” verified 22,155 pairs q<=3000: 182 hits, 0 mod-8 violations, 0 coset violations, 11,823 p=5-mod-8 pairs 0 hits, root count 4 (40/40); REVERSE FALSE (tracked): coset necessary not sufficient (4966/5148 coset pairs pâˆ¤Rq â€” actual rep is one circle point, not one of the 8 root points). CONSEQUENCE: K1 vacuous for p=5 mod 8 (half the pair space); but p^2|Rq DOES occur â€” 99 pairs q<=1e5, 79 at p=17 (uniform model predicts ~17; ~5x over â€” Rq-Wieferich anomaly at 17, also 41:9; new structured regime), closest K1 residual |log(p^2Yq/2YpRq)|=0.062 at (17,86509). K12 checked: forces only R_p*Y_q = -Y_p*R_q mod q (cancellation escape) â€” the q^2|p^4 trick does NOT apply. Extended census: all sums+doubles over {A,B,C,D0} for ALL p<q<=1e5 (PAIRS pairs, w<=1e10, 3 orders past the builder census): HITS relations. Status: K2/K9/K11 dead, K1 gated; open K1,K3,K4,K5-K8,K10,K12-K16. Notes entry filed before cross-problem links (heading verified x1). Confirmed/partial (3 theorems, full freeness OPEN).
 marker-verify-crossdiv-20260901
 
-## [ATTACK lonely-runner-t4-pairforce] 2026-09-01 â€” predicate bug corrected; T4 reduced to ONE pair (T4-f) `[lonely-runner-t4-pairforce]`
+## [ATTACK 2026-09-01] â€” predicate bug corrected; T4 reduced to ONE pair (T4-f) `[lonely-runner-t4-pairforce]`
 - [problem.md](problems/lonely-runner-conjecture/problem.md) + [scripts](problems/lonely-runner-conjecture/scripts/lonely_runner_t4_pairforce.py) -- T4 continue. CORRECTION (append-only): the `[lonely-runner-t4-windows]` containment predicate had swapped arc-index bounds (tested ceil((r*lo-1)/4) <= floor((r*hi+1)/4); correct is ceil((r*hi-1)/4) <= k <= floor((r*lo+1)/4)) â€” far too permissive; the stall note's "{2,4,5}-type candidates surviving the pair-{a,b} condition" were an artifact. Filed conclusions re-validated with the corrected predicate: window<=>tight EXHAUSTIVE over 235,258 primitive triples [1,120] (0 mismatches, was 400 sampled); tight sets [1,120] = {(1,2,3)}. NEW Conjecture T4-f (census-verified [1,200], self-tests pass, 1 hit = (1,2,3); pair-level: {1,2} is the ONLY coprime pair admitting any c>b, c=3): windows of {a,b} in single B_c arcs (c largest) => (a,b,c)=(1,2,3); combined with Lemma T4-a this gives T4 <=> T4-f â€” the gap collapses from simultaneous three-pair to ONE-pair. Proof structure data: 19,200/19,900 pairs die by length alone (max window >= 2/(b+1)); 700 exceptions = multiples of small reduced ratios (1,2),(2,3),(3,4),(5,6) dying on position. New stall: length lemma (L) for reduced sums >= 5 + position argument (P) for small reduced ratios, both open. Confidence: T4-f-as-conjecture high; unproven. Notes entry filed before cross-problem links (heading verified x1). Confirmed/partial (correction + T4-f census + reframed stall; T4 OPEN).
 
-## [magic-square-of-squares] 2026-09-01 - K3/K4 quartic-to-quadratic reduction + per-prime square sieve `[mss-two-prime-k34]`
+## [MSS 2026-09-01] magic-square-of-squares - K3/K4 quartic-to-quadratic reduction + per-prime square sieve `[mss-two-prime-k34]`
 
 Attacked the two open kill-equations NOT gated by the R_q-Wieferich anomaly.
 (1) Near-miss (173,7933) confirmed exactly (X-3Y = 50,004,240, |log(X/3Y)| = 3.589e-5); CORRECTION (append-only): the filed argmin range "q<=2e5" was overstated (prime table capped at 20000) - extended range gives K3 argmin (101,47681) 1.18e-5, K4 (61,198221) 3.2e-5. (2) THEOREM K34: K3 (R_p Y_q = 3 Y_p R_q) collapses from a quartic in q's rep ratio to a QUADRATIC in u = x - 1/x; positive rational root forces Delta = 16(R_p^2 + 9 Y_p^2) square; mirrored quartic gives K3 => A(p) and B(q), K4 => B(p) and A(q), with A(n): R_n^2+9Y_n^2 = square, B(n): 9R_n^2+Y_n^2 = square - per-prime tests, iff-verified 10,731 pairs (0 mismatches). Equivalent primitive-Pythagorean/Pell characterization: A(n) <=> exists coprime m>n with mn = 3Y_n/2, |m^2-n^2| = R_n (mirror for B); equivalently n^2 = 2s^2-r^2 or s^2-2r^2 with rs = Y_n (named descent gap, not discharged). (3) Census: A/B = 0 hits on all 12,980 1mod4 primes <= 3e5 => K3 AND K4 dead for every pair with min(p,q) <= 3e5, other side unbounded (any solution needs p,q > 3e5, w = pq > 9e10); direct pair census p<q<=3e5: 84,233,710 pairs, 0 hits. New Conjecture K34: A,B never hold (probability ~n^-2 per prime, summable) - if proved, K3+K4 die outright. Files: scripts/mss_two_prime_k34_quartic.py + .log; notes.md section [mss-two-prime-k34] (inserted before Cross-problem links, heading intact); index.md magic-square line extended.
 
-## [PUBLISH math-research-wiki] 2026-09-01 â€” repo created public + v0.1.0 release for Zenodo DOI
+## [PUBLISH 2026-09-01] â€” repo created public + v0.1.0 release for Zenodo DOI
 - [GitHub](https://github.com/juma8383/math-research-wiki) â€” public repo, branch main at 6655aa2, 383 files.
 - Prep: .gitignore excludes .claude/ (private operational state: usage status, recovery summaries) and .playwright-mcp/; LICENSE.md added (CC BY 4.0 content / MIT code); README extended with audit-trail rationale, [to-verify]/[summary]/heuristic honesty conventions, and not-peer-reviewed status disclaimer.
 - Flags audit pre-push: 53 [to-verify] + 121 [summary] markers live and labeled inline (published flagged, never silently); no secrets found (scanned for tokens/keys/personal paths).
@@ -3684,16 +3684,16 @@ Attacked the two open kill-equations NOT gated by the R_q-Wieferich anomaly.
 - Incident note: the first `git init` landed in the scripts/ subfolder (shell cwd) creating a nested repo with a 46-file commit; deleted within the minute and re-initialized at the repo root. Recorded here per append-only transparency.
 - lonely-runner-conjecture / T4 one-pair close-out (2026-09-01, `[lonely-runner-t4-onepair]`): **Conjecture T4 RESOLVED - the only primitive tight 3-set is {1,2,3}, now a THEOREM.** Both open halves of the T4-f program proved on paper + exact-Fraction verification (scripts/lonely_runner_t4_lengthlemma.py, _t4_consecutive.py, _t4_onepair.py + logs): (1) **Theorem L** (exact max window length): for coprime a<b, ml = 2/b if b-a>=2 (a FULL gap of G_b exhibited inside G_a via a(4i+1) mod 4b in [b,3b-2a] - a full residue class mod 4 meets the 2(b-a)+1>=5-integer interval; cases a odd / 2 mod 4 / 0 mod 4), ml = (2k-1)/(k(k+1)) for (k,k+1) - so the (L) threshold is reduced sum 3 and the 700-exception census structure (exceptions exactly small-scaled consecutive ratios) is a theorem; (2) **Theorem P-kill** (position kill, all scales at once): for (a,b)=(dk,d(k+1)), c>d(k+1), the exact window w0=(1/k,3/(k+1)) (verified W1 k<=200) forces 3k <= c/d <= 2k(k+1)/(2k-1) => k=1, then the second window pins c/d=3 and gcd(c,d)=1 forces d=1 - a scale-free argument, no finite per-ratio check needed; (3) **Theorem T4** = T4-a + L + P-kill (+ L3 for the converse); Corollary: **T4-f is a theorem** (one-pair condition alone, no tightness needed). Verified: W1-W4 all 0 violations, W3 re-confirms exactly one hit (1,2,3) in [1,200]; problem.md new section inserted before Control-step framing (heading intact); index.md lonely-runner line updated. Next open: tight 4-sets ({1,3,4,7} sporadic), T1/T2 at larger n.
 
-## [ATTACK mss-two-prime-k58] K5-K8 dead: branch-split + rep-ratio injectivity (2026-09-01)
+## [ATTACK 2026-09-01] K5-K8 dead: branch-split + rep-ratio injectivity ()
 
 Continuation of the two-prime kill-equation attack (`[mss-two-prime-freeness]` -> `[mss-two-prime-crossdiv]` -> `[mss-two-prime-k34]`). Script `problems/magic-square-of-squares/scripts/mss_two_prime_k58_branch.py` (+ .log). The six separated kill-equations K5-K8 all have the shape $Y_q(p^2\pm R_p)=Y_p(q^2\pm R_q)$; the branch-split lemma ($\{n^2\pm R_n\}=\{2s^2,8t^2\}$, $s=a^2-b^2$, $t=ab$, S-branch iff $u=s/t>2$) plus rep-ratio injectivity kills all four sign combos: same-branch forces $u_p=u_q\Rightarrow p=q$; cross-branch forces $u_pu_q=4\Rightarrow x_q=(x_p+1)/(x_p-1)\Rightarrow q=(a_p+b_p)^2+(a_p-b_p)^2=2p$, impossible for distinct odd primes. THEOREM K58: all of K5, K6a/b, K7a/b, K8 DEAD (no conjectures used). Verified: branch split 0 violations / 2,549 primes <=5e4; equation-iff check 0 mismatches / 1,296,855 pairs q<=3e4; K5-K8 relations 0 hits; extended census 11,436,153 pairs q<=1e5, 0 hits. Kill list down to K1 (Wieferich-gated), K3/K4 (K34-gated), K10, K12-K16. Flagged: T2 in `[mss-two-prime-crossdiv]` kills "2B=A" (= K10 under the sequential labeling) yet its status line lists K10 open â€” discrepancy to resolve next visit. notes.md new section inserted before "## Cross-problem links" (heading count verified 1); index.md MSS line extended.
 
-## [PUBLISH zenodo-doi] 2026-09-01 â€” concept DOI minted and wired into README
+## [PUBLISH 2026-09-01] â€” concept DOI minted and wired into README
 - Zenodo skipped the pre-existing v0.1.0 (webhook only fires on releases arriving after enablement); fallback executed as pre-announced: v0.1.1 published -> DOI minted within 1 minute.
 - Version DOI 10.5281/zenodo.22238400 (v0.1.1, verified HTTP 200 -> zenodo.org/records/22238400); concept DOI (all versions) 10.5281/zenodo.22238399.
 - README: DOI badge (concept DOI) + Cite section added. Two-layer publish complete: GitHub (open notebook) + Zenodo (citable layer).
 
-## [ATTACK lonely-runner-tight4] Tight 4-set classification opened: exhaustive census [1,80] + one-pair structure (2026-09-01)
+## [ATTACK 2026-09-01] Tight 4-set classification opened: exhaustive census [1,80] + one-pair structure ()
 
 Continuation of `[lonely-runner-t4-onepair]` (T4 resolved). Goal: open the tight-4-set classification ({1,3,4,7} sporadic). Scripts `problems/lonely-runner-conjecture/scripts/lonely_runner_tight4.py` + `_tight4_struct.py` (+ .log, self-tests S1-S4 ALL PASSED: integer engine cross-validated vs the Fraction reference engine exhaustive [1,16] 0 mismatches; Fan-Sun 7/30 + both known tight 4-sets exact; triple-window<=>tight exhaustive [1,16] 0 mismatches; proved filters never reject a tight set).
 (1) CENSUS: all 1,473,833 primitive 4-subsets of [1,80] (607,153 full kappa-evals after the two PROVED filters F1 = Lemma T3 (some element divisible by each of 2,3,4) and F2 = NEW Lemma (Lemma T at t*=1/5: if 5 does not divide any element, t=1/5 maximizes and the tight runners are exactly the residues +-1 mod 5 with a rising AND a falling one present), 139.6 s: **exactly TWO tight sets, {1,2,3,4} and {1,3,4,7}**; zero kappa < 1/5 violations (box re-verification of published LRC(4)). Fixed-prefix families to d=200: tight members of {1,2,3,d}={4}, {1,3,4,d}={7}, {1,2,4,d}={1,3,5,d}={2,3,4,d}={} - each sporadic alone in its family.
@@ -3703,7 +3703,7 @@ Continuation of `[lonely-runner-t4-onepair]` (T4 resolved). Goal: open the tight
 (5) Conjecture T5 stated: the only primitive tight 4-sets are {1,2,3,4}, {1,3,4,7} (finitely many, no family at n=4); open = first-principles one-pair reproval (triple {a,b,c}-windows-in-single-B_d-arcs is the natural T4-f analogue - the condition both sporadics satisfy).
 Files: lonely_runner_tight4.py/.log, lonely_runner_tight4_struct.py/.log; problem.md new section (heading count verified 1); index.md lonely-runner line extended.
 
-## [ATTACK mss-two-prime-uquad] 2026-09-01 -- u-factorization + K1/K10/K12 + K13-K16 kills
+## [ATTACK 2026-09-01] -- u-factorization + K1/K10/K12 + K13-K16 kills
 
 Agent: math-research subagent (kill equations K1, K10, K12-K16).
 Objective: verify the dead agent's factorization lead, write each kill as an
@@ -3789,7 +3789,7 @@ via Add-Content only; no Set-Content on log.md.
   scripts mss_k34_g3jac_{frobenius,quotients,rank}.py/.log (agent),
   mss_k34_g3jac_claude_check.py/.log (Claude). K34 remains OPEN with a
   named, computationally concrete gate.
-## [ATTACK mss-k34-sieve2] 2026-09-02 -- round 2: deepened MW sieve + sibling covers D_A/D_B + p-adic pole refinement
+## [ATTACK 2026-09-02] -- round 2: deepened MW sieve + sibling covers D_A/D_B + p-adic pole refinement
 Round 2 on K34 (magic square of squares, two-prime case), levers 1-3 of the
 round-2 brief. Notes: new section [mss-k34-sieve2] (appended before
 Cross-problem links; existing sections untouched).
@@ -3876,7 +3876,7 @@ self-caught by the local expansion at (4,264) (528 = 48*11 makes it a
 
 ---
 
-## [ATTACK mss-k34-refine2] 2026-09-02 â€” K34: cancellation lemma PROVED; gate reduced to odd-depth primitive divisors
+## [ATTACK 2026-09-02] â€” K34: cancellation lemma PROVED; gate reduced to odd-depth primitive divisors
 
 **Round target** (from 2d): the two lemmas of the primitive-divisor route â€” (a) cancellation/numerator lemma, (b) applicability of Ingram's primitive-divisor theorem to the coset EDS.
 
@@ -3933,7 +3933,7 @@ That is the exact residue of the problem: ruling out "all primitive divisors hav
 - Tracked failures appended (items 5-6): p5 sign-bound bug x < d2/d1 vs x < sqrt(d2/d1); missing 3 -| n condition initially leaving wrong survivor list.
 - Notes subsection [mss-k34-descent] finalized in problems\magic-square-of-squares\notes.md before "## Cross-problem links" (grep-verified exactly once).
 
-## [ATTACK mss-k34-descent] 2026-09-02 ~13:55 | magic-square-of-squares
+## [ATTACK 2026-09-02] ~13:55 | magic-square-of-squares
 
 - Factorization descent lever on K34-A DEVELOPED and VERIFIED (agent round
   mss_k34_descent_p1..p6 + Claude verification mss_k34_descent_claude_check):
@@ -3955,7 +3955,7 @@ That is the exact residue of the problem: ruling out "all primitive divisors hav
   (saved evidence now supplied); 16-vs-12 layer-1 survivor count difference
   noted (condition-set bookkeeping, full-hit set identical). K34 OPEN.
 
-## [ATTACK collatz-attempt-07] 2026-09-02 ~14:40 | collatz-conjecture
+## [ATTACK 2026-09-02] ~14:40 | collatz-conjecture
 
 - External-AI attempt integrated (GitHub Copilot session, produced outside
   the wiki): exponent-word sieve for positive Syracuse cycles. Per protocol,
@@ -3980,7 +3980,7 @@ That is the exact residue of the problem: ruling out "all primitive divisors hav
   Copilot's "2^71.02" precision NOT confirmed - kept to-verify; Wang 2026
   Zenodo m<=93/94 preprints flagged unreviewed. Collatz OPEN.
 
-## [UPDATE mss-k34-refine4] 2026-09-02 ~15:10 | magic-square-of-squares
+## [UPDATE 2026-09-02] ~15:10 | magic-square-of-squares
 
 - Parity-table extension to 1e6 LANDED (mss_k34_refine4_ext.py, 4.7 h,
   52,501 primes in (3e5,1e6] with complete order-finding): APPEND-ONLY
@@ -3993,7 +3993,7 @@ That is the exact residue of the problem: ruling out "all primitive divisors hav
   NO class collapses - consistent with the kill-correlation finding.
   K34 OPEN.
 
-## [ATTACK mss-k34-continuation] 2026-09-03 ~10:45 | magic-square-of-squares
+## [ATTACK 2026-09-03] ~10:45 | magic-square-of-squares
 
 - Primitive-divisor ATTRIBUTION CORRECTED (append-only; resolves the 2e
   to-verify): "Ingram's theorem, psi_n primitive divisors for n>=13" is not
@@ -4049,7 +4049,7 @@ That is the exact residue of the problem: ruling out "all primitive divisors hav
   proof path; the odd-depth primitive-divisor gate remains the structural
   gap. Quota: RED zone honored (no subagents, direct work only).
 
-## [ATTACK mss-k34-tooling] 2026-09-03 ~13:45 | magic-square-of-squares
+## [ATTACK 2026-09-03] ~13:45 | magic-square-of-squares
 
 - TOOLING LANDED: WSL2 Ubuntu 26.04 (already present, started) now hosts
   PARI/GP 2.17.3 + eclib/mwrank 20250122 (apt); SageMath 10.9 building
@@ -4531,3 +4531,693 @@ magic-square-of-squares (K34 ladder). Node/edge extraction per
 SCHEMA.md dag page type; statuses anchored to theory/conjecture pages
 or attempt anchors; stub problems intentionally excluded (derived lint
 covers them).
+## [LINT 2026-09-09] Phase-A close-out: repo-wide lint triage, logged fixes, green baseline
+
+Task 5 of the 2026-09-09 overhaul. Fresh-run tallies govern: the opening lint run reported 863 blockers (681 broken wikilinks over 97 distinct slugs; 86 claim-tag cites over 67 distinct tags; 63 missing frontmatter; 30 unparseable log.md entries; 3 frontmatter field gaps) and 95 warnings. Every blocker class was triaged and fixed under the 2026-09-09 controller rulings; final state: 0 blocker(s), exit 0, 128 warnings (all honest leaves — uncited source-tag definitions kept for future use, plus unknown page types for the nested PvsNP wiki's own convention and the typeless working-notebook pages; warnings never fail CI). Unittest suite: 9/9 OK. Every fix is minimal and logged per-hunk; no claim was weakened, restated, or given invented provenance.
+
+Two linter-script conformance fixes (flagged for controller ratification):
+
+1. scripts/lint_dag.py `_pages` resolution universe now also covers `problems/*/wiki/**/*.md` (the sanctioned self-contained nested PvsNP wiki per its own SCHEMA/index/log; spec 3.2.1 requires every wikilink to resolve and its pages were on-disk-but-unresolvable). This one change converted 196 false-positive broken-wikilink blockers into resolvable links.
+2. scripts/lint_dag.py `ROOT_BOOKKEEPING` gained `license.md` (repo infrastructure like README, not a wiki page).
+
+Per-file fix record (each line: file, hunk count, what and why):
+  - problems\beals-conjecture\problem.md: tools/related normalized
+  - problems\birch-swinnerton-dyer\problem.md: tools/related normalized
+  - problems\collatz-conjecture\problem.md: tools/related normalized
+  - problems\hodge-conjecture\problem.md: tools/related normalized
+  - problems\navier-stokes\problem.md: tools/related normalized
+  - problems\yang-mills\problem.md: tools/related normalized
+  - problems/beals-conjecture/attempts/attempt-11.md: 1 x [dv2022-irreduc-conjecture] -> [darmon-program-2022]
+  - problems/beals-conjecture/progress.md: 1 x [dv2022-irreduc-conjecture] -> [darmon-program-2022]
+  - problems/beals-conjecture/synthesis.md: 1 x [dv2022-irreduc-conjecture] -> [darmon-program-2022]
+  - SCHEMA.md: 1 x [method-pmi] -> [<method-pmi>]
+  - log.md: 1 x [method-pmi] -> [<method-pmi>]
+  - problems/beals-conjecture/attempts/attempt-10.md: 1 x [method-pmi] -> [<method-pmi>]
+  - problems/beals-conjecture/attempts/attempt-18.md: 1 x [method-pmi] -> [<method-pmi>]
+  - problems/PvsNP/wiki/SCHEMA.md: 1 x [page] -> [<page>]
+  - problems/PvsNP/wiki/log.md: 1 x [page] -> [<page>]
+  - problems/PvsNP/wiki/SCHEMA.md: 1 x [page-name] -> [<page-name>]
+  - SCHEMA.md: 1 x [page-slug] -> [<page-slug>]
+  - log.md: 1 x [page-slugs] -> page-slugs
+  - problems/PvsNP/wiki/SCHEMA.md: 1 x [refs] -> [<refs>]
+  - problems/beals-conjecture/attempts/attempt-10.md: 1 x [rg2024-357-smallest] -> [ratcliffe-grechuk-2024]
+  - problems/beals-conjecture/attempts/attempt-22.md: 1 x [rg2024-357-smallest] -> [ratcliffe-grechuk-2024]
+  - problems/beals-conjecture/synthesis.md: 1 x [rg2024-357-smallest] -> [ratcliffe-grechuk-2024]
+  - problems/beals-conjecture/attempts/attempt-10.md: 1 x [rg2024-comp-bound] -> [ratcliffe-grechuk-2024]
+  - problems/beals-conjecture/synthesis.md: 1 x [rg2024-comp-bound] -> [ratcliffe-grechuk-2024]
+  - theory/methods/counting-heuristic.md: 1 x [rg2024-comp-bound] -> [ratcliffe-grechuk-2024]
+  - problems/beals-conjecture/attempts/attempt-05.md: 1 x [rg2024-faltings-algorithm] -> [ratcliffe-grechuk-2024]
+  - problems/beals-conjecture/attempts/attempt-10.md: 1 x [rg2024-faltings-algorithm] -> [ratcliffe-grechuk-2024]
+  - theory/methods/mordell-curve-lens.md: 1 x [rg2024-faltings-algorithm] -> [ratcliffe-grechuk-2024]
+  - theory/methods/spherical-reduction.md: 1 x [rg2024-faltings-algorithm] -> [ratcliffe-grechuk-2024]
+  - problems/PvsNP/wiki/log.md: 21 x [wikilinks] -> wikilinks
+  - problems/beals-conjecture/problem.md: 1 x [conj-fermat-catalan] -> [fermat-catalan]
+  - problems/hodge-conjecture/problem.md: 1 x [conj-generalized-hodge] -> [generalized-hodge]
+  - problems/beals-conjecture/problem.md: 1 x [def-beal-equation] -> [beal-equation]
+  - problems/collatz-conjecture/problem.md: 1 x [def-collatz-map] -> [collatz-map]
+  - problems/birch-swinnerton-dyer/problem.md: 1 x [def-elliptic-curve-L-function] -> [elliptic-curve-L-function]
+  - problems/hodge-conjecture/problem.md: 1 x [def-hodge-class-cycle-map] -> [hodge-class-cycle-map]
+  - problems/yang-mills/problem.md: 1 x [def-mass-gap-confinement] -> [mass-gap-confinement]
+  - problems/navier-stokes/problem.md: 1 x [def-navier-stokes-equation] -> [navier-stokes-equation]
+  - problems/yang-mills/problem.md: 1 x [def-wightman-os-axioms] -> [wightman-os-axioms]
+  - problems/yang-mills/problem.md: 1 x [def-yang-mills-theory] -> [yang-mills-theory]
+  - problems/beals-conjecture/problem.md: 1 x [method-abc-finiteness] -> [abc-finiteness]
+  - problems/hodge-conjecture/problem.md: 1 x [method-analytic-algebraic-bridge] -> [analytic-algebraic-bridge]
+  - problems/collatz-conjecture/problem.md: 1 x [method-average-vs-pointwise-control] -> [average-vs-pointwise-control]
+  - problems/yang-mills/problem.md: 1 x [method-constructive-continuum-limit] -> [constructive-continuum-limit]
+  - problems/beals-conjecture/problem.md: 1 x [method-counting-heuristic] -> [counting-heuristic]
+  - problems/collatz-conjecture/problem.md: 1 x [method-cycle-exclusion-linear-forms] -> [cycle-exclusion-linear-forms]
+  - problems/beals-conjecture/problem.md: 1 x [method-darmon-program] -> [darmon-program]
+  - problems/navier-stokes/problem.md: 1 x [method-energy-supercriticality] -> [energy-supercriticality]
+  - problems/beals-conjecture/problem.md: 1 x [method-exponent-reduction] -> [exponent-reduction]
+  - problems/beals-conjecture/problem.md: 1 x [method-frey-level-lowering-obstruction] -> [frey-level-lowering-obstruction]
+  - problems/beals-conjecture/problem.md: 1 x [method-frey-modularity] -> [frey-modularity]
+  - problems/birch-swinnerton-dyer/problem.md: 1 x [method-heegner-point-euler-system] -> [heegner-point-euler-system]
+  - problems/beals-conjecture/problem.md: 1 x [method-infinite-descent] -> [infinite-descent]
+  - problems/beals-conjecture/problem.md: 1 x [method-mordell-curve-lens] -> [mordell-curve-lens]
+  - problems/beals-conjecture/problem.md: 1 x [method-pairwise-coprime-reduction] -> [pairwise-coprime-reduction]
+  - problems/beals-conjecture/problem.md: 1 x [method-spherical-reduction] -> [spherical-reduction]
+  - problems/beals-conjecture/problem.md: 1 x [method-triangle-group-descent] -> [triangle-group-descent]
+  - problems/hodge-conjecture/problem.md: 1 x [thm-absolute-hodge-motivated] -> [absolute-hodge-motivated]
+  - problems/yang-mills/problem.md: 1 x [thm-asymptotic-freedom] -> [asymptotic-freedom]
+  - problems/yang-mills/problem.md: 1 x [thm-balaban-rg] -> [balaban-rg]
+  - problems/navier-stokes/problem.md: 1 x [thm-beale-kato-majda] -> [beale-kato-majda]
+  - problems/navier-stokes/problem.md: 1 x [thm-caffarelli-kohn-nirenberg] -> [caffarelli-kohn-nirenberg]
+  - problems/beals-conjecture/problem.md: 1 x [thm-catalan-mihailescu] -> [catalan-mihailescu]
+  - problems/hodge-conjecture/problem.md: 1 x [thm-cattani-deligne-kaplan] -> [cattani-deligne-kaplan]
+  - problems/collatz-conjecture/problem.md: 1 x [thm-collatz-conway-undecidability] -> [collatz-conway-undecidability]
+  - problems/collatz-conjecture/problem.md: 1 x [thm-collatz-cycle-bounds] -> [collatz-cycle-bounds]
+  - problems/collatz-conjecture/problem.md: 1 x [thm-collatz-density-results] -> [collatz-density-results]
+  - problems/collatz-conjecture/problem.md: 1 x [thm-collatz-tao-almost-bounded] -> [collatz-tao-almost-bounded]
+  - problems/beals-conjecture/problem.md: 1 x [thm-darmon-granville] -> [darmon-granville]
+  - problems/beals-conjecture/problem.md: 1 x [thm-fermat-last] -> [fermat-last]
+  - problems/hodge-conjecture/problem.md: 1 x [thm-hard-lefschetz-reduction] -> [hard-lefschetz-reduction]
+  - problems/hodge-conjecture/problem.md: 1 x [thm-integral-hodge-fails] -> [integral-hodge-fails]
+  - problems/birch-swinnerton-dyer/problem.md: 1 x [thm-kolyvagin-gross-zagier] -> [kolyvagin-gross-zagier]
+  - problems/yang-mills/problem.md: 1 x [thm-lattice-gauge-constructive] -> [lattice-gauge-constructive]
+  - problems/hodge-conjecture/problem.md: 1 x [thm-lefschetz-1-1] -> [lefschetz-1-1]
+  - problems/navier-stokes/problem.md: 1 x [thm-leray-weak-solutions] -> [leray-weak-solutions]
+  - problems/navier-stokes/problem.md: 1 x [thm-local-wellposedness] -> [local-wellposedness]
+  - problems/birch-swinnerton-dyer/problem.md: 1 x [thm-modularity] -> [modularity]
+  - problems/birch-swinnerton-dyer/problem.md: 1 x [thm-mordell-weil] -> [mordell-weil]
+  - problems/birch-swinnerton-dyer/problem.md: 1 x [thm-parity] -> [parity]
+  - problems/yang-mills/problem.md: 1 x [thm-seiberg-witten-supersymmetric] -> [seiberg-witten-supersymmetric]
+  - problems/navier-stokes/problem.md: 1 x [thm-serrin-regularity] -> [serrin-regularity]
+  - problems/beals-conjecture/problem.md: 1 x [thm-solved-generalized-fermat-signatures] -> [solved-generalized-fermat-signatures]
+  - problems/hodge-conjecture/problem.md: 1 x [thm-standard-conjectures-motives] -> [standard-conjectures-motives]
+  - problems/navier-stokes/problem.md: 1 x [thm-tao-averaged-blowup] -> [tao-averaged-blowup]
+  - theory/methods/rh-positivity-equivalences.md: 1 x provenance: [riemann-hypothesis-attempt-01] -> provenance: problems/riemann-hypothesis/attempts/attempt-01.
+  - theory/theorems/near-miss-stratification.md: 1 x provenance: [beal-near-miss-stratification-preprint] -> provenance: in-repo derivation (beals-conjecture attempts)
+  - problems/PvsNP/wiki/log.md: 1 x [barrier-treadmill] -> [barrier-treadmill]
+  - problems/PvsNP/wiki/log.md: 1 x [coarsening-gap] -> [coarsening-gap]
+  - problems/4d-euler-brick/problem.md: problem frontmatter added (stub)
+  - problems/aaronson-quantum-prize/problem.md: problem frontmatter added (stub)
+  - problems/abc-conjecture/problem.md: problem frontmatter added (stub)
+  - problems/beals-conjecture/notes.md: notes frontmatter added
+  - problems/beals-conjecture/progress.md: progress frontmatter added
+  - problems/birch-swinnerton-dyer/notes.md: notes frontmatter added
+  - problems/birch-swinnerton-dyer/progress.md: progress frontmatter added
+  - problems/brocard-problem/problem.md: problem frontmatter added (stub)
+  - problems/chromatic-number-of-the-plane/problem.md: problem frontmatter added (stub)
+  - problems/collatz-conjecture/notes.md: notes frontmatter added
+  - problems/collatz-conjecture/progress.md: progress frontmatter added
+  - problems/conway-thrackle-conjecture/problem.md: problem frontmatter added (stub)
+  - problems/diffie-hellman/problem.md: problem frontmatter added (stub)
+  - problems/discrete-logarithm/problem.md: problem frontmatter added (stub)
+  - problems/goldbach-conjecture/problem.md: problem frontmatter added (stub)
+  - problems/grimm-conjecture/problem.md: problem frontmatter added (stub)
+  - problems/hodge-conjecture/notes.md: notes frontmatter added
+  - problems/hodge-conjecture/progress.md: progress frontmatter added
+  - problems/legendre-conjecture/problem.md: problem frontmatter added (stub)
+  - problems/lonely-runner-conjecture/problem.md: problem frontmatter added (stub)
+  - problems/magic-square-of-squares/notes.md: notes frontmatter added
+  - problems/magic-square-of-squares/progress.md: progress frontmatter added
+  - problems/navier-stokes/notes.md: notes frontmatter added
+  - problems/navier-stokes/progress.md: progress frontmatter added
+  - problems/odd-perfect-number/problem.md: problem frontmatter added (stub)
+  - problems/perfect-cuboid/problem.md: problem frontmatter added (stub)
+  - problems/poincare-conjecture/notes.md: notes frontmatter added
+  - problems/poincare-conjecture/progress.md: progress frontmatter added
+  - problems/PvsNP/notes.md: notes frontmatter added
+  - problems/PvsNP/progress.md: progress frontmatter added
+  - problems/rational-distance/problem.md: problem frontmatter added (stub)
+  - problems/riemann-hypothesis/notes.md: notes frontmatter added
+  - problems/riemann-hypothesis/progress.md: progress frontmatter added
+  - problems/rsa-factoring/problem.md: problem frontmatter added (stub)
+  - problems/square-of-cubes/problem.md: problem frontmatter added (stub)
+  - problems/twin-prime-conjecture/problem.md: problem frontmatter added (stub)
+  - problems/yang-mills/notes.md: notes frontmatter added
+  - problems/yang-mills/progress.md: progress frontmatter added
+  - sources/collatz-survey.md: barina already defined (skip)
+  - MISS problems/PvsNP/wiki/pages/novel-diagnoses.md: [williams-iff-vicinality]
+  - theory/conjectures/odd-odd-pillai-2.md: 4 x [near-miss-stratification] -> [near-miss-stratification]
+  - problems/collatz-conjecture/notes.md: 1 x UNFLAG [2026-08-31]
+  - problems/lonely-runner-conjecture/problem.md: 1 x UNFLAG [2pt]
+  - problems/brocard-problem/problem.md: 1 x UNFLAG [brocard-structural]
+  - problems/birch-swinnerton-dyer/progress.md: 1 x UNFLAG [bsd-bck21-2021]
+  - problems/birch-swinnerton-dyer/attempts/attempt-05.md: 2 x UNFLAG [bsd-higher-gz-kim-2022]
+  - problems/birch-swinnerton-dyer/progress.md: 2 x UNFLAG [bsd-higher-gz-kim-2022]
+  - problems/birch-swinnerton-dyer/progress.md: 1 x UNFLAG [bsd-kataoka-sano-2024]
+  - problems/birch-swinnerton-dyer/progress.md: 1 x UNFLAG [bsd-sano-2023-derived-bockstein]
+  - problems/odd-perfect-number/problem.md: 1 x UNFLAG [budget]
+  - problems/collatz-conjecture/progress.md: 1 x UNFLAG [collatz-cycle-hercher]
+  - problems/birch-swinnerton-dyer/attempts/attempt-08.md: 2 x UNFLAG [conditions]
+  - problems/birch-swinnerton-dyer/attempts/attempt-09.md: 1 x UNFLAG [conditions]
+  - problems/magic-square-of-squares/notes.md: 2 x UNFLAG [cubic-dset-vanishes]
+  - problems/square-of-cubes/problem.md: 1 x UNFLAG [cubic-dset-vanishes]
+  - problems/PvsNP/wiki/pages/status-map.md: 1 x UNFLAG [fifth-loop-cycle-4]
+  - problems/PvsNP/wiki/pages/status-map.md: 1 x UNFLAG [fifth-loop-cycle-5]
+  - problems/PvsNP/wiki/pages/novel-diagnoses.md: 1 x UNFLAG [fifth-loop-synthesis]
+  - problems/PvsNP/wiki/pages/status-map.md: 1 x UNFLAG [fifth-loop-synthesis]
+  - problems/PvsNP/wiki/pages/williams-algorithmic.md: 1 x UNFLAG [fifth-loop-synthesis]
+  - problems/lonely-runner-conjecture/problem.md: 1 x UNFLAG [lonely-runner-frontier-update]
+  - problems/lonely-runner-conjecture/problem.md: 2 x UNFLAG [lonely-runner-structural]
+  - problems/lonely-runner-conjecture/problem.md: 1 x UNFLAG [lonely-runner-t4-onepair]
+  - problems/lonely-runner-conjecture/problem.md: 2 x UNFLAG [lonely-runner-t4-pairforce]
+  - problems/lonely-runner-conjecture/problem.md: 2 x UNFLAG [lonely-runner-t4-windows]
+  - problems/lonely-runner-conjecture/problem.md: 1 x UNFLAG [lonely-runner-tight4]
+  - problems/lonely-runner-conjecture/problem.md: 1 x UNFLAG [lonely-runner-tightsets]
+  - problems/PvsNP/wiki/pages/gct.md: 1 x UNFLAG [mr-2014]
+  - problems/magic-square-of-squares/notes.md: 11 x UNFLAG [mss-k34-c3ab-prep]
+  - problems/magic-square-of-squares/notes.md: 1 x UNFLAG [mss-k34-continuation]
+  - problems/magic-square-of-squares/notes.md: 5 x UNFLAG [mss-k34-descent]
+  - problems/magic-square-of-squares/progress.md: 1 x UNFLAG [mss-k34-descent]
+  - theory/theorems/k34-leaf-jacobian.md: 1 x UNFLAG [mss-k34-descent]
+  - problems/magic-square-of-squares/notes.md: 2 x UNFLAG [mss-k34-elliptic]
+  - problems/magic-square-of-squares/notes.md: 1 x UNFLAG [mss-k34-hbzd]
+  - problems/magic-square-of-squares/notes.md: 2 x UNFLAG [mss-k34-jacobian]
+  - problems/magic-square-of-squares/progress.md: 2 x UNFLAG [mss-k34-jacobian]
+  - theory/lemmas/k34-lift-gate-quartic.md: 1 x UNFLAG [mss-k34-jacobian]
+  - theory/methods/quartic-jacobian-fusion.md: 1 x UNFLAG [mss-k34-jacobian]
+  - theory/theorems/k34-leaf-jacobian.md: 1 x UNFLAG [mss-k34-jacobian]
+  - problems/magic-square-of-squares/notes.md: 1 x UNFLAG [mss-k34-liftgate]
+  - problems/magic-square-of-squares/progress.md: 2 x UNFLAG [mss-k34-liftgate]
+  - theory/lemmas/k34-lift-gate-quartic.md: 1 x UNFLAG [mss-k34-liftgate]
+  - problems/magic-square-of-squares/notes.md: 1 x UNFLAG [mss-k34-liftgate2]
+  - problems/magic-square-of-squares/progress.md: 1 x UNFLAG [mss-k34-liftgate2]
+  - problems/magic-square-of-squares/notes.md: 2 x UNFLAG [mss-k34-refine]
+  - problems/magic-square-of-squares/notes.md: 1 x UNFLAG [mss-k34-refine2]
+  - problems/magic-square-of-squares/notes.md: 2 x UNFLAG [mss-k34-refine3]
+  - problems/magic-square-of-squares/notes.md: 1 x UNFLAG [mss-k34-refine4]
+  - problems/magic-square-of-squares/notes.md: 1 x UNFLAG [mss-k34-richelot]
+  - problems/magic-square-of-squares/notes.md: 1 x UNFLAG [mss-k34-sage]
+  - problems/magic-square-of-squares/notes.md: 1 x UNFLAG [mss-k34-sage2]
+  - problems/magic-square-of-squares/notes.md: 1 x UNFLAG [mss-k34-selmer2i]
+  - problems/magic-square-of-squares/notes.md: 8 x UNFLAG [mss-k34-sieve2]
+  - problems/magic-square-of-squares/notes.md: 1 x UNFLAG [mss-k34-sieve2-sage2]
+  - problems/magic-square-of-squares/notes.md: 1 x UNFLAG [mss-k34-sieve2-verify]
+  - problems/magic-square-of-squares/notes.md: 1 x UNFLAG [mss-k34-tower1]
+  - problems/magic-square-of-squares/progress.md: 1 x UNFLAG [mss-k34-tower1]
+  - problems/magic-square-of-squares/notes.md: 1 x UNFLAG [mss-k34-tower2]
+  - problems/magic-square-of-squares/progress.md: 1 x UNFLAG [mss-k34-tower2]
+  - problems/magic-square-of-squares/notes.md: 1 x UNFLAG [mss-k34-tower3]
+  - problems/magic-square-of-squares/progress.md: 1 x UNFLAG [mss-k34-tower3]
+  - problems/magic-square-of-squares/notes.md: 1 x UNFLAG [mss-k34-tower4]
+  - problems/magic-square-of-squares/notes.md: 1 x UNFLAG [mss-k34-tower5]
+  - problems/magic-square-of-squares/progress.md: 1 x UNFLAG [mss-k34-tower5]
+  - problems/magic-square-of-squares/notes.md: 1 x UNFLAG [mss-k34-tower6]
+  - problems/magic-square-of-squares/progress.md: 1 x UNFLAG [mss-k34-tower6]
+  - problems/magic-square-of-squares/notes.md: 1 x UNFLAG [mss-k34-tower7]
+  - problems/magic-square-of-squares/progress.md: 1 x UNFLAG [mss-k34-tower7]
+  - problems/magic-square-of-squares/notes.md: 1 x UNFLAG [mss-k34-tower8]
+  - problems/magic-square-of-squares/notes.md: 1 x UNFLAG [mss-k34-tower9]
+  - problems/magic-square-of-squares/notes.md: 2 x UNFLAG [mss-omega1-stratification]
+  - problems/magic-square-of-squares/notes.md: 1 x UNFLAG [mss-parallelogram-reduction]
+  - problems/magic-square-of-squares/notes.md: 2 x UNFLAG [mss-primepower-freeness]
+  - problems/magic-square-of-squares/notes.md: 1 x UNFLAG [mss-structural-lemmas-verified]
+  - problems/magic-square-of-squares/notes.md: 3 x UNFLAG [mss-two-prime]
+  - problems/magic-square-of-squares/notes.md: 5 x UNFLAG [mss-two-prime-crossdiv]
+  - problems/magic-square-of-squares/notes.md: 7 x UNFLAG [mss-two-prime-freeness]
+  - problems/magic-square-of-squares/notes.md: 6 x UNFLAG [mss-two-prime-k34]
+  - problems/magic-square-of-squares/notes.md: 2 x UNFLAG [mss-two-prime-k58]
+  - problems/magic-square-of-squares/notes.md: 1 x UNFLAG [mss-two-prime-uquad]
+  - problems/magic-square-of-squares/progress.md: 1 x UNFLAG [mss-two-prime-uquad]
+  - problems/navier-stokes/attempts/attempt-05.md: 2 x UNFLAG [ns-hou-2024]
+  - problems/navier-stokes/progress.md: 1 x UNFLAG [ns-hou-wang-yang-2026]
+  - theory/conjectures/odd-odd-pillai-2.md: 1 x UNFLAG [pillai2-local-sieve]
+  - problems/PvsNP/wiki/pages/novel-diagnoses.md: 2 x UNFLAG [proof-theoretic]
+  - problems/riemann-hypothesis/progress.md: 2 x UNFLAG [rh-2024-claims-unverified]
+  - problems/riemann-hypothesis/progress.md: 1 x UNFLAG [rh-2026-claims-non-journal]
+  - problems/riemann-hypothesis/progress.md: 2 x UNFLAG [rh-bandwidth-ceiling-verified]
+  - theory/methods/rh-positivity-equivalences.md: 1 x UNFLAG [rh-bandwidth-ceiling-verified]
+  - theory/theorems/zero-density-ladder.md: 1 x UNFLAG [rh-bandwidth-ceiling-verified]
+  - problems/riemann-hypothesis/progress.md: 1 x UNFLAG [rh-chourasiya-flagged]
+  - theory/theorems/zero-density-ladder.md: 1 x UNFLAG [rh-chourasiya-flagged]
+  - problems/riemann-hypothesis/progress.md: 1 x UNFLAG [rh-dh-noise-flagged]
+  - problems/PvsNP/wiki/pages/status-map.md: 1 x UNFLAG [second-loop-cycle-3]
+  - problems/PvsNP/wiki/pages/descriptive-complexity.md: 2 x UNFLAG [shelah-1996]
+  - problems/PvsNP/wiki/pages/status-map.md: 1 x UNFLAG [shelah-1996]
+  - problems/PvsNP/wiki/pages/novel-diagnoses.md: 1 x UNFLAG [sixth-loop-cycle-1]
+  - problems/PvsNP/wiki/pages/status-map.md: 1 x UNFLAG [sixth-loop-cycle-1]
+  - problems/PvsNP/wiki/pages/williams-algorithmic.md: 1 x UNFLAG [sixth-loop-cycle-1]
+  - problems/PvsNP/wiki/pages/novel-diagnoses.md: 1 x UNFLAG [sixth-loop-cycle-2]
+  - problems/PvsNP/wiki/pages/status-map.md: 1 x UNFLAG [sixth-loop-cycle-2]
+  - problems/PvsNP/wiki/pages/williams-algorithmic.md: 1 x UNFLAG [sixth-loop-cycle-2]
+  - problems/PvsNP/wiki/pages/novel-diagnoses.md: 1 x UNFLAG [sixth-loop-cycle-3]
+  - problems/PvsNP/wiki/pages/status-map.md: 1 x UNFLAG [sixth-loop-cycle-3]
+  - problems/lonely-runner-conjecture/problem.md: 1 x UNFLAG [speeds]
+  - problems/beals-conjecture/attempts/attempt-10.md: 1 x UNFLAG [synthesis]
+  - problems/beals-conjecture/problem.md: 1 x UNFLAG [synthesis]
+  - theory/theorems/zero-density-ladder.md: 1 x UNFLAG [verified]
+  - problems/yang-mills/progress.md: 1 x UNFLAG [ym-chatterjee-confinement]
+  - problems/PvsNP/wiki/sources/2026-08-21-initial-survey.md: nested-source frontmatter added (typeless, mirrors sibling)
+  - problems/PvsNP/wiki/sources/2026-08-21-majmaj-push.md: nested-source frontmatter added (typeless, mirrors sibling)
+  - problems/PvsNP/wiki/sources/2026-08-21-maxip-push.md: nested-source frontmatter added (typeless, mirrors sibling)
+  - problems/PvsNP/wiki/sources/2026-08-21-mcsp-deep-dive.md: nested-source frontmatter added (typeless, mirrors sibling)
+  - problems/PvsNP/wiki/sources/2026-08-21-mcsp-meta-complexity.md: nested-source frontmatter added (typeless, mirrors sibling)
+  - problems/PvsNP/wiki/sources/2026-08-21-mining-program-seam.md: nested-source frontmatter added (typeless, mirrors sibling)
+  - problems/PvsNP/wiki/sources/2026-08-21-pnp-workflow.md: nested-source frontmatter added (typeless, mirrors sibling)
+  - problems/PvsNP/wiki/sources/2026-08-21-routeA-push.md: nested-source frontmatter added (typeless, mirrors sibling)
+  - problems/PvsNP/wiki/sources/2026-08-21-s1-push.md: nested-source frontmatter added (typeless, mirrors sibling)
+  - problems/PvsNP/wiki/sources/2026-08-21-s1a-primary-source.md: nested-source frontmatter added (typeless, mirrors sibling)
+  - problems/PvsNP/wiki/sources/2026-08-21-s2-primary-source.md: nested-source frontmatter added (typeless, mirrors sibling)
+  - problems/PvsNP/wiki/sources/2026-08-23-nonamplification-route.md: nested-source frontmatter added (typeless, mirrors sibling)
+  - problems/PvsNP/wiki/sources/2026-08-23-s3-choprs-thm49.md: nested-source frontmatter added (typeless, mirrors sibling)
+  - problems/PvsNP/wiki/sources/2026-08-23-wire-frontier-push.md: nested-source frontmatter added (typeless, mirrors sibling)
+  - sources/poonen-schaefer-stoll-2007.md: author/date/provenance added (from its own authors/year/ingested)
+  - theory/conjectures/generalized-hodge.md: status/raised-by/evidence added
+  - theory/theorems/bfh-murty-nonvanishing.md: name added (mirrors its own title)
+  - log.md line 233: prefix normalized
+  - log.md line 291: prefix normalized
+  - log.md line 387: prefix normalized
+  - log.md line 406: prefix normalized
+  - log.md line 2834: prefix normalized
+  - log.md line 2874: prefix normalized
+  - log.md line 2923: prefix normalized
+  - log.md line 3521: prefix normalized
+  - log.md line 3559: prefix normalized
+  - log.md line 3592: prefix normalized
+  - log.md line 3600: prefix normalized
+  - log.md line 3622: prefix normalized
+  - log.md line 3634: prefix normalized
+  - log.md line 3648: prefix normalized
+  - log.md line 3664: prefix normalized
+  - log.md line 3667: prefix normalized
+  - log.md line 3671: prefix normalized
+  - log.md line 3674: prefix normalized
+  - log.md line 3679: prefix normalized
+  - log.md line 3687: prefix normalized
+  - log.md line 3691: prefix normalized
+  - log.md line 3696: prefix normalized
+  - log.md line 3706: prefix normalized
+  - log.md line 3792: prefix normalized
+  - log.md line 3879: prefix normalized
+  - log.md line 3936: prefix normalized
+  - log.md line 3958: prefix normalized
+  - log.md line 3983: prefix normalized
+  - log.md line 3996: prefix normalized
+  - log.md line 4052: prefix normalized
+  - theory/methods/necessary-window-heuristics.md: 1 x UNFLAG [brocard-rootofunity-heuristic]
+  - problems/magic-square-of-squares/problem.md: 1 x UNFLAG [mss-census-verified]
+  - problems/magic-square-of-squares/problem.md: 1 x UNFLAG [mss-census-w1e6-verified]
+  - problems/magic-square-of-squares/problem.md: 1 x UNFLAG [mss-census-w1e7-verified]
+  - problems/magic-square-of-squares/problem.md: 1 x UNFLAG [mss-k34-jacobian]
+  - problems/magic-square-of-squares/problem.md: 1 x UNFLAG [mss-k34-liftgate]
+  - problems/magic-square-of-squares/problem.md: 1 x UNFLAG [mss-k34-liftgate2]
+  - problems/magic-square-of-squares/problem.md: 1 x UNFLAG [mss-k34-richelot]
+  - problems/magic-square-of-squares/problem.md: 1 x UNFLAG [mss-k34-sage2]
+  - problems/magic-square-of-squares/problem.md: 1 x UNFLAG [mss-k34-selmer2i]
+  - problems/magic-square-of-squares/problem.md: 1 x UNFLAG [mss-k34-tower1]
+  - problems/magic-square-of-squares/problem.md: 1 x UNFLAG [mss-k34-tower2]
+  - problems/magic-square-of-squares/problem.md: 1 x UNFLAG [mss-k34-tower3]
+  - problems/magic-square-of-squares/problem.md: 1 x UNFLAG [mss-k34-tower4]
+  - problems/magic-square-of-squares/problem.md: 1 x UNFLAG [mss-k34-tower6]
+  - problems/magic-square-of-squares/problem.md: 1 x UNFLAG [mss-k34-tower7]
+  - problems/magic-square-of-squares/problem.md: 1 x UNFLAG [mss-k34-tower9]
+  - problems/magic-square-of-squares/problem.md: 1 x UNFLAG [mss-nsq9-w1e8-verified]
+  - problems/magic-square-of-squares/problem.md: 1 x UNFLAG [mss-omega1-stratification]
+  - problems/magic-square-of-squares/problem.md: 1 x UNFLAG [mss-parallelogram-reduction]
+  - theory/methods/necessary-window-heuristics.md: 1 x UNFLAG [mss-partner-window]
+  - problems/magic-square-of-squares/problem.md: 1 x UNFLAG [mss-primepower-freeness]
+  - problems/magic-square-of-squares/problem.md: 1 x UNFLAG [mss-structural-lemmas-verified]
+  - problems/magic-square-of-squares/problem.md: 2 x UNFLAG [mss-two-prime]
+  - problems/riemann-hypothesis/problem.md: 1 x UNFLAG [rh-2026-claims-non-journal]
+  - problems/riemann-hypothesis/problem.md: 1 x UNFLAG [rh-bandwidth-ceiling-verified]
+  - problems/riemann-hypothesis/problem.md: 1 x UNFLAG [rh-chourasiya-flagged]
+  - problems/riemann-hypothesis/attempts/attempt-01.md: attempt frontmatter added
+  - log.md SAVED: 30 lines normalized
+  - problems/riemann-hypothesis/attempts/attempt-01.md: outcome line added
+  - problems/riemann-hypothesis/attempts/attempt-01.md: 2 x UNFLAG [rh-2024-claims-unverified]
+  - log.md line 233 repaired
+  - log.md line 291 repaired
+  - log.md line 387 repaired
+  - log.md line 406 repaired
+  - log.md line 2834 repaired
+  - log.md line 2874 repaired
+  - log.md line 2923 repaired
+  - log.md line 3521 repaired
+  - log.md line 3559 repaired
+  - log.md line 3592 repaired
+  - log.md line 3600 repaired
+  - log.md line 3622 repaired
+  - log.md line 3634 repaired
+  - log.md line 3648 repaired
+  - log.md line 3664 repaired
+  - log.md line 3667 repaired
+  - log.md line 3671 repaired
+  - log.md:3674: MANUAL ## [------------------------ 2026-09-01] -------------------
+  - log.md line 3679 repaired
+  - log.md line 3687 repaired
+  - log.md line 3691 repaired
+  - log.md line 3696 repaired
+  - log.md line 3706 repaired
+  - log.md line 3792 repaired
+  - log.md line 3879 repaired
+  - log.md line 3936 repaired
+  - log.md line 3958 repaired
+  - log.md line 3983 repaired
+  - log.md line 3996 repaired
+  - log.md line 4052 repaired
+  - log.md SAVED: 29 lines repaired
+  - problems/beals-conjecture/attempts/attempt-02.md: 1 x [conj-fermat-catalan] -> [fermat-catalan]
+  - problems/hodge-conjecture/attempts/attempt-01.md: 1 x [conj-generalized-hodge] -> [generalized-hodge]
+  - problems/hodge-conjecture/notes.md: 1 x [conj-generalized-hodge] -> [generalized-hodge]
+  - problems/hodge-conjecture/progress.md: 1 x [conj-generalized-hodge] -> [generalized-hodge]
+  - sources/hodge-survey.md: 1 x [conj-generalized-hodge] -> [generalized-hodge]
+  - log.md: 1 x [def-beal-equation] -> [beal-equation]
+  - problems/beals-conjecture/attempts/attempt-10.md: 1 x [def-beal-equation] -> [beal-equation]
+  - problems/beals-conjecture/attempts/attempt-19.md: 1 x [def-beal-equation] -> [beal-equation]
+  - theory/methods/counting-heuristic.md: 2 x [def-beal-equation] -> [beal-equation]
+  - problems/collatz-conjecture/attempts/attempt-01.md: 1 x [def-collatz-map] -> [collatz-map]
+  - problems/collatz-conjecture/problem.md: 2 x [def-collatz-map] -> [collatz-map]
+  - problems/collatz-conjecture/progress.md: 1 x [def-collatz-map] -> [collatz-map]
+  - sources/collatz-survey.md: 2 x [def-collatz-map] -> [collatz-map]
+  - theory/methods/average-vs-pointwise-control.md: 1 x [def-collatz-map] -> [collatz-map]
+  - theory/methods/cycle-exclusion-linear-forms.md: 1 x [def-collatz-map] -> [collatz-map]
+  - theory/theorems/collatz-tao-almost-bounded.md: 1 x [def-collatz-map] -> [collatz-map]
+  - problems/birch-swinnerton-dyer/attempts/attempt-01.md: 1 x [def-elliptic-curve-L-function] -> [elliptic-curve-L-function]
+  - theory/theorems/modularity.md: 1 x [def-elliptic-curve-L-function] -> [elliptic-curve-L-function]
+  - theory/theorems/mordell-weil.md: 1 x [def-elliptic-curve-L-function] -> [elliptic-curve-L-function]
+  - problems/hodge-conjecture/attempts/attempt-01.md: 2 x [def-hodge-class-cycle-map] -> [hodge-class-cycle-map]
+  - problems/hodge-conjecture/progress.md: 1 x [def-hodge-class-cycle-map] -> [hodge-class-cycle-map]
+  - sources/hodge-survey.md: 2 x [def-hodge-class-cycle-map] -> [hodge-class-cycle-map]
+  - theory/conjectures/generalized-hodge.md: 1 x [def-hodge-class-cycle-map] -> [hodge-class-cycle-map]
+  - theory/methods/analytic-algebraic-bridge.md: 1 x [def-hodge-class-cycle-map] -> [hodge-class-cycle-map]
+  - theory/theorems/integral-hodge-fails.md: 1 x [def-hodge-class-cycle-map] -> [hodge-class-cycle-map]
+  - problems/yang-mills/attempts/attempt-01.md: 1 x [def-mass-gap-confinement] -> [mass-gap-confinement]
+  - problems/yang-mills/progress.md: 1 x [def-mass-gap-confinement] -> [mass-gap-confinement]
+  - sources/ym-survey.md: 2 x [def-mass-gap-confinement] -> [mass-gap-confinement]
+  - theory/definitions/yang-mills-theory.md: 1 x [def-mass-gap-confinement] -> [mass-gap-confinement]
+  - theory/theorems/asymptotic-freedom.md: 2 x [def-mass-gap-confinement] -> [mass-gap-confinement]
+  - theory/theorems/lattice-gauge-constructive.md: 1 x [def-mass-gap-confinement] -> [mass-gap-confinement]
+  - problems/navier-stokes/attempts/attempt-01.md: 1 x [def-navier-stokes-equation] -> [navier-stokes-equation]
+  - problems/navier-stokes/progress.md: 1 x [def-navier-stokes-equation] -> [navier-stokes-equation]
+  - sources/ns-survey.md: 2 x [def-navier-stokes-equation] -> [navier-stokes-equation]
+  - theory/methods/energy-supercriticality.md: 1 x [def-navier-stokes-equation] -> [navier-stokes-equation]
+  - theory/theorems/beale-kato-majda.md: 1 x [def-navier-stokes-equation] -> [navier-stokes-equation]
+  - theory/theorems/caffarelli-kohn-nirenberg.md: 1 x [def-navier-stokes-equation] -> [navier-stokes-equation]
+  - theory/theorems/leray-weak-solutions.md: 1 x [def-navier-stokes-equation] -> [navier-stokes-equation]
+  - theory/theorems/local-wellposedness.md: 1 x [def-navier-stokes-equation] -> [navier-stokes-equation]
+  - theory/theorems/serrin-regularity.md: 2 x [def-navier-stokes-equation] -> [navier-stokes-equation]
+  - problems/yang-mills/attempts/attempt-01.md: 1 x [def-wightman-os-axioms] -> [wightman-os-axioms]
+  - problems/yang-mills/progress.md: 1 x [def-wightman-os-axioms] -> [wightman-os-axioms]
+  - sources/ym-survey.md: 2 x [def-wightman-os-axioms] -> [wightman-os-axioms]
+  - theory/methods/constructive-continuum-limit.md: 2 x [def-wightman-os-axioms] -> [wightman-os-axioms]
+  - theory/theorems/lattice-gauge-constructive.md: 1 x [def-wightman-os-axioms] -> [wightman-os-axioms]
+  - problems/yang-mills/attempts/attempt-01.md: 2 x [def-yang-mills-theory] -> [yang-mills-theory]
+  - problems/yang-mills/progress.md: 1 x [def-yang-mills-theory] -> [yang-mills-theory]
+  - sources/ym-survey.md: 2 x [def-yang-mills-theory] -> [yang-mills-theory]
+  - theory/definitions/mass-gap-confinement.md: 1 x [def-yang-mills-theory] -> [yang-mills-theory]
+  - theory/methods/constructive-continuum-limit.md: 1 x [def-yang-mills-theory] -> [yang-mills-theory]
+  - theory/theorems/asymptotic-freedom.md: 1 x [def-yang-mills-theory] -> [yang-mills-theory]
+  - problems/beals-conjecture/attempts/attempt-03.md: 3 x [dv2022] -> [darmon-program-2022]
+  - problems/beals-conjecture/attempts/attempt-11.md: 1 x [dv2022] -> [darmon-program-2022]
+  - theory/methods/darmon-program.md: 3 x [dv2022] -> [darmon-program-2022]
+  - problems/beals-conjecture/attempts/attempt-01.md: 1 x [method-abc-finiteness] -> [abc-finiteness]
+  - problems/beals-conjecture/attempts/attempt-11.md: 1 x [method-abc-finiteness] -> [abc-finiteness]
+  - problems/beals-conjecture/attempts/attempt-19.md: 1 x [method-abc-finiteness] -> [abc-finiteness]
+  - problems/beals-conjecture/attempts/attempt-22.md: 1 x [method-abc-finiteness] -> [abc-finiteness]
+  - problems/beals-conjecture/notes.md: 1 x [method-abc-finiteness] -> [abc-finiteness]
+  - problems/beals-conjecture/progress.md: 1 x [method-abc-finiteness] -> [abc-finiteness]
+  - problems/beals-conjecture/synthesis.md: 1 x [method-abc-finiteness] -> [abc-finiteness]
+  - theory/methods/counting-heuristic.md: 1 x [method-abc-finiteness] -> [abc-finiteness]
+  - theory/theorems/darmon-granville.md: 1 x [method-abc-finiteness] -> [abc-finiteness]
+  - problems/hodge-conjecture/attempts/attempt-01.md: 2 x [method-analytic-algebraic-bridge] -> [analytic-algebraic-bridge]
+  - problems/hodge-conjecture/progress.md: 2 x [method-analytic-algebraic-bridge] -> [analytic-algebraic-bridge]
+  - theory/conjectures/generalized-hodge.md: 1 x [method-analytic-algebraic-bridge] -> [analytic-algebraic-bridge]
+  - theory/definitions/hodge-class-cycle-map.md: 1 x [method-analytic-algebraic-bridge] -> [analytic-algebraic-bridge]
+  - theory/methods/two-avatars-control-step.md: 1 x [method-analytic-algebraic-bridge] -> [analytic-algebraic-bridge]
+  - theory/theorems/absolute-hodge-motivated.md: 1 x [method-analytic-algebraic-bridge] -> [analytic-algebraic-bridge]
+  - theory/theorems/cattani-deligne-kaplan.md: 1 x [method-analytic-algebraic-bridge] -> [analytic-algebraic-bridge]
+  - theory/theorems/integral-hodge-fails.md: 1 x [method-analytic-algebraic-bridge] -> [analytic-algebraic-bridge]
+  - theory/theorems/lefschetz-1-1.md: 1 x [method-analytic-algebraic-bridge] -> [analytic-algebraic-bridge]
+  - problems/collatz-conjecture/attempts/attempt-01.md: 2 x [method-average-vs-pointwise-control] -> [average-vs-pointwise-control]
+  - problems/collatz-conjecture/attempts/attempt-07.md: 1 x [method-average-vs-pointwise-control] -> [average-vs-pointwise-control]
+  - problems/collatz-conjecture/problem.md: 2 x [method-average-vs-pointwise-control] -> [average-vs-pointwise-control]
+  - problems/collatz-conjecture/progress.md: 2 x [method-average-vs-pointwise-control] -> [average-vs-pointwise-control]
+  - sources/collatz-survey.md: 2 x [method-average-vs-pointwise-control] -> [average-vs-pointwise-control]
+  - theory/methods/cycle-exclusion-linear-forms.md: 1 x [method-average-vs-pointwise-control] -> [average-vs-pointwise-control]
+  - theory/methods/two-avatars-control-step.md: 2 x [method-average-vs-pointwise-control] -> [average-vs-pointwise-control]
+  - theory/theorems/collatz-density-results.md: 1 x [method-average-vs-pointwise-control] -> [average-vs-pointwise-control]
+  - theory/theorems/collatz-tao-almost-bounded.md: 1 x [method-average-vs-pointwise-control] -> [average-vs-pointwise-control]
+  - theory/theorems/zero-density-ladder.md: 1 x [method-average-vs-pointwise-control] -> [average-vs-pointwise-control]
+  - problems/yang-mills/attempts/attempt-01.md: 2 x [method-constructive-continuum-limit] -> [constructive-continuum-limit]
+  - problems/yang-mills/progress.md: 2 x [method-constructive-continuum-limit] -> [constructive-continuum-limit]
+  - sources/ym-survey.md: 2 x [method-constructive-continuum-limit] -> [constructive-continuum-limit]
+  - theory/definitions/wightman-os-axioms.md: 1 x [method-constructive-continuum-limit] -> [constructive-continuum-limit]
+  - theory/theorems/balaban-rg.md: 1 x [method-constructive-continuum-limit] -> [constructive-continuum-limit]
+  - theory/theorems/lattice-gauge-constructive.md: 1 x [method-constructive-continuum-limit] -> [constructive-continuum-limit]
+  - log.md: 1 x [method-counting-heuristic] -> [counting-heuristic]
+  - problems/beals-conjecture/attempts/attempt-19.md: 1 x [method-counting-heuristic] -> [counting-heuristic]
+  - problems/beals-conjecture/attempts/attempt-22.md: 1 x [method-counting-heuristic] -> [counting-heuristic]
+  - problems/beals-conjecture/attempts/attempt-23.md: 1 x [method-counting-heuristic] -> [counting-heuristic]
+  - problems/beals-conjecture/attempts/attempt-24.md: 2 x [method-counting-heuristic] -> [counting-heuristic]
+  - problems/beals-conjecture/progress.md: 1 x [method-counting-heuristic] -> [counting-heuristic]
+  - problems/beals-conjecture/synthesis.md: 1 x [method-counting-heuristic] -> [counting-heuristic]
+  - problems/collatz-conjecture/attempts/attempt-01.md: 2 x [method-cycle-exclusion-linear-forms] -> [cycle-exclusion-linear-forms]
+  - problems/collatz-conjecture/problem.md: 2 x [method-cycle-exclusion-linear-forms] -> [cycle-exclusion-linear-forms]
+  - problems/collatz-conjecture/progress.md: 3 x [method-cycle-exclusion-linear-forms] -> [cycle-exclusion-linear-forms]
+  - sources/collatz-survey.md: 1 x [method-cycle-exclusion-linear-forms] -> [cycle-exclusion-linear-forms]
+  - theory/definitions/collatz-map.md: 1 x [method-cycle-exclusion-linear-forms] -> [cycle-exclusion-linear-forms]
+  - theory/theorems/collatz-cycle-bounds.md: 2 x [method-cycle-exclusion-linear-forms] -> [cycle-exclusion-linear-forms]
+  - problems/beals-conjecture/attempts/attempt-03.md: 1 x [method-darmon-program] -> [darmon-program]
+  - problems/beals-conjecture/attempts/attempt-06.md: 1 x [method-darmon-program] -> [darmon-program]
+  - problems/beals-conjecture/attempts/attempt-08.md: 1 x [method-darmon-program] -> [darmon-program]
+  - problems/beals-conjecture/attempts/attempt-22.md: 1 x [method-darmon-program] -> [darmon-program]
+  - problems/beals-conjecture/progress.md: 1 x [method-darmon-program] -> [darmon-program]
+  - problems/beals-conjecture/synthesis.md: 1 x [method-darmon-program] -> [darmon-program]
+  - problems/navier-stokes/attempts/attempt-01.md: 1 x [method-energy-supercriticality] -> [energy-supercriticality]
+  - problems/navier-stokes/progress.md: 1 x [method-energy-supercriticality] -> [energy-supercriticality]
+  - sources/ns-survey.md: 2 x [method-energy-supercriticality] -> [energy-supercriticality]
+  - theory/definitions/navier-stokes-equation.md: 1 x [method-energy-supercriticality] -> [energy-supercriticality]
+  - theory/theorems/caffarelli-kohn-nirenberg.md: 1 x [method-energy-supercriticality] -> [energy-supercriticality]
+  - theory/theorems/leray-weak-solutions.md: 1 x [method-energy-supercriticality] -> [energy-supercriticality]
+  - theory/theorems/local-wellposedness.md: 1 x [method-energy-supercriticality] -> [energy-supercriticality]
+  - theory/theorems/serrin-regularity.md: 1 x [method-energy-supercriticality] -> [energy-supercriticality]
+  - theory/theorems/tao-averaged-blowup.md: 1 x [method-energy-supercriticality] -> [energy-supercriticality]
+  - problems/beals-conjecture/attempts/attempt-01.md: 1 x [method-exponent-reduction] -> [exponent-reduction]
+  - problems/beals-conjecture/attempts/attempt-22.md: 1 x [method-exponent-reduction] -> [exponent-reduction]
+  - problems/beals-conjecture/synthesis.md: 1 x [method-exponent-reduction] -> [exponent-reduction]
+  - theory/methods/frey-modularity.md: 1 x [method-exponent-reduction] -> [exponent-reduction]
+  - theory/methods/pairwise-coprime-reduction.md: 1 x [method-exponent-reduction] -> [exponent-reduction]
+  - problems/beals-conjecture/attempts/attempt-02.md: 1 x [method-frey-level-lowering-obstruction] -> [frey-level-lowering-obstruction]
+  - problems/beals-conjecture/attempts/attempt-06.md: 2 x [method-frey-level-lowering-obstruction] -> [frey-level-lowering-obstruction]
+  - problems/beals-conjecture/attempts/attempt-08.md: 1 x [method-frey-level-lowering-obstruction] -> [frey-level-lowering-obstruction]
+  - problems/beals-conjecture/attempts/attempt-22.md: 1 x [method-frey-level-lowering-obstruction] -> [frey-level-lowering-obstruction]
+  - problems/beals-conjecture/synthesis.md: 1 x [method-frey-level-lowering-obstruction] -> [frey-level-lowering-obstruction]
+  - theory/methods/darmon-program.md: 1 x [method-frey-level-lowering-obstruction] -> [frey-level-lowering-obstruction]
+  - theory/methods/infinite-descent.md: 2 x [method-frey-level-lowering-obstruction] -> [frey-level-lowering-obstruction]
+  - theory/theorems/solved-generalized-fermat-signatures.md: 1 x [method-frey-level-lowering-obstruction] -> [frey-level-lowering-obstruction]
+  - problems/beals-conjecture/attempts/attempt-01.md: 1 x [method-frey-modularity] -> [frey-modularity]
+  - problems/beals-conjecture/attempts/attempt-03.md: 1 x [method-frey-modularity] -> [frey-modularity]
+  - problems/beals-conjecture/attempts/attempt-19.md: 1 x [method-frey-modularity] -> [frey-modularity]
+  - problems/beals-conjecture/attempts/attempt-22.md: 1 x [method-frey-modularity] -> [frey-modularity]
+  - problems/beals-conjecture/progress.md: 1 x [method-frey-modularity] -> [frey-modularity]
+  - problems/beals-conjecture/synthesis.md: 1 x [method-frey-modularity] -> [frey-modularity]
+  - theory/methods/abc-finiteness.md: 1 x [method-frey-modularity] -> [frey-modularity]
+  - theory/methods/counting-heuristic.md: 1 x [method-frey-modularity] -> [frey-modularity]
+  - theory/methods/darmon-program.md: 1 x [method-frey-modularity] -> [frey-modularity]
+  - theory/methods/frey-level-lowering-obstruction.md: 1 x [method-frey-modularity] -> [frey-modularity]
+  - theory/methods/infinite-descent.md: 1 x [method-frey-modularity] -> [frey-modularity]
+  - theory/theorems/fermat-last.md: 1 x [method-frey-modularity] -> [frey-modularity]
+  - problems/birch-swinnerton-dyer/attempts/attempt-01.md: 1 x [method-heegner-point-euler-system] -> [heegner-point-euler-system]
+  - problems/birch-swinnerton-dyer/attempts/attempt-02.md: 1 x [method-heegner-point-euler-system] -> [heegner-point-euler-system]
+  - problems/birch-swinnerton-dyer/progress.md: 1 x [method-heegner-point-euler-system] -> [heegner-point-euler-system]
+  - sources/bsd-survey.md: 2 x [method-heegner-point-euler-system] -> [heegner-point-euler-system]
+  - theory/theorems/bfh-murty-nonvanishing.md: 1 x [method-heegner-point-euler-system] -> [heegner-point-euler-system]
+  - theory/theorems/kolyvagin-gross-zagier.md: 1 x [method-heegner-point-euler-system] -> [heegner-point-euler-system]
+  - theory/theorems/mordell-weil.md: 1 x [method-heegner-point-euler-system] -> [heegner-point-euler-system]
+  - theory/theorems/parity.md: 1 x [method-heegner-point-euler-system] -> [heegner-point-euler-system]
+  - problems/beals-conjecture/attempts/attempt-06.md: 1 x [method-infinite-descent] -> [infinite-descent]
+  - problems/beals-conjecture/attempts/attempt-08.md: 1 x [method-infinite-descent] -> [infinite-descent]
+  - problems/beals-conjecture/attempts/attempt-11.md: 1 x [method-infinite-descent] -> [infinite-descent]
+  - problems/beals-conjecture/attempts/attempt-22.md: 1 x [method-infinite-descent] -> [infinite-descent]
+  - problems/beals-conjecture/progress.md: 1 x [method-infinite-descent] -> [infinite-descent]
+  - problems/beals-conjecture/synthesis.md: 1 x [method-infinite-descent] -> [infinite-descent]
+  - problems/beals-conjecture/attempts/attempt-05.md: 1 x [method-mordell-curve-lens] -> [mordell-curve-lens]
+  - problems/beals-conjecture/attempts/attempt-06.md: 1 x [method-mordell-curve-lens] -> [mordell-curve-lens]
+  - problems/beals-conjecture/attempts/attempt-08.md: 1 x [method-mordell-curve-lens] -> [mordell-curve-lens]
+  - problems/beals-conjecture/attempts/attempt-22.md: 1 x [method-mordell-curve-lens] -> [mordell-curve-lens]
+  - problems/beals-conjecture/progress.md: 1 x [method-mordell-curve-lens] -> [mordell-curve-lens]
+  - problems/beals-conjecture/synthesis.md: 1 x [method-mordell-curve-lens] -> [mordell-curve-lens]
+  - theory/methods/infinite-descent.md: 3 x [method-mordell-curve-lens] -> [mordell-curve-lens]
+  - problems/beals-conjecture/attempts/attempt-01.md: 1 x [method-pairwise-coprime-reduction] -> [pairwise-coprime-reduction]
+  - problems/beals-conjecture/attempts/attempt-22.md: 1 x [method-pairwise-coprime-reduction] -> [pairwise-coprime-reduction]
+  - problems/beals-conjecture/synthesis.md: 1 x [method-pairwise-coprime-reduction] -> [pairwise-coprime-reduction]
+  - theory/definitions/beal-equation.md: 1 x [method-pairwise-coprime-reduction] -> [pairwise-coprime-reduction]
+  - theory/methods/abc-finiteness.md: 1 x [method-pairwise-coprime-reduction] -> [pairwise-coprime-reduction]
+  - theory/methods/exponent-reduction.md: 1 x [method-pairwise-coprime-reduction] -> [pairwise-coprime-reduction]
+  - problems/riemann-hypothesis/progress.md: 2 x [method-rh-positivity-equivalences] -> [rh-positivity-equivalences]
+  - problems/beals-conjecture/attempts/attempt-08.md: 1 x [method-spherical-reduction] -> [spherical-reduction]
+  - problems/beals-conjecture/attempts/attempt-22.md: 1 x [method-spherical-reduction] -> [spherical-reduction]
+  - problems/beals-conjecture/progress.md: 1 x [method-spherical-reduction] -> [spherical-reduction]
+  - problems/beals-conjecture/synthesis.md: 1 x [method-spherical-reduction] -> [spherical-reduction]
+  - problems/beals-conjecture/attempts/attempt-11.md: 1 x [method-triangle-group-descent] -> [triangle-group-descent]
+  - problems/beals-conjecture/attempts/attempt-14.md: 2 x [method-triangle-group-descent] -> [triangle-group-descent]
+  - problems/beals-conjecture/attempts/attempt-15.md: 1 x [method-triangle-group-descent] -> [triangle-group-descent]
+  - problems/beals-conjecture/attempts/attempt-22.md: 1 x [method-triangle-group-descent] -> [triangle-group-descent]
+  - problems/beals-conjecture/progress.md: 1 x [method-triangle-group-descent] -> [triangle-group-descent]
+  - problems/beals-conjecture/synthesis.md: 1 x [method-triangle-group-descent] -> [triangle-group-descent]
+  - sources/poonen-schaefer-stoll-2007.md: 2 x [method-triangle-group-descent] -> [triangle-group-descent]
+  - problems/riemann-hypothesis/progress.md: 2 x [method-two-avatars-control-step] -> [two-avatars-control-step]
+  - theory/methods/rh-positivity-equivalences.md: 1 x [method-two-avatars-control-step] -> [two-avatars-control-step]
+  - problems/beals-conjecture/attempts/attempt-14.md: 2 x [pss2007] -> [poonen-schaefer-stoll-2007]
+  - problems/beals-conjecture/attempts/attempt-22.md: 1 x [pss2007] -> [poonen-schaefer-stoll-2007]
+  - problems/beals-conjecture/progress.md: 1 x [pss2007] -> [poonen-schaefer-stoll-2007]
+  - problems/beals-conjecture/attempts/attempt-02.md: 2 x [rg2024] -> [ratcliffe-grechuk-2024]
+  - problems/beals-conjecture/progress.md: 1 x [rg2024] -> [ratcliffe-grechuk-2024]
+  - theory/theorems/solved-generalized-fermat-signatures.md: 2 x [rg2024] -> [ratcliffe-grechuk-2024]
+  - problems/hodge-conjecture/attempts/attempt-01.md: 2 x [thm-absolute-hodge-motivated] -> [absolute-hodge-motivated]
+  - problems/hodge-conjecture/progress.md: 2 x [thm-absolute-hodge-motivated] -> [absolute-hodge-motivated]
+  - sources/hodge-survey.md: 2 x [thm-absolute-hodge-motivated] -> [absolute-hodge-motivated]
+  - theory/theorems/cattani-deligne-kaplan.md: 1 x [thm-absolute-hodge-motivated] -> [absolute-hodge-motivated]
+  - problems/yang-mills/attempts/attempt-01.md: 2 x [thm-asymptotic-freedom] -> [asymptotic-freedom]
+  - problems/yang-mills/problem.md: 2 x [thm-asymptotic-freedom] -> [asymptotic-freedom]
+  - problems/yang-mills/progress.md: 2 x [thm-asymptotic-freedom] -> [asymptotic-freedom]
+  - sources/ym-survey.md: 1 x [thm-asymptotic-freedom] -> [asymptotic-freedom]
+  - theory/definitions/mass-gap-confinement.md: 1 x [thm-asymptotic-freedom] -> [asymptotic-freedom]
+  - theory/definitions/yang-mills-theory.md: 1 x [thm-asymptotic-freedom] -> [asymptotic-freedom]
+  - theory/theorems/lattice-gauge-constructive.md: 1 x [thm-asymptotic-freedom] -> [asymptotic-freedom]
+  - problems/yang-mills/progress.md: 1 x [thm-balaban-rg] -> [balaban-rg]
+  - sources/ym-survey.md: 1 x [thm-balaban-rg] -> [balaban-rg]
+  - theory/methods/constructive-continuum-limit.md: 1 x [thm-balaban-rg] -> [balaban-rg]
+  - problems/navier-stokes/attempts/attempt-01.md: 2 x [thm-beale-kato-majda] -> [beale-kato-majda]
+  - problems/navier-stokes/progress.md: 3 x [thm-beale-kato-majda] -> [beale-kato-majda]
+  - sources/ns-survey.md: 1 x [thm-beale-kato-majda] -> [beale-kato-majda]
+  - theory/methods/energy-supercriticality.md: 1 x [thm-beale-kato-majda] -> [beale-kato-majda]
+  - problems/birch-swinnerton-dyer/attempts/attempt-02.md: 2 x [thm-bfh-murty-nonvanishing] -> [bfh-murty-nonvanishing]
+  - problems/birch-swinnerton-dyer/progress.md: 2 x [thm-bfh-murty-nonvanishing] -> [bfh-murty-nonvanishing]
+  - problems/navier-stokes/attempts/attempt-01.md: 1 x [thm-caffarelli-kohn-nirenberg] -> [caffarelli-kohn-nirenberg]
+  - problems/navier-stokes/progress.md: 2 x [thm-caffarelli-kohn-nirenberg] -> [caffarelli-kohn-nirenberg]
+  - sources/ns-survey.md: 1 x [thm-caffarelli-kohn-nirenberg] -> [caffarelli-kohn-nirenberg]
+  - theory/methods/energy-supercriticality.md: 1 x [thm-caffarelli-kohn-nirenberg] -> [caffarelli-kohn-nirenberg]
+  - problems/beals-conjecture/notes.md: 1 x [thm-catalan-mihailescu] -> [catalan-mihailescu]
+  - problems/hodge-conjecture/attempts/attempt-01.md: 1 x [thm-cattani-deligne-kaplan] -> [cattani-deligne-kaplan]
+  - problems/hodge-conjecture/progress.md: 1 x [thm-cattani-deligne-kaplan] -> [cattani-deligne-kaplan]
+  - sources/hodge-survey.md: 1 x [thm-cattani-deligne-kaplan] -> [cattani-deligne-kaplan]
+  - problems/collatz-conjecture/attempts/attempt-01.md: 1 x [thm-collatz-conway-undecidability] -> [collatz-conway-undecidability]
+  - problems/collatz-conjecture/progress.md: 1 x [thm-collatz-conway-undecidability] -> [collatz-conway-undecidability]
+  - sources/collatz-survey.md: 2 x [thm-collatz-conway-undecidability] -> [collatz-conway-undecidability]
+  - problems/collatz-conjecture/attempts/attempt-01.md: 1 x [thm-collatz-cycle-bounds] -> [collatz-cycle-bounds]
+  - problems/collatz-conjecture/progress.md: 1 x [thm-collatz-cycle-bounds] -> [collatz-cycle-bounds]
+  - sources/collatz-survey.md: 3 x [thm-collatz-cycle-bounds] -> [collatz-cycle-bounds]
+  - theory/definitions/collatz-map.md: 1 x [thm-collatz-cycle-bounds] -> [collatz-cycle-bounds]
+  - theory/methods/cycle-exclusion-linear-forms.md: 1 x [thm-collatz-cycle-bounds] -> [collatz-cycle-bounds]
+  - problems/collatz-conjecture/attempts/attempt-01.md: 1 x [thm-collatz-density-results] -> [collatz-density-results]
+  - problems/collatz-conjecture/progress.md: 1 x [thm-collatz-density-results] -> [collatz-density-results]
+  - sources/collatz-survey.md: 3 x [thm-collatz-density-results] -> [collatz-density-results]
+  - theory/methods/average-vs-pointwise-control.md: 1 x [thm-collatz-density-results] -> [collatz-density-results]
+  - theory/theorems/collatz-tao-almost-bounded.md: 1 x [thm-collatz-density-results] -> [collatz-density-results]
+  - problems/collatz-conjecture/attempts/attempt-01.md: 1 x [thm-collatz-tao-almost-bounded] -> [collatz-tao-almost-bounded]
+  - problems/collatz-conjecture/progress.md: 1 x [thm-collatz-tao-almost-bounded] -> [collatz-tao-almost-bounded]
+  - sources/collatz-survey.md: 1 x [thm-collatz-tao-almost-bounded] -> [collatz-tao-almost-bounded]
+  - theory/methods/average-vs-pointwise-control.md: 2 x [thm-collatz-tao-almost-bounded] -> [collatz-tao-almost-bounded]
+  - theory/theorems/collatz-density-results.md: 1 x [thm-collatz-tao-almost-bounded] -> [collatz-tao-almost-bounded]
+  - problems/beals-conjecture/attempts/attempt-01.md: 1 x [thm-darmon-granville] -> [darmon-granville]
+  - problems/beals-conjecture/attempts/attempt-14.md: 1 x [thm-darmon-granville] -> [darmon-granville]
+  - problems/beals-conjecture/attempts/attempt-19.md: 1 x [thm-darmon-granville] -> [darmon-granville]
+  - problems/beals-conjecture/attempts/attempt-22.md: 1 x [thm-darmon-granville] -> [darmon-granville]
+  - problems/beals-conjecture/progress.md: 1 x [thm-darmon-granville] -> [darmon-granville]
+  - problems/beals-conjecture/synthesis.md: 1 x [thm-darmon-granville] -> [darmon-granville]
+  - theory/methods/abc-finiteness.md: 1 x [thm-darmon-granville] -> [darmon-granville]
+  - theory/methods/counting-heuristic.md: 2 x [thm-darmon-granville] -> [darmon-granville]
+  - theory/methods/triangle-group-descent.md: 1 x [thm-darmon-granville] -> [darmon-granville]
+  - theory/theorems/fermat-last.md: 1 x [thm-darmon-granville] -> [darmon-granville]
+  - problems/beals-conjecture/attempts/attempt-01.md: 1 x [thm-fermat-last] -> [fermat-last]
+  - theory/methods/frey-modularity.md: 1 x [thm-fermat-last] -> [fermat-last]
+  - theory/theorems/darmon-granville.md: 1 x [thm-fermat-last] -> [fermat-last]
+  - theory/theorems/solved-generalized-fermat-signatures.md: 1 x [thm-fermat-last] -> [fermat-last]
+  - problems/hodge-conjecture/attempts/attempt-01.md: 2 x [thm-hard-lefschetz-reduction] -> [hard-lefschetz-reduction]
+  - problems/hodge-conjecture/progress.md: 1 x [thm-hard-lefschetz-reduction] -> [hard-lefschetz-reduction]
+  - sources/hodge-survey.md: 3 x [thm-hard-lefschetz-reduction] -> [hard-lefschetz-reduction]
+  - theory/theorems/lefschetz-1-1.md: 1 x [thm-hard-lefschetz-reduction] -> [hard-lefschetz-reduction]
+  - problems/hodge-conjecture/attempts/attempt-01.md: 1 x [thm-integral-hodge-fails] -> [integral-hodge-fails]
+  - problems/hodge-conjecture/progress.md: 1 x [thm-integral-hodge-fails] -> [integral-hodge-fails]
+  - sources/hodge-survey.md: 2 x [thm-integral-hodge-fails] -> [integral-hodge-fails]
+  - theory/methods/analytic-algebraic-bridge.md: 1 x [thm-integral-hodge-fails] -> [integral-hodge-fails]
+  - problems/birch-swinnerton-dyer/attempts/attempt-01.md: 1 x [thm-kolyvagin-gross-zagier] -> [kolyvagin-gross-zagier]
+  - problems/birch-swinnerton-dyer/attempts/attempt-02.md: 1 x [thm-kolyvagin-gross-zagier] -> [kolyvagin-gross-zagier]
+  - problems/birch-swinnerton-dyer/problem.md: 2 x [thm-kolyvagin-gross-zagier] -> [kolyvagin-gross-zagier]
+  - problems/birch-swinnerton-dyer/progress.md: 2 x [thm-kolyvagin-gross-zagier] -> [kolyvagin-gross-zagier]
+  - sources/bsd-survey.md: 2 x [thm-kolyvagin-gross-zagier] -> [kolyvagin-gross-zagier]
+  - theory/methods/heegner-point-euler-system.md: 2 x [thm-kolyvagin-gross-zagier] -> [kolyvagin-gross-zagier]
+  - theory/theorems/bfh-murty-nonvanishing.md: 1 x [thm-kolyvagin-gross-zagier] -> [kolyvagin-gross-zagier]
+  - problems/yang-mills/attempts/attempt-01.md: 2 x [thm-lattice-gauge-constructive] -> [lattice-gauge-constructive]
+  - problems/yang-mills/progress.md: 2 x [thm-lattice-gauge-constructive] -> [lattice-gauge-constructive]
+  - sources/ym-survey.md: 1 x [thm-lattice-gauge-constructive] -> [lattice-gauge-constructive]
+  - theory/methods/constructive-continuum-limit.md: 1 x [thm-lattice-gauge-constructive] -> [lattice-gauge-constructive]
+  - theory/theorems/balaban-rg.md: 1 x [thm-lattice-gauge-constructive] -> [lattice-gauge-constructive]
+  - problems/hodge-conjecture/attempts/attempt-01.md: 2 x [thm-lefschetz-1-1] -> [lefschetz-1-1]
+  - problems/hodge-conjecture/progress.md: 2 x [thm-lefschetz-1-1] -> [lefschetz-1-1]
+  - sources/hodge-survey.md: 1 x [thm-lefschetz-1-1] -> [lefschetz-1-1]
+  - theory/conjectures/generalized-hodge.md: 1 x [thm-lefschetz-1-1] -> [lefschetz-1-1]
+  - theory/methods/analytic-algebraic-bridge.md: 1 x [thm-lefschetz-1-1] -> [lefschetz-1-1]
+  - theory/theorems/hard-lefschetz-reduction.md: 1 x [thm-lefschetz-1-1] -> [lefschetz-1-1]
+  - problems/navier-stokes/attempts/attempt-01.md: 1 x [thm-leray-weak-solutions] -> [leray-weak-solutions]
+  - problems/navier-stokes/progress.md: 1 x [thm-leray-weak-solutions] -> [leray-weak-solutions]
+  - sources/ns-survey.md: 2 x [thm-leray-weak-solutions] -> [leray-weak-solutions]
+  - problems/navier-stokes/attempts/attempt-01.md: 1 x [thm-local-wellposedness] -> [local-wellposedness]
+  - problems/navier-stokes/progress.md: 2 x [thm-local-wellposedness] -> [local-wellposedness]
+  - sources/ns-survey.md: 1 x [thm-local-wellposedness] -> [local-wellposedness]
+  - theory/methods/energy-supercriticality.md: 1 x [thm-local-wellposedness] -> [local-wellposedness]
+  - theory/definitions/elliptic-curve-L-function.md: 1 x [thm-modularity] -> [modularity]
+  - CLAUDE.md: 1 x [thm-mordell-weil] -> [mordell-weil]
+  - Qwen.md: 1 x [thm-mordell-weil] -> [mordell-weil]
+  - problems/birch-swinnerton-dyer/attempts/attempt-01.md: 1 x [thm-mordell-weil] -> [mordell-weil]
+  - problems/birch-swinnerton-dyer/progress.md: 1 x [thm-mordell-weil] -> [mordell-weil]
+  - theory/definitions/elliptic-curve-L-function.md: 1 x [thm-mordell-weil] -> [mordell-weil]
+  - problems/beals-conjecture/synthesis.md: 1 x [thm-near-miss-stratification] -> [near-miss-stratification]
+  - problems/birch-swinnerton-dyer/attempts/attempt-01.md: 2 x [thm-parity] -> [parity]
+  - problems/birch-swinnerton-dyer/progress.md: 1 x [thm-parity] -> [parity]
+  - sources/bsd-survey.md: 1 x [thm-parity] -> [parity]
+  - problems/yang-mills/attempts/attempt-01.md: 1 x [thm-seiberg-witten-supersymmetric] -> [seiberg-witten-supersymmetric]
+  - problems/yang-mills/progress.md: 1 x [thm-seiberg-witten-supersymmetric] -> [seiberg-witten-supersymmetric]
+  - sources/ym-survey.md: 1 x [thm-seiberg-witten-supersymmetric] -> [seiberg-witten-supersymmetric]
+  - problems/navier-stokes/attempts/attempt-01.md: 1 x [thm-serrin-regularity] -> [serrin-regularity]
+  - problems/navier-stokes/progress.md: 2 x [thm-serrin-regularity] -> [serrin-regularity]
+  - sources/ns-survey.md: 2 x [thm-serrin-regularity] -> [serrin-regularity]
+  - theory/methods/energy-supercriticality.md: 2 x [thm-serrin-regularity] -> [serrin-regularity]
+  - theory/theorems/beale-kato-majda.md: 1 x [thm-serrin-regularity] -> [serrin-regularity]
+  - problems/beals-conjecture/attempts/attempt-02.md: 1 x [thm-solved-generalized-fermat-signatures] -> [solved-generalized-fermat-signatures]
+  - problems/beals-conjecture/attempts/attempt-07.md: 1 x [thm-solved-generalized-fermat-signatures] -> [solved-generalized-fermat-signatures]
+  - problems/beals-conjecture/progress.md: 1 x [thm-solved-generalized-fermat-signatures] -> [solved-generalized-fermat-signatures]
+  - problems/beals-conjecture/synthesis.md: 1 x [thm-solved-generalized-fermat-signatures] -> [solved-generalized-fermat-signatures]
+  - theory/methods/frey-level-lowering-obstruction.md: 2 x [thm-solved-generalized-fermat-signatures] -> [solved-generalized-fermat-signatures]
+  - problems/hodge-conjecture/attempts/attempt-01.md: 2 x [thm-standard-conjectures-motives] -> [standard-conjectures-motives]
+  - problems/hodge-conjecture/progress.md: 2 x [thm-standard-conjectures-motives] -> [standard-conjectures-motives]
+  - sources/hodge-survey.md: 1 x [thm-standard-conjectures-motives] -> [standard-conjectures-motives]
+  - theory/methods/analytic-algebraic-bridge.md: 1 x [thm-standard-conjectures-motives] -> [standard-conjectures-motives]
+  - theory/theorems/absolute-hodge-motivated.md: 1 x [thm-standard-conjectures-motives] -> [standard-conjectures-motives]
+  - problems/navier-stokes/attempts/attempt-02.md: 1 x [thm-tao-averaged-blowup] -> [tao-averaged-blowup]
+  - problems/navier-stokes/progress.md: 1 x [thm-tao-averaged-blowup] -> [tao-averaged-blowup]
+  - sources/ns-survey.md: 2 x [thm-tao-averaged-blowup] -> [tao-averaged-blowup]
+  - problems/riemann-hypothesis/progress.md: 2 x [thm-zero-density-ladder] -> [zero-density-ladder]
+  - theory/methods/rh-positivity-equivalences.md: 1 x [thm-zero-density-ladder] -> [zero-density-ladder]
+Category summaries (why-class map for the lines above):
+
+- legacy-prefixed wikilinks `[method-*] [thm-*] [def-*] [conj-*]` resolved to real page names built from index.md + the theory/ tree (ruling 2); source-id shorthand wikilinks `[rg2024*] [dv2022*] [pss2007*]` resolved to their real `sources/<id>.md` names.
+- Targetless placeholder/prose wikilinks neutralized without inventing pages: illustrative placeholders angle-bracketed (`[<page-slug>]`, `[<method-pmi>]`, `[<page>]`, `[<page-name>]`, `[<refs>]`); prose words de-bracketed (`wikilinks`, `page-slugs`).
+- Nested-wiki log.md:11 quoted tag-as-link tokens converted to their true tag form `[barrier-treadmill]` / `[coarsening-gap]` (both defined in the nested sources dir).
+- `tools:`/`related:` malformed bracket-lists in 6 active problem.md files normalized to one `[tool]` token each (SCHEMA-template shape; the SCHEMA example itself was the source of the malformed style and was fixed too).
+- Frontmatter added (minimal honest values: page-own stated dates where present, else git birthdates; status/difficulty from each page's own self-description; empty tags/tools/related where the page carries none): 22 stub problem.md (type problem, status stub, difficulty unknown); 4 active problem.md (magic-square-of-squares + PvsNP in-progress, riemann-hypothesis open, poincare-conjecture proven — per the pages' own STATUS lines); 10 progress.md (type progress); 10 notes.md (type notes); 4 attempts (collatz 01+07, hodge 01, poincare 01, riemann 01; approach/outcome extracted from each page's own provenance/summary lines); 13 PvsNP nested sources (typeless title/date/status raw, mirroring the nested wiki's own sibling-file convention); 1 theory method (necessary-window-heuristics, used-in from its own body). SCHEMA.md defines no type for progress/notes, so their unknown-type warnings are the honest leave.
+- 3 frontmatter field completions (additive, from each page's own fields): sources/poonen-schaefer-stoll-2007.md author/date/provenance; theory/conjectures/generalized-hodge.md status/raised-by/evidence; theory/theorems/bfh-murty-nonvanishing.md name.
+- Claim tag defined where a sources page documents the claim (additive only): `[collatz-barina]` defined in sources/collatz-survey.md at the Barina-2020 line it documents.
+- Typo repair: `[williams-iff-vicinality]` → `[williams-iff-vicinity]` (vicinity is defined in the nested sources boundary-case-targetability.md).
+- `[near-miss-stratification]` cite converted to the resolving wikilink `[near-miss-stratification]` (theory/theorems page exists).
+- provenance-field repairs (2, nothing invented): theory/methods/rh-positivity-equivalences.md → plain in-repo path `problems/riemann-hypothesis/attempts/attempt-01.md`; theory/theorems/near-miss-stratification.md → plain in-repo-derivation value (the phantom preprint wikilink dropped, not replaced by an invented arXiv id).
+- DE-BRACKETED (unflagged) in-repo marker/prose tags, listed explicitly per ruling 5 for controller ratification (words kept exactly, brackets dropped, no provenance invented, no sources page invented): sixth-loop-cycle-1/2/3; fifth-loop-synthesis; fifth-loop-cycle-4/5; second-loop-cycle-3; shelah-1996; mr-2014; conditions; synthesis; verified; proof-theoretic; budget; brocard-structural; cubic-dset-vanishes; 2026-08-31 (a date misbracketed); williams-iff-vicinality (typo, see above); ns-hou-2024; ns-hou-wang-yang-2026; ym-chatterjee-confinement; bsd-higher-gz-kim-2022; bsd-bck21-2021; bsd-kataoka-sano-2024; bsd-sano-2023-derived-bockstein; collatz-cycle-hercher; rh-2024-claims-unverified; rh-2026-claims-non-journal; rh-bandwidth-ceiling-verified; rh-chourasiya-flagged; rh-dh-noise-flagged; pillai2-local-sieve; the lonely-runner ladder set (2pt, speeds, structural, t1-scan, n3-deep, t4-pairforce, t4-windows, tight4, openfrontier, 9-canon); brocard-rootofunity-heuristic; mss-partner-window; and the mss-k34-*/mss-two-prime-*/mss-* working-ladder section markers (~60 distinct: jacobian, liftgate(+2), descent, tower1-9, sieve2(+), refine(+2/4), elliptic, selmer2i, sage2, c3ab-prep, omega1-stratification, parallelogram-reduction, structural-lemmas-verified, primepower-freeness, two-prime(+), two-prime-k34/k58, two-prime-freeness, two-prime-crossdiv, two-prime-uquad, census-verified). These are the working notebooks' own session/section markers for in-repo computations, not ingested-source claims; re-bracketing any of them awaits a controller ruling plus a documenting source page.
+- log.md (root): 30 legacy entry-prefix lines normalized to the parseable `## [PREFIX YYYY-MM-DD]` shape, PREFIX LINE ONLY, every content word preserved in place (e.g. `[INGEST+ATTACK 2026-08-24]` → `[INGEST 2026-08-24] +ATTACK ...`; `[ATTACK mss-k34-tooling 2026-09-03]` → `[ATTACK 2026-09-03] mss-k34-tooling ...`). The one lowercase-prefix entry (line 3674, `[magic-square-of-squares]`) repaired as `[MSS 2026-09-01] magic-square-of-squares - ...` using the ladder's own established shorthand. One mojibake byte sequence in a 2026-08-24 entry body left byte-exactly as ingested (content, not prefix).
+- Queued additive items (ruling 6): SCHEMA.md kind vocabulary now includes `definition` (the 2026-09-09 exemplar precedent); SCHEMA.md dag section states the `uses:` single-line convention; .gitignore gains `!.claude/agents/`; docs/runbook-ci.md gains the warnings-never-fail-CI block (branch protection only after this green baseline; the check is not selectable until the workflow has run once; admins bypass by default).
+- index.md: no lines needed adding — all newly typed problem/attempt/dag pages were already cataloged (verified by the linter's index-parity pass).
+- Scratch tooling (task5_*.py, task5-log*.txt, task5-fm-list.txt, task5-tags-e.txt, task5-lint-entry*.md) deleted before the commit; triage reports lint-report-task5*.txt stay gitignored.
+

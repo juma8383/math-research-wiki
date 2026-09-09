@@ -14,24 +14,24 @@ First cycle on YM. Mirrors the other three problems' attempt-01: get the
 clean form, locate the exact frontier, name the open content, map the
 obstruction.
 
-## Statement established [[def-yang-mills-theory]]
+## Statement established [[yang-mills-theory]]
 
 Jaffe-Witten [ym-clay-jaffe-witten]: for any compact simple $G$, a non-trivial
 quantum YM on $\mathbb R^4$ EXISTS (Wightman/OS axioms
-[[def-wightman-os-axioms]]) and has a MASS GAP $\Delta>0$
-[[def-mass-gap-confinement]]. Two coupled required pieces.
+[[wightman-os-axioms]]) and has a MASS GAP $\Delta>0$
+[[mass-gap-confinement]]. Two coupled required pieces.
 
 ## The exact frontier
 
 | piece | status |
 |---|---|
-| classical YM (4D, scale-invariant) | known [[def-yang-mills-theory]] |
-| asymptotic freedom (perturbative UV) | known [[thm-asymptotic-freedom]] [ym-asymptotic-freedom] |
-| lattice YM (finite spacing) | rigorous [[thm-lattice-gauge-constructive]] [ym-lattice-constructive] |
+| classical YM (4D, scale-invariant) | known [[yang-mills-theory]] |
+| asymptotic freedom (perturbative UV) | known [[asymptotic-freedom]] [ym-asymptotic-freedom] |
+| lattice YM (finite spacing) | rigorous [[lattice-gauge-constructive]] [ym-lattice-constructive] |
 | mass gap — numerical (lattice) | confirmed |
 | **4D quantum YM existence (axioms)** | **open** [ym-existence-open] |
 | **mass gap Δ>0 (continuum, rigorous)** | **open** [ym-mass-gap] |
-| supersymmetric YM mass-gap-like | solved (related theory) [[thm-seiberg-witten-supersymmetric]] [ym-supersymmetric] |
+| supersymmetric YM mass-gap-like | solved (related theory) [[seiberg-witten-supersymmetric]] [ym-supersymmetric] |
 
 ## Open content (analog of Beal's "finitely many → zero", BSD's "rank ≤1 → arbitrary rank", NS's "small data → arbitrary large-data")
 
@@ -44,8 +44,8 @@ confinement (non-perturbative IR) rigorously."**
 The *resolution* layer works and finished the verified base: lattice YM is
 rigorously defined (Wilson holonomies; OS reflection positivity; Lüscher
 transfer matrix; strong-coupling area law), and asymptotic freedom gives
-perturbative UV control [[thm-asymptotic-freedom]]
-[[thm-lattice-gauge-constructive]].
+perturbative UV control [[asymptotic-freedom]]
+[[lattice-gauge-constructive]].
 
 The gap is a **control step** — two coupled pieces:
 - **(1) Continuum-limit control**: convergence as $a\to0$ to a non-trivial 4D
@@ -56,7 +56,7 @@ The gap is a **control step** — two coupled pieces:
   strongly-coupled IR where asymptotic freedom gives no expansion parameter.
 
 Both are *control* (of the limit / of the IR spectrum); the lattice object is
-built. The reusable engine is [[method-constructive-continuum-limit]] (OS
+built. The reusable engine is [[constructive-continuum-limit]] (OS
 reconstruction + cluster expansions + finite-range decomposition + gap
 transport).
 
@@ -97,7 +97,7 @@ links added across all four problems.
 
 ## Forward directions
 
-- **(A) Lattice → continuum constructive** [[method-constructive-continuum-limit]]:
+- **(A) Lattice → continuum constructive** [[constructive-continuum-limit]]:
   Balaban RG + cluster expansions + OS reconstruction; transport a lattice
   spectral gap to the continuum, uniform in $a$. The recent attempts are this
   direction but conditional [ym-recent-claims-unverified].
