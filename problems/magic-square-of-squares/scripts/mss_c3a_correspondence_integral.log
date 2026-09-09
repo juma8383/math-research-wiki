@@ -1,0 +1,9 @@
+=== C1: both genus-1 curves in Sage; Jacobians via mwrank ===
+  Q_iota: v^4 + 132*v^3 - 250*v^2 + 132*v + 1
+  Q_G   : -512*v^4 + 128*v^2 + 1
+  f_iota(v) - v^4*D(u) with u=v+1/v: -v^8 - 132*v^6 + 251*v^4 + 132*v^3 - 382*v^2 + 132*v
+  (if 0: the iota-rho quotient is the G-quartic in u = v + 1/v, i.e. the
+   SECOND involution on Q_iota is u = v + 1/v — matching the filed
+   identity g = x^4 G(x+1/x) with G the [1,0,128,0,-512] quartic!)
+=== DONE ===
+EXIT=0

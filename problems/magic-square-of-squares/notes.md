@@ -3515,3 +3515,32 @@ side of the annihilation is complete (torsion ⟹ 0, two independent
 primes, five representatives each). The single remaining step of the
 residue bound is the correspondence-level integral for the ι/ρ-side MW
 cycles — the same step identified in §2ac §4. No new `[to-verify]`.
+
+## §2ag CORRESPONDENCE STRUCTURE RESOLVED (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`)
+
+`mss_c3a_correspondence_integral.sage`/`.log` + sympy verification. The
+attempted curve-level pushforward chain is resolved — negatively, and
+instructively:
+
+- The C3_A octic identity g = x⁴·G(x+1/x) with G = t⁴+128t²−512 is
+  **exactly true** (sympy) — this is the ρ-quotient identity already
+  filed. My in-script check failed on a Sage/SymPy ring-mixing bug
+  (Sage polynomial variable substituted into a SymPy var); the sympy
+  cross-check caught it. Tracked lesson: never mix ring universes in
+  one identity check — verify in ONE system.
+- The induced ρ action on Q_ι = C3_A/ι is (v, w) → (1/v, w/v²); its
+  quotient is w′² = u₂² + 132u₂ − 252 with u₂ = v + 1/v — **genus 0**
+  (the involution has rational fixed points (±1, ±4)). So the
+  iota-rho JOINT quotient is genus 0, and the E_G factor in
+  J(C3_A) ~ E_ι × E_ρ × E_G is the **Prym variety** of the cover —
+  not a curve-level quotient. The pushforward-annihilation route
+  through a curve map Q_ι → Q_G does not exist; the correspondence
+  integral genuinely needs the Prym-isogeny structure (the filed
+  `mss_k34_g3jac` machinery, or a Stoll-type genus-3 two-descent).
+- Net effect on the program: the remaining residue-bound step is
+  harder than the genus-1 shortcut hoped, but its necessity and shape
+  are now precisely mapped: ω_G (= the ι∘ρ-anti-invariant differential)
+  annihilates the E_G-torsion MW part (dual-prime verified, §2af), and
+  the ι/ρ-side annihilation must come from the correspondence — the
+  last open piece, unchanged from the filed state. `[to-verify]`:
+  none added; tracked as the named computation.
