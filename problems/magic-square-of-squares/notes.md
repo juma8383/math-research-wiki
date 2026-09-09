@@ -3571,3 +3571,12 @@ as the A side: exact rank/torsion/period data + the shared E_G
 annihilation. The remaining step is the same correspondence-level
 integral (the Prym-isogeny structure), shared between A and B by the
 §2ad symmetry.
+
+## §2ai SIEVE STRESS 1.67e6 → 2.42e6 (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`)
+
+`mss_k34_sieve_stress_1e6_3e6.sage`/`.log` (time-capped at 1511 s,
+resumable from p > 2419679): primes 1.67e6..2.42e6 — **87 valid primes
+(ord| M_A), zero violations**. Combined verified level: ~2.42·10⁶
+cumulative, zero violations across the whole 5..2.42e6 sweep. The
+3×10⁶ tier needs one more resumption (the script prints its own
+resume-point; pure CPU).

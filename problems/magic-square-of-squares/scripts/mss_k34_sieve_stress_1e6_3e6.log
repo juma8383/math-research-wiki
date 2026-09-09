@@ -1,0 +1,5 @@
+  (time cap at p=2419693)
+  primes 1.67e6..3e6: valid=87 elapsed=1511s violations: NONE
+  (resumable from p > 2419679)
+=== DONE ===
+EXIT=0
