@@ -143,6 +143,16 @@ L = ℚ(√−271) are E± : y² = x³+(±2√−271−2)x²+238x (conjugate, L-
 isogeny — the rank gate is an explicit Sage descent over L (running).
 Reconciliation: K = ℚ(√238) (Frobenius-factorization field) and
 L = ℚ(√−271) (Richelot isogeny field) are different, both real. K34
+remains open. **§2aj (2026-09-09, `[mss-k34-selmer2i]`):** **RANK GATE
+CLOSED UNCONDITIONALLY** — Sage's NF descent wedged at 24h (killed,
+tracked failure 28); replaced by a hand 2-isogeny descent (b = 238
+rational ⇒ explicit candidates; exact local conditions incl. 2-adic ring
+model + points-at-infinity): Sel(φ) = {1,238} (dim 1; {7,34} die
+2-adically, ZERO solutions mod P³), Sel(φ′) = {1} (dim 1; c=2
+valuation-blocked at 2) ⇒ **rank E₊(ℚ(√−271)) = 0 PROVED**; rank Jac(P) = 0
+upgraded from BSD-conditional (§2r) to unconditional; Sha[φ] = (Z/2)²,
+Sha[φ′] = Z/2. **rank Jac(Z_D) = 1 < 3 unconditional: Chabauty gate
+PASSES**; named remaining: height bound, then Coleman on Z_D. K34
 remains open.
 **§2s (2026-09-08, `[mss-k34-tower7]`):** the hand 2-descent on Jac(P) is
 NOT directly available — Gordon-Grant/Stoll requires all five Weierstrass

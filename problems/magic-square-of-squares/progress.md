@@ -89,7 +89,12 @@ all other kill-equations K1/K2/K5–K16 dead). K34 is reduced to:
    over L = ℚ(√−271): E± : y² = x³+(±2√−271−2)x²+238x (conjugate, L-rational
    2-torsion at (0,0)); **rank Jac(P) = rank E₊(ℚ(√−271))** via the
    Richelot isogeny — the rank gate is an explicit Sage simon_two_descent
-   over L (computation launched).
+   over L (computation launched). **§2aj:** **RANK GATE CLOSED UNCONDITIONALLY**
+   — hand 2-isogeny descent on E₊ over L (after killing the 24h-wedged Sage
+   descent): Sel(φ) = {1,238}, Sel(φ′) = {1} ⇒ **rank E₊(ℚ(√−271)) = 0
+   PROVED**; rank Jac(P) = 0 upgraded from BSD-conditional to unconditional;
+   **rank Jac(Z_D) = 1 < 3: Chabauty gate PASSES**; named remaining: height
+   bound, then Coleman on Z_D.
 
 ## Honest state
 
