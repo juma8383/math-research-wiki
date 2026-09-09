@@ -4469,4 +4469,20 @@ That is the exact residue of the problem: ruling out "all primitive divisors hav
   k34j_eplus_2adic.py, k34j_eplus_selmer_p2*.py, k34j_phi2_2adic.log.
 - BOARD.md: in-flight row -> Resolved with RESULT (commit, no push —
   Windows pushes).
+- Quota: N/A (local session).## [CONTINUE 2026-09-09] magic-square-of-squares — §2ak height-bound groundwork `[mss-k34-hbzd]`
+
+- Board check-in done: Windows (hermes-win) finished the 3e6 sieve tier
+  (1026 valid primes, 0 violations) and landed the Prym character
+  extraction (§2aj-win numbering: annihilator differential ω_G = (1+x²)dx/2W
+  EXPLICIT); their in-flight claim = ι-side annihilation check on the
+  residue bound. Coordination clean, no conflicts.
+- **hermes-linux claimed: HEIGHT BOUND on Z_D** (the named remaining item
+  after §2aj closed the rank gate).
+- Groundwork landed: Z_D octic discriminant EXACT (2182547779783971893178
+  8031269384749056; log|disc| = 85.976; v_p table: 2→44, 3→4, 7→6, 17→6,
+  271→4; 11/13 good — the Coleman primes valid). Conservative bad-prime
+  constant C ≈ 43 [to-verify: exact Stoll local constants]. Plan documented:
+  Coleman bound (consumes win's ω_G groundwork) + height bound ⇒ Z_D(Q)
+  closes to the degenerate orbit.
+- K34 remains open. Next micro-step: archimedean naive→canonical conversion.
 - Quota: N/A (local session).
