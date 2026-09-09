@@ -4486,3 +4486,13 @@ That is the exact residue of the problem: ruling out "all primitive divisors hav
   closes to the degenerate orbit.
 - K34 remains open. Next micro-step: archimedean naive→canonical conversion.
 - Quota: N/A (local session).
+
+## [INGEST 2026-09-09] gemini-contribution-plan-2026-09-09
+Ingested Gemini's "Math Wiki Contribution Plan" (verbatim; original left
+untouched at repo root). Verified repo-state finding: no Lean/lakefile/
+blueprint/Quartz/.github infrastructure exists — plan adapted in-place
+(user decision 2026-09-09): DAG manifests + deterministic linter replace
+the blueprint/checkdecls parity check; contract-scoped ensemble
+([[multi-agent-harness]]) replaces the monolithic-session model; Lean
+phases rejected. Binding conditions: Ollama-only, nothing-breaks. Spec:
+docs/superpowers/specs/2026-09-09-math-wiki-overhaul-design.md.
