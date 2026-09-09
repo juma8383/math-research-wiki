@@ -1,0 +1,12 @@
+=== D1: survivor stress with higher hunt primes (extension to 1e7, ord|M_A) ===
+  (time cap hit at p=1668473)
+  valid primes 1e6..5e6: 118 ; violations: NONE (908s)
+=== D2: the (R-W)(R+W) descent identity — symbolic setup ===
+  quartic (1,0,136,0,16) invariants: (18688, -4874240)
+  filed iota_rho invariants: (18688, -4874240)
+  => w^2 = v^4+136v^2+16 is the THIRD quotient (G_A side). Its Jac: compute:
+  its cubic: y^2 = x^3 + -504576 x + 131604480
+  j = 1556068/81 (expect 1556068/81 = E_G!)
+  => the square-condition quartic is E_G-covered (Prym side), consistent.
+=== DONE ===
+EXIT=0

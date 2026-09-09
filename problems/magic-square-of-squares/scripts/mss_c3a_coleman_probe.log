@@ -1,0 +1,19 @@
+=== P1: doc example reproduces (odd degree, known answer) ===
+  coleman_integral(w, P, Q) = 4*5 + 3*5^2 + 3*5^3 + 2*5^5 + O(5^7)
+=== P2: genus-3 odd-degree probe (x^7 + ...): API shape ===
+  genus-3 odd-degree constructed; g = 3
+  MW gens OK: (-((10+10*11+10*11^2+10*11^3+10*11^4+10*11^5+10*11^6+10*11^7+O(11^8)))*1) dx/2y | -((10+10*11+10*11^2+10*11^3+10*11^4+10*11^5+10*11^6+10*11^7+O(11^8)))*x
+  (point construction note: Coordinates [1 + O(11^8), 3 + O(11^8), 1 + O(11^8)] do not define a point on Hyperelliptic Curve over 11-adic Field with)
+=== P3: C3_A p-adic transform to odd degree ===
+  P3 note: name 'fA' is not defined
+=== P4: the practical Coleman route for C3_A ===
+  Standard route (Balakrishnan): work on the PRYM-side odd model OR use
+  the quotient curves. The rank-2 MW basis lives on E_iota x E_rho x E_G;
+  the annihilating-differential approach on the genus-1 quotients is
+  classical (E.coleman_integral, verified in P1). The genus-3 computation
+  via tinyColeman/mwrank-style tooling is NOT in Sage 10.9 under a single
+  entry point; the practical path is: integrate on the quotient cubics
+  (genus 1, fully supported) + the Prym argument.
+  => C3_A gate route: Coleman on quotients + Prym exactness. Documented.
+=== DONE ===
+EXIT=0

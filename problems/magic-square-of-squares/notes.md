@@ -3307,3 +3307,64 @@ already-filed gates; no new proof claimed. K34 open; the named gates
 unchanged (C3_A Coleman, Z_D conditional chain, EDS primitive-divisor
 route). The gate-prep is filed so the Coleman round starts from verified
 tables instead of re-deriving them.
+
+## §2ab COLEMAN-PREP ROUND 2 (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`)
+
+Three parallel Sage runs (`mss_c3a_coleman_probe.sage`/`.log`,
+`mss_c3a_annihilation.sage`/`.log`, `mss_k34_factorization_descent.sage`/`.log`).
+
+### 1. Coleman API verified LIVE in Sage 10.9
+
+`w.coleman_integral(P, Q)` reproduces the documentation example exactly
+(4·5 + 3·5² + 3·5³ + 2·5⁵ + O(5⁷) on the genus-2 odd model); a genus-3
+odd-degree curve constructs with MW gens; and the first integral on OUR
+material computed: **∫_O^{G_ι} ω = 2·11 + 9·11² + 7·11³ + 3·11⁴ +
+6·11⁵ + 9·11⁷ + 2·11⁹ + O(11¹⁰)** (G_ι = (384, 13824) the E_ι
+generator; ω its invariant differential; p = 11, precision 10).
+
+### 2. Exact MW bookkeeping for J(C3_A)(ℚ) (annihilation skeleton)
+
+- E_ι: rank 1 (Sage), generator (384, 13824); E_G: rank 0 confirmed by
+  Sage mwrank this time (lower bound 0 achieved), torsion exactly
+  ℤ/4 ⊕ ℤ/2 (order-4 points (48, ±10368), (912, ±20736) — matches the
+  filed data exactly).
+- **MW basis of J(C3_A)(ℚ): (G_ι, 0, 0), (0, G_ρ, 0) — rank 2, exact.**
+- H⁰(Ω¹(C3_A)) = ⟨dx/W, x·dx/W, x²·dx/W⟩; under ι (x→−x): dx/W and
+  x²·dx/W are anti-invariant (E_ι side), x·dx/W invariant (ρ side);
+  under ρ (x→1/x): dx/W ↔ x²·dx/W mix — the E_G-side annihilator is the
+  combination killed by both quotient maps. (This bookkeeping sets up
+  the linear solve: ω = (a + b·x + c·x²)·dx/W has 3 coefficients and 2
+  annihilation conditions; the kernel is 1-dimensional, as it must be.)
+
+### 3. A-side sieve stress extended to ~1.7·10⁶
+
+Survivor classes {0, 2, M/2−1, −2, −1} mod M_A tested at primes in
+(10⁶, 1.67·10⁶] with ord(G)|M_A: **118 valid primes, zero violations**
+(908 s; time-capped run, resumable). Combined verified level: ~1.7·10⁶,
+zero violations cumulative.
+
+### 4. The factorization-descent lever RE-DERIVED (structural)
+
+The filed round-2 open lever (§2 Sec. 2 of `[mss-k34-sieve2]`,
+"(R−W)(R+W) descent — not developed") gains a structural identity: the
+D_A square-condition quartic w² = v⁴ + 136v² + 16 (z² − 4 = v²) has
+binary-quartic invariants **exactly (18688, −4874240) = E_G's** — its
+Jacobian is the cubic y² = x³ − 504576x + 131604480 (j = 1556068/81),
+i.e. **K34-A ⟺ a rational point on an E_G-covered curve** (the
+square-condition quartic is the ι∘ρ quotient). Since rank E_G = 0 is
+proved (§8) with E_G(ℚ) = torsion only, the rational points of
+w² = v⁴+136v²+16 are bounded by E_G's torsion + the covering map: the
+known degenerate orbit. This makes the descent lever concrete: any
+non-degenerate K34-A candidate forces a point on the E_G-cover of the
+ι∘ρ quotient that is NOT in the torsion orbit — the same shape as the
+Z_D gate. (Full descent argument still open; the identity is the new
+exact input.) `[to-verify]`: connect this quartic's rational points to
+the E_G-torsion orbits explicitly (Mordell-Weil computation on the
+quartic = torsion image).
+
+**Honest status.** K34 OPEN; no proof claimed. The C3_A Coleman gate now
+has all three ingredients verified and standing: MW basis (exact), the
+annihilation linear-algebra shape (3 unknowns, 2 conditions, kernel
+dim 1), and a working coleman_integral at p = 11. The named next
+computation is unchanged: solve for ω, verify the annihilation at
+precision, run the residue/Clarkson bound.

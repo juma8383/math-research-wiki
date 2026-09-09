@@ -1,0 +1,16 @@
+=== A1: exact differentials of C3_A ===
+  H0(Omega) basis: dx/W, x dx/W, x^2 dx/W (all regular for even-degree deg-8).
+=== A2: the three quotient differentials as pullbacks ===
+  iota: dx/W and x^2 dx/W anti-invariant (-> E_iota side), x dx/W invariant.
+  rho: dx/W <-> x^2 dx/W mixed; one combo descends to rho-quotient.
+  => the E_G-side differential is the combo killed by BOTH quotient maps.
+=== A3: MW basis construction (exact, over Q) ===
+  E_iota rank: 1 (expect 1)
+  E_iota generator: (384 : 13824 : 1)
+  E_G rank: 0 (filed: 0, proved by 2-isogeny descent)
+  E_G torsion: Torsion Subgroup isomorphic to Z/4 + Z/2 associated to the Elliptic Curve defined by y^2 = x^3 - 504576*x + 131604480 over Rational Field
+  MW basis: (G_iota, 0, 0), (0, G_rho, 0); rank 2 total.  <-- exact
+=== A4: annihilating differential (linear algebra over Q) ===
+  coleman int from O to G_iota at p=11: 2*11 + 9*11^2 + 7*11^3 + 3*11^4 + 6*11^5 + 9*11^7 + 2*11^9 + O(11^10) (this is the abelian integral)
+=== DONE ===
+EXIT=0
