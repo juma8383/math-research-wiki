@@ -1,0 +1,37 @@
+=== I1: the iota-side annihilation condition, stated exactly ===
+  The iota-side annihilation check requires: int_{gamma_iota}(omega_G) = 0.
+  omega_G is e_G-isotypic; gamma_iota is e_iota-isotypic; idempotent
+  orthogonality gives int = 0 PROVIDED the idempotent decomposition of
+  End(J) is compatible with the polarizations (Rosati). The classical
+  statement (Prym theory): for a genus-3 bielliptic cover with involution
+  group (Z/2)^2, H1 decomposes orthogonally and the pairing is block-
+  diagonal. THE NUMERICAL CHECK at p=11: the Abel integral of the
+  PULLBACK of omega_{E_G} along the iota-quotient correspondence.
+  Computable directly: omega_G is a DIFFERENTIAL ON C3_A (even degree).
+  Sage cannot integrate it (S1 failed). The quotient-side proxy: the
+  Poincare duality pairing of omega_G with the HEISENBERG lift of the
+  iota-side cycle is what the block-diagonality gives; verifying it
+  requires the correspondence — the named Prym computation (filed).
+  THIS SCRIPT instead verifies the orthogonality NUMERICALLY via the
+  FROBENIUS-matrix route: the Coleman integration of omega_G between
+  C3_A residue classes via the tinyColeman-style approach is NOT in
+  Sage; the alternative numerical route: compute the period lattice
+  of C3_A at p=11 via the FROBENIUS action on H1(MW) (Sage has the
+  Frobenius matrix on Monsky-Washnitzer cohomology for ODD degree only).
+  => the honest statement: the iota-side annihilation check requires
+     the odd-degree transform of C3_A, which does not exist over Q
+     (no rational Weierstrass point), but exists over an EXTENSION.
+  THE WORKAROUND: extend the base field! Over K = Q(sqrt(f(x0))) for a
+  branch point x0, C3_A gets an odd model. C3_A has NO rational
+  Weierstrass points but the branch points of f are defined over
+  Q(sqrt(disc-free roots))... f(x) = x^8+132x^6-250x^4+132x^2+1:
+  substitute y = x^2: f = y^4+132y^3-250y^2+132y+1 — the quartic has
+  roots? (its discriminant): the 4 branch pairs give sqrt-extensions.
+  The odd model over K: computable but the annihilation check then
+  needs care with the extension (the integral over the K-rational
+  cycle vs the Q-structure). THIS IS the named computation; running it
+  numerically here at p=11 to confirm the mechanism:
+=== I2: odd-model construction over a quadratic extension at p=11 ===
+  roots of f mod 11: []
+=== DONE ===
+EXIT=0

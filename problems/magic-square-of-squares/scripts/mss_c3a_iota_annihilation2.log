@@ -1,0 +1,12 @@
+=== I2b: find a root of f in F_121 = GF(11^2) ===
+Traceback (most recent call last):
+  File "/mnt/c/Claude-Code/Math/problems/magic-square-of-squares/scripts/mss_c3a_iota_annihilation2.sage.py", line 31, in <module>
+    F2b = GF(_sage_const_121 , modulus=x**_sage_const_2  + _sage_const_7 , names=('b',)); (b,) = F2b._first_ngens(1)
+  File "sage/structure/factory.pyx", line 372, in sage.structure.factory.UniqueFactory.__call__
+  File "sage/structure/factory.pyx", line 415, in sage.structure.factory.UniqueFactory.get_object
+  File "/opt/sage/src/sage/misc/decorators.py", line 656, in wrapper
+    return func(*args, **kwds)
+  File "/opt/sage/src/sage/rings/finite_rings/finite_field_constructor.py", line 846, in create_object
+    raise ValueError("finite field modulus must be irreducible but it is not")
+ValueError: finite field modulus must be irreducible but it is not
+EXIT=0

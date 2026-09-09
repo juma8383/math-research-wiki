@@ -3700,4 +3700,52 @@ insolubility of class 1 signals a test bug); 29. the "nonsingular gradient"
 2-adic test fails structurally at p = 2 for this family (4·c²Z³ + 2acZ ≡ 0
 mod 2 identically) — replaced by lift-consistency counting.
 
+K34 remains open. Quota: N/A (local session).## §2ak HEIGHT-BOUND GROUNDWORK (linux box, 2026-09-09, `[mss-k34-hbzd]`)
+
+`k34j_zd_invariants.py`, `k34j_zd_height_step2.py` (.log). Step 1 of the
+height bound on Z_D (the named remaining item after the rank gate closed,
+§2aj):
+
+### Global data (exact)
+
+Z_D : V² = w⁸ − 4w⁶ − 604w⁴ − 952w² + 56644 (genus 3). Discriminant of the
+octic model: 21825477797839718931788031269384749056, log|disc| = 85.976,
+with local valuations:
+
+| p | 2 | 3 | 7 | 17 | 271 | 11 | 13 |
+|---|---|---|---|----|-----|----|----|
+| v_p(disc) | 44 | 4 | 6 | 6 | 4 | 0 | 0 |
+
+11 and 13 confirmed good (the tight-prime Coleman primes from §2ae are
+valid for Z_D's discriminant too).
+
+### Height-bound architecture (the plan)
+
+The closure of Z_D(ℚ) = degenerate orbit needs, after the now-unconditional
+rank 1 < 3:
+
+1. **Coleman bound** at a good prime (11/13): #Z_D(ℚ) ≤ #Z_D(F_p) + 2g−2 +
+   (rank-1 residue term) — needs the Coleman integration, which consumes
+   the §2ae/§2af groundwork (Windows' annihilator differential ω_G is
+   explicit; the ι-side annihilation check is Windows' in-flight claim).
+2. **Height bound** (this round's target): an explicit H with any
+   Z_D(ℚ)-point of canonical height > H excluded by the mod-p sieve
+   (§2o kills all admissible m ≤ 240 at p ≤ 499, density ρ ≈ 8.9·10⁻²⁵⁵ —
+   §2u). The height bound converts "all m" into "all m in a finite box".
+
+### Conservative constant computed
+
+First-pass conservative bad-prime constant C ≈ 42.99 (from
+(1/2)·Σ_p v_p(disc)·log p over the 5 bad primes), giving the shape
+h_canon(P) ≥ h_naive(P) − C. **Flagged [to-verify]**: the exact Stoll/Flynn
+local constants for the octic model (the placeholder over-counts; the true
+constant is typically 2–4× smaller, which only improves the final bound).
+
+### Next micro-step (this session, in flight)
+
+The archimedean side: the naive-to-canonical conversion at the infinite
+place via potential theory on the octic, then the operative output:
+r₀ = exp bound on denominators of w = s/r — closing the height-bound layer
+`[to-verify]: exact local constants at the 5 bad primes`.
+
 K34 remains open. Quota: N/A (local session).

@@ -1,0 +1,15 @@
+=== I2c: roots of f in GF(11^2) ===
+  roots of f in F_121: 8 found
+  sample: [3*b + 3, b + 1, 8*b + 4, 10*b + 5]
+=== I2d: lift to the unramified quadratic extension of Q_11 ===
+Traceback (most recent call last):
+  File "/mnt/c/Claude-Code/Math/problems/magic-square-of-squares/scripts/mss_c3a_iota_annihilation3.sage.py", line 27, in <module>
+    K2 = Qp(_sage_const_11 , _sage_const_8 ).extension(x**_sage_const_2  + _sage_const_7 ) if False else Qp(_sage_const_11 , _sage_const_8 ).extension(polygen(GF(_sage_const_11 )) .minpoly() if False else None, names=('c',)); (c,) = K2._first_ngens(1)
+                                                                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/sage/src/sage/rings/padics/padic_generic.py", line 646, in extension
+    return ExtensionFactory(base=self, modulus=modulus, prec=prec, names=names, check=True, implementation=implementation, **print_mode)
+  File "sage/structure/factory.pyx", line 370, in sage.structure.factory.UniqueFactory.__call__
+  File "/opt/sage/src/sage/rings/padics/factory.py", line 3335, in create_key_and_extra_args
+    raise ValueError("modulus must be a polynomial")
+ValueError: modulus must be a polynomial
+EXIT=0
