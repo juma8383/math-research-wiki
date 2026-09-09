@@ -30,9 +30,9 @@ conjecture = Col_min(N)=1 for all N. [used-in: [[collatz_conjecture]] [[collatz-
 
 ## [collatz-verified] Computational verification
 [summary] Verified for all N ≤ 2^68 ≈ 2.95×10^20 (Barina 2020); Oliveira e
+Silva x_min > 5.76×10^18. No counterexample found. [used-in: [[collatz_conjecture]] [[collatz-cycle-bounds]]]
 
 `[collatz-barina]` - verification-ceiling tag: exhaustive computation (Barina 2020) verifies Collatz convergence for all N <= 2^68; see line above.
-Silva x_min > 5.76×10^18. No counterexample found. [used-in: [[collatz_conjecture]] [[collatz-cycle-bounds]]]
 
 ## [collatz-density-terras] Terras (1976) / Everett (1977)
 [summary] Col_min(N) < N for almost all N (natural density). Almost every

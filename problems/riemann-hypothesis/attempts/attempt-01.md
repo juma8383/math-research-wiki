@@ -4,7 +4,6 @@ problem: riemann-hypothesis
 attempt: 01
 date: 2026-09-01
 approach: 3-approach protocol attack (web-verified; classical facts confirmed)
-partial - frontier + control reductions established; no proof claimed
 tags: []
 outcome: partial - frontier + control reductions established; no proof claimed
 ---

@@ -65,7 +65,7 @@ difficulty: unknown | easy | medium | hard | famous-open-problem
 created: <YYYY-MM-DD>
 last-updated: <YYYY-MM-DD>
 tags: [number-theory, analysis, ...]      # topic areas
-tools: [[method-pmi], [thm-fund-thm-arithmetic]]   # theory pages used
+tools: [[infinite-descent]] [[fermat-last]]   # theory pages used
 related: [[<other-slug>]]
 ---
 ```

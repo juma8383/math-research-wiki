@@ -5221,3 +5221,111 @@ Category summaries (why-class map for the lines above):
 - index.md: no lines needed adding — all newly typed problem/attempt/dag pages were already cataloged (verified by the linter's index-parity pass).
 - Scratch tooling (task5_*.py, task5-log*.txt, task5-fm-list.txt, task5-tags-e.txt, task5-lint-entry*.md) deleted before the commit; triage reports lint-report-task5*.txt stay gitignored.
 
+## [LINT 2026-09-09] review corrections
+
+Corrections to the `[LINT 2026-09-09] Phase-A close-out` entry
+above, made in coordinator review fix round 1. Historical entry
+bodies are NOT re-edited; this block is the correction of record.
+
+### (a) Prefix-repair claim corrected
+
+The [LINT] entry states that every repaired log prefix line kept
+every content word in place, and shows two worked examples. That
+claim was INACCURATE: the two worked examples in the entry were
+illustrative constructions and were never applied to the file.
+In reality the prefix repairs normalized the malformed `## [...]`
+prefixes to the schema shape and, in doing so, dropped the
+type/subject marker tokens from 29 of the 30 repaired lines
+(e.g. mss-k34-tooling, lonely-runner-n3-deep, zenodo-doi,
+math-research-wiki, LINT/CONSOLIDATION, INCIDENT+RECOVERY,
+THEOREM-STRENGTHENED). So that no information is lost from the
+audit trail, the ORIGINAL full prefix lines for all 30 repairs
+follow, verbatim from the parent commit (3486908^). The repaired
+bodies in the historical entries stand unchanged.
+
+Line numbers refer to the parent commit's log.md. Each line is
+quoted exactly as it stood before repair (its byte content,
+including pre-existing mojibake, is reproduced unchanged).
+
+- parent line 233:
+  > ## [INGEST+ATTACK 2026-08-24] beals-conjecture (attempt-14, loop cycle 12/20)
+- parent line 291:
+  > ## [INGEST+ATTACK 2026-08-24] beals-conjecture (attempt-17, loop cycle 15/20)
+- parent line 387:
+  > ## [LINT/CONSOLIDATION 2026-08-24] beals-conjecture (attempt-21, loop cycle 19/20)
+- parent line 406:
+  > ## [CLOSE-OUT 2026-08-24] beals-conjecture (attempt-22, loop cycle 20/20)
+- parent line 2834:
+  > ## [CONTINUE 2026-08-31 late] RH theory-page batch (attempt-02 "deepest
+- parent line 2874:
+  > ## [LOOP 2026-08-31 ~22:50] Recovery summary (per usage-policy long-task rule)
+- parent line 2923:
+  > ## [LOOP 2026-08-31 ~23:05] PILLAI-2 EXTENDED to 1e21, FULL odd-prime
+- parent line 3521:
+  > ## [THEOREM-STRENGTHENED 2026-09-01] magic-square-of-squares â€” prime-power freeness theorem, final form `[mss-primepower-freeness]`
+- parent line 3559:
+  > ## [CONTINUE mss-omega1-stratification] 2026-09-01 â€” omega_1-stratified hourglass heuristic `[mss-omega1-stratification]`
+- parent line 3592:
+  > ## [CONTINUE mss-omega1-stratification addendum] 2026-09-01 â€” W=1e7 confirmation
+- parent line 3600:
+  > ## [CONTINUE lonely-runner-t1-scan] 2026-09-01 â€” Conjecture T1 deep boxes `[lonely-runner-t1-scan]`
+- parent line 3622:
+  > ## [CONTINUE lonely-runner-n3-deep] 2026-09-01 â€” tight-triple classification box [1,200] `[lonely-runner-t1-scan]`
+- parent line 3634:
+  > ## [CONTINUE lonely-runner-openfrontier] 2026-09-01 â€” first census in open territory `[lonely-runner-t1-scan]`
+- parent line 3648:
+  > ## [INCIDENT+RECOVERY 2026-09-01] log.md truncated to 15 bytes and fully restored `[log-recovery]`
+- parent line 3664:
+  > ## [ATTACK mss-two-prime-freeness] 2026-09-01 â€” omega_1=2 slice theorems + complete kill-equation case tree `[mss-two-prime-freeness]`
+- parent line 3667:
+  > ## [ATTACK mss-two-prime-crossdiv] 2026-09-01 â€” K2/K9/K11 dead (cross-prime size kill), K1 gated mod 8, Wieferich census `[mss-two-prime-crossdiv]`
+- parent line 3671:
+  > ## [ATTACK lonely-runner-t4-pairforce] 2026-09-01 â€” predicate bug corrected; T4 reduced to ONE pair (T4-f) `[lonely-runner-t4-pairforce]`
+- parent line 3674:
+  > ## [magic-square-of-squares] 2026-09-01 - K3/K4 quartic-to-quadratic reduction + per-prime square sieve `[mss-two-prime-k34]`
+- parent line 3679:
+  > ## [PUBLISH math-research-wiki] 2026-09-01 â€” repo created public + v0.1.0 release for Zenodo DOI
+- parent line 3687:
+  > ## [ATTACK mss-two-prime-k58] K5-K8 dead: branch-split + rep-ratio injectivity (2026-09-01)
+- parent line 3691:
+  > ## [PUBLISH zenodo-doi] 2026-09-01 â€” concept DOI minted and wired into README
+- parent line 3696:
+  > ## [ATTACK lonely-runner-tight4] Tight 4-set classification opened: exhaustive census [1,80] + one-pair structure (2026-09-01)
+- parent line 3706:
+  > ## [ATTACK mss-two-prime-uquad] 2026-09-01 -- u-factorization + K1/K10/K12 + K13-K16 kills
+- parent line 3792:
+  > ## [ATTACK mss-k34-sieve2] 2026-09-02 -- round 2: deepened MW sieve + sibling covers D_A/D_B + p-adic pole refinement
+- parent line 3879:
+  > ## [ATTACK mss-k34-refine2] 2026-09-02 â€” K34: cancellation lemma PROVED; gate reduced to odd-depth primitive divisors
+- parent line 3936:
+  > ## [ATTACK mss-k34-descent] 2026-09-02 ~13:55 | magic-square-of-squares
+- parent line 3958:
+  > ## [ATTACK collatz-attempt-07] 2026-09-02 ~14:40 | collatz-conjecture
+- parent line 3983:
+  > ## [UPDATE mss-k34-refine4] 2026-09-02 ~15:10 | magic-square-of-squares
+- parent line 3996:
+  > ## [ATTACK mss-k34-continuation] 2026-09-03 ~10:45 | magic-square-of-squares
+- parent line 4052:
+  > ## [ATTACK mss-k34-tooling] 2026-09-03 ~13:45 | magic-square-of-squares
+
+### (b) collatz-barina entry inconsistency
+
+The [LINT] entry's fix log contains both a line stating the
+`[collatz-barina]` definition was added to
+sources/collatz-survey.md and a line reading "barina already
+defined (skip)". The definition WAS added, exactly once, as part
+of this task. The "already defined (skip)" line records the
+idempotency guard of the fix script on a re-run (it skips
+re-inserting when the definition is already present), not a
+skipped repair. The summary was correct; the per-file line was
+misleading.
+
+### (c) EOL disclosure
+
+Rebuilding log.md for the [LINT] entry rewrote the whole file
+with a uniform CRLF join. Measured against the parent commit:
+the pre-entry region was 4092 CRLF-terminated and 441 LF-only-terminated lines (4533 total); after the rewrite
+it is 4533/4533 CRLF. Of these, 441 lines outside the appended entry are
+byte-identical in content with only the EOL flipped LF to CRLF,
+and 34 lines differ in content - every one a fix logged in the [LINT] entry.
+Disclosed per controller ruling; EOLs are NOT reverted.
