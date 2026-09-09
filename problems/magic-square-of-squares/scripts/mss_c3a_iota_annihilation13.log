@@ -1,0 +1,8 @@
+=== I3f: direct SpecialHyperellipticQuotientRing route ===
+  f_monic degree: 7 ; leading: 1 + O(11^8)
+Traceback (most recent call last):
+  File "/mnt/c/Claude-Code/Math/problems/magic-square-of-squares/scripts/mss_c3a_iota_annihilation13.sage.py", line 47, in <module>
+    from sage.schemes.hyperelliptic_curves.monsky_washnitzer import (
+        SpecialHyperellipticQuotientRing, SpecialMonskyWashnitzerDifferential)
+ImportError: cannot import name 'SpecialMonskyWashnitzerDifferential' from 'sage.schemes.hyperelliptic_curves.monsky_washnitzer' (/opt/sage/src/sage/schemes/hyperelliptic_curves/monsky_washnitzer.py)
+EXIT=0

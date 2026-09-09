@@ -3766,4 +3766,35 @@ sieve's reach].
 unconditional; Coleman data ✓ assembled by win; height constants ✓ first
 pass), with ONE [to-verify] open: the exact local constants at the 5 bad
 primes (replacing the conservative v_p(disc)/2 placeholder). K34 remains
-open. Quota: N/A (local session).
+open. Quota: N/A (local session).## §2ak ADDENDUM-2 (2026-09-09): point counts + Jacobian generator data for the Coleman run
+
+`k34j_zd_point_counts.py`, `k34j_zd_jac_generator.py` (.log).
+
+### #Z_D(F_p) table (exact)
+
+| p | 11 | 13 | 17 | 19 | 23 | 29 | 31 | 37 | 41 | 43 |
+|---|----|----|----|----|----|----|----|----|----|----|
+| #Z_D(F_p) | **12** | 20 | 19 | 26 | 32 | 28 | 32 | 32 | 60 | 44 |
+
+**p = 11 is TIGHT for Z_D too** (12 = small; consistent with the §2ae
+tight-prime census for C3_A): the Coleman bound at 11 reads
+#Z_D(ℚ) ≤ 12 + 2g−2 = **16** (before the rank-1 residue correction).
+
+### Generator data
+
+The divisor class (0,238) − (0,−238) — the difference of the two known
+degenerate-orbit points — is TORSION mod both Coleman primes: order 7 in
+J(F₁₁), order 13 in J(F₁₃). So it is NOT the free generator; the rank-1
+free part lifts from J_L (generator G_L, §2j/§2m data) through the tower
+map, as expected from Jac(Z_D) ~ J_L × Jac(P) with Jac(P) = 0 (§2aj).
+
+### Coleman-input checklist (updated)
+
+- [x] #Z_D(F_p) at 11/13 (this addendum)
+- [x] rank Jac(Z_D) = 1 unconditional (§2aj)
+- [ ] MW generator as Mumford rep (the J_L-lift divisor)
+- [ ] annihilator differential (2-dim eigen-differentials on the octic)
+- [ ] Coleman integrals + residue computation at p = 11
+- [ ] height-bound sharp constants (the §2ak [to-verify])
+
+K34 remains open. Quota: N/A (local session).

@@ -1,0 +1,5 @@
+=== I3d: integral between the infinity images (u=0) ===
+  f_monic(0) = (c + 2) + (5*c + 1)*11 + (7*c + 3)*11^2 + 3*11^3 + (9*c + 1)*11^4 + (4*c + 10)*11^5 + (3*c (expect the transformed constant: f(0)/lc·...)
+  I3d error: Coordinates [0, 1 + O(11^8), 1 + O(11^8)] do not define a point on Hyperelliptic Curve over 11-adic Unramified Extension Field in c defined by X^2 - 7 defined by (1 + O(11^8))*y^2 = (1 + O(11^8))*x^8 + (1 + O(11^8))*x^7 + ((9*c + 4) + (3*c + 5)*11 + 
+=== DONE ===
+EXIT=0

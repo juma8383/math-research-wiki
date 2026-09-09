@@ -1,0 +1,7 @@
+=== I3g: Frobenius-matrix route on the odd model ===
+  f_monic degree: 7 ; leading: 1 + O(11^8)
+  curve: Hyperelliptic Curve over 11-adic Unramified Extension Field in c defined by X^2 - 7 defined by (1 + 
+  I3g integral error: polynomial must be monic
+  Frobenius-matrix route error: 
+=== DONE ===
+EXIT=0

@@ -1,0 +1,5 @@
+=== I3h: raw MW ring on the monic polynomial ===
+  f_monic degree: 7 ; leading: 1 + O(11^8)
+  I3h error: polynomial must be monic
+=== DONE ===
+EXIT=0
