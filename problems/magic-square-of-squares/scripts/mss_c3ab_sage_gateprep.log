@@ -1,0 +1,17 @@
+=== setup ===
+  EQA rank (mwrank): 1  EQB rank: 1  EG rank: 1
+  EQA conductor: 768
+=== A: B-side sieve hunt continuation to 2e6 ===
+  valid primes (ord|264) <= 2e6: 40 ; kills: NONE
+  survivors now: [0, 1, 2, 134, 262] (filed: [0, 1, 2, 134, 262] mod 264)
+  B-side hunt continuation DONE
+=== B: Jac(C3_A) Frobenius decomposition check (extend 36 -> ~150 primes) ===
+  ERROR in frobenius loop: y^2 = x^3 + 15*x + 95 defines a singular curve
+  checked 28 primes ; mismatches: [11, 13, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 83, 89, 97, 101, 103, 107, 109, 113]
+=== C: C3_A involutions and quotient maps ===
+Traceback (most recent call last):
+  File "/mnt/c/Claude-Code/Math/problems/magic-square-of-squares/scripts/mss_c3ab_sage_gateprep.sage.py", line 108, in <module>
+    g2 = u**_sage_const_4  + _sage_const_128 *u**_sage_const_2  - _sage_const_512
+         ^
+NameError: name 'u' is not defined
+EXIT=0

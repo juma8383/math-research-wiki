@@ -1,0 +1,18 @@
+=== setup v3 (exact filed cubics) ===
+  EIOTA j: -8000/81  (expect -8000/81)
+  EG j: 1556068/81  (expect 1556068/81)
+=== B': Jac(C3_A) = E_iota x E_rho x E_G product check (exact cubics) ===
+  skipped (singular mod p): NONE
+  mismatches: NONE — decomposition CONFIRMED at all 75 good primes 7..397
+=== C': quotient identification (iota: v=x^2; rho: u=x-1/x) ===
+  iota-quotient vs E_iota trace mismatches: NONE
+  rho-quotient vs E_iota trace mismatches: NONE
+=== D: #C3_A(F_p) for good primes <= 200 ===
+  #C3_A(F_11) = 8 (filed: 8)
+  p<=40: {7: 16, 11: 8, 13: 8, 17: 20, 19: 24, 23: 32, 29: 40, 31: 48, 37: 40}
+  #C vs p+1-(2*t_iota+t_G) mismatches: NONE — point-count formula confirmed
+=== E: coleman machinery probe ===
+  odd-degree Qp hyperelliptic OK; coleman API: False
+  even-degree C3_A over Qp(11): constructed OK
+=== ALL DONE ===
+EXIT=0

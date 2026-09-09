@@ -3239,3 +3239,71 @@ no monitoring loop). Two independent discharges:
 
 Both maps cross-validated in the same run (A: 2(y+66x) map; B:
 (6y−92x)/(x(x−36)) map). No new discrepancies; F14 unchanged.
+
+## §2aa GATE-PREP ROUND (Windows box, SageMath 10.9/WSL2, 2026-09-09, `[mss-k34-c3ab-prep]`)
+
+Preparation for the two Coleman targets (C3_A main gate; B-side mirror) while
+the Linux box runs the E₊(ℚ(√−271)) descent. Scripts
+`mss_c3ab_sage_gateprep.sage`/`2`/`3` + logs (scripts folder). Four results:
+
+### 1. B-side sieve hunt continuation to 2·10⁶ — `[to-verify]` DISCHARGED
+
+The round-2 B-side filing (Sec. 4 of `[mss-k34-sieve2]`) noted the
+grow+hunt continuation "was still running at filing time". Completed
+here (native Sage, exact): **40 valid primes (ord(G_B)|264) ≤ 2·10⁶,
+zero kills** — the 5 classes {0, 1, 2, 134, 262} mod M_B = 264 survive
+unchanged. `mss_c3ab_sage_gateprep.log` part A. (Consistent with
+`b_stress.py`: 34 valid ≤ 2·10⁵, 0 violations, §2z addendum.)
+
+### 2. J(C3_A) ~ E_ι × E_ρ × E_G: CONFIRMED in native Sage (75/75 primes)
+
+Product check with the **exact filed quotient cubics** —
+E_ι = E_ρ: y² = x³ − 276480x + 240648192 (I,J = 10240, −8912896;
+j = −8000/81 — the ι/ρ quartics' common Jacobian, ℚ-isogenous to master
+E_A), E_G: y² = x³ − 504576x + 131604480 (I,J = 18688, −4874240;
+j = 1556068/81): P_{C3_A,p} = P_{E_ι}·P_{E_ρ}·P_{E_G} at **all 75 good
+primes 7 ≤ p ≤ 397, zero mismatches, none skipped**. (v1/v2 attempt
+corrections recorded: (i) the 2-isogenous ~E_A/~E_B models have the
+wrong per-prime Frobenius traces for a prime-level product test — the
+exact quotient cubics are required; (ii) E_G as constructed IS singular
+mod 5 (conductor 2^7·3^17·5^1·…; its Frobenius at 5 must be taken from
+the product side) — consistent with the filed torsion data being taken
+over p ∈ {5..43} with care, and NOT a contradiction of anything filed.)
+Scripts v2/v3 logs document the corrections.
+
+### 3. Quotient identification for the Coleman MW-basis
+
+Both involutions' quotient quartics — ι: v = x²,
+W² = v⁴+132v³−250v²+132v+1; ρ: the palindromic reduction
+W′² = −512v⁴+128v²+1 (u = x−1/x per the filed identity
+g = x⁴·G(x−1/x)) — have Frobenius traces **identical to E_ι** at every
+good prime ≤ 211 (0 mismatches each). The ι and ρ quotients are the two
+E_A-copies; E_G is the Prym of the full ι∘ρ involution, consistent with
+the filed J(C3_A) tree.
+
+### 4. #C3_A(F_p) table (Coleman input) + point-count formula
+
+For good primes ≤ 200 (exact; 2 rational points at infinity, leading
+coefficient 1 = square): #C3_A(F_7)=16, **#C3_A(F_11)=8** (the filed
+Chabauty-gate anchor, confirmed), 13: 8, 17: 20, 19: 24, 23: 32, 29:
+40, 31: 48, 37: 40, … And the even-degree point-count identity
+**#C3_A(F_p) = p + 1 − (2·t_ι + t_G)** verified exactly at all good
+primes ≤ 200 (zero violations) — note the T⁵ coefficient (not T)
+carries the trace sum in Sage's ascending Frobenius list (tracked
+locally; caught by hand-verification at p = 7, 11, 13).
+
+### 5. Machinery probe
+
+Even-degree C3_A constructs over ℚ₁₁ in Sage 10.9 (HyperellipticCurve
+change_ring OK); odd-degree Monsky–Washnitzer machinery loads; the
+`coleman_integrals` convenience API is absent under that name — the
+named next computation (honest Coleman on C3_A at p = 11) needs either
+the MW integrator via `sage.rings.function_field`-level APIs or the
+Balakrishnan–Tuitman route. No computation started; machinery status
+recorded.
+
+**Honest status.** All results are verification/input data for the
+already-filed gates; no new proof claimed. K34 open; the named gates
+unchanged (C3_A Coleman, Z_D conditional chain, EDS primitive-divisor
+route). The gate-prep is filed so the Coleman round starts from verified
+tables instead of re-deriving them.

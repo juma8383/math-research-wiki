@@ -1,0 +1,23 @@
+=== setup v2 ===
+  EG a4 = 504576  a6 = 131604480 (expect 504576-ish / 131*-4480-ish per notes)
+Unable to compute the rank with certainty (lower bound=0).
+This could be because Sha(E/Q)[2] is nontrivial.
+Try calling something like two_descent(second_limit=13) on the
+curve then trying this command again.  You could also try rank
+with only_use_mwrank=False.
+  EG rank: unproven (lower bound 0)  conductor: 1283976576
+=== B: Jac(C3_A) Frobenius decomposition (primes 5..400, bad {2,3,5,13}) ===
+  skipped (singular factor mod p): [103]
+  checked 73 primes (5s) ; mismatches: [5, 13, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 79, 89, 97, 101, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 311, 313, 317, 331, 337, 347, 349, 353, 359, 367, 373, 379, 383, 389, 397]
+=== C: C3_A quotient maps ===
+  q1 (v=x^2) invariants: (10240, -8912896)
+  q2 (u=x+1/x) invariants: (10240, -8912896)
+Traceback (most recent call last):
+  File "/mnt/c/Claude-Code/Math/problems/magic-square-of-squares/scripts/mss_c3ab_sage_gateprep2.sage.py", line 90, in <module>
+    Hq1 = HyperellipticCurve(g1.change_ring(GF(p)))
+                             ^^^^^^^^^^^^^^
+  File "sage/structure/element.pyx", line 494, in sage.structure.element.Element.__getattr__
+  File "sage/structure/element.pyx", line 507, in sage.structure.element.Element.getattr_from_category
+  File "sage/cpython/getattr.pyx", line 362, in sage.cpython.getattr.getattr_from_other_class
+AttributeError: 'sage.symbolic.expression.Expression' object has no attribute 'change_ring'
+EXIT=0
