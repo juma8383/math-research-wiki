@@ -3981,4 +3981,38 @@ quantity (up to the chain normalization). With #Z_D(F₁₁) = 12 and the
 eigen-differential split, the Coleman bound at 11 is now one
 integration from assembly.
 
+K34 remains open. Quota: N/A (local session).## §2ak ADDENDUM-8 (2026-09-09): log datum verified twice; the assembly frontier, honestly
+
+### Verified
+
+The p-adic elliptic log of G_L at p = 11 reproduces exactly under
+independent recomputation (loop-based [4]G vs native multiplication —
+both give formal log([4]G) = 7·11 + 2·11² + 6·11⁵ + 11⁶ + 10·11⁷ +
+… O(11¹²), hence log(G_L) = (that)/4 = 10·11 + 8·11² + 2·11³ + … O(11¹²)).
+The Addendum-7 datum stands.
+
+### The honest state of the Z_D Coleman bound
+
+In-hand: #Z_D(F₁₁) = 12 (tight), rank Jac(Z_D) = 1 (unconditional, §2aj),
+the eigen-differential split (odd = D-lift, even = Prym), the J_L-side
+period datum (this pass). **Blocked in-tooling**: the residue-class
+annihilation solve for the 2-dim Prym part requires p-adic integrals of
+dw/V and w²dw/V between Mumford classes on the EVEN octic — Sage's
+coleman_integral does not implement even-degree models (the recorded
+blocker), and no odd birational model of Z_D exists (no rational branch
+point). This is the same structural limitation Windows hit on C3_A; the
+correspondence/quotient-elliptic route carries the J_L-side (done here)
+but the Prym residue classes need genus-3 integration tooling (Magma-class
+Coleman, or a hand-rolled Balakrishnan–Bradshaw–Kedlaya-style hyperelliptic
+integrator for even models — research-level, flagged).
+
+### Next (bounded, toolable)
+
+The P-curve side: the Prym piece's contribution to the residue bound is
+controlled by Jac(P) = 0 (proved) — the rigorous transfer of "rank 0 ⇒
+finite contribution" through the Z_D correspondence is the named next
+item, and it is a paper-and-pencil chain once the P-curve's model is
+written down explicitly (its Z_D-realization). That formalization is the
+next round's target.
+
 K34 remains open. Quota: N/A (local session).
