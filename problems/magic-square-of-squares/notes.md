@@ -3950,4 +3950,35 @@ the Sage padic_elliptic_logarithm API is absent in this build — another
 noted pitfall). This is the period datum the Z_D Coleman bound consumes
 (the quotient-elliptic integral per Addendum-4's checklist).
 
+K34 remains open. Quota: N/A (local session).## §2ak ADDENDUM-7 (2026-09-09): the p-adic elliptic logarithm of G_L at p = 11 — the period datum
+
+`k34j_jlp4` route (formal-group log; ellpointoz absent in PARI 2.17 and
+`padic_elliptic_logarithm` absent in Sage 10.9 — both noted pitfalls).
+
+### Method (exact, via kernel-of-reduction decomposition)
+
+G_L = (2472, 51408) on J_L reduces to a non-identity point mod 11: the
+p-adic log is not directly the formal log. Decomposition: order of
+G_L mod 11 is **4**; [4]G_L ∈ E₁(ℚ₁₁) (the kernel of reduction,
+valuation −2); then
+
+  log(G_L) = log([4]G_L) / 4,
+
+with log the formal-group logarithm of J_L's formal group at
+T = −x/y([4]G_L).
+
+### The datum (11-adic, precision 11)
+
+- T(−x/y of [4]G_L) = 7·11 + 2·11² + 6·11⁵ + 8·11⁶ + … (valuation 1)
+- formal log([4]G_L) = 7·11 + 2·11² + 6·11⁵ + 11⁶ + 10·11⁷ + … O(11¹²)
+- **log(G_L) = 10·11 + 8·11² + 2·11³ + 8·11⁴ + 9·11⁵ + 5·11⁶ + 2·11⁷ +
+  4·11⁸ + 6·11⁹ + 10·11¹⁰ + 9·11¹¹ + O(11¹²)**
+
+This is the annihilator-side period datum for the Z_D Coleman bound:
+the even (Prym-side) differentials kill the J_L-lift, and the odd
+differential's integral against the MW generator is exactly this
+quantity (up to the chain normalization). With #Z_D(F₁₁) = 12 and the
+eigen-differential split, the Coleman bound at 11 is now one
+integration from assembly.
+
 K34 remains open. Quota: N/A (local session).

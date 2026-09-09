@@ -1,0 +1,7 @@
+  ***   at top-level: L=ellpointoz(E,G)
+  ***                   ^---------------
+  ***   not a function in function call
+... skipping file '/tmp/jlp2.gp'
+padic elliptic log of G_L (mod 11):L
+DONE
+EXIT:0
