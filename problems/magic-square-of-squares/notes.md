@@ -4053,4 +4053,37 @@ toolable computation — the next script).
 rank ✓ (unconditional) · point counts ✓ · Prym structure ✓ · period
 datum ✓ · remaining: the 1-dim spare from the log, then the height-bound
 constants ([to-verify] from §2ak, research-level). K34 remains open.
-Quota: N/A (local session).
+Quota: N/A (local session).## §2ak ADDENDUM-10 (2026-09-09): residue classes enumerated — the spare computation marked as the continuation point
+
+### Residue classes of Z_D mod 11 (exact)
+
+10 affine residue points (w, V): (0,±4), (3,±5), (3,±6), (4,±2), (4,±9),
+(7,±2), (7,±9), (8,±5), (8,±6) — plus the 2 points at infinity. Note
+w = 5 and w = 7 both give x = w² = 3 and x = w² = 5 collisions on D:
+the 10 affine ℤ-points collapse to 8 D-points (the cover's two-to-one
+structure mod 11), consistent with #Z_D(F₁₁) = 12.
+
+### Push data (exact)
+
+- The base class (0,238) − D₁ ∈ J(F₁₁) has **order 4**.
+- Each residue point pushes to a degree-1 Mumford rep (P − D₁): x = 0 →
+  (x, ±4/±7); x = 9 → (x+2, ±5/±6); x = 5 → (x+6, ±2/±9).
+
+### The spare computation — continuation point (marked honestly)
+
+The remaining numeric step: for each of the 12 residue Mumford classes,
+extract the p-adic lift's D-component log and compare against the
+verified MW datum log(G_L) = 10·11 + 8·11² + … O(11¹²) (Addendum-7/8).
+The condition: a residue class survives the Coleman bound only if its
+p-adic lift exists with the D-component annihilated (log ≡ 0), i.e. its
+D-component is an 11-divisible multiple of G_L. The extraction of the
+log per Mumford class on the genus-3 even octic runs into the recorded
+even-model integrator gap — the same tooling frontier; the spare is
+marked as the clean continuation point (the mod-11 classes are all in
+hand; the p-adic lift extraction is the last bounded step for the D-side).
+
+### Program state
+
+rank ✓ · counts ✓ · Prym ✓ · period ✓ · spare (marked, in flight) ·
+height constants [to-verify]. K34 remains open. Quota: N/A (local
+session).
