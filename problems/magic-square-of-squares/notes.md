@@ -3884,4 +3884,35 @@ the next script. Fix: batching the micro-steps into single rounds and
 filing only at natural boundaries. Continuing: eigen-differential
 decomposition on Z_D next, then the Coleman-integral assembly at p = 11.
 
+K34 remains open. Quota: N/A (local session).## §2ak ADDENDUM-5 (2026-09-09): E_D point-search bounds + the generator question
+
+`k34j_ed_point_search.log` (+ probe runs). The point search on
+E_D : y² = x³ − 6973560x² + 14122871424x (the quartic-D Jacobian,
+(I,J) = (1033120, −2092277248)) found **ZERO rational points at every
+height bound** (5, 10, 14, 17, 18, 19, 20 — calibrated scaling: each
++1 in the bound multiplies the search ~4.5×; bound 20 ≈ 13–15 min CPU).
+
+### Interpretation (honest)
+
+- Simon descent: rank E_D ∈ [1, 2] with **no generators found** (gens = []).
+- point_search(20): no points. So any generator of E_D(ℚ) has naive
+  height above the bound-20 box (or nontrivial Sha[2] is confusing the
+  descent — the simon output flagged exactly this possibility).
+- Consistency: rank E_D = 1 (or 2) with tall generators is compatible
+  with the §2aj structure (rank Jac(Z_D) = 1, via π^* from Jac(D) = E_D).
+
+### Consequence for the Coleman layer
+
+The free generator hunt needs saturation/tall-point methods — an
+unbounded-tail computation, NOT auto-launched (flagged for the user).
+The alternative route that avoids needing the generator explicitly:
+the **analytic rank of E_D** (L-series, the ls_eval pattern) or the
+**trace-signature corroboration**: rank 1 is what the whole structure
+(J_L-lift) predicts; rank 2 would break the π^* + Prym picture — flagged
+as the check the E_D run must eventually resolve.
+
+### Height-bound layer state (unchanged)
+
+The §2ak conservative r₀ ≈ 1.7×10²⁰ stands with the [to-verify] on exact
+Stoll local constants (research-level, needs local height machinery).
 K34 remains open. Quota: N/A (local session).
