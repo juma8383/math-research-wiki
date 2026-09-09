@@ -3544,3 +3544,30 @@ instructively:
   the ι/ρ-side annihilation must come from the correspondence — the
   last open piece, unchanged from the filed state. `[to-verify]`:
   none added; tracked as the named computation.
+
+## §2ah B-SIDE ANNIHILATOR MIRROR (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`)
+
+`mss_c3b_annihilator_p11p13.sage`/`.log`. The B-side mechanism data:
+
+- **E′_ι exact model**: y² = x³ − 1935360x + 1033371648
+  (invariants (71680, −38273024), j = 2744000/9) — NOTE: j = 2744000/9
+  is the SAME j as the codomain of E_ι's single 2-isogeny (§2ac §2)!
+  So the A-side 2-isogenous copy and the B-side ι-quotient are in the
+  SAME isogeny class — a nice cross-link between the two mirrors
+  (consistent with the filed "E′_ι isogenous to master E_B", itself
+  ℚ-isogenous to master E_A's class — the A/B master curves E_A, E_B
+  share the isogeny cloud through these copies).
+- E′_ι: rank 1 (Sage), torsion ℤ/2 — matches the filed B-side rank.
+- **E_G-torsion annihilation re-verified from the B-side entry point**
+  (same curve, same result: (480,0) → 0, (48,10368) → O(11⁸),
+  (336,0) → 0).
+- **E′_ι generator period at p = 11**: ∫_O^{G′} ω_{E′} = 4·11 +
+  7·11² + 7·11³ + 8·11⁴ + 8·11⁵ + 2·11⁶ + O(11⁸) with
+  G′ = (−384, 41472) — the B-side MW-period datum, mirroring the
+  A-side's ∫_O^{G_ι} ω_E.
+
+The B-side residue-bound skeleton is now assembled to the same depth
+as the A side: exact rank/torsion/period data + the shared E_G
+annihilation. The remaining step is the same correspondence-level
+integral (the Prym-isogeny structure), shared between A and B by the
+§2ad symmetry.

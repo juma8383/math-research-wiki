@@ -1,0 +1,13 @@
+=== B1: E'_iota exact model and rank ===
+  E'_iota: y^2 = x^3 + -1935360 x + 1033371648
+  j = 2744000/9
+  rank: 1  torsion: Torsion Subgroup isomorphic to Z/2 associated to the Elliptic Curve defined by y^2 = x^3 - 1935360*x + 1033371648 over Rational Field
+  (filed: isogenous to master E_B, rank 1)
+=== B2: E_G torsion annihilation at p=11 (B-side = same curve) ===
+  ∫_O^{(480,0)} ω_G = 0
+  ∫_O^{(48,10368)} ω_G = O(11^8)
+  ∫_O^{(336,0)} ω_G = 0
+=== B3: E'_iota generator and its period at p=11 ===
+  ∫_O^{G'} ω_{E'} = 4*11 + 7*11^2 + 7*11^3 + 8*11^4 + 8*11^5 + 2*11^6 + O(11^8)  (G' = (-384 : 41472 : 1) )
+=== DONE ===
+EXIT=0
