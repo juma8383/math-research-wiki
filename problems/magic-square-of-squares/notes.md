@@ -3915,4 +3915,39 @@ as the check the E_D run must eventually resolve.
 
 The §2ak conservative r₀ ≈ 1.7×10²⁰ stands with the [to-verify] on exact
 Stoll local constants (research-level, needs local height machinery).
+K34 remains open. Quota: N/A (local session).## §2ak ADDENDUM-6 (2026-09-09): the Jacobian-of-quartic normalization CORRECTED — Jac(D) = J_L exactly; the spurious E_D model discarded
+
+`k34j_ed_analytic.gp/.log`, `k34j_ed_analytic2.gp/.log` (kept as tracked
+failures), `k34j_zd_mumford_gen.py`. Two mistakes caught and corrected in
+this pass:
+
+### Tracked failure 30: wrong Jacobian normalization
+
+For the even quartic y² = f₄(x) with binary-quartic invariants (I, J) =
+(1033120, −2092277248), the Jacobian cubic is y² = x³ − 27·I·x − 27·J =
+**x³ − 27894240x + 56491485696 = J_L exactly** (27·I = 27894240 = J_L's
+a₄; 27·J's negative = J_L's a₆). The spurious "E_D" model I first built
+(y² = x³ − 6973560x² + 14122871424x, the 27/4 cubic-invariant
+normalization) is a DIFFERENT curve: its point search (bound 20, zero
+points), its ap-traces at 17..43, and its analytic probe
+(Σ a_p/p up to 5000 = −0.0885, flat — rank-0-shaped) all belong to the
+spurious curve and are DISCARDED as data; kept as the failure record.
+The earlier "E_D not isogenous to J_L" trace-comparison conclusion is
+VOID for the same reason (wrong curve).
+
+### The corrected picture (now fully consistent)
+
+- Jac(D) = J_L: rank 1, generator G_L = (2472, 51408), torsion Z/2 =
+  (−6096, 0) (Sage-verified).
+- Jac(Z_D) = π^*(Jac(D)) + Prym(2-dim) with the odd line ω = w·dw/V
+  carrying the D-lift; Jac(P) = 0 PROVED (§2aj).
+- rank Jac(Z_D) = 1 < 3 unconditional (§2aj): the Chabauty gate stands.
+
+### In flight
+
+The p-adic elliptic logarithm of G_L at p = 11 (PARI ellpointoz, running;
+the Sage padic_elliptic_logarithm API is absent in this build — another
+noted pitfall). This is the period datum the Z_D Coleman bound consumes
+(the quotient-elliptic integral per Addendum-4's checklist).
+
 K34 remains open. Quota: N/A (local session).

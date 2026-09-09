@@ -1,0 +1,12 @@
+disc = 66165608470990116672
+  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+  ***   while(p<N,
+  ***            ^-
+... skipping file '/home/linux/mss-k34/ed_analytic.gp'
+3
+  ***   syntax error, unexpected ')', expecting end of file: );
+  ***                                                        ^--
+sum a_p/p up to 5000 = 0.E-38
+rank-1 signature: drifting toward -1 (log log N ~ 2.0)
+DONE
+EXIT:0
