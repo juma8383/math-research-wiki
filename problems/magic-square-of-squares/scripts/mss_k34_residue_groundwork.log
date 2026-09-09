@@ -1,0 +1,12 @@
+=== R1: candidate primes with #C3_A(F_p) == 8 (tight bound) ===
+  primes <= 500 with #C3_A(F_p) = 8: [11, 13]
+  (at these, #C3_A(Q) <= 8 + 2g - 2 = 12 by Chabauty count; tightest gate)
+=== R2: reduction of the 8 known Q-points at the tight primes ===
+  at p=11: reductions of (0,±1), (1,±4), (-1,±4), inf±:
+   x=0: W^2 = 1 -> W = [1, 10]
+   x=1: W^2 = 5 -> W = [4, 7]
+   x=-1: W^2 = 5 -> W = [4, 7]
+=== R3: period-matrix data at p=13 (second tight prime candidate) ===
+  ∫_O^{G_iota} ω_E at p=13: 7*13 + 4*13^2 + 5*13^4 + 9*13^5 + 3*13^6 + 6*13^7 + O(13^8)
+=== DONE ===
+EXIT=0

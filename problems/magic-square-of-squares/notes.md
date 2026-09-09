@@ -3472,3 +3472,29 @@ Remaining named computation: the residue/height bound (Coleman on
 C3_A/C3_B at a good prime; needs the MW-cycle integrals through the
 correspondence, or the effective-Chabauty Z_D route). The sieve stress
 extension toward 3×10⁶ is running.
+
+## §2ae RESIDUE-GROUNDWORK ROUND (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`)
+
+`mss_k34_residue_groundwork.sage`/`.log`. Tight-prime census and
+known-point reduction data for the residue bound:
+
+- **Tight primes: {11, 13} only** (≤ 500): the primes where
+  #C3_A(F_p) = 8, the minimum possible (the 8 known ℚ-points exactly
+  fill the reduction — the residue bound at these primes reads
+  #C3_A(ℚ) ≤ 8 + 2g−2 = 12, with the 8 known points already present,
+  leaving ≤ 4 spare classes).
+- **Known-point reductions at p = 11 verified exact**: x=0 →
+  W² = 1, W = ±1; x = ±1 → W² = 5, W = ±4 (each x-value giving the
+  two W-signs as distinct residue points). The 8 known ℚ-points reduce
+  to the 8 residue points with no collision — the finite-field side is
+  fully accounted for by the known orbit (this is the input the residue
+  argument needs: any extra ℚ-point must reduce INTO one of these
+  residue classes and be caught p-adically).
+- **Second-prime period data at p = 13**: ∫_O^{G_ι} ω_E = 7·13 +
+  4·13² + 5·13⁴ + 9·13⁵ + 3·13⁶ + 6·13⁷ + O(13⁸) — the annihilator
+  solve is not pinned to p = 11; two independent primes now have the
+  period data assembled.
+
+Machinery note: the full residue bound additionally needs the
+genus-3-cycle integrals (through the correspondence) — this round
+assembles the data the bound consumes. `[to-verify]`: none added.
