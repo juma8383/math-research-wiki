@@ -1,0 +1,10 @@
+=== I3c: integral with in-script v ===
+  model OK, differential OK
+  f_monic(xm0) = (3*c + 9) + (5*c + 2)*11 + 7*11^2 + (c + 6)*11^3 + (8*c + 7)*11^4 + (4*c + 2)*11^5 + (8*c + 4)*11^6 
+Traceback (most recent call last):
+  File "/mnt/c/Claude-Code/Math/problems/magic-square-of-squares/scripts/mss_c3a_iota_annihilation10.sage.py", line 45, in <module>
+    v = vsq.sqrt()
+  File "sage/rings/padics/local_generic_element.pyx", line 810, in sage.rings.padics.local_generic_element.LocalGenericElement.sqrt
+  File "sage/rings/padics/padic_generic_element.pyx", line 3504, in sage.rings.padics.padic_generic_element.pAdicGenericElement.square_root
+NotImplementedError: extending using the sqrt function not yet implemented
+EXIT=0

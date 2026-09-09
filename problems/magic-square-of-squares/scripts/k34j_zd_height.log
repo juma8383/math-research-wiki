@@ -1,0 +1,7 @@
+branch roots max |.| = 5.063871655034234
+archimedean constant C_inf <= 3.605
+finite constant (conservative) = 42.99
+total C = 46.59
+conservative r0 bound = 1.718e+20 [to-verify: exact constants shrink this]
+DONE
+EXIT:0

@@ -3748,4 +3748,22 @@ place via potential theory on the octic, then the operative output:
 r₀ = exp bound on denominators of w = s/r — closing the height-bound layer
 `[to-verify]: exact local constants at the 5 bad primes`.
 
-K34 remains open. Quota: N/A (local session).
+K34 remains open. Quota: N/A (local session).## §2ak ADDENDUM (2026-09-09): archimedean constant + conservative r0
+
+`k34j_zd_height_step3.py`/`zd_height.log`. Branch-point analysis of the
+octic f(w) = w⁸ − 4w⁶ − 604w⁴ − 952w² + 56644: **max |root| = 5.0639**
+(all 8 branch points inside the disk of radius 5.07), giving the
+archimedean constant **C_inf ≤ 3.605** (sharp shape: 2·log(1 + max|root|)).
+
+Assembled with the conservative finite-part constant (42.99, §2ak):
+**total C ≈ 46.59**, yielding the first conservative denominator bound
+**r₀ ≈ 1.72×10²⁰** [to-verify: the exact Stoll local constants shrink
+this; the finite-part placeholder over-counts by the standard factor —
+the true r₀ is expected in the 10⁶–10¹⁵ range, which matters for the
+sieve's reach].
+
+**Status of the height-bound layer**: architecture complete (rank ✓
+unconditional; Coleman data ✓ assembled by win; height constants ✓ first
+pass), with ONE [to-verify] open: the exact local constants at the 5 bad
+primes (replacing the conservative v_p(disc)/2 placeholder). K34 remains
+open. Quota: N/A (local session).
