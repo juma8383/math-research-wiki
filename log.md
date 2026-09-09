@@ -5353,3 +5353,24 @@ worker-prover agent-type fell back to general-purpose (not registered
 in this running session — contract inlined verbatim, spec-honest);
 EOL-preserving binary edits throughout; push of main still parked on
 `workflow` scope (user: `! gh auth refresh -h github.com -s workflow`).
+[HARNESS 2026-09-09] final-review fix wave (addendum to the entry above)
+
+Final whole-branch review (618e95c..31fdc6e, 13 commits) returned
+"With fixes": 0 Critical, 2 Important, 4 Minor. Fix commit abe9850
+(single fix dispatch per the SDD loop): (1) the coprime-restricted
+minimizer of |A^5-rem| is not always in {fl,fl+1} — search_5713_widbox.py
+widened to {fl-1, fl, fl+1} + break dropped; attempt-26 readout corrected
+append-only (3rd-smallest genuine gap 4939 @ (5,2,2), not 8743; min 1771
+@ (6,3,2) UNAFFECTED — reviewer + Orchestrator agree via structurally
+different scans); 56-signature table's per-signature minima flagged
+`to-verify` for a cheap widened-window re-run. (2) lint_dag.py uses:
+parsing now continuation-aware (10th test, RED->GREEN); kind: vocabulary
+checked as warning (determinism kept: two runs byte-identical, 0
+blockers, 128 warnings, --ci exit 0). (3) SCHEMA.md: attempt outcome
+vocabulary gained `confirmed` + progress.md anchor allowed for
+open/conditional nodes + single-word log-prefix note (controller
+closeout commit fixes the stale first-line-only uses: line).
+Residual parked with ruling: 10802 @ (7,3,2) sits at fl+2, outside the
+ruled {fl-1,fl,fl+1} readout window — disclosed in the attempt-26
+addendum; the widened-window re-run to-verify covers full readout
+completeness. Suite 10/10 OK.

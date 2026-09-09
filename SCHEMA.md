@@ -119,7 +119,7 @@ Body: one indented block per node:
   kind: definition | conjecture | theorem | lemma | method
   status: open | proven | conditional | dead
   uses: [<node-id>, ...]
-  (convention: `uses:` is a single line — put every dependency id on that one line; the linter validates only the first line of a value)
+  (convention: `uses:` is a single line — put every dependency id on that one line; the linter validates a value across continuation lines (indented under the key; fix 2026-09-09, final-review))
   source: [[<theory/conjecture page>]] or problems/<slug>/attempts/attempt-NN.md or problems/<slug>/progress.md (allowed anchor for `open`/`conditional` nodes)
   next: <one line — what proving this unlocks>
 
