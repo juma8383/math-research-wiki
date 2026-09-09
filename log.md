@@ -4519,3 +4519,7 @@ parity, frontmatter validity, index/log parity, DAG status parity,
 orphans. Report-only; `--ci` exits 1 on blockers only. Full-repo run
 recorded (863 blockers / 95 warnings, lint-report-phase-a.txt) feeding
 the logged [LINT] close-out pass.
+
+## [CI 2026-09-09] structure gate
+GitHub Actions lint workflow + runbook; the linter is merge authority
+on structure; branch-protection steps in docs/runbook-ci.md.
