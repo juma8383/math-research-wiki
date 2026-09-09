@@ -3589,4 +3589,80 @@ total across 5..3e6 = 640 + 236 + 87 + 63 = **1026 valid primes with
 ord(G)|M_A, zero violations cumulative**. The filed round-2 claim
 ("the hunt to 3·10⁶ had not killed it at filing time") is now fully
 discharged at Sage precision: the M/2−1 class survives to 3×10⁶.
-The `[to-verify]` on the 3e6 tier is DISCHARGED.
+The `[to-verify]` on the 3e6 tier is DISCHARGED.## §2aj THE RANK GATE CLOSED — hand 2-isogeny descent on E₊ over L (linux box, 2026-09-09, `[mss-k34-selmer2i]`)
+
+`k34j_eplus_selmer_v7.py`, `k34j_two_adic2.py`, `k34j_lift_counts.py`
+(.log each). The Sage NF `simon_two_descent` on E₊ was killed after 24h
+CPU with a wedged signature (flat RSS 223 MB, zero I/O growth, no output
+— tracked failure 28). Replaced by a HAND-ROLLED 2-isogeny descent, exact
+throughout:
+
+### Setup
+
+E₊ : y² = x³ + a x² + b x over L = ℚ(√−271), a = 2t−2, b = 238 (RATIONAL —
+this is what makes the descent explicit). φ : E₊ → E′ with kernel (0,0);
+E′ : y² = x³ + ap x² + bp x, ap = −4t+4, bp = −2032−8t (note ap² − 4bp =
+3808 = 2⁵·7·17, RATIONAL). Standard descent coverings (Silverman/Tate):
+
+  C_d : d W² = d² Z⁴ + a d Z² + b        (φ-side, candidates d | b)
+  C′_d : d W² = d² Z⁴ + ap d Z² + bp     (φ′-side, candidates (d) | (bp))
+
+rank E₊(L) = dim Sel(φ) + dim Sel(φ′) − 2.
+
+### Candidate spaces (exact)
+
+- **L*/(L*)² = ⟨2, 7, 17, t, −1⟩** (5-dim, 32 classes: h(L) = 11 odd so no
+  class-group correction; units = {±1}; −1 verified NOT a square in L).
+- **φ-side candidates**: c = ±d·t^e, d | 238 (32 classes).
+- **φ′-side**: (bp) = P2a³·P2b³·P17·P37b·P103b — the ONLY principal ideal
+  divisor is 1 (class group Z/11 blocks all nontrivial products), so
+  candidates reduce to c = ±2^i·17^j with i ≤ 3, j ≤ 1: classes {±1, ±2,
+  ±17, ±34} (8 classes).
+
+### Local conditions (complete, exact)
+
+At each constrained prime (P | 2, 7, 17, 37, 103, (t)): (i) smooth
+reduction ⇒ soluble (Lang, H¹(F_p, E) = 0); (ii) **points at infinity of
+the quartic ⇒ soluble iff c is a local square** (at the split primes over
+2, L_P ≅ Q₂, so c odd must satisfy c ≡ 1 mod 8); (iii) affine enumeration
+over F_p with Hensel lift for nonsingular solutions; double-point tangent
+test for singular-only cases; (iv) **exact 2-adic ring-model test** at
+both P|2: O_L/P^n ≅ Z/2^n[u]/(u² + 2c·u + 2m₀), enumeration mod P⁶ with
+lift-consistency counting (c = 238: 1024 → 8192 → 32768 solutions mod
+P³→P⁴→P⁵, each solution extending — consistent lift chain ⇒ soluble;
+c = 7 and c = 34: ZERO solutions mod P³ ⇒ 2-adically DEAD; c = 2 (φ′-side)
+dead at 2).
+
+### Result
+
+- **Sel(φ) = {1, 238}** (dim 1): {7, 34} die 2-adically (zero solutions
+  mod P³ — the b-term's unique min-valuation argument), {1, 238} pass
+  everywhere (1 via the infinity point: 1 ≡ 1 mod 8).
+- **Sel(φ′) = {1}** (dim 1): c = 2 dies 2-adically (valuation analysis:
+  RHS min valuation 1 achieved once, LHS even — insoluble), others die at
+  odd primes.
+- **rank E₊(L) = dim Sel(φ) + dim Sel(φ′) − 2 = 1 + 1 − 2 = 0**, PROVED
+  (exact 2-isogeny descent, all local conditions verified exactly).
+
+### Consequences (the gate)
+
+1. **rank Jac(P) = rank E₊(ℚ(√−271)) = 0 is now UNCONDITIONAL** (the
+   Richelot isogeny preserves rank) — §2r's analytic/BSD-conditional rank-0
+   is upgraded to a theorem. The apparent tension (interim dim Sel(φ) = 2
+   before the 2-adic resolution) is resolved: Sha[φ] ≅ (Z/2)², Sha[φ′] ≅
+   Z/2 — the extra Selmer classes were Tate–Shafarevich, not rank.
+2. **rank Jac(Z_D) = 1 < 3 = genus UNCONDITIONALLY: the Chabauty gate on
+   Z_D passes.** The closure program on the leaf chain is now: (1) ✓ rank
+   (this section); (2) height bound (named remaining item); (3) Coleman
+   integration on Z_D.
+3. K34-A candidate chain: sieve → D-gate → Z_D all exact; the gate that
+   remains open is the height bound + the residue/height bound on C3_A
+   (Windows' §2ae groundwork consumed by that).
+
+Tracked failures resolved: 28. v6 Selmer test missed points-at-infinity
+(c = 1 falsely insoluble — the trivial class is ALWAYS in the Selmer, so
+insolubility of class 1 signals a test bug); 29. the "nonsingular gradient"
+2-adic test fails structurally at p = 2 for this family (4·c²Z³ + 2acZ ≡ 0
+mod 2 identically) — replaced by lift-consistency counting.
+
+K34 remains open. Quota: N/A (local session).

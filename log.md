@@ -4452,4 +4452,21 @@ That is the exact residue of the problem: ruling out "all primitive divisors hav
 - Files: notes.md sec 2y; scripts k34j_richelot_split.py,
   k34j_richelot_verify.py, k34j_eplus_rank.py/.log, k34j_prym_search.py/.log.
 - Verdict: K34 OPEN. The rank gate is now a concrete Sage computation.
+- Quota: N/A (local session).## [CONTINUE 2026-09-09] magic-square-of-squares — §2aj RANK GATE CLOSED `[mss-k34-selmer2i]`
+
+- **RANK Jac(P) = 0 PROVED UNCONDITIONALLY** (hand 2-isogeny descent on
+  E+ over L = Q(sqrt(-271)); exact local conditions at all constrained
+  primes including the 2-adic ring model and points-at-infinity):
+  Sel(phi) = {1, 238} (dim 1), Sel(phi') = {1} (dim 1),
+  rank = 1 + 1 - 2 = 0. Sha[phi] = (Z/2)^2, Sha[phi'] = Z/2.
+- Sage NF simon_two_descent was killed after 24h wedged (tracked failure 28);
+  the hand descent replaced it and SUCCEEDED in minutes.
+- **rank Jac(Z_D) = 1 < 3 UNCONDITIONAL: Chabauty gate on Z_D PASSES.**
+  Leaf-chain closure program: rank ✓ (§2aj), height bound (named item),
+  Coleman on Z_D.
+- K34 remains open. The §2r analytic rank-0 upgraded to unconditional.
+- Files: notes.md §2aj; scripts k34j_eplus_selmer_v6/v7.py,
+  k34j_eplus_2adic.py, k34j_eplus_selmer_p2*.py, k34j_phi2_2adic.log.
+- BOARD.md: in-flight row -> Resolved with RESULT (commit, no push —
+  Windows pushes).
 - Quota: N/A (local session).

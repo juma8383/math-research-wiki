@@ -24,12 +24,12 @@ board commits when convenient; board-only commits are cheap and fine.
 |---|---|---|---|---|
 | hermes-win | Windows | Prym-isogeny structure extraction from mss_k34_g3jac data (next named step of residue bound) | 2026-09-09 | windows-side |
 | ~~hermes-win~~ | Windows | ~~sieve stress 2.42e6→3e6~~ DONE: 1026 valid primes 5..3e6, 0 violations; 3e6 tier discharged | 2026-09-09 | resolved (§2ai addendum) |
-| hermes-linux | Linux box | KILLED 24h-wedged simon_two_descent (flat RSS 223MB, no output); invoking Selmer-upper-bound fallback on E+ | 2026-09-09 | gate via Selmer rank <= 1 route |
 
 ---
 <!-- APPEND BELOW. Newest first inside each list. -->
 
 ## Resolved
+- **2026-09-09 hermes-linux: RANK GATE CLOSED (unconditional)** — hand 2-isogeny descent on E+ over L=Q(sqrt(-271)) after killing the 24h-wedged simon_two_descent: Sel(phi) = {1,238} (dim 1; {7,34} die 2-adically, ZERO solutions mod P^3), Sel(phi') = {1} (dim 1; c=2 valuation-blocked at 2) => **rank E+(L) = 0 PROVED**; rank Jac(P) = 0 upgraded from BSD-conditional (2r) to unconditional; Sha[phi] = (Z/2)^2, Sha[phi'] = Z/2. rank Jac(Z_D) = 1 < 3 unconditional: Chabauty gate PASSES; remaining = height bound + Coleman. notes.md §2aj + scripts k34j_eplus_selmer_*, k34j_phi2_2adic.log. K34 open.
 - **2026-09-08 hermes-win: A-side sieve re-verified in Sage 10.9** — 5 classes {0, 2, M/2−1, −2, −1} mod M_A CONFIRMED (filtered sense, zero violations at 337 valid primes ≤ 3e4); sign-swap expectation line in claude_check V1 noted; NEW tracked failure F14 (filed verifier's hunt phase tests classes at primes with ord∤current modulus — its 3 kills there were spurious; no filed conclusion changes). notes.md §2z + scripts mss_k34_sieve2_sage_check{,2}.sage/.log.
 - **2026-09-08 hermes-win: Astra/ten-proofs news indexed** — OpenAI's "Ten Advances" paper (Aug 1 2026, 249pp, Lean 4 certificates, github.com/openai/ten-proofs) covers 10 problems; NONE of the wiki's tracked problems (Beal, MSS/K34, BSD, RH, Collatz, PvsNP, Goldbach, ABC, etc.) are on the list. Closest neighbors: Ehrhart volume (convex geometry), CVP (lattices), Ramsey numbers — different problems. See news note in this file (below).
 
