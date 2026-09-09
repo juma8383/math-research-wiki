@@ -1,0 +1,6 @@
+=== I3r: UnramifiedExtensionField factory ===
+Traceback (most recent call last):
+  File "/mnt/c/Claude-Code/Math/problems/magic-square-of-squares/scripts/mss_c3a_iota_annihilation24.sage.py", line 22, in <module>
+    from sage.rings.padics.factory import UnramifiedExtensionField
+ImportError: cannot import name 'UnramifiedExtensionField' from 'sage.rings.padics.factory' (/opt/sage/src/sage/rings/padics/factory.py)
+EXIT=0

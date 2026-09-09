@@ -1,0 +1,9 @@
+=== I3j: list()-based degree hygiene + HQR ===
+  f_monic.list() length: 9 (degree 7)
+  last entry: O(11^8)
+  f_final degree: 8 ; leading: 1 + O(11^8)
+  HQR constructed: OK
+  HQR: SpecialHyperellipticQuotientRing K[x,y,y^-1] / (y^2 = (1 + O(11^8))*u^8 + (1 + O(11^8))*u^7 + ((9*c 
+  gens OK: x, y
+=== DONE ===
+EXIT=0

@@ -1,0 +1,12 @@
+=== I3i: inline replication of the monic check ===
+  type(f_monic): PolynomialRing_cdvf_with_category.element_class ; parent: Univariate Polynomial Ring in u over 11-adic Unramified Extension Field in c defined by X^2 - 7
+  base_ring: 11-adic Unramified Extension Field in c defined by X^2 - 7
+  after change_ring: degree 7 ; type PolynomialRing_cdvf_with_category.element_class
+  len(coefficients(sparse=False)): 9
+  popped value: O(11^8)
+  popped != 1? True
+  popped == 1? True
+  direct: elt == 1 -> True ; elt != 1 -> False
+  type(elt): qAdicCappedRelativeElement
+=== DONE ===
+EXIT=0

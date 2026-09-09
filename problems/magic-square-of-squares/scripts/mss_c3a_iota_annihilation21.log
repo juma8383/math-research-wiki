@@ -1,0 +1,5 @@
+=== I3o: manual Hensel sqrt ===
+  fp = (4*c + 3) + (5*c + 3)*11 + (3*c + 4)*11^2 + (6*c + 10)*11^3 + (2*c + 2
+  fp^60 == 1? False
+=== DONE ===
+EXIT=0

@@ -1,0 +1,12 @@
+=== I3q: K4 route, clean ===
+Traceback (most recent call last):
+  File "/mnt/c/Claude-Code/Math/problems/magic-square-of-squares/scripts/mss_c3a_iota_annihilation23.sage.py", line 23, in <module>
+    K4 = Qp(_sage_const_11 , _sage_const_8 ).extension(Y**_sage_const_4  - _sage_const_2 , 'y4', names=('y4',)); (y4,) = K4._first_ngens(1)
+  File "/opt/sage/src/sage/rings/padics/padic_generic.py", line 646, in extension
+    return ExtensionFactory(base=self, modulus=modulus, prec=prec, names=names, check=True, implementation=implementation, **print_mode)
+  File "sage/structure/factory.pyx", line 372, in sage.structure.factory.UniqueFactory.__call__
+  File "sage/structure/factory.pyx", line 415, in sage.structure.factory.UniqueFactory.get_object
+  File "/opt/sage/src/sage/rings/padics/factory.py", line 3448, in create_object
+    raise NotImplementedError("Extensions by general polynomials not yet supported.  Please use an unramified or Eisenstein polynomial.")
+NotImplementedError: Extensions by general polynomials not yet supported.  Please use an unramified or Eisenstein polynomial.
+EXIT=0

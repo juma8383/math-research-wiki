@@ -3797,4 +3797,48 @@ map, as expected from Jac(Z_D) ~ J_L × Jac(P) with Jac(P) = 0 (§2aj).
 - [ ] Coleman integrals + residue computation at p = 11
 - [ ] height-bound sharp constants (the §2ak [to-verify])
 
+K34 remains open. Quota: N/A (local session).## §2ak ADDENDUM-3 (2026-09-09): Mumford rep of the J_L-lift class + a new D-point
+
+`k34j_zd_mumford_gen.py` (.log). The Mumford-representation computation on
+the tower:
+
+### New rational point on D (exact)
+
+Sage's Jacobian reduction of the class (P₁ + P₂ − D₁ − D₂), with
+P₁ = (0, 238), P₂ = (−33/2, 5/4) on D : V² = x⁴ − 4x³ − 604x² − 952x + 56644,
+collapses to a degree-1 Mumford rep **(u = x + 476/33, v = −1190/1089)** —
+i.e. a THIRD rational point pair on D beyond the §2k list:
+
+$$P = \left(-\tfrac{476}{33},\ \pm\tfrac{1190}{1089}\right),$$
+
+verified exactly: D(−476/33) = 1416100/1185921 = (−1190/1089)². D(ℚ) has
+at least {(0,±238), (−33/2,±5/4), (−476/33,±1190/1089)}; the new point is
+the group-law sum of the two known classes (E_D group law).
+
+### Mumford rep on Z_D (the pullback)
+
+The tower map π : Z_D → D is (w, V) ↦ (w², V) — Z_D is the square-x cover
+of D (the octic IS f₄(w²), verified by coefficient match). The pullback
+of the class (P − D₁) has Mumford rep on Z_D:
+
+  **u(w) = w² + 476/33,  v(w) = −1190/1089 (constant)**,
+
+with v² ≡ f₄(w²) mod u exactly (the octic ≡ (−1190/1089)² mod w² + 476/33).
+Caveat recorded: x = −476/33 < 0, so π⁻¹(P) is not a rational divisor — the
+pullback is a class, not an effective rational divisor; the effective
+generator question goes through the α-class structure (image(α^L) =
+{1, 238, 271, 64498}, §2l): the class of −476/33 = 238·(−2/33), not in the
+lift-fiber with x > 0. The Mumford rep above is still the correct
+Jacobian element (rationality of the class ≠ rationality of its support).
+
+### Where the loop stands (self-diagnosis note)
+
+The between-rounds stall had no single blocker — the next steps needed a
+chain of small exact verifications (model shifts, on-curve checks,
+Mumford reductions), each cheap but requiring careful Sage handling; the
+session was ending turns at filing points instead of rolling straight into
+the next script. Fix: batching the micro-steps into single rounds and
+filing only at natural boundaries. Continuing: eigen-differential
+decomposition on Z_D next, then the Coleman-integral assembly at p = 11.
+
 K34 remains open. Quota: N/A (local session).

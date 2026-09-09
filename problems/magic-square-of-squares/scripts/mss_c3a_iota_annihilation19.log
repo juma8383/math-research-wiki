@@ -1,0 +1,6 @@
+=== I3m: integral between the (0,±1) images (correct transform) ===
+  curve + differential OK
+  on-curve check f(u0) - v^2 = (3*c + 6) + (3*c + 7)*11 + (9*c + 1)*11^2 + (7*c + 10)*11^3 + (2*c + 3)*11^4 + (
+  I3m integral error: Coordinates [(7*c + 8) + (7*c + 4)*11 + (2*c + 6)*11^2 + 10*11^3 + c*11^4 + (3*c + 6)*11^5 + 2*c*11^6 + (4*c + 9)*11^7 + O(11^8), 6 + (2*c + 3)*11 + (10*c + 9)*11^2 + (6*c + 1)*11^3 + 6*11^4 + (4*c + 10)*11^5 + (9*c + 3)*11^6 + (7*c + 2)*11^7 + O(11^
+=== DONE ===
+EXIT=0

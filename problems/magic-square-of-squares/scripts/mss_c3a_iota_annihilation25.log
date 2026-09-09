@@ -1,0 +1,7 @@
+=== I3s: find an irreducible quartic mod 11 ===
+  unramified quartic found: (1 + O(11^8))*X^4 + (1 + O(11^8))*X + 2 + O(11^8)
+  K4 = 11-adic Unramified Extension Field in y4 defined by X^4 + X + 2
+  roots over K4: 8
+  fp square in K4? False
+=== DONE ===
+EXIT=0
