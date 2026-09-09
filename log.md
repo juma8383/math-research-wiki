@@ -4523,3 +4523,11 @@ the logged [LINT] close-out pass.
 ## [CI 2026-09-09] structure gate
 GitHub Actions lint workflow + runbook; the linter is merge authority
 on structure; branch-protection steps in docs/runbook-ci.md.
+## [DAG 2026-09-09] manifests for 9 active problems
+Created problems/<slug>/dag.md for beals-conjecture (exemplar),
+birch-swinnerton-dyer, navier-stokes, yang-mills, hodge-conjecture,
+collatz-conjecture, riemann-hypothesis, PvsNP,
+magic-square-of-squares (K34 ladder). Node/edge extraction per
+SCHEMA.md dag page type; statuses anchored to theory/conjecture pages
+or attempt anchors; stub problems intentionally excluded (derived lint
+covers them).
