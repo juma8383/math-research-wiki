@@ -3431,3 +3431,28 @@ point-set-exact (8 points, degenerate only), and the E_G torsion
 annihilates. Remaining named item: the residue bound on C3_A itself
 (needs the MW-cycle integrals through the correspondence, or effective
 Chabauty via the Z_D route already filed).
+
+## §2ad B-SIDE MIRROR ROUND (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`)
+
+`mss_c3b_mirror_round.sage`/`.log`. The B-side square-condition quartic
+Q*_B: w² = 9v⁴ − 56v² + 144 (from D_B: w² = 9z⁴−128z²+512 with
+z² = v²+4) is **E_G-covered exactly like the A side**: binary-quartic
+invariants (18688, −4874240) — the filed ι∘ρ (E_G) class, NOT the E_B
+class (71680, −38273024) that the alternative structure would have
+given. Native Sage point enumeration:
+
+$$Q^*_B(\mathbb{Q}) = \{\infty_\pm,\ (0,\pm12),\ (\pm2,\pm8)\}$$
+
+— exactly 8 points (rigorous as on the A side: Abel–Jacobi + rank
+E_G = 0), and the K34-B lift condition z² = v²+4 is rational ONLY at
+v = 0 (z = ±2, the known degenerate D_B points); v = ±2 gives z² = 8,
+not rational. **Both mirror layers are now closed identically**: sieve →
+D_{A/B} square condition → Q*_{A/B} (8 points, degenerate only). The
+symmetry is exact — E_G is the COMMON Prym factor and both K34-A and
+K34-B reduce through it the same way.
+
+Structural note for the descent program: the square-condition quartics
+Q* and Q*_B both having Jacobian E_G means the two K34 gates share the
+same final obstruction — the E_G layer — which is rank-0/finite. The
+remaining gate computation (residue bound on C3_A/C3_B) is common in
+structure. No proof claimed; K34 open; the named gates unchanged.

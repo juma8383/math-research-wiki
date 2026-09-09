@@ -1,0 +1,16 @@
+=== Z1: Q*_B = w^2 = 9v^4 - 56v^2 + 144 : native rational point set ===
+  Q*_B(Q) points (bound 100): [(1 : 3 : 0), (1 : -3 : 0), (-2 : -8 : 1), (-2 : 8 : 1), (0 : -12 : 1), (0 : 12 : 1), (2 : -8 : 1), (2 : 8 : 1)]
+=== Z2: integer cross-check ===
+  integer (v, w) pairs |v| <= 100: [(-2, -8), (-2, 8), (0, -12), (0, 12), (2, -8), (2, 8)]
+=== Z3: Jacobian invariants of Q*_B (which factor?) ===
+  Q*_B (9,0,-56,0,144) invariants: (18688, -4874240)
+  filed: C3_B iota/rho invariants (71680, -38273024) [E_B side];
+  filed: iota_rho invariants (18688, -4874240) [E_G side].
+  => if Q*_B matches (71680, -38273024), the B square-condition layer is
+     E_B-covered (rank 1!) — NOT rank 0 — different structure from A side.
+  => if (18688, -4874240), it is E_G-covered like A.
+=== Z4: the lift condition on Q*_B(Q) ===
+  K34-B needs z^2 = v^2 + 4 rational too. On the Z1/Z2 points:
+  (computed below from Z1/Z2 output)
+=== DONE ===
+EXIT=0
