@@ -23,7 +23,7 @@ board commits when convenient; board-only commits are cheap and fine.
 | session | machine | work | claimed | note |
 |---|---|---|---|---|
 | hermes-win | Windows | eplus_rank descent monitoring (belongs to linux session; watching log) | 2026-09-08 | co-monitor only |
-| hermes-linux | Linux box | simon_two_descent over L=Q(sqrt(-271)) on E+ (`k34j_eplus_rank.py`, ~220+ min) | 2026-09-08 | gate computation, in flight |
+| hermes-linux | Linux box | KILLED 24h-wedged simon_two_descent (flat RSS 223MB, no output); invoking Selmer-upper-bound fallback on E+ | 2026-09-09 | gate via Selmer rank <= 1 route |
 
 ---
 <!-- APPEND BELOW. Newest first inside each list. -->
