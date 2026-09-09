@@ -1,0 +1,16 @@
+=== P1: the E_G idempotent differential EXACTLY (character theory) ===
+  automorphisms() not available: 'HyperellipticCurve_rational_field_with_category' object has no attribute 'automorphisms'
+  iota* on (a,b,c) = (-a, b, -c)  [computed above]
+  rho* on (a,b,c) = (-c, -b, -a)  [derived: x->1/x maps the basis
+   dx/W -> -t^2 dt/W?? sign conventions: verify numerically next]
+=== P2: the simultaneous anti-invariant subspace ===
+  omega_G = dx/W + x^2 dx/W (anti-invariant under iota AND rho).
+  => this IS the annihilator for the E_G-side; the iota/rho-side
+     annihilator is the complementary combo dx/W - x^2 dx/W (iota-anti,
+     rho-SYMMETRIC) and x dx/W (iota-invariant). The 3x3 character table:
+     (dx/W): iota-anti, rho-anti-with-mix => NOT pure; the pure characters:
+     omega_1 = dx/W + x^2 dx/W (anti-anti = E_G eigen),
+     omega_2 = dx/W - x^2 dx/W (anti under iota; under rho: mixes with...)
+     omega_3 = x dx/W (iota-invariant = rho-side).
+=== DONE ===
+EXIT=0

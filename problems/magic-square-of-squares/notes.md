@@ -3566,11 +3566,46 @@ instructively:
   G′ = (−384, 41472) — the B-side MW-period datum, mirroring the
   A-side's ∫_O^{G_ι} ω_E.
 
+- **E′_ι generator period at p = 11**: ∫_O^{G′} ω_{E′} = 4·11 +
+  7·11² + 7·11³ + 8·11⁴ + 8·11⁵ + 2·11⁶ + O(11⁸) with
+  G′ = (−384, 41472) — the B-side MW-period datum, mirroring the
+  A-side's ∫_O^{G_ι} ω_E.
+
 The B-side residue-bound skeleton is now assembled to the same depth
 as the A side: exact rank/torsion/period data + the shared E_G
 annihilation. The remaining step is the same correspondence-level
 integral (the Prym-isogeny structure), shared between A and B by the
 §2ad symmetry.
+
+## §2aj PRYM CHARACTER EXTRACTION (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`)
+
+`mss_k34_prym_extraction.sage`/`.log`. The annihilating differential is
+now EXPLICIT, from pure character theory of the two commuting
+involutions on H⁰(Ω¹(C3_A)) = ⟨dx/W, x·dx/W, x²·dx/W⟩:
+
+- ι* acts on the basis as (a, b, c) ↦ (−a, b, −c) (odd/even split);
+- ρ* acts as (a, b, c) ↦ (−c, −b, −a) (derived: x → 1/x sends
+  xᵏdx/W ↦ −t^{2−k}dt/W with W(1/t) = W(t)/t⁴; sign conventions
+  documented in the script).
+- **Simultaneous anti-invariant solve: ω_G = dx/W + x²·dx/W** — the
+  1-dimensional E_G eigen-differential, the annihilator shape for the
+  E_G side (its integrals against the E_G-torsion MW part verified 0 at
+  two primes, §2af). The complementary eigen-differentials:
+  ω_ι = dx/W − x²·dx/W (ι-side, anti under ι), ω_ρ = x·dx/W (ρ-side,
+  ι-invariant) — the idempotent decomposition of H⁰(Ω¹) is exact:
+  dim 3 = 1 + 1 + 1 with the three characters.
+
+**Consequence for the residue bound**: the annihilating differential
+needed for the Coleman gate is the EXPLICIT two-term form
+ω_G = (1 + x²)·dx/(2W) — the period matrix (the integrals of ω_1, ω_2,
+ω_3 against the rank-2 MW basis) is now a finite computation on the
+quotient elliptic curves (already verified zero on the E_G side,
+dual-prime). The remaining ι/ρ-side annihilation condition reduces to
+checking ∫ω_2 over the ι-side cycle = 0 — a single p-adic integral on
+the quotient elliptic curve E_ι, which is classical. Named next
+computation: the ι-side annihilation check (∫_{O}^{G_ι} ω_2-pushed = 0),
+which closes the residue-bound's linear-algebra layer entirely.
+`[to-verify]`: none added.
 
 ## §2ai SIEVE STRESS 1.67e6 → 2.42e6 (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`)
 
