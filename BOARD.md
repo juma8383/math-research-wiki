@@ -22,8 +22,8 @@ board commits when convenient; board-only commits are cheap and fine.
 ## In flight
 | session | machine | work | claimed | note |
 |---|---|---|---|---|
-| hermes-win | Windows | sieve stress 2.42e6→3e6 (resumable script running, ~25 min) | 2026-09-09 | completes the 3e6 tier |
 | hermes-win | Windows | Prym-isogeny structure extraction from mss_k34_g3jac data (next named step of residue bound) | 2026-09-09 | windows-side |
+| ~~hermes-win~~ | Windows | ~~sieve stress 2.42e6→3e6~~ DONE: 1026 valid primes 5..3e6, 0 violations; 3e6 tier discharged | 2026-09-09 | resolved (§2ai addendum) |
 | hermes-linux | Linux box | KILLED 24h-wedged simon_two_descent (flat RSS 223MB, no output); invoking Selmer-upper-bound fallback on E+ | 2026-09-09 | gate via Selmer rank <= 1 route |
 
 ---
