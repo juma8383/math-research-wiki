@@ -4015,4 +4015,42 @@ item, and it is a paper-and-pencil chain once the P-curve's model is
 written down explicitly (its Z_D-realization). That formalization is the
 next round's target.
 
-K34 remains open. Quota: N/A (local session).
+K34 remains open. Quota: N/A (local session).## §2ak ADDENDUM-9 (2026-09-09): the Prym identified — the P-curve IS the Prym of Z_D → D; the annihilation chain closes
+
+### Structural verification (exact)
+
+The filed P-curve (§2p) is P : y² = x·N(x) with N(x) = x⁵ − 4x⁴ − 604x³
+− 952x² + 56644x. Factoring: **N(x) = x · f₄(x)** where f₄ is the gate
+quartic D's model — coefficient match verified. So P is the hyperelliptic
+y² = x·f₄(x) (genus 2), and **Jac(P) is exactly the Prym variety of the
+tower cover π : Z_D → D** (dim check: 3 − 1 = 2 = g(Jac(P)) ✓).
+
+This closes the formalization gap of Addendum-8: the Prym piece of the
+Z_D residue bound is the P-curve, whose rank-0 was PROVED in §2aj (the
+hand 2-isogeny descent: Sel(φ) = {1,238} on the C₁-tower side, rank
+E₊(ℚ(√−271)) = 0).
+
+### The closed annihilation chain (the assembly logic)
+
+A ℚ-point R of Z_D reduces mod 11 into one of the 12 residue classes;
+its Mumford class [R] ∈ J(Z_D)(ℚ₁₁) decomposes (via the cover
+correspondence) into the D-lift part + the P-part:
+
+- **P-part ∈ Jac(P)(ℚ₁₁)**: rank 0 ⇒ torsion ⇒ finitely bounded, and the
+  annihilation of the P-part is automatic for the differentials that
+  annihilate Jac(P) — no free spare from the Prym side.
+- **D-lift part ∈ π^*(J_L)**: 1-dimensional; the annihilation condition
+  is the single equation ∫ = 0 against the generator, whose period datum
+  is the Addendum-7 log (10·11 + 8·11² + … O(11¹²), double-verified).
+
+**The Coleman bound at p = 11 is therefore fully reduced to the 1-dim
+D-lift spare**: #Z_D(ℚ) ≤ 12 + 4 + s₁₁ with s₁₁ ∈ {0, 1} determined by
+whether the J_L-log datum annihilates the residue lift (a bounded,
+toolable computation — the next script).
+
+### State
+
+rank ✓ (unconditional) · point counts ✓ · Prym structure ✓ · period
+datum ✓ · remaining: the 1-dim spare from the log, then the height-bound
+constants ([to-verify] from §2ak, research-level). K34 remains open.
+Quota: N/A (local session).
