@@ -3217,3 +3217,25 @@ stands CONFIRMED (filtered sense); no change to any filed conclusion.**
 The EDS primitive-divisor route (§2d) and the Chabauty/Coleman gates
 remain the named next computations. `[to-verify]` discharged for the
 A-side sieve at the 3e4 level; extension to 3e5+ is a pure CPU rerun.
+
+## §2z ADDENDUM (2026-09-09, hermes-win): the 3e5+/1e6 stress rerun LANDED — zero violations
+
+`mss_k34_sieve2_sage_check3.sage`/`.log` (Sage 10.9, WSL2; notification-run,
+no monitoring loop). Two independent discharges:
+
+- **A-side extension:** filtered stress (ord_p(G) | M_A) now covers
+  **876 valid primes to 10^6** (640 ≤ 3·10^5 + 236 in (3·10^5, 10^6)),
+  zero violations of {0, 2, M/2−1, −2, −1}. Confirms §6ii (their counts:
+  624 + 231; the ±small deltas are boundary prime-counting, both runs:
+  zero violations) — the round-2 A-side sieve result is now verified to
+  the 10^6 level in native Sage. `[to-verify]` DISCHARGED.
+- **B-side mirror (first native-Sage B verification):** 5 classes
+  {0, 1, 2, 134, 262} mod M_B = 264 vs all good primes ≤ 2·10^5 with
+  ord(G_B) | 264: **34 valid primes, zero violations** — independently
+  reproduces `mss_k34_sieve2_b_stress.py` (33 valid; boundary-count
+  delta) in native Sage. §4's B-side `[to-verify]` for the t=0 stress
+  layer is discharged; the B grow+hunt continuation to 2·10^6 remains
+  the Linux session's item (its state file is authoritative).
+
+Both maps cross-validated in the same run (A: 2(y+66x) map; B:
+(6y−92x)/(x(x−36)) map). No new discrepancies; F14 unchanged.

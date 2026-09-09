@@ -1,0 +1,8 @@
+=== A3: A-side filtered stress, primes <= 3e5, then 3e5..1e6 ===
+  A <= 3e5: valid=640 elapsed=281s violations=NONE
+  A 3e5..1e6: +valid=236 elapsed=1239s violations(addnl)=NONE
+  A TOTAL: valid=876 ; violations: NONE
+=== B3: B-side filtered stress, primes <= 2e5 ===
+  B: valid=34 elapsed=1257s violations=NONE
+=== DONE ===
+EXIT=0
