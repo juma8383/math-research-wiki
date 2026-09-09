@@ -3456,3 +3456,19 @@ Q* and Q*_B both having Jacobian E_G means the two K34 gates share the
 same final obstruction — the E_G layer — which is rank-0/finite. The
 remaining gate computation (residue bound on C3_A/C3_B) is common in
 structure. No proof claimed; K34 open; the named gates unchanged.
+
+## §2ad ADDENDUM (2026-09-09): the descent-layer chain summary (program state)
+
+The K34 candidate chain is now exact at every layer, both mirrors:
+
+| layer | A-side | B-side | status |
+|---|---|---|---|
+| sieve | 5 classes mod M_A = 42078090600 | 5 classes mod M_B = 264 | verified to ~1.7e6 (A) / 2e6 (B) |
+| cover | D_A: w²=z⁴+128z²−512, z²−4=□ | D_B: w²=9z⁴−128z²+512, z²−4=□ | filed, symbolic |
+| E_G layer | Q*: w²=v⁴+136v²+16, 8 pts | Q*_B: w²=9v⁴−56v²+144, 8 pts | EXACT (this round) |
+| lift verdict | 0 non-degenerate | 0 non-degenerate | CLOSED |
+
+Remaining named computation: the residue/height bound (Coleman on
+C3_A/C3_B at a good prime; needs the MW-cycle integrals through the
+correspondence, or the effective-Chabauty Z_D route). The sieve stress
+extension toward 3×10⁶ is running.
