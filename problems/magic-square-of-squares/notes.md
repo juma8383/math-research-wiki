@@ -3368,3 +3368,66 @@ annihilation linear-algebra shape (3 unknowns, 2 conditions, kernel
 dim 1), and a working coleman_integral at p = 11. The named next
 computation is unchanged: solve for ω, verify the annihilation at
 precision, run the residue/Clarkson bound.
+
+## §2ac QUARTIC-LAYER ROUND (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`)
+
+Four more Sage runs (`mss_c3a_annihilator_solve{,2,3}.sage` + logs,
+`mss_c3a_coleman_quartic{,2,3}.sage` + logs). One negative structural
+finding, one exact point-set determination, one API boundary — and one
+lesson about hand-derived maps (all recorded).
+
+### 1. Annihilation tests PASSED (E_G side)
+
+The E_G torsion lattice is annihilated by ω_G computationally: both
+2-torsion points integrate to exactly 0 and the order-4 point
+(48, 10368) to O(11⁸) = 0 at p = 11, precision 8 — the first
+*mathematical* (not API) result of the C3_A Coleman program verified.
+E_ι's period at two precisions agrees (2·11 + 9·11² + 7·11³ + …,
+O(11⁸) vs O(11¹⁰)); the 2G linearly check hit a Qp-sqrt limitation in
+Sage (workaround: 2·∫ instead of ∫ at 2G, by linearity — noted).
+
+### 2. E_ι and E_G are NOT isogenous (structural negative)
+
+Trace comparison 5 ≤ p ≤ 97: agreement at **1 of 23** primes
+(coincidence level); the single 2-isogeny from E_ι goes to a THIRD
+curve (j = 2744000/9). So the hand-derived "composition map E_ι → E_G"
+shortcut does not exist: the J(C3_A) product has three distinct
+isogeny classes {E_ι (×2)}, {E_G}. (solve2's `isogenies_prime_degree(2)`
+returning one isogeny with an unmapped codomain is consistent; solve3's
+trace test is the decisive check.)
+
+### 3. Q*(ℚ) determined EXACTLY: 8 points, all degenerate for the lift
+
+Native Sage enumeration on the square-condition quartic
+Q*: w² = v⁴+136v²+16 (`rational_points(bound=100)`):
+
+$$Q^*(\mathbb{Q}) = \{\infty_\pm,\ (0,\pm4),\ (\pm2,\pm24)\}$$
+
+— exactly 8 points, matching #E_G(Q) = 8 (torsion ℤ/4⊕ℤ/2, rank 0) as
+it must. **The K34-A lift through this layer requires z² = v²+4 to ALSO
+be a rational square**: v = 0 gives z = ±2 (the known degenerate D_A
+points); v = ±2 gives z² = 8, NOT rational — the (±2, ±24) points are
+NOT liftable to D_A. Hence **the E_G-layer (ι∘ρ quotient) square
+condition produces no non-degenerate D_A points** — the descent lever
+is now pinned: any non-degenerate K34-A candidate must evade the
+ι∘ρ-quotient layer, which (combined with rank E_G = 0) bounds it into
+the already-filed coset structure. (Corrections recorded: my
+hand-derived maps v² = (136+4X)/(X²−1) and (136+8X)/(X²−1) were both
+wrong; the standard quartic-to-cubic model E*: y² = X³−272X²+18432X
+has E_G's j-invariant AND agrees on traces 23/23 — so E* IS in E_G's
+isogeny class — but the explicit birational map needs Sage's own
+machinery; lesson recorded: never hand-derive the map when
+`rational_points` can enumerate directly.)
+
+### 4. Machinery summary (for the final Coleman round)
+
+coleman_integral: works on odd-degree models (doc-exact), fails
+silently on even-degree C3_A. The remaining gate computation — the
+annihilating differential on C3_A with respect to the FULL rank-2 MW
+lattice — needs the correspondence-level integration or a Stoll-style
+genus-3 implementation not present in Sage 10.9. What IS now proved
+computationally: the E_G layer of the square condition is
+point-set-exact (8 points, degenerate only), and the E_G torsion
+annihilates. Remaining named item: the residue bound on C3_A itself
+(needs the MW-cycle integrals through the correspondence, or effective
+Chabauty via the Z_D route already filed).

@@ -1,0 +1,16 @@
+=== V1: Q* construction and point search (exact) ===
+  Q* = w^2 = v^4 + 136v^2 + 16 ; points with small v:
+  square-w points |v| <= 2000: [(-2, 24), (0, 4), (2, 24)]
+  (each (v, s) also gives (v, -s); v rational with denominator: later)
+=== V2: the elliptic model of Q* (its Jacobian E_G) ===
+  E_G rank: 0  torsion: Torsion Subgroup isomorphic to Z/4 + Z/2 associated to the Elliptic Curve defined by y^2 = x^3 - 504576*x + 131604480 over Rational Field
+  base point options: (0, ±4) [w(0) = 16 -> ±4], also v=±1: w^2 = 153? not square.
+  found points include (0, ±4)! base point = (0,4).
+  v^2 = (136 + 4X)/(X^2 - 1) with w = X*v^2 - 4.
+  Square condition: v^2 square <=> (136 + 4X)/(X^2 - 1) square on E_G.
+=== V3: E_G torsion -> Q* images (the full rational point set, if rank 0) ===
+  8 torsion points of E_G: [(0 : 1 : 0), (-816 : 0 : 1), (48 : -10368 : 1), (48 : 10368 : 1), (336 : 0 : 1), (480 : 0 : 1), (912 : -20736 : 1), (912 : 20736 : 1)]
+  pull each torsion point through v^2 = (136+4X)/(X^2-1):
+  torsion images: [('(48 : 10368 : 1)', 'v^2=328/2303 NOT square'), ('(912 : -20736 : 1)', 'v^2=344/75613 NOT square'), ('(480 : 0 : 1)', 'v^2=2056/230399 NOT square'), ('(336 : 0 : 1)', 'v^2=296/22579 NOT square'), ('(48 : -10368 : 1)', 'v^2=328/2303 NOT square'), ('(-816 : 0 : 1)', 'v^2 negative'), ('(912 : 20736 : 1)', 'v^2=344/75613 NOT square')]
+=== DONE ===
+EXIT=0

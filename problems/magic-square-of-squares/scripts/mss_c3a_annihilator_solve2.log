@@ -1,0 +1,10 @@
+=== T1: the iota-rho correspondence on elliptic curves EXACTLY ===
+  Q_iota : w^2 = v^4+132v^3-250v^2+132v+1, rational base point (0,1).
+  E_iota j: -8000/81  E_G j: 1556068/81
+  same j? False
+=== T2: the isogeny phi: E_iota -> E_G (composition of the two 2-isogenies?) ===
+  2-isogenies from E_iota: 1
+  T2 error: not implemented.
+=== T3: same for the rho side ===
+=== DONE ===
+EXIT=0

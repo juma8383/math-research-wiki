@@ -1,0 +1,22 @@
+=== W1: is E* = y^2 = x^3 - 272x^2 + 18432x isogenous to E_G? ===
+  E* j: 1556068/81  E_G j: 1556068/81
+  E* rank: 0  torsion: Torsion Subgroup isomorphic to Z/4 + Z/2 associated to the Elliptic Curve defined by y^2 = x^3 - 272*x^2 + 18432*x over Rational Field
+  trace agreement at 23 primes 5..97: 23
+=== W2: full rational-point set of Q* via E* torsion (exact) ===
+  torsion points of E*: [(0 : 1 : 0), (0 : 1 : 0), (96 : -384 : 1), (144 : 0 : 1), (96 : 384 : 1), (0 : 0 : 1)]
+  torsion -> Q* images:
+   ('(0 : 0 : 1)', 'den=0 case (maps to infinity on Q*)')
+   ('O', '-> base point (0,4) of Q*')
+   ('O', '-> base point (0,4) of Q*')
+   ('(144 : 0 : 1)', 'v^2 negative')
+   ('(96 : -384 : 1)', 'v^2 negative')
+   ('(96 : 384 : 1)', 'v^2 negative')
+=== W3: brute-force cross-check |v| <= 5000 (integers) ===
+  (integer search integrated above; rational-denominator points via W4)
+=== W4: the honest verdict ===
+  If torsion images + brute force agree: Q*(Q) = the found degenerate orbit
+  => square condition z^2-4 = v^2 has only degenerate solutions on this layer,
+  => the K34-A square-condition at THIS layer is closed IF the covering
+  correspondence is handled (denominator points pending).
+=== DONE ===
+EXIT=0

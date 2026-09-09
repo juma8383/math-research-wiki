@@ -1,0 +1,16 @@
+=== U1: 2-torsion structure of E_iota and E_G (exact) ===
+  E_iota torsion: Torsion Subgroup isomorphic to Z/2 associated to the Elliptic Curve defined by y^2 = x^3 - 276480*x + 240648192 over Rational Field
+  E_G   torsion: Torsion Subgroup isomorphic to Z/4 + Z/2 associated to the Elliptic Curve defined by y^2 = x^3 - 504576*x + 131604480 over Rational Field
+  E_iota torsion generator: (-768 : 0 : 1) (order 2)
+  E_G torsion generator: (48 : 10368 : 1) (order 4)
+  E_G torsion generator: (336 : 0 : 1) (order 2)
+=== U2: isogenies E_iota -> E_G via all rational 2-isogeny chains ===
+  isogenies_prime_degree(2) count: 1
+   codomain j: 2744000/9
+=== U3: brute-force check: is E_G 2-isogenous to E_iota at all? ===
+  trace agreement at 22 good primes 7..97: 1
+  (equal traces at all primes <=> Q-isogenous)
+=== U4: the honest structural reading ===
+  (route decision printed by the run results)
+=== DONE ===
+EXIT=0

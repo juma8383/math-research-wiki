@@ -1,0 +1,12 @@
+=== S1: does Sage coleman_integral accept the EVEN-degree C3_A? ===
+  invariant_differential: (-((10+10*11+10*11^2+10*11^3+10*11^4+10*11^5+10*11^6+10*11^7+O(11^8)))*1) dx/2y
+  even-degree integral error: 
+=== S2: classical quotient-side integrals (E_iota, p=11) ===
+  ∫_O^{G_iota} ω_E = 2*11 + 9*11^2 + 7*11^3 + 3*11^4 + 6*11^5 + 9*11^7 + O(11^8)
+  S2 error: extending using the sqrt function not yet implemented
+=== S3: E_G torsion integrals (should be torsion multiples => zero) ===
+  ∫_O^{T2=(480,0)} ω_G = 0 (expect O(11^8): Weierstrass endpoints need odd w)
+  ∫_O^{T2b=(-816,0)} ω_G = 0 (expect O(11^8): Weierstrass endpoints need odd w)
+  ∫_O^{(48,10368)} ω_G = O(11^8) (expect 0: order-4 point)
+=== DONE ===
+EXIT=0

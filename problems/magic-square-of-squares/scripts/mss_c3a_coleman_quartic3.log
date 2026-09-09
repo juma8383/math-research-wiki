@@ -1,0 +1,10 @@
+=== X1: Sage native genus-1 elliptic model ===
+  X1 error: 'HyperellipticCurve_rational_field_with_category' object has no attribute 'elliptic_curve'
+=== X2: points() on the quartic curve directly ===
+  CQ.rational_points(bound=100): [(1 : 1 : 0), (1 : -1 : 0), (-2 : -24 : 1), (-2 : 24 : 1), (0 : -4 : 1), (0 : 4 : 1), (2 : -24 : 1), (2 : 24 : 1)]
+=== X3: cross-check with the integer search ===
+  integer (v, w=+s) points |v| <= 100: 3 pairs (each gives ±w)
+=== X4: the isomorphism Q* ~= E1 pulled back to E_G side ===
+  X4 error: 'HyperellipticCurve_rational_field_with_category' object has no attribute 'elliptic_curve'
+=== DONE ===
+EXIT=0
