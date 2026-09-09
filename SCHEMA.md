@@ -94,6 +94,38 @@ tried, the best partial result so far, the live conjectures, and the single
 next step. This is what a fresh session reads first to resume. Keep it
 short — details live in the attempts.
 
+### `dag.md`  (per actively-attacked problem)
+Machine-readable proof-DAG manifest — the attack's dependency graph as
+data. Bookkeeping, not content: may be edited in place; only the
+Orchestrator edits it, and status changes require a Reviewer-verdict
+anchor. Node status vocabulary (shared with conjecture pages):
+`open | proven | conditional | dead`.
+
+```yaml
+---
+type: dag
+problem: <slug>
+last-updated: <YYYY-MM-DD>
+---
+```
+
+Body: one indented block per node:
+
+- id: <kebab-slug>
+  kind: conjecture | theorem | lemma | method
+  status: open | proven | conditional | dead
+  uses: [<node-id>, ...]
+  source: [[<theory/conjecture page>]] or problems/<slug>/attempts/attempt-NN.md
+  next: <one line — what proving this unlocks>
+
+Rules: a `status: proven` node is valid only when `source` is a
+wikilink resolving to a `type: theorem` or `type: lemma` page, or a
+conjecture page with `status: proven`; attempt-anchored sources are for
+open/conditional/dead nodes only; every `uses` id must be defined in
+the same manifest; stub problems get no manifest (the derived lint
+covers them). The manifest is the Orchestrator's dispatch map: an
+**open leaf** = a node whose `uses` are all `proven`/`dead`.
+
 ### `notes.md`  (per problem, optional)
 Loose scratch: observations not yet worthy of an attempt, candidate
 reformulations, "try this next" sparks. Promote good notes into attempts.
@@ -200,7 +232,43 @@ Health pass, run every several attacks or when things drift:
   but don't link.
 - **Data gaps** — a problem with no attempts, or an attempt with no recorded
   outcome.
+- **DAG/status parity** — run `scripts/lint_dag.py`; fix every blocker
+  as a logged `[LINT]` pass (the linter is report-only; edits are
+  logged here).
 Fix inline, append `[LINT <date>]` to `log.md` with what was found and fixed.
+
+---
+
+## Harness (multi-agent execution model)
+
+Adapted from [[gemini-contribution-plan-2026-09-09]] (see
+[[multi-agent-harness]]). Roles and contracts:
+
+- **Orchestrator** = the main session. Reads index → progress → dag;
+  selects open leaves; dispatches. Writes only structural files
+  (`dag.md`, `index.md`, `log.md`, dispatch prompts). Never proves;
+  updates node status only after a Reviewer verdict.
+- **Worker (Prover)** = one subagent per node. Receives only: the node
+  statement, its `uses`-dependency statements, linked theory pages,
+  relevant `scripts/` pointers. Writes one new
+  `attempts/attempt-NN.md` (+ theory/conjecture pages it must file).
+  May not change any node status anywhere; may not edit other
+  problems' folders. Attempt frontmatter carries a `scout:` line and
+  ends with a `Next` section per the research protocol.
+- **Target Reviewer** = separate adversarial subagent; never the
+  Worker re-checking itself. Input: Worker's new file + the informal
+  source text. Checks semantic parity (no weakened hypotheses, no
+  smuggled assumptions, numbers/citations match source pages),
+  novelty vs. prior art, honesty flags. Verdict recorded by the
+  Orchestrator in the attempt file as a `review: <verdict>` line.
+- **Refiner** = subagent on repeated node failure; gets only the
+  failing node + diagnostics; hard budget. On exhaustion → Orchestrator
+  may alone invoke the **Dynamic Splitting Protocol**: split the node
+  into named sub-lemmas/conjectures, update `dag.md`, log the split.
+  The graph stays connected through expansion — no silent weakening.
+
+Subagent definitions live in `.claude/agents/`. Enforcement is contract
++ Reviewer + lint (harness tool scopes are per-tool, not per-path).
 
 ---
 

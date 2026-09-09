@@ -4496,3 +4496,10 @@ the blueprint/checkdecls parity check; contract-scoped ensemble
 ([[multi-agent-harness]]) replaces the monolithic-session model; Lean
 phases rejected. Binding conditions: Ollama-only, nothing-breaks. Spec:
 docs/superpowers/specs/2026-09-09-math-wiki-overhaul-design.md.
+
+## [GOVERNANCE 2026-09-09] schema + protocol amendments
+SCHEMA.md: dag.md page type (status vocab open|proven|conditional|dead),
+Harness section (Orchestrator/Worker/Reviewer/Refiner contracts), Lint
+extended with DAG/status parity. research-protocol.md: Scout gate +
+Reviewer gate added additively. Per spec 3.3/3.5,
+docs/superpowers/specs/2026-09-09-math-wiki-overhaul-design.md.

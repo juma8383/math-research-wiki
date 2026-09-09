@@ -92,3 +92,19 @@ Before any claim leaves an attempt into `progress.md`/`theory/`:
 This is the discipline that caught Beal's (2,3,7) spherical mislabel, BSD's
 to-verify items, YM's and Hodge's and Collatz's unverified preprint flurries.
 **Honesty over optimism. Flag to-verify. Append-only corrections.**
+
+## Verification gates (2026-09-09, from the adapted overhaul plan)
+
+**(a) Scout-then-prove.** Before any Worker dispatch on a dag node, a
+mandatory Scout step: search Mathlib / the literature / prior wiki art
+for an existing proof of the node. Record the result as a `scout:`
+frontmatter line in the Worker's attempt (`scout: found <where>` or
+`scout: not-found <where-looked>`). Do not pay compute for a proof
+that already exists.
+
+**(b) Reviewer gate on status.** No agent changes a node's status to
+`proven` on its own judgment. Flow: Worker files the work in an
+attempt → Target Reviewer (separate context) validates semantic
+parity → Orchestrator updates `dag.md`/`index.md`/`progress.md` with
+anchors to both. Nobody self-reviews; `scripts/lint_dag.py` — not any
+agent — is the deterministic authority on structure.
