@@ -3580,3 +3580,13 @@ resumable from p > 2419679): primes 1.67e6..2.42e6 — **87 valid primes
 cumulative, zero violations across the whole 5..2.42e6 sweep. The
 3×10⁶ tier needs one more resumption (the script prints its own
 resume-point; pure CPU).
+
+## §2ai ADDENDUM: the 3e6 tier COMPLETE — final combined level
+
+`mss_k34_sieve_stress_2p4_3e6.sage`/`.log`: primes 2.42e6..3e6 —
+**63 valid primes, zero violations**. **The 3×10⁶ tier is COMPLETE**:
+total across 5..3e6 = 640 + 236 + 87 + 63 = **1026 valid primes with
+ord(G)|M_A, zero violations cumulative**. The filed round-2 claim
+("the hunt to 3·10⁶ had not killed it at filing time") is now fully
+discharged at Sage precision: the M/2−1 class survives to 3×10⁶.
+The `[to-verify]` on the 3e6 tier is DISCHARGED.

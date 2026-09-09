@@ -1,0 +1,4 @@
+  primes 1.67e6..3e6: valid=63 elapsed=1373s violations: NONE
+  (resumable from p > 2999999)
+=== DONE ===
+EXIT=0
