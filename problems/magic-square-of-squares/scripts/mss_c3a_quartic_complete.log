@@ -1,0 +1,26 @@
+=== Y1: rigorous |Q*(Q)| = 8 via Abel-Jacobi injectivity ===
+  Genus-1 with rational base point P0: the Abel map P -> [P - P0] is a
+  BIRATIONAL EQUIVALENCE Q* -> E_G onto its image. Since E_G(Q) has 8
+  points (rank 0 + Z/4+Z/2), |Q*(Q)| <= 8 ALWAYS. The 8 enumerated:
+  {inf+, inf-, (0,±4), (±2,±24)} = 8. Hence Q*(Q) = exactly these 8.
+  [This is now RIGOROUS: Abel-Jacobi injectivity + rank(E_G) = 0 proved.]
+  (The earlier confusion: my hand maps were wrong; the count is the proof.)
+=== Y2: the K34-A lift condition on the 8 points (exact) ===
+  Lift chain: K34-A candidate => D_A point (z, w) with z^2 - 4 = v^2, v != 0
+  => Q* point (v, w) with w^2 = v^4+136v^2+16 AND z^2 = v^2 + 4 rational.
+  On the 8 Q*(Q) points: v = 0 -> z^2 = 4 (z = ±2, DEGENERATE, known);
+  v = ±2 -> z^2 = 8 (not a rational square); infinities -> v = infinity
+  (the lift degenerates at the pole). => NO non-degenerate lift exists.
+  ==> LAYER CLOSED: the iota-rho (E_G) quotient layer of the square
+      condition contributes ZERO non-degenerate D_A points, rigorously.
+=== Y3: what this means for K34-A (honest) ===
+  The K34-A candidate chain: M_A survivor classes (sieve) -> D_A square-
+  condition -> Q* (E_G layer). This run closes the LAST layer as a finite
+  point-set check: every Q*(Q) point is degenerate for the lift.
+  What remains for K34-A: the residue/height bound connecting the sieve
+  survivors to the D_A -> Q* lift (the Coleman computation on C3_A, or the
+  effective-Chabauty route via Z_D already filed). No new proof claimed,
+  but the square-condition descent lever is now EXACT at every layer:
+  sieve (5 classes mod M_A) -> D_A (z^2-4 = v^2) -> Q* (8 points, degenerate).
+=== DONE ===
+EXIT=0
