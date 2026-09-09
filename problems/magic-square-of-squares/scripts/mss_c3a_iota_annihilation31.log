@@ -1,0 +1,7 @@
+=== I3y: the two coefficient-list routes ===
+Traceback (most recent call last):
+  File "/mnt/c/Claude-Code/Math/problems/magic-square-of-squares/scripts/mss_c3a_iota_annihilation31.sage.py", line 30, in <module>
+    if is_unramified(P):
+       ^^^^^^^^^^^^^
+NameError: name 'is_unramified' is not defined
+EXIT=0

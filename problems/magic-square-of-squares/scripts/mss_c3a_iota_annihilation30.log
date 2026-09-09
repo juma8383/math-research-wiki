@@ -1,0 +1,32 @@
+=== I3x: clean monic normalization (all in K8 scalars) ===
+  true degree: 7
+  lc type: qAdicCappedRelativeElement
+  sqrt(lc) = 1 + O(11)
+  check z^2 - lc valuation: 1 (expect >= 9)
+  after scalar division: degree 7 ; leading 1 + O(11)
+  final degree: 7 ; leading == 1: True
+  is_ramified: True
+Traceback (most recent call last):
+  File "sage/misc/cachefunc.pyx", line 1040, in sage.misc.cachefunc.CachedFunction.__call__
+  File "sage/misc/weak_dict.pyx", line 708, in sage.misc.weak_dict.WeakValueDictionary.__getitem__
+KeyError: ((<class 'sage.schemes.hyperelliptic_curves.monsky_washnitzer.SpecialHyperellipticQuotientRing'>, Hyperelliptic Curve over 11-adic Unramified Extension Field in y8 defined by X^8 + X + 4 defined by (1 + O(11^10))*y^2 = (1 + O(11))*x^7 + ((y8^7 + y8^6 + 3*y8^5 + 8*y8^4 + 5*y8^2 + 8*y8 + 1) + O(11))*x^6 + ((6*y8^7 + 6*y8^6 + 7*y8^5 + 4*y8^4 + 8*y8^2 + 4*y8 + 8) + O(11))*x^5 + ((5*y8^7 + 5*y8^6 + 4*y8^5 + 7*y8^4 + 3*y8^2 + 7*y8 + 5)*11 + O(11^2))*x^4 + (2 + O(11))*x^3 + ((9*y8^7 + 9*y8^6 + 5*y8^5 + 6*y8^4 + y8^2 + 6*y8 + 9) + O(11))*x^2 + ((5*y8^7 + 5*y8^6 + 4*y8^5 + 7*y8^4 + 3*y8^2 + 7*y8 + 3) + O(11))*x + (5*y8^7 + 5*y8^6 + 4*y8^5 + 7*y8^4 + 3*y8^2 + 7*y8 + 1) + O(11)), ())
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Claude-Code/Math/problems/magic-square-of-squares/scripts/mss_c3a_iota_annihilation30.sage.py", line 68, in <module>
+    w = Codd.invariant_differential()
+  File "/opt/sage/src/sage/schemes/hyperelliptic_curves/hyperelliptic_generic.py", line 1490, in invariant_differential
+    S = monsky_washnitzer.SpecialHyperellipticQuotientRing(self)
+  File "sage/misc/classcall_metaclass.pyx", line 320, in sage.misc.classcall_metaclass.ClasscallMetaclass.__call__
+  File "sage/misc/cachefunc.pyx", line 1045, in sage.misc.cachefunc.CachedFunction.__call__
+  File "/opt/sage/src/sage/structure/unique_representation.py", line 1195, in __classcall__
+    return super().__classcall__(cls, *args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/sage/src/sage/structure/unique_representation.py", line 598, in __classcall__
+    instance = typecall(cls, *args, **options)
+  File "sage/misc/classcall_metaclass.pyx", line 471, in sage.misc.classcall_metaclass.typecall
+  File "/opt/sage/src/sage/schemes/hyperelliptic_curves/monsky_washnitzer.py", line 2481, in __init__
+    raise NotImplementedError("polynomial must be monic")
+NotImplementedError: polynomial must be monic
+EXIT=0

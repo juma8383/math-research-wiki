@@ -1,0 +1,8 @@
+=== I5: the integral on the working model ===
+  curve: Hyperelliptic Curve over 11-adic Unramified Extension Field in y8 defined by X^8 + X + 4 defined by (1 + O(11^
+  is_ramified: False
+  differential OK
+  f(u0) = (4*y8^7 + 4*y8^6 + y8^5 + 10*y8^4 + 9*y8^2 + 10*y8 + 6) + (2*y8^7 + 3*y8^6 + 4*y
+  I5 error: 
+=== DONE ===
+EXIT=0

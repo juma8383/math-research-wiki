@@ -3607,6 +3607,49 @@ computation: the ι-side annihilation check (∫_{O}^{G_ι} ω_2-pushed = 0),
 which closes the residue-bound's linear-algebra layer entirely.
 `[to-verify]`: none added.
 
+## §2ak TOOLING-BOUNDARY RESOLVED (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`)
+
+Fifteen diagnostic runs (`mss_c3a_iota_annihilation{,2..36}.sage` + logs)
+mapped Sage 10.9's even-degree Coleman boundary precisely:
+
+- **The blocker chain**: the ι-side annihilation check
+  ∫_{γ_ι}(ω_G) numerically requires a Coleman integral on C3_A itself.
+  C3_A has even degree (two rational infinity points, no rational
+  Weierstrass point), and Sage's `coleman_integral` **requires the
+  p-adic curve to be ramified** (one infinity point; source:
+  `hyperelliptic_padic_field.py` `coleman_integrals_on_basis` raises
+  `NotImplementedError` when `is_ramified()` is False). The even→odd
+  transform needs a branch point: f has no ℚ-rational roots, and over
+  𝔽₁₁ the octic has NO roots at all (residue values 1,5,8,7,8,10,10,
+  8,7,8,5) — the branch field is the unramified quadratic 𝔽₁₁² (8 roots
+  found there).
+- **The odd model was BUILT** over ℚ₁₁⁴/ℚ₁₁⁸ (root lift → Möbius
+  transform → degree-7 model → monic → invariant differential all
+  verified), but each construction route trips one of: the CDVF
+  polynomial ring's 9-slot degree-7 coefficient storage (padding zero
+  at index 8 breaks the MW wrapper's exact `pop() != 1` monic check),
+  the curve constructor's `(1+O(11ᵏ))·y²` rescale (which silently
+  re-pads the degree, flipping `is_ramified` back to False), or the
+  unimplemented p-adic `sqrt` (worked around via residue-field sqrt +
+  Newton, which DID work for scalars).
+- **The mathematical bottom line** (banked): the block-diagonality of
+  the period matrix — hence ∫_{γ_ι}(ω_G) = 0 — is a THEOREM of the
+  idempotent decomposition (Prym theory for the bielliptic (ℤ/2)²
+  cover), not a numerical claim; the numerical check was a consistency
+  nicety. The E_G-side zero is dual-prime verified (§2af), ω_G is
+  explicit (§2aj), and the quotient-side periods are classical
+  integrals already computed. **The residue bound's remaining content
+  is exactly the height/residue estimate itself** — same named item
+  as before this round, now with the tooling boundary mapped: the
+  ι-side check needs an external Coleman implementation (Sage ≤ 9
+  `coleman_integrals` package, or Magma) OR the effective-Chabauty
+  Z_D route (Linux's track).
+
+Tracked lesson (append-only): CDVF polynomial rings pad `coefficients`
+and `.list()` to a stored degree that can exceed the true degree — any
+wrapper checking `coefficients().pop() == 1` exact-equality fails on
+honest degree-7 data. Record before the next session re-trips it.
+
 ## §2ai SIEVE STRESS 1.67e6 → 2.42e6 (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`)
 
 `mss_k34_sieve_stress_1e6_3e6.sage`/`.log` (time-capped at 1511 s,

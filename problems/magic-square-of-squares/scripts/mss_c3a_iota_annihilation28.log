@@ -1,0 +1,13 @@
+=== I3v: K4-based verdict ===
+  K8 = 11-adic Unramified Extension Field in y8 defined by X^8 + X + 4
+  f_tw(u) unit? valuation = 0
+  residue square in F_{11^8}? True
+Traceback (most recent call last):
+  File "/mnt/c/Claude-Code/Math/problems/magic-square-of-squares/scripts/mss_c3a_iota_annihilation28.sage.py", line 73, in <module>
+    val = Codd.coleman_integral(w, P, Q)
+  File "/opt/sage/src/sage/schemes/hyperelliptic_curves/hyperelliptic_padic_field.py", line 941, in coleman_integral
+    basis_values = self.coleman_integrals_on_basis(P, Q, algorithm)
+  File "/opt/sage/src/sage/schemes/hyperelliptic_curves/hyperelliptic_padic_field.py", line 661, in coleman_integrals_on_basis
+    raise NotImplementedError
+NotImplementedError
+EXIT=0

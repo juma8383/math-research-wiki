@@ -1,0 +1,12 @@
+=== I3z: the two coefficient-list routes ===
+  degree: 7
+  len(.list()): 9
+  len(coefficients(sparse=False)): 9
+  curve poly degree: 7
+  curve poly len(list()): 9
+  curve poly leading: 1 + O(11^10)
+  wrapper-replica: len = 9 ; popped == 1? False
+  rebuilt: degree 8 ; leading 1 + O(11^10)
+  HQR still failing: name 'mw' is not defined
+=== DONE ===
+EXIT=0

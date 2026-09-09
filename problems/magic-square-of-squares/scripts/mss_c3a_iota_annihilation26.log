@@ -1,0 +1,7 @@
+=== I3t: unramified octic field ===
+  unramified octic: (1 + O(11^9))*X^8 + (1 + O(11^9))*X^4 + 6 + O(11^9)
+  K8 = 11-adic Unramified Extension Field in y8 defined by X^8 + X^4 + 6
+  roots over K8: 8
+  fp square in K8? False
+=== DONE ===
+EXIT=0

@@ -1,0 +1,8 @@
+=== I3u: verdict-only check on the K2 model ===
+  model OK; u-image = (7*c + 8) + (7*c + 4)*11 + (2*c + 6)*11^2 + 10*11^3 + c*11^4
+  f_tw(u) = (3*c + 9) + (5*c + 2)*11 + 7*11^2 + (c + 6)*11^3 + (8*c + 7)*11^4 + (4*c + 2)*11
+  residue square in F_121? False
+  v not in K2 even at Hensel level: need K4 (twist field) for
+  the exact VALUE, but the verdict via K4: extend once more
+=== DONE ===
+EXIT=0

@@ -1,0 +1,38 @@
+=== I3w: degree-trimmed monic ===
+  true degree of the twist model: 7
+  trimmed list length: 8 ; top: 1 + O(11^10)
+  final degree: 7 ; leading: 1 + O(11^10)
+  is_ramified (should be True for odd degree): True
+  f_final(u) valuation: 0
+  residue square? True
+Traceback (most recent call last):
+  File "sage/structure/category_object.pyx", line 856, in sage.structure.category_object.CategoryObject.getattr_from_category
+KeyError: '_frob'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/sage/src/sage/schemes/hyperelliptic_curves/hyperelliptic_padic_field.py", line 1037, in frobenius
+    _frob = self._frob
+            ^^^^^^^^^^
+  File "sage/structure/category_object.pyx", line 850, in sage.structure.category_object.CategoryObject.__getattr__
+  File "sage/structure/category_object.pyx", line 865, in sage.structure.category_object.CategoryObject.getattr_from_category
+  File "sage/cpython/getattr.pyx", line 357, in sage.cpython.getattr.getattr_from_other_class
+AttributeError: 'PolynomialRing_cdvf_with_category' object has no attribute '_SageObject__custom_name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Claude-Code/Math/problems/magic-square-of-squares/scripts/mss_c3a_iota_annihilation29.sage.py", line 93, in <module>
+    val = Codd.coleman_integral(w, P, Q)
+  File "/opt/sage/src/sage/schemes/hyperelliptic_curves/hyperelliptic_padic_field.py", line 941, in coleman_integral
+    basis_values = self.coleman_integrals_on_basis(P, Q, algorithm)
+  File "/opt/sage/src/sage/schemes/hyperelliptic_curves/hyperelliptic_padic_field.py", line 698, in coleman_integrals_on_basis
+    TP = self.frobenius(P)
+  File "/opt/sage/src/sage/schemes/hyperelliptic_curves/hyperelliptic_padic_field.py", line 1046, in frobenius
+    h = f(x**p) - f**p
+        ~~~~~~~~^~~~~~
+  File "sage/structure/element.pyx", line 1345, in sage.structure.element.Element.__sub__
+  File "sage/structure/coerce.pyx", line 1298, in sage.structure.coerce.CoercionModel.bin_op
+TypeError: unsupported operand parent(s) for -: 'Univariate Polynomial Ring in x over 11-adic Unramified Extension Field in y8 defined by X^8 + X + 4' and 'Univariate Polynomial Ring in u over 11-adic Unramified Extension Field in y8 defined by X^8 + X + 4'
+EXIT=0

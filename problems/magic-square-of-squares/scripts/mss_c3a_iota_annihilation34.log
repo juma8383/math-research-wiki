@@ -1,0 +1,6 @@
+=== I4b: fresh-ring rebuild, variable fixed ===
+  degree: 7 ; len(list()): 9
+  f_final degree: 8 ; leading: 1 + O(11^10)
+  I4 error: name 'mw' is not defined
+=== DONE ===
+EXIT=0
