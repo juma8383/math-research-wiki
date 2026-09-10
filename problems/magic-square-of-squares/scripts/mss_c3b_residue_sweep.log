@@ -1,0 +1,5 @@
+=== B-SWEEP: the B-side residue filter over good primes <= 200 ===
+  good primes: 42 ; bad (singular J_LB): [] ; total killed: 2096
+  (the base pair skipped; verdict = every non-degenerate class killed)
+=== DONE ===
+EXIT=0

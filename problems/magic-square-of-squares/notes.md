@@ -4290,6 +4290,24 @@ never misses, the degenerate orbit is the unique survivor everywhere.
 sweep automates it.) The standing items remain: the height-bound
 refinement (Linux's track) and the Coleman execution (tooling gap).
 
+## §2aq THE B-SIDE RESIDUE SWEEP (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`)
+
+`mss_c3b_residue_sweep.sage`/`.log`. The B-side mirror sweep: **42 good
+primes ≤ 200 (J_LB has NO additional bad primes in range), 2096
+residue-class kills total, zero surviving non-degenerate classes at
+every prime**. The two residue-filter sweeps are now both exhaustive:
+
+| sweep | primes | kills | survivors |
+|---|---|---|---|
+| A-side (Z_D, J_L) | 37 | 2095 | degenerate orbit only |
+| B-side (Z_DB, J_LB) | 42 | 2096 | degenerate orbit only |
+
+**Both K34 gates' p-adic residue layers are exhaustively verified to
+p ≤ 200 with zero spare everywhere.** The structural symmetry is total:
+same filter mechanism, same kill pattern, same unique survivor. The
+program's remaining content is unchanged: height-bound refinement
+(Linux) and the Coleman execution (tooling gap, flagged).
+
 ## §2ak ADDENDUM-13 (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`): the height constants CROSS-CHECKED — the octic model is MINIMAL
 
 `mss_k34_zd_height_sharp{2,3,4}.sage` + logs. The `[to-verify]` on the
