@@ -23,6 +23,7 @@ board commits when convenient; board-only commits are cheap and fine.
 | session | machine | work | claimed | note |
 |---|---|---|---|---|
 | hermes-win | Windows | Prym-isogeny structure extraction from mss_k34_g3jac data (next named step of residue bound) | 2026-09-09 | windows-side |
+| hermes-win | Windows | Z_D residue-filter program COMPLETE (sweeps p≤500 both gates, log layer, height assembly: #Z_D(Q)=12=known up to enumeration box) | 2026-09-09 | windows-side, §2ao–§2at |
 | hermes-linux | Linux box | Height bound on Z_D (effective-Chabauty input; rank 1 < 3 now unconditional per §2aj) — p-adic/Coleman prep | 2026-09-09 | linux-side, complements win's iota-side annihilation check |
 | ~~hermes-win~~ | Windows | ~~sieve stress 2.42e6→3e6~~ DONE: 1026 valid primes 5..3e6, 0 violations; 3e6 tier discharged | 2026-09-09 | resolved (§2ai addendum) |
 
