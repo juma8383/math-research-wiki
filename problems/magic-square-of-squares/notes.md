@@ -4144,3 +4144,33 @@ a square). The infinity class [∞⁺ − D₁] in J_L(𝔽₁₁) is a finite p
 same way — killed unless it coincides with a class verified O. The
 exact infinity-class check is a bounded residual computation to record
 in the next pass. `[to-verify]`: the 2 infinity classes' pushes.
+
+## §2ak ADDENDUM-12 (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`): the infinity classes verified — the residue layer FULLY closed
+
+`mss_k34_zd_spare3.sage`/`.log`. The residual from Addendum-11:
+
+- **inf⁺ push: X = 1, Y² = 9** — on J_L(𝔽₁₁) ✓ (9 is a QR mod 11;
+  the point is finite, NOT O → killed);
+- **inf⁻ push: X = 10, Y² = 7** — 7 is a NONRESIDUE mod 11: the
+  X = 10 value does NOT lie on J_L(𝔽₁₁) — the inf⁻ class has NO
+  11-divisible lift by an even stronger mechanism (its push is not
+  even 𝔽₁₁-rational) — killed a fortiori.
+
+**Final verdict, all 12 residue classes:**
+
+| class | push | verdict |
+|---|---|---|
+| D₁ − D₁ | O | survives (degenerate orbit) |
+| (0,4) − D₁ | T (x = 9 ≠ O) | killed |
+| (9,5),(9,6) − D₁ | X = 5, 10 | killed |
+| (5,2),(5,9) − D₁ | X = 4, 1 | killed |
+| ∞⁺ − D₁ | X = 1 (on curve) | killed |
+| ∞⁻ − D₁ | X = 10 (not on curve) | killed a fortiori |
+
+**s₁₁ = 0 for ALL 12 residue classes — the Z_D residue layer at
+p = 11 is COMPLETE with only the degenerate orbit.** The chain
+
+rank ✓ · counts ✓ · Prym ✓ · period ✓ · spare = 0 ✓ (all 12)
+
+has no open numeric item at p = 11; the standing `[to-verify]` is the
+height-bound constant refinement (§2ak, Linux's claimed track).

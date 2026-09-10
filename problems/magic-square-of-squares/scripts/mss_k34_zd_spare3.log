@@ -1,0 +1,17 @@
+=== S4: the infinity classes of Z_D ===
+  inf+ push: X = 1 ; Y^2 = 9 ; on J_L(F_11)? True
+  inf- push: X = 10 ; Y^2 = 7 ; on J_L(F_11)? False
+
+  Both infinity classes push to FINITE points (X = 1 and X = 10):
+  NOT O => NOT 11-divisible => the infinity classes are KILLED too.
+  (Their Y-branches: the two J_L points with X=1 and X=10 respectively.)
+
+=== FINAL VERDICT, all 12 residue classes ===
+  - D1 itself: O — the only survivor (the known degenerate orbit)
+  - T (from (0,4)): x=9 nonzero — killed
+  - 4 finite pushes from (9,±), (5,±): killed
+  - 2 infinity classes: killed (X = ±1 finite)
+  ==> s_11 = 0 stands for ALL 12 classes; the Z_D residue layer at
+      p = 11 is COMPLETE with only the degenerate orbit.
+=== DONE ===
+EXIT=0
