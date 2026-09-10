@@ -4363,6 +4363,16 @@ the band; the probe confirms the Chabauty-side determination
 direct-search side within the tested band. The full box (r₀ ≈ 10²⁰)
 remains Linux's descent-sieve track.
 
+## §2av THE C3_A ENUMERATION PROBE (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`)
+
+`mss_k34_c3a_enum_probe.sage`/`.log`. The same direct probe on the
+gate curve itself: |x| ≤ 10⁶ on the octic — **exactly 3 affine x-values
+found: (0, ±1), (±1, ±4)** — the filed known points, nothing new.
+The C3_A(ℚ) small-band census matches the Chabauty-side expectation
+(#C3_A(ℚ) = 8 = 2 infinities + these 3 x-fibers), independent
+confirmation from the direct-search side. Both gate curves now carry:
+rank gate ✓ residue filter ✓ sweeps ✓ log layer ✓ small-band census ✓.
+
 ## §2ak ADDENDUM-13 (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`): the height constants CROSS-CHECKED — the octic model is MINIMAL
 
 `mss_k34_zd_height_sharp{2,3,4}.sage` + logs. The `[to-verify]` on the
