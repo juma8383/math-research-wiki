@@ -1,0 +1,19 @@
+=== H1: bad-prime valuation data (exact) ===
+  conservative C_finite = 42.988 (Linux filed: 42.99)
+  per-prime contributions:
+   p=2: v=44, v*log(p)/2 = 15.249
+   p=3: v=4, v*log(p)/2 = 2.197
+   p=7: v=6, v*log(p)/2 = 5.838
+   p=17: v=6, v*log(p)/2 = 8.500
+   p=271: v=4, v*log(p)/2 = 11.204
+=== R2: archimedean check (Linux: C_inf <= 3.605 from max|root| = 5.0639) ===
+  max |branch root| = 5.0639 ; C_inf = 2*log(1+5.0639) = 3.605
+=== R3: the sharp non-archimedean route (Stoll-style) ===
+  testing p-minimality by translation w -> w + t (t in Z_p):
+   (p=2: direct discriminant-shift test in S4)
+   (p=3: direct discriminant-shift test in S4)
+   (p=7: direct discriminant-shift test in S4)
+   (p=17: direct discriminant-shift test in S4)
+   (p=271: direct discriminant-shift test in S4)
+=== DONE (S4 continues the minimality tests) ===
+EXIT=0

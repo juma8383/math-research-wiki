@@ -4202,6 +4202,28 @@ orbit survives the 11-divisibility filter; the Prym sides are rank-0
 identically (46.593). The two Chabauty closures are symmetric down to
 the same structural pieces.
 
+## §2am B-SIDE RESIDUE FILTER AT p = 13 (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`)
+
+`mss_c3b_residue_13.sage`/`.log`. The second tight prime:
+
+- **#C3_B(𝔽₁₃) = 24** (2 infinities + 22 affine) — note the filed
+  Addendum-2 table listed #Z_D(𝔽₁₃) = 20 for the A-side tower; the
+  B-side C3_B count at 13 is 24, a distinct datum (both recorded).
+- **#J_LB(𝔽₁₃) = 18**; **D_B(𝔽₁₃): 16 affine classes**.
+- The pushes: **13 of 16 land on finite on-curve J_LB(𝔽₁₃) points →
+  killed** (non-identity ⟹ not 13-divisible). The 3 exceptional
+  classes: (1,9) and (12,9) push to X = 8 and X = 5 whose Y² values
+  are NONRESIDUES mod 13 (push not even 𝔽₁₃-rational — killed a
+  fortiori, the inf⁻-style mechanism from the A-side p = 11 round);
+  and (2,12) = D1_B itself — the base class, the identity, the only
+  survivor (the known degenerate orbit (2, ±12)).
+
+**B-side spare at p = 13: s₁₃ = 0** — all 16 classes killed except the
+base. The mirror is dual-prime complete: at BOTH tight primes {11, 13},
+both K34 gates' residue layers leave only the degenerate orbit. The
+p-adic layer of the B-side closure matches the A-side exactly, and the
+dual-prime pattern (§2af) extends to the residue filters.
+
 ## §2ak ADDENDUM-13 (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`): the height constants CROSS-CHECKED — the octic model is MINIMAL
 
 `mss_k34_zd_height_sharp{2,3,4}.sage` + logs. The `[to-verify]` on the

@@ -1,0 +1,10 @@
+=== B13: C3_B at p = 13 ===
+  #C3_B(F_13) = 2 + 22 = 24 (filed 24 -> recheck: filed says 24 at 11,
+   20 at 13? the filed table: 11->12? recheck against Addendum-2)
+=== B14: D_B(F_13) classes and pushes (J_LB(F_13)) ===
+  #J_LB(F_13) = 18
+  D_B(F_13) affine: 16
+  killed (finite on-curve pushes): 13
+  survivors/not-on-curve: [(1, 9, 'X=8 not on curve'), (2, 12), (12, 9, 'X=5 not on curve')]
+=== DONE ===
+EXIT=0
