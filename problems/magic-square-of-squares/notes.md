@@ -4332,6 +4332,26 @@ Coleman input reduces to the degenerate orbit alone. **The s = 0
 verdict is confirmed at the log layer as well** — the residue-filter
 layer is internally consistent end to end.
 
+## §2at THE HEIGHT-FINAL ASSEMBLY (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`)
+
+`mss_k34_zd_height_final.sage`/`.log`. The pieces assembled:
+
+- **Chabauty condition**: rank J_L = 1 < g = 3 ✓ (filed, unconditional
+  via selmer2i); p = 11 tight: #Z_D(𝔽₁₁) = 12 = 8 known + 4 degenerate.
+- **Residue-filter spare s = 0** at every layer (Addendum-11/12,
+  sweeps to p ≤ 500, log layer).
+- **⟹ #Z_D(ℚ) = 12 = the known points EXACTLY** — the tower's rational
+  points are exactly the filed 8 known + 4 degenerate-orbit points,
+  with the Chabauty bound closing tight at p = 11.
+- The remaining formal ingredient: the height enumeration box
+  (conservative r₀ ≈ 1.7×10²⁰ from the validated 46.593; the exact
+  Stoll constants would close it tight) — the descent-sieve run over
+  that box is the last mechanical step, Linux's active track.
+
+**Z_D(ℚ) is now determined up to the enumeration-box execution**: the
+p-adic side has zero remaining content, all layers filed and
+cross-verified between the two machines.
+
 ## §2ak ADDENDUM-13 (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`): the height constants CROSS-CHECKED — the octic model is MINIMAL
 
 `mss_k34_zd_height_sharp{2,3,4}.sage` + logs. The `[to-verify]` on the
