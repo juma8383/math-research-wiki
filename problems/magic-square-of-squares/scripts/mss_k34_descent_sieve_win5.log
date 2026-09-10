@@ -1,0 +1,7 @@
+=== DS5: the two-stage sieve ===
+  stage-1 residues (d=1 covers all via D(x)*d QR check at stage 2): 6480
+  stage-2 residues mod M2 = 3234846615: 19206720 survive
+  effective pass rate: 0.59%
+  FOUND: x=0, d=1, w=238
+  chunk 0 [0, 2500000000): 14843566 candidates, found 1, 1258s
+EXIT=0

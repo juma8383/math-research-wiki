@@ -4435,6 +4435,24 @@ Chabauty-side determinations. The direct census program is at its
 practical wall; the remaining box (to r₀ ≈ 10²⁰) belongs to the
 descent sieve.
 
+## §2bb THE DESCENT SIEVE TO 10¹⁰ (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`)
+
+`mss_k34_descent_sieve_win{2..6}.sage` + logs. The modular-filter
+sieve over both 2-cover classes (d ∈ {1, 238}, Linux's Sel(φ) =
+{1, 238}) swept to **|x| ≤ 10¹⁰**: two-stage modular filter (9 primes,
+M₂ ≈ 1.4×10⁸, 0.59% pass rate) then isqrt on the survivors — **exactly
+one point found: (0, 238) on the d = 1 cover, the degenerate orbit**;
+the d = 238 cover is empty throughout, as required (the degenerate
+orbit is the trivial Selmer class). The d = 238 emptiness is the
+descent-sieve analogue of the residue-filter kills: **no rational
+point on the non-trivial cover to 10¹⁰**. Version notes: v2 died on
+the CRT construction (M ≈ 10¹⁰ residues), v3 was timeout-cut at
+1700 s mid-sweep, v4/v5 chunked (1258 s per 2.5×10⁹ chunk), v6
+iterated survivor classes directly (662 s total). The sieve wall now
+stands at 10¹⁰; the formal box to r₀ ≈ 10²⁰ requires the
+enumeration-to-Coleman-bound machinery (Linux's track) or
+significantly more compute — flagged.
+
 ## §2ak ADDENDUM-13 (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`): the height constants CROSS-CHECKED — the octic model is MINIMAL
 
 `mss_k34_zd_height_sharp{2,3,4}.sage` + logs. The `[to-verify]` on the

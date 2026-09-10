@@ -1,0 +1,9 @@
+=== DS6: the vectorized-residue sweep ===
+  stage-2 survivors: 19206720
+  k-range per class: 4
+  FOUND: x=0, d=1, w=238
+   ...k=0 (464s)
+  TOTAL: 1
+  elapsed: 662s
+=== DONE ===
+EXIT=0

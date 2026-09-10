@@ -1,0 +1,7 @@
+=== DS3: the sieve (M = 255255, 6 primes) ===
+  cover d=1: 6480/255255 residues survive
+  cover d=238: 34272/255255 residues survive
+=== DS4: the x-sweep to 1e10 with the filter ===
+  union residues: 40752 (16.0% of x-values pass the filter)
+  FOUND: x=0, d=1, w=238
+EXIT=0
