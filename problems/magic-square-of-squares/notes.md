@@ -4426,6 +4426,15 @@ x-fibers alone. The gate curve's direct census is two tiers deeper
 than before; the Chabauty-side expectation (#C3_A(ℚ) = 8) holds
 throughout the swept range.
 
+## §2ba THE C3_B BAND TO 10⁸ (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`)
+
+`mss_k34_c3b_band_1e6_1e8.sage`/`.log` (253 s). The B-side octic band
+[10⁶, 10⁸]: **zero points** — all three target curves now stand at the
+|x| ≤ 10⁸ direct-search wall, every tier consistent with the
+Chabauty-side determinations. The direct census program is at its
+practical wall; the remaining box (to r₀ ≈ 10²⁰) belongs to the
+descent sieve.
+
 ## §2ak ADDENDUM-13 (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`): the height constants CROSS-CHECKED — the octic model is MINIMAL
 
 `mss_k34_zd_height_sharp{2,3,4}.sage` + logs. The `[to-verify]` on the
