@@ -1,0 +1,9 @@
+=== A13: C3_A at p = 13 ===
+  #C3_A(F_13) = 2 + 6 = 8 (filed: 8)
+=== A14: the D-classes and pushes (J_L(F_13)) ===
+  #J_L(F_13) = 14
+  D(F_13) affine: 12
+  killed (finite on-curve): 6
+  exceptions: [(0, 4, 'D1 itself - O'), (0, 9, 'the T pair (involution)'), (3, 11, 'X=5 not on curve'), (4, 5, 'X=12 not on curve'), (4, 8, 'X=3 not on curve'), (10, 2, 'X=11 not on curve')]
+=== DONE ===
+EXIT=0

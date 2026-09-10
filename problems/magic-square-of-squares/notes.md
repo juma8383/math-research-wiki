@@ -4224,6 +4224,36 @@ both K34 gates' residue layers leave only the degenerate orbit. The
 p-adic layer of the B-side closure matches the A-side exactly, and the
 dual-prime pattern (§2af) extends to the residue filters.
 
+## §2an A-SIDE RESIDUE FILTER AT p = 13 (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`)
+
+`mss_c3a_residue_13.sage`/`.log`. The A-side second tight prime:
+
+- **#C3_A(𝔽₁₃) = 8 confirmed** (2 infinities + 6 affine — the tight
+  count from §2aa, reproduced).
+- **#J_L(𝔽₁₃) = 14**; **D(𝔽₁₃): 12 affine classes**.
+- The pushes: **6 killed** (finite on-curve J_L(𝔽₁₃) pushes, non-
+  identity ⟹ not 13-divisible); the exceptions:
+  - (0, 4) = D₁ itself — the identity, the only survivor;
+  - (0, 9) — the involution partner (the T pair);
+  - (3, 11), (4, 5), (4, 8), (10, 2) — push to X = 5, 12, 3, 11 whose
+    Y² are NONRESIDUES mod 13 (not even 𝔽₁₃-rational — killed a
+    fortiori, same mechanism as the B-side p = 13 round).
+
+**A-side spare at p = 13: s₁₃ = 0** — all 12 classes killed except D₁
+itself (with the T pair and 4 nonresidue pushes among the kills). The
+dual-prime residue-filter program is now complete on BOTH gates:
+
+| gate | p = 11 | p = 13 |
+|---|---|---|
+| A-side (Z_D) | s = 0 (12/12 killed except D₁) | s = 0 (12/12, 6 on-curve + 4 nonresidue + T) |
+| B-side (Z_DB) | s = 0 (14/14) | s = 0 (16/16) |
+
+At both tight primes, both towers' residue layers leave ONLY the
+degenerate orbit. The remaining items for the full closure are
+unchanged: the height-bound constants (validated conservative layer,
+refinement optional) and the Coleman execution itself (tooling-gap
+flagged; Magma-class or external integrator).
+
 ## §2ak ADDENDUM-13 (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`): the height constants CROSS-CHECKED — the octic model is MINIMAL
 
 `mss_k34_zd_height_sharp{2,3,4}.sage` + logs. The `[to-verify]` on the
