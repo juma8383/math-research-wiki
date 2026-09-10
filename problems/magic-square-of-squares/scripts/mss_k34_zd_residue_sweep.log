@@ -1,0 +1,6 @@
+=== SWEEP: the residue filter over all good primes <= 200 ===
+  primes swept: 37 ; total killed: 2095 ; classes with nonres pushes: 97
+  (nonres pushes are killed a fortiori; the sweep verdict = every
+   non-degenerate class killed at every good prime tested)
+=== DONE ===
+EXIT=0

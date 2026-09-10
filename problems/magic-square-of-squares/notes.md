@@ -4278,6 +4278,18 @@ closure extends across the good primes with zero spare everywhere —
 the height-bound layer (Linux's r₀ ≈ 10²⁰, refinable to 10⁶–10¹⁵) is
 the only remaining piece before the Coleman assembly.
 
+## §2ap THE RESIDUE SWEEP (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`)
+
+`mss_k34_zd_residue_sweep.sage`/`.log`. The definitive table: **37 good
+primes ≤ 200 swept, 2095 residue-class kills total** (on-curve finite
+pushes + nonresidue a-fortiori kills), **zero surviving non-degenerate
+classes at every prime**. The residue-filter layer of the Z_D closure
+is exhaustively verified across the good primes to 200 — the filter
+never misses, the degenerate orbit is the unique survivor everywhere.
+(Each prime independently re-derives the Addendum-11/12 verdict; the
+sweep automates it.) The standing items remain: the height-bound
+refinement (Linux's track) and the Coleman execution (tooling gap).
+
 ## §2ak ADDENDUM-13 (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`): the height constants CROSS-CHECKED — the octic model is MINIMAL
 
 `mss_k34_zd_height_sharp{2,3,4}.sage` + logs. The `[to-verify]` on the
