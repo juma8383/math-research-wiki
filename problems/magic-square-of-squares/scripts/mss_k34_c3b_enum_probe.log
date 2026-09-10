@@ -1,0 +1,7 @@
+=== C3B-ENUM: the B-octic direct sweep |x| <= 1e6 ===
+  points found |x| <= 1e6: 3
+   x=0: W=+3
+   x=1: W=+12
+   x=-1: W=+12
+=== DONE ===
+EXIT=0

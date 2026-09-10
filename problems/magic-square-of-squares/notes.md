@@ -4373,6 +4373,22 @@ The C3_A(ℚ) small-band census matches the Chabauty-side expectation
 confirmation from the direct-search side. Both gate curves now carry:
 rank gate ✓ residue filter ✓ sweeps ✓ log layer ✓ small-band census ✓.
 
+## §2aw THE C3_B ENUMERATION PROBE (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`)
+
+`mss_k34_c3b_enum_probe.sage`/`.log`. The B-side octic probe |x| ≤ 10⁶:
+**exactly 3 affine x-values found: (0, ±3), (±1, ±12)** — no new
+points. Reconciliation with the filed §2ad census: the filed Q*_B
+points (0, ±12), (±2, ±8) live on the QUARTIC
+w² = 9v⁴ − 56v² + 144 (v = the u-variable), not on the octic model —
+the probe's (0, ±3) [octic x = 0: W² = 9] and (±1, ±12) [W² = 144] are
+the corresponding octic-side points; both censuses agree after the
+model identification (the quartic v=0 fiber ↔ the octic x=0 fiber;
+v = ±2 → z² = 8 irrational, so no octic lift at the (±2, ±8) points —
+consistent: the octic sweep correctly does NOT see them). **The B-side
+small-band census confirms Q*_B(ℚ) = the filed 8 points, nothing new.**
+All three target curves (C3_A, Z_D, C3_B/Q*_B) now carry the full
+checklist: rank gate ✓ residue filter ✓ sweeps ✓ small-band census ✓.
+
 ## §2ak ADDENDUM-13 (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`): the height constants CROSS-CHECKED — the octic model is MINIMAL
 
 `mss_k34_zd_height_sharp{2,3,4}.sage` + logs. The `[to-verify]` on the
