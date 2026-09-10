@@ -1,0 +1,6 @@
+=== SWEEP 200..500: both towers ===
+  A (J_L): 48 good primes in 200..500 ; total kills: 16642
+  B (J_LB): 49 good primes in 200..500 ; total kills: 17409
+  (verdict expected: zero non-degenerate survivors at every prime)
+=== DONE ===
+EXIT=0

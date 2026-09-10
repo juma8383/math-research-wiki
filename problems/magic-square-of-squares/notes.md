@@ -4308,6 +4308,18 @@ same filter mechanism, same kill pattern, same unique survivor. The
 program's remaining content is unchanged: height-bound refinement
 (Linux) and the Coleman execution (tooling gap, flagged).
 
+## §2ar SWEEP EXTENSION 200–500 (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`)
+
+`mss_c3a_residue_sweep_200_500.sage`/`.log`. Both towers over the next
+prime tier: **A-side 48 good primes (16642 kills), B-side 49 good
+primes (17409 kills), zero non-degenerate survivors at every prime**
+(bad primes auto-detected and skipped via the singular-curve guard).
+Combined with §2ap/§2aq: the residue-filter layer is now exhaustively
+verified over **127 good primes to p ≤ 500 — 38,242 total kills, zero
+spare anywhere**. The p-adic residue layer is closed across the full
+tested range; the remaining closure content is unchanged (height-bound
+refinement + Coleman execution).
+
 ## §2ak ADDENDUM-13 (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`): the height constants CROSS-CHECKED — the octic model is MINIMAL
 
 `mss_k34_zd_height_sharp{2,3,4}.sage` + logs. The `[to-verify]` on the
