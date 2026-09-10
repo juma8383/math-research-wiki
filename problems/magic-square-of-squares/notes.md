@@ -4399,6 +4399,24 @@ points. The census bands now: Z_D quartic ✓ 10⁷, C3_A octic ✓ 10⁶,
 C3_B octic ✓ 10⁶. The direct-search wall advances behind the Chabauty
 determination; the full-box descent sieve remains Linux's track.
 
+## §2ay THE Z_D BAND [10⁷, 10⁸] (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`)
+
+`mss_k34_zd_enum_1e7_1e8.sage`/`.log` (532 s runtime). **One point
+found in |x| ≤ 10⁸ total: (0, ±238) — the degenerate orbit, again
+alone.** The direct-search wall now stands at |x| ≤ 10⁸ for Z_D:
+
+| curve | band | points |
+|---|---|---|
+| Z_D (quartic) | \|x\| ≤ 10⁸ | degenerate orbit only |
+| C3_A (octic) | \|x\| ≤ 10⁶ | known 3 x-fibers only |
+| C3_B (octic) | \|x\| ≤ 10⁶ | 3 x-fibers only |
+
+Every direct tier is consistent with the Chabauty-side determination
+(#Z_D(ℚ) = 12, #C3_A(ℚ) = 8, #Q*_B(ℚ) = 8 — all "known points only").
+Beyond 10⁸ the direct sweep's cost grows linearly (532 s/tier); the
+descent sieve (Linux's track) is the correct tool for the remaining
+box to r₀ ≈ 10²⁰.
+
 ## §2ak ADDENDUM-13 (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`): the height constants CROSS-CHECKED — the octic model is MINIMAL
 
 `mss_k34_zd_height_sharp{2,3,4}.sage` + logs. The `[to-verify]` on the
