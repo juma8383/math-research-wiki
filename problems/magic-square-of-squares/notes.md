@@ -4453,7 +4453,7 @@ stands at 10¹⁰; the formal box to r₀ ≈ 10²⁰ requires the
 enumeration-to-Coleman-bound machinery (Linux's track) or
 significantly more compute — flagged.
 
-## §2ak ADDENDUM-13 (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`): the height constants CROSS-CHECKED — the octic model is MINIMAL
+## §2bc ADDENDUM-13 (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`): the height constants CROSS-CHECKED — the octic model is MINIMAL
 
 `mss_k34_zd_height_sharp{2,3,4}.sage` + logs. The `[to-verify]` on the
 conservative height constants is addressed from the Windows side:

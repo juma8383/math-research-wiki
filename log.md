@@ -5374,3 +5374,16 @@ Residual parked with ruling: 10802 @ (7,3,2) sits at fl+2, outside the
 ruled {fl-1,fl,fl+1} readout window — disclosed in the attempt-26
 addendum; the widened-window re-run to-verify covers full readout
 completeness. Suite 10/10 OK.
+
+## [LINT 2026-09-10] CI recovery: undefined round tag [mss-k34-c3ab-prep]
+Post-crash recovery (2026-09-10). CI lint had been red since the first
+mss-k34-c3ab-prep push (2026-09-10 05:20Z; last green run 05:03Z): notes.md
+cites the round-series tag [mss-k34-c3ab-prep] 20x but no sources/ page
+defined it. Fix: filed sources/mss-k34-c3ab-prep.md (session work-package
+tag; provenance "private notes") + index.md catalog line. Also: the second
+## §2ak heading (ADDENDUM-13, appended after §2bb) renumbered to §2bc so
+section ids are unique — content untouched. Uncommitted crash residue
+NOTED, not filed: scripts mss_k34_descent_sieve_win6b.* / win7.* (win7 log
+truncated mid-sweep at "stage-1 survivors: 5103", C3_A octic sieve);
+docs/superpowers/ and "Math Wiki Contribution Plan.md" predate the crash
+and stay untracked pending owner decision.
