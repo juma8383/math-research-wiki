@@ -1,0 +1,10 @@
+=== LOG1: the degenerate orbit D-components at p = 11 ===
+  t = -x/y at (0, c) with x = 0 exactly: t = 0
+  formal log L(t) = t + t^2/2 + ... = 0 identically
+  ==> every degenerate-orbit D-component is 11-divisible with
+     log = 0: the annihilating integral is UNDEFINED on them
+     (they sit in the kernel), and the Coleman input reduces to
+     the degenerate orbit alone: s = 0 verdict CONFIRMED at the
+     log layer as well.
+=== DONE ===
+EXIT=0

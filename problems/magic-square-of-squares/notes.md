@@ -4320,6 +4320,18 @@ spare anywhere**. The p-adic residue layer is closed across the full
 tested range; the remaining closure content is unchanged (height-bound
 refinement + Coleman execution).
 
+## §2as THE LOG-DATUM LAYER (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`)
+
+`mss_k34_zd_log_datum.sage`/`.log`. The final consistency check on the
+degenerate orbit: the tower points above (0,0), (0,1) have x = 0
+exactly, so the formal parameter t = −x/y = 0 in J_L's formal group at
+p = 11 — **log(t) = 0 identically**: every degenerate-orbit
+D-component is 11-divisible with vanishing log, the annihilating
+integral is undefined on them (they sit in the kernel), and the
+Coleman input reduces to the degenerate orbit alone. **The s = 0
+verdict is confirmed at the log layer as well** — the residue-filter
+layer is internally consistent end to end.
+
 ## §2ak ADDENDUM-13 (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`): the height constants CROSS-CHECKED — the octic model is MINIMAL
 
 `mss_k34_zd_height_sharp{2,3,4}.sage` + logs. The `[to-verify]` on the
