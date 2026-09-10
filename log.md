@@ -5387,3 +5387,22 @@ NOTED, not filed: scripts mss_k34_descent_sieve_win6b.* / win7.* (win7 log
 truncated mid-sweep at "stage-1 survivors: 5103", C3_A octic sieve);
 docs/superpowers/ and "Math Wiki Contribution Plan.md" predate the crash
 and stay untracked pending owner decision.
+
+## [INGEST 2026-09-10] explicit PNT bounds plan - adapted in-place
+User-submitted external LLM plan (explicit Chebyshev-bounds modernization,
+Lean 4 stubs, fork/PR workflow). Fact-checked claim-by-claim per the
+gemini-plan precedent: repository description HALLUCINATED (0 issues, 0
+PRs, no src/lean, no Lean - standing 2026-09-09 no-Lean ruling; fork/PR
+phases rejected). Literature verified: FKS 2023 (arXiv:2204.02588,
+all-x psi bound 9.22, exp const 0.8476836 = 2/sqrt(5.5666305) - plan
+WRONGLY said C = sqrt(2/R); large-x 4.47e-15 at log x >= 3000)
+abstract-anchored; Broadbent et al. 2021 (Math. Comp.) log-bounds for
+theta, k <= 5; Patel thesis sub-Weyl 27/164 REAL but superseded by
+Patel-Yang 2023 (66.7); Ramanujan threshold exp(3361) = Johnston-Yang,
+current record Axler 2022 exp(3158.442); plan dVP-shape bounds
+UNVERIFIED/suspect (degenerate exponent) - filed do-not-load. FILED:
+sources/fiori-kadiri-swidinsky-2023.md, sources/broadbent-kadiri-2021.md,
+sources/explicit-pnt-bounds-plan-2026-09-10.md (assessment), theory/
+theorems/explicit-chebyshev-bounds.md (toolbox; used-in
+[[riemann_hypothesis]] context); index.md catalog lines. All new source
+pages SUMMARY-verified (abstract level), verbatim re-check pending.
