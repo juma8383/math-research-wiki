@@ -1,0 +1,5 @@
+=== E4: the C3_A octic band |x| in [1e6, 1e8] ===
+  positive-x points in band: 0 (mirror to -x by evenness)
+  elapsed: 237s
+=== DONE ===
+EXIT=0
