@@ -1,0 +1,21 @@
+=== B2b: C3_B count CORRECTED ===
+  #C3_B(F_11) = 2 + 22 = 24 (filed 24: check)
+=== B3: the B-side D-classes and pushes ===
+  D_B(F_11) affine points: 14
+  base D1_B = (2, 1) mod 11; pushing classes:
+   z=2, w=1: push X = 1 (finite => killed unless O)
+   z=2, w=10: push X = 0 (finite => killed unless O)
+   z=3, w=1: push X = 8 (finite => killed unless O)
+   z=3, w=10: push X = 0 (finite => killed unless O)
+   z=4, w=3: push X = 1 (finite => killed unless O)
+   z=4, w=8: push X = 5 (finite => killed unless O)
+   z=5, w=0: push X = 9 (finite => killed unless O)
+   z=6, w=0: push X = 2 (finite => killed unless O)
+   z=7, w=3: push X = 10 (finite => killed unless O)
+   z=7, w=8: push X = 6 (finite => killed unless O)
+   z=8, w=1: push X = 3 (finite => killed unless O)
+   z=8, w=10: push X = 0 (finite => killed unless O)
+   z=9, w=1: push X = 10 (finite => killed unless O)
+   z=9, w=10: push X = 0 (finite => killed unless O)
+=== DONE ===
+EXIT=0

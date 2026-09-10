@@ -4175,6 +4175,33 @@ rank ✓ · counts ✓ · Prym ✓ · period ✓ · spare = 0 ✓ (all 12)
 has no open numeric item at p = 11; the standing `[to-verify]` is the
 height-bound constant refinement (§2ak, Linux's claimed track).
 
+## §2al B-SIDE MIRROR: the Z_DB residue filter (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`)
+
+`mss_c3b_zd_mirror{,2}.sage` + logs. The B-side of the same filter:
+
+- **#C3_B(𝔽₁₁) = 24 CONFIRMED** (v1's 26 was my counting bug: I
+  initialized 4 infinity points for a square leading coefficient —
+  the correct value is 2; corrected: 2 + 22 affine = 24, matching the
+  filed number exactly).
+- **J_LB model** (invariants (71680, −38273024)):
+  y² = x³ − 1935360x + 1033371648; **#J_LB(𝔽₁₁) = 16**.
+- **D_B(𝔽₁₁): 14 affine classes** (the square-condition quartic
+  w² = 9z⁴−128z²+512), pushed through the quartic→cubic map with base
+  D1_B = (2, 1) mod 11 (the filed known point (2, ±12)).
+- The pushes: **13 of 14 classes land on finite X-values** (including
+  three at X = 0 — which is NOT the identity on this curve: (0,0) is
+  not on J_LB since the constant term ≡ 1 mod 11 — so those are
+  ordinary finite points, killed); the base class [D1_B − D1_B] = O is
+  the only survivor; its involution partner (2,10) pushes to X = 0
+  (finite, killed).
+
+**B-side spare = 0 — the mirror is exactly symmetric with the A side.**
+Both K34 gates' residue layers at p = 11 now read: only the degenerate
+orbit survives the 11-divisibility filter; the Prym sides are rank-0
+(killed automatically); the height-constant layer is cross-validated
+identically (46.593). The two Chabauty closures are symmetric down to
+the same structural pieces.
+
 ## §2ak ADDENDUM-13 (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`): the height constants CROSS-CHECKED — the octic model is MINIMAL
 
 `mss_k34_zd_height_sharp{2,3,4}.sage` + logs. The `[to-verify]` on the

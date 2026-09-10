@@ -1,0 +1,10 @@
+=== B1: the B-side gate quartic and its Jacobian ===
+  J_LB: y^2 = x^3 + -1935360 x + 1033371648
+  #J_LB(F_11) = 16
+=== B2: C3_B residue classes at p=11 ===
+  #C3_B(F_11) = 26 (filed: 24)
+  affine classes: 22
+=== B3: the D_B-side collapse (x = z^2) and pushes ===
+  (full mirror computation in S4)
+=== DONE ===
+EXIT=0
