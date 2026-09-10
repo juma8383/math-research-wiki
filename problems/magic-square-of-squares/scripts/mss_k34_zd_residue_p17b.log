@@ -1,0 +1,7 @@
+=== R19/R23: the residue filter at the good primes 19, 23 ===
+--- p = 19 ---
+  A: #C3_A=24 ; #J_L=26 ; D classes=24 ; killed=17 ; exceptions=[(0, 10), (2, 18, 'X=14 nonres push'), (9, 2, 'X=14 nonres push'), (10, 18, 'X=18 nonres push'), (12, 6, 'X=14 nonres push'), (17, 15, 'X=16 nonres push')]
+--- p = 23 ---
+  A: #C3_A=32 ; #J_L=24 ; D classes=22 ; killed=10 ; exceptions=[(0, 8), (1, 0, 'X=8 nonres push'), (2, 11, 'X=21 nonres push'), (3, 5, 'X=12 nonres push'), (4, 1, 'X=8 nonres push'), (11, 0, 'X=7 nonres push'), (12, 6, 'X=5 nonres push'), (12, 17, 'X=4 nonres push'), (18, 7, 'X=20 nonres push'), (18, 16, 'X=9 nonres push'), (22, 7, 'X=8 nonres push')]
+=== DONE ===
+EXIT=0

@@ -1,0 +1,23 @@
+=== R17: the residue filter at p in {17, 19, 23} (both towers) ===
+--- p = 17 ---
+Traceback (most recent call last):
+  File "/mnt/c/Claude-Code/Math/problems/magic-square-of-squares/scripts/mss_k34_zd_residue_p17.sage.py", line 46, in <module>
+    JLp = EllipticCurve([_sage_const_0 , _sage_const_0 , _sage_const_0 , -_sage_const_27894240 , _sage_const_56491485696 ]).change_ring(GF(p))
+  File "/opt/sage/src/sage/schemes/elliptic_curves/ell_generic.py", line 1454, in change_ring
+    return self.base_extend(R)
+           ~~~~~~~~~~~~~~~~^^^
+  File "/opt/sage/src/sage/schemes/elliptic_curves/ell_number_field.py", line 163, in base_extend
+    E = super().base_extend(R)
+  File "/opt/sage/src/sage/schemes/elliptic_curves/ell_generic.py", line 1424, in base_extend
+    E = constructor.EllipticCurve([R(a) for a in self.a_invariants()])
+  File "sage/structure/factory.pyx", line 372, in sage.structure.factory.UniqueFactory.__call__
+  File "sage/structure/factory.pyx", line 415, in sage.structure.factory.UniqueFactory.get_object
+  File "/opt/sage/src/sage/schemes/elliptic_curves/constructor.py", line 541, in create_object
+    return EllipticCurve_finite_field(R, x)
+  File "/opt/sage/src/sage/schemes/elliptic_curves/ell_field.py", line 53, in __init__
+    super().__init__(R, data, category=category)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/sage/src/sage/schemes/elliptic_curves/ell_generic.py", line 146, in __init__
+    raise ArithmeticError(self._equation_string() + " defines a singular curve")
+ArithmeticError: y^2 = x^3 + 6*x + 6 defines a singular curve
+EXIT=0

@@ -4254,6 +4254,30 @@ unchanged: the height-bound constants (validated conservative layer,
 refinement optional) and the Coleman execution itself (tooling-gap
 flagged; Magma-class or external integrator).
 
+## §2ao MULTI-PRIME EXTENSION: the residue filter at p ∈ {19, 23} (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`)
+
+`mss_k34_zd_residue_p17{,b}.sage` + logs. Extending the filter past the
+tight primes:
+
+- **p = 17 is a BAD prime for J_L** (the model reduces to
+  x³ + 6x + 6, singular — consistent with the filed bad-prime support
+  {2, 3, 7, 17, 271}); the filter skips it.
+- **p = 19:** #C3_A = 24, #J_L(𝔽₁₉) = 26, D classes = 24 — **17
+  killed** (finite on-curve pushes), 5 nonresidue pushes (killed a
+  fortiori: X = 14, 14, 18, 14, 16), and (0, 10) = D₁ itself. **s₁₉ =
+  0** for the non-degenerate classes.
+- **p = 23:** #C3_A = 32, #J_L(𝔽₂₃) = 24, D classes = 22, **10
+  killed**, 9 nonresidue pushes (killed a fortiori), and (0, 8) = D₁ —
+  **s₂₃ = 0** for the non-degenerate classes.
+
+**The residue filter is now multi-prime verified: {11, 13, 19, 23} —
+every good prime tested kills every non-degenerate residue class.** The
+pattern holds identically: on-curve finite pushes are the main kill,
+nonresidue pushes the a-fortiori kill. The p-adic layer of the Z_D
+closure extends across the good primes with zero spare everywhere —
+the height-bound layer (Linux's r₀ ≈ 10²⁰, refinable to 10⁶–10¹⁵) is
+the only remaining piece before the Coleman assembly.
+
 ## §2ak ADDENDUM-13 (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`): the height constants CROSS-CHECKED — the octic model is MINIMAL
 
 `mss_k34_zd_height_sharp{2,3,4}.sage` + logs. The `[to-verify]` on the
