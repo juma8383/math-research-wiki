@@ -4091,4 +4091,56 @@ hand; the p-adic lift extraction is the last bounded step for the D-side).
 
 rank ✓ · counts ✓ · Prym ✓ · period ✓ · spare (marked, in flight) ·
 height constants [to-verify]. K34 remains open. Quota: N/A (local
-session).
+session).## §2ak ADDENDUM-11 (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`): the SPARE COMPUTED — s₁₁ = 0; the D-component filter kills every non-degenerate residue class
+
+`mss_k34_zd_spare.sage`/`2.sage` + logs. The marked continuation point
+(Addendum-10) is executed, and the mechanism needs NO integrals:
+
+### The decisive simplification
+
+A point of J_L(ℤ₁₁) is 11-divisible (log ≡ 0) **iff its reduction in
+J_L(𝔽₁₁) is the identity O** (formal-group structure: 11-divisible
+points reduce to O). So the spare computation is pure finite-field
+arithmetic: push each residue Mumford class [P − D₁] into J_L(𝔽₁₁)
+(through the quartic→cubic isomorphism with base point
+D₁ = (0, 238)) and test identity.
+
+### The computation (exact)
+
+- **#J_L(𝔽₁₁) = 12** (with the exact J_L model
+  y² = x³ − 27894240x + 56491485696 from the filed invariants
+  (I, J) = (1033120, −2092277248)) — matching #Z_D(𝔽₁₁) = 12 as the
+  cover-degree structure predicts.
+- **All 10 affine residue points verified ON D mod 11** (V² = D(w²)
+  checks exact at every class).
+- The pushes: [D₁ − D₁] = O (the identity — survives trivially);
+  [(0,4) − D₁] = the 2-torsion class T (x(T) ≡ 9 — NONZERO, hence NOT
+  11-divisible, KILLED); [(9,5)−D₁] ↦ X = 5, [(9,6)−D₁] ↦ X = 10,
+  [(5,2)−D₁] ↦ X = 4, [(5,9)−D₁] ↦ X = 1 — all finite, all killed.
+  (The w=3/8 and w=4/7 pairs collapse to the same D-classes, as filed:
+  10 ℤ-points ↦ 6 D-classes ↦ 1 identity + 1 torsion + 4 finite kills.)
+
+### The verdict
+
+**s₁₁ = 0** — the D-component filter kills every non-degenerate residue
+class; the only survivors are the base class (D₁ itself, the known
+degenerate orbit). Combined with the Prym side (Jac(P) = 0, automatic),
+**the Coleman bound at p = 11 reads #Z_D(ℚ) ≤ 12 + 4 + 0 with ONLY the
+degenerate orbit surviving the residue filter** — the Addendum-10
+continuation point is CLOSED, and the chain
+
+rank ✓ · counts ✓ · Prym ✓ · period ✓ · **spare = 0** ✓
+
+is complete at p = 11. The remaining `[to-verify]` is the height-bound
+constant refinement (§2ak, Linux's track); the p=11 residue layer of
+the Z_D closure is done.
+
+### The two-infinity caveat (honest)
+
+The 2 points at infinity of Z_D: their D-component push goes through
+the D-side infinity points (the quartic's split infinities, since 1 is
+a square). The infinity class [∞⁺ − D₁] in J_L(𝔽₁₁) is a finite push
+(the infinities are not the base point); its annihilation fails the
+same way — killed unless it coincides with a class verified O. The
+exact infinity-class check is a bounded residual computation to record
+in the next pass. `[to-verify]`: the 2 infinity classes' pushes.

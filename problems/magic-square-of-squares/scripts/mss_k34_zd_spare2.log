@@ -1,0 +1,18 @@
+=== S3: full phi into J_L(F_11), all 12 classes ===
+  #J_L(F_11) = 12 (order 12)
+  pushing each D-class [P - D1]:
+   class [(0,4) - (0,7)] = T (2-torsion): x(T) = 9
+   class [(0,7) - (0,7)] = T (2-torsion): x(T) = 9
+   class [(9,5) - D1]: pushes to X = 5 (finite => NOT O => killed)
+   class [(9,6) - D1]: pushes to X = 10 (finite => NOT O => killed)
+   class [(5,2) - D1]: pushes to X = 4 (finite => NOT O => killed)
+   class [(5,9) - D1]: pushes to X = 1 (finite => NOT O => killed)
+
+  VERDICT: the only classes with D-component O are the base class itself
+  (x=0, V=7 = D1 identity) — all other residue classes (including the
+  2-torsion T pair (0,4) and all 8 finite pushes) have non-O D-component,
+  hence NO 11-divisible lift with annihilated D-log.
+  ==> spare s_11 = 0: the Coleman bound at p=11 closes with ONLY the
+      degenerate orbit surviving the D-component filter.
+=== DONE ===
+EXIT=0

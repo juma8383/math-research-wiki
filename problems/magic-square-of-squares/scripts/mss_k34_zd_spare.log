@@ -1,0 +1,19 @@
+=== S1: J_L model (exact coefficients) ===
+  J_L: y^2 = x^3 + -27894240 x + 56491485696
+  #J_L(F_11) = 12
+=== S2: the quartic->cubic map at p=11 (base (0, 238)) ===
+  D-points from the residue classes (x = w^2 mod 11):
+   w=0: x = 0, V = 4 ; V^2 check: 5
+   w=0: x = 0, V = 7 ; V^2 check: 5
+   w=3: x = 9, V = 5 ; V^2 check: 3
+   w=3: x = 9, V = 6 ; V^2 check: 3
+   w=4: x = 5, V = 2 ; V^2 check: 4
+   w=4: x = 5, V = 9 ; V^2 check: 4
+   w=7: x = 5, V = 2 ; V^2 check: 4
+   w=7: x = 5, V = 9 ; V^2 check: 4
+   w=8: x = 9, V = 5 ; V^2 check: 3
+   w=8: x = 9, V = 6 ; V^2 check: 3
+  pushing each residue class through the map:
+  (X-computed; full phi check in S3)
+=== DONE ===
+EXIT=0
