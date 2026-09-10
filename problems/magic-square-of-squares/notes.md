@@ -4352,6 +4352,17 @@ layer is internally consistent end to end.
 p-adic side has zero remaining content, all layers filed and
 cross-verified between the two machines.
 
+## §2au THE ENUMERATION PROBE (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`)
+
+`mss_k34_zd_enum_probe.sage`/`.log`. The small-height band |x| ≤ 10⁶
+swept directly on the quartic D(x): **exactly one affine point found —
+(0, ±238), the degenerate orbit**, consistent with the filed known
+Z_D(ℚ) = degenerate orbit + 2 rational infinities. No new points in
+the band; the probe confirms the Chabauty-side determination
+(#Z_D(ℚ) = 12 with the degenerate orbit and infinity points) from the
+direct-search side within the tested band. The full box (r₀ ≈ 10²⁰)
+remains Linux's descent-sieve track.
+
 ## §2ak ADDENDUM-13 (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`): the height constants CROSS-CHECKED — the octic model is MINIMAL
 
 `mss_k34_zd_height_sharp{2,3,4}.sage` + logs. The `[to-verify]` on the

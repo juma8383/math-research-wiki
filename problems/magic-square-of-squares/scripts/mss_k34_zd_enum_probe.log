@@ -1,0 +1,5 @@
+=== E1: the tower small-band sweep (c <= 1e6) ===
+  points found |x| <= 1e6: 1
+   x=0: W=+238
+=== DONE ===
+EXIT=0
