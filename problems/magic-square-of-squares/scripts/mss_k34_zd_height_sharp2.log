@@ -1,0 +1,10 @@
+=== H2: discriminant-shift minimality test ===
+Traceback (most recent call last):
+  File "/mnt/c/Claude-Code/Math/problems/magic-square-of-squares/scripts/mss_k34_zd_height_sharp2.sage.py", line 28, in <module>
+    out('  disc = %s' % str(base_disc := base_disc if False else base_disc)[:_sage_const_60 ] if False else '  disc bits: %s' % base_disc.nbits())
+                                                                                                                                ^^^^^^^^^^^^^^^
+  File "sage/structure/element.pyx", line 494, in sage.structure.element.Element.__getattr__
+  File "sage/structure/element.pyx", line 507, in sage.structure.element.Element.getattr_from_category
+  File "sage/cpython/getattr.pyx", line 362, in sage.cpython.getattr.getattr_from_other_class
+AttributeError: 'sage.rings.rational.Rational' object has no attribute 'nbits'
+EXIT=0

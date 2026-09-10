@@ -1,0 +1,16 @@
+=== H2b: discriminant-shift minimality test (fixed) ===
+  disc sign/size: + (numerator 38 digits)
+  p=2: v(disc) = 44 (baseline)
+   -> minimal in ±4 (no translation lowers v)
+  p=3: v(disc) = 4 (baseline)
+   -> minimal in ±4 (no translation lowers v)
+  p=7: v(disc) = 6 (baseline)
+   -> minimal in ±4 (no translation lowers v)
+  p=17: v(disc) = 6 (baseline)
+   -> minimal in ±4 (no translation lowers v)
+  p=271: v(disc) = 4 (baseline)
+   -> minimal in ±4 (no translation lowers v)
+=== S4b: sharp-constant assembly ===
+  (per-prime minimized valuations above; sharp C_finite uses them)
+=== DONE ===
+EXIT=0

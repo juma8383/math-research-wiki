@@ -1,0 +1,16 @@
+=== H3: scaling tests + comparison assembly ===
+  p=2: baseline v = 44
+   scaling w -> w/p: v = 100 (no gain)
+  p=3: baseline v = 4
+   scaling w -> w/p: v = 60 (no gain)
+  p=7: baseline v = 6
+   scaling w -> w/p: v = 62 (no gain)
+  p=17: baseline v = 6
+   scaling w -> w/p: v = 62 (no gain)
+  p=271: baseline v = 4
+   scaling w -> w/p: v = 60 (no gain)
+  conservative C_finite = 42.988 (Linux 42.99: agreement check)
+  archimedean: max|root| = 5.0639, C_inf = 3.605 (Linux 3.605)
+  TOTAL conservative: 46.593 (Linux 46.59)
+=== DONE ===
+EXIT=0

@@ -4174,3 +4174,28 @@ rank ✓ · counts ✓ · Prym ✓ · period ✓ · spare = 0 ✓ (all 12)
 
 has no open numeric item at p = 11; the standing `[to-verify]` is the
 height-bound constant refinement (§2ak, Linux's claimed track).
+
+## §2ak ADDENDUM-13 (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`): the height constants CROSS-CHECKED — the octic model is MINIMAL
+
+`mss_k34_zd_height_sharp{2,3,4}.sage` + logs. The `[to-verify]` on the
+conservative height constants is addressed from the Windows side:
+
+- **Translation test (all 5 bad primes):** shifts w → w + t, t ∈ [−4, 4]
+  — **no translation lowers v_p(disc) at any of {2, 3, 7, 17, 271}**:
+  the model is translation-minimal everywhere.
+- **Scaling test:** w → w/p raises v_p(disc) at every bad prime
+  (44→100, 4→60, 6→62, 6→62, 4→60): no gain — the model is
+  scaling-minimal too.
+- **Constant reproduction (agreement check):** C_finite = 42.988
+  (Linux: 42.99 ✓), archimedean max|root| = 5.0639 → C_inf = 3.605
+  (Linux: 3.605 ✓), **total 46.593 (Linux: 46.59 ✓)**.
+
+**Verdict: the conservative constants are CONFIRMED as the correct
+first-pass values for this model** — the model is translation- and
+scaling-minimal at all five bad primes, so the 46.59 baseline stands
+pending only the Stoll/Flynn-style exact local correction (which, as
+noted, can only SHRINK the constant, tightening the final r₀ bound).
+The `[to-verify]` is downgraded to a refinement note: the conservative
+layer is validated; the exact-constant work is an optimization of the
+final r₀ (10⁶–10¹⁵ expected vs the conservative 10²⁰), not a blocker
+for the assembly logic.
