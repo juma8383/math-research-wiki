@@ -4389,6 +4389,16 @@ small-band census confirms Q*_B(ℚ) = the filed 8 points, nothing new.**
 All three target curves (C3_A, Z_D, C3_B/Q*_B) now carry the full
 checklist: rank gate ✓ residue filter ✓ sweeps ✓ small-band census ✓.
 
+## §2ax THE Z_D BAND EXTENSION |x| ≤ 10⁷ (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`)
+
+`mss_k34_zd_enum_1e6_1e7.sage`/`.log`. The quartic band [10⁶, 10⁷]
+swept directly (both signs; D is not even): **zero points** — combined
+with §2au: Z_D's affine rational points are still only the degenerate
+orbit (0, ±238) within |x| ≤ 10⁷, one height tier deeper with no new
+points. The census bands now: Z_D quartic ✓ 10⁷, C3_A octic ✓ 10⁶,
+C3_B octic ✓ 10⁶. The direct-search wall advances behind the Chabauty
+determination; the full-box descent sieve remains Linux's track.
+
 ## §2ak ADDENDUM-13 (Windows box, 2026-09-09, `[mss-k34-c3ab-prep]`): the height constants CROSS-CHECKED — the octic model is MINIMAL
 
 `mss_k34_zd_height_sharp{2,3,4}.sage` + logs. The `[to-verify]` on the
