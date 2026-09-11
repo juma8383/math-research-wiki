@@ -159,4 +159,4 @@ analytic rank Jac(P) = 0 (flat sum); rank Jac(Z_D) = 1 < 3, Chabauty
 applies to Z_D; two Chabauty targets: C3_A, Z_D) → **§2s 2026-09-08**
 (`mss-k34-tower7`: hand 2-descent blocked — N(x) has no rational root,
 Gordon-Grant hypothesis fails; rank Jac(P) = 0 filed ANALYTIC/
-BSD-CONDITIONAL; Chabauty-on-Z_D gate honestly conditional).
+BSD-CONDITIONAL; Chabauty-on-Z_D gate honestly conditional). → **§2bd 2026-09-11** (`mss-k4-c4quotients`: k=4 multiplier line — external Copilot contribution integrated after full independent verification ' C4 genus-3 lift of the E4 quartic, V4 quotient structure E_s/E_t/E_u, mod-7 support law, 7-adic disk fullness, corrected Jacobian families, naive squareclass sieve clean; NEW from the rank audit: rank J_u = 0 UNCONDITIONAL (degenerate locus only), E_s rank 1 (gen (-258,1024)), J(C4) ~ E_s x E_t x E_u verified mod 22 primes, rank J(C4)(Q) <= 2 < 3 = genus — Chabauty regime entered for k=4; next: MW basis of J(C4) + Chabauty determination of C4(Q); contribution folder left untracked per Collatz attempt-07 precedent, scripts promoted to scripts/k4_*).

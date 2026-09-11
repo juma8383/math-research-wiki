@@ -4476,4 +4476,100 @@ noted, can only SHRINK the constant, tightening the final r₀ bound).
 The `[to-verify]` is downgraded to a refinement note: the conservative
 layer is validated; the exact-constant work is an optimization of the
 final r₀ (10⁶–10¹⁵ expected vs the conservative 10²⁰), not a blocker
-for the assembly logic.
+for the assembly logic.## §2bd THE K=4 MULTIPLIER LINE: COPILOT CONTRIBUTION INTEGRATED + QUOTIENT RANK AUDIT (2026-09-11, `[mss-k4-c4quotients]`)
+
+Provenance: an external Copilot chat session on the magic-square problem
+(user-mediated; folder `magic-square-chat-Copilot-Contribution/` — 4
+materialized attempt files, 4 scripts, and a 215-page chat PDF that is the
+only record of the lineage's earlier rounds). The folder is left untracked
+per the Collatz attempt-07 precedent (verified scripts promoted to
+`scripts/k4_copilot_*.py`). Per protocol, every load-bearing claim was
+independently reproduced BEFORE acceptance; the audit also closed the
+contribution's two named open frontiers (rank J_u; sign-quotient model +
+full isogeny decomposition).
+
+### 1. The lineage as received
+
+The chat built the admissible-offsets program from scratch: A = {r ∈ ℚ :
+1−r, 1+r both squares} (rational image of f(t) = (1+t)²/(4t)); 2-free and
+3-free theorems (via Fermat 4-squares-in-AP); the multiplier problem
+K = {k > 1 : ∃ r ≠ 0, r, kr ∈ A}, with k = 4 the open case. For k = 4
+the first-cover quartic is E₄: W² = u⁴ − 248u² + 16 with the
+load-bearing lift condition u² + 4 = (x + 1/x)². The slope-lift
+(t = x + 1/x, u = x − 1/x, Z = Wx²) gives the genus-3 curve
+
+    C₄:  Z² = x⁸ − 252x⁶ + 518x⁴ − 252x² + 1
+
+with degenerate locus u ∈ {0, ∞} ↔ x ∈ {0, ±1, ∞}, and the norm
+factorization Z² = N_{ℚ(√15)/ℚ}(x⁴ − (126 + 32√15)x² + 1) (constants
+126² − 32²·15 = 516, disc 252² − 4·516 = 61440 = (64√15)²). Then:
+mod-7 support theorem 7 ∣ pq(p−q)(p+q) (P ≡ x⁸ + 1 mod 7, r² + 1 a
+square forces r² = 1); 7-adic disk fullness — all four residue disks are
+Hensel-full (lifts through 7⁶; x = 7 → z ≡ 27441, x = 8 → z ≡ 26743), a
+counterevidence argument against local-uniqueness proofs of 4-freeness;
+Klein-four quotient structure (σ: x ↦ −x, τ: x ↦ 1/x) with three genus-1
+quotients E_s (sign), E_t (reciprocal), E_u (negative-reciprocal) coupled
+by t² − u² = 4; Jacobian models J_u: Y² = X(X+240)(X+256) and
+J_t: Y² = X(X+192)(X+320); J_t rank ≥ 1 via P = (4, 504),
+x(2P) = 14737921/3969 (Lutz–Nagell); the corrected general families
+J_{u,k}: Y² = X(X+16k²)(X+16(k²−1)) and
+J_{t,k}: Y² = X(X+16k(k−1))(X+16k(k+1)) (not to be conflated); and the
+naive squareclass sieve d ∈ {±1, ±2, ±3, ±5, ±6, ±10, ±15, ±30} × moduli
+{8, 16, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31}: EVERY class survived — no
+quick obstruction (counterevidence to the simplest hoped-for descent).
+Structural echo of §2m: the K34 genus-3 curve Z also split 3-ways under
+its Jacobian.
+
+### 2. Verification record (this session: exact arithmetic + PARI/GP + mwrank)
+
+- **Algebra (`k4_quotient_verify.py`, exact rational arithmetic)**: the
+  coupling t² − u² = 4; the C₄ polynomial identity
+  x⁴(u⁴ − 248u² + 16) = P(x) for u = x − 1/x; both Jacobian models and
+  both corrected k-families; P = (4, 504) on J_t with
+  2P = (14737921/3969, −60471686143/250047) nonintegral; bonus structure:
+  Q = (−256, 1024) on J_t satisfies **2Q = −P**, i.e. the contribution's
+  infinite-order point is exactly −2 × the mwrank generator found below —
+  P lives inside a rank-1 group, not a mystery coset.
+- **Computation (Copilot scripts rerun)**: Hensel lifts through 7⁶ (six
+  (x, z₀) pairs, all verified); mod-7 support law; biquotient residue
+  census + exact quotient identities; squareclass sieve reproduces
+  "every tested squareclass survived every tested modulus" (all 16 × 12).
+- **Rank audit — NEW RESULTS (`k4_pari_rank_audit{,2}.gp`,
+  `k4_charpoly_check.gp`), closing both of the contribution's named
+  frontiers**:
+  - **rank J_u = 0, unconditional** (mwrank 2-descent: "the rank and
+    full Mordell–Weil basis have been determined unconditionally";
+    PARI ellrank [0, 0] concurs). J_u(ℚ) = (ℤ/2)² =
+    {∞, (0,0), (−240,0), (−256,0)} — the negative-reciprocal quotient
+    carries ONLY the degenerate locus. The "best rank-zero candidate"
+    is confirmed rank zero.
+  - **Sign quotient E_s**: from the quotient curve Z² = s⁴ − 252s³ +
+    518s² − 252s + 1 (s = x²; the σ: x ↦ −x quotient), PARI `ellfromeqn`
+    gives the Weierstrass model y² = x³ + 518x² + 63500x + 124936 with
+    **rank 1** (generator (−258, 1024), torsion (ℤ/2)²;
+    mwrank-certified).
+  - **J(C₄) ~ E_s × E_t × E_u**: the Frobenius charpoly of C₄ equals the
+    product of the three quotient charpolys for all 22 good primes in
+    [3, 100] (`k4_charpoly_check.gp`; the ℚ-isogeny itself follows from
+    the standard V₄-quotient argument — `[to-verify]` the precise
+    citation).
+  - **rank J(C₄)(ℚ) ≤ 1 + 1 + 0 = 2 < 3 = genus — the Chabauty regime
+    is entered for the k=4 line for the first time** (conditional on the
+    V₄ decomposition). The 2-isogeny companions also certified:
+    E′: y² = x³ − 62x² + x rank 0; E_t′: y² = x³ − 64x² + 64x rank 1
+    (generator (64, 64)).
+
+### 3. Frontier
+
+The contribution's two named smaller frontiers (prove rank J_u; sign
+model + total rank) are closed. The shared next step is the one its
+approach-C named: **determine C₄(ℚ) by Chabauty** (rank 2 < 3) — full MW
+basis of J(C₄)(ℚ) assembled from the three quotient generators, then the
+Chabauty/Mordell–Weil-sieve determination of C₄(ℚ). If C₄(ℚ) = the
+degenerate locus {x ∈ {0, ±1, ∞}} (u ∈ {0, ∞}), the k=4 multiplier dies
+through this quotient and, per the contribution's own reduction ("a
+rank-zero result followed by a lift audit would prove 4-freeness"), the
+4-freeness gate advances. Breaking input: a nondegenerate rational point
+on C₄. `[to-verify]`: the V₄-isogeny citation; the contribution's exact
+search p ≤ q ≤ 500 (only degenerate fractions) not yet independently
+rerun.

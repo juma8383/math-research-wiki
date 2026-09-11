@@ -5406,3 +5406,35 @@ sources/explicit-pnt-bounds-plan-2026-09-10.md (assessment), theory/
 theorems/explicit-chebyshev-bounds.md (toolbox; used-in
 [[riemann_hypothesis]] context); index.md catalog lines. All new source
 pages SUMMARY-verified (abstract level), verbatim re-check pending.
+
+## [INGEST 2026-09-11] MSS k=4 Copilot contribution - verified and integrated
+User-provided external Copilot chat contribution on the magic-square k=4
+multiplier line (folder problems/magic-square-of-squares/
+magic-square-chat-Copilot-Contribution/ - 4 attempt files, 4 scripts,
+215-page chat PDF; left UNTRACKED per the Collatz attempt-07 precedent;
+the PDF is the sole record of the lineage's early rounds: admissible
+offsets A, 2-free/3-free theorems, multiplier problem K, k=2,3 dead).
+All load-bearing claims independently verified BEFORE acceptance (exact
+arithmetic + PARI/GP + mwrank in WSL2): C4 lift identity
+Z^2 = x^8-252x^6+518x^4-252x^2+1 (t = x+1/x, u = x-1/x, Z = Wx^2); norm
+factorization over Q(sqrt(15)); mod-7 support law 7 | pq(p-q)(p+q);
+Hensel lifts through 7^6 (x=7 -> z=27441, x=8 -> z=26743); Jacobian
+models J_u, J_t; P=(4,504) infinite order with x(2P)=14737921/3969
+(= -2 x the mwrank generator (-16,16) on the scaled E_t); corrected
+families J_{u,k}, J_{t,k}; naive squareclass sieve clean (16 classes x
+12 moduli). NEW RESULTS closing the contribution's two named frontiers:
+rank J_u = 0 UNCONDITIONAL (mwrank 2-descent; J_u(Q) = (Z/2)^2 =
+degenerate locus only); sign quotient E_s (PARI ellfromeqn on the s = x^2
+quotient): y^2 = x^3+518x^2+63500x+124936, RANK 1, gen (-258,1024);
+J(C4) ~ E_s x E_t x E_u verified by Frobenius charpoly product identity
+22/22 good primes in [3,100]; hence rank J(C4)(Q) <= 2 < 3 = genus -
+Chabauty regime entered for k=4 (conditional on the standard V4-isogeny
+argument, [to-verify] citation). 2-isogeny companions certified: E'
+(y^2 = x^3-62x^2+x) rank 0; E_t' (y^2 = x^3-64x^2+64x) rank 1. FILED:
+notes.md section 2bd; sources/mss-k4-c4quotients.md (round tag);
+progress.md frontier chain; index.md catalog line; scripts promoted to
+problems/magic-square-of-squares/scripts/: k4_copilot_{elliptic_quotient_
+probe,ju_descent_local_sieve,7adic_disk_check,biquotient_analysis}.py,
+k4_quotient_verify.py, k4_pari_rank_audit{,2}.gp, k4_charpoly_check.gp.
+Next: full MW basis of J(C4)(Q) + Chabauty determination of C4(Q); if
+C4(Q) = degenerate locus {x in {0,+-1,inf}}, the k=4 multiplier dies.
